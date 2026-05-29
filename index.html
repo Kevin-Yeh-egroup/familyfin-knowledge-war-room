@@ -337,6 +337,209 @@
 
     .card p { margin: 10px 0 0; color: var(--muted); }
 
+    .review-board {
+      display: grid;
+      grid-template-columns: minmax(260px, .85fr) minmax(0, 1.4fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .suggestion-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .suggestion-item {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .suggestion-item:hover,
+    .suggestion-item.active {
+      border-color: rgba(20, 125, 126, .65);
+      background: #f7fbfb;
+    }
+
+    .suggestion-item strong {
+      display: block;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .suggestion-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 800;
+      background: #eef3f8;
+      color: #344054;
+      white-space: nowrap;
+    }
+
+    .status-pill.approved { background: #e6f4ea; color: #256141; }
+    .status-pill.needsEvidence { background: #fff4df; color: #7a4d00; }
+    .status-pill.rejected { background: #fbe8ee; color: #9c2f50; }
+
+    .detail-panel {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      min-height: 640px;
+    }
+
+    .detail-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .detail-panel h3 {
+      font-size: 22px;
+      margin: 0;
+    }
+
+    .detail-section {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-section h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .detail-section p {
+      margin: 8px 0 0;
+      color: #344054;
+    }
+
+    .source-list,
+    .next-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .source-list li,
+    .next-list li {
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #f9fbfd;
+    }
+
+    .source-list a {
+      font-weight: 800;
+      color: var(--blue);
+    }
+
+    .draft-block {
+      display: grid;
+      gap: 16px;
+    }
+
+    .draft-block article {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fcfdff;
+    }
+
+    .review-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .action-button {
+      min-height: 40px;
+      padding: 9px 13px;
+      border-radius: 6px;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .action-button.primary {
+      border-color: var(--green);
+      background: var(--green);
+      color: #fff;
+    }
+
+    .action-button.warn {
+      border-color: #d39b2a;
+      background: #fff7e8;
+      color: #704600;
+    }
+
+    .action-button.danger {
+      border-color: #d8a2b2;
+      background: #fff5f8;
+      color: #8b2444;
+    }
+
+    .approval-vault {
+      margin-top: 20px;
+      display: grid;
+      gap: 14px;
+    }
+
+    .vault-group {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .vault-group h4 {
+      margin: 0 0 10px;
+      font-size: 16px;
+    }
+
+    .vault-group ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .export-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
     .checklist {
       display: grid;
       gap: 10px;
@@ -377,8 +580,13 @@
       .stats,
       .grid-2,
       .grid-3,
-      .cards {
+      .cards,
+      .review-board {
         grid-template-columns: 1fr;
+      }
+
+      .detail-top {
+        flex-direction: column;
       }
 
       .bar-row {
@@ -678,35 +886,548 @@
 
     <section id="cards" class="panel">
       <div class="panel-head">
-        <h2>第一批新增建議</h2>
-        <p class="sub">這些題目適合由戰情室持續追蹤來源，再轉成一般民眾版或社工版文章。</p>
+        <h2>新增建議審稿台</h2>
+        <p class="sub">點進每張建議卡，可以先看預生成草稿、證據包、案例註記與下一步。核准後會依知識分類存到本機暫存庫，並可匯出 JSON 或 Markdown 交給後續上稿流程。</p>
       </div>
       <div class="panel-body">
-        <div class="cards">
-          <article class="card">
-            <h3>財務社會工作不是教理財，而是重新判讀家庭經濟困境</h3>
-            <p><span class="tag blue">社工版</span><span class="tag gold">高優先</span></p>
-            <p>核心重新框架：不是教服務對象記帳，而是看見生活條件如何限制選擇。</p>
-          </article>
-          <article class="card">
-            <h3>有補助，為什麼生活還是不穩？</h3>
-            <p><span class="tag green">一般民眾版</span><span class="tag gold">高優先</span></p>
-            <p>核心重新框架：不是有補助就穩，而是生活風險可能超過補助能承接的範圍。</p>
-          </article>
-          <article class="card">
-            <h3>搬家不是單一決定：住所、戶籍、補助與支持系統的結構判讀</h3>
-            <p><span class="tag blue">社工版</span><span class="tag gold">高優先</span></p>
-            <p>核心重新框架：不是案主想搬就搬，而是支持系統與風險承接的拉扯。</p>
-          </article>
-          <article class="card">
-            <h3>真正的穩定，不只是今天付得出帳單</h3>
-            <p><span class="tag green">一般民眾版</span><span class="tag rose">中優先</span></p>
-            <p>核心重新框架：穩定不是沒有壓力，而是仍然有調整空間。</p>
-          </article>
+        <div class="review-board">
+          <div>
+            <div class="suggestion-list" id="suggestionList" aria-label="新增建議清單"></div>
+          </div>
+          <article class="detail-panel" id="suggestionDetail" aria-live="polite"></article>
+        </div>
+
+        <div class="detail-section">
+          <h3>核准暫存庫</h3>
+          <p class="sub">這裡是本機瀏覽器的分類暫存。換裝置或清除瀏覽器資料後不會同步；若要永久保存，可在下一版接 GitHub PR、Google Sheet 或知識庫後台 API。</p>
+          <div class="export-actions">
+            <button class="action-button" type="button" id="exportJson">匯出 JSON</button>
+            <button class="action-button" type="button" id="exportMarkdown">匯出 Markdown</button>
+            <button class="action-button danger" type="button" id="clearReviews">清除本機審稿狀態</button>
+          </div>
+          <div class="approval-vault" id="approvalVault"></div>
         </div>
       </div>
     </section>
   </main>
+
+  <script>
+    const reviewSuggestions = [
+      {
+        id: "rent-subsidy-still-unstable",
+        title: "有補助，為什麼生活還是不穩？",
+        audience: "一般民眾版",
+        category: "主要問題彙編｜政府救助資源",
+        priority: "高優先",
+        readiness: "可審稿",
+        problem: "問題不只是有沒有補助，而是補助能不能接住租屋、搬家、戶籍、押金與房東互動帶來的連續風險。",
+        evidence: [
+          {
+            label: "內政部不動產資訊平台｜300億元中央擴大租金補貼專區",
+            url: "https://pip.moi.gov.tw/Publicize/Info/B1020?tripid=d091a3fb-3ad7-4400-9595-b6d02896dcf2",
+            note: "可作為制度與申請資訊來源，包含諮詢專線與線上申請入口。"
+          },
+          {
+            label: "內政部新聞稿｜租金補貼延長至115年、戶數提升至75萬",
+            url: "https://www.moi.gov.tw/News_Content.aspx?n=4&s=318897",
+            note: "可支撐文章中的政策規模描述，但需在上稿前再次確認年度公告。"
+          },
+          {
+            label: "公視新聞｜租金補貼遭追回個案",
+            url: "https://news.pts.org.tw/article/638087",
+            note: "可作為真實案例材料，使用時應去識別化，只抽取制度風險，不補當事人情節。"
+          }
+        ],
+        caseNote: "真實公開案例可寫成：有租屋事實的房客已領取補貼，後續卻因房東稅務或行政認定問題面臨追繳。草稿不可推論所有租補都會出問題，只能說明補助與租屋現實之間可能仍有落差。",
+        draft: [
+          {
+            heading: "前言：不是拿到補助就穩了",
+            paragraphs: [
+              "很多人以為，申請到租金補貼，生活就會鬆一口氣。但真正讓人不安的，常常不是那一筆補助有沒有入帳，而是租屋生活本身有太多不確定。",
+              "房東願不願意配合、資料能不能補齊、搬家後資格怎麼接續、押金和仲介費從哪裡來，這些都不是一個月補貼能完全處理的事。"
+            ]
+          },
+          {
+            heading: "核心判讀：補助處理的是負擔，不一定處理風險",
+            paragraphs: [
+              "補助可以降低租金壓力，但不等於家庭就有承接風險的能力。當收入已經很緊，任何一次搬家、補件、延遲入帳或資格變動，都可能讓原本勉強平衡的生活被打亂。",
+              "所以問題不只是有沒有申請，而是家裡是否有時間、資訊、文件、押金和可求助的人，去承接申請過程中的變動。"
+            ]
+          },
+          {
+            heading: "行動落點：先看三件事",
+            paragraphs: [
+              "第一，確認自己目前的租賃契約、戶籍與居住事實是否能支持申請。第二，搬家或租約異動時，不要只問能不能續領，也要問需要什麼期限內補件。第三，如果房東限制申請、要求漲租或要求承擔稅負，應保存對話與租約，向地方政府或租金補貼專線詢問。",
+              "真正重要的不是把補助當成唯一解方，而是把它放進整個生活風險裡一起看。當你知道哪些地方會卡住，才比較有機會提早準備。"
+            ]
+          }
+        ],
+        nextSteps: [
+          "上稿前再次確認115年度租金補貼申請期間、舊案帶入規則與專線。",
+          "補一則地方政府或國土署對房東限制申請的最新說明。",
+          "一般民眾版末段加入文件檢查清單：租約、帳戶、身分資料、搬家補件紀錄、諮詢窗口。"
+        ]
+      },
+      {
+        id: "social-assistance-not-equal-stability",
+        title: "有列冊或有救助，為什麼家庭還是一直在撐？",
+        audience: "一般民眾版",
+        category: "不同對象需求｜經濟弱勢家庭",
+        priority: "高優先",
+        readiness: "可審稿",
+        problem: "問題不只是是否符合低收或中低收資格，而是固定收入、照顧責任、醫療支出與突發費用會不會讓生活沒有調整空間。",
+        evidence: [
+          {
+            label: "衛生福利部｜低收入戶及中低收入戶說明",
+            url: "https://www.mohw.gov.tw/cp-88-79005-1.html",
+            note: "可作為申請管道、1957福利諮詢專線與法規入口來源。"
+          },
+          {
+            label: "衛福部統計表｜社會救助",
+            url: "https://www.mohw.gov.tw/dl-63155-7aff56ae-7076-4ad3-9b4d-1871a247611e.html",
+            note: "113年低收入戶約14.2萬戶、26.3萬人；中低收入戶約10.3萬戶、26.6萬人。數字上稿前需以最新統計表覆核。"
+          },
+          {
+            label: "政府資料開放平臺｜低收入戶及中低收入戶之戶數及人數統計",
+            url: "https://data.gov.tw/dataset/160963",
+            note: "可下載歷年低收入戶與中低收入戶戶數、人數、性別統計。"
+          }
+        ],
+        caseNote: "本題建議先用『去識別化組合情境』，例如隔代照顧、零工收入、醫療支出與學費同時發生。正式上稿若使用真實案例，需另補可公開來源或由內部個案資料完成去識別化與授權判斷。",
+        draft: [
+          {
+            heading: "前言：不是有資格就不辛苦",
+            paragraphs: [
+              "很多人以為，只要家庭有列冊、領到補助，生活就應該比較穩。但真正讓人撐不住的，往往不是完全沒有資源，而是資源剛好只能補一段，卻接不住所有變動。",
+              "當家裡有人生病、孩子要繳費、照顧者只能接零工，生活不是一條直線，而是不斷被不同支出拉扯。"
+            ]
+          },
+          {
+            heading: "核心判讀：困難不只在收入低，而在風險太密",
+            paragraphs: [
+              "低收入或中低收入資格，能協助家庭進入制度支持。但家庭的壓力不一定只來自每月收入，還來自支出的時間點、照顧責任和突發事件。",
+              "如果每筆錢都已經被房租、餐費、交通、學用品和醫療費用先分走，人就很難為未來做準備。這時候不是不會規劃，而是生活根本沒有留下規劃的空間。"
+            ]
+          },
+          {
+            heading: "行動落點：把補助放進整張生活地圖",
+            paragraphs: [
+              "可以先把家裡的固定支出、即將發生的大筆支出、可能延遲入帳的收入，以及可求助窗口分開列出來。這不是為了檢討自己，而是看清楚真正卡住的是哪一段。",
+              "如果發現某一筆突發費用會讓房租或餐費被擠掉，應及早詢問戶籍地社會局處、里長辦公室或1957福利諮詢專線，而不是等到斷繳後才求助。"
+            ]
+          }
+        ],
+        nextSteps: [
+          "補上最新年度最低生活費標準與各縣市差異，避免讀者誤用全國單一門檻。",
+          "社工版可延伸為評估表：固定成本、照顧責任、風險事件、支持系統、可立即求助窗口。",
+          "若使用內部案例，需完成去識別化與案例授權流程。"
+        ]
+      },
+      {
+        id: "debt-negotiation-not-agency",
+        title: "債務協商不是找代辦，而是先看清楚自己站在哪裡",
+        audience: "一般民眾版",
+        category: "財務管理與規劃｜債務",
+        priority: "高優先",
+        readiness: "可審稿",
+        problem: "問題不只是欠多少錢，而是債務人是否知道合法協商入口、最大債權金融機構、還款能力與代辦風險。",
+        evidence: [
+          {
+            label: "金管會銀行局｜消費者債務清理條例之前置協商說明",
+            url: "https://www.banking.gov.tw/ch/home.jsp?id=742&parentpath=0%2C674%2C717%2C740&websitelink=artwebsite.jsp",
+            note: "可作為前置協商制度、面談與流程說明來源。"
+          },
+          {
+            label: "金管會銀行局新聞稿｜申請前置協商請直接向最大債權金融機構辦理",
+            url: "https://www.banking.gov.tw/ch/home.jsp?aplistdn=ou%3Dnews%2Cou%3Dmultisite%2Cou%3Dchinese%2Cou%3Dap_root%2Co%3Dfsc%2Cc%3Dtw&dataserno=33075&dtable=News&id=540&mcustomize=news_view.jsp&parentpath=0%2C524%2C539",
+            note: "可支撐『避免代辦公司誤導』與諮詢銀行公會專線的提醒。"
+          },
+          {
+            label: "銀行局｜消費者債務清理條例相關法規",
+            url: "https://www.banking.gov.tw/ch/home.jsp?id=743&parentpath=0%2C674%2C717%2C740&websitelink=artwebsite.jsp",
+            note: "可作為法規與第151條協商義務的延伸查核來源。"
+          }
+        ],
+        caseNote: "正式文章可引用『代辦公司收費、個資外流或承諾不實』的公開案例，但本卡目前先以主管機關風險提醒作為材料，不虛構受害故事。",
+        draft: [
+          {
+            heading: "前言：債務最難的，不只是金額",
+            paragraphs: [
+              "很多人一聽到債務，就只想知道自己欠了多少、要還多久。但真正讓人慌的，常常不是數字本身，而是不知道下一步該找誰、能不能談、會不會越談越糟。",
+              "當催收電話、帳單和生活支出同時壓過來，人很容易抓住任何看起來能立刻解決問題的人。這也是代辦風險容易出現的時候。"
+            ]
+          },
+          {
+            heading: "核心判讀：協商不是把問題交出去",
+            paragraphs: [
+              "前置協商的重點，不是找一個人替你承諾奇蹟，而是把債務、收入、必要支出和可負擔的還款能力整理清楚，回到合法流程裡談。",
+              "如果只聽代辦說可以降低月付、保證成功，卻沒有看見費用、授權文件、個資風險和實際還款能力，債務問題可能還沒解決，先增加新的風險。"
+            ]
+          },
+          {
+            heading: "行動落點：先做四個確認",
+            paragraphs: [
+              "第一，整理所有金融機構債務與帳單。第二，找出最大債權金融機構。第三，估算扣除房租、餐食、交通、醫療後真正能負擔的金額。第四，直接向金融機構或銀行公會諮詢，不先把資料交給來路不明的代辦。",
+              "真正重要的不是立刻擺脫壓力，而是不要在壓力最大時做出讓自己更沒有選擇的決定。"
+            ]
+          }
+        ],
+        nextSteps: [
+          "補上銀行公會前置協商申請書與諮詢專線入口。",
+          "社工版可增加評估問題：收入穩定性、必要支出、非金融債務、催收壓力、是否已有代辦接觸。",
+          "補一則可查證代辦爭議案例，並只使用來源可確認的事實。"
+        ]
+      },
+      {
+        id: "financial-scam-recovery",
+        title: "被詐騙後，不只是錢沒了：家庭如何重新承接風險",
+        audience: "社工版",
+        category: "評估與輔導觀點｜風險判讀",
+        priority: "中優先",
+        readiness: "需補案例",
+        problem: "問題不只是詐騙事件，而是財損、債務、帳戶凍結、家庭信任與求助羞恥感會一起影響後續生活決策。",
+        evidence: [
+          {
+            label: "內政部警政署｜165打詐儀錶板介紹",
+            url: "https://www.npa.gov.tw/ch/app/data/view?id=2206&module=wg054&serno=7218ce42-167b-489b-817b-71fcce2af534",
+            note: "可支撐165儀錶板的案件統計、案例、預防秘笈與打詐成果功能。"
+          },
+          {
+            label: "內政部新聞稿｜打詐成效與每日平均案件、財損變化",
+            url: "https://www.moi.gov.tw/News_Content.aspx?n=2&s=337375",
+            note: "可作為詐騙議題規模與趨勢資料，但需在上稿前覆核最新儀錶板數字。"
+          },
+          {
+            label: "165打詐儀錶板",
+            url: "https://165dashboard.tw/",
+            note: "可搜尋去識別化案例與最新案件類型，供正式草稿補真實案例。"
+          }
+        ],
+        caseNote: "本卡目前不放具名或未交叉查證案例。正式上稿時，建議從165儀錶板挑選去識別化案例，標明查詢日期與案類，不將單一案例寫成趨勢。",
+        draft: [
+          {
+            heading: "前言：詐騙後的工作，不只是在追回錢",
+            paragraphs: [
+              "在實務現場，詐騙常被理解為財產損失事件。但對社工而言，真正需要判讀的，是財損後家庭還剩下多少承接能力。",
+              "有些服務對象不是不想求助，而是在羞愧、害怕家人知道、帳戶被限制、債務立即到期的壓力裡，失去整理問題的能力。"
+            ]
+          },
+          {
+            heading: "核心判讀：財損會改變決策結構",
+            paragraphs: [
+              "詐騙事件表面上是一次損失，實際上可能把家庭推進連鎖風險。原本要繳的房租、藥費、學費和債務沒有消失，反而因為資金缺口變得更急。",
+              "如果社工只問被騙多少，容易忽略後面更需要處理的是：是否有新的借貸、是否有帳戶或司法風險、家庭關係是否破裂、服務對象是否開始迴避所有通知。"
+            ]
+          },
+          {
+            heading: "介入落點：先穩住生活，再整理法律與財務",
+            paragraphs: [
+              "社工可以先協助服務對象把事件分成三層：第一層是立即安全與報案保存證據；第二層是接下來30天的必要支出與收入缺口；第三層是家庭溝通、債務協商與制度資源。",
+              "重點不是替服務對象做所有決定，而是協助他重新看見哪些事要先處理，哪些事需要專業轉介，哪些事不能因為害怕而拖到更難收拾。"
+            ]
+          }
+        ],
+        nextSteps: [
+          "正式上稿前從165儀錶板擷取一則去識別化案例，記錄查詢日期與案類。",
+          "補上報案、165諮詢、金融機構掛失或止付、法律扶助等行動窗口。",
+          "社工版加入風險盤點表：財損、帳戶、債務、家庭關係、居住、工作、照顧責任。"
+        ]
+      }
+    ];
+
+    const reviewStorageKey = "familyfin-war-room-suggestion-reviews";
+    const statusLabels = {
+      pending: "待審",
+      approved: "已核准",
+      needsEvidence: "補證中",
+      rejected: "退回"
+    };
+    let activeSuggestionId = reviewSuggestions[0].id;
+
+    function loadReviews() {
+      try {
+        return JSON.parse(localStorage.getItem(reviewStorageKey)) || {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function saveReviews(reviews) {
+      localStorage.setItem(reviewStorageKey, JSON.stringify(reviews));
+    }
+
+    function getSuggestionStatus(id) {
+      const reviews = loadReviews();
+      return reviews[id]?.status || "pending";
+    }
+
+    function setSuggestionStatus(id, status) {
+      const reviews = loadReviews();
+      const suggestion = reviewSuggestions.find((item) => item.id === id);
+      reviews[id] = {
+        status,
+        category: suggestion.category,
+        title: suggestion.title,
+        reviewedAt: new Date().toISOString()
+      };
+      saveReviews(reviews);
+      renderAll();
+    }
+
+    function makeTag(text, className = "") {
+      const tag = document.createElement("span");
+      tag.className = `tag ${className}`.trim();
+      tag.textContent = text;
+      return tag;
+    }
+
+    function makeStatusPill(status) {
+      const pill = document.createElement("span");
+      pill.className = `status-pill ${status}`;
+      pill.textContent = statusLabels[status] || statusLabels.pending;
+      return pill;
+    }
+
+    function renderSuggestionList() {
+      const list = document.getElementById("suggestionList");
+      list.textContent = "";
+      reviewSuggestions.forEach((suggestion) => {
+        const item = document.createElement("button");
+        item.type = "button";
+        item.className = `suggestion-item${suggestion.id === activeSuggestionId ? " active" : ""}`;
+        item.addEventListener("click", () => {
+          activeSuggestionId = suggestion.id;
+          renderAll();
+        });
+
+        const title = document.createElement("strong");
+        title.textContent = suggestion.title;
+        item.appendChild(title);
+
+        const meta = document.createElement("div");
+        meta.className = "suggestion-meta";
+        meta.append(makeStatusPill(getSuggestionStatus(suggestion.id)));
+        meta.append(makeTag(suggestion.audience, suggestion.audience.includes("社工") ? "blue" : "green"));
+        meta.append(makeTag(suggestion.priority, suggestion.priority.includes("高") ? "gold" : "rose"));
+        item.appendChild(meta);
+
+        list.appendChild(item);
+      });
+    }
+
+    function renderDetail() {
+      const detail = document.getElementById("suggestionDetail");
+      const suggestion = reviewSuggestions.find((item) => item.id === activeSuggestionId) || reviewSuggestions[0];
+      const status = getSuggestionStatus(suggestion.id);
+      detail.textContent = "";
+
+      const top = document.createElement("div");
+      top.className = "detail-top";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h3");
+      title.textContent = suggestion.title;
+      const meta = document.createElement("p");
+      meta.className = "sub";
+      meta.textContent = `${suggestion.category}｜${suggestion.audience}｜${suggestion.readiness}`;
+      titleWrap.append(title, meta);
+      top.append(titleWrap, makeStatusPill(status));
+      detail.appendChild(top);
+
+      const problem = document.createElement("div");
+      problem.className = "detail-section";
+      const problemTitle = document.createElement("h4");
+      problemTitle.textContent = "重新框架";
+      const problemText = document.createElement("p");
+      problemText.textContent = suggestion.problem;
+      problem.append(problemTitle, problemText);
+      detail.appendChild(problem);
+
+      const evidenceSection = document.createElement("div");
+      evidenceSection.className = "detail-section";
+      const evidenceTitle = document.createElement("h4");
+      evidenceTitle.textContent = "證據包";
+      const sourceList = document.createElement("ul");
+      sourceList.className = "source-list";
+      suggestion.evidence.forEach((source) => {
+        const sourceItem = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = source.url;
+        link.target = "_blank";
+        link.rel = "noopener";
+        link.textContent = source.label;
+        const note = document.createElement("p");
+        note.textContent = source.note;
+        sourceItem.append(link, note);
+        sourceList.appendChild(sourceItem);
+      });
+      evidenceSection.append(evidenceTitle, sourceList);
+      detail.appendChild(evidenceSection);
+
+      const caseSection = document.createElement("div");
+      caseSection.className = "detail-section";
+      const caseTitle = document.createElement("h4");
+      caseTitle.textContent = "案例註記";
+      const caseText = document.createElement("p");
+      caseText.textContent = suggestion.caseNote;
+      caseSection.append(caseTitle, caseText);
+      detail.appendChild(caseSection);
+
+      const draftSection = document.createElement("div");
+      draftSection.className = "detail-section";
+      const draftTitle = document.createElement("h4");
+      draftTitle.textContent = "預生成草稿";
+      const draftBlock = document.createElement("div");
+      draftBlock.className = "draft-block";
+      suggestion.draft.forEach((section) => {
+        const article = document.createElement("article");
+        const heading = document.createElement("h4");
+        heading.textContent = section.heading;
+        article.appendChild(heading);
+        section.paragraphs.forEach((paragraph) => {
+          const text = document.createElement("p");
+          text.textContent = paragraph;
+          article.appendChild(text);
+        });
+        draftBlock.appendChild(article);
+      });
+      draftSection.append(draftTitle, draftBlock);
+      detail.appendChild(draftSection);
+
+      const nextSection = document.createElement("div");
+      nextSection.className = "detail-section";
+      const nextTitle = document.createElement("h4");
+      nextTitle.textContent = "核准前下一步";
+      const nextList = document.createElement("ul");
+      nextList.className = "next-list";
+      suggestion.nextSteps.forEach((step) => {
+        const item = document.createElement("li");
+        item.textContent = step;
+        nextList.appendChild(item);
+      });
+      nextSection.append(nextTitle, nextList);
+      detail.appendChild(nextSection);
+
+      const actions = document.createElement("div");
+      actions.className = "review-actions";
+      const approve = document.createElement("button");
+      approve.type = "button";
+      approve.className = "action-button primary";
+      approve.textContent = "核准並分類存放";
+      approve.addEventListener("click", () => setSuggestionStatus(suggestion.id, "approved"));
+      const needsEvidence = document.createElement("button");
+      needsEvidence.type = "button";
+      needsEvidence.className = "action-button warn";
+      needsEvidence.textContent = "退回補證";
+      needsEvidence.addEventListener("click", () => setSuggestionStatus(suggestion.id, "needsEvidence"));
+      const reject = document.createElement("button");
+      reject.type = "button";
+      reject.className = "action-button danger";
+      reject.textContent = "不採用";
+      reject.addEventListener("click", () => setSuggestionStatus(suggestion.id, "rejected"));
+      actions.append(approve, needsEvidence, reject);
+      detail.appendChild(actions);
+    }
+
+    function getApprovedSuggestions() {
+      const reviews = loadReviews();
+      return reviewSuggestions.filter((suggestion) => reviews[suggestion.id]?.status === "approved");
+    }
+
+    function renderVault() {
+      const vault = document.getElementById("approvalVault");
+      const approved = getApprovedSuggestions();
+      vault.textContent = "";
+      if (!approved.length) {
+        const empty = document.createElement("p");
+        empty.className = "sub";
+        empty.textContent = "目前尚未核准任何新增建議。";
+        vault.appendChild(empty);
+        return;
+      }
+
+      const byCategory = approved.reduce((groups, suggestion) => {
+        groups[suggestion.category] = groups[suggestion.category] || [];
+        groups[suggestion.category].push(suggestion);
+        return groups;
+      }, {});
+
+      Object.entries(byCategory).forEach(([category, suggestions]) => {
+        const group = document.createElement("div");
+        group.className = "vault-group";
+        const heading = document.createElement("h4");
+        heading.textContent = category;
+        const list = document.createElement("ul");
+        suggestions.forEach((suggestion) => {
+          const item = document.createElement("li");
+          item.textContent = `${suggestion.title}（${suggestion.audience}）`;
+          list.appendChild(item);
+        });
+        group.append(heading, list);
+        vault.appendChild(group);
+      });
+    }
+
+    function buildExportPayload() {
+      const reviews = loadReviews();
+      return getApprovedSuggestions().map((suggestion) => ({
+        id: suggestion.id,
+        title: suggestion.title,
+        category: suggestion.category,
+        audience: suggestion.audience,
+        priority: suggestion.priority,
+        approvedAt: reviews[suggestion.id]?.reviewedAt || null,
+        problem: suggestion.problem,
+        evidence: suggestion.evidence,
+        caseNote: suggestion.caseNote,
+        draft: suggestion.draft,
+        nextSteps: suggestion.nextSteps
+      }));
+    }
+
+    function downloadFile(filename, content, type) {
+      const blob = new Blob([content], { type });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = filename;
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    function exportJson() {
+      const payload = buildExportPayload();
+      downloadFile("familyfin-approved-suggestions.json", JSON.stringify(payload, null, 2), "application/json;charset=utf-8");
+    }
+
+    function exportMarkdown() {
+      const payload = buildExportPayload();
+      const markdown = payload.length
+        ? payload.map((suggestion) => {
+            const sources = suggestion.evidence.map((source) => `- [${source.label}](${source.url})：${source.note}`).join("\n");
+            const draft = suggestion.draft.map((section) => `### ${section.heading}\n\n${section.paragraphs.join("\n\n")}`).join("\n\n");
+            const next = suggestion.nextSteps.map((step) => `- ${step}`).join("\n");
+            return `## ${suggestion.title}\n\n分類：${suggestion.category}\n\n版本：${suggestion.audience}\n\n核准時間：${suggestion.approvedAt || ""}\n\n### 重新框架\n\n${suggestion.problem}\n\n### 證據包\n\n${sources}\n\n### 案例註記\n\n${suggestion.caseNote}\n\n${draft}\n\n### 核准前下一步\n\n${next}`;
+          }).join("\n\n---\n\n")
+        : "# 好理家在核准新增建議\n\n目前尚未核准任何新增建議。";
+      downloadFile("familyfin-approved-suggestions.md", markdown, "text/markdown;charset=utf-8");
+    }
+
+    function renderAll() {
+      renderSuggestionList();
+      renderDetail();
+      renderVault();
+    }
+
+    document.getElementById("exportJson").addEventListener("click", exportJson);
+    document.getElementById("exportMarkdown").addEventListener("click", exportMarkdown);
+    document.getElementById("clearReviews").addEventListener("click", () => {
+      localStorage.removeItem(reviewStorageKey);
+      renderAll();
+    });
+    renderAll();
+  </script>
 
   <footer class="footer">
     <p>Public review package. This page uses noindex headers and meta tags during review; noindex is not access control.</p>

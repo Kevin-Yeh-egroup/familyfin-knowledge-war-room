@@ -9,6 +9,14 @@ This is a public review package for the FamilyFinHealth knowledge-base war room.
 
 The page is a reporting artifact. It may propose evidence-backed article drafts, but it does not modify or publish knowledge-base articles automatically.
 
+Review console:
+
+- Each `新增建議` item can be opened to inspect the pre-generated draft, source package, case note, and next-step checklist.
+- Kevin can mark an item as `已核准`, `補證中`, or `退回`.
+- Approved items are grouped by knowledge-base category in a browser-local approval vault.
+- The vault can export approved suggestions as JSON or Markdown for later upload, GitHub review, or back-office publishing.
+- Current MVP persistence is `localStorage`; cross-device durable approval storage should be added through GitHub, Google Sheets, or a knowledge-base API before using it as the single source of record.
+
 Updated article-generation rule:
 
 - Websearch must collect Taiwan-specific data, policy context, and credible real cases before drafting.
