@@ -5,6 +5,7 @@
 - [x] HTML meta robots set to `noindex,nofollow,noarchive`.
 - [x] `robots.txt` blocks crawling.
 - [x] `vercel.json` sets `X-Robots-Tag`.
-- [ ] GitHub public repo created.
-- [ ] Production deployment verified.
-- [ ] Stable public URL verified.
+- [x] GitHub public repo created: `Kevin-Yeh-egroup/familyfin-knowledge-war-room`.
+- [x] Vercel project connected to GitHub repo.
+- [x] Production deployment verified.
+- [x] Stable public URL verified.
