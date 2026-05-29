@@ -12,10 +12,17 @@ The page is a reporting artifact. It may propose evidence-backed article drafts,
 Review console:
 
 - Each `新增建議` item can be opened to inspect the pre-generated draft, source package, case note, and next-step checklist.
+- Suggestions are now data-driven through `suggestions.json`; the HTML page uses embedded content only as a fallback.
 - Kevin can mark an item as `已核准`, `補證中`, or `退回`.
 - Approved items are grouped by knowledge-base category in a browser-local approval vault.
 - The vault can export approved suggestions as JSON or Markdown for later upload, GitHub review, or back-office publishing.
 - Current MVP persistence is `localStorage`; cross-device durable approval storage should be added through GitHub, Google Sheets, or a knowledge-base API before using it as the single source of record.
+
+Operational records:
+
+- Daily report: `reports/2026-05-29-daily-report.md`
+- Optimization log: `logs/2026-05-29-optimization-log.md`
+- Codex workflow proposal: `docs/codex-optimization-proposal.md`
 
 Updated article-generation rule:
 

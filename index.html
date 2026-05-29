@@ -459,6 +459,53 @@
       color: var(--blue);
     }
 
+    .rubric-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .rubric-card,
+    .score-list li {
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .rubric-card h4 {
+      margin: 0 0 8px;
+      font-size: 15px;
+    }
+
+    .rubric-card p {
+      margin: 8px 0 0;
+      color: #475467;
+      font-size: 14px;
+    }
+
+    .score-list {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .score-badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: 26px;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: #2455a6;
+      font-size: 12px;
+      font-weight: 800;
+      margin-left: 8px;
+    }
+
     .draft-block {
       display: grid;
       gap: 16px;
@@ -581,7 +628,8 @@
       .grid-2,
       .grid-3,
       .cards,
-      .review-board {
+      .review-board,
+      .rubric-grid {
         grid-template-columns: 1fr;
       }
 
@@ -881,6 +929,12 @@
           <li>社工版：提供風險判讀、資訊蒐集問題、介入路徑與紀錄提醒。</li>
           <li>草稿末尾必附來源註記、案例註記、使用限制與人工判斷風險。</li>
         </ul>
+
+        <div class="detail-section">
+          <h3>內容審稿 Rubric</h3>
+          <p class="sub">每週新增建議與草稿會依這組量表檢查，讓「可審稿」「需補證」「可上稿」有共同標準。</p>
+          <div class="rubric-grid" id="rubricList"></div>
+        </div>
       </div>
     </section>
 
@@ -888,6 +942,7 @@
       <div class="panel-head">
         <h2>新增建議審稿台</h2>
         <p class="sub">點進每張建議卡，可以先看預生成草稿、證據包、案例註記與下一步。核准後會依知識分類存到本機暫存庫，並可匯出 JSON 或 Markdown 交給後續上稿流程。</p>
+        <p class="sub" id="dataSourceStatus">正在讀取 suggestions.json。</p>
       </div>
       <div class="panel-body">
         <div class="review-board">
@@ -912,7 +967,7 @@
   </main>
 
   <script>
-    const reviewSuggestions = [
+    let reviewSuggestions = [
       {
         id: "rent-subsidy-still-unstable",
         title: "有補助，為什麼生活還是不穩？",
@@ -1135,6 +1190,19 @@
       }
     ];
 
+    let reviewRubric = [
+      {
+        criterion: "來源可信度",
+        pass: "至少一個台灣官方、法規、制度、統計或可靠機構來源。",
+        fail: "不得使用無來源數字或無法回查的二手資料。"
+      },
+      {
+        criterion: "可行動下一步",
+        pass: "主要建議需連到檢查清單、申請入口、電話、窗口或評估問題。",
+        fail: "不得只停在抽象提醒。"
+      }
+    ];
+
     const reviewStorageKey = "familyfin-war-room-suggestion-reviews";
     const statusLabels = {
       pending: "待審",
@@ -1142,7 +1210,32 @@
       needsEvidence: "補證中",
       rejected: "退回"
     };
-    let activeSuggestionId = reviewSuggestions[0].id;
+    let activeSuggestionId = reviewSuggestions[0]?.id || null;
+
+    async function loadReviewData() {
+      const status = document.getElementById("dataSourceStatus");
+      try {
+        const response = await fetch("suggestions.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`suggestions.json ${response.status}`);
+        }
+        const data = await response.json();
+        if (Array.isArray(data.suggestions) && data.suggestions.length) {
+          reviewSuggestions = data.suggestions;
+          reviewRubric = Array.isArray(data.rubric) && data.rubric.length ? data.rubric : reviewRubric;
+          activeSuggestionId = reviewSuggestions[0].id;
+          if (status) {
+            status.textContent = `已讀取 suggestions.json，更新時間：${data.updatedAt || "未標示"}。`;
+          }
+        }
+      } catch (error) {
+        if (status) {
+          status.textContent = "目前使用頁面內備援資料；正式部署時會優先讀取 suggestions.json。";
+        }
+      }
+      renderRubric();
+      renderAll();
+    }
 
     function loadReviews() {
       try {
@@ -1191,6 +1284,13 @@
     function renderSuggestionList() {
       const list = document.getElementById("suggestionList");
       list.textContent = "";
+      if (!reviewSuggestions.length) {
+        const empty = document.createElement("p");
+        empty.className = "sub";
+        empty.textContent = "目前沒有可審稿的新增建議。";
+        list.appendChild(empty);
+        return;
+      }
       reviewSuggestions.forEach((suggestion) => {
         const item = document.createElement("button");
         item.type = "button";
@@ -1218,6 +1318,10 @@
     function renderDetail() {
       const detail = document.getElementById("suggestionDetail");
       const suggestion = reviewSuggestions.find((item) => item.id === activeSuggestionId) || reviewSuggestions[0];
+      if (!suggestion) {
+        detail.textContent = "目前沒有可顯示的建議內容。";
+        return;
+      }
       const status = getSuggestionStatus(suggestion.id);
       detail.textContent = "";
 
@@ -1271,6 +1375,29 @@
       caseText.textContent = suggestion.caseNote;
       caseSection.append(caseTitle, caseText);
       detail.appendChild(caseSection);
+
+      if (Array.isArray(suggestion.reviewScores) && suggestion.reviewScores.length) {
+        const scoreSection = document.createElement("div");
+        scoreSection.className = "detail-section";
+        const scoreTitle = document.createElement("h4");
+        scoreTitle.textContent = "審稿評分";
+        const scoreList = document.createElement("ul");
+        scoreList.className = "score-list";
+        suggestion.reviewScores.forEach((score) => {
+          const item = document.createElement("li");
+          const strong = document.createElement("strong");
+          strong.textContent = score.criterion;
+          const badge = document.createElement("span");
+          badge.className = "score-badge";
+          badge.textContent = `${score.score}/5`;
+          const note = document.createElement("p");
+          note.textContent = score.note;
+          item.append(strong, badge, note);
+          scoreList.appendChild(item);
+        });
+        scoreSection.append(scoreTitle, scoreList);
+        detail.appendChild(scoreSection);
+      }
 
       const draftSection = document.createElement("div");
       draftSection.className = "detail-section";
@@ -1367,6 +1494,23 @@
       });
     }
 
+    function renderRubric() {
+      const rubricList = document.getElementById("rubricList");
+      rubricList.textContent = "";
+      reviewRubric.forEach((item) => {
+        const card = document.createElement("article");
+        card.className = "rubric-card";
+        const heading = document.createElement("h4");
+        heading.textContent = item.criterion;
+        const pass = document.createElement("p");
+        pass.textContent = `通過：${item.pass}`;
+        const fail = document.createElement("p");
+        fail.textContent = `退回：${item.fail}`;
+        card.append(heading, pass, fail);
+        rubricList.appendChild(card);
+      });
+    }
+
     function buildExportPayload() {
       const reviews = loadReviews();
       return getApprovedSuggestions().map((suggestion) => ({
@@ -1379,6 +1523,7 @@
         problem: suggestion.problem,
         evidence: suggestion.evidence,
         caseNote: suggestion.caseNote,
+        reviewScores: suggestion.reviewScores || [],
         draft: suggestion.draft,
         nextSteps: suggestion.nextSteps
       }));
@@ -1406,9 +1551,10 @@
       const markdown = payload.length
         ? payload.map((suggestion) => {
             const sources = suggestion.evidence.map((source) => `- [${source.label}](${source.url})：${source.note}`).join("\n");
+            const scores = (suggestion.reviewScores || []).map((score) => `- ${score.criterion}：${score.score}/5，${score.note}`).join("\n");
             const draft = suggestion.draft.map((section) => `### ${section.heading}\n\n${section.paragraphs.join("\n\n")}`).join("\n\n");
             const next = suggestion.nextSteps.map((step) => `- ${step}`).join("\n");
-            return `## ${suggestion.title}\n\n分類：${suggestion.category}\n\n版本：${suggestion.audience}\n\n核准時間：${suggestion.approvedAt || ""}\n\n### 重新框架\n\n${suggestion.problem}\n\n### 證據包\n\n${sources}\n\n### 案例註記\n\n${suggestion.caseNote}\n\n${draft}\n\n### 核准前下一步\n\n${next}`;
+            return `## ${suggestion.title}\n\n分類：${suggestion.category}\n\n版本：${suggestion.audience}\n\n核准時間：${suggestion.approvedAt || ""}\n\n### 重新框架\n\n${suggestion.problem}\n\n### 證據包\n\n${sources}\n\n### 案例註記\n\n${suggestion.caseNote}\n\n### 審稿評分\n\n${scores || "尚未評分"}\n\n${draft}\n\n### 核准前下一步\n\n${next}`;
           }).join("\n\n---\n\n")
         : "# 好理家在核准新增建議\n\n目前尚未核准任何新增建議。";
       downloadFile("familyfin-approved-suggestions.md", markdown, "text/markdown;charset=utf-8");
@@ -1426,7 +1572,7 @@
       localStorage.removeItem(reviewStorageKey);
       renderAll();
     });
-    renderAll();
+    loadReviewData();
   </script>
 
   <footer class="footer">
