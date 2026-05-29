@@ -406,6 +406,8 @@
         <a href="#taxonomy">分類盤點</a>
         <a href="#articles">近期文章</a>
         <a href="#workflow">週報機制</a>
+        <a href="#drafting">文章生成</a>
+        <a href="#review">審稿規則</a>
         <a href="#cards">新增建議</a>
       </div>
     </nav>
@@ -415,7 +417,7 @@
     <div class="hero-inner">
       <div class="eyebrow">2026-05-29 初始盤點</div>
       <h1>好理家在知識庫戰情室</h1>
-      <p>定期檢視 1306 篇知識庫文章、受眾標籤、分類結構與外部政策動態，把「可以新增什麼」整理成可決策的週報，而不是直接改稿或發布。</p>
+      <p>定期檢視 1306 篇知識庫文章、受眾標籤、分類結構與外部政策動態，把「可以新增什麼」整理成可決策的週報；必要時產出有數據、有案例、有來源的待審文章草稿，但不自動發布。</p>
       <div class="hero-actions">
         <a class="button" href="https://www.familyfinhealth.com/social-worker/knowledge-base">開啟知識庫</a>
         <a class="button secondary" href="#workflow">查看週報規格</a>
@@ -522,13 +524,13 @@
     <section id="workflow" class="panel">
       <div class="panel-head">
         <h2>週報機制</h2>
-        <p class="sub">戰情室只做盤點、判讀、建議與來源整理。正式改稿與發布保留人工核准。</p>
+        <p class="sub">戰情室會做盤點、判讀、建議、來源整理與待審文章草稿。正式改稿與發布保留人工核准。</p>
       </div>
       <div class="panel-body">
         <div class="grid-3">
           <div class="mini">
             <h3>每週</h3>
-            <p>巡知識庫總量、受眾標籤、分類文章數、新增文章、外部資料更新，產出可新增建議卡。</p>
+            <p>巡知識庫總量、受眾標籤、分類文章數、新增文章、外部資料更新，產出可新增建議卡、證據包與草稿候選。</p>
           </div>
           <div class="mini">
             <h3>每月</h3>
@@ -540,10 +542,136 @@
           </div>
         </div>
         <ul class="checklist" style="margin-top:18px">
-          <li>不自動改文章。</li>
+          <li>可產出待審文章草稿，但不直接寫入知識庫。</li>
           <li>不自動發布。</li>
-          <li>不把外部資料混入逐字稿改寫。</li>
-          <li>每張建議卡附來源、日期、可信度與需要人工判斷的風險。</li>
+          <li>逐字稿改寫與外部資料文章分流標示，避免把新資料混入原逐字稿。</li>
+          <li>每張建議卡與草稿附來源、日期、可信度與需要人工判斷的風險。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="drafting" class="panel">
+      <div class="panel-head">
+        <h2>證據型文章生成</h2>
+        <p class="sub">新增建議不只停在題目，而是先建立可查證的材料，再用一般民眾版或社工版 prompt 生成草稿。</p>
+      </div>
+      <div class="panel-body">
+        <div class="grid-3">
+          <div class="mini">
+            <h3>一、資料包</h3>
+            <p>每篇候選文章先收集台灣官方統計、制度頁、可靠新聞、研究或實務資料，標出來源日期與適用限制。</p>
+          </div>
+          <div class="mini">
+            <h3>二、真實情境</h3>
+            <p>案例可來自新聞或公開資料，但要去識別化、避免補劇情；若是組合情境，必須明確標成情境示意。</p>
+          </div>
+          <div class="mini">
+            <h3>三、行動落點</h3>
+            <p>文章要讓讀者知道下一步如何盤點、查證、求助或與社工討論，不能只停在概念描述。</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:18px">
+          <div class="mini">
+            <h3>一般民眾版要求</h3>
+            <p>用生活語言說明壓力如何發生，加入數字與真實情境，但不寫成新聞摘要。核心是讓讀者重新看懂自己的處境與下一步。</p>
+          </div>
+          <div class="mini">
+            <h3>社工版要求</h3>
+            <p>從個案現象走到結構判讀，明確寫出評估提醒、介入焦點、資源串接與常見誤判，讓文章可作實務討論底稿。</p>
+          </div>
+        </div>
+        <ul class="checklist" style="margin-top:18px">
+          <li>沒有來源的數字不得使用。</li>
+          <li>新聞案例不得改寫成像當事人授權的故事。</li>
+          <li>不得為了戲劇性加入未證實細節。</li>
+          <li>每篇草稿需經「資料真實性」與「prompt 符合度」兩層審稿。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="review" class="panel">
+      <div class="panel-head">
+        <h2>雙 Agent 審稿規則</h2>
+        <p class="sub">文章可以生成，但必須先通過資料治理與實用性審查。這是退稿、補證與放行的共同標準。</p>
+      </div>
+      <div class="panel-body">
+        <div class="grid-2">
+          <div class="mini">
+            <h3>最低通過門檻</h3>
+            <ul class="checklist">
+              <li>至少一個台灣官方、制度或統計來源。</li>
+              <li>至少一組台灣實際數據，或一個可查證真實案例。</li>
+              <li>每個主要建議都連到申請條件、窗口、流程、表單、電話、網址或檢查清單。</li>
+              <li>找不到可靠來源時，只能標為待查證或退稿補證。</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h3>文章草稿骨架</h3>
+            <ul class="checklist">
+              <li>開場情境：台灣常見生活現場。</li>
+              <li>真正問題：從表象走到結構。</li>
+              <li>台灣現況佐證：1 至 2 個必要數字。</li>
+              <li>案例化說明：抽取風險機制，不寫成新聞摘要。</li>
+              <li>下一步：一般民眾可自查，社工可判讀與介入。</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="table-wrap" style="margin-top:18px">
+          <table>
+            <thead>
+              <tr>
+                <th>來源優先順序</th>
+                <th>可使用資料</th>
+                <th>使用限制</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>行政院主計總處、政府資料開放平臺、各部會與地方政府統計</td>
+                <td>需標年份、地區、單位、母數與查詢日期</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>主管機關制度頁、全國法規資料庫、申請辦法、法院裁判書</td>
+                <td>補助、資格、金額與窗口需以最新公告為準</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>衛福、內政、勞動、教育、金管、財政、地方社會局處資料</td>
+                <td>只引用與文章判斷或行動有關的資料</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>學術研究、社福團體報告、專業機構研究</td>
+                <td>需有方法、樣本、年份；不可省略研究限制</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>中央社或具採訪事實與日期的主流媒體案例</td>
+                <td>只能補案例情境，不可取代制度或統計來源</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="grid-2" style="margin-top:18px">
+          <div class="mini">
+            <h3>案例標示</h3>
+            <p><span class="tag green">真實公開案例</span><span class="tag blue">去識別化改寫</span><span class="tag gold">模擬情境</span></p>
+            <p>真實案例不得增加來源沒有的動機、情緒、對話、金額或結果。組合情境必須明確標成模擬，不能假裝是真實個案。</p>
+          </div>
+          <div class="mini">
+            <h3>反誇大檢查</h3>
+            <p>不得把新聞個案寫成全台趨勢；不得把「可能、部分、依條件」寫成「一定、保證、都可以」。遇到來源衝突時，官方資料優先，採保守說法。</p>
+          </div>
+        </div>
+
+        <ul class="checklist" style="margin-top:18px">
+          <li>一般民眾版：讓人看懂自己在哪裡，並知道現在能做什麼。</li>
+          <li>社工版：提供風險判讀、資訊蒐集問題、介入路徑與紀錄提醒。</li>
+          <li>草稿末尾必附來源註記、案例註記、使用限制與人工判斷風險。</li>
         </ul>
       </div>
     </section>
