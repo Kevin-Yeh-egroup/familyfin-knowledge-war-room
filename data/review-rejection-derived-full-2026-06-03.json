@@ -1,0 +1,111 @@
+{
+  "updatedAt": "2026-06-02T18:35:41.274Z",
+  "source": "InfoCenter event list filtered by latest review status = rejected, then each EVENT_REVIEW modal opened read-only.",
+  "privacy": {
+    "rawEventIdsStoredInThisFile": false,
+    "rawReviewTextStoredInThisFile": false,
+    "rawArticleTextStoredInThisFile": false,
+    "privateRawFile": "work-private/all-review-rejection-details-ui-raw-2026-06-03.jsonl",
+    "publicSafeDerivedOnly": true
+  },
+  "verification": {
+    "rejectedListRangesSeen": [
+      "1-100 of 290",
+      "101-200 of 290",
+      "201-290 of 290"
+    ],
+    "rejectedRowsFromUi": 290,
+    "uniqueEventIdsFromUi": 290,
+    "detailRowsProcessed": 290,
+    "detailRowsOpened": 290,
+    "detailErrors": 0,
+    "countConfirmed": true
+  },
+  "reviewFieldCompleteness": {
+    "titleAndContent": 20,
+    "titleOnly": 123,
+    "contentOnly": 0,
+    "openedButNoTitleOrContent": 147,
+    "anyReviewText": 143
+  },
+  "collectionMethods": {
+    "unknown": 176,
+    "iab-ui-event-review-modal-v1": 114
+  },
+  "categoryModel": [
+    {
+      "id": "conceptual_or_general",
+      "label": "概念性或一般性描述"
+    },
+    {
+      "id": "platform_scope_mismatch",
+      "label": "不符合平台家庭經濟與助人工作主軸"
+    },
+    {
+      "id": "needs_specific_numbers_actions",
+      "label": "缺少具體數值、行為調整或改善證明"
+    },
+    {
+      "id": "oversimplified_complex_context",
+      "label": "過度簡化複雜家庭、財務或處遇情境"
+    },
+    {
+      "id": "duplicate_or_existing_content",
+      "label": "重複或已有更完整內容"
+    },
+    {
+      "id": "story_or_case_angle_issue",
+      "label": "故事性、情境性或角色角度不精準"
+    },
+    {
+      "id": "accuracy_or_grounding_risk",
+      "label": "正確性、現實落差或資料根據風險"
+    },
+    {
+      "id": "structure_or_readability_issue",
+      "label": "內容結構雜亂或需要結構式呈現"
+    },
+    {
+      "id": "too_narrow_or_off_topic",
+      "label": "主題過窄、偏離財商教育或處遇需求"
+    }
+  ],
+  "categoryCounts": {
+    "conceptual_or_general": 50,
+    "platform_scope_mismatch": 15,
+    "needs_specific_numbers_actions": 23,
+    "oversimplified_complex_context": 14,
+    "duplicate_or_existing_content": 15,
+    "story_or_case_angle_issue": 8,
+    "accuracy_or_grounding_risk": 8,
+    "structure_or_readability_issue": 6,
+    "too_narrow_or_off_topic": 5
+  },
+  "categoryReviewSignalCounts": {
+    "conceptual_or_general": 50,
+    "platform_scope_mismatch": 15,
+    "needs_specific_numbers_actions": 23,
+    "oversimplified_complex_context": 14,
+    "duplicate_or_existing_content": 15,
+    "story_or_case_angle_issue": 8,
+    "accuracy_or_grounding_risk": 8,
+    "structure_or_readability_issue": 6,
+    "too_narrow_or_off_topic": 5
+  },
+  "categoryCoverage": {
+    "matchedAnyCategory": 86,
+    "unmatched": 204,
+    "note": "Counts are multi-label. Use matchedAmongReviewTextRows / reviewTextRows for learning-sample coverage; emptyReviewModalRows are state-only records.",
+    "reviewTextRows": 143,
+    "matchedAmongReviewTextRows": 86,
+    "unmatchedReviewTextRows": 57,
+    "emptyReviewModalRows": 147
+  },
+  "trainingImplications": [
+    "審核標題本身是主要學習素材，不能只讀審核內容欄。",
+    "投稿前檢查應先擋下概念宣導、平台主軸不符、過度簡化、缺少具體數值或行動差異的文章。",
+    "文章生成 agent 應要求具體台灣情境、可檢查的數字、生活決策脈絡，以及清楚結構，而不是單純價值觀宣導。",
+    "有 147 筆駁回彈窗沒有標題或內容，應視為狀態資料，不作為寫作品質規則的主要訓練樣本。"
+  ],
+  "rawIntegrityHash": "fdfc62a310cc060b2985799d707176c08ba5e890566bcbee69148e17e39c2fce"
+}
