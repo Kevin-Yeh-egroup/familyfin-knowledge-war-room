@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-02T18:50:00+08:00",
-  "source": "FamilyFin knowledge war room full learning run plus weekly submission pack",
+  "updatedAt": "2026-06-02T22:55:00+08:00",
+  "source": "FamilyFin knowledge war room full learning run plus plain-text submission pack",
   "metrics": {
     "indexedPublishedArticles": 1320,
     "indexedDraftArticles": 27,
@@ -19,13 +19,34 @@
     "status": "completed",
     "description": "已從最早文章開始，分批讀完事件列表中可學習的文章正文。公開 repo 僅保存統計、規則、投稿包與來源摘要，不保存 InfoCenter 原始全文學習包。",
     "sourceDistribution": [
-      { "source": "小編團隊投稿", "count": 233 },
-      { "source": "公開徵稿", "count": 243 },
-      { "source": "好理家在FB 已定稿行政審即可上架", "count": 47 },
-      { "source": "馴錢師FB圖文", "count": 5 },
-      { "source": "Podcast圖文", "count": 5 },
-      { "source": "季刊用插圖", "count": 1 },
-      { "source": "未標示", "count": 6 }
+      {
+        "source": "小編團隊投稿",
+        "count": 233
+      },
+      {
+        "source": "公開徵稿",
+        "count": 243
+      },
+      {
+        "source": "好理家在FB 已定稿行政審即可上架",
+        "count": 47
+      },
+      {
+        "source": "馴錢師FB圖文",
+        "count": 5
+      },
+      {
+        "source": "Podcast圖文",
+        "count": 5
+      },
+      {
+        "source": "季刊用插圖",
+        "count": 1
+      },
+      {
+        "source": "未標示",
+        "count": 6
+      }
     ],
     "bodyLength": {
       "average": 2365,
@@ -49,247 +70,617 @@
     "approvalBoundary": "只產生擴充建議與 10 篇草稿包；不自動上架、不送審、不改 InfoCenter。"
   },
   "qualityGates": [
-    "正文扣除 SEO 欄位、來源與審核紀錄後必須超過 2000 字。",
-    "每篇至少引用 2 個台灣脈絡來源，優先政府、統計、金融機構、法院、可信新聞。",
-    "凡涉及補助、津貼、計畫、申請資格、金額、期限、法規或政府服務，必須查核目前有效版本，不可沿用舊年度資訊。",
-    "文章需標示資料發布或更新日期、查核日期、適用年度、主管機關與中央/地方適用範圍。",
-    "若中央與地方政府規範不同，必須分開說明；若地方差異大，需提醒讀者向所在地縣市政府或主管機關確認。",
-    "每篇需有讀者版本、正式主要標籤、次要標籤、搜尋意圖、SEO title、meta description、slug、AIO 摘要、FAQ 與來源清單。",
-    "案例只使用公開新聞、官方資料或明確標示為綜合情境；不得虛構戲劇化個案。",
-    "文章必須包含現象、結構原因、生活影響與可理解的下一步，不能只是概念性描述。",
-    "退修原因需保留給 agent 學習：字數不足、資料來源不足、台灣性不足、讀者版本錯位、標籤錯位、過度承諾或語氣責備。"
+    "正文扣除標題、讀者標籤、來源、審核紀錄與任何平台欄位後，必須超過 2000 字。",
+    "投稿工作台只顯示純文字正文，不顯示 Markdown、SEO、AIO、Meta、Slug 或 FAQ 欄位。",
+    "文章不能停留在概念描述，必須有具體生活場景、壓力如何發生、讀者如何判斷自己處境，以及可理解的下一步。",
+    "資料與案例要融入敘事，不用一段接一段報來源；每篇最多保留 1 到 2 個關鍵數據在正文，其他查核放在內部紀錄。",
+    "涉及補助、津貼、計畫、申請資格、金額、期限、法規或政府服務，必須查核目前有效版本，並確認中央與地方規範差異。",
+    "退修或駁回建議是最優先學習來源；每次投稿包都要先萃取退修規則，再用規則檢查新文章。",
+    "每篇都要通過非概念文檢查 agent：情境密度、動作密度、台灣脈絡、引用感、AI腔、讀者代入感。",
+    "文章語氣要像陪讀者整理處境，不像報告、簡報、政策懶人包、投資課或社群貼文。"
   ],
   "topicDistribution": [
-    { "type": "生活壓力型", "target": 4, "examples": ["租屋", "緊急預備金", "單親育兒", "青年第一份工作"] },
-    { "type": "資源制度型", "target": 3, "examples": ["租金補貼", "債務協商", "政府救助資源"] },
-    { "type": "風險預防型", "target": 2, "examples": ["詐騙", "退休與詐騙風險"] },
-    { "type": "社工實務判讀型", "target": 1, "examples": ["收入中斷與減班休息"] }
+    {
+      "type": "生活壓力型",
+      "target": 4,
+      "examples": [
+        "租屋",
+        "緊急預備金",
+        "單親育兒",
+        "青年第一份工作"
+      ]
+    },
+    {
+      "type": "資源制度型",
+      "target": 3,
+      "examples": [
+        "租金補貼",
+        "債務協商",
+        "政府救助資源"
+      ]
+    },
+    {
+      "type": "風險預防型",
+      "target": 2,
+      "examples": [
+        "詐騙",
+        "退休與詐騙風險"
+      ]
+    },
+    {
+      "type": "社工實務判讀型",
+      "target": 1,
+      "examples": [
+        "收入中斷與減班休息"
+      ]
+    }
   ],
   "articlePack": {
     "id": "2026-06-02-weekly-pack",
-    "title": "2026-06-02 首批 10 篇可投稿文章包",
+    "title": "2026-06-02 首批 10 篇純文字投稿文章包",
     "status": "待 Kevin 審核",
-    "description": "每篇已生成可閱讀全文，並通過正文 2000 字以上檢查。審核台可核准、退修或駁回；核准紀錄依正式標籤分類保存在瀏覽器 localStorage，可匯出 JSON 或 Markdown。",
+    "description": "每篇只提供純文字正文預覽與複製，不顯示 SEO/AIO 欄位。正文扣除平台欄位後均超過 2000 字。首批文章已標示需使用非概念文檢查 agent 做二次退修學習。",
     "articles": [
       {
         "id": "rent-subsidy-stability",
         "title": "租金補貼不是居住穩定：真正卡住人的，是租屋支出把生活鎖住",
         "audience": "一般民眾",
         "primaryTag": "主要問題彙編-政府救助資源",
-        "secondaryTags": ["家庭重大事件-住居不穩定", "財務管理與規劃-收支結構", "評估與輔導觀點-財務韌性"],
+        "secondaryTags": [
+          "家庭重大事件-住居不穩定",
+          "財務管理與規劃-收支結構",
+          "評估與輔導觀點-財務韌性"
+        ],
         "categoryType": "生活壓力型",
-        "searchIntent": "資源查詢型＋問題理解型",
-        "seoTitle": "租金補貼不是居住穩定：租屋支出如何鎖住生活",
-        "metaDescription": "租金補貼能減輕租屋壓力，但不等於家庭已經穩定。本文用台灣租金補貼資料，整理租屋支出、現金流與調整空間的關係。",
-        "slug": "rent-subsidy-living-stability",
         "bodyChars": 2004,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/01-rent-subsidy-stability.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/01-rent-subsidy-stability.txt",
         "sources": [
-          { "label": "內政部不動產資訊平台，300億元中央擴大租金補貼", "url": "https://pip.moi.gov.tw/Publicize/Info/B1020" },
-          { "label": "行政院300億元中央擴大租金補貼政策說明", "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/442e67f9-e22e-42c6-9df2-4d3fa9d10666" },
-          { "label": "新住民全球新聞網，租金補貼核定戶數報導", "url": "https://news.immigration.gov.tw/NewsSection/Detail/527BB4F7-2E1E-4293-BC0F-2A7DABB11D01?lang=TW&topic=onetouch" }
+          {
+            "label": "內政部不動產資訊平台，300億元中央擴大租金補貼",
+            "url": "https://pip.moi.gov.tw/Publicize/Info/B1020"
+          },
+          {
+            "label": "行政院300億元中央擴大租金補貼政策說明",
+            "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/442e67f9-e22e-42c6-9df2-4d3fa9d10666"
+          },
+          {
+            "label": "新住民全球新聞網，租金補貼核定戶數報導",
+            "url": "https://news.immigration.gov.tw/NewsSection/Detail/527BB4F7-2E1E-4293-BC0F-2A7DABB11D01?lang=TW&topic=onetouch"
+          }
         ],
-        "agentDiscussion": "保留補貼制度資訊，但主軸從申請教學轉成居住支出如何鎖住生活調整空間。"
+        "agentDiscussion": "保留補貼制度資訊，但主軸從申請教學轉成居住支出如何鎖住生活調整空間。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "debt-negotiation-not-agency",
         "title": "債務協商不是找代辦：真正要處理的，是每月還款把生活壓到沒有空間",
         "audience": "一般民眾",
         "primaryTag": "主要問題彙編-債務",
-        "secondaryTags": ["財務管理與規劃-債務管理", "政策法規-消費者債務清理", "評估與輔導觀點-風險承接"],
+        "secondaryTags": [
+          "財務管理與規劃-債務管理",
+          "政策法規-消費者債務清理",
+          "評估與輔導觀點-風險承接"
+        ],
         "categoryType": "資源制度型",
-        "searchIntent": "問題解決型＋風險預防型",
-        "seoTitle": "債務協商不是找代辦：卡債與信貸壓力怎麼判斷",
-        "metaDescription": "債務問題不只是欠多少錢，而是每月還款是否壓縮生活。本文整理台灣前置協商與債務清理資訊，協助看懂還款壓力。",
-        "slug": "debt-negotiation-life-structure",
         "bodyChars": 2021,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/02-debt-negotiation-not-agency.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/02-debt-negotiation-not-agency.txt",
         "sources": [
-          { "label": "中華民國銀行公會，消費金融無擔保債務協商委員會", "url": "https://www.ba.org.tw/PublicInformation/ImportantSpec?type=f452ba3e-f54c-4243-9358-b875c036c1cc" },
-          { "label": "司法院，消費者債務清理常見問答", "url": "https://www.judicial.gov.tw/tw/lp-1654-1-xCat-09-1-60.html" },
-          { "label": "金融監督管理委員會銀行局", "url": "https://www.banking.gov.tw/" }
+          {
+            "label": "中華民國銀行公會，消費金融無擔保債務協商委員會",
+            "url": "https://www.ba.org.tw/PublicInformation/ImportantSpec?type=f452ba3e-f54c-4243-9358-b875c036c1cc"
+          },
+          {
+            "label": "司法院，消費者債務清理常見問答",
+            "url": "https://www.judicial.gov.tw/tw/lp-1654-1-xCat-09-1-60.html"
+          },
+          {
+            "label": "金融監督管理委員會銀行局",
+            "url": "https://www.banking.gov.tw/"
+          }
         ],
-        "agentDiscussion": "避免把協商寫成代辦推薦，改以現金流、正式制度與風險辨識為核心。"
+        "agentDiscussion": "避免把協商寫成代辦推薦，改以現金流、正式制度與風險辨識為核心。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "scam-recovery-social-work",
         "title": "詐騙後不是只剩報案：財務損失如何變成家庭壓力與復原任務",
         "audience": "社工",
         "primaryTag": "家庭重大事件-詐騙",
-        "secondaryTags": ["主要問題彙編-債務", "評估與輔導觀點-危機介入", "財務管理與規劃-財務韌性"],
+        "secondaryTags": [
+          "主要問題彙編-債務",
+          "評估與輔導觀點-危機介入",
+          "財務管理與規劃-財務韌性"
+        ],
         "categoryType": "風險預防型",
-        "searchIntent": "問題解決型＋社工實務判讀型",
-        "seoTitle": "詐騙後的社工介入：從財務損失看見家庭復原",
-        "metaDescription": "詐騙不只是金錢損失，也可能牽動債務、羞恥、家庭衝突與警示帳戶。本文整理台灣詐騙資料與社工判讀焦點。",
-        "slug": "scam-loss-family-recovery",
         "bodyChars": 2007,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/03-scam-recovery-social-work.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/03-scam-recovery-social-work.txt",
         "sources": [
-          { "label": "中央社，內政部4月詐欺統計報導", "url": "https://www.cna.com.tw/news/aipl/202605280280.aspx" },
-          { "label": "行政院，打詐成效與165打詐儀錶板資料", "url": "https://www.ey.gov.tw/Page/88F151FFCE5C741E/ee2ab542-3595-4128-99cb-2ccf4d2a7488" },
-          { "label": "165打詐儀錶板", "url": "https://165dashboard.tw/" }
+          {
+            "label": "中央社，內政部4月詐欺統計報導",
+            "url": "https://www.cna.com.tw/news/aipl/202605280280.aspx"
+          },
+          {
+            "label": "行政院，打詐成效與165打詐儀錶板資料",
+            "url": "https://www.ey.gov.tw/Page/88F151FFCE5C741E/ee2ab542-3595-4128-99cb-2ccf4d2a7488"
+          },
+          {
+            "label": "165打詐儀錶板",
+            "url": "https://165dashboard.tw/"
+          }
         ],
-        "agentDiscussion": "把詐騙文章從宣導改成復原任務，避免責備受害者。"
+        "agentDiscussion": "把詐騙文章從宣導改成復原任務，避免責備受害者。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "emergency-fund-income-break",
         "title": "沒有緊急預備金不是不自律：收入一中斷，家庭為什麼很快失去選擇",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-緊急預備金",
-        "secondaryTags": ["財務管理與規劃-收支結構", "主要問題彙編-政府救助資源", "評估與輔導觀點-財務韌性"],
+        "secondaryTags": [
+          "財務管理與規劃-收支結構",
+          "主要問題彙編-政府救助資源",
+          "評估與輔導觀點-財務韌性"
+        ],
         "categoryType": "生活壓力型",
-        "searchIntent": "問題理解型＋資源查詢型",
-        "seoTitle": "沒有緊急預備金不是不自律：收入中斷時怎麼看",
-        "metaDescription": "緊急預備金不是單純存錢技巧，而是家庭承接風險的能力。本文用台灣家庭收支與急難紓困資源，說明為什麼人會卡住。",
-        "slug": "emergency-fund-income-break",
         "bodyChars": 2007,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/04-emergency-fund-income-break.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/04-emergency-fund-income-break.txt",
         "sources": [
-          { "label": "主計總處，113年家庭收支調查", "url": "https://www.stat.gov.tw/News_Content.aspx?n=3908&s=235198" },
-          { "label": "衛福部，低收入戶及中低收入戶", "url": "https://www.mohw.gov.tw/cp-88-79005-1.html" },
-          { "label": "我的E政府，強化社會安全網-急難紓困", "url": "https://www.gov.tw/News_Content_2_718861" }
+          {
+            "label": "主計總處，113年家庭收支調查",
+            "url": "https://www.stat.gov.tw/News_Content.aspx?n=3908&s=235198"
+          },
+          {
+            "label": "衛福部，低收入戶及中低收入戶",
+            "url": "https://www.mohw.gov.tw/cp-88-79005-1.html"
+          },
+          {
+            "label": "我的E政府，強化社會安全網-急難紓困",
+            "url": "https://www.gov.tw/News_Content_2_718861"
+          }
         ],
-        "agentDiscussion": "把預備金從存錢技巧改寫成家庭承接風險的能力。"
+        "agentDiscussion": "把預備金從存錢技巧改寫成家庭承接風險的能力。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "long-term-care-family-finance",
         "title": "長照不是單一照顧選擇：家庭照顧支出如何消耗人的餘裕",
         "audience": "社工",
         "primaryTag": "不同對象需求-長照家庭",
-        "secondaryTags": ["家庭重大事件-重大傷病", "評估與輔導觀點-支持系統", "財務管理與規劃-風險承接"],
+        "secondaryTags": [
+          "家庭重大事件-重大傷病",
+          "評估與輔導觀點-支持系統",
+          "財務管理與規劃-風險承接"
+        ],
         "categoryType": "社工實務判讀型",
-        "searchIntent": "社工實務判讀型＋資源查詢型",
-        "seoTitle": "長照家庭財務壓力：社工如何判讀照顧與支出",
-        "metaDescription": "長照壓力不只是服務選擇，也牽動收入、照顧時間、醫療支出與家庭關係。本文整理台灣長照資料與社工判讀焦點。",
-        "slug": "long-term-care-family-finance",
         "bodyChars": 2011,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/05-long-term-care-family-finance.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/05-long-term-care-family-finance.txt",
         "sources": [
-          { "label": "衛福部，長照2.0服務滿意度與家庭照顧者負荷", "url": "https://www.mohw.gov.tw/cp-2704-70100-1.html" },
-          { "label": "衛福部，1966長照服務資訊", "url": "https://www.mohw.gov.tw/" },
-          { "label": "衛福部，弱勢民生照顧與獨居老人關懷", "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html" }
+          {
+            "label": "衛福部，長照2.0服務滿意度與家庭照顧者負荷",
+            "url": "https://www.mohw.gov.tw/cp-2704-70100-1.html"
+          },
+          {
+            "label": "衛福部，1966長照服務資訊",
+            "url": "https://www.mohw.gov.tw/"
+          },
+          {
+            "label": "衛福部，弱勢民生照顧與獨居老人關懷",
+            "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html"
+          }
         ],
-        "agentDiscussion": "把長照從資源媒合擴展為時間成本、照顧分工與財務承接判讀。"
+        "agentDiscussion": "把長照從資源媒合擴展為時間成本、照顧分工與財務承接判讀。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "single-parent-childcare-support",
         "title": "單親家庭不是只有補助問題：育兒成本與申請門檻如何一起壓縮生活",
         "audience": "一般民眾",
         "primaryTag": "不同對象需求-單親家庭",
-        "secondaryTags": ["主要問題彙編-政府救助資源", "家庭重大事件-離婚或分居", "財務管理與規劃-收支結構"],
+        "secondaryTags": [
+          "主要問題彙編-政府救助資源",
+          "家庭重大事件-離婚或分居",
+          "財務管理與規劃-收支結構"
+        ],
         "categoryType": "生活壓力型",
-        "searchIntent": "資源查詢型＋問題理解型",
-        "seoTitle": "單親家庭補助之外：育兒成本如何壓縮生活選擇",
-        "metaDescription": "單親家庭的壓力不只是收入少，也包含照顧時間、托育費、文件申請與支持系統。本文整理台灣補助制度與生活判讀。",
-        "slug": "single-parent-childcare-support",
         "bodyChars": 2010,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/06-single-parent-childcare-support.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/06-single-parent-childcare-support.txt",
         "sources": [
-          { "label": "衛福部，特殊境遇家庭扶助條例", "url": "https://dep.mohw.gov.tw/DOPS/cp-1287-14940-105.html" },
-          { "label": "衛福部，未滿2歲幼兒照顧政策與托育補助", "url": "https://www.mohw.gov.tw/CH/cp-5130-58003-1.html" },
-          { "label": "衛福部，弱勢民生照顧與1957福利諮詢", "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html" }
+          {
+            "label": "衛福部，特殊境遇家庭扶助條例",
+            "url": "https://dep.mohw.gov.tw/DOPS/cp-1287-14940-105.html"
+          },
+          {
+            "label": "衛福部，未滿2歲幼兒照顧政策與托育補助",
+            "url": "https://www.mohw.gov.tw/CH/cp-5130-58003-1.html"
+          },
+          {
+            "label": "衛福部，弱勢民生照顧與1957福利諮詢",
+            "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html"
+          }
         ],
-        "agentDiscussion": "避免把單親困境簡化為補助缺口，加入照顧時間與申請門檻。"
+        "agentDiscussion": "避免把單親困境簡化為補助缺口，加入照顧時間與申請門檻。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "youth-first-job-credit",
         "title": "青年第一份工作不只看薪水：低薪、學貸與信用使用如何影響未來選擇",
         "audience": "一般民眾",
         "primaryTag": "不同對象需求-青年",
-        "secondaryTags": ["財務管理與規劃-信用管理", "財務管理與規劃-收支結構", "主要問題彙編-債務"],
+        "secondaryTags": [
+          "財務管理與規劃-信用管理",
+          "財務管理與規劃-收支結構",
+          "主要問題彙編-債務"
+        ],
         "categoryType": "生活壓力型",
-        "searchIntent": "問題理解型＋決策輔助型",
-        "seoTitle": "青年第一份工作財務壓力：低薪、學貸與信用使用",
-        "metaDescription": "青年財務不是只要少花錢。第一份工作薪資、學貸、租屋與信用使用，會影響未來選擇。本文整理台灣資料與判讀方式。",
-        "slug": "youth-first-job-credit",
         "bodyChars": 2008,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/07-youth-first-job-credit.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/07-youth-first-job-credit.txt",
         "sources": [
-          { "label": "勞動部，114年初任人員薪資統計結果", "url": "https://www.mol.gov.tw/1607/1632/1633/90149/" },
-          { "label": "中央社，教育部學貸負擔調整報導", "url": "https://www.cna.com.tw/news/aspt/202605270366.aspx" },
-          { "label": "勞動部職類別薪資調查動態查詢", "url": "https://pswst.mol.gov.tw/psdn/Query/wFrmQuery01.aspx" }
+          {
+            "label": "勞動部，114年初任人員薪資統計結果",
+            "url": "https://www.mol.gov.tw/1607/1632/1633/90149/"
+          },
+          {
+            "label": "中央社，教育部學貸負擔調整報導",
+            "url": "https://www.cna.com.tw/news/aspt/202605270366.aspx"
+          },
+          {
+            "label": "勞動部職類別薪資調查動態查詢",
+            "url": "https://pswst.mol.gov.tw/psdn/Query/wFrmQuery01.aspx"
+          }
         ],
-        "agentDiscussion": "避免只寫節省技巧，加入起薪、學貸、租屋與信用工具的交互壓力。"
+        "agentDiscussion": "避免只寫節省技巧，加入起薪、學貸、租屋與信用工具的交互壓力。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "retirement-medical-scam-risk",
         "title": "退休不只是存款數字：年金、醫療、照護與詐騙風險如何一起影響老後安全",
         "audience": "一般民眾",
         "primaryTag": "不同對象需求-高齡者",
-        "secondaryTags": ["財務管理與規劃-退休規劃", "家庭重大事件-詐騙", "家庭重大事件-重大傷病"],
+        "secondaryTags": [
+          "財務管理與規劃-退休規劃",
+          "家庭重大事件-詐騙",
+          "家庭重大事件-重大傷病"
+        ],
         "categoryType": "風險預防型",
-        "searchIntent": "決策輔助型＋風險預防型",
-        "seoTitle": "退休不只是存款：年金、醫療與詐騙風險怎麼看",
-        "metaDescription": "老後安全感不只看存款。年金、醫療、照護、居住與詐騙風險，都會影響退休生活。本文用台灣資料協助判讀。",
-        "slug": "retirement-medical-scam-risk",
         "bodyChars": 2006,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/08-retirement-medical-scam-risk.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/08-retirement-medical-scam-risk.txt",
         "sources": [
-          { "label": "勞保局，國民年金老年年金給付金額", "url": "https://www.bli.gov.tw/0014336.html" },
-          { "label": "衛福部，弱勢民生照顧與獨居老人關懷", "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html" },
-          { "label": "行政院，打詐成效與165打詐儀錶板資料", "url": "https://www.ey.gov.tw/Page/88F151FFCE5C741E/ee2ab542-3595-4128-99cb-2ccf4d2a7488" }
+          {
+            "label": "勞保局，國民年金老年年金給付金額",
+            "url": "https://www.bli.gov.tw/0014336.html"
+          },
+          {
+            "label": "衛福部，弱勢民生照顧與獨居老人關懷",
+            "url": "https://www.mohw.gov.tw/cp-7173-83786-1.html"
+          },
+          {
+            "label": "行政院，打詐成效與165打詐儀錶板資料",
+            "url": "https://www.ey.gov.tw/Page/88F151FFCE5C741E/ee2ab542-3595-4128-99cb-2ccf4d2a7488"
+          }
         ],
-        "agentDiscussion": "把退休從存款數字改寫為現金流、照護、醫療與詐騙風險。"
+        "agentDiscussion": "把退休從存款數字改寫為現金流、照護、醫療與詐騙風險。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "reduced-hours-income-risk",
         "title": "減班休息不是只有少上班：有工作的人，為什麼也可能沒有穩定感",
         "audience": "社工",
         "primaryTag": "家庭重大事件-失業或收入中斷",
-        "secondaryTags": ["主要問題彙編-政府救助資源", "評估與輔導觀點-風險預警", "財務管理與規劃-收支結構"],
+        "secondaryTags": [
+          "主要問題彙編-政府救助資源",
+          "評估與輔導觀點-風險預警",
+          "財務管理與規劃-收支結構"
+        ],
         "categoryType": "社工實務判讀型",
-        "searchIntent": "社工實務判讀型＋問題解決型",
-        "seoTitle": "減班休息與收入中斷：社工如何判讀家庭財務風險",
-        "metaDescription": "有工作不代表有穩定收入。減班休息、工時下降與短期收入中斷，會影響家庭現金流。本文整理台灣勞動資訊與社工評估焦點。",
-        "slug": "reduced-hours-income-risk",
         "bodyChars": 2010,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/09-reduced-hours-income-risk.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/09-reduced-hours-income-risk.txt",
         "sources": [
-          { "label": "勞動部，減班休息法遵問答", "url": "https://www.mol.gov.tw/1607/28162/28166/28218/28228/81254" },
-          { "label": "我的E政府，強化社會安全網-急難紓困", "url": "https://www.gov.tw/News_Content_2_718861" },
-          { "label": "勞動部，勞動統計月報", "url": "https://www.mol.gov.tw/statistics/2452/2453/" }
+          {
+            "label": "勞動部，減班休息法遵問答",
+            "url": "https://www.mol.gov.tw/1607/28162/28166/28218/28228/81254"
+          },
+          {
+            "label": "我的E政府，強化社會安全網-急難紓困",
+            "url": "https://www.gov.tw/News_Content_2_718861"
+          },
+          {
+            "label": "勞動部，勞動統計月報",
+            "url": "https://www.mol.gov.tw/statistics/2452/2453/"
+          }
         ],
-        "agentDiscussion": "把有工作但收入不穩的灰色風險寫出來，協助社工提早介入。"
+        "agentDiscussion": "把有工作但收入不穩的灰色風險寫出來，協助社工提早介入。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
       },
       {
         "id": "resource-access-social-work",
         "title": "知道政府資源不等於用得到：社工如何把補助資訊變成可承接的支持",
         "audience": "社工",
         "primaryTag": "主要問題彙編-政府救助資源",
-        "secondaryTags": ["評估與輔導觀點-資源盤點", "政策法規-社會救助", "不同對象需求-弱勢家庭"],
+        "secondaryTags": [
+          "評估與輔導觀點-資源盤點",
+          "政策法規-社會救助",
+          "不同對象需求-弱勢家庭"
+        ],
         "categoryType": "資源制度型",
-        "searchIntent": "社工實務判讀型＋資源查詢型",
-        "seoTitle": "政府資源用不到怎麼辦：社工的資源盤點與轉譯",
-        "metaDescription": "服務對象知道補助，不代表能完成申請。本文從低收中低收、急難紓困與特殊境遇家庭，整理社工如何協助轉譯資源。",
-        "slug": "resource-access-social-work",
         "bodyChars": 2087,
         "readiness": "可投稿初稿",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-02-weekly-pack/10-resource-access-social-work.md",
+        "bodyPath": "articles/2026-06-02-weekly-pack/10-resource-access-social-work.txt",
         "sources": [
-          { "label": "衛福部，低收入戶及中低收入戶", "url": "https://www.mohw.gov.tw/cp-88-79005-1.html" },
-          { "label": "我的E政府，強化社會安全網-急難紓困", "url": "https://www.gov.tw/News_Content_2_718861" },
-          { "label": "衛福部，特殊境遇家庭扶助條例", "url": "https://dep.mohw.gov.tw/DOPS/cp-1287-14940-105.html" }
+          {
+            "label": "衛福部，低收入戶及中低收入戶",
+            "url": "https://www.mohw.gov.tw/cp-88-79005-1.html"
+          },
+          {
+            "label": "我的E政府，強化社會安全網-急難紓困",
+            "url": "https://www.gov.tw/News_Content_2_718861"
+          },
+          {
+            "label": "衛福部，特殊境遇家庭扶助條例",
+            "url": "https://dep.mohw.gov.tw/DOPS/cp-1287-14940-105.html"
+          }
         ],
-        "agentDiscussion": "把資源文章從補助清單升級成申請障礙、文件卡點與社工轉譯。"
+        "agentDiscussion": "把資源文章從補助清單升級成申請障礙、文件卡點與社工轉譯。",
+        "contentMode": "plain_text_body_only",
+        "copyTarget": "bodyPath",
+        "visibleFields": [
+          "title",
+          "audience",
+          "primaryTag",
+          "secondaryTags",
+          "bodyChars",
+          "readiness",
+          "nonConceptReview"
+        ],
+        "nonConceptReview": {
+          "status": "needs_human_review",
+          "note": "本批為首批舊稿轉純文字，仍需用非概念文檢查 agent 逐篇檢查：是否有具體情境、台灣資料是否融入敘事、是否過度引用。"
+        }
+      }
+    ],
+    "exportMode": "plain_text",
+    "files": [
+      "articles/2026-06-02-weekly-pack/01-rent-subsidy-stability.txt",
+      "articles/2026-06-02-weekly-pack/02-debt-negotiation-not-agency.txt",
+      "articles/2026-06-02-weekly-pack/03-scam-recovery-social-work.txt",
+      "articles/2026-06-02-weekly-pack/04-emergency-fund-income-break.txt",
+      "articles/2026-06-02-weekly-pack/05-long-term-care-family-finance.txt",
+      "articles/2026-06-02-weekly-pack/06-single-parent-childcare-support.txt",
+      "articles/2026-06-02-weekly-pack/07-youth-first-job-credit.txt",
+      "articles/2026-06-02-weekly-pack/08-retirement-medical-scam-risk.txt",
+      "articles/2026-06-02-weekly-pack/09-reduced-hours-income-risk.txt",
+      "articles/2026-06-02-weekly-pack/10-resource-access-social-work.txt"
+    ]
+  },
+  "readerResearch": {
+    "updatedAt": "2026-06-02T22:55:00+08:00",
+    "summary": "目前知識型文章更需要可掃讀、生活化、低引用感與高可信度並存。資料要支撐判讀，但不能讓文章像資料摘要。",
+    "rules": [
+      "開頭先進入讀者困境，不先講制度背景。",
+      "每 3 到 5 段要回到一個具體生活情境或判斷問題。",
+      "數據只挑最能改變讀者理解的一兩個，避免堆疊。",
+      "來源查核留在內部，不在正文堆連結。",
+      "用短段落、清楚小標、生活語言，讓手機閱讀者可掃讀。",
+      "不要為了 SEO 或字數而寫；讀者讀完要覺得有被幫助，不需要再搜尋一次。"
+    ],
+    "sources": [
+      {
+        "label": "Nielsen Norman Group：網頁讀者會快速掃讀，搜尋結果頁也更非線性",
+        "url": "https://www.nngroup.com/articles/how-people-read-online/"
+      },
+      {
+        "label": "GOV.UK：內容要符合使用者需要、短句、清楚小標、避免浪費注意力",
+        "url": "https://www.gov.uk/guidance/content-design/writing-for-gov-uk"
+      },
+      {
+        "label": "Google Search Central：people-first content，不為搜尋引擎或字數而寫",
+        "url": "https://developers.google.com/search/docs/fundamentals/creating-helpful-content"
+      },
+      {
+        "label": "Reuters Institute Digital News Report 2025：信任、避免資訊過載與新聞迴避",
+        "url": "https://reutersinstitute.politics.ox.ac.uk/digital-news-report/2025/dnr-executive-summary"
+      },
+      {
+        "label": "數位發展部 2025 Digital Access Survey：台灣線上閱讀、即時通訊與影音使用現況",
+        "url": "https://moda.gov.tw/en/press/press-releases/18674"
+      },
+      {
+        "label": "TWNIC 2025 台灣網路報告：社群、LINE、影音與政府服務使用情境",
+        "url": "https://report.twnic.tw/2025/TrendAnalysis_globalCompetitiveness.html"
+      }
+    ]
+  },
+  "nonConceptAgent": {
+    "name": "非概念文檢查 agent",
+    "maturity": "project-local-candidate",
+    "purpose": "每次可投稿文章工作台生成後，先用退修/駁回建議萃取規則，再檢查文章是否太概念、太像 AI、太像引用摘要。",
+    "trigger": "每週五 14:00 投稿文章包生成；Kevin 貼上退修或駁回建議；人工審稿標記退修或駁回。",
+    "ruleExtraction": [
+      "把退修意見拆成問題類型：太概念、缺案例、資料過舊、引用感太重、AI腔、讀者版本錯位、標籤錯位、不可操作。",
+      "每則意見都改寫成可檢查規則，例如「不要只說建立安全感」改成「必須寫出哪個生活場景讓安全感被破壞」。",
+      "同一類問題出現 2 次以上，升為下週必查門檻。",
+      "保留原稿片段、審稿意見、修正後片段，形成可對照學習卡。"
+    ],
+    "conceptDetection": [
+      "抽象詞密度過高：安全感、韌性、支持系統、結構、資源等詞很多，但沒有日常場景。",
+      "段落只說應該如何，沒有描述讀者在什麼情境下會卡住。",
+      "只有制度或數據，沒有寫出它對生活、家庭關係、工作選擇的影響。",
+      "只列建議，沒有讓讀者看懂為什麼自己會做不到。",
+      "小標看起來很正確，但段落沒有新的判讀或具體畫面。"
+    ],
+    "evidenceIntegration": [
+      "資料先轉成「它改變了我們對問題的理解」再放進正文。",
+      "同一段只承載一個數據或政策重點，後面立刻接生活影響。",
+      "新聞案例只取一個可驗證情節，不鋪成戲劇故事。",
+      "正文不連續列來源；來源與查核日期留在內部審核紀錄。",
+      "如果資料只是裝飾，刪掉；如果資料能讓讀者重新判斷處境，留下。"
+    ],
+    "workbenchFields": [
+      "非概念風險：低／中／高",
+      "最像概念文的段落",
+      "缺少的具體情境",
+      "可保留的關鍵資料",
+      "應移到內部查核的引用",
+      "AI感警訊",
+      "建議重寫方向",
+      "是否可進入人工審核"
+    ],
+    "discussionReviewers": [
+      {
+        "name": "review_feedback_miner",
+        "purpose": "從 Kevin 或文章管理端的退修/駁回建議萃取下週必避規則。"
+      },
+      {
+        "name": "non_concept_reviewer",
+        "purpose": "指出哪些段落太概念，要求補生活場景、卡住過程、台灣情境與具體判讀。"
+      },
+      {
+        "name": "reader_appeal_reviewer",
+        "purpose": "檢查前 150 字、段落節奏、AI感、引用感與讀者是否願意讀下去。"
       }
     ]
   }

@@ -60,3 +60,18 @@ Kevin 補充：參考資料必須使用目前最新資料，尤其歷年補助�
 - `docs/submission-article-generation-standard-v2.md`
 - `suggestions.json` 品質門檻
 - `automation-14` 每週自動化 prompt
+
+## 2026-06-02 追加規格修正：純文字、非概念文與讀者吸引力
+
+Kevin 補充：投稿工作台不需要 Markdown，也不需要把 SEO/AIO 顯示出來；正文門檻是正文本身超過 2000 字，不含 SEO/AIO、來源、FAQ 或審核紀錄。文章目前的問題不是資料不足，而是引用感、AI 感與概念描述太重，讀者不會主動想讀。
+
+本次已調整：
+
+- 文章包改為 `.txt` 純文字投稿稿。
+- 工作台新增複製正文、複製標題＋正文、複製審稿版。
+- 前台不顯示 SEO/AIO、Meta、Slug、FAQ 或來源清單。
+- 新增 `docs/non-concept-article-review-agent.md`，把退修/駁回建議變成下週必查規則。
+- 新增 `docs/readability-research-20260602.md`，將 websearch 結論轉為讀者吸引力檢查規則。
+- 每週流程加入 `review_feedback_miner`、`non_concept_reviewer`、`reader_appeal_reviewer` 三個討論輸出。
+
+後續每次 Kevin 提供駁回或退修意見時，必須建立學習卡：審核意見、問題段落、問題類型、可檢查規則、修正方向與是否升級為下週必查門檻。

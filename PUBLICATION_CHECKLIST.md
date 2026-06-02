@@ -27,6 +27,8 @@ Current package:
 - [x] Review board updated from suggestion ideas to 10 submission-ready drafts.
 - [x] Each draft body checked as 2000+ non-whitespace characters.
 - [x] Public repo still excludes raw InfoCenter learning packs and private review text.
+- [x] Plain-text workbench added: no Markdown preview, SEO/AIO hidden, copy body/title+body/review text available.
+- [x] Non-concept and reader-appeal review agent rules added to the weekly workflow.
 
 Production proof:
 
