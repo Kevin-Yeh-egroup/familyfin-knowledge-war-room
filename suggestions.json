@@ -716,6 +716,15 @@
       "hasCommentArticleToReviewCommentPairing": false,
       "hasPerEventReviewCommentText": false,
       "hasPerEventAgentDiscussionTrace": false,
+      "hasLabelReviewRejectionAdviceLearning": false,
+      "labelReviewRejectionAudit": {
+        "checkedAt": "2026-06-02T23:59:00+08:00",
+        "sampleCount": 540,
+        "rejectCount": 187,
+        "publicSubmissionRejectCount": 150,
+        "editorAdviceParsedInPreviousPacks": 0,
+        "finding": "先前 learning pack 只有審核狀態與文章正文，沒有解析標籤審核駁回的總編輯文字建議。回查確認審核內容藏在 EVENT_REVIEW 表格列詳情中，必須點擊審核駁回列才可讀到審核標題與審核內容。"
+      },
       "summary": "目前已完成文章正文與審核狀態的群體學習，但公開 repo 沒有證據顯示已逐則完成評論文章全文與審核/駁回評語原文的交叉對照。"
     },
     "reviewContrastLearningLoop": {
@@ -738,6 +747,7 @@
     ],
     "nextRunRequirements": [
       "重新進入 InfoCenter 事件列表時，優先確認每則事件是否有評論文章與審核評語欄位可讀。",
+      "若事件為標籤審核駁回，必須進入 EVENT_REVIEW 頁籤並點擊審核駁回列，讀取展開後的審核標題與審核內容；只看表格狀態不算完成學習。",
       "若可讀，建立去識別化 review_event_pairs；若不可讀，記錄缺口與可能的人工匯出路徑。",
       "每週文章包至少產出 5 張 review_contrast_cards，直到累積足夠退修樣本。",
       "每張卡必須含 agent 討論摘要與是否升級規則的判定。",

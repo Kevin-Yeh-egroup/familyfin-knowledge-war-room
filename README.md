@@ -49,6 +49,7 @@
 - `docs/submission-article-generation-standard-v2.md`：可投稿文章生成標準 v3。
 - `docs/non-concept-article-review-agent.md`：非概念文檢查 agent 規格。
 - `docs/agent-training-and-review-feedback-loop.md`：Agent 訓練方法與審查駁回交叉學習規格。
+- `docs/label-review-rejection-learning-audit.md`：標籤審核駁回學習稽核，記錄審核內容需點開審核狀態列才可讀取。
 - `docs/numeric-proof-writing-angle-reviewers.md`：數值化證明與寫作角度 reviewer 規格。
 - `docs/readability-research-20260602.md`：知識型文章可讀性研究摘要。
 - `docs/current-taiwan-data-verification-rules.md`：台灣最新資料與補助規範查核規則。
