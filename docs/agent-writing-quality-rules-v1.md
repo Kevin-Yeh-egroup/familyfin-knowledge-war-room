@@ -100,11 +100,12 @@
 
 1. `source_scout`：找台灣資料、制度、統計、新聞案例。
 2. `knowledge_gap_mapper`：比對既有分類與文章缺口。
-3. `article_pattern_miner`：確認是否符合好理家在寫法。
-4. `public_writer` 或 `social_work_writer`：依受眾產稿。
-5. `fact_case_reviewer`：檢查資料、案例、數字與過度推論。
-6. `quality_reviewer`：檢查 prompt fit、語氣、結構、下一步。
-7. `approval_packager`：包成 Kevin 可核准的新增建議。
+3. `tag_mapper`：依文章專區正式標籤選出受眾、主要標籤與次要標籤。
+4. `article_pattern_miner`：確認是否符合好理家在寫法。
+5. `public_writer` 或 `social_work_writer`：依受眾產稿。
+6. `fact_case_reviewer`：檢查資料、案例、數字與過度推論。
+7. `quality_reviewer`：檢查 prompt fit、語氣、結構、下一步。
+8. `approval_packager`：包成 Kevin 可核准的新增建議。
 
 ## 八、未完成缺口
 
@@ -112,4 +113,3 @@
 - 仍需增加公開徵稿、FB、Podcast、電子報等標籤樣本
 - 仍需分開建立一般民眾版與社工版的通過範例庫
 - 仍需將核准結果回寫到正式文章分類流程
-

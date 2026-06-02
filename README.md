@@ -35,6 +35,6 @@
 
 - `reports/2026-06-02-learning-milestone-001.md`
 - `docs/agent-writing-quality-rules-v1.md`
+- `docs/article-zone-tag-reference.md`
 - `docs/chronological-learning-runbook.md`
 - `logs/2026-06-02-learning-log.md`
-

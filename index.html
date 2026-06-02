@@ -507,6 +507,7 @@
       <div class="navlinks">
         <a href="#learning">學習進度</a>
         <a href="#rules">寫作規則</a>
+        <a href="#tags">標籤參考</a>
         <a href="#suggestions">新增建議</a>
         <a href="#safety">資料邊界</a>
       </div>
@@ -610,6 +611,39 @@
             </div>
           </div>
           <div id="suggestionDetail" class="detail"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tags" class="panel">
+      <div class="section-head">
+        <h2>文章專區標籤參考</h2>
+        <p class="sub">新增建議必須使用文章管理中的正式標籤；此處只呈現作業台常用對照，完整清單見 docs。</p>
+      </div>
+      <div class="section-body">
+        <div class="grid-3">
+          <div class="box">
+            <h3>文章受眾</h3>
+            <p><span class="tag green">一般民眾</span><span class="tag blue">社工</span></p>
+          </div>
+          <div class="box">
+            <h3>高密度標籤</h3>
+            <p><span class="tag">財務管理與規劃-保險</span><span class="tag">財務管理與規劃-管理技巧</span><span class="tag">財務管理與規劃-投資</span><span class="tag">主要問題彙編-債務</span></p>
+          </div>
+          <div class="box">
+            <h3>新增建議原則</h3>
+            <p>每篇至少 1 個受眾、1 個主要知識庫標籤。若文章同時涉及事件與介入，主要標籤放文章核心功能，次要標籤放情境。</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:16px">
+          <div class="box">
+            <h3>常用問題標籤</h3>
+            <p><span class="tag rose">主要問題彙編-債務</span><span class="tag rose">主要問題彙編-政府救助資源</span><span class="tag rose">主要問題彙編-罹病求助</span><span class="tag rose">主要問題彙編-民間社會資源</span></p>
+          </div>
+          <div class="box">
+            <h3>社工專業標籤</h3>
+            <p><span class="tag blue">評估與輔導觀點-專業知能</span><span class="tag blue">評估與輔導觀點-經驗分享</span><span class="tag blue">政策法規-法規應用</span><span class="tag blue">政策法規-政策解析</span></p>
+          </div>
         </div>
       </div>
     </section>
@@ -731,6 +765,11 @@
       titleWrap.append(title, meta);
       top.append(titleWrap, tag(statusLabels[statusFor(item.id)], statusFor(item.id) === "approved" ? "green" : "gold"));
       detail.appendChild(top);
+
+      const tagWrap = document.createElement("p");
+      tagWrap.append(tag("主要：" + (item.primaryTag || item.category), "green"));
+      (item.secondaryTags || []).forEach((tagName) => tagWrap.append(tag("次要：" + tagName, "blue")));
+      section(detail, "正式標籤", [tagWrap]);
 
       section(detail, "問題判讀", [paragraph(item.problem)]);
 
