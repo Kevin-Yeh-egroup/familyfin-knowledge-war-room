@@ -1,60 +1,40 @@
 # 好理家在知識庫戰情室
 
-This is a public review package for the FamilyFinHealth knowledge-base war room.
+這個 repo 是好理家在知識庫戰情室的公開 review package。
 
-- Source entry: <https://www.familyfinhealth.com/social-worker/knowledge-base>
-- Review mode: public but noindex
-- Deployment target: Vercel production
-- Artifact slug: `familyfin-knowledge-war-room`
+用途：
 
-The page is a reporting artifact. It may propose evidence-backed article drafts, but it does not modify or publish knowledge-base articles automatically.
+- 盤點好理家在知識庫與文章管理資料
+- 記錄 Codex / agent 從既有文章中學到的寫作規則
+- 建立可審核的新增文章建議
+- 讓 Kevin 可以在公開但 noindex 的 Vercel Production 頁面檢視進度
 
-Review console:
+重要邊界：
 
-- Each `新增建議` item can be opened to inspect the pre-generated draft, source package, case note, and next-step checklist.
-- Suggestions are now data-driven through `suggestions.json`; the HTML page uses embedded content only as a fallback.
-- Kevin can mark an item as `已核准`, `補證中`, or `退回`.
-- Approved items are grouped by knowledge-base category in a browser-local approval vault.
-- The vault can export approved suggestions as JSON or Markdown for later upload, GitHub review, or back-office publishing.
-- Current MVP persistence is `localStorage`; cross-device durable approval storage should be added through GitHub, Google Sheets, or a knowledge-base API before using it as the single source of record.
+- 本 repo 不存放 InfoCenter 原始文章全文
+- 本 repo 不存放個案會談內容、未去識別化評論、帳號或內部 API token
+- `noindex` 只是搜尋引擎提示，不是存取控制
+- 所有新增建議都需要 Kevin 或指定審稿者核准後，才可進入正式知識庫流程
 
-Operational records:
+目前進度：
 
-- Daily report: `reports/2026-05-29-daily-report.md`
-- Optimization log: `logs/2026-05-29-optimization-log.md`
-- Codex workflow proposal: `docs/codex-optimization-proposal.md`
+- 已建立正式索引：文章管理 1320 篇已發布、27 篇草稿、47 個知識庫標籤
+- 已建立事件索引：事件管理 2026 則
+- 已從最早事件開始跑 chronological learning packs
+- 2026-06-02 已完成前 5 批：掃描 600 則事件，取得 122 篇可學正文
+- 已建立 Agent 寫作品質規則 v1
 
-Updated article-generation rule:
+公開頁面：
 
-- Websearch must collect Taiwan-specific data, policy context, and credible real cases before drafting.
-- Drafts should use Kevin's general-public or social-worker prompt style.
-- Drafts must avoid purely conceptual writing.
-- Numbers require sources.
-- News cases must be attributed, de-identified, and not embellished.
-- Any composite scenario must be labeled as an illustrative scenario.
-- Drafts require a fact/case review and a prompt-fit review before publication.
+- `index.html`
+- `suggestions.json`
+- `robots.txt`
+- `vercel.json`
 
-Minimum drafting gate:
+營運文件：
 
-- At least one Taiwan official, legal, institutional, or statistical source.
-- At least one Taiwan-specific number or one verifiable real case.
-- Every major recommendation must lead to an action: eligibility check, office/window, process, form, phone number, URL, or checklist.
-- Without reliable sources, the item must be labeled as `待查證`, `概念性建議`, or returned for evidence gathering.
+- `reports/2026-06-02-learning-milestone-001.md`
+- `docs/agent-writing-quality-rules-v1.md`
+- `docs/chronological-learning-runbook.md`
+- `logs/2026-06-02-learning-log.md`
 
-Source priority:
-
-1. Taiwan official statistics and government open data.
-2. Original legal, policy, and institutional sources.
-3. Responsible ministry or local government pages.
-4. Academic, professional, or NGO reports with method/year/sample.
-5. Reliable news cases, used only for scenario context.
-
-Draft structure:
-
-1. Taiwan opening scenario.
-2. Problem reframing.
-3. Taiwan data or policy context.
-4. Case-based explanation without invented details.
-5. Reader/self-check or social-work risk assessment.
-6. Concrete next steps and resources.
-7. Source notes, case notes, limits, and review findings.
