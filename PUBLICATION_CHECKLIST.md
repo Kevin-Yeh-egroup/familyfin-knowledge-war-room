@@ -15,8 +15,18 @@
 Current package:
 
 - Learning milestone: `reports/2026-06-02-learning-milestone-001.md`
-- Agent rules: `docs/agent-writing-quality-rules-v1.md`
+- Full learning summary: `reports/2026-06-02-full-learning-summary.md`
+- Article generation standard: `docs/submission-article-generation-standard-v2.md`
+- First submission pack: `articles/2026-06-02-weekly-pack/`
 - Suggestions data: `suggestions.json`
+
+2026-06-02 update:
+
+- [x] Full chronological learning completed through all 2026 events.
+- [x] Weekly Friday 14:00 automation created as `automation-14`.
+- [x] Review board updated from suggestion ideas to 10 submission-ready drafts.
+- [x] Each draft body checked as 2000+ non-whitespace characters.
+- [x] Public repo still excludes raw InfoCenter learning packs and private review text.
 
 Production proof:
 

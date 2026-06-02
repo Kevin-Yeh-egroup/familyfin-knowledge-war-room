@@ -2,39 +2,49 @@
 
 這個 repo 是好理家在知識庫戰情室的公開 review package。
 
-用途：
+目前用途：
 
-- 盤點好理家在知識庫與文章管理資料
-- 記錄 Codex / agent 從既有文章中學到的寫作規則
-- 建立可審核的新增文章建議
-- 讓 Kevin 可以在公開但 noindex 的 Vercel Production 頁面檢視進度
+- 盤點好理家在知識庫與 InfoCenter 文章管理結果。
+- 讓 Codex / agent 從文章全文、狀態與標籤中學習好文章標準。
+- 每週產出知識庫擴充建議與 10 篇可投稿文章草稿。
+- 提供 Kevin 可點選全文、核准、退修、駁回、分類存放的審核台。
+- 透過 GitHub + Vercel Production 提供穩定 public review URL。
 
-重要邊界：
+## 目前狀態
 
-- 本 repo 不存放 InfoCenter 原始文章全文
-- 本 repo 不存放個案會談內容、未去識別化評論、帳號或內部 API token
-- `noindex` 只是搜尋引擎提示，不是存取控制
-- 所有新增建議都需要 Kevin 或指定審稿者核准後，才可進入正式知識庫流程
+- 正式索引已發布文章：1320
+- 草稿文章：27
+- InfoCenter 事件列表：2026
+- 已完成全文學習批次：17
+- 可學文章正文：540
+- 成功樣本：340
+- 退修/駁回樣本：187
+- 首批可投稿草稿：10
 
-目前進度：
+## 每週自動化
 
-- 已建立正式索引：文章管理 1320 篇已發布、27 篇草稿、47 個知識庫標籤
-- 已建立事件索引：事件管理 2026 則
-- 已從最早事件開始跑 chronological learning packs
-- 2026-06-02 已完成前 5 批：掃描 600 則事件，取得 122 篇可學正文
-- 已建立 Agent 寫作品質規則 v1
+- Automation ID：`automation-14`
+- 名稱：好理家在每週知識庫擴充與投稿文章包
+- 時間：每週五 14:00 Asia/Taipei
+- 邊界：只產出草稿包與擴充建議，不自動上架、不自動送審、不修改 InfoCenter。
 
-公開頁面：
+## 主要檔案
 
-- `index.html`
-- `suggestions.json`
-- `robots.txt`
-- `vercel.json`
+- `index.html`：10 篇可投稿文章工作台。
+- `suggestions.json`：學習統計、品質門檻、文章 metadata。
+- `articles/2026-06-02-weekly-pack/`：首批 10 篇文章全文。
+- `docs/submission-article-generation-standard-v2.md`：可投稿文章生成標準。
+- `reports/2026-06-02-full-learning-summary.md`：全文學習總結。
+- `logs/2026-06-02-full-learning-and-automation-log.md`：本次日誌。
+- `docs/article-zone-tag-reference.md`：文章專區正式標籤參考。
 
-營運文件：
+## 安全邊界
 
-- `reports/2026-06-02-learning-milestone-001.md`
-- `docs/agent-writing-quality-rules-v1.md`
-- `docs/article-zone-tag-reference.md`
-- `docs/chronological-learning-runbook.md`
-- `logs/2026-06-02-learning-log.md`
+- 本 repo 不保存 InfoCenter 原始全文學習包。
+- 本 repo 不保存內部評論原文、Cookie、Token、私有 API 回應或未匿名個案資料。
+- `noindex` 不是隱私保護；目前僅用於 review 階段避免搜尋收錄。
+- 核准後的文章仍需 Kevin 或文章管理端確認，才可進入正式知識庫上架流程。
+
+## Production
+
+Stable URL：<https://familyfin-knowledge-war-room.vercel.app/>
