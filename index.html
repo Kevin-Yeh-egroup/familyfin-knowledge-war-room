@@ -616,6 +616,20 @@
             <ul id="evidenceRules" class="rule-list"></ul>
           </div>
         </div>
+        <div class="grid-2" style="margin-top:16px">
+          <div>
+            <h3>數值化證明</h3>
+            <ul id="numericRules" class="rule-list"></ul>
+          </div>
+          <div>
+            <h3>書寫角度</h3>
+            <ul id="angleRules" class="rule-list"></ul>
+          </div>
+        </div>
+        <div class="box" style="margin-top:16px">
+          <h3>每週討論角色</h3>
+          <ul id="discussionReviewers" class="rule-list"></ul>
+        </div>
       </div>
     </section>
 
@@ -781,6 +795,23 @@
         li.textContent = rule;
         evidence.appendChild(li);
       });
+
+      const fillList = (id, items) => {
+        const list = document.getElementById(id);
+        list.textContent = "";
+        (items || []).forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          list.appendChild(li);
+        });
+      };
+
+      fillList("numericRules", agent.numericProofReviewer?.requiredChecks || []);
+      fillList("angleRules", [
+        ...(agent.writingAngleReviewer?.publicAngle || []).map((item) => "一般民眾：" + item),
+        ...(agent.writingAngleReviewer?.socialWorkAngle || []).map((item) => "社工：" + item)
+      ]);
+      fillList("discussionReviewers", (agent.discussionReviewers || []).map((item) => `${item.name}：${item.purpose}`));
     }
 
     function renderList() {

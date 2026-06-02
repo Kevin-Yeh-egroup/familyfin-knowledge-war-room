@@ -27,6 +27,9 @@
 - 投稿預覽與複製輸出改為純文字 TXT。
 - 字數門檻改為正文超過 2000 字，不含平台欄位與審核紀錄。
 - 新增「非概念文檢查 agent」與 `reader_appeal_reviewer`，每週投稿包都要檢查文章是否太概念、引用感太重、AI 感太強或不吸引讀者。
+- 新增 `numeric_proof_reviewer`，把「不要概念文」拆成可檢查的數值化證明：每篇至少要有具體數值、前後差異示例與改善關鍵因素。
+- 新增 `writing_angle_reviewer`，分開檢查一般民眾版與社工版的切入角度，避免責備、教訓、政策報告感或 AI 摘要感。
+- 新增學習資料庫欄位規格，用來累積文章角度、數值證明、退修意見、禁用語句與 agent 討論紀錄。
 - 退修/駁回建議會優先轉成下週必查規則。
 
 ## 每週自動化
@@ -43,6 +46,7 @@
 - `articles/2026-06-02-weekly-pack/`：首批 10 篇純文字文章。
 - `docs/submission-article-generation-standard-v2.md`：可投稿文章生成標準 v3。
 - `docs/non-concept-article-review-agent.md`：非概念文檢查 agent 規格。
+- `docs/numeric-proof-writing-angle-reviewers.md`：數值化證明與寫作角度 reviewer 規格。
 - `docs/readability-research-20260602.md`：知識型文章可讀性研究摘要。
 - `docs/current-taiwan-data-verification-rules.md`：台灣最新資料與補助規範查核規則。
 - `reports/2026-06-02-full-learning-summary.md`：全文學習總結。

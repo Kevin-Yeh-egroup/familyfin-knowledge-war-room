@@ -75,3 +75,23 @@ Kevin 補充：投稿工作台不需要 Markdown，也不需要把 SEO/AIO 顯�
 - 每週流程加入 `review_feedback_miner`、`non_concept_reviewer`、`reader_appeal_reviewer` 三個討論輸出。
 
 後續每次 Kevin 提供駁回或退修意見時，必須建立學習卡：審核意見、問題段落、問題類型、可檢查規則、修正方向與是否升級為下週必查門檻。
+
+## 2026-06-02 數值化證明與書寫角度規格
+
+Kevin 追加定義：文章不能是概念文，不代表只要增加資料或引用。文章需要能讓讀者看見數值差異，例如收支調整前後、固定支出比例、債務月付差異、可動用餘裕變化，也要指出造成改善的關鍵因素。
+
+本次與 agent 討論後，新增兩個固定 reviewer：
+
+- `numeric_proof_reviewer`：每篇至少檢查 2 個具體數值或數值化情境、1 個前後差異示例、1 到 3 個改善關鍵因素。官方資料必須查核最新台灣版本；示意數字必須標示為假設。
+- `writing_angle_reviewer`：一般民眾版從生活壓力、具體選擇與「我為什麼卡住」進入；社工版從實務誤判、評估盲點與介入焦點進入。兩者都避免責備、教訓、政策報告感與 AI 摘要感。
+
+已更新：
+
+- `suggestions.json`
+- `index.html`
+- `docs/submission-article-generation-standard-v2.md`
+- `docs/non-concept-article-review-agent.md`
+- `docs/numeric-proof-writing-angle-reviewers.md`
+- `docs/readability-research-20260602.md`
+
+治理判斷：本次先保持為 `familyfin-knowledge-war-room` 專用規格，不升級成全域 skill。等累積 2 到 3 次投稿退修/通過回饋後，再評估是否抽成可重用的好理家在文章生成 skill。

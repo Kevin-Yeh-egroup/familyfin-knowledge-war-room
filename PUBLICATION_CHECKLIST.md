@@ -29,6 +29,9 @@ Current package:
 - [x] Public repo still excludes raw InfoCenter learning packs and private review text.
 - [x] Plain-text workbench added: no Markdown preview, SEO/AIO hidden, copy body/title+body/review text available.
 - [x] Non-concept and reader-appeal review agent rules added to the weekly workflow.
+- [x] Numeric proof reviewer added: articles must include concrete numbers, before/after difference examples, and improvement factors.
+- [x] Writing angle reviewer added: public and social-work articles are checked against audience-specific entry angles and banned phrases.
+- [x] Learning database fields documented for numeric proof, writing angle, non-concept review, banned phrases, review feedback, and agent discussions.
 
 Production proof:
 
