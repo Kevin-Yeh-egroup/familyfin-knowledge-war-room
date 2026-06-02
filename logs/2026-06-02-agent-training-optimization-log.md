@@ -97,3 +97,18 @@ Kevin 也要求確認先前訓練是否做到：
 - 是否可產出 `review_contrast_cards`。
 
 若評語原文不可讀，需回報資料缺口，不得宣稱已完成逐則交叉學習。
+## Production publish proof
+
+- Commit: `8c0cb6f Add agent training feedback loop`
+- GitHub: pushed to `origin/main`
+- Vercel production URL: `https://familyfin-knowledge-war-room.vercel.app/`
+- Deployment inspect URL: `https://vercel.com/egroup-task3s-projects/familyfin-knowledge-war-room/H99yKYYF9sEU8dRiC2yqoRx2qP2e`
+- Verification:
+  - `200 OK`
+  - `X-Robots-Tag: noindex, nofollow, noarchive`
+  - `robots.txt` keeps `Disallow: /`
+  - HTML contains `Agent 訓練閉環`
+  - HTML contains `人工審核意見 / 退修原因`
+  - HTML and `suggestions.json` no longer expose `SEO/AIO` wording in the workbench surface
+  - `suggestions.json` contains `agentTrainingOptimization`
+  - `suggestions.json` keeps `hasCommentArticleToReviewCommentPairing = false` and `hasPerEventAgentDiscussionTrace = false` until actual per-event review feedback is available
