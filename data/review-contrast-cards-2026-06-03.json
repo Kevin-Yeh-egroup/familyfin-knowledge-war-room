@@ -1,0 +1,493 @@
+{
+  "updatedAt": "2026-06-02T16:43:40.327Z",
+  "source": "InfoCenter EVENT_REVIEW clicked rejection rows and EVENT_COMMENT article cross-check",
+  "orgLabel": "好理家在文章管理區",
+  "profileMode": "external profile path supplied at runtime; profile path is not stored in output",
+  "privacy": {
+    "rawEventIdsStored": false,
+    "rawReviewTextStored": false,
+    "rawArticleTextStored": false,
+    "publicSafeDerivedCardsOnly": true
+  },
+  "run": {
+    "attempted": 10,
+    "cardsCreated": 10,
+    "clickedReviewRows": 10,
+    "reviewDetailsFound": 10,
+    "reviewTitlesFound": 10,
+    "reviewContentsFound": 3,
+    "completeReviewDetailsFound": 3,
+    "reviewLearningReadyCards": 3,
+    "commentArticlesOpened": 10,
+    "errors": 0,
+    "orgVerified": true
+  },
+  "cards": [
+    {
+      "cardId": "review-contrast-20260603-001",
+      "sourceRef": "private-event-hash-165d8febca34",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": true,
+      "reviewDetailCompleteness": "title_and_content",
+      "reviewLearningReady": true,
+      "reviewProblemTypes": [
+        "case_accuracy",
+        "numeric_accuracy",
+        "source_grounding"
+      ],
+      "reviewIssueSummary": "審核重點落在案例條件與數字設定不一致，文章不能為了敘事效果拼湊人物、費用或收支。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 2822,
+        "numberCount": 43,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": true,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "產稿前建立 claims table，列出收入、支出、補助、費用、前後差異與每個數字的來源或假設。",
+          "個案型文章要固定家庭人數、角色、收入來源與照顧責任，全文不得前後矛盾。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "numeric_proof_reviewer",
+          "fact_case_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-002",
+      "sourceRef": "private-event-hash-9834cd38b777",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "numeric_accuracy",
+        "reality_plausibility"
+      ],
+      "reviewIssueSummary": "審核重點落在生活情境與台灣現實不符，收入、工資或支出設定需要能被現場經驗檢驗。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 2715,
+        "numberCount": 41,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": true,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "產稿前建立 claims table，列出收入、支出、補助、費用、前後差異與每個數字的來源或假設。",
+          "所有薪資、補助、租金、托育費與生活成本都要先用台灣當年度資料或合理區間校準。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "numeric_proof_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-003",
+      "sourceRef": "private-event-hash-2daf085ff753",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "platform_fit",
+        "article_integration"
+      ],
+      "reviewIssueSummary": "審核重點落在平台定位與文章整合度不足，需要重新整理成符合好理家在知識庫用途的主軸。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 1158,
+        "numberCount": 1,
+        "hasScenario": false,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "投稿前先檢查文章是否服務財商教育、助人工作或台灣生活決策，偏離者要重整主軸。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "writing_angle_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-004",
+      "sourceRef": "private-event-hash-fe50511284ce",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "non_concept_concreteness"
+      ],
+      "reviewIssueSummary": "審核重點落在內容過於概念化，文章需要具體情境、數值前後差異與可操作的改善關鍵。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 1515,
+        "numberCount": 8,
+        "hasScenario": false,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "每個核心段落至少要有一個具體場景、數值變化或行動後結果，不能只停在觀念說明。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "non_concept_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-005",
+      "sourceRef": "private-event-hash-ed6e1e4add78",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "case_accuracy",
+        "finance_focus_alignment"
+      ],
+      "reviewIssueSummary": "審核重點落在改變關鍵偏離財務議題，需要分清楚心理支持、家庭支持與財務介入的主次。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 1487,
+        "numberCount": 12,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "個案型文章要固定家庭人數、角色、收入來源與照顧責任，全文不得前後矛盾。",
+          "若案例改善主因不是財務行動，要改寫為跨系統支持，或明確說明財務介入的位置。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "fact_case_reviewer",
+          "writing_angle_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-006",
+      "sourceRef": "private-event-hash-5e222bdf8365",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": true,
+      "reviewDetailCompleteness": "title_and_content",
+      "reviewLearningReady": true,
+      "reviewProblemTypes": [
+        "numeric_accuracy"
+      ],
+      "reviewIssueSummary": "審核意見指出文章需要更明確的實務判讀與可驗證內容。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 3162,
+        "numberCount": 41,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": true,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "產稿前建立 claims table，列出收入、支出、補助、費用、前後差異與每個數字的來源或假設。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "numeric_proof_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-007",
+      "sourceRef": "private-event-hash-aa416393ad92",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": true,
+      "reviewDetailCompleteness": "title_and_content",
+      "reviewLearningReady": true,
+      "reviewProblemTypes": [
+        "numeric_accuracy",
+        "source_grounding"
+      ],
+      "reviewIssueSummary": "審核意見指出文章需要更明確的實務判讀與可驗證內容。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 1818,
+        "numberCount": 21,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "產稿前建立 claims table，列出收入、支出、補助、費用、前後差異與每個數字的來源或假設。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "numeric_proof_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-008",
+      "sourceRef": "private-event-hash-7c8e46729a94",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "editorial_quality_gap"
+      ],
+      "reviewIssueSummary": "審核意見指出文章需要更明確的實務判讀與可驗證內容。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 3360,
+        "numberCount": 11,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": true,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [],
+        "reviewerAgents": [
+          "quality_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-009",
+      "sourceRef": "private-event-hash-70a40011265f",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "numeric_accuracy"
+      ],
+      "reviewIssueSummary": "審核意見指出文章需要更明確的實務判讀與可驗證內容。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 2870,
+        "numberCount": 10,
+        "hasScenario": true,
+        "hasBeforeAfter": true,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [
+          "產稿前建立 claims table，列出收入、支出、補助、費用、前後差異與每個數字的來源或假設。"
+        ],
+        "reviewerAgents": [
+          "quality_reviewer",
+          "numeric_proof_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    },
+    {
+      "cardId": "review-contrast-20260603-010",
+      "sourceRef": "private-event-hash-61bb2bcc54bd",
+      "status": "REJECT",
+      "clickedReviewRow": true,
+      "reviewDetailFound": true,
+      "reviewTitleFound": true,
+      "reviewContentFound": false,
+      "reviewDetailCompleteness": "title_only",
+      "reviewLearningReady": false,
+      "reviewProblemTypes": [
+        "editorial_quality_gap"
+      ],
+      "reviewIssueSummary": "審核意見指出文章需要更明確的實務判讀與可驗證內容。",
+      "articleSignals": {
+        "commentTabChecked": true,
+        "articleOpened": true,
+        "charCount": 1639,
+        "numberCount": 2,
+        "hasScenario": true,
+        "hasBeforeAfter": false,
+        "hasTaiwanPolicy": false,
+        "hasAction": true
+      },
+      "contrastLearning": {
+        "needsCrossCheck": [
+          "article_claims",
+          "review_feedback",
+          "taiwan_current_sources",
+          "reader_actionability"
+        ],
+        "checkableRules": [],
+        "reviewerAgents": [
+          "quality_reviewer"
+        ]
+      },
+      "privacy": {
+        "rawEventIdStored": false,
+        "rawReviewTextStored": false,
+        "rawArticleTextStored": false,
+        "deidentifiedOnly": true
+      }
+    }
+  ],
+  "errors": []
+}

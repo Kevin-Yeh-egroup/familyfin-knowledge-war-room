@@ -1,6 +1,6 @@
 {
-  "updatedAt": "2026-06-02T23:08:00+08:00",
-  "source": "FamilyFin knowledge war room full learning run plus plain-text submission pack",
+  "updatedAt": "2026-06-03T00:55:00+08:00",
+  "source": "FamilyFin knowledge war room full learning run plus plain-text submission pack + review rejection click learning batch",
   "metrics": {
     "indexedPublishedArticles": 1320,
     "indexedDraftArticles": 27,
@@ -13,7 +13,12 @@
     "processingBodies": 12,
     "unknownBodies": 1,
     "nextOffset": 2026,
-    "completed": true
+    "completed": true,
+    "reviewRejectionClickBatchAttempted": 10,
+    "reviewRejectionRowsClicked": 10,
+    "reviewRejectionTitlesFound": 10,
+    "reviewRejectionContentsFound": 3,
+    "reviewRejectionLearningReadyCards": 3
   },
   "learningSummary": {
     "status": "completed",
@@ -669,7 +674,7 @@
     ]
   },
   "agentTrainingOptimization": {
-    "updatedAt": "2026-06-02T23:42:00+08:00",
+    "updatedAt": "2026-06-03T00:55:00+08:00",
     "status": "project-local candidate",
     "purpose": "把好理家在文章 agent 從讀全文與寫規則，升級為可追蹤、可對照、可評估的學習閉環。",
     "methodologySources": [
@@ -713,19 +718,38 @@
       "hasSuccessRejectedGroupComparison": true,
       "hasReviewerAgents": true,
       "hasLearningCardSchema": true,
-      "hasCommentArticleToReviewCommentPairing": false,
+      "hasCommentArticleToReviewCommentPairing": true,
       "hasPerEventReviewCommentText": false,
       "hasPerEventAgentDiscussionTrace": false,
-      "hasLabelReviewRejectionAdviceLearning": false,
+      "hasLabelReviewRejectionAdviceLearning": true,
       "labelReviewRejectionAudit": {
         "checkedAt": "2026-06-02T23:59:00+08:00",
         "sampleCount": 540,
         "rejectCount": 187,
         "publicSubmissionRejectCount": 150,
         "editorAdviceParsedInPreviousPacks": 0,
-        "finding": "先前 learning pack 只有審核狀態與文章正文，沒有解析標籤審核駁回的總編輯文字建議。回查確認審核內容藏在 EVENT_REVIEW 表格列詳情中，必須點擊審核駁回列才可讀到審核標題與審核內容。"
+        "finding": "先前 learning pack 只有審核狀態與文章正文，沒有解析標籤審核駁回的總編輯文字建議。2026-06-03 首批回查確認：必須點擊 EVENT_REVIEW 表格中的審核駁回資料列，且完整學習必須讀到審核內容，不可只看審核標題。",
+        "firstClickedBatchAt": "2026-06-03T00:55:00+08:00",
+        "firstClickedBatch": {
+          "attempted": 10,
+          "clickedReviewRows": 10,
+          "reviewTitlesFound": 10,
+          "reviewContentsFound": 3,
+          "completeReviewDetailsFound": 3,
+          "reviewLearningReadyCards": 3,
+          "commentArticlesOpened": 10,
+          "contentRequiredForCompleteLearning": true,
+          "titleOnlyCountsAsPartialSignal": true,
+          "publicDataFile": "data/review-contrast-cards-2026-06-03.json",
+          "rawReviewTextStored": false,
+          "rawArticleTextStored": false,
+          "rawEventIdsStored": false
+        }
       },
-      "summary": "目前已完成文章正文與審核狀態的群體學習，但公開 repo 沒有證據顯示已逐則完成評論文章全文與審核/駁回評語原文的交叉對照。"
+      "summary": "目前已完成文章正文與審核狀態的群體學習，並啟動審核駁回列的逐筆點擊回查。首批 10 筆中 3 筆具備審核內容並可形成完整學習卡；只有審核標題者列為部分訊號。",
+      "labelReviewRejectionLearningMaturity": "partial-first-click-batch",
+      "reviewContentRequiredForCompleteLearning": true,
+      "hasPerEventReviewContentDerivedLearning": true
     },
     "reviewContrastLearningLoop": {
       "name": "Review Contrast Learning Loop",
@@ -736,7 +760,18 @@
         "召集 reviewer 討論：review_feedback_miner、article_pattern_miner、writing_angle_reviewer、numeric_proof_reviewer、non_concept_reviewer、reader_appeal_reviewer、quality_reviewer。",
         "升級規則：依出現次數與風險等級決定是否成為下週提醒或必查門檻。",
         "回寫工作台：顯示新增學習卡數、已交叉對照數、尚缺評語原文數、已升級規則數與漏判 reviewer。"
-      ]
+      ],
+      "contentGate": {
+        "completeLearningRequires": [
+          "comment_article_body",
+          "review_title",
+          "review_content"
+        ],
+        "partialSignalOnly": [
+          "review_title_without_review_content"
+        ],
+        "reviewerReminder": "review_feedback_miner 不得只讀審核標題；必須讀審核內容並與評論文章交叉對照。"
+      }
     },
     "recommendedTables": [
       "review_event_pairs",
