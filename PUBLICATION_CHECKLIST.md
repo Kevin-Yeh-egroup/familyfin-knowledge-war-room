@@ -9,11 +9,18 @@
 - [x] `vercel.json` sets `X-Robots-Tag`.
 - [x] GitHub public repo created: `Kevin-Yeh-egroup/familyfin-knowledge-war-room`.
 - [x] Vercel project connected to GitHub repo.
-- [ ] 2026-06-02 Production deployment verified after commit.
-- [ ] Stable public URL verified after commit.
+- [x] 2026-06-02 Production deployment verified after commit.
+- [x] Stable public URL verified after commit.
 
 Current package:
 
 - Learning milestone: `reports/2026-06-02-learning-milestone-001.md`
 - Agent rules: `docs/agent-writing-quality-rules-v1.md`
 - Suggestions data: `suggestions.json`
+
+Production proof:
+
+- Stable URL: <https://familyfin-knowledge-war-room.vercel.app/>
+- Deployment URL: <https://familyfin-knowledge-war-room-kb53b6l7q-egroup-task3s-projects.vercel.app>
+- Header verified: `X-Robots-Tag: noindex, nofollow, noarchive`
+- `robots.txt`: `Disallow: /`
