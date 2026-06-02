@@ -46,3 +46,17 @@
 - Kevin 審核後，將退修原因整理回 `docs/submission-article-generation-standard-v2.md`。
 - 若連續 2-3 週同類主題重複，需啟動知識缺口重排，避免變成文章農場。
 
+## 2026-06-02 追加規則
+
+Kevin 補充：參考資料必須使用目前最新資料，尤其歷年補助、計畫、津貼、申請資格、金額與期限，必須確認：
+
+- 是目前最新資訊。
+- 是最符合台灣脈絡的資訊。
+- 符合台灣中央以及地方政府規範。
+
+已更新：
+
+- `docs/current-taiwan-data-verification-rules.md`
+- `docs/submission-article-generation-standard-v2.md`
+- `suggestions.json` 品質門檻
+- `automation-14` 每週自動化 prompt
