@@ -95,3 +95,23 @@ Kevin 追加定義：文章不能是概念文，不代表只要增加資料或�
 - `docs/readability-research-20260602.md`
 
 治理判斷：本次先保持為 `familyfin-knowledge-war-room` 專用規格，不升級成全域 skill。等累積 2 到 3 次投稿退修/通過回饋後，再評估是否抽成可重用的好理家在文章生成 skill。
+
+## 2026-06-02 Agent 訓練與審查駁回交叉學習優化
+
+Kevin 要求補查 agent 訓練方法，並確認先前是否真的完成「評論文章 × 審核評語」的交叉對照學習。
+
+本次啟動最新 Agent OS，並依 agent training standard 檢查後，結論如下：
+
+- 已完成：文章正文與審核狀態的群體學習，包含成功樣本與退修/駁回樣本的差異摘要。
+- 已完成：用 reviewer agent 討論文章品質方向，包括非概念文、讀者吸引力、數值化證明與書寫角度。
+- 尚未能確認：每一則評論中的文章全文與審核/駁回評語原文已逐則交叉對照。
+- 尚未能確認：每則事件都有 agent 討論 trace 與可回查 learning card。
+
+已補強：
+
+- 新增 `docs/agent-training-and-review-feedback-loop.md`。
+- 新增 `suggestions.json` 的 `agentTrainingOptimization`。
+- 新增前端「Agent 訓練閉環」區塊。
+- 更新每週流程規則：下一輪需優先建立 `review_event_pairs`、`review_contrast_cards`、`agent_learning_discussions` 與 `eval_trace_records`。
+
+本次治理判斷：仍保持 project-local candidate，不升級全域 Agent OS、不寫全域 memory。需要等下一輪實際取得審核評語原文後，再判斷是否能升級成好理家在文章生成 skill。

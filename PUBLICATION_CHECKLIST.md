@@ -32,6 +32,7 @@ Current package:
 - [x] Numeric proof reviewer added: articles must include concrete numbers, before/after difference examples, and improvement factors.
 - [x] Writing angle reviewer added: public and social-work articles are checked against audience-specific entry angles and banned phrases.
 - [x] Learning database fields documented for numeric proof, writing angle, non-concept review, banned phrases, review feedback, and agent discussions.
+- [x] Agent training loop documented with review-event pairing, contrast cards, agent discussion traces, and explicit gap status for missing per-event review comments.
 
 Production proof:
 

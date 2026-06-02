@@ -71,7 +71,7 @@
   },
   "qualityGates": [
     "正文扣除標題、讀者標籤、來源、審核紀錄與任何平台欄位後，必須超過 2000 字。",
-    "投稿工作台只顯示純文字正文，不顯示 Markdown、SEO、AIO、Meta、Slug 或 FAQ 欄位。",
+    "投稿工作台只顯示純文字正文，不顯示 Markdown、平台欄位或 FAQ 欄位。",
     "文章不能停留在概念描述，必須有具體生活場景、壓力如何發生、讀者如何判斷自己處境，以及可理解的下一步。",
     "資料與案例要融入敘事，不用一段接一段報來源；每篇最多保留 1 到 2 個關鍵數據在正文，其他查核放在內部紀錄。",
     "每篇正文至少要有 2 個具體數值或數值化情境，至少 1 個前後差異示例，並指出 1 到 3 個改善關鍵因素。",
@@ -79,6 +79,7 @@
     "一般民眾版要從生活壓力、前後差異或具體選擇進入；社工版要從實務誤判、風險判讀或介入焦點進入。",
     "涉及補助、津貼、計畫、申請資格、金額、期限、法規或政府服務，必須查核目前有效版本，並確認中央與地方規範差異。",
     "退修或駁回建議是最優先學習來源；每次投稿包都要先萃取退修規則，再用規則檢查新文章。",
+    "若能取得評論中的文章與審核評語，必須建立交叉對照卡；若只能取得審核狀態，必須標示為群體差異學習，不可宣稱已逐則學完評語。",
     "每篇都要通過非概念文檢查 agent：情境密度、動作密度、台灣脈絡、引用感、AI腔、讀者代入感。",
     "文章語氣要像陪讀者整理處境，不像報告、簡報、政策懶人包、投資課或社群貼文。"
   ],
@@ -122,7 +123,14 @@
     "id": "2026-06-02-weekly-pack",
     "title": "2026-06-02 首批 10 篇純文字投稿文章包",
     "status": "待 Kevin 審核",
-    "description": "每篇只提供純文字正文預覽與複製，不顯示 SEO/AIO 欄位。正文扣除平台欄位後均超過 2000 字。首批文章已標示需使用非概念文檢查 agent 做二次退修學習。",
+    "description": "每篇只提供純文字正文預覽與複製，不顯示平台欄位。正文扣除平台欄位後均超過 2000 字。首批文章已標示需使用非概念文檢查 agent 做二次退修學習。",
+    "reviewLearningFields": [
+      "reviewStatusHistory",
+      "reviewFeedbackCards",
+      "agentDiscussionTrace",
+      "contrastCardIds",
+      "humanReviewNote"
+    ],
     "articles": [
       {
         "id": "rent-subsidy-stability",
@@ -611,7 +619,7 @@
       "一般民眾版從生活壓力與自我理解進入；社工版從實務判讀、評估盲點與介入焦點進入。",
       "來源查核留在內部，不在正文堆連結。",
       "用短段落、清楚小標、生活語言，讓手機閱讀者可掃讀。",
-      "不要為了 SEO 或字數而寫；讀者讀完要覺得有被幫助，不需要再搜尋一次。"
+      "不要為了搜尋排序或字數而寫；讀者讀完要覺得有被幫助，不需要再搜尋一次。"
     ],
     "sources": [
       {
@@ -660,6 +668,82 @@
       }
     ]
   },
+  "agentTrainingOptimization": {
+    "updatedAt": "2026-06-02T23:42:00+08:00",
+    "status": "project-local candidate",
+    "purpose": "把好理家在文章 agent 從讀全文與寫規則，升級為可追蹤、可對照、可評估的學習閉環。",
+    "methodologySources": [
+      {
+        "label": "OpenAI Practical Guide to Building Agents：human intervention、guardrails、handoffs",
+        "url": "https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf"
+      },
+      {
+        "label": "OpenAI Agent Evals：使用 traces、graders、datasets、eval runs 改善 agent 品質",
+        "url": "https://developers.openai.com/api/docs/guides/agent-evals"
+      },
+      {
+        "label": "OpenAI Trace Grading：用結構化分數評估 agent 決策、工具與 handoff",
+        "url": "https://developers.openai.com/api/docs/guides/trace-grading"
+      },
+      {
+        "label": "OpenAI Agents SDK Guardrails：input/output/tool guardrails 與 workflow boundaries",
+        "url": "https://openai.github.io/openai-agents-python/guardrails/"
+      },
+      {
+        "label": "Anthropic Building Effective Agents：prompt chaining、routing、parallelization、evaluator-optimizer",
+        "url": "https://www.anthropic.com/engineering/building-effective-agents"
+      },
+      {
+        "label": "Google Agents whitepaper：RAG、data stores、targeted learning、retrieval-based in-context learning",
+        "url": "https://storage.ghost.io/c/dc/a8/dca8ae32-7ed6-405a-b948-680b55c8f3dc/content/files/2025/01/Whitepaper-Agents---Google.pdf"
+      }
+    ],
+    "methodRules": [
+      "不要把 agent 訓練理解成 prompt 變長；要建立資料來源、案例對照、評估標準與回饋閉環。",
+      "每篇文章生成都要留下可回查 trace：使用哪些資料、召集哪些 reviewer、觸發哪些 guardrail、最後為何通過或退修。",
+      "用 retrieval 取回相似成功稿與退修稿摘要，讓 agent 在生成前先看見好壞差異。",
+      "每篇文章先建立 source plan 與 claims table，將主張、來源、年份、風險與是否需人工複核分開記錄。",
+      "用 evaluator-optimizer loop 處理退修：先定位失敗段落與規則，再重寫，不直接整篇重生。",
+      "把人工審核視為訓練資料；核准、退修、駁回都要形成 learning card。",
+      "先用 20 題左右的小型 eval set 檢查 groundedness、source quality、可讀性、品牌語氣、風險合規與非概念文。",
+      "同類退修問題出現 2 次以上列入下週提醒，3 次以上升級為必查門檻；政策、數字、法規錯誤立即升級。"
+    ],
+    "currentAudit": {
+      "hasArticleStatusLearning": true,
+      "hasSuccessRejectedGroupComparison": true,
+      "hasReviewerAgents": true,
+      "hasLearningCardSchema": true,
+      "hasCommentArticleToReviewCommentPairing": false,
+      "hasPerEventReviewCommentText": false,
+      "hasPerEventAgentDiscussionTrace": false,
+      "summary": "目前已完成文章正文與審核狀態的群體學習，但公開 repo 沒有證據顯示已逐則完成評論文章全文與審核/駁回評語原文的交叉對照。"
+    },
+    "reviewContrastLearningLoop": {
+      "name": "Review Contrast Learning Loop",
+      "goal": "把評論中的文章、審核評語、原稿問題段落、修正建議與 agent 討論整合成可累積經驗的學習卡。",
+      "steps": [
+        "擷取事件配對：event_id、article_id、文章狀態、評論文章摘要、審核評語、時間與來源位置。",
+        "建立差異對照：原稿問題段落、評語指出問題、通過稿相反特徵、可檢查規則、修正示範。",
+        "召集 reviewer 討論：review_feedback_miner、article_pattern_miner、writing_angle_reviewer、numeric_proof_reviewer、non_concept_reviewer、reader_appeal_reviewer、quality_reviewer。",
+        "升級規則：依出現次數與風險等級決定是否成為下週提醒或必查門檻。",
+        "回寫工作台：顯示新增學習卡數、已交叉對照數、尚缺評語原文數、已升級規則數與漏判 reviewer。"
+      ]
+    },
+    "recommendedTables": [
+      "review_event_pairs",
+      "review_contrast_cards",
+      "agent_learning_discussions",
+      "eval_trace_records",
+      "eval_cases"
+    ],
+    "nextRunRequirements": [
+      "重新進入 InfoCenter 事件列表時，優先確認每則事件是否有評論文章與審核評語欄位可讀。",
+      "若可讀，建立去識別化 review_event_pairs；若不可讀，記錄缺口與可能的人工匯出路徑。",
+      "每週文章包至少產出 5 張 review_contrast_cards，直到累積足夠退修樣本。",
+      "每張卡必須含 agent 討論摘要與是否升級規則的判定。",
+      "每篇文章生成前先保存 source plan 與 claims table，投稿前再保存 trace 摘要。"
+    ]
+  },
   "nonConceptAgent": {
     "name": "非概念文檢查 agent",
     "maturity": "project-local-candidate",
@@ -669,7 +753,8 @@
       "把退修意見拆成問題類型：太概念、缺案例、資料過舊、引用感太重、AI腔、讀者版本錯位、標籤錯位、不可操作。",
       "每則意見都改寫成可檢查規則，例如「不要只說建立安全感」改成「必須寫出哪個生活場景讓安全感被破壞」。",
       "同一類問題出現 2 次以上，升為下週必查門檻。",
-      "保留原稿片段、審稿意見、修正後片段，形成可對照學習卡。"
+      "保留原稿片段、審稿意見、修正後片段，形成可對照學習卡。",
+      "若事件中有評論文章與審核評語，建立 review_contrast_card；若缺評語原文，標示為資料缺口。"
     ],
     "conceptDetection": [
       "抽象詞密度過高：安全感、韌性、支持系統、結構、資源等詞很多，但沒有日常場景。",
@@ -764,16 +849,23 @@
         "writing_angle_rules",
         "numeric_proof_examples",
         "source_fact_checks",
+        "review_event_pairs",
+        "review_contrast_cards",
         "non_concept_reviews",
         "tone_and_banned_phrases",
         "review_feedback_cards",
-        "agent_discussions"
+        "agent_discussions",
+        "eval_trace_records"
       ]
     },
     "discussionReviewers": [
       {
         "name": "review_feedback_miner",
         "purpose": "從 Kevin 或文章管理端的退修/駁回建議萃取下週必避規則。"
+      },
+      {
+        "name": "review_contrast_miner",
+        "purpose": "把評論文章、審核評語、原稿問題段落與成功樣本特徵交叉對照，形成學習卡。"
       },
       {
         "name": "writing_angle_reviewer",

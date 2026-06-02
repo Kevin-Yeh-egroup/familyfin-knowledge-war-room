@@ -282,6 +282,24 @@
     .tag.gold { background: #fbf0d9; color: #80540f; }
     .tag.rose { background: #f9e8ee; color: #9c2f50; }
 
+    .review-note-input {
+      width: 100%;
+      min-height: 116px;
+      resize: vertical;
+      padding: 12px 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      font: inherit;
+      line-height: 1.7;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .review-note-input:focus {
+      outline: 3px solid rgba(20, 125, 126, .16);
+      border-color: rgba(20, 125, 126, .72);
+    }
+
     .review-board {
       display: grid;
       grid-template-columns: minmax(300px, .82fr) minmax(0, 1.55fr);
@@ -506,7 +524,7 @@
       <div>
         <div class="eyebrow">2026-06-02 plain-text workbench</div>
         <h1>10 篇可投稿文章工作台</h1>
-        <p>這版只顯示純文字正文，可一鍵複製。SEO、AIO、來源查核與平台欄位改放在內部規則，不佔用投稿預覽；每篇正文扣除欄位後都需超過 2000 字。</p>
+        <p>這版只顯示純文字正文，可一鍵複製。來源查核與平台欄位改放在內部規則，不佔用投稿預覽；每篇正文扣除欄位後都需超過 2000 字。</p>
       </div>
       <div class="status-board">
         <div class="status-tile"><strong id="heroBatches">17</strong><span>已完成全文學習批次</span></div>
@@ -538,6 +556,35 @@
           <div class="box">
             <h3>這輪修正</h3>
             <p>文章包改為純文字正文與複製流程。審核焦點從「欄位完整」往前移到「是否太概念、是否有生活畫面、資料是否自然融入」。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="training" class="panel">
+      <div class="section-head">
+        <h2>Agent 訓練閉環</h2>
+        <p class="sub">用評論文章、審核評語、退修差異與 reviewer 討論，累積可回查的好文章經驗。</p>
+      </div>
+      <div class="section-body">
+        <div class="grid-2">
+          <div class="box">
+            <h3>目前稽核</h3>
+            <p id="trainingAudit">讀取中...</p>
+          </div>
+          <div class="box">
+            <h3>交叉學習流程</h3>
+            <p id="trainingLoop">讀取中...</p>
+          </div>
+        </div>
+        <div class="grid-2" style="margin-top:16px">
+          <div>
+            <h3>方法論轉成規則</h3>
+            <ul id="trainingRules" class="rule-list"></ul>
+          </div>
+          <div>
+            <h3>下一輪必查</h3>
+            <ul id="trainingNextRun" class="rule-list"></ul>
           </div>
         </div>
       </div>
@@ -636,7 +683,7 @@
     <section id="quality" class="panel">
       <div class="section-head">
         <h2>品質門檻</h2>
-        <p class="sub">SEO/AIO 不再顯示於投稿預覽，但文章排版與可讀性仍需符合平台文章標準。</p>
+        <p class="sub">平台欄位不顯示於投稿預覽，但文章排版與可讀性仍需符合平台文章標準。</p>
       </div>
       <div class="section-body">
         <ul id="qualityGates" class="rule-list"></ul>
@@ -677,18 +724,26 @@
       return loadReviews()[id]?.status || "pending";
     }
 
-    function setStatus(id, status) {
+    function setStatus(id, status, note) {
       const reviews = loadReviews();
       const article = data.articlePack.articles.find((item) => item.id === id);
+      const previous = reviews[id] || {};
       reviews[id] = {
+        ...previous,
         status,
         title: article.title,
         primaryTag: article.primaryTag,
         audience: article.audience,
+        note: note ?? previous.note ?? "",
         reviewedAt: new Date().toISOString()
       };
       saveReviews(reviews);
       render();
+    }
+
+    function saveReviewNote(id, note) {
+      const status = statusFor(id);
+      setStatus(id, status, note);
     }
 
     function makeTag(text, kind) {
@@ -775,6 +830,32 @@
       });
     }
 
+    function fillList(id, items) {
+      const list = document.getElementById(id);
+      if (!list) return;
+      list.textContent = "";
+      (items || []).forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+    }
+
+    function renderTraining() {
+      const training = data.agentTrainingOptimization || {};
+      const audit = training.currentAudit || {};
+      const loop = training.reviewContrastLearningLoop || {};
+      const auditParts = [
+        audit.hasArticleStatusLearning ? "已完成文章正文＋審核狀態的群體學習。" : "尚未完成文章狀態學習。",
+        audit.hasCommentArticleToReviewCommentPairing ? "已完成評論文章與審核評語逐則配對。" : "尚未能證明已逐則配對評論文章與審核評語原文。",
+        audit.hasPerEventAgentDiscussionTrace ? "已保留逐則 agent 討論 trace。" : "尚缺逐則 agent 討論 trace。"
+      ];
+      document.getElementById("trainingAudit").textContent = audit.summary || auditParts.join(" ");
+      document.getElementById("trainingLoop").textContent = `${loop.name || "Review Contrast Learning Loop"}：${loop.goal || ""}`;
+      fillList("trainingRules", training.methodRules || []);
+      fillList("trainingNextRun", training.nextRunRequirements || []);
+    }
+
     function renderAgent() {
       const agent = data.nonConceptAgent || {};
       document.getElementById("agentPurpose").textContent = agent.purpose || "";
@@ -795,16 +876,6 @@
         li.textContent = rule;
         evidence.appendChild(li);
       });
-
-      const fillList = (id, items) => {
-        const list = document.getElementById(id);
-        list.textContent = "";
-        (items || []).forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          list.appendChild(li);
-        });
-      };
 
       fillList("numericRules", agent.numericProofReviewer?.requiredChecks || []);
       fillList("angleRules", [
@@ -875,6 +946,16 @@
 
       detailSection(detail, "Agent 討論摘要", [paragraph(article.agentDiscussion || "尚未填寫。")]);
 
+      const currentReview = loadReviews()[article.id] || {};
+      const reviewNote = document.createElement("textarea");
+      reviewNote.className = "review-note-input";
+      reviewNote.placeholder = "輸入退修、駁回或核准原因。這會先存於此瀏覽器，之後可轉成 review_feedback_card。";
+      reviewNote.value = currentReview.note || "";
+      detailSection(detail, "人工審核意見 / 退修原因", [
+        reviewNote,
+        paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
+      ]);
+
       const body = document.createElement("div");
       body.className = "article-body";
       const plain = splitArticleText(activeBody, article);
@@ -888,15 +969,16 @@
         actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
         actionButton("複製審稿版", "", () => copyText(plain.reviewText, "已複製含標籤的審稿版。")),
         actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8")),
-        actionButton("核准投稿", "primary", () => setStatus(article.id, "approved")),
-        actionButton("退修", "warn", () => setStatus(article.id, "revise")),
-        actionButton("駁回", "danger", () => setStatus(article.id, "rejected"))
+        actionButton("儲存審核意見", "", () => saveReviewNote(article.id, reviewNote.value.trim())),
+        actionButton("核准投稿", "primary", () => setStatus(article.id, "approved", reviewNote.value.trim())),
+        actionButton("退修", "warn", () => setStatus(article.id, "revise", reviewNote.value.trim())),
+        actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim()))
       );
       detail.appendChild(actions);
       const copyNote = document.createElement("div");
       copyNote.className = "copy-note";
       copyNote.id = "copyNote";
-      copyNote.textContent = "預設顯示與下載為標題＋正文，不包含 SEO/AIO、來源清單或查核紀錄。";
+      copyNote.textContent = "預設顯示與下載為標題＋正文，不包含平台欄位、來源清單或查核紀錄。";
       detail.appendChild(copyNote);
     }
 
@@ -984,6 +1066,7 @@
 
     async function render() {
       renderMetrics();
+      renderTraining();
       renderAgent();
       renderList();
       renderDetail();

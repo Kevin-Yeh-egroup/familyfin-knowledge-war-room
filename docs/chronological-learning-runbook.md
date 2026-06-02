@@ -6,15 +6,16 @@
 
 ## 已完成
 
-- Batch 001：`startOffset = 0`
-- Batch 002：`startOffset = 120`
-- Batch 003：`startOffset = 240`
-- Batch 004：`startOffset = 360`
-- Batch 005：`startOffset = 480`
+- Batch 001 至 Batch 017 已完成。
+- 已掃描事件列表：2026 則。
+- 可學文章正文：540 篇。
+- 成功樣本：340 篇。
+- 退修或駁回樣本：187 篇。
 
-下一批：
+目前狀態：
 
-- Batch 006：`startOffset = 600`
+- `completed = true`
+- `nextOffset = 2026`
 
 ## 節奏
 
@@ -24,6 +25,23 @@
 - raw learning packs 保留在本機，不進公開 repo
 - 新增建議的分類必須參考 `docs/article-zone-tag-reference.md`
 - 每篇建議至少標 1 個文章受眾與 1 個正式知識庫標籤
+- 下一階段重點改為 `Review Contrast Learning Loop`：逐則確認評論中的文章、審核評語、駁回原因與原稿段落是否可交叉對照。
+- 若審核評語原文無法從事件列表讀取，需記錄缺口與可行的人工匯出路徑。
+
+## Review Contrast Learning Loop
+
+後續每批不是只讀正文，而是建立可學習配對：
+
+- `event_id`
+- `article_id`
+- 評論中的文章摘要
+- 審核或駁回評語摘要
+- 原稿問題段落
+- 評語指出的問題
+- agent 討論摘要
+- 是否升級為下週必查規則
+
+公開 repo 只保存去識別化摘要、統計與規則，不保存 InfoCenter 原文或內部評論全文。
 
 ## 公開邊界
 
