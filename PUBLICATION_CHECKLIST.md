@@ -21,6 +21,6 @@ Current package:
 Production proof:
 
 - Stable URL: <https://familyfin-knowledge-war-room.vercel.app/>
-- Deployment URL: <https://familyfin-knowledge-war-room-kb53b6l7q-egroup-task3s-projects.vercel.app>
+- Vercel CLI deployment target: `production`
 - Header verified: `X-Robots-Tag: noindex, nofollow, noarchive`
 - `robots.txt`: `Disallow: /`
