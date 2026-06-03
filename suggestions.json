@@ -295,7 +295,7 @@
       },
       {
         "id": "emergency-buffer-income-gap",
-        "title": "手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗",
+        "title": "手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-緊急預備金",
         "secondaryTags": [
@@ -389,7 +389,7 @@
       },
       {
         "id": "scam-loss-family-recovery",
-        "title": "錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血",
+        "title": "錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來",
         "audience": "一般民眾",
         "primaryTag": "財務安全與風險-詐騙防治",
         "secondaryTags": [
@@ -581,7 +581,7 @@
       },
       {
         "id": "retirement-care-and-scam-risk",
-        "title": "退休金每月進來，醫療、照顧和詐騙風險也每天靠近",
+        "title": "退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張",
         "audience": "一般民眾",
         "primaryTag": "生命歷程與財務-退休與高齡",
         "secondaryTags": [
@@ -638,6 +638,7 @@
       "bodyOnlyCopy": true,
       "bodyMinChars": 2000,
       "titleDiversityRequired": true,
+      "titleNaturalTaiwanChineseRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "files": {
@@ -678,8 +679,13 @@
     },
     "titleDiversityPolicy": {
       "status": "required",
-      "note": "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句。",
-      "maxNotColonReframeTitles": 2
+      "note": "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句，且必須是自然台灣中文，不可像美語直譯或顧問簡報。",
+      "maxNotColonReframeTitles": 2,
+      "awkwardTitleExamples": [
+        "緊急預備金要先回答收入空窗",
+        "家庭要先做的財務止血",
+        "風險也每天靠近"
+      ]
     }
   },
   "readerResearch": {
@@ -1780,6 +1786,7 @@
         "default": "non_series",
         "seriesRequiresExplicitKevinRequest": true,
         "maxSameFormulaTitlesPerPack": 2,
+        "naturalTaiwanChineseRequired": true,
         "requiredTitleEntryTypes": [
           "生活畫面",
           "具體問題",
@@ -1788,7 +1795,12 @@
           "後果提醒",
           "家庭選擇困境"
         ],
-        "rejectWhen": "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式。"
+        "rejectWhen": "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式；標題出現美語直譯、顧問簡報感或不自然抽象詞也要退回。",
+        "awkwardExamples": [
+          "緊急預備金要先回答收入空窗",
+          "家庭要先做的財務止血",
+          "風險也每天靠近"
+        ]
       },
       "publicAudienceInstruction": "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
       "socialWorkAudienceInstruction": "社工版要讓助人工作者看見表面問題背後的結構、評估盲點與介入焦點。語氣專業穩定，但不要寫成學術論文。"
@@ -1891,7 +1903,7 @@
         "未通過時回到對應 stage 補素材，不只潤稿。"
       ]
     },
-    "integrityHash": "59382e164814954de712b95d97b3696840e8896201bd2ac4a82b7ab0d505eda2"
+    "integrityHash": "be4135157abc78d3c7410d05f381b7248e12ba582d09844206a06e61440006ba"
   },
   "roleIntegrityCorrection": {
     "status": "implemented",

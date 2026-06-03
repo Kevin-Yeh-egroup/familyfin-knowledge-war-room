@@ -40,6 +40,14 @@ const bannedBodyPatterns = [
   /\bagent\b/i,
 ];
 
+const awkwardTitlePatterns = [
+  /要先回答/,
+  /收入空窗/,
+  /財務止血/,
+  /風險也每天靠近/,
+  /家庭要先做的/,
+];
+
 function body(paragraphs) {
   return paragraphs.map((line) => line.trim()).filter(Boolean).join("\n\n");
 }
@@ -165,7 +173,7 @@ const articles = [
   {
     id: "emergency-buffer-income-gap",
     fileName: "04-emergency-buffer-income-gap.txt",
-    title: "手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗",
+    title: "手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看",
     primaryTag: "財務管理與規劃-緊急預備金",
     secondaryTags: ["家庭重大事件-收入中斷", "主要問題彙編-政府救助資源", "評估與輔導觀點-財務韌性"],
     categoryType: "生活壓力型",
@@ -243,7 +251,7 @@ const articles = [
   {
     id: "scam-loss-family-recovery",
     fileName: "06-scam-loss-family-recovery.txt",
-    title: "錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血",
+    title: "錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來",
     primaryTag: "財務安全與風險-詐騙防治",
     secondaryTags: ["財務管理與規劃-緊急預備金", "家庭重大事件-收入與資產損失", "評估與輔導觀點-風險辨識"],
     categoryType: "風險預防型",
@@ -408,7 +416,7 @@ const articles = [
   {
     id: "retirement-care-and-scam-risk",
     fileName: "10-retirement-care-and-scam-risk.txt",
-    title: "退休金每月進來，醫療、照顧和詐騙風險也每天靠近",
+    title: "退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張",
     primaryTag: "生命歷程與財務-退休與高齡",
     secondaryTags: ["家庭重大事件-長照與醫療", "財務安全與風險-詐騙防治", "財務管理與規劃-緊急預備金"],
     categoryType: "風險預防型",
@@ -481,6 +489,12 @@ function validateArticles() {
     if (article.text.length <= 2000) fail(`${article.id} body too short: ${article.text.length}`);
     const leaks = findBodyLeaks(article.text);
     if (leaks.length) fail(`${article.id} has role/meta leaks: ${leaks.join(", ")}`);
+    const awkwardTitleMatches = awkwardTitlePatterns
+      .filter((pattern) => pattern.test(article.title))
+      .map((pattern) => pattern.toString());
+    if (awkwardTitleMatches.length) {
+      fail(`${article.id} title sounds unnatural or translated: ${awkwardTitleMatches.join(", ")}`);
+    }
     const family = titleFamily(article.title);
     titleFamilyCounts[family] = (titleFamilyCounts[family] || 0) + 1;
   }
@@ -563,6 +577,7 @@ function updateSuggestions() {
       bodyOnlyCopy: true,
       bodyMinChars: 2000,
       titleDiversityRequired: true,
+      titleNaturalTaiwanChineseRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     files: {
@@ -592,8 +607,13 @@ function updateSuggestions() {
     },
     titleDiversityPolicy: {
       status: "required",
-      note: "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句。",
+      note: "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句，且必須是自然台灣中文，不可像美語直譯或顧問簡報。",
       maxNotColonReframeTitles: 2,
+      awkwardTitleExamples: [
+        "緊急預備金要先回答收入空窗",
+        "家庭要先做的財務止血",
+        "風險也每天靠近",
+      ],
     },
   };
   suggestions.roleIntegrityCorrection = {

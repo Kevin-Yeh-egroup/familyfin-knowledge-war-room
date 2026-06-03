@@ -248,6 +248,7 @@ const generationPromptContract = {
     default: "non_series",
     seriesRequiresExplicitKevinRequest: true,
     maxSameFormulaTitlesPerPack: 2,
+    naturalTaiwanChineseRequired: true,
     requiredTitleEntryTypes: [
       "生活畫面",
       "具體問題",
@@ -257,7 +258,12 @@ const generationPromptContract = {
       "家庭選擇困境",
     ],
     rejectWhen:
-      "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式。",
+      "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式；標題出現美語直譯、顧問簡報感或不自然抽象詞也要退回。",
+    awkwardExamples: [
+      "緊急預備金要先回答收入空窗",
+      "家庭要先做的財務止血",
+      "風險也每天靠近",
+    ],
   },
   publicAudienceInstruction:
     "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
@@ -484,6 +490,7 @@ function renderPrompt(data) {
 - 不輸出內部規劃、article brief、gate 自評、審稿建議、修稿建議或 agent 討論。
 - 標題需有生活感與吸引力。
 - 標題不得整批使用同一公式。除非 Kevin 明確要求系列文章，否則同批 10 篇要混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境；「不是＿＿：＿＿」同批最多 1 到 2 篇。
+- 標題必須是自然台灣中文，不可像美語直譯或顧問簡報。避免「要先回答收入空窗」「財務止血」「風險也每天靠近」這類意思可懂但不自然的語句。
 - 段落標題需有重新定義問題的效果。
 - 至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響。
 - 至少兩個具體數值或數值化情境。
