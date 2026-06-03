@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-03T18:40:00+08:00",
+  "updatedAt": "2026-06-03T18:55:00+08:00",
   "source": "FamilyFin knowledge war room role-integrity-corrected public article pack regenerated after Kevin feedback",
   "metrics": {
     "indexedPublishedArticles": 1320,
@@ -142,9 +142,9 @@
   ],
   "articlePack": {
     "id": "2026-06-03-public-regenerated-pack",
-    "title": "2026-06-03 重新生成 10 篇一般民眾純文字投稿文章包",
+    "title": "2026-06-03 家庭生活壓力與財務缺口候選稿",
     "status": "待 Kevin 審核",
-    "description": "本批次修正先前正文混入寫作建議的重大問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性預檢。",
+    "description": "本批次修正先前正文混入寫作建議與標題句型過度相似的問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性預檢。",
     "reviewLearningFields": [
       "Kevin 可點進每篇查看純文字正文。",
       "核准後依 primaryTag 分類存放。",
@@ -154,7 +154,7 @@
     "articles": [
       {
         "id": "rent-subsidy-cashflow",
-        "title": "租金補貼不是安心保證：房租時間差怎麼壓住家庭現金流",
+        "title": "房租五號到期，補貼還沒進來：租屋家庭最容易卡住的時間差",
         "audience": "一般民眾",
         "primaryTag": "主要問題彙編-政府救助資源",
         "secondaryTags": [
@@ -201,7 +201,7 @@
       },
       {
         "id": "single-parent-childcare-gap",
-        "title": "單親家庭不是少一個人幫忙而已：托育時間和收入缺口怎麼一起出現",
+        "title": "一個人接孩子，也一個人接帳單：單親家庭的托育費為什麼常變成收入缺口",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-家庭型態改變",
         "secondaryTags": [
@@ -248,7 +248,7 @@
       },
       {
         "id": "debt-negotiation-cashflow",
-        "title": "債務協商不是找人代辦：先看每月還款有沒有把生活壓扁",
+        "title": "每月都在繳，債卻沒變少：債務協商前先看懂家庭還款壓力",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-債務與信用",
         "secondaryTags": [
@@ -295,7 +295,7 @@
       },
       {
         "id": "emergency-buffer-income-gap",
-        "title": "緊急預備金不是存很多錢：先看家裡能不能撐過一個收入空窗",
+        "title": "手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-緊急預備金",
         "secondaryTags": [
@@ -342,7 +342,7 @@
       },
       {
         "id": "long-term-care-family-budget",
-        "title": "長照不是只有申請服務：照顧支出和少掉的收入都會改變家庭",
+        "title": "爸爸出院後，家裡多了哪些帳單？長照成本常從看不見的地方開始",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-長照與醫療",
         "secondaryTags": [
@@ -389,7 +389,7 @@
       },
       {
         "id": "scam-loss-family-recovery",
-        "title": "詐騙後不是只剩報案：先把家庭生活缺口止住",
+        "title": "錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血",
         "audience": "一般民眾",
         "primaryTag": "財務安全與風險-詐騙防治",
         "secondaryTags": [
@@ -440,7 +440,7 @@
       },
       {
         "id": "first-job-family-support",
-        "title": "第一份薪水不是自由開始：租屋、學貸和家用會先排隊",
+        "title": "第一份薪水進來前，房租和家用已經排隊：青年獨立的第一張收支表",
         "audience": "一般民眾",
         "primaryTag": "生命歷程與財務-青年就業",
         "secondaryTags": [
@@ -487,7 +487,7 @@
       },
       {
         "id": "reduced-hours-income-warning",
-        "title": "減班休息不是還有工作就好：收入少一截時家庭最先斷在哪裡",
+        "title": "減班休息先看三筆錢，收入少一截時帳單不會跟著少",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-收入中斷",
         "secondaryTags": [
@@ -534,7 +534,7 @@
       },
       {
         "id": "special-circumstance-support",
-        "title": "特殊境遇扶助不是救急口號：文件、期限和生活缺口要一起看",
+        "title": "變故後的三個月怎麼撐？特殊境遇家庭扶助要接住的是生活缺口",
         "audience": "一般民眾",
         "primaryTag": "主要問題彙編-政府救助資源",
         "secondaryTags": [
@@ -581,7 +581,7 @@
       },
       {
         "id": "retirement-care-and-scam-risk",
-        "title": "老後安全不是退休金一件事：醫療、照顧和詐騙風險會同時拉扯",
+        "title": "退休金每月進來，醫療、照顧和詐騙風險也每天靠近",
         "audience": "一般民眾",
         "primaryTag": "生命歷程與財務-退休與高齡",
         "secondaryTags": [
@@ -637,6 +637,7 @@
       "seoAioVisible": false,
       "bodyOnlyCopy": true,
       "bodyMinChars": 2000,
+      "titleDiversityRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "files": {
@@ -674,6 +675,11 @@
       "defaultAudience": "一般民眾",
       "socialWorkerOnlyOnExplicitRequest": true,
       "bodyMustNotAddressEditorsOrReviewers": true
+    },
+    "titleDiversityPolicy": {
+      "status": "required",
+      "note": "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句。",
+      "maxNotColonReframeTitles": 2
     }
   },
   "readerResearch": {
@@ -1541,9 +1547,10 @@
           "寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活框架。",
           "寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工造成的財務影響。",
           "列出主要標籤與次要標籤，說明與既有文章的差異。",
-          "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。"
+          "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。",
+          "除非 Kevin 明確要求系列文章，否則同批標題不得大量使用同一公式，例如全部寫成「不是＿＿：＿＿」。"
         ],
-        "generationMove": "先產出 topic fit note，再產出標題。標題不能先行，避免為了標題硬寫一篇平台不需要的文章。"
+        "generationMove": "先產出 topic fit note，再產出標題與 title diversity check。標題不能先行，避免為了標題硬寫一篇平台不需要的文章；同批標題需混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境。"
       },
       {
         "id": "stage-02-audience-angle",
@@ -1765,9 +1772,24 @@
         "taiwan_source_check_plan",
         "structure_map",
         "next_step_note",
+        "title_diversity_plan",
         "role_integrity_scan",
         "gate_self_review"
       ],
+      "titleDiversityPolicy": {
+        "default": "non_series",
+        "seriesRequiresExplicitKevinRequest": true,
+        "maxSameFormulaTitlesPerPack": 2,
+        "requiredTitleEntryTypes": [
+          "生活畫面",
+          "具體問題",
+          "數字切入",
+          "時間壓力",
+          "後果提醒",
+          "家庭選擇困境"
+        ],
+        "rejectWhen": "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式。"
+      },
       "publicAudienceInstruction": "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
       "socialWorkAudienceInstruction": "社工版要讓助人工作者看見表面問題背後的結構、評估盲點與介入焦點。語氣專業穩定，但不要寫成學術論文。"
     },
@@ -1869,11 +1891,11 @@
         "未通過時回到對應 stage 補素材，不只潤稿。"
       ]
     },
-    "integrityHash": "4f26a64e9da4b40e000ff2b37594d6624c49cadddac5bc31da93fc341041e725"
+    "integrityHash": "59382e164814954de712b95d97b3696840e8896201bd2ac4a82b7ab0d505eda2"
   },
   "roleIntegrityCorrection": {
     "status": "implemented",
-    "updatedAt": "2026-06-03T18:40:00+08:00",
+    "updatedAt": "2026-06-03T18:55:00+08:00",
     "summary": "已改以一般民眾為預設生成方向，並新增正文角色一致性硬性檢查。正文不得出現寫作建議、審稿語氣、agent 討論或社工版指令。",
     "latestPack": "2026-06-03-public-regenerated-pack",
     "auditCommand": "node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack"

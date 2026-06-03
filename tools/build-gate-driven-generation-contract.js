@@ -26,9 +26,10 @@ const generationStages = [
       "寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工造成的財務影響。",
       "列出主要標籤與次要標籤，說明與既有文章的差異。",
       "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。",
+      "除非 Kevin 明確要求系列文章，否則同批標題不得大量使用同一公式，例如全部寫成「不是＿＿：＿＿」。",
     ],
     generationMove:
-      "先產出 topic fit note，再產出標題。標題不能先行，避免為了標題硬寫一篇平台不需要的文章。",
+      "先產出 topic fit note，再產出標題與 title diversity check。標題不能先行，避免為了標題硬寫一篇平台不需要的文章；同批標題需混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境。",
   },
   {
     id: "stage-02-audience-angle",
@@ -239,9 +240,25 @@ const generationPromptContract = {
     "taiwan_source_check_plan",
     "structure_map",
     "next_step_note",
+    "title_diversity_plan",
     "role_integrity_scan",
     "gate_self_review",
   ],
+  titleDiversityPolicy: {
+    default: "non_series",
+    seriesRequiresExplicitKevinRequest: true,
+    maxSameFormulaTitlesPerPack: 2,
+    requiredTitleEntryTypes: [
+      "生活畫面",
+      "具體問題",
+      "數字切入",
+      "時間壓力",
+      "後果提醒",
+      "家庭選擇困境",
+    ],
+    rejectWhen:
+      "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式。",
+  },
   publicAudienceInstruction:
     "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
   socialWorkAudienceInstruction:
@@ -447,8 +464,9 @@ function renderPrompt(data) {
 8. taiwan_source_check_plan
 9. structure_map
 10. next_step_note
-11. role_integrity_scan
-12. gate_self_review
+11. title_diversity_plan
+12. role_integrity_scan
+13. gate_self_review
 
 預設受眾：
 
@@ -465,6 +483,7 @@ function renderPrompt(data) {
 - 不輸出 SEO/AIO、FAQ、slug、meta description 或來源清單。
 - 不輸出內部規劃、article brief、gate 自評、審稿建議、修稿建議或 agent 討論。
 - 標題需有生活感與吸引力。
+- 標題不得整批使用同一公式。除非 Kevin 明確要求系列文章，否則同批 10 篇要混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境；「不是＿＿：＿＿」同批最多 1 到 2 篇。
 - 段落標題需有重新定義問題的效果。
 - 至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響。
 - 至少兩個具體數值或數值化情境。

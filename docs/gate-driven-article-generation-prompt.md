@@ -15,8 +15,9 @@
 8. taiwan_source_check_plan
 9. structure_map
 10. next_step_note
-11. role_integrity_scan
-12. gate_self_review
+11. title_diversity_plan
+12. role_integrity_scan
+13. gate_self_review
 
 預設受眾：
 
@@ -33,6 +34,7 @@
 - 不輸出 SEO/AIO、FAQ、slug、meta description 或來源清單。
 - 不輸出內部規劃、article brief、gate 自評、審稿建議、修稿建議或 agent 討論。
 - 標題需有生活感與吸引力。
+- 標題不得整批使用同一公式。除非 Kevin 明確要求系列文章，否則同批 10 篇要混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境；「不是＿＿：＿＿」同批最多 1 到 2 篇。
 - 段落標題需有重新定義問題的效果。
 - 至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響。
 - 至少兩個具體數值或數值化情境。

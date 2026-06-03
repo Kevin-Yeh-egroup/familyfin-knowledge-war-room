@@ -19,9 +19,10 @@
         "寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活框架。",
         "寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工造成的財務影響。",
         "列出主要標籤與次要標籤，說明與既有文章的差異。",
-        "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。"
+        "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。",
+        "除非 Kevin 明確要求系列文章，否則同批標題不得大量使用同一公式，例如全部寫成「不是＿＿：＿＿」。"
       ],
-      "generationMove": "先產出 topic fit note，再產出標題。標題不能先行，避免為了標題硬寫一篇平台不需要的文章。"
+      "generationMove": "先產出 topic fit note，再產出標題與 title diversity check。標題不能先行，避免為了標題硬寫一篇平台不需要的文章；同批標題需混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境。"
     },
     {
       "id": "stage-02-audience-angle",
@@ -243,9 +244,24 @@
       "taiwan_source_check_plan",
       "structure_map",
       "next_step_note",
+      "title_diversity_plan",
       "role_integrity_scan",
       "gate_self_review"
     ],
+    "titleDiversityPolicy": {
+      "default": "non_series",
+      "seriesRequiresExplicitKevinRequest": true,
+      "maxSameFormulaTitlesPerPack": 2,
+      "requiredTitleEntryTypes": [
+        "生活畫面",
+        "具體問題",
+        "數字切入",
+        "時間壓力",
+        "後果提醒",
+        "家庭選擇困境"
+      ],
+      "rejectWhen": "同一批標題像系列模板，或大量重複「不是＿＿：＿＿」「先看＿＿」「＿＿不是＿＿」等同一公式。"
+    },
     "publicAudienceInstruction": "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
     "socialWorkAudienceInstruction": "社工版要讓助人工作者看見表面問題背後的結構、評估盲點與介入焦點。語氣專業穩定，但不要寫成學術論文。"
   },
@@ -347,5 +363,5 @@
       "未通過時回到對應 stage 補素材，不只潤稿。"
     ]
   },
-  "integrityHash": "4f26a64e9da4b40e000ff2b37594d6624c49cadddac5bc31da93fc341041e725"
+  "integrityHash": "59382e164814954de712b95d97b3696840e8896201bd2ac4a82b7ab0d505eda2"
 }

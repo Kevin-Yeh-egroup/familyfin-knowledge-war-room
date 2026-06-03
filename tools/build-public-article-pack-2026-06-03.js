@@ -7,7 +7,12 @@ const repoRoot = path.resolve(__dirname, "..");
 const packId = "2026-06-03-public-regenerated-pack";
 const packDir = path.join(repoRoot, "articles", packId);
 const suggestionsPath = path.join(repoRoot, "suggestions.json");
-const now = "2026-06-03T18:40:00+08:00";
+const gateDrivenContractPath = path.join(
+  repoRoot,
+  "data",
+  "gate-driven-article-generation-contract-2026-06-03.json",
+);
+const now = "2026-06-03T18:55:00+08:00";
 
 const bannedBodyPatterns = [
   /讀者版本/,
@@ -43,7 +48,7 @@ const articles = [
   {
     id: "rent-subsidy-cashflow",
     fileName: "01-rent-subsidy-cashflow.txt",
-    title: "租金補貼不是安心保證：房租時間差怎麼壓住家庭現金流",
+    title: "房租五號到期，補貼還沒進來：租屋家庭最容易卡住的時間差",
     primaryTag: "主要問題彙編-政府救助資源",
     secondaryTags: ["家庭重大事件-住居不穩定", "財務管理與規劃-收支結構", "評估與輔導觀點-財務韌性"],
     categoryType: "生活壓力型",
@@ -81,7 +86,7 @@ const articles = [
   {
     id: "single-parent-childcare-gap",
     fileName: "02-single-parent-childcare-gap.txt",
-    title: "單親家庭不是少一個人幫忙而已：托育時間和收入缺口怎麼一起出現",
+    title: "一個人接孩子，也一個人接帳單：單親家庭的托育費為什麼常變成收入缺口",
     primaryTag: "家庭重大事件-家庭型態改變",
     secondaryTags: ["主要問題彙編-政府救助資源", "財務管理與規劃-收支結構", "家庭重大事件-兒少照顧"],
     categoryType: "生活壓力型",
@@ -120,7 +125,7 @@ const articles = [
   {
     id: "debt-negotiation-cashflow",
     fileName: "03-debt-negotiation-cashflow.txt",
-    title: "債務協商不是找人代辦：先看每月還款有沒有把生活壓扁",
+    title: "每月都在繳，債卻沒變少：債務協商前先看懂家庭還款壓力",
     primaryTag: "財務管理與規劃-債務與信用",
     secondaryTags: ["主要問題彙編-法律與債務資源", "財務管理與規劃-收支結構", "評估與輔導觀點-風險辨識"],
     categoryType: "資源制度型",
@@ -160,7 +165,7 @@ const articles = [
   {
     id: "emergency-buffer-income-gap",
     fileName: "04-emergency-buffer-income-gap.txt",
-    title: "緊急預備金不是存很多錢：先看家裡能不能撐過一個收入空窗",
+    title: "手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗",
     primaryTag: "財務管理與規劃-緊急預備金",
     secondaryTags: ["家庭重大事件-收入中斷", "主要問題彙編-政府救助資源", "評估與輔導觀點-財務韌性"],
     categoryType: "生活壓力型",
@@ -199,7 +204,7 @@ const articles = [
   {
     id: "long-term-care-family-budget",
     fileName: "05-long-term-care-family-budget.txt",
-    title: "長照不是只有申請服務：照顧支出和少掉的收入都會改變家庭",
+    title: "爸爸出院後，家裡多了哪些帳單？長照成本常從看不見的地方開始",
     primaryTag: "家庭重大事件-長照與醫療",
     secondaryTags: ["財務管理與規劃-收支結構", "主要問題彙編-政府救助資源", "評估與輔導觀點-風險辨識"],
     categoryType: "家庭經濟轉譯型",
@@ -238,7 +243,7 @@ const articles = [
   {
     id: "scam-loss-family-recovery",
     fileName: "06-scam-loss-family-recovery.txt",
-    title: "詐騙後不是只剩報案：先把家庭生活缺口止住",
+    title: "錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血",
     primaryTag: "財務安全與風險-詐騙防治",
     secondaryTags: ["財務管理與規劃-緊急預備金", "家庭重大事件-收入與資產損失", "評估與輔導觀點-風險辨識"],
     categoryType: "風險預防型",
@@ -283,7 +288,7 @@ const articles = [
   {
     id: "first-job-family-support",
     fileName: "07-first-job-family-support.txt",
-    title: "第一份薪水不是自由開始：租屋、學貸和家用會先排隊",
+    title: "第一份薪水進來前，房租和家用已經排隊：青年獨立的第一張收支表",
     primaryTag: "生命歷程與財務-青年就業",
     secondaryTags: ["財務管理與規劃-收支結構", "家庭重大事件-離家與獨立", "評估與輔導觀點-財務韌性"],
     categoryType: "生活壓力型",
@@ -323,7 +328,7 @@ const articles = [
   {
     id: "reduced-hours-income-warning",
     fileName: "08-reduced-hours-income-warning.txt",
-    title: "減班休息不是還有工作就好：收入少一截時家庭最先斷在哪裡",
+    title: "減班休息先看三筆錢，收入少一截時帳單不會跟著少",
     primaryTag: "家庭重大事件-收入中斷",
     secondaryTags: ["主要問題彙編-就業與職涯", "財務管理與規劃-收支結構", "評估與輔導觀點-風險辨識"],
     categoryType: "風險預防型",
@@ -363,7 +368,7 @@ const articles = [
   {
     id: "special-circumstance-support",
     fileName: "09-special-circumstance-support.txt",
-    title: "特殊境遇扶助不是救急口號：文件、期限和生活缺口要一起看",
+    title: "變故後的三個月怎麼撐？特殊境遇家庭扶助要接住的是生活缺口",
     primaryTag: "主要問題彙編-政府救助資源",
     secondaryTags: ["家庭重大事件-家庭型態改變", "財務管理與規劃-緊急預備金", "評估與輔導觀點-資源盤點"],
     categoryType: "資源制度型",
@@ -403,7 +408,7 @@ const articles = [
   {
     id: "retirement-care-and-scam-risk",
     fileName: "10-retirement-care-and-scam-risk.txt",
-    title: "老後安全不是退休金一件事：醫療、照顧和詐騙風險會同時拉扯",
+    title: "退休金每月進來，醫療、照顧和詐騙風險也每天靠近",
     primaryTag: "生命歷程與財務-退休與高齡",
     secondaryTags: ["家庭重大事件-長照與醫療", "財務安全與風險-詐騙防治", "財務管理與規劃-緊急預備金"],
     categoryType: "風險預防型",
@@ -458,14 +463,33 @@ function findBodyLeaks(text) {
     .map((pattern) => pattern.toString());
 }
 
+function titleFamily(title) {
+  if (/不是.+[：:]/.test(title)) return "not-colon-reframe";
+  if (/[？?]/.test(title) && /[：:]/.test(title)) return "question-colon";
+  if (/[？?]/.test(title)) return "question";
+  if (/[：:]/.test(title)) return "colon-scene";
+  return "plain";
+}
+
 function validateArticles() {
   const ids = new Set();
+  const titleFamilyCounts = {};
+  const repeatedTitleFrames = [];
   for (const article of articles) {
     if (ids.has(article.id)) fail(`Duplicate article id: ${article.id}`);
     ids.add(article.id);
     if (article.text.length <= 2000) fail(`${article.id} body too short: ${article.text.length}`);
     const leaks = findBodyLeaks(article.text);
     if (leaks.length) fail(`${article.id} has role/meta leaks: ${leaks.join(", ")}`);
+    const family = titleFamily(article.title);
+    titleFamilyCounts[family] = (titleFamilyCounts[family] || 0) + 1;
+  }
+  for (const [family, count] of Object.entries(titleFamilyCounts)) {
+    if (family === "not-colon-reframe" && count > 2) repeatedTitleFrames.push(`${family}: ${count}`);
+    if (family !== "not-colon-reframe" && count > 5) repeatedTitleFrames.push(`${family}: ${count}`);
+  }
+  if (repeatedTitleFrames.length) {
+    fail(`Title frame too repetitive: ${repeatedTitleFrames.join(", ")}`);
   }
 }
 
@@ -508,6 +532,7 @@ function articleRecord(article) {
 
 function updateSuggestions() {
   const suggestions = JSON.parse(fs.readFileSync(suggestionsPath, "utf8"));
+  const gateDrivenContract = JSON.parse(fs.readFileSync(gateDrivenContractPath, "utf8"));
   suggestions.updatedAt = now;
   suggestions.source = "FamilyFin knowledge war room role-integrity-corrected public article pack regenerated after Kevin feedback";
   suggestions.metrics = {
@@ -521,9 +546,9 @@ function updateSuggestions() {
   };
   suggestions.articlePack = {
     id: packId,
-    title: "2026-06-03 重新生成 10 篇一般民眾純文字投稿文章包",
+    title: "2026-06-03 家庭生活壓力與財務缺口候選稿",
     status: "待 Kevin 審核",
-    description: "本批次修正先前正文混入寫作建議的重大問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性預檢。",
+    description: "本批次修正先前正文混入寫作建議與標題句型過度相似的問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性預檢。",
     reviewLearningFields: [
       "Kevin 可點進每篇查看純文字正文。",
       "核准後依 primaryTag 分類存放。",
@@ -537,6 +562,7 @@ function updateSuggestions() {
       seoAioVisible: false,
       bodyOnlyCopy: true,
       bodyMinChars: 2000,
+      titleDiversityRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     files: {
@@ -564,6 +590,11 @@ function updateSuggestions() {
       socialWorkerOnlyOnExplicitRequest: true,
       bodyMustNotAddressEditorsOrReviewers: true,
     },
+    titleDiversityPolicy: {
+      status: "required",
+      note: "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句。",
+      maxNotColonReframeTitles: 2,
+    },
   };
   suggestions.roleIntegrityCorrection = {
     status: "implemented",
@@ -572,6 +603,7 @@ function updateSuggestions() {
     latestPack: packId,
     auditCommand: `node tools/audit-article-role-integrity.js articles/${packId}`,
   };
+  suggestions.gateDrivenArticleGeneration = gateDrivenContract;
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
 }
 
