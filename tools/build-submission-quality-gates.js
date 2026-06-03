@@ -73,14 +73,14 @@ const gates = [
     rejectWhen: [
       "主題只是一般投資、健康、法律、關係、反詐或生活提醒，沒有回到家庭經濟與助人工作處境。",
       "文章可以放在任何理財或生活平台，缺少好理家在的辨識度。",
-      "文章只有情緒、觀念或個人選擇，沒有說清楚家庭收入、支出、債務、照顧成本、風險承接或資源取得如何影響生活。",
+      "文章只有情緒、觀念或個人選擇，沒有說清楚家庭收入、支出、債務、照顧成本、遇到變故時是否撐得住，或資源取得如何影響生活。",
     ],
     mustHave: [
       "明確連到家庭財務壓力、生活風險、服務對象決策、支持系統或助人工作現場。",
       "說清楚這篇為何適合好理家在，而不是一般宣導文章。",
       "至少呈現一個家庭經濟連結：收入變動、固定支出、債務壓力、照顧成本、托育/長照/醫療支出、居住成本、補助資源、或家庭成員分工造成的財務影響。",
     ],
-    revisionMove: "把主題重新框回家庭經濟困境、風險承接能力、服務現場判讀或一般民眾可理解的生活壓力；若無法連到家庭經濟，就換題。",
+    revisionMove: "把主題重新框回家庭經濟困境、遇到變故時是否撐得住、服務現場判讀或一般民眾可理解的生活壓力；若無法連到家庭經濟，就換題。",
   },
   {
     id: "gate-02-non-concept",
@@ -254,6 +254,25 @@ const gates = [
     revisionMove:
       "刪除所有後台語言與角色錯位句，把句子改成直接面向一般民眾的生活判讀；若需要給作者的提醒，移到內部 review note，不放正文。",
   },
+  {
+    id: "gate-12-body-naturalness",
+    name: "正文台灣中文語感關卡",
+    severity: "required",
+    evidenceSignals: [],
+    reviewerAgents: ["taiwanese_body_voice_reviewer", "reader_appeal_reviewer", "role_leak_reviewer"],
+    rejectWhen: [
+      "正文雖然意思可懂，但讀起來像美語直譯、顧問簡報、內部訓練語或過度抽象組合詞。",
+      "數據、政策或案例被堆成引用感，沒有融進一般民眾的生活敘述。",
+      "正文出現「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」等不自然語句。",
+    ],
+    mustHave: [
+      "正文用台灣一般讀者會自然理解的說法。",
+      "數字和政策放在讀者能想像的生活畫面裡。",
+      "抽象判讀需改成日常說法，例如薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道。",
+    ],
+    revisionMove:
+      "逐段把翻譯腔、簡報腔或抽象詞改成生活語句；若一段只剩概念或引用，就重寫成場景、數字、前後差異與讀者能做的盤點。",
+  },
 ];
 
 const scoreModel = {
@@ -265,7 +284,11 @@ const scoreModel = {
     { dimension: "非概念與生活具體度", points: 20, gates: ["gate-02-non-concept", "gate-06-story-precision"] },
     { dimension: "數值證明與台灣事實", points: 20, gates: ["gate-03-numeric-proof", "gate-07-fact-and-policy"] },
     { dimension: "結構判讀與複雜性", points: 22, gates: ["gate-04-complexity", "gate-08-structure"] },
-    { dimension: "可投稿新意、可行下一步與角色一致", points: 20, gates: ["gate-05-originality-gap", "gate-10-actionability", "gate-11-role-integrity"] },
+    {
+      dimension: "可投稿新意、可行下一步、角色一致與正文語感",
+      points: 20,
+      gates: ["gate-05-originality-gap", "gate-10-actionability", "gate-11-role-integrity", "gate-12-body-naturalness"],
+    },
   ],
 };
 
@@ -302,6 +325,11 @@ const discussionProtocol = [
   },
   {
     step: 7,
+    agent: "taiwanese_body_voice_reviewer",
+    job: "檢查正文是否像台灣一般讀者會自然理解的說法，是否有翻譯腔、簡報腔、引用感或過度抽象組合詞。",
+  },
+  {
+    step: 8,
     agent: "quality_reviewer",
     job: "合併評分，輸出核准、修正後核准或退回重寫。",
   },

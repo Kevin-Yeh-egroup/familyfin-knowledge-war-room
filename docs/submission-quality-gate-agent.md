@@ -37,6 +37,7 @@ Required discussion:
 - numeric_proof_reviewer: 檢查至少一組前後數值或可衡量改善，並確認假設與事實界線。
 - fact_case_reviewer: 檢查台灣資料、政策、補助、案例或新聞是否最新且適用。
 - role_leak_reviewer: 檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。
+- taiwanese_body_voice_reviewer: 檢查正文是否像台灣一般讀者會自然理解的說法，是否有翻譯腔、簡報腔、引用感或過度抽象組合詞。
 - quality_reviewer: 合併評分，輸出核准、修正後核准或退回重寫。
 
 Verification:

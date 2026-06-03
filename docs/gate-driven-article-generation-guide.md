@@ -32,8 +32,8 @@
 來源 gate：gate-01-platform-fit, gate-05-originality-gap
 
 生成前要求：
-- 寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活框架。
-- 寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工造成的財務影響。
+- 寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活整理角度。
+- 寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、遇到變故時是否撐得住，或家庭分工造成的財務影響。
 - 列出主要標籤與次要標籤，說明與既有文章的差異。
 - 若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。
 - 除非 Kevin 明確要求系列文章，否則同批標題不得大量使用同一公式，例如全部寫成「不是＿＿：＿＿」。
@@ -99,15 +99,16 @@
 - 正文超過 2000 字，不含標題、欄位、SEO/AIO、FAQ 或內部查核紀錄。
 - 輸出純文字，不使用 Markdown 標記。
 - 段落標題要有重新定義問題的效果。
+- 正文必須像台灣一般讀者會自然理解的說法，不使用美語直譯、顧問簡報感或過度抽象組合詞。
 - 預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。
 - 正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。
 
 生成動作：
-- 依照一般民眾版生成正文。生成時每段都要回扣生活選擇、風險承接或支持系統；社工介入語言只在 Kevin 明確指定社工版時使用。
+- 依照一般民眾版生成正文。生成時每段都要回扣生活選擇、遇到變故時是否撐得住、支持系統或日常安排；社工介入語言只在 Kevin 明確指定社工版時使用。
 
 ### stage-07-revision-loop 最後才用 gate 檢查與修正
 
-來源 gate：gate-01-platform-fit, gate-02-non-concept, gate-03-numeric-proof, gate-04-complexity, gate-05-originality-gap, gate-06-story-precision, gate-07-fact-and-policy, gate-08-structure, gate-09-audience-angle, gate-10-actionability, gate-11-role-integrity
+來源 gate：gate-01-platform-fit, gate-02-non-concept, gate-03-numeric-proof, gate-04-complexity, gate-05-originality-gap, gate-06-story-precision, gate-07-fact-and-policy, gate-08-structure, gate-09-audience-angle, gate-10-actionability, gate-11-role-integrity, gate-12-body-naturalness
 
 生成前要求：
 - 先用 fatal gate 檢查是否需要重寫。

@@ -16,8 +16,8 @@
         "gate-05-originality-gap"
       ],
       "requiredBeforeDraft": [
-        "寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活框架。",
-        "寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工造成的財務影響。",
+        "寫出這篇文章對好理家在知識庫的功能：補缺口、更新資料、整理實務判讀，或提供一般民眾可理解的生活整理角度。",
+        "寫出家庭經濟主軸：這篇文章要回到收入、支出、債務、照顧成本、居住成本、補助資源、遇到變故時是否撐得住，或家庭分工造成的財務影響。",
         "列出主要標籤與次要標籤，說明與既有文章的差異。",
         "若主題只是一般理財、投資、健康、法律或防詐宣導，或無法說清楚家庭經濟連結，必須改題或放棄。",
         "除非 Kevin 明確要求系列文章，否則同批標題不得大量使用同一公式，例如全部寫成「不是＿＿：＿＿」。"
@@ -96,10 +96,11 @@
         "正文超過 2000 字，不含標題、欄位、SEO/AIO、FAQ 或內部查核紀錄。",
         "輸出純文字，不使用 Markdown 標記。",
         "段落標題要有重新定義問題的效果。",
+        "正文必須像台灣一般讀者會自然理解的說法，不使用美語直譯、顧問簡報感或過度抽象組合詞。",
         "預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。",
         "正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。"
       ],
-      "generationMove": "依照一般民眾版生成正文。生成時每段都要回扣生活選擇、風險承接或支持系統；社工介入語言只在 Kevin 明確指定社工版時使用。"
+      "generationMove": "依照一般民眾版生成正文。生成時每段都要回扣生活選擇、遇到變故時是否撐得住、支持系統或日常安排；社工介入語言只在 Kevin 明確指定社工版時使用。"
     },
     {
       "id": "stage-07-revision-loop",
@@ -115,7 +116,8 @@
         "gate-08-structure",
         "gate-09-audience-angle",
         "gate-10-actionability",
-        "gate-11-role-integrity"
+        "gate-11-role-integrity",
+        "gate-12-body-naturalness"
       ],
       "requiredBeforeDraft": [
         "先用 fatal gate 檢查是否需要重寫。",
@@ -129,7 +131,7 @@
     "gate-01-platform-fit": {
       "generationQuestion": "這篇為何必須出現在好理家在，且如何回扣家庭經濟，而不是任何理財或生活平台？",
       "requiredArtifact": "family_economic_fit_note",
-      "promptInstruction": "先說明主題與收入、支出、債務、照顧成本、居住成本、補助資源、家庭分工或風險承接的連結；若連不上家庭經濟，不要進入撰文。"
+      "promptInstruction": "先說明主題與收入、支出、債務、照顧成本、居住成本、補助資源、家庭分工，或遇到變故時是否撐得住的連結；若連不上家庭經濟，不要進入撰文。"
     },
     "gate-02-non-concept": {
       "generationQuestion": "讀者會在哪個具體生活畫面中遇到這個問題？",
@@ -180,6 +182,11 @@
       "generationQuestion": "正文是否只對目標讀者說話，沒有混入作者、編輯、審稿或 agent 的建議？",
       "requiredArtifact": "role_integrity_scan",
       "promptInstruction": "正文禁止出現「這篇文章應」「文章最後也應」「對一般民眾版而言」「如果這篇要投稿」「可以提醒讀者」「建議每篇」「知識庫文章要」等後台語；若出現，必須刪除或重寫。"
+    },
+    "gate-12-body-naturalness": {
+      "generationQuestion": "正文是否像台灣一般讀者會自然理解的說法，而不是翻譯腔或顧問簡報？",
+      "requiredArtifact": "body_naturalness_scan",
+      "promptInstruction": "逐段檢查正文語感。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」；改成薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道等生活說法。"
     }
   },
   "generationPromptContract": {
@@ -246,6 +253,7 @@
       "next_step_note",
       "title_diversity_plan",
       "role_integrity_scan",
+      "body_naturalness_scan",
       "gate_self_review"
     ],
     "titleDiversityPolicy": {
@@ -277,7 +285,7 @@
     "socialWorkerVersionAllowedOnlyWhenKevinExplicitlyRequests": true,
     "primaryTag": "",
     "secondaryTags": [],
-    "familyEconomicFitNote": "這篇如何連到家庭收入、支出、債務、照顧成本、居住成本、補助資源、風險承接或家庭分工的財務影響。",
+    "familyEconomicFitNote": "這篇如何連到家庭收入、支出、債務、照顧成本、居住成本、補助資源、遇到變故時是否撐得住，或家庭分工的財務影響。",
     "topicFitNote": "這篇文章對好理家在知識庫的功能。",
     "knowledgeGapNote": "相較既有文章，本篇補的缺口。",
     "readerEntryNote": "讀者或社工在第一段會被帶進哪個困境。",
@@ -362,12 +370,12 @@
     ],
     "duringDrafting": [
       "段落依 structureMap 生成。",
-      "每段都回到生活限制、風險承接、支持系統或實務判讀。"
+      "每段都回到生活限制、遇到變故時是否撐得住、支持系統或實務判讀。"
     ],
     "afterDrafting": [
       "quality_reviewer 只做最後把關。",
       "未通過時回到對應 stage 補素材，不只潤稿。"
     ]
   },
-  "integrityHash": "be4135157abc78d3c7410d05f381b7248e12ba582d09844206a06e61440006ba"
+  "integrityHash": "8a6dbb7e20000cb58e2ea55ac14bdb699e7a697fd2334dfd5d8ff52b1d5fd699"
 }
