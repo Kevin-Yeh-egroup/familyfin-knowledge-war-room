@@ -36,6 +36,7 @@ Required discussion:
 - non_concept_reviewer: 檢查文章是否停在概念宣導，是否有場景、數字、限制與決策困難。
 - numeric_proof_reviewer: 檢查至少一組前後數值或可衡量改善，並確認假設與事實界線。
 - fact_case_reviewer: 檢查台灣資料、政策、補助、案例或新聞是否最新且適用。
+- role_leak_reviewer: 檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。
 - quality_reviewer: 合併評分，輸出核准、修正後核准或退回重寫。
 
 Verification:

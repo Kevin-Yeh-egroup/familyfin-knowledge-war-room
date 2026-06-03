@@ -15,14 +15,15 @@
 每篇文章開始寫正文前，必須先完成：
 
 - topic_fit_note：這篇為何適合好理家在。
-- audience_voice_note：寫給一般民眾或社工，入口角度是什麼。
+- audience_voice_note：預設寫給一般民眾，入口角度是什麼；只有 Kevin 明確指定時才改社工版。
 - knowledge_gap_note：補知識庫哪個缺口。
 - scene_and_pressure_note：具體生活場景與壓力來源。
 - constraint_matrix：至少兩個限制條件。
 - numeric_proof_plan：至少兩個數值與一組前後差異。
 - taiwan_source_check_plan：需要查核的台灣最新資料。
 - structure_map：段落如何從現象走到結構。
-- next_step_note：讀者或社工看完後能盤點什麼。
+- next_step_note：一般民眾看完後能先盤點什麼；只有 Kevin 明確指定社工版時才改成社工評估焦點。
+- role_integrity_scan：檢查正文是否混入作者建議、審稿語、投稿語、知識庫語、讀者版本說明或社工語氣錯位。
 
 ## 七階段生成流程
 
@@ -41,16 +42,16 @@
 
 ### stage-02-audience-angle 先決定讀者與入口角度
 
-來源 gate：gate-09-audience-angle, gate-06-story-precision
+來源 gate：gate-09-audience-angle, gate-06-story-precision, gate-11-role-integrity
 
 生成前要求：
-- 二選一設定：一般民眾版或社工版，不混用語氣。
+- 預設一律設定為一般民眾版；只有 Kevin 明確指定社工版時，才可改成社工版。
 - 一般民眾版需先寫出讀者現在可能正在承受的矛盾感。
-- 社工版需先寫出實務現場容易誤判的表面問題。
+- 未被明確指定社工版時，不得對社工、助人工作者、陪伴者或文章作者發出介入建議。
 - 禁止用課程講義、政策懶人包、投資課或社群貼文語氣開場。
 
 生成動作：
-- 先產出 reader entry note：讀者是誰、他卡在哪裡、第一段要讓他感覺被理解或被專業地提醒什麼。
+- 先產出 reader entry note 和 role integrity note：讀者是誰、他卡在哪裡、第一段要讓他感覺被理解；同時列出正文不得出現的後台語。
 
 ### stage-03-structural-reframe 先定義真正要重新框架的問題
 
@@ -97,14 +98,15 @@
 - 正文超過 2000 字，不含標題、欄位、SEO/AIO、FAQ 或內部查核紀錄。
 - 輸出純文字，不使用 Markdown 標記。
 - 段落標題要有重新定義問題的效果。
-- 結尾留下可盤點的下一步或社工評估焦點，不收在口號。
+- 預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。
+- 正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。
 
 生成動作：
-- 依照選定讀者版本生成正文。生成時每段都要回扣生活選擇、風險承接、支持系統或實務介入。
+- 依照一般民眾版生成正文。生成時每段都要回扣生活選擇、風險承接或支持系統；社工介入語言只在 Kevin 明確指定社工版時使用。
 
 ### stage-07-revision-loop 最後才用 gate 檢查與修正
 
-來源 gate：gate-01-platform-fit, gate-02-non-concept, gate-03-numeric-proof, gate-04-complexity, gate-05-originality-gap, gate-06-story-precision, gate-07-fact-and-policy, gate-08-structure, gate-09-audience-angle, gate-10-actionability
+來源 gate：gate-01-platform-fit, gate-02-non-concept, gate-03-numeric-proof, gate-04-complexity, gate-05-originality-gap, gate-06-story-precision, gate-07-fact-and-policy, gate-08-structure, gate-09-audience-angle, gate-10-actionability, gate-11-role-integrity
 
 生成前要求：
 - 先用 fatal gate 檢查是否需要重寫。
@@ -119,10 +121,11 @@
 
 - source_scout：列出台灣現況、政策、補助、新聞或資料查核需求；不確定就標示待查，不可硬寫。
 - knowledge_gap_mapper：比對知識庫標籤與既有主題，決定本篇補缺口或更新資料的理由。
-- writing_angle_reviewer：決定一般民眾版或社工版入口角度，列出不能出現的語氣。
+- writing_angle_reviewer：依預設一般民眾版決定入口角度；只有 Kevin 明確指定時才改社工版，並列出不能出現的語氣。
 - numeric_proof_reviewer：要求至少兩個數值、一組前後差異、一到三個改善關鍵因素。
 - non_concept_reviewer：確認場景、限制、壓力累積與生活選擇已經準備好，才允許開始寫正文。
-- public_writer_or_social_work_writer：依讀者版本生成純文字正文，正文超過 2000 字，不顯示 SEO/AIO 欄位。
+- public_writer：預設生成一般民眾純文字正文，正文超過 2000 字，不顯示 SEO/AIO 欄位或內部建議。
+- role_leak_reviewer：逐段掃描正文，若出現作者建議、審稿語、讀者版本語、投稿語、知識庫語或社工語氣錯位，退回重寫。
 - quality_reviewer：生成後只做最後 gate 檢查；若未過關，回到對應生成階段補素材。
 
 ## 輸出限制

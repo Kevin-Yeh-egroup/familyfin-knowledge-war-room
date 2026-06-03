@@ -31,7 +31,7 @@ Anthropic 的 effective agents 方法把 agentic system 分成 prompt chaining�
 
 轉成好理家在規則：
 
-- 先 routing：判斷文章是一般民眾版、社工版、制度資源型、風險預防型或社工實務判讀型。
+- 先 routing：預設文章為一般民眾版，再判斷是制度資源型、風險預防型或家庭經濟轉譯型；只有 Kevin 明確指定時才改成社工版。
 - 再 chaining：資料查核、角度設定、數值化證明、寫稿、非概念檢查、讀者吸引力檢查、品質判定依序進行。
 - 再 evaluator-optimizer：退修或駁回後，不直接重寫全文，而是先指出失敗段落、失敗原因、修正規則，再重寫。
 
@@ -55,6 +55,7 @@ OpenAI Agents SDK guardrails 區分 input、output、tool guardrails；若工作
 
 - 資料查核步驟要有「最新台灣資料」 guardrail。
 - 寫作角度步驟要有「不責備、不教訓」 guardrail。
+- 正文輸出步驟要有「角色一致與內部語言隔離」 guardrail，禁止把作者建議、審稿語、讀者版本語、投稿語或 agent 討論寫進正文。
 - 數值化步驟要有「示意數字不可冒充真實案例」 guardrail。
 - 投稿前要有「純文字、正文 2000 字以上、無 SEO/AIO 顯示」 guardrail。
 
@@ -136,6 +137,7 @@ OpenAI agent guide 強調 human intervention 可協助找出失敗、邊界案�
 - `numeric_proof_reviewer`：是否缺少數值差異或改善關鍵？
 - `non_concept_reviewer`：是否只是概念描述？
 - `reader_appeal_reviewer`：哪裡讓人不想讀？
+- `role_leak_reviewer`：哪裡混入作者建議、審稿語、投稿語、知識庫語或角色錯位？
 - `quality_reviewer`：下次投稿前要怎麼擋下同類問題？
 
 ### Step 4：升級規則
@@ -164,7 +166,8 @@ OpenAI agent guide 強調 human intervention 可協助找出失敗、邊界案�
 - 文章是否 grounded。
 - 來源是否最新且符合台灣。
 - 一般民眾版是否可讀且不責備。
-- 社工版是否有判讀與介入焦點。
+- 是否全部預設一般民眾版；若有社工版，是否有 Kevin 明確指定。
+- 正文是否沒有角色錯亂、後台語或內部建議外洩。
 - 是否有數值化差異與改善關鍵。
 - 是否避免 AI 感、引用感與概念文。
 

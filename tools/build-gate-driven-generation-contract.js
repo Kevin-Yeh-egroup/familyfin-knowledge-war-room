@@ -33,15 +33,15 @@ const generationStages = [
   {
     id: "stage-02-audience-angle",
     name: "先決定讀者與入口角度",
-    sourceGates: ["gate-09-audience-angle", "gate-06-story-precision"],
+    sourceGates: ["gate-09-audience-angle", "gate-06-story-precision", "gate-11-role-integrity"],
     requiredBeforeDraft: [
-      "二選一設定：一般民眾版或社工版，不混用語氣。",
+      "預設一律設定為一般民眾版；只有 Kevin 明確指定社工版時，才可改成社工版。",
       "一般民眾版需先寫出讀者現在可能正在承受的矛盾感。",
-      "社工版需先寫出實務現場容易誤判的表面問題。",
+      "未被明確指定社工版時，不得對社工、助人工作者、陪伴者或文章作者發出介入建議。",
       "禁止用課程講義、政策懶人包、投資課或社群貼文語氣開場。",
     ],
     generationMove:
-      "先產出 reader entry note：讀者是誰、他卡在哪裡、第一段要讓他感覺被理解或被專業地提醒什麼。",
+      "先產出 reader entry note 和 role integrity note：讀者是誰、他卡在哪裡、第一段要讓他感覺被理解；同時列出正文不得出現的後台語。",
   },
   {
     id: "stage-03-structural-reframe",
@@ -88,10 +88,11 @@ const generationStages = [
       "正文超過 2000 字，不含標題、欄位、SEO/AIO、FAQ 或內部查核紀錄。",
       "輸出純文字，不使用 Markdown 標記。",
       "段落標題要有重新定義問題的效果。",
-      "結尾留下可盤點的下一步或社工評估焦點，不收在口號。",
+      "預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。",
+      "正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。",
     ],
     generationMove:
-      "依照選定讀者版本生成正文。生成時每段都要回扣生活選擇、風險承接、支持系統或實務介入。",
+      "依照一般民眾版生成正文。生成時每段都要回扣生活選擇、風險承接或支持系統；社工介入語言只在 Kevin 明確指定社工版時使用。",
   },
   {
     id: "stage-07-revision-loop",
@@ -157,10 +158,10 @@ const gateToGenerationMoves = {
       "每個主段落都用短句重新定義問題，再展開生活結構、壓力累積與選擇影響。",
   },
   "gate-09-audience-angle": {
-    generationQuestion: "這篇是寫給一般民眾，還是寫給社工？",
+    generationQuestion: "這篇是否依照預設寫給一般民眾？若要寫社工版，Kevin 是否有明確指定？",
     requiredArtifact: "audience_voice_note",
     promptInstruction:
-      "一般民眾版用被理解的生活語言；社工版用評估、判讀、介入焦點，不混用。",
+      "預設只寫一般民眾版，用被理解的生活語言；未被明確指定時，不寫社工評估、判讀或介入焦點。",
   },
   "gate-10-actionability": {
     generationQuestion: "讀者看完後，第一個能盤點或判讀的是什麼？",
@@ -168,22 +169,64 @@ const gateToGenerationMoves = {
     promptInstruction:
       "結尾留下低門檻盤點問題或社工評估焦點，不做財務承諾或政策承諾。",
   },
+  "gate-11-role-integrity": {
+    generationQuestion: "正文是否只對目標讀者說話，沒有混入作者、編輯、審稿或 agent 的建議？",
+    requiredArtifact: "role_integrity_scan",
+    promptInstruction:
+      "正文禁止出現「這篇文章應」「文章最後也應」「對一般民眾版而言」「如果這篇要投稿」「可以提醒讀者」「建議每篇」「知識庫文章要」等後台語；若出現，必須刪除或重寫。",
+  },
 };
 
 const generationPromptContract = {
   outputLanguage: "Traditional Chinese",
   articleFormat: "plain_text_only",
+  defaultTargetAudience: "public",
+  socialWorkerVersionRequiresExplicitKevinRequest: true,
   minimumBodyCharacters: 2000,
-  excludeFromVisibleOutput: ["SEO title", "meta description", "slug", "AIO notes", "FAQ", "source list", "internal review notes"],
+  excludeFromVisibleOutput: [
+    "SEO title",
+    "meta description",
+    "slug",
+    "AIO notes",
+    "FAQ",
+    "source list",
+    "internal review notes",
+    "article brief",
+    "gate self review",
+    "editorial advice",
+    "agent discussion",
+    "revision suggestions",
+  ],
   visibleArticleMustInclude: [
     "生活感標題",
-    "前言切入矛盾或實務誤判",
+    "前言切入一般民眾的生活矛盾",
     "4 到 6 個具判讀效果的段落標題",
     "至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響",
     "至少兩個數值或數值化情境",
     "至少一組前後差異或可比較數字",
     "至少一個台灣現況或制度脈絡，若涉及政策需查最新官方資訊",
-    "結語回到重新理解自己、保留選擇、承接變動或社工介入焦點",
+    "結語回到重新理解自己、保留選擇或承接變動，不收在作者建議或審稿語",
+  ],
+  visibleArticleMustExclude: [
+    "讀者版本",
+    "一般民眾版",
+    "社工版",
+    "這篇文章",
+    "本文可以",
+    "本文應",
+    "文章最後",
+    "文章發展",
+    "如果這篇要投稿",
+    "如果這篇文章要用在知識庫",
+    "對一般民眾版而言",
+    "對知識庫文章而言",
+    "可以提醒讀者",
+    "建議每篇",
+    "好理家在文章的重要任務",
+    "知識文章要做到",
+    "審稿",
+    "投稿",
+    "agent",
   ],
   hiddenPlanningMustInclude: [
     "family_economic_fit_note",
@@ -196,6 +239,7 @@ const generationPromptContract = {
     "taiwan_source_check_plan",
     "structure_map",
     "next_step_note",
+    "role_integrity_scan",
     "gate_self_review",
   ],
   publicAudienceInstruction:
@@ -206,7 +250,8 @@ const generationPromptContract = {
 
 const articleBriefTemplate = {
   topic: "",
-  targetAudience: "public | social_worker",
+  targetAudience: "public",
+  socialWorkerVersionAllowedOnlyWhenKevinExplicitlyRequests: true,
   primaryTag: "",
   secondaryTags: [],
   familyEconomicFitNote:
@@ -243,6 +288,12 @@ const articleBriefTemplate = {
     },
   ],
   firstStepOrAssessmentFocus: "",
+  roleIntegrityScan: {
+    bodyAddressesOnlyTargetReader: true,
+    noEditorialAdviceInBody: true,
+    noArticleMetaLanguageInBody: true,
+    noSocialWorkerVoiceUnlessExplicitlyRequested: true,
+  },
 };
 
 const agentDiscussionFlow = [
@@ -256,7 +307,7 @@ const agentDiscussionFlow = [
   },
   {
     agent: "writing_angle_reviewer",
-    beforeWriting: "決定一般民眾版或社工版入口角度，列出不能出現的語氣。",
+    beforeWriting: "依預設一般民眾版決定入口角度；只有 Kevin 明確指定時才改社工版，並列出不能出現的語氣。",
   },
   {
     agent: "numeric_proof_reviewer",
@@ -267,8 +318,12 @@ const agentDiscussionFlow = [
     beforeWriting: "確認場景、限制、壓力累積與生活選擇已經準備好，才允許開始寫正文。",
   },
   {
-    agent: "public_writer_or_social_work_writer",
-    beforeWriting: "依讀者版本生成純文字正文，正文超過 2000 字，不顯示 SEO/AIO 欄位。",
+    agent: "public_writer",
+    beforeWriting: "預設生成一般民眾純文字正文，正文超過 2000 字，不顯示 SEO/AIO 欄位或內部建議。",
+  },
+  {
+    agent: "role_leak_reviewer",
+    beforeWriting: "逐段掃描正文，若出現作者建議、審稿語、讀者版本語、投稿語、知識庫語或社工語氣錯位，退回重寫。",
   },
   {
     agent: "quality_reviewer",
@@ -333,14 +388,15 @@ function renderGuide(data) {
 每篇文章開始寫正文前，必須先完成：
 
 - topic_fit_note：這篇為何適合好理家在。
-- audience_voice_note：寫給一般民眾或社工，入口角度是什麼。
+- audience_voice_note：預設寫給一般民眾，入口角度是什麼；只有 Kevin 明確指定時才改社工版。
 - knowledge_gap_note：補知識庫哪個缺口。
 - scene_and_pressure_note：具體生活場景與壓力來源。
 - constraint_matrix：至少兩個限制條件。
 - numeric_proof_plan：至少兩個數值與一組前後差異。
 - taiwan_source_check_plan：需要查核的台灣最新資料。
 - structure_map：段落如何從現象走到結構。
-- next_step_note：讀者或社工看完後能盤點什麼。
+- next_step_note：一般民眾看完後能先盤點什麼；只有 Kevin 明確指定社工版時才改成社工評估焦點。
+- role_integrity_scan：檢查正文是否混入作者建議、審稿語、投稿語、知識庫語、讀者版本說明或社工語氣錯位。
 
 ## 七階段生成流程
 
@@ -391,7 +447,14 @@ function renderPrompt(data) {
 8. taiwan_source_check_plan
 9. structure_map
 10. next_step_note
-11. gate_self_review
+11. role_integrity_scan
+12. gate_self_review
+
+預設受眾：
+
+- 一律生成一般民眾版。
+- 只有 Kevin 明確指定「社工版」時，才可以改用社工專業文章角度。
+- 未被明確指定時，不要對社工、助人工作者、陪伴者、作者、編輯或審稿者說話。
 
 正文輸出要求：
 
@@ -400,6 +463,7 @@ function renderPrompt(data) {
 - 正文超過 2000 字。
 - 不輸出 Markdown。
 - 不輸出 SEO/AIO、FAQ、slug、meta description 或來源清單。
+- 不輸出內部規劃、article brief、gate 自評、審稿建議、修稿建議或 agent 討論。
 - 標題需有生活感與吸引力。
 - 段落標題需有重新定義問題的效果。
 - 至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響。
@@ -407,10 +471,32 @@ function renderPrompt(data) {
 - 至少一組前後差異或可比較數字。
 - 若涉及台灣政策、補助、資格、金額、年度或地方方案，必須確認最新官方資訊後再寫。
 
+正文禁止出現的後台語與角色錯亂語：
+
+- 讀者版本
+- 一般民眾版
+- 社工版
+- 這篇文章
+- 本文可以
+- 本文應
+- 文章最後
+- 文章發展
+- 如果這篇要投稿
+- 如果這篇文章要用在知識庫
+- 對一般民眾版而言
+- 對知識庫文章而言
+- 可以提醒讀者
+- 建議每篇
+- 好理家在文章的重要任務
+- 知識文章要做到
+- 審稿
+- 投稿
+- agent
+
 一般民眾版：
 ${data.generationPromptContract.publicAudienceInstruction}
 
-社工版：
+社工版只有在 Kevin 明確指定時才套用：
 ${data.generationPromptContract.socialWorkAudienceInstruction}
 
 生成前自問：
@@ -419,7 +505,7 @@ ${Object.entries(data.gateToGenerationMoves)
   .map(([gateId, move]) => `- ${gateId}：${move.generationQuestion} ${move.promptInstruction}`)
   .join("\n")}
 
-若文章無法回扣家庭經濟，或任何 fatal gate 無法在規劃階段被滿足，請不要硬寫正文，改為輸出「需要補資料或換題」的原因。
+若文章無法回扣家庭經濟、無法維持一般民眾讀者角度，或任何 fatal gate 無法在規劃階段被滿足，請不要硬寫正文，改為輸出「需要補資料或換題」的原因。
 `;
 }
 

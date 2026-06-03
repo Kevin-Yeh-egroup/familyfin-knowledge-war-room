@@ -235,6 +235,25 @@ const gates = [
     ],
     revisionMove: "把結尾從抽象鼓勵改成一個低門檻盤點動作或服務現場提問。",
   },
+  {
+    id: "gate-11-role-integrity",
+    name: "角色一致與內部語言隔離關卡",
+    severity: "fatal",
+    evidenceSignals: [],
+    reviewerAgents: ["role_leak_reviewer", "writing_angle_reviewer", "quality_reviewer"],
+    rejectWhen: [
+      "正文出現給作者、編輯、agent 或審稿者看的建議，例如「這篇文章應」「文章最後也應」「對一般民眾版而言」「如果這篇要投稿」。",
+      "正文用後台語言評論文章本身，例如讀者版本、知識庫、投稿、本文可以、建議每篇、寫法上、文章發展上。",
+      "一般民眾文混入社工、陪伴者或助人工作者的工作指令，讓主要讀者不知道文章到底在對誰說話。",
+    ],
+    mustHave: [
+      "正文只能對目標讀者說話，不對作者、編輯、agent、審稿者或文章本身說話。",
+      "所有寫作建議、審稿建議、來源查核、SEO/AIO、brief 與 gate 自評都只能留在內部欄位，不得進入正文。",
+      "預設生成一般民眾版；只有 Kevin 明確指定社工版時，才允許社工評估、判讀或介入語言進入正文。",
+    ],
+    revisionMove:
+      "刪除所有後台語言與角色錯位句，把句子改成直接面向一般民眾的生活判讀；若需要給作者的提醒，移到內部 review note，不放正文。",
+  },
 ];
 
 const scoreModel = {
@@ -246,7 +265,7 @@ const scoreModel = {
     { dimension: "非概念與生活具體度", points: 20, gates: ["gate-02-non-concept", "gate-06-story-precision"] },
     { dimension: "數值證明與台灣事實", points: 20, gates: ["gate-03-numeric-proof", "gate-07-fact-and-policy"] },
     { dimension: "結構判讀與複雜性", points: 22, gates: ["gate-04-complexity", "gate-08-structure"] },
-    { dimension: "可投稿新意與可行下一步", points: 20, gates: ["gate-05-originality-gap", "gate-10-actionability"] },
+    { dimension: "可投稿新意、可行下一步與角色一致", points: 20, gates: ["gate-05-originality-gap", "gate-10-actionability", "gate-11-role-integrity"] },
   ],
 };
 
@@ -278,6 +297,11 @@ const discussionProtocol = [
   },
   {
     step: 6,
+    agent: "role_leak_reviewer",
+    job: "檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。",
+  },
+  {
+    step: 7,
     agent: "quality_reviewer",
     job: "合併評分，輸出核准、修正後核准或退回重寫。",
   },
