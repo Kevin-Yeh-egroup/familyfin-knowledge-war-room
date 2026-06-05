@@ -223,17 +223,22 @@ const gates = [
     name: "可行下一步關卡",
     severity: "required",
     evidenceSignals: ["needs_specific_numbers_actions", "missing_depth_or_content"],
-    reviewerAgents: ["quality_reviewer", "numeric_proof_reviewer"],
+    reviewerAgents: ["quality_reviewer", "numeric_proof_reviewer", "ending_strength_reviewer"],
     rejectWhen: [
       "文章只有理解，沒有讓讀者或社工知道下一步可以盤點什麼。",
       "建議太大、太正確，卻沒有第一個可操作行動。",
+      "結尾只是重複前文、抽象鼓勵或漂亮收束，沒有把核心困境收回生活選擇。",
+      "結尾突然冒出新概念、新建議或泛泛的希望感，讓讀者感覺詞不達意。",
     ],
     mustHave: [
       "一般民眾版至少留下一個可以自我檢查的問題或盤點方向。",
       "社工版至少留下一個評估焦點或提問方向。",
       "下一步不能變成財務建議或政策承諾。",
+      "結尾需回扣文章開頭的生活機制，收成一個清楚判斷：讀者現在要先看日期、金額、順序、支出缺口或支持來源中的哪一個。",
+      "結尾最後一句要有落點，不用口號、不用雞湯、不用只說「重新站穩」。",
     ],
-    revisionMove: "把結尾從抽象鼓勵改成一個低門檻盤點動作或服務現場提問。",
+    revisionMove:
+      "把結尾從抽象鼓勵改成一個低門檻盤點動作或服務現場提問；最後一段要回扣開頭的生活矛盾，並指出最值得先整理的缺口。",
   },
   {
     id: "gate-11-role-integrity",
@@ -259,19 +264,30 @@ const gates = [
     name: "正文台灣中文語感關卡",
     severity: "required",
     evidenceSignals: [],
-    reviewerAgents: ["taiwanese_body_voice_reviewer", "reader_appeal_reviewer", "role_leak_reviewer"],
+    reviewerAgents: [
+      "taiwanese_body_voice_reviewer",
+      "kevin_editorial_reference_reviewer",
+      "reader_appeal_reviewer",
+      "role_leak_reviewer",
+    ],
     rejectWhen: [
       "正文雖然意思可懂，但讀起來像美語直譯、顧問簡報、內部訓練語或過度抽象組合詞。",
       "數據、政策或案例被堆成引用感，沒有融進一般民眾的生活敘述。",
       "正文出現「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」等不自然語句。",
+      "正文出現「示意前後差異」「示意看前後差異」這類寫給作者看的轉場語。",
+      "開頭只是在介紹主題，沒有先抓到讀者生活裡真正卡住的機制。",
+      "數字只是在證明文章有資料，沒有轉成日期、支出、前後差異、可撐天數或家庭選擇。",
     ],
     mustHave: [
       "正文用台灣一般讀者會自然理解的說法。",
       "數字和政策放在讀者能想像的生活畫面裡。",
       "抽象判讀需改成日常說法，例如薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道。",
+      "開頭要先寫出生活機制或壓力來源，例如日期準時、收入和托育同時變少、照顧讓時間每天少一點。",
+      "至少一段把政策或金額翻成具體生活用途，例如兩週通勤、一次診所自費、幾天房租緩衝或少一次刷卡補洞。",
+      "可使用短列點整理三個卡點、三個數字或三個順序，但列點後必須回到家庭生活壓力，不寫成講義。",
     ],
     revisionMove:
-      "逐段把翻譯腔、簡報腔或抽象詞改成生活語句；若一段只剩概念或引用，就重寫成場景、數字、前後差異與讀者能做的盤點。",
+      "逐段把翻譯腔、簡報腔或抽象詞改成生活語句；若一段只剩概念或引用，就重寫成生活機制、場景、數字、前後差異、日期順序與讀者能做的盤點。",
   },
 ];
 
@@ -330,6 +346,16 @@ const discussionProtocol = [
   },
   {
     step: 8,
+    agent: "kevin_editorial_reference_reviewer",
+    job: "用 Kevin 修稿樣本萃取的口味檢查文章：開頭是否有生活機制、數字是否推動判讀、政策是否被翻成日常用途、結尾是否回到生活選擇。",
+  },
+  {
+    step: 9,
+    agent: "ending_strength_reviewer",
+    job: "檢查結尾是否回扣開頭生活機制、收成清楚判斷，並避免爛尾、空泛希望、詞不達意或突然新增概念。",
+  },
+  {
+    step: 10,
     agent: "quality_reviewer",
     job: "合併評分，輸出核准、修正後核准或退回重寫。",
   },

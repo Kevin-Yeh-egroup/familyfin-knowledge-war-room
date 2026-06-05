@@ -19,6 +19,7 @@ Current package:
 - Article generation standard: `docs/submission-article-generation-standard-v2.md`
 - First submission pack: `articles/2026-06-02-weekly-pack/`
 - Suggestions data: `suggestions.json`
+- Weekly report and analysis history data: `analysis-history.json`
 
 2026-06-02 update:
 
@@ -33,6 +34,14 @@ Current package:
 - [x] Writing angle reviewer added: public and social-work articles are checked against audience-specific entry angles and banned phrases.
 - [x] Learning database fields documented for numeric proof, writing angle, non-concept review, banned phrases, review feedback, and agent discussions.
 - [x] Agent training loop documented with review-event pairing, contrast cards, agent discussion traces, and explicit gap status for missing per-event review comments.
+
+2026-06-05 update:
+
+- [x] Analysis history panel added to the public review page.
+- [x] Analysis history is now grouped into weekly reports with status, outcomes, blockers, next actions, and expandable records.
+- [x] Previous reports and logs are exposed only as public-safe derived summaries.
+- [x] Local private paths are normalized before writing `analysis-history.json`.
+- [x] Copy and TXT download actions added for each analysis record.
 
 Production proof:
 

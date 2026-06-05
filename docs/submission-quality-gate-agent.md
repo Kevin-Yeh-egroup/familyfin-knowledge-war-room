@@ -38,6 +38,8 @@ Required discussion:
 - fact_case_reviewer: 檢查台灣資料、政策、補助、案例或新聞是否最新且適用。
 - role_leak_reviewer: 檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。
 - taiwanese_body_voice_reviewer: 檢查正文是否像台灣一般讀者會自然理解的說法，是否有翻譯腔、簡報腔、引用感或過度抽象組合詞。
+- kevin_editorial_reference_reviewer: 用 Kevin 修稿樣本萃取的口味檢查文章：開頭是否有生活機制、數字是否推動判讀、政策是否被翻成日常用途、結尾是否回到生活選擇。
+- ending_strength_reviewer: 檢查結尾是否回扣開頭生活機制、收成清楚判斷，並避免爛尾、空泛希望、詞不達意或突然新增概念。
 - quality_reviewer: 合併評分，輸出核准、修正後核准或退回重寫。
 
 Verification:

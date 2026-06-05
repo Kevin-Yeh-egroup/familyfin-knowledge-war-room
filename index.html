@@ -300,19 +300,26 @@
       border-color: rgba(20, 125, 126, .72);
     }
 
-    .review-board {
+    .review-board,
+    .history-board {
       display: grid;
       grid-template-columns: minmax(300px, .82fr) minmax(0, 1.55fr);
       gap: 16px;
       align-items: start;
     }
 
-    .article-list {
+    .history-board {
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.58fr);
+    }
+
+    .article-list,
+    .history-list {
       display: grid;
       gap: 10px;
     }
 
-    .article-item {
+    .article-item,
+    .history-item {
       width: 100%;
       min-height: 98px;
       padding: 14px;
@@ -322,12 +329,15 @@
     }
 
     .article-item:hover,
-    .article-item.active {
+    .article-item.active,
+    .history-item:hover,
+    .history-item.active {
       border-color: rgba(20, 125, 126, .68);
       background: #f7fbfb;
     }
 
-    .article-item strong {
+    .article-item strong,
+    .history-item strong {
       display: block;
       margin-bottom: 8px;
       line-height: 1.35;
@@ -343,6 +353,10 @@
     .detail {
       min-height: 760px;
       padding: 22px;
+    }
+
+    .history-detail {
+      min-height: 620px;
     }
 
     .detail-top {
@@ -368,7 +382,8 @@
       color: #344054;
     }
 
-    .article-body {
+    .article-body,
+    .history-content {
       min-height: 520px;
       max-height: 680px;
       overflow: auto;
@@ -380,6 +395,35 @@
       white-space: pre-wrap;
       font-size: 16px;
       line-height: 1.9;
+    }
+
+    .history-content {
+      min-height: 360px;
+      max-height: 560px;
+      font-size: 15px;
+    }
+
+    .weekly-records {
+      display: grid;
+      gap: 10px;
+    }
+
+    .weekly-records details {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+    }
+
+    .weekly-records summary {
+      cursor: pointer;
+      padding: 12px 14px;
+      font-weight: 900;
+    }
+
+    .weekly-records .history-content {
+      margin: 0 14px 14px;
+      min-height: 260px;
+      max-height: 460px;
     }
 
     .actions {
@@ -473,7 +517,8 @@
       .hero-inner,
       .grid-2,
       .grid-3,
-      .review-board {
+      .review-board,
+      .history-board {
         grid-template-columns: 1fr;
       }
 
@@ -512,6 +557,7 @@
       <div class="navlinks">
         <a href="#learning">學習進度</a>
         <a href="#workflow">每週流程</a>
+        <a href="#history">週報紀錄</a>
         <a href="#pack">純文字文章包</a>
         <a href="#agent">非概念文檢查</a>
         <a href="#quality">品質門檻</a>
@@ -613,6 +659,24 @@
       </div>
     </section>
 
+    <section id="history" class="panel">
+      <div class="section-head">
+        <h2>週報紀錄</h2>
+        <p class="sub" id="historyStatus">讀取 analysis-history.json 中...</p>
+      </div>
+      <div class="section-body">
+        <div class="history-board">
+          <div>
+            <div id="historyList" class="history-list"></div>
+            <div class="note" style="margin-top:14px">
+              週報優先顯示本週狀態、完成事項、阻擋風險與下一步；逐筆紀錄可在週報內展開。
+            </div>
+          </div>
+          <div id="historyDetail" class="detail history-detail"></div>
+        </div>
+      </div>
+    </section>
+
     <section id="pack" class="panel">
       <div class="section-head">
         <h2>純文字文章包</h2>
@@ -705,8 +769,10 @@
     };
 
     let data = { articlePack: { articles: [] }, metrics: {}, qualityGates: [] };
+    let analysisHistory = { entries: [] };
     let activeId = null;
     let activeBody = "";
+    let activeWeeklyId = null;
 
     function loadReviews() {
       try {
@@ -841,6 +907,18 @@
       });
     }
 
+    function makeRuleListElement(items, emptyText) {
+      const list = document.createElement("ul");
+      list.className = "rule-list";
+      const safeItems = items && items.length ? items : [emptyText || "尚未填寫。"];
+      safeItems.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+      return list;
+    }
+
     function renderTraining() {
       const training = data.agentTrainingOptimization || {};
       const audit = training.currentAudit || {};
@@ -908,6 +986,101 @@
         button.append(title, meta);
         list.appendChild(button);
       });
+    }
+
+    function renderHistoryList() {
+      const list = document.getElementById("historyList");
+      if (!list) return;
+      const reports = analysisHistory.weeklyReports || [];
+      list.textContent = "";
+      if (!reports.length) {
+        list.appendChild(paragraph("目前還沒有可顯示的週報紀錄。"));
+        return;
+      }
+      reports.forEach((report) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "history-item" + (report.id === activeWeeklyId ? " active" : "");
+        button.addEventListener("click", () => {
+          activeWeeklyId = report.id;
+          renderHistory();
+        });
+        const title = document.createElement("strong");
+        title.textContent = report.title;
+        const meta = document.createElement("div");
+        meta.className = "meta-line";
+        meta.append(makeTag(`${report.weekStart} - ${report.weekEnd}`, "green"));
+        meta.append(makeTag(report.status || "週報", report.status === "需處理" ? "gold" : "blue"));
+        meta.append(makeTag(`${report.records?.length || 0} 筆紀錄`, "rose"));
+        button.append(title, meta);
+        list.appendChild(button);
+      });
+    }
+
+    function renderHistoryDetail() {
+      const detail = document.getElementById("historyDetail");
+      if (!detail) return;
+      const reports = analysisHistory.weeklyReports || [];
+      const report = reports.find((item) => item.id === activeWeeklyId) || reports[0];
+      detail.textContent = "";
+      if (!report) {
+        detail.textContent = "目前沒有週報紀錄。";
+        return;
+      }
+      activeWeeklyId = report.id;
+
+      const top = document.createElement("div");
+      top.className = "detail-top";
+      const titleWrap = document.createElement("div");
+      const title = document.createElement("h3");
+      title.textContent = report.title;
+      const meta = document.createElement("p");
+      meta.className = "sub";
+      meta.textContent = `${report.weekStart || ""} 至 ${report.weekEnd || ""} / ${report.records?.length || 0} 筆紀錄`;
+      titleWrap.append(title, meta);
+      top.append(titleWrap, makeTag(report.status || "週報", report.status === "需處理" ? "gold" : "green"));
+      detail.appendChild(top);
+
+      detailSection(detail, "本週摘要", [paragraph(report.summary || "尚未填寫摘要。")]);
+      detailSection(detail, "本週完成", [makeRuleListElement(report.outcomes || [], "尚未填寫完成事項。")]);
+      detailSection(detail, "阻擋或風險", [makeRuleListElement(report.blockers || [], "本週沒有明確阻擋。")]);
+      detailSection(detail, "下一步", [makeRuleListElement(report.nextActions || [], "尚未填寫下一步。")]);
+
+      const recordWrap = document.createElement("div");
+      recordWrap.className = "weekly-records";
+      (report.records || []).forEach((record) => {
+        const entry = (analysisHistory.entries || []).find((item) => item.id === record.id) || record;
+        const item = document.createElement("details");
+        const summary = document.createElement("summary");
+        summary.textContent = `${record.date}｜${record.type}｜${record.title}`;
+        const recordSummary = paragraph(record.summary || "");
+        recordSummary.style.padding = "0 14px 8px";
+        const content = document.createElement("div");
+        content.className = "history-content";
+        content.textContent = entry.content || record.summary || "沒有可顯示內容。";
+        item.append(summary, recordSummary, content);
+        recordWrap.appendChild(item);
+      });
+      detailSection(detail, "本週紀錄內容", [recordWrap]);
+
+      const actions = document.createElement("div");
+      actions.className = "actions";
+      actions.append(
+        actionButton("複製本週週報", "primary", () => copyText(report.copyText || report.summary || "", "已複製本週週報。", "historyCopyNote")),
+        actionButton("下載本週週報", "", () => download(`${report.id}.txt`, report.copyText || report.summary || "", "text/plain;charset=utf-8"))
+      );
+      detail.appendChild(actions);
+
+      const copyNote = document.createElement("div");
+      copyNote.className = "copy-note";
+      copyNote.id = "historyCopyNote";
+      copyNote.textContent = "週報內容可直接複製，作為回顧、交辦或下次續跑依據。";
+      detail.appendChild(copyNote);
+    }
+
+    function renderHistory() {
+      renderHistoryList();
+      renderHistoryDetail();
     }
 
     function renderDetail() {
@@ -991,11 +1164,11 @@
       return button;
     }
 
-    async function copyText(text, successText) {
-      const note = document.getElementById("copyNote");
+    async function copyText(text, successText, noteId = "copyNote") {
+      const note = document.getElementById(noteId);
       try {
         await navigator.clipboard.writeText(text);
-        note.textContent = successText || "已複製純文字。";
+        if (note) note.textContent = successText || "已複製純文字。";
       } catch (error) {
         const area = document.createElement("textarea");
         area.value = text;
@@ -1003,7 +1176,7 @@
         area.select();
         document.execCommand("copy");
         area.remove();
-        note.textContent = successText || "已用備援方式複製純文字。";
+        if (note) note.textContent = successText || "已用備援方式複製純文字。";
       }
     }
 
@@ -1068,6 +1241,7 @@
       renderMetrics();
       renderTraining();
       renderAgent();
+      renderHistory();
       renderList();
       renderDetail();
       renderVault();
@@ -1075,6 +1249,7 @@
 
     async function init() {
       const status = document.getElementById("dataStatus");
+      const historyStatus = document.getElementById("historyStatus");
       try {
         const response = await fetch("suggestions.json", { cache: "no-store" });
         if (!response.ok) throw new Error("suggestions.json " + response.status);
@@ -1084,6 +1259,15 @@
         status.textContent = `已載入：${data.articlePack.title}，更新時間 ${data.updatedAt}`;
       } catch (error) {
         status.textContent = "讀取 suggestions.json 失敗：" + error.message;
+      }
+      try {
+        const historyResponse = await fetch("analysis-history.json", { cache: "no-store" });
+        if (!historyResponse.ok) throw new Error("analysis-history.json " + historyResponse.status);
+        analysisHistory = await historyResponse.json();
+        activeWeeklyId = analysisHistory.latestWeeklyReportId || analysisHistory.weeklyReports?.[0]?.id || null;
+        historyStatus.textContent = `已載入 ${analysisHistory.weeklyReportCount || 0} 份週報、${analysisHistory.count || 0} 筆分析紀錄，更新時間 ${analysisHistory.updatedAt || ""}`;
+      } catch (error) {
+        historyStatus.textContent = "讀取 analysis-history.json 失敗：" + error.message;
       }
       render();
     }

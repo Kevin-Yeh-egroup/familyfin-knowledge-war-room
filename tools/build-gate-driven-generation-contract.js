@@ -90,7 +90,10 @@ const generationStages = [
       "輸出純文字，不使用 Markdown 標記。",
       "段落標題要有重新定義問題的效果。",
       "正文必須像台灣一般讀者會自然理解的說法，不使用美語直譯、顧問簡報感或過度抽象組合詞。",
+      "開頭不要先介紹題目，要先寫出讀者生活裡真正卡住的機制，例如日期準時、收入和照顧同時變少、帳單不會等人。",
+      "政策數字和補助金額要轉成生活用途或前後差異，讓讀者看見這筆錢可以撐哪幾天、少哪一次周轉、補哪一段費用。",
       "預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。",
+      "結尾要回扣開頭的生活機制，收成清楚判斷，不用空泛希望、口號或突然新增概念。",
       "正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。",
     ],
     generationMove:
@@ -169,7 +172,7 @@ const gateToGenerationMoves = {
     generationQuestion: "讀者看完後，第一個能盤點或判讀的是什麼？",
     requiredArtifact: "next_step_note",
     promptInstruction:
-      "結尾留下低門檻盤點問題或社工評估焦點，不做財務承諾或政策承諾。",
+      "結尾留下低門檻盤點問題或社工評估焦點，不做財務承諾或政策承諾。另產出 ending_strength_note：結尾要回扣開頭生活機制，指出讀者最該先整理的日期、金額、順序、支出缺口或支持來源，避免爛尾、空泛希望或詞不達意。",
   },
   "gate-11-role-integrity": {
     generationQuestion: "正文是否只對目標讀者說話，沒有混入作者、編輯、審稿或 agent 的建議？",
@@ -181,7 +184,7 @@ const gateToGenerationMoves = {
     generationQuestion: "正文是否像台灣一般讀者會自然理解的說法，而不是翻譯腔或顧問簡報？",
     requiredArtifact: "body_naturalness_scan",
     promptInstruction:
-      "逐段檢查正文語感。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」；改成薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道等生活說法。",
+      "逐段檢查正文語感。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」；改成薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道等生活說法。再用 kevin_editorial_reference_note 檢查開頭是否抓到生活機制、數字是否推動判讀、政策是否被翻成日常用途。",
   },
 };
 
@@ -247,9 +250,11 @@ const generationPromptContract = {
     "taiwan_source_check_plan",
     "structure_map",
     "next_step_note",
+    "ending_strength_note",
     "title_diversity_plan",
     "role_integrity_scan",
     "body_naturalness_scan",
+    "kevin_editorial_reference_note",
     "gate_self_review",
   ],
   titleDiversityPolicy: {
@@ -271,6 +276,31 @@ const generationPromptContract = {
       "緊急預備金要先回答收入空窗",
       "家庭要先做的財務止血",
       "風險也每天靠近",
+    ],
+  },
+  editorialReferencePolicy: {
+    source: "Kevin edited article samples provided on 2026-06-03",
+    status: "project-local learning reference",
+    doNotCopySamplesVerbatim: true,
+    requiredMoves: [
+      "第一句先抓生活機制，不先講背景或定義。",
+      "用假設情境把收入、固定支出、日期和缺口放在同一張生活表裡。",
+      "政策或補助金額要翻成通勤、診所自費、房租緩衝、少一次刷卡補洞等日常用途。",
+      "每篇至少安排一組前後差異，並明說改善關鍵是什麼。",
+      "可以用短列點整理三個卡點、三個數字或三個順序，但列點後要回到家庭生活，不寫成講義。",
+      "結尾回到生活選擇與可呼吸的空間，不收在口號或雞湯。",
+    ],
+    endingQualityRules: [
+      "最後一段要回扣第一段的生活矛盾。",
+      "最後一句要有明確落點，讓讀者知道要先看哪個缺口。",
+      "不能用空泛希望感、漂亮話或新概念當結尾。",
+      "如果結尾只是在重述全文，必須重寫。",
+    ],
+    rejectWhen: [
+      "開頭像一般主題介紹，沒有讓讀者立刻看見自己的壓力。",
+      "數字只像引用資料，沒有變成生活判斷。",
+      "文章只是說應該怎麼做，沒有呈現日期、金額、順序、限制與取捨。",
+      "結尾弱、爛尾、詞不達意，或沒有收回開頭的生活壓力。",
     ],
   },
   publicAudienceInstruction:
@@ -478,9 +508,12 @@ function renderPrompt(data) {
 8. taiwan_source_check_plan
 9. structure_map
 10. next_step_note
-11. title_diversity_plan
-12. role_integrity_scan
-13. gate_self_review
+11. ending_strength_note
+12. title_diversity_plan
+13. role_integrity_scan
+14. body_naturalness_scan
+15. kevin_editorial_reference_note
+16. gate_self_review
 
 預設受眾：
 
@@ -500,6 +533,9 @@ function renderPrompt(data) {
 - 標題不得整批使用同一公式。除非 Kevin 明確要求系列文章，否則同批 10 篇要混合生活畫面、問題句、數字句、時間壓力、後果句或家庭選擇困境；「不是＿＿：＿＿」同批最多 1 到 2 篇。
 - 標題必須是自然台灣中文，不可像美語直譯或顧問簡報。避免「要先回答收入空窗」「財務止血」「風險也每天靠近」這類意思可懂但不自然的語句。
 - 正文也必須是自然台灣中文。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」這類像翻譯腔或顧問簡報的語句，改用「薪水突然少一段」「先讓錢不要再流出去」「遇到變故時還撐不撐得住」「可以查證的協助管道」等生活說法。
+- 正文不得出現「示意前後差異」「示意看前後差異」這類寫給作者看的轉場語。要改成讀者能自然理解的句子，例如「把減班前後攤開看」「把時間差算進去」「把每月結餘拆開看」。
+- 依 Kevin 修稿樣本檢查正文：第一句先抓生活機制，不先講背景；數字要推動判讀，不只當引用；政策或補助金額要翻成日常用途、前後差異、日期順序或少一次周轉。
+- 結尾要強。最後一段必須回扣開頭的生活矛盾，最後一句要有明確落點，讓讀者知道要先看日期、金額、順序、支出缺口或支持來源中的哪一個；不能只用抽象鼓勵、漂亮話或新概念收尾。
 - 段落標題需有重新定義問題的效果。
 - 至少一個家庭經濟主軸連結，例如收入變動、固定支出、債務壓力、照顧成本、居住成本、補助資源或家庭分工造成的財務影響。
 - 至少兩個具體數值或數值化情境。

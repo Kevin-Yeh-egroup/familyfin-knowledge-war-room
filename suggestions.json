@@ -164,7 +164,7 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2048,
+        "bodyChars": 2051,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/01-rent-subsidy-cashflow.txt",
@@ -268,7 +268,7 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "資源制度型",
-        "bodyChars": 2111,
+        "bodyChars": 2115,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/03-debt-negotiation-cashflow.txt",
@@ -320,7 +320,7 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2101,
+        "bodyChars": 2113,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/04-emergency-buffer-income-gap.txt",
@@ -372,7 +372,7 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "家庭經濟轉譯型",
-        "bodyChars": 2052,
+        "bodyChars": 2057,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/05-long-term-care-family-budget.txt",
@@ -424,7 +424,7 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2094,
+        "bodyChars": 2107,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/06-scam-loss-family-recovery.txt",
@@ -480,7 +480,7 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2020,
+        "bodyChars": 2023,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/07-first-job-family-support.txt",
@@ -532,7 +532,7 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2019,
+        "bodyChars": 2021,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/08-reduced-hours-income-warning.txt",
@@ -584,7 +584,7 @@
           "評估與輔導觀點-資源盤點"
         ],
         "categoryType": "資源制度型",
-        "bodyChars": 2038,
+        "bodyChars": 2035,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/09-special-circumstance-support.txt",
@@ -636,7 +636,7 @@
           "財務管理與規劃-緊急預備金"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2131,
+        "bodyChars": 2134,
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt",
@@ -750,13 +750,43 @@
         "正式資源",
         "策略可以是",
         "家庭修復",
-        "生活被接住"
+        "生活被接住",
+        "示意前後差異",
+        "示意看前後差異"
       ],
       "preferredMoves": [
         "把「收入空窗」改成「薪水突然少一段」或「一段薪水還沒進來的日子」。",
         "把「財務止血」改成「先讓錢不要再流出去」。",
         "把「承接風險」改成「遇到變故時還撐不撐得住」。",
-        "把「正式資源」改成「可以查證的協助管道」或「可以詢問的承辦單位」。"
+        "把「正式資源」改成「可以查證的協助管道」或「可以詢問的承辦單位」。",
+        "把「示意前後差異」改成「把調整前後攤開看」「把時間差算進去」「把每月結餘拆開看」。"
+      ]
+    },
+    "kevinEditorialReferencePolicy": {
+      "status": "learned_from_reference",
+      "source": "Kevin 2026-06-03 人工調整稿",
+      "note": "學習 Kevin 修稿後的文章節奏：開頭先抓生活機制，數字推動判讀，政策轉成日常用途，結尾回到生活選擇。此規則用於 agent 討論與生成檢查，不照抄參考稿。",
+      "requiredMoves": [
+        "第一句先抓生活機制，不先講背景或定義。",
+        "政策或補助金額要翻成具體生活用途，例如通勤、診所自費、房租緩衝或少一次刷卡補洞。",
+        "假設情境要把收入、固定支出、日期和缺口放在一起看。",
+        "每篇至少一組前後差異，並寫出改善關鍵。",
+        "短列點可以使用，但列點後要回到家庭生活壓力。",
+        "結尾回到生活選擇與可呼吸的空間。"
+      ]
+    },
+    "endingStrengthPolicy": {
+      "status": "required",
+      "note": "結尾不能爛尾或詞不達意。最後一段要回扣開頭生活機制，最後一句要有明確落點，讓讀者知道下一步要先看哪個缺口。",
+      "rejectWhen": [
+        "結尾只是重述全文或抽象鼓勵。",
+        "結尾突然加入新概念，沒有收回本文主線。",
+        "最後一句沒有落點，只留下漂亮話或希望感。"
+      ],
+      "requiredMoves": [
+        "回扣開頭的生活矛盾。",
+        "指出讀者要先整理日期、金額、順序、支出缺口或支持來源中的哪一個。",
+        "把希望感建立在具體可整理的缺口上，不寫成雞湯。"
       ]
     }
   },
@@ -1703,7 +1733,10 @@
           "輸出純文字，不使用 Markdown 標記。",
           "段落標題要有重新定義問題的效果。",
           "正文必須像台灣一般讀者會自然理解的說法，不使用美語直譯、顧問簡報感或過度抽象組合詞。",
+          "開頭不要先介紹題目，要先寫出讀者生活裡真正卡住的機制，例如日期準時、收入和照顧同時變少、帳單不會等人。",
+          "政策數字和補助金額要轉成生活用途或前後差異，讓讀者看見這筆錢可以撐哪幾天、少哪一次周轉、補哪一段費用。",
           "預設結尾留下一般民眾可以自我盤點的一步；只有 Kevin 明確指定社工版時，才可留下社工評估焦點。",
+          "結尾要回扣開頭的生活機制，收成清楚判斷，不用空泛希望、口號或突然新增概念。",
           "正文不得出現對文章、作者、編輯、審稿者或 agent 的建議。"
         ],
         "generationMove": "依照一般民眾版生成正文。生成時每段都要回扣生活選擇、遇到變故時是否撐得住、支持系統或日常安排；社工介入語言只在 Kevin 明確指定社工版時使用。"
@@ -1782,7 +1815,7 @@
       "gate-10-actionability": {
         "generationQuestion": "讀者看完後，第一個能盤點或判讀的是什麼？",
         "requiredArtifact": "next_step_note",
-        "promptInstruction": "結尾留下低門檻盤點問題或社工評估焦點，不做財務承諾或政策承諾。"
+        "promptInstruction": "結尾留下低門檻盤點問題或社工評估焦點，不做財務承諾或政策承諾。另產出 ending_strength_note：結尾要回扣開頭生活機制，指出讀者最該先整理的日期、金額、順序、支出缺口或支持來源，避免爛尾、空泛希望或詞不達意。"
       },
       "gate-11-role-integrity": {
         "generationQuestion": "正文是否只對目標讀者說話，沒有混入作者、編輯、審稿或 agent 的建議？",
@@ -1792,7 +1825,7 @@
       "gate-12-body-naturalness": {
         "generationQuestion": "正文是否像台灣一般讀者會自然理解的說法，而不是翻譯腔或顧問簡報？",
         "requiredArtifact": "body_naturalness_scan",
-        "promptInstruction": "逐段檢查正文語感。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」；改成薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道等生活說法。"
+        "promptInstruction": "逐段檢查正文語感。避免「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」；改成薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道等生活說法。再用 kevin_editorial_reference_note 檢查開頭是否抓到生活機制、數字是否推動判讀、政策是否被翻成日常用途。"
       }
     },
     "generationPromptContract": {
@@ -1857,9 +1890,11 @@
         "taiwan_source_check_plan",
         "structure_map",
         "next_step_note",
+        "ending_strength_note",
         "title_diversity_plan",
         "role_integrity_scan",
         "body_naturalness_scan",
+        "kevin_editorial_reference_note",
         "gate_self_review"
       ],
       "titleDiversityPolicy": {
@@ -1880,6 +1915,31 @@
           "緊急預備金要先回答收入空窗",
           "家庭要先做的財務止血",
           "風險也每天靠近"
+        ]
+      },
+      "editorialReferencePolicy": {
+        "source": "Kevin edited article samples provided on 2026-06-03",
+        "status": "project-local learning reference",
+        "doNotCopySamplesVerbatim": true,
+        "requiredMoves": [
+          "第一句先抓生活機制，不先講背景或定義。",
+          "用假設情境把收入、固定支出、日期和缺口放在同一張生活表裡。",
+          "政策或補助金額要翻成通勤、診所自費、房租緩衝、少一次刷卡補洞等日常用途。",
+          "每篇至少安排一組前後差異，並明說改善關鍵是什麼。",
+          "可以用短列點整理三個卡點、三個數字或三個順序，但列點後要回到家庭生活，不寫成講義。",
+          "結尾回到生活選擇與可呼吸的空間，不收在口號或雞湯。"
+        ],
+        "endingQualityRules": [
+          "最後一段要回扣第一段的生活矛盾。",
+          "最後一句要有明確落點，讓讀者知道要先看哪個缺口。",
+          "不能用空泛希望感、漂亮話或新概念當結尾。",
+          "如果結尾只是在重述全文，必須重寫。"
+        ],
+        "rejectWhen": [
+          "開頭像一般主題介紹，沒有讓讀者立刻看見自己的壓力。",
+          "數字只像引用資料，沒有變成生活判斷。",
+          "文章只是說應該怎麼做，沒有呈現日期、金額、順序、限制與取捨。",
+          "結尾弱、爛尾、詞不達意，或沒有收回開頭的生活壓力。"
         ]
       },
       "publicAudienceInstruction": "一般民眾版要讓讀者覺得自己不是被責備，而是開始看懂壓力怎麼形成。用生活語言寫，不用專業術語堆疊。",
@@ -1983,7 +2043,7 @@
         "未通過時回到對應 stage 補素材，不只潤稿。"
       ]
     },
-    "integrityHash": "8a6dbb7e20000cb58e2ea55ac14bdb699e7a697fd2334dfd5d8ff52b1d5fd699"
+    "integrityHash": "c9b44b8afb3315da367960340ca898c900748f043669a2944e3835a4ddf038bc"
   },
   "roleIntegrityCorrection": {
     "status": "implemented",

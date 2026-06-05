@@ -7,6 +7,7 @@
 - 盤點好理家在知識庫與 InfoCenter 文章管理結果。
 - 讓 Codex / agent 從文章全文、狀態、標籤與退修意見中學習好文章標準。
 - 每週產出知識庫擴充建議與 10 篇可投稿文章草稿。
+- 以週報方式回看上一次與歷次任務的分析整理、執行日誌、阻擋原因與下一步。
 - 提供 Kevin 可點選全文、複製純文字、核准、退修、駁回、分類存放的審核台。
 - 透過 GitHub + Vercel Production 提供穩定 public review URL。
 
@@ -45,6 +46,8 @@
 
 - `index.html`：10 篇純文字投稿文章工作台。
 - `suggestions.json`：學習統計、品質門檻、文章 metadata、非概念檢查 agent 規則。
+- `analysis-history.json`：公開安全的週報紀錄與歷次分析紀錄，可在首頁展開與複製。
+- `tools/build-analysis-history.js`：從 `reports/` 與 `logs/` 重建週報與分析紀錄資料檔。
 - `articles/2026-06-02-weekly-pack/`：首批 10 篇純文字文章。
 - `docs/submission-article-generation-standard-v2.md`：可投稿文章生成標準 v3。
 - `docs/non-concept-article-review-agent.md`：非概念文檢查 agent 規格。

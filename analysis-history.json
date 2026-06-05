@@ -1,0 +1,298 @@
+{
+  "updatedAt": "2026-06-05T08:57:06.365Z",
+  "source": "public-safe derived analysis logs and reports",
+  "privacy": {
+    "rawInfoCenterArticleBodiesStored": false,
+    "rawReviewTextStored": false,
+    "localPrivatePathsNormalized": true,
+    "publicSafeDerivedSummariesOnly": true
+  },
+  "latestEntryId": "2026-06-05-biweekly-check",
+  "latestWeeklyReportId": "week-2026-06-01",
+  "count": 10,
+  "weeklyReportCount": 2,
+  "weeklyReports": [
+    {
+      "id": "week-2026-06-01",
+      "weekStart": "2026-06-01",
+      "weekEnd": "2026-06-07",
+      "title": "2026-06-01 至 2026-06-07 週報｜全文學習、審核駁回與文章品質 gate",
+      "status": "需處理",
+      "summary": "本週完成知識庫全文學習與文章品質規則升級，也確認審核駁回內容必須點開明細才有完整訓練價值。雙週產稿因 review/comment 證據與候選題卡不足先停，避免產出看似完整但訓練基礎不足的文章包。",
+      "outcomes": [
+        "完成 2026 則事件掃描與 540 篇可學正文統計。",
+        "建立審核駁回點擊學習路徑，確認 10 筆抽樣中有 3 筆具完整審核內容。",
+        "加入角色一致、家庭經濟、非概念文、數值證明、台灣中文語感與結尾強度等文章品質 gate。"
+      ],
+      "blockers": [
+        "review/comment 讀取仍未完全恢復，不能把只有審核標題的資料視為完整訓練素材。",
+        "正式 10 題雙週文章包的候選題卡不足，因此 2026-06-05 產稿流程先停止。",
+        "目前公開戰情室只保存去識別整理，不保存後台原始文章或審核原文。"
+      ],
+      "nextActions": [
+        "先補週戰情室輸出檔與 review/comment 正確讀取。",
+        "補足一般民眾候選題卡後，再重跑正式 10 題產稿。",
+        "每次產稿前檢查是否有內部轉場語、角色錯亂、翻譯腔與弱結尾。"
+      ],
+      "records": [
+        {
+          "id": "2026-06-05-biweekly-check",
+          "date": "2026-06-05",
+          "type": "雙週產稿檢查",
+          "title": "上一次雙週產稿為什麼先停下來",
+          "summary": "2026-06-05 雙週流程未生成 10 篇文章包，主因是 review/comment 前置學習與候選題卡 gate 未通過。",
+          "sourcePath": "reports/2026-06-05-biweekly-article-generation-check.md"
+        },
+        {
+          "id": "2026-06-05-biweekly-log",
+          "date": "2026-06-05",
+          "type": "執行日誌",
+          "title": "2026-06-05 雙週文章生成日誌",
+          "summary": "紀錄 automation-15 的 local-only 執行結果：因 fatal gate 未解除，停止產稿並改寫 blocker report。",
+          "sourcePath": "logs/2026-06-05-biweekly-article-generation-log.md"
+        },
+        {
+          "id": "2026-06-03-rejection-learning",
+          "date": "2026-06-03",
+          "type": "審核駁回學習",
+          "title": "審核駁回列點擊學習：只看標題不夠",
+          "summary": "確認真正有訓練價值的是審核明細中的審核內容，而不是只知道文章被駁回或只看到審核標題。",
+          "sourcePath": "reports/2026-06-03-review-rejection-learning-daily.md"
+        },
+        {
+          "id": "2026-06-03-kevin-editorial-learning",
+          "date": "2026-06-03",
+          "type": "Kevin 修稿樣本學習",
+          "title": "從 Kevin 修稿學到的文章節奏",
+          "summary": "把 Kevin 人工調整後的文章萃取成可重複使用的寫作判斷，包含自然開頭、數字推動判讀、禁用內部轉場語與結尾強度。",
+          "sourcePath": "logs/2026-06-03-kevin-editorial-reference-learning-log.md"
+        },
+        {
+          "id": "2026-06-03-body-naturalness",
+          "date": "2026-06-03",
+          "type": "正文語感修正",
+          "title": "把台灣中文語感擴展到正文",
+          "summary": "把翻譯腔或顧問簡報語列為正文品質 gate，讓文章更像一般民眾會讀下去的台灣中文。",
+          "sourcePath": "logs/2026-06-03-body-natural-taiwanese-fix-log.md"
+        },
+        {
+          "id": "2026-06-03-title-naturalness",
+          "date": "2026-06-03",
+          "type": "標題語感修正",
+          "title": "標題不做系列感，也不要像美語直翻",
+          "summary": "將標題語感調整成台灣讀者比較自然會點開的句子，避免同一批文章看起來像固定模板系列。",
+          "sourcePath": "logs/2026-06-03-title-natural-taiwanese-fix-log.md"
+        },
+        {
+          "id": "2026-06-03-role-confusion",
+          "date": "2026-06-03",
+          "type": "角色錯亂修正",
+          "title": "文章正文不能混入審稿建議或作者提醒",
+          "summary": "回應文章中出現給作者或社工的建議句，將預設產稿切回一般民眾版，並把 role integrity 設為硬性 gate。",
+          "sourcePath": "logs/2026-06-03-role-confusion-and-public-default-fix-log.md"
+        },
+        {
+          "id": "2026-06-02-full-learning-summary",
+          "date": "2026-06-02",
+          "type": "全文學習總結",
+          "title": "全量讀完後的知識庫學習總結",
+          "summary": "從 InfoCenter 事件列表最早文章開始分批讀取，完成 2026 則事件掃描與 540 篇可學正文統計。",
+          "sourcePath": "reports/2026-06-02-full-learning-summary.md"
+        },
+        {
+          "id": "2026-06-02-learning-milestone-001",
+          "date": "2026-06-02",
+          "type": "學習里程碑",
+          "title": "第一段全文學習里程碑",
+          "summary": "前 5 批共掃描 600 則事件、122 篇可學正文，建立成功稿與駁回稿的早期差異觀察。",
+          "sourcePath": "reports/2026-06-02-learning-milestone-001.md"
+        }
+      ],
+      "copyText": "2026-06-01 至 2026-06-07 週報｜全文學習、審核駁回與文章品質 gate\n\n狀態：需處理\n週期：2026-06-01 至 2026-06-07\n\n本週摘要\n本週完成知識庫全文學習與文章品質規則升級，也確認審核駁回內容必須點開明細才有完整訓練價值。雙週產稿因 review/comment 證據與候選題卡不足先停，避免產出看似完整但訓練基礎不足的文章包。\n\n本週完成\n- 完成 2026 則事件掃描與 540 篇可學正文統計。\n- 建立審核駁回點擊學習路徑，確認 10 筆抽樣中有 3 筆具完整審核內容。\n- 加入角色一致、家庭經濟、非概念文、數值證明、台灣中文語感與結尾強度等文章品質 gate。\n\n阻擋或風險\n- review/comment 讀取仍未完全恢復，不能把只有審核標題的資料視為完整訓練素材。\n- 正式 10 題雙週文章包的候選題卡不足，因此 2026-06-05 產稿流程先停止。\n- 目前公開戰情室只保存去識別整理，不保存後台原始文章或審核原文。\n\n下一步\n- 先補週戰情室輸出檔與 review/comment 正確讀取。\n- 補足一般民眾候選題卡後，再重跑正式 10 題產稿。\n- 每次產稿前檢查是否有內部轉場語、角色錯亂、翻譯腔與弱結尾。\n\n本週紀錄\n- 2026-06-05｜雙週產稿檢查｜上一次雙週產稿為什麼先停下來\n- 2026-06-05｜執行日誌｜2026-06-05 雙週文章生成日誌\n- 2026-06-03｜審核駁回學習｜審核駁回列點擊學習：只看標題不夠\n- 2026-06-03｜Kevin 修稿樣本學習｜從 Kevin 修稿學到的文章節奏\n- 2026-06-03｜正文語感修正｜把台灣中文語感擴展到正文\n- 2026-06-03｜標題語感修正｜標題不做系列感，也不要像美語直翻\n- 2026-06-03｜角色錯亂修正｜文章正文不能混入審稿建議或作者提醒\n- 2026-06-02｜全文學習總結｜全量讀完後的知識庫學習總結\n- 2026-06-02｜學習里程碑｜第一段全文學習里程碑"
+    },
+    {
+      "id": "week-2026-05-25",
+      "weekStart": "2026-05-25",
+      "weekEnd": "2026-05-31",
+      "title": "2026-05-25 至 2026-05-31 週報｜戰情室工作流成形",
+      "status": "已完成",
+      "summary": "本週把知識庫盤點從一次性報告升級為可持續運作的戰情室工作流，建立資料檔驅動、審稿台、Rubric 與後續自動化方向。",
+      "outcomes": [
+        "建立 `suggestions.json` 作為前端資料來源。",
+        "將新增建議升級為可審稿、可核准、可退修與可分類存放的工作台。",
+        "確認新增建議必須具備台灣制度、資料、案例或可行動窗口，不能只停在題目靈感。"
+      ],
+      "blockers": [
+        "核准狀態仍使用瀏覽器 localStorage，尚未成為跨裝置正式紀錄。",
+        "正式自動寫入 repo 或外部系統仍需 Kevin 核准。"
+      ],
+      "nextActions": [
+        "觀察 2 至 3 次週報後，再決定是否提升為全域 Codex skill。",
+        "若多人使用審稿台，下一版可評估接 GitHub PR 或 Google Sheet 保存核准狀態。"
+      ],
+      "records": [
+        {
+          "id": "2026-05-29-daily-report",
+          "date": "2026-05-29",
+          "type": "戰情室優化日報",
+          "title": "戰情室從盤點升級成工作流",
+          "summary": "第一輪復盤確認任務本質已從單次文章盤點，升級為內容戰情室 workflow 與審稿台。",
+          "sourcePath": "reports/2026-05-29-daily-report.md"
+        }
+      ],
+      "copyText": "2026-05-25 至 2026-05-31 週報｜戰情室工作流成形\n\n狀態：已完成\n週期：2026-05-25 至 2026-05-31\n\n本週摘要\n本週把知識庫盤點從一次性報告升級為可持續運作的戰情室工作流，建立資料檔驅動、審稿台、Rubric 與後續自動化方向。\n\n本週完成\n- 建立 `suggestions.json` 作為前端資料來源。\n- 將新增建議升級為可審稿、可核准、可退修與可分類存放的工作台。\n- 確認新增建議必須具備台灣制度、資料、案例或可行動窗口，不能只停在題目靈感。\n\n阻擋或風險\n- 核准狀態仍使用瀏覽器 localStorage，尚未成為跨裝置正式紀錄。\n- 正式自動寫入 repo 或外部系統仍需 Kevin 核准。\n\n下一步\n- 觀察 2 至 3 次週報後，再決定是否提升為全域 Codex skill。\n- 若多人使用審稿台，下一版可評估接 GitHub PR 或 Google Sheet 保存核准狀態。\n\n本週紀錄\n- 2026-05-29｜戰情室優化日報｜戰情室從盤點升級成工作流"
+    }
+  ],
+  "entries": [
+    {
+      "id": "2026-06-05-biweekly-check",
+      "sourcePath": "reports/2026-06-05-biweekly-article-generation-check.md",
+      "type": "雙週產稿檢查",
+      "title": "上一次雙週產稿為什麼先停下來",
+      "summary": "2026-06-05 雙週流程未生成 10 篇文章包，主因是 review/comment 前置學習與候選題卡 gate 未通過。",
+      "highlights": [
+        "未更新 war room review board 文章包資料。",
+        "目前只有 3 張 reviewLearningReadyCards，可支撐的正式題卡不足。",
+        "下一步要先恢復 review/comment 正確讀取，再重跑正式 10 題。"
+      ],
+      "date": "2026-06-05",
+      "content": "# 2026-06-05 雙週文章生成檢查摘要\n\n結果：blocked\n\n摘要\n\n- 未生成 10 篇文章包。\n- 未更新 war room review board 文章包資料。\n- 原因不是政策查核不足，而是前置學習與候選題卡 gate 未通過。\n\n關鍵證據\n\n- `data/review-contrast-cards-2026-06-03.json`\n  - `cardsCreated = 10`\n  - `reviewLearningReadyCards = 3`\n  - `completeReviewDetailsFound = 3`\n- `[內部 automation memory]`\n  - 同日週戰情室已判定 `EVENT_REVIEW / EVENT_COMMENT` 讀取未恢復\n  - 題卡不足以支撐正式 10 題雙週包\n- 目前 repo 無 `work/war-room-weekly-review-2026-06-05.md` 等承接檔\n\n本次輸出\n\n- blocker report：`work/biweekly-article-generation-2026-06-05.md`\n- automation memory：`[內部 automation memory]`\n\nKevin 現在應聚焦\n\n1. 先補週戰情室輸出檔。\n2. 先恢復 review/comment 正確讀取。\n3. 補足一般民眾候選題卡後再重跑正式 10 題。",
+      "copyText": "上一次雙週產稿為什麼先停下來\n\n# 2026-06-05 雙週文章生成檢查摘要\n\n結果：blocked\n\n摘要\n\n- 未生成 10 篇文章包。\n- 未更新 war room review board 文章包資料。\n- 原因不是政策查核不足，而是前置學習與候選題卡 gate 未通過。\n\n關鍵證據\n\n- `data/review-contrast-cards-2026-06-03.json`\n  - `cardsCreated = 10`\n  - `reviewLearningReadyCards = 3`\n  - `completeReviewDetailsFound = 3`\n- `[內部 automation memory]`\n  - 同日週戰情室已判定 `EVENT_REVIEW / EVENT_COMMENT` 讀取未恢復\n  - 題卡不足以支撐正式 10 題雙週包\n- 目前 repo 無 `work/war-room-weekly-review-2026-06-05.md` 等承接檔\n\n本次輸出\n\n- blocker report：`work/biweekly-article-generation-2026-06-05.md`\n- automation memory：`[內部 automation memory]`\n\nKevin 現在應聚焦\n\n1. 先補週戰情室輸出檔。\n2. 先恢復 review/comment 正確讀取。\n3. 補足一般民眾候選題卡後再重跑正式 10 題。"
+    },
+    {
+      "id": "2026-06-05-biweekly-log",
+      "sourcePath": "logs/2026-06-05-biweekly-article-generation-log.md",
+      "type": "執行日誌",
+      "title": "2026-06-05 雙週文章生成日誌",
+      "summary": "紀錄 automation-15 的 local-only 執行結果：因 fatal gate 未解除，停止產稿並改寫 blocker report。",
+      "highlights": [
+        "執行範圍維持 read-only。",
+        "確認同日既有結論：review/comment 證據不足、候選題卡不足。",
+        "沒有改寫 InfoCenter、網站後台、GitHub、Vercel 或其他外部系統。"
+      ],
+      "date": "2026-06-05",
+      "content": "# 2026-06-05 雙週文章生成日誌\n\n- 任務：automation-15 好理家在知識庫雙週文章生成\n- 模式：local-only，外部系統 read-only\n- 結果：blocked，未生成 10 篇候選稿\n\n執行紀錄\n\n1. 讀取 `[內部 automation memory]`\n2. 驗證同日既有結論：review/comment 證據不足、候選題卡不足\n3. 檢查 `data/review-contrast-cards-2026-06-03.json`，確認 `reviewLearningReadyCards = 3`\n4. 檢查目前 repo，確認缺少本次應承接的 `work/` 週戰情室輸出\n5. 停止產稿，改寫 blocker report 與檢查摘要\n\n備註\n\n- 曾嘗試執行本地打包腳本，但腳本內文長度檢查未過，且不應在 fatal gate 未解除時繼續修補為正式產稿流程。\n- 本次沒有改寫 InfoCenter、網站後台、GitHub、Vercel 或其他外部系統。",
+      "copyText": "2026-06-05 雙週文章生成日誌\n\n# 2026-06-05 雙週文章生成日誌\n\n- 任務：automation-15 好理家在知識庫雙週文章生成\n- 模式：local-only，外部系統 read-only\n- 結果：blocked，未生成 10 篇候選稿\n\n執行紀錄\n\n1. 讀取 `[內部 automation memory]`\n2. 驗證同日既有結論：review/comment 證據不足、候選題卡不足\n3. 檢查 `data/review-contrast-cards-2026-06-03.json`，確認 `reviewLearningReadyCards = 3`\n4. 檢查目前 repo，確認缺少本次應承接的 `work/` 週戰情室輸出\n5. 停止產稿，改寫 blocker report 與檢查摘要\n\n備註\n\n- 曾嘗試執行本地打包腳本，但腳本內文長度檢查未過，且不應在 fatal gate 未解除時繼續修補為正式產稿流程。\n- 本次沒有改寫 InfoCenter、網站後台、GitHub、Vercel 或其他外部系統。"
+    },
+    {
+      "id": "2026-06-03-rejection-learning",
+      "sourcePath": "reports/2026-06-03-review-rejection-learning-daily.md",
+      "type": "審核駁回學習",
+      "title": "審核駁回列點擊學習：只看標題不夠",
+      "summary": "確認真正有訓練價值的是審核明細中的審核內容，而不是只知道文章被駁回或只看到審核標題。",
+      "highlights": [
+        "抽樣 10 筆駁回事件，10 筆都成功打開評論中的文章。",
+        "10 筆讀到審核標題，其中 3 筆讀到完整審核內容。",
+        "沒有讀到審核內容時，只能算部分訊號，不能當完整訓練素材。"
+      ],
+      "date": "2026-06-03",
+      "content": "# 2026-06-03 日報：審核駁回建議學習\n\n今天完成第一批「審核駁回列點擊」學習驗證。\n\n這次最重要的發現是：過去只知道文章被駁回，但真正有訓練價值的內容藏在審核明細裡，而且必須點開審核駁回列才會看到。更進一步說，只看審核標題仍不夠，審核內容才會說明文章為什麼不符合好理家在的投稿品質。\n\n本次抽樣 10 筆審核駁回事件，10 筆都成功打開評論中的文章，10 筆都讀到審核標題，其中 3 筆讀到完整審核內容並形成可學習卡。\n\n已新增工具與資料檔，讓後續週五流程可以重跑：\n\n- `tools/infocenter-review-rejection-click-readonly.js`\n- `data/review-contrast-cards-2026-06-03.json`\n\n後續文章生成工作台會把這件事納入品質門檻：如果沒有讀到審核內容，只能算部分訊號，不能當成完整訓練素材。",
+      "copyText": "審核駁回列點擊學習：只看標題不夠\n\n# 2026-06-03 日報：審核駁回建議學習\n\n今天完成第一批「審核駁回列點擊」學習驗證。\n\n這次最重要的發現是：過去只知道文章被駁回，但真正有訓練價值的內容藏在審核明細裡，而且必須點開審核駁回列才會看到。更進一步說，只看審核標題仍不夠，審核內容才會說明文章為什麼不符合好理家在的投稿品質。\n\n本次抽樣 10 筆審核駁回事件，10 筆都成功打開評論中的文章，10 筆都讀到審核標題，其中 3 筆讀到完整審核內容並形成可學習卡。\n\n已新增工具與資料檔，讓後續週五流程可以重跑：\n\n- `tools/infocenter-review-rejection-click-readonly.js`\n- `data/review-contrast-cards-2026-06-03.json`\n\n後續文章生成工作台會把這件事納入品質門檻：如果沒有讀到審核內容，只能算部分訊號，不能當成完整訓練素材。"
+    },
+    {
+      "id": "2026-06-03-kevin-editorial-learning",
+      "sourcePath": "logs/2026-06-03-kevin-editorial-reference-learning-log.md",
+      "type": "Kevin 修稿樣本學習",
+      "title": "從 Kevin 修稿學到的文章節奏",
+      "summary": "把 Kevin 人工調整後的文章萃取成可重複使用的寫作判斷，包含自然開頭、數字推動判讀、禁用內部轉場語與結尾強度。",
+      "highlights": [
+        "好的開頭先寫出壓力如何發生，不先介紹議題。",
+        "數字要推動判讀，讓讀者看見前後差異、日期壓力、可撐天數或少一次周轉。",
+        "正文不得出現寫給作者看的轉場語，結尾需獨立檢查 ending strength。"
+      ],
+      "date": "2026-06-03",
+      "content": "# 2026-06-03 Kevin 修稿樣本學習日誌\n\n## 觸發\n\nKevin 提供一批人工調整後的文章作為參考，希望後續文章生成能學到更自然、更可投稿的寫作方式。\n\n## 主要發現\n\n- Kevin 的修稿重點不是只讓語句更順，而是讓文章更像在解釋生活裡真正卡住人的機制。\n- 好的開頭會先寫出壓力如何發生，而不是先介紹議題。\n- 數字要推動判讀，讓讀者看見前後差異、日期壓力、可撐天數或少一次周轉。\n- 政策或補助金額要翻成日常用途，不能只是引用年度或月額。\n- 短列點可用，但必須回到家庭生活壓力，不可變講義。\n- 2026-06-03 追加回饋：正文不應出現「示意前後差異」這類寫給作者看的轉場語。\n- 2026-06-03 追加回饋：結尾偏弱會讓文章有爛尾或詞不達意的感覺，需獨立檢查 ending strength。\n\n## 已更新\n\n- `docs/kevin-editorial-reference-learning-2026-06-03.md`\n- `docs/submission-article-generation-standard-v2.md`\n- `docs/non-concept-article-review-agent.md`\n- `tools/build-submission-quality-gates.js`\n- `tools/build-gate-driven-generation-contract.js`\n- `tools/build-public-article-pack-2026-06-03.js`\n- 追加 `ending_strength_reviewer`\n- 追加可見轉場語禁用規則\n\n## 驗證項目\n\n- 生成合約應加入 `kevin_editorial_reference_note`。\n- 生成合約應加入 `ending_strength_note`。\n- 投稿品質 gate 應加入 `kevin_editorial_reference_reviewer`。\n- 投稿品質 gate 應加入 `ending_strength_reviewer`。\n- 工作台 suggestions 應加入 `kevinEditorialReferencePolicy`。\n- 工作台 suggestions 應加入 `endingStrengthPolicy`。\n\n## 注意\n\n本次只萃取可重複的寫作判斷，不直接覆蓋文章包正文，也不 commit / push / deploy。",
+      "copyText": "從 Kevin 修稿學到的文章節奏\n\n# 2026-06-03 Kevin 修稿樣本學習日誌\n\n## 觸發\n\nKevin 提供一批人工調整後的文章作為參考，希望後續文章生成能學到更自然、更可投稿的寫作方式。\n\n## 主要發現\n\n- Kevin 的修稿重點不是只讓語句更順，而是讓文章更像在解釋生活裡真正卡住人的機制。\n- 好的開頭會先寫出壓力如何發生，而不是先介紹議題。\n- 數字要推動判讀，讓讀者看見前後差異、日期壓力、可撐天數或少一次周轉。\n- 政策或補助金額要翻成日常用途，不能只是引用年度或月額。\n- 短列點可用，但必須回到家庭生活壓力，不可變講義。\n- 2026-06-03 追加回饋：正文不應出現「示意前後差異」這類寫給作者看的轉場語。\n- 2026-06-03 追加回饋：結尾偏弱會讓文章有爛尾或詞不達意的感覺，需獨立檢查 ending strength。\n\n## 已更新\n\n- `docs/kevin-editorial-reference-learning-2026-06-03.md`\n- `docs/submission-article-generation-standard-v2.md`\n- `docs/non-concept-article-review-agent.md`\n- `tools/build-submission-quality-gates.js`\n- `tools/build-gate-driven-generation-contract.js`\n- `tools/build-public-article-pack-2026-06-03.js`\n- 追加 `ending_strength_reviewer`\n- 追加可見轉場語禁用規則\n\n## 驗證項目\n\n- 生成合約應加入 `kevin_editorial_reference_note`。\n- 生成合約應加入 `ending_strength_note`。\n- 投稿品質 gate 應加入 `kevin_editorial_reference_reviewer`。\n- 投稿品質 gate 應加入 `ending_strength_reviewer`。\n- 工作台 suggestions 應加入 `kevinEditorialReferencePolicy`。\n- 工作台 suggestions 應加入 `endingStrengthPolicy`。\n\n## 注意\n\n本次只萃取可重複的寫作判斷，不直接覆蓋文章包正文，也不 commit / push / deploy。"
+    },
+    {
+      "id": "2026-06-03-body-naturalness",
+      "sourcePath": "logs/2026-06-03-body-natural-taiwanese-fix-log.md",
+      "type": "正文語感修正",
+      "title": "把台灣中文語感擴展到正文",
+      "summary": "把翻譯腔或顧問簡報語列為正文品質 gate，讓文章更像一般民眾會讀下去的台灣中文。",
+      "highlights": [
+        "正文避免收入空窗、財務止血、承接風險等抽象或翻譯腔。",
+        "生成器加入 awkwardBodyPatterns，正文出現不自然語句會直接失敗。",
+        "10 篇正文通過 role leak audit 與正文台灣中文語感 gate。"
+      ],
+      "date": "2026-06-03",
+      "content": "# 2026-06-03 正文台灣中文語感修正日誌\n\n## 觸發\n\nKevin 回饋：前一輪已把標題改得比較自然，但這個語感也應該擴展到正文。\n\n本次修正重點不是只替換幾個詞，而是把「讀得懂但不像台灣人會自然這樣說」列為正文品質 gate。\n\n## 發現\n\n- 部分正文仍有翻譯腔或顧問簡報語，例如「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」。\n- 這類語句意思可懂，但會讓一般民眾讀者覺得不像在談自己的生活。\n- 若只修標題，正文仍可能出現同一種抽象腔調，文章會變得像內部訓練材料。\n\n## 修正\n\n- 重寫 6 篇正文中較明顯的語感問題句。\n- 在文章包生成器加入 `awkwardBodyPatterns`，正文出現不自然語句會直接失敗。\n- 在 `suggestions.json` 加入 `bodyNaturalnessPolicy` 與 `bodyNaturalnessReview`。\n- 在投稿品質關卡加入 `gate-12-body-naturalness`。\n- 在生成合約加入 `body_naturalness_scan`，要求 agent 生成前後都討論正文語感。\n- 更新投稿生成標準與非概念文章審稿 agent 文件。\n\n## 改寫方向\n\n- 「收入空窗」改為「薪水突然少一段」或「一段薪水還沒進來的日子」。\n- 「財務止血」改為「先讓錢不要再流出去」。\n- 「承接風險」改為「遇到變故時還撐不撐得住」。\n- 「正式資源」改為「可以查證的協助管道」或「可以詢問的承辦單位」。\n- 「家庭修復」改為「家裡慢慢恢復穩定」。\n\n## 驗證\n\n- `node tools/build-submission-quality-gates.js`\n- `node tools/build-gate-driven-generation-contract.js`\n- `node tools/build-public-article-pack-2026-06-03.js`\n- `node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack`\n\n驗證結果：10 篇文章正文皆超過 2000 字，role leak audit 通過，正文台灣中文語感 gate 通過。",
+      "copyText": "把台灣中文語感擴展到正文\n\n# 2026-06-03 正文台灣中文語感修正日誌\n\n## 觸發\n\nKevin 回饋：前一輪已把標題改得比較自然，但這個語感也應該擴展到正文。\n\n本次修正重點不是只替換幾個詞，而是把「讀得懂但不像台灣人會自然這樣說」列為正文品質 gate。\n\n## 發現\n\n- 部分正文仍有翻譯腔或顧問簡報語，例如「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」。\n- 這類語句意思可懂，但會讓一般民眾讀者覺得不像在談自己的生活。\n- 若只修標題，正文仍可能出現同一種抽象腔調，文章會變得像內部訓練材料。\n\n## 修正\n\n- 重寫 6 篇正文中較明顯的語感問題句。\n- 在文章包生成器加入 `awkwardBodyPatterns`，正文出現不自然語句會直接失敗。\n- 在 `suggestions.json` 加入 `bodyNaturalnessPolicy` 與 `bodyNaturalnessReview`。\n- 在投稿品質關卡加入 `gate-12-body-naturalness`。\n- 在生成合約加入 `body_naturalness_scan`，要求 agent 生成前後都討論正文語感。\n- 更新投稿生成標準與非概念文章審稿 agent 文件。\n\n## 改寫方向\n\n- 「收入空窗」改為「薪水突然少一段」或「一段薪水還沒進來的日子」。\n- 「財務止血」改為「先讓錢不要再流出去」。\n- 「承接風險」改為「遇到變故時還撐不撐得住」。\n- 「正式資源」改為「可以查證的協助管道」或「可以詢問的承辦單位」。\n- 「家庭修復」改為「家裡慢慢恢復穩定」。\n\n## 驗證\n\n- `node tools/build-submission-quality-gates.js`\n- `node tools/build-gate-driven-generation-contract.js`\n- `node tools/build-public-article-pack-2026-06-03.js`\n- `node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack`\n\n驗證結果：10 篇文章正文皆超過 2000 字，role leak audit 通過，正文台灣中文語感 gate 通過。"
+    },
+    {
+      "id": "2026-06-03-title-naturalness",
+      "sourcePath": "logs/2026-06-03-title-natural-taiwanese-fix-log.md",
+      "type": "標題語感修正",
+      "title": "標題不做系列感，也不要像美語直翻",
+      "summary": "將標題語感調整成台灣讀者比較自然會點開的句子，避免同一批文章看起來像固定模板系列。",
+      "highlights": [
+        "標題要有不同切角，不把每篇做成同一系列。",
+        "避免美語直翻式句子。",
+        "標題需要先讓讀者感覺這篇跟自己的生活有關。"
+      ],
+      "date": "2026-06-03",
+      "content": "# 2026-06-03 標題台灣中文語感修正日誌\n\n## 背景\n\nKevin 回饋：「緊急預備金要先回答收入空窗」讀起來像美語翻譯，不像台灣中文或一般民眾會自然使用的語法。\n\n## 問題\n\n上一版已修正標題句型過度相似，但仍有部分標題呈現翻譯腔或簡報腔。這類標題雖然意思可懂，卻不像人會自然說出口，也會削弱好理家在文章需要的生活感。\n\n## 修正\n\n- 「手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗」\n  - 改為「手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看」\n- 「錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血」\n  - 改為「錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來」\n- 「退休金每月進來，醫療、照顧和詐騙風險也每天靠近」\n  - 改為「退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張」\n\n## 新增規則\n\n- 標題必須是自然台灣中文，不可像美語直譯或顧問簡報。\n- 需要避免「要先回答收入空窗」「財務止血」「風險也每天靠近」這類意思可懂但不自然的語句。\n- title diversity check 之外，增加 title naturalness check。\n\n## 驗證\n\n- 文章包成功重建。\n- title naturalness 擋詞未命中新標題。\n- 正文未重新生成，本文內容與字數維持原文章包。",
+      "copyText": "標題不做系列感，也不要像美語直翻\n\n# 2026-06-03 標題台灣中文語感修正日誌\n\n## 背景\n\nKevin 回饋：「緊急預備金要先回答收入空窗」讀起來像美語翻譯，不像台灣中文或一般民眾會自然使用的語法。\n\n## 問題\n\n上一版已修正標題句型過度相似，但仍有部分標題呈現翻譯腔或簡報腔。這類標題雖然意思可懂，卻不像人會自然說出口，也會削弱好理家在文章需要的生活感。\n\n## 修正\n\n- 「手上有一萬元，可以撐幾天？緊急預備金要先回答收入空窗」\n  - 改為「手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看」\n- 「錢被騙走以後，明天房租怎麼辦？家庭要先做的財務止血」\n  - 改為「錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來」\n- 「退休金每月進來，醫療、照顧和詐騙風險也每天靠近」\n  - 改為「退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張」\n\n## 新增規則\n\n- 標題必須是自然台灣中文，不可像美語直譯或顧問簡報。\n- 需要避免「要先回答收入空窗」「財務止血」「風險也每天靠近」這類意思可懂但不自然的語句。\n- title diversity check 之外，增加 title naturalness check。\n\n## 驗證\n\n- 文章包成功重建。\n- title naturalness 擋詞未命中新標題。\n- 正文未重新生成，本文內容與字數維持原文章包。"
+    },
+    {
+      "id": "2026-06-03-role-confusion",
+      "sourcePath": "logs/2026-06-03-role-confusion-and-public-default-fix-log.md",
+      "type": "角色錯亂修正",
+      "title": "文章正文不能混入審稿建議或作者提醒",
+      "summary": "回應文章中出現給作者或社工的建議句，將預設產稿切回一般民眾版，並把 role integrity 設為硬性 gate。",
+      "highlights": [
+        "正文只能對目標讀者說話。",
+        "不得混入作者建議、審稿語、投稿語、知識庫語或 agent 討論痕跡。",
+        "後續預設先生成一般民眾閱讀文章，社工版需 Kevin 另行指定。"
+      ],
+      "date": "2026-06-03",
+      "content": "# 2026-06-03 角色錯亂與一般民眾預設修正日誌\n\n## 問題\n\nKevin 指出首批生成文章有重大角色錯亂：\n\n- 正文混入對作者、編輯或 agent 的寫作建議。\n- 例如「對一般民眾版本來說」「文章最後也應」「如果這篇文章要投稿」這類句子被放進正文。\n- 這會讓讀者看見生成痕跡，進而不信任文章。\n\n此問題不是單篇瑕疵，而是生成流程沒有把「內部規劃」與「讀者正文」硬切開。\n\n## 掃描結果\n\n新增 `tools/audit-article-role-integrity.js` 後，掃描 `articles/2026-06-02-weekly-pack`：\n\n- 掃描文章：10 篇\n- 命中問題：63 筆\n- 正文後台語：11 筆\n- 預設一般民眾流程下不應出現的社工語氣：48 筆\n- 非預設受眾 metadata：4 筆\n\n因此首批 10 篇文章降級為「需重生，不可直接投稿」。\n\n## 本次修正\n\n### 1. 新增 fatal gate\n\n新增 `gate-11-role-integrity`：\n\n- 名稱：角色一致與內部語言隔離關卡\n- 嚴重度：fatal\n- 任何正文出現作者建議、審稿語、投稿語、知識庫語、讀者版本語或 agent 討論痕跡，都應退回重寫。\n\n### 2. 預設全部生成一般民眾版\n\n後續文章生成預設：\n\n- 一律生成一般民眾版。\n- 只有 Kevin 明確提出社工版時，才啟用社工版。\n- 未明確指定時，不得出現社工評估、介入、服務對象、個案、助人工作者等語氣。\n\n### 3. 新增 role_leak_reviewer\n\n每次文章包生成後，必須掃描：\n\n- 這篇文章\n- 本文可以\n- 本文應\n- 文章最後\n- 文章發展\n- 對一般民眾版而言\n- 如果這篇要投稿\n- 如果這篇文章要用在知識庫\n- 可以提醒讀者\n- 建議每篇\n- 好理家在文章的重要任務\n- 知識文章要做到\n- 審稿\n- 投稿\n- agent\n\n上述語句若出現在正文，直接退修。\n\n## 後續規則\n\n- 舊稿不再視為可投稿初稿。\n- 下一批文章必須重新生成，且全部先用一般民眾版。\n- 社工版需求由 Kevin 另行指定。\n- 文章正文只對讀者說話；所有寫作建議、審核建議、來源查核、SEO/AIO 與 agent 討論，都只能放在內部欄位。",
+      "copyText": "文章正文不能混入審稿建議或作者提醒\n\n# 2026-06-03 角色錯亂與一般民眾預設修正日誌\n\n## 問題\n\nKevin 指出首批生成文章有重大角色錯亂：\n\n- 正文混入對作者、編輯或 agent 的寫作建議。\n- 例如「對一般民眾版本來說」「文章最後也應」「如果這篇文章要投稿」這類句子被放進正文。\n- 這會讓讀者看見生成痕跡，進而不信任文章。\n\n此問題不是單篇瑕疵，而是生成流程沒有把「內部規劃」與「讀者正文」硬切開。\n\n## 掃描結果\n\n新增 `tools/audit-article-role-integrity.js` 後，掃描 `articles/2026-06-02-weekly-pack`：\n\n- 掃描文章：10 篇\n- 命中問題：63 筆\n- 正文後台語：11 筆\n- 預設一般民眾流程下不應出現的社工語氣：48 筆\n- 非預設受眾 metadata：4 筆\n\n因此首批 10 篇文章降級為「需重生，不可直接投稿」。\n\n## 本次修正\n\n### 1. 新增 fatal gate\n\n新增 `gate-11-role-integrity`：\n\n- 名稱：角色一致與內部語言隔離關卡\n- 嚴重度：fatal\n- 任何正文出現作者建議、審稿語、投稿語、知識庫語、讀者版本語或 agent 討論痕跡，都應退回重寫。\n\n### 2. 預設全部生成一般民眾版\n\n後續文章生成預設：\n\n- 一律生成一般民眾版。\n- 只有 Kevin 明確提出社工版時，才啟用社工版。\n- 未明確指定時，不得出現社工評估、介入、服務對象、個案、助人工作者等語氣。\n\n### 3. 新增 role_leak_reviewer\n\n每次文章包生成後，必須掃描：\n\n- 這篇文章\n- 本文可以\n- 本文應\n- 文章最後\n- 文章發展\n- 對一般民眾版而言\n- 如果這篇要投稿\n- 如果這篇文章要用在知識庫\n- 可以提醒讀者\n- 建議每篇\n- 好理家在文章的重要任務\n- 知識文章要做到\n- 審稿\n- 投稿\n- agent\n\n上述語句若出現在正文，直接退修。\n\n## 後續規則\n\n- 舊稿不再視為可投稿初稿。\n- 下一批文章必須重新生成，且全部先用一般民眾版。\n- 社工版需求由 Kevin 另行指定。\n- 文章正文只對讀者說話；所有寫作建議、審核建議、來源查核、SEO/AIO 與 agent 討論，都只能放在內部欄位。"
+    },
+    {
+      "id": "2026-06-02-full-learning-summary",
+      "sourcePath": "reports/2026-06-02-full-learning-summary.md",
+      "type": "全文學習總結",
+      "title": "全量讀完後的知識庫學習總結",
+      "summary": "從 InfoCenter 事件列表最早文章開始分批讀取，完成 2026 則事件掃描與 540 篇可學正文統計。",
+      "highlights": [
+        "成功文章通常具備生活現象、重新框架、資源或介入方向、收束到安全感或選擇空間四層。",
+        "退修或駁回常見問題是篇幅不足、太概念化、缺台灣脈絡、案例無查核或標籤定位不清。",
+        "後續要把新增建議升級為 10 篇可投稿文章包。"
+      ],
+      "date": "2026-06-02",
+      "content": "# 2026-06-02 好理家在知識庫全文學習總結\n\n## 執行範圍\n\n本次從 InfoCenter 事件列表最早文章開始，分批讀取可學習文章正文，直到事件列表掃描完成。\n\n公開 repo 僅保存統計、品質規則、投稿草稿與來源摘要；不保存 InfoCenter 原始全文學習包、內部評論全文、Cookie、Token 或未匿名個案資訊。\n\n## 結果\n\n- 事件列表總數：2026\n- 已掃描事件：2026\n- 完成學習批次：17\n- 可學習文章正文：540\n- SUCCESS：340\n- REJECT：187\n- PROCESSING：12\n- UNKNOWN：1\n- Cursor：completed = true，nextOffset = 2026\n\n## 來源分布\n\n- 小編團隊投稿：233\n- 公開徵稿：243\n- 好理家在FB 已定稿行政審即可上架：47\n- 馴錢師FB圖文：5\n- Podcast圖文：5\n- 季刊用插圖：1\n- 未標示：6\n\n## 篇幅分布\n\n- 平均：2365 字\n- 中位數：2198 字\n- 最短：188 字\n- 最長：24149 字\n\n## 主要發現\n\n成功文章通常具備四層：\n\n1. 從生活現象切入，讓讀者感覺被理解。\n2. 重新框架問題，指出壓力背後的生活條件與結構。\n3. 帶出資源、行動方向或社工介入判讀。\n4. 收束到安全感、選擇空間、支持系統或財務韌性。\n\n退修或駁回樣本常見問題：\n\n- 篇幅不足。\n- 太概念化，缺少台灣制度、數據或案例。\n- 個人經驗太重，沒有轉成知識文章。\n- 標籤定位不清。\n- 缺少資料來源與事實查核。\n- 語氣像教訓、業配或投資課。\n\n## 對每週流程的意義\n\n「新增建議」應升級為「10 篇可投稿文章包」。每篇需要有全文、來源、SEO/AIO、agent 討論紀錄、正式標籤與人工審核狀態。\n\n每週五 14:00 的自動化流程應產出：\n\n- 知識庫缺口盤點。\n- 台灣最新資料與案例來源。\n- 10 篇不同主題文章草稿。\n- 每篇正文 2000 字以上。\n- 每篇可核准、退修、駁回。\n- 核准後依正式標籤分類存放。\n\n## 首批投稿包\n\n本次已建立 `articles/2026-06-02-weekly-pack/`，含 10 篇可投稿初稿，並以機器檢查確認每篇正文扣除空白後均超過 2000 字。\n\n## 追加：Agent 訓練閉環稽核\n\n2026-06-02 追加檢查後，需更精確區分兩種學習：\n\n已完成的是「文章正文 + 審核狀態」的群體學習。也就是能從成功、退修、駁回樣本中整理常見差異。\n\n尚未能確認完成的是「評論中的文章 + 審核評語原文 + 原稿段落」的逐則交叉對照學習。公開 repo 目前沒有保存內部評論全文，也沒有足夠證據顯示每則評語已和文章逐段配對。\n\n下一階段每週流程需建立：\n\n- `review_event_pairs`\n- `review_contrast_cards`\n- `agent_learning_discussions`\n- `eval_trace_records`\n\n這樣 agent 才能從「讀過很多文章」升級成「知道每次退修到底差在哪裡」。",
+      "copyText": "全量讀完後的知識庫學習總結\n\n# 2026-06-02 好理家在知識庫全文學習總結\n\n## 執行範圍\n\n本次從 InfoCenter 事件列表最早文章開始，分批讀取可學習文章正文，直到事件列表掃描完成。\n\n公開 repo 僅保存統計、品質規則、投稿草稿與來源摘要；不保存 InfoCenter 原始全文學習包、內部評論全文、Cookie、Token 或未匿名個案資訊。\n\n## 結果\n\n- 事件列表總數：2026\n- 已掃描事件：2026\n- 完成學習批次：17\n- 可學習文章正文：540\n- SUCCESS：340\n- REJECT：187\n- PROCESSING：12\n- UNKNOWN：1\n- Cursor：completed = true，nextOffset = 2026\n\n## 來源分布\n\n- 小編團隊投稿：233\n- 公開徵稿：243\n- 好理家在FB 已定稿行政審即可上架：47\n- 馴錢師FB圖文：5\n- Podcast圖文：5\n- 季刊用插圖：1\n- 未標示：6\n\n## 篇幅分布\n\n- 平均：2365 字\n- 中位數：2198 字\n- 最短：188 字\n- 最長：24149 字\n\n## 主要發現\n\n成功文章通常具備四層：\n\n1. 從生活現象切入，讓讀者感覺被理解。\n2. 重新框架問題，指出壓力背後的生活條件與結構。\n3. 帶出資源、行動方向或社工介入判讀。\n4. 收束到安全感、選擇空間、支持系統或財務韌性。\n\n退修或駁回樣本常見問題：\n\n- 篇幅不足。\n- 太概念化，缺少台灣制度、數據或案例。\n- 個人經驗太重，沒有轉成知識文章。\n- 標籤定位不清。\n- 缺少資料來源與事實查核。\n- 語氣像教訓、業配或投資課。\n\n## 對每週流程的意義\n\n「新增建議」應升級為「10 篇可投稿文章包」。每篇需要有全文、來源、SEO/AIO、agent 討論紀錄、正式標籤與人工審核狀態。\n\n每週五 14:00 的自動化流程應產出：\n\n- 知識庫缺口盤點。\n- 台灣最新資料與案例來源。\n- 10 篇不同主題文章草稿。\n- 每篇正文 2000 字以上。\n- 每篇可核准、退修、駁回。\n- 核准後依正式標籤分類存放。\n\n## 首批投稿包\n\n本次已建立 `articles/2026-06-02-weekly-pack/`，含 10 篇可投稿初稿，並以機器檢查確認每篇正文扣除空白後均超過 2000 字。\n\n## 追加：Agent 訓練閉環稽核\n\n2026-06-02 追加檢查後，需更精確區分兩種學習：\n\n已完成的是「文章正文 + 審核狀態」的群體學習。也就是能從成功、退修、駁回樣本中整理常見差異。\n\n尚未能確認完成的是「評論中的文章 + 審核評語原文 + 原稿段落」的逐則交叉對照學習。公開 repo 目前沒有保存內部評論全文，也沒有足夠證據顯示每則評語已和文章逐段配對。\n\n下一階段每週流程需建立：\n\n- `review_event_pairs`\n- `review_contrast_cards`\n- `agent_learning_discussions`\n- `eval_trace_records`\n\n這樣 agent 才能從「讀過很多文章」升級成「知道每次退修到底差在哪裡」。"
+    },
+    {
+      "id": "2026-06-02-learning-milestone-001",
+      "sourcePath": "reports/2026-06-02-learning-milestone-001.md",
+      "type": "學習里程碑",
+      "title": "第一段全文學習里程碑",
+      "summary": "前 5 批共掃描 600 則事件、122 篇可學正文，建立成功稿與駁回稿的早期差異觀察。",
+      "highlights": [
+        "通過稿多數會把生活情境放在前面。",
+        "駁回稿常見問題不是沒有資訊，而是太像資料整理。",
+        "真實案例有效，但需要去識別化與倫理邊界。"
+      ],
+      "date": "2026-06-02",
+      "content": "# 2026-06-02 學習里程碑 001\n\n## 範圍\n\n本次從 InfoCenter「好理家在文章管理區」事件管理中，依事件建立時間由舊到新讀取前 5 批資料。\n\n- 掃描事件：600 則\n- 可學正文：122 篇\n- 事件範圍：2025-02-24 至 2025-07-18\n- 下一批起點：`startOffset = 600`\n- 主要來源標籤：小編團隊投稿\n\n## 審核狀態\n\n- SUCCESS：100 篇\n- REJECT：21 篇\n- UNKNOWN：1 篇\n\n## 批次明細\n\n| 批次 | Offset | 時間範圍 | 掃描 | 可學正文 | 狀態摘要 |\n| --- | ---: | --- | ---: | ---: | --- |\n| 001 | 0-120 | 2025-02-24 至 2025-05-23 | 120 | 38 | SUCCESS 20、REJECT 17、UNKNOWN 1 |\n| 002 | 120-240 | 2025-05-23 至 2025-05-29 | 120 | 20 | SUCCESS 20 |\n| 003 | 240-360 | 2025-05-29 至 2025-07-05 | 120 | 24 | SUCCESS 20、REJECT 4 |\n| 004 | 360-480 | 2025-07-05 至 2025-07-15 | 120 | 20 | SUCCESS 20 |\n| 005 | 480-600 | 2025-07-15 至 2025-07-18 | 120 | 20 | SUCCESS 20 |\n\n## 學習發現\n\n第一，通過稿多數會把生活情境放在前面。\n\n成功文章常見切入方式是家庭、債務、詐騙、保險、補助、醫療、租屋、子女教養或工作變動。這些文章不是只談觀念，而是把制度或知識接到讀者真的會遇到的壓力。\n\n第二，駁回稿常見問題不是沒有資訊，而是太像資料整理。\n\n駁回稿中有些主題本身很重要，例如信用、在職專班、二房東、夫妻財務、消費者債務清理。但文章若停在定義、利弊、成本分析或專業資訊，較難形成好理家在需要的「重新看懂處境」。\n\n第三，社工版文章需要更明確的介入語言。\n\n只說資源、條件或法律，不等於社工文章。社工版需要指出社工怎麼看、可能看錯哪裡、如何盤點風險、如何陪服務對象轉譯現實限制。\n\n第四，真實案例有效，但需要去識別化與倫理邊界。\n\n本批次中發現部分文章含有會談或個案資料痕跡。這些資料可以作為內部學習，但不能進入公開 repo 或 Vercel 頁面。後續 agent 生成案例時，只能使用公開新聞、官方案例、已授權素材或清楚標示的示意情境。\n\n第五，審核意見欄位仍是缺口。\n\n目前能穩定取得審核狀態，但文字型駁回建議尚未出現在已讀 API 欄位。後續要從頁面互動、其他 API 或人工導出路徑補齊，才可能建立更精準的「駁回原因模型」。\n\n## 時間預估\n\n目前實測每批 120 則約 90-100 秒。以總數 2026 則估算：\n\n- 已完成：5 批，600 則\n- 剩餘：約 1426 則\n- 尚需批次：約 12 批\n- 純讀取時間：約 20 分鐘\n- 每 5 批彙整一次規則：約 10-15 分鐘\n- 全量讀完並產出第二版規則：約 35-50 分鐘\n- 加上部署、驗證與紀錄：約 45-75 分鐘\n\n## 下一步\n\n1. 從 `startOffset = 600` 繼續跑第 006 批。\n2. 跑到第 010 批後，做第二次規則彙整。\n3. 同步追查審核意見文字來源。\n4. 不公開 raw learning packs，只公開統計、規則、runbook 與可審核新增建議。",
+      "copyText": "第一段全文學習里程碑\n\n# 2026-06-02 學習里程碑 001\n\n## 範圍\n\n本次從 InfoCenter「好理家在文章管理區」事件管理中，依事件建立時間由舊到新讀取前 5 批資料。\n\n- 掃描事件：600 則\n- 可學正文：122 篇\n- 事件範圍：2025-02-24 至 2025-07-18\n- 下一批起點：`startOffset = 600`\n- 主要來源標籤：小編團隊投稿\n\n## 審核狀態\n\n- SUCCESS：100 篇\n- REJECT：21 篇\n- UNKNOWN：1 篇\n\n## 批次明細\n\n| 批次 | Offset | 時間範圍 | 掃描 | 可學正文 | 狀態摘要 |\n| --- | ---: | --- | ---: | ---: | --- |\n| 001 | 0-120 | 2025-02-24 至 2025-05-23 | 120 | 38 | SUCCESS 20、REJECT 17、UNKNOWN 1 |\n| 002 | 120-240 | 2025-05-23 至 2025-05-29 | 120 | 20 | SUCCESS 20 |\n| 003 | 240-360 | 2025-05-29 至 2025-07-05 | 120 | 24 | SUCCESS 20、REJECT 4 |\n| 004 | 360-480 | 2025-07-05 至 2025-07-15 | 120 | 20 | SUCCESS 20 |\n| 005 | 480-600 | 2025-07-15 至 2025-07-18 | 120 | 20 | SUCCESS 20 |\n\n## 學習發現\n\n第一，通過稿多數會把生活情境放在前面。\n\n成功文章常見切入方式是家庭、債務、詐騙、保險、補助、醫療、租屋、子女教養或工作變動。這些文章不是只談觀念，而是把制度或知識接到讀者真的會遇到的壓力。\n\n第二，駁回稿常見問題不是沒有資訊，而是太像資料整理。\n\n駁回稿中有些主題本身很重要，例如信用、在職專班、二房東、夫妻財務、消費者債務清理。但文章若停在定義、利弊、成本分析或專業資訊，較難形成好理家在需要的「重新看懂處境」。\n\n第三，社工版文章需要更明確的介入語言。\n\n只說資源、條件或法律，不等於社工文章。社工版需要指出社工怎麼看、可能看錯哪裡、如何盤點風險、如何陪服務對象轉譯現實限制。\n\n第四，真實案例有效，但需要去識別化與倫理邊界。\n\n本批次中發現部分文章含有會談或個案資料痕跡。這些資料可以作為內部學習，但不能進入公開 repo 或 Vercel 頁面。後續 agent 生成案例時，只能使用公開新聞、官方案例、已授權素材或清楚標示的示意情境。\n\n第五，審核意見欄位仍是缺口。\n\n目前能穩定取得審核狀態，但文字型駁回建議尚未出現在已讀 API 欄位。後續要從頁面互動、其他 API 或人工導出路徑補齊，才可能建立更精準的「駁回原因模型」。\n\n## 時間預估\n\n目前實測每批 120 則約 90-100 秒。以總數 2026 則估算：\n\n- 已完成：5 批，600 則\n- 剩餘：約 1426 則\n- 尚需批次：約 12 批\n- 純讀取時間：約 20 分鐘\n- 每 5 批彙整一次規則：約 10-15 分鐘\n- 全量讀完並產出第二版規則：約 35-50 分鐘\n- 加上部署、驗證與紀錄：約 45-75 分鐘\n\n## 下一步\n\n1. 從 `startOffset = 600` 繼續跑第 006 批。\n2. 跑到第 010 批後，做第二次規則彙整。\n3. 同步追查審核意見文字來源。\n4. 不公開 raw learning packs，只公開統計、規則、runbook 與可審核新增建議。"
+    },
+    {
+      "id": "2026-05-29-daily-report",
+      "sourcePath": "reports/2026-05-29-daily-report.md",
+      "type": "戰情室優化日報",
+      "title": "戰情室從盤點升級成工作流",
+      "summary": "第一輪復盤確認任務本質已從單次文章盤點，升級為內容戰情室 workflow 與審稿台。",
+      "highlights": [
+        "新增建議不能只停在題目靈感，必須先有台灣制度、資料、案例或可行動窗口。",
+        "Agent 最有價值的位置是分工審稿，而不是同時寫草稿。",
+        "審稿台比靜態報告更接近實際工作流程。"
+      ],
+      "date": "2026-05-29",
+      "content": "# 2026-05-29 日報｜好理家在知識庫戰情室優化\n\n## 今日完成\n\n- 完成知識庫戰情室第一輪復盤，確認任務本質已從單次文章盤點升級為內容戰情室 workflow。\n- 將「新增建議」優化為資料檔驅動架構：新增 `suggestions.json`，前端優先讀取資料檔，再回退到頁面內備援資料。\n- 新增內容審稿 Rubric，包含來源可信度、台灣情境具體度、案例治理、Prompt 符合度、可行動下一步。\n- 在每則建議卡加入審稿評分欄位，讓「可審稿」「需補證」「可上稿」更容易判斷。\n- 保留核准暫存庫、分類存放、JSON 匯出、Markdown 匯出功能。\n- 補充 Codex 後續優化草案，作為全域 skill 與 automation 調整前的審核材料。\n\n## 主要發現\n\n- 登入態是知識庫盤點的關鍵。公開 API 與登入後瀏覽器看到的內容差異很大，因此後續盤點應固定加入瀏覽器登入態檢查。\n- 新增建議不能只停在題目靈感，必須先有台灣制度、資料、案例或可行動窗口，否則容易變成概念型文章。\n- Agent 最有價值的位置不是同時寫草稿，而是分工審稿：一個查資料真實性與案例治理，一個看 prompt 符合度與實用性。\n- 審稿台比靜態報告更接近實際工作流程，因為 Kevin 可以點開草稿、核准、退回補證，並依分類暫存。\n\n## 風險與限制\n\n- 目前核准狀態仍使用瀏覽器 `localStorage`，適合 MVP，不適合作為跨裝置唯一正式紀錄。\n- `suggestions.json` 可以被週報 automation 更新，但正式自動寫入 repo 前仍需要 Kevin 另行核准。\n- 草稿引用的數據、制度與案例在正式上稿前仍需覆核最新公告與查詢日期。\n\n## 建議下一步\n\n- 將 `suggestions.json` 作為週報新增建議的主要輸出格式。\n- 觀察 2 至 3 次週報後，再決定是否把這套流程提升為全域 Codex skill。\n- 若審稿台確實會多人使用，下一版應接 GitHub PR 或 Google Sheet 來保存核准狀態。",
+      "copyText": "戰情室從盤點升級成工作流\n\n# 2026-05-29 日報｜好理家在知識庫戰情室優化\n\n## 今日完成\n\n- 完成知識庫戰情室第一輪復盤，確認任務本質已從單次文章盤點升級為內容戰情室 workflow。\n- 將「新增建議」優化為資料檔驅動架構：新增 `suggestions.json`，前端優先讀取資料檔，再回退到頁面內備援資料。\n- 新增內容審稿 Rubric，包含來源可信度、台灣情境具體度、案例治理、Prompt 符合度、可行動下一步。\n- 在每則建議卡加入審稿評分欄位，讓「可審稿」「需補證」「可上稿」更容易判斷。\n- 保留核准暫存庫、分類存放、JSON 匯出、Markdown 匯出功能。\n- 補充 Codex 後續優化草案，作為全域 skill 與 automation 調整前的審核材料。\n\n## 主要發現\n\n- 登入態是知識庫盤點的關鍵。公開 API 與登入後瀏覽器看到的內容差異很大，因此後續盤點應固定加入瀏覽器登入態檢查。\n- 新增建議不能只停在題目靈感，必須先有台灣制度、資料、案例或可行動窗口，否則容易變成概念型文章。\n- Agent 最有價值的位置不是同時寫草稿，而是分工審稿：一個查資料真實性與案例治理，一個看 prompt 符合度與實用性。\n- 審稿台比靜態報告更接近實際工作流程，因為 Kevin 可以點開草稿、核准、退回補證，並依分類暫存。\n\n## 風險與限制\n\n- 目前核准狀態仍使用瀏覽器 `localStorage`，適合 MVP，不適合作為跨裝置唯一正式紀錄。\n- `suggestions.json` 可以被週報 automation 更新，但正式自動寫入 repo 前仍需要 Kevin 另行核准。\n- 草稿引用的數據、制度與案例在正式上稿前仍需覆核最新公告與查詢日期。\n\n## 建議下一步\n\n- 將 `suggestions.json` 作為週報新增建議的主要輸出格式。\n- 觀察 2 至 3 次週報後，再決定是否把這套流程提升為全域 Codex skill。\n- 若審稿台確實會多人使用，下一版應接 GitHub PR 或 Google Sheet 來保存核准狀態。"
+    }
+  ]
+}

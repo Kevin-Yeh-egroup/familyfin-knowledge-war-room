@@ -1,4 +1,6 @@
 .vercel
 node_modules
+work/
 work-private/
+tools/build-biweekly-article-pack-2026-06-05.js
 *.raw-infocenter.json
