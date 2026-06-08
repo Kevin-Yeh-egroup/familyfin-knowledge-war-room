@@ -5,6 +5,42 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const sources = [
   {
+    id: "2026-06-08-knowledge-base-title-index",
+    sourcePath: "reports/2026-06-08-knowledge-base-title-index-log.md",
+    type: "知識庫標題索引",
+    title: "既有知識庫標題索引接入 validator",
+    summary: "新增公開知識庫標題索引，讓 validator 可比對候選文章是否撞到站上既有公開文章標題。",
+    highlights: [
+      "索引只保存公開 articleId、公開標題與正規化標題，不保存正文或後台資料。",
+      "目前索引包含 1323 筆公開知識庫標題。",
+      "目前 10 篇候選稿與既有標題為 0 exact match、0 near match、0 warning。"
+    ]
+  },
+  {
+    id: "2026-06-08-submission-mechanism-chat-review",
+    sourcePath: "reports/2026-06-08-submission-mechanism-chat-review.md",
+    type: "投稿檢核機制回查",
+    title: "把投稿檢核聊天本體回填到產稿前 gate",
+    summary: "回查「檢核投稿機制」聊天本體，將標題新意、內容差異、新讀者價值與案例數字判斷，轉成戰情室產稿前規則。",
+    highlights: [
+      "相似度分數只是審稿訊號，不等於抄襲判定。",
+      "標題是第一提醒點，但正文也要逐篇檢查案例、數字、段落順序與核心建議。",
+      "戰情室新增 title novelty、content difference 與 new reader value 產稿前 gate。"
+    ]
+  },
+  {
+    id: "2026-06-08-source-of-truth-reconciliation",
+    sourcePath: "reports/2026-06-08-source-of-truth-reconciliation.md",
+    type: "Source-of-truth 對帳",
+    title: "戰情室正式索引與紀錄來源對帳",
+    summary: "整理 repo 內目前可作為戰情室正式索引、週報、文章包與 blocker 判斷的資料來源，避免工作流從不同檔案讀到互相矛盾的狀態。",
+    highlights: [
+      "`suggestions.json` 是目前 review board 與文章包 metadata 的第一來源。",
+      "`article-pack-history.json` 記錄每次純文字文章包產出或 blocked attempt。",
+      "`analysis-history.json` 將 reports/logs 轉成公開安全的週報與分析紀錄。"
+    ]
+  },
+  {
     id: "2026-06-05-biweekly-check",
     sourcePath: "reports/2026-06-05-biweekly-article-generation-check.md",
     type: "雙週產稿檢查",
@@ -127,6 +163,26 @@ const sources = [
 ];
 
 const weeklyNotes = {
+  "2026-06-08": {
+    title: "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核與產稿前 gate",
+    status: "需處理",
+    summary: "本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程。重點不是立刻多產文章，而是讓下一次正式產稿前先擋掉標題過近、內容沒有新價值、缺案例數字與紀錄來源漂移。",
+    outcomes: [
+      "完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。",
+      "回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。",
+      "validator 增加同批標題正規化重複、近似與核心題名包含檢查。",
+      "新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。"
+    ],
+    blockers: [
+      "live review/comment learning 仍低於正式 10 篇文章包門檻。",
+      "正式產稿前仍需每次重新更新公開標題索引，避免用舊索引判斷題目新意。"
+    ],
+    nextActions: [
+      "下一輪正式產稿前，先補每題 new_reader_value 與 content_difference_plan。",
+      "若要產正式 10 篇，需先恢復或確認 live review/comment 交叉學習。",
+      "考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。"
+    ]
+  },
   "2026-06-01": {
     title: "2026-06-01 至 2026-06-07 週報｜全文學習、審核駁回與文章品質 gate",
     status: "需處理",

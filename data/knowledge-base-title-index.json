@@ -1,0 +1,6632 @@
+{
+  "updatedAt": "2026-06-08T04:10:54.674Z",
+  "source": "FamilyFin public knowledge-base article title search API",
+  "sourceApi": "https://www.familyfinhealth.com/api/v1/organizations/0A4f9LDYSg2A7OzOih8A3g/search/public/articles",
+  "organizationId": "0A4f9LDYSg2A7OzOih8A3g",
+  "locale": "zh_TW",
+  "privacy": {
+    "publicTitlesOnly": true,
+    "rawArticleBodiesStored": false,
+    "privateInfoCenterDataStored": false
+  },
+  "totalReportedByApi": 1323,
+  "fetchedRecords": 1323,
+  "titleCount": 1323,
+  "titles": [
+    {
+      "articleId": "LGc9Mua6StqEMC2jg9HKsg",
+      "title": " 經濟困難中，如何教育孩子，避免代間貧窮的延續？",
+      "normalizedTitle": "經濟困難中如何教育孩子避免代間貧窮的延續"
+    },
+    {
+      "articleId": "0lAzEBG0S5uny6I51q1reg",
+      "title": "《人生階段 × 財務韌性》 第一階段｜18–25 歲：當你還沒成家，其實已經在決定未來家庭的承受力",
+      "normalizedTitle": "人生階段×財務韌性第一階段|18–25歲當你還沒成家其實已經在決定未來家庭的承受力"
+    },
+    {
+      "articleId": "YvwcbHgFROKKteLePZyCvQ",
+      "title": "《人生階段 × 財務韌性》 第二階段｜26–35 歲：成家之後，壓垮人的不是花費，而是「不能出事」",
+      "normalizedTitle": "人生階段×財務韌性第二階段|26–35歲成家之後壓垮人的不是花費而是不能出事"
+    },
+    {
+      "articleId": "594cjEQCRD2Q61QK4MFMQw",
+      "title": "《人生階段 × 財務韌性》第三階段｜幼兒家庭期 當甜蜜的負荷越來越重，幼兒家庭如何在忙亂中穩住生活",
+      "normalizedTitle": "人生階段×財務韌性第三階段|幼兒家庭期當甜蜜的負荷越來越重幼兒家庭如何在忙亂中穩住生活"
+    },
+    {
+      "articleId": "0V1GI3dvBRza8gBDMCfTQQ",
+      "title": "《父母進去了，孩子怎麼辦》 服刑與子女照顧的兩難",
+      "normalizedTitle": "父母進去了孩子怎麼辦服刑與子女照顧的兩難"
+    },
+    {
+      "articleId": "05H2Jhf59RrKkaJawsUBbw",
+      "title": "《家庭支持 × 財務》主題一：收入穩定的雙薪家庭，為何仍需要支持系統？",
+      "normalizedTitle": "家庭支持×財務主題一收入穩定的雙薪家庭為何仍需要支持系統"
+    },
+    {
+      "articleId": "sJQNcNRkehmd6ABJVsuQ",
+      "title": "《家庭支持 × 財務》主題三：「家庭支持」決定財務復原力，如何讓家庭成為真正的安全網？",
+      "normalizedTitle": "家庭支持×財務主題三家庭支持決定財務復原力如何讓家庭成為真正的安全網"
+    },
+    {
+      "articleId": "0H1xoCRpIRHmuTrt4LZv5Q",
+      "title": "《畢業後，人生好難》01 面試談的不只是薪水，而是未來五年的自己",
+      "normalizedTitle": "畢業後人生好難01面試談的不只是薪水而是未來五年的自己"
+    },
+    {
+      "articleId": "Rbem9eJSQguMHhNx72kAHQ",
+      "title": "《畢業後，人生好難》02 學會看懂薪資單，便是建立財務韌性的第一步",
+      "normalizedTitle": "畢業後人生好難02學會看懂薪資單便是建立財務韌性的第一步"
+    },
+    {
+      "articleId": "pUcmEXD6Se2Tou0AnrNdwA",
+      "title": "《畢業後，人生好難》03 年薪百萬卻存不到錢？財務有餘裕和選擇，才是升級人生",
+      "normalizedTitle": "畢業後人生好難03年薪百萬卻存不到錢財務有餘裕和選擇才是升級人生"
+    },
+    {
+      "articleId": "09FU94PbQ1y6dgfbsN1EiA",
+      "title": "《勞退 × 家庭財務韌性》 只靠勞退，真的夠退休嗎？",
+      "normalizedTitle": "勞退×家庭財務韌性只靠勞退真的夠退休嗎"
+    },
+    {
+      "articleId": "0BXsd8YlASRe5yRqHDT3nQ",
+      "title": "《勞退 × 家庭財務韌性》 退休不只存數字，更要三支柱一起撐！",
+      "normalizedTitle": "勞退×家庭財務韌性退休不只存數字更要三支柱一起撐"
+    },
+    {
+      "articleId": "0aTiwwBORRP6tEIsDAVrbg",
+      "title": "《勞退 × 家庭財務韌性》 提前先整理退休金資訊，讓家人未來多一份安心",
+      "normalizedTitle": "勞退×家庭財務韌性提前先整理退休金資訊讓家人未來多一份安心"
+    },
+    {
+      "articleId": "PpwfL7o4Tqu2e91ksfZQbg",
+      "title": "《AI 時代的家庭財務重整》 需要花大錢補AI更會做的事嗎？孩子教育預算的重新配置與未來韌性",
+      "normalizedTitle": "ai時代的家庭財務重整需要花大錢補ai更會做的事嗎孩子教育預算的重新配置與未來韌性"
+    },
+    {
+      "articleId": "0ypoLHkoWSSy1Ft3sG35ig",
+      "title": "「一張表，讓我們終於看清了欠債的真相」家庭債務盤點工具教學",
+      "normalizedTitle": "一張表讓我們終於看清了欠債的真相家庭債務盤點工具教學"
+    },
+    {
+      "articleId": "mezZhJhnSpSuYZ0iDfMJAg",
+      "title": "「只是小錢」這句話，是家庭財務最危險的謊言",
+      "normalizedTitle": "只是小錢這句話是家庭財務最危險的謊言"
+    },
+    {
+      "articleId": "x2AY4pdrR0uh4VFqoH6udw",
+      "title": "「我們明明很省，為什麼還是欠債？」年輕爸媽最容易踩的財務陷阱",
+      "normalizedTitle": "我們明明很省為什麼還是欠債年輕爸媽最容易踩的財務陷阱"
+    },
+    {
+      "articleId": "O41gOqb8RcuKRPPwt8A7tw",
+      "title": "「爸媽的卡債，是我的責任嗎？」家裡長輩有負債怎麼辦？",
+      "normalizedTitle": "爸媽的卡債是我的責任嗎家裡長輩有負債怎麼辦"
+    },
+    {
+      "articleId": "06XqYvOSQmO4YmbsN5Xhlw",
+      "title": "「買東西前先想三秒」真的改變了我",
+      "normalizedTitle": "買東西前先想三秒真的改變了我"
+    },
+    {
+      "articleId": "8PyrTIESaqUydtiuRRGw",
+      "title": "「還完這筆債，我們就能開始新生活了嗎？」負債夫妻的假期望",
+      "normalizedTitle": "還完這筆債我們就能開始新生活了嗎負債夫妻的假期望"
+    },
+    {
+      "articleId": "enfoHJRT63dveHrnVoLA",
+      "title": "「贏在起跑點的吃補」：父母的育兒營養焦慮與財務平衡",
+      "normalizedTitle": "贏在起跑點的吃補父母的育兒營養焦慮與財務平衡"
+    },
+    {
+      "articleId": "0W3yG2LJiSAWpBdhW1JfHA",
+      "title": "【中年職場卡關期】不敢轉職，也能提升年薪的5個實戰策略",
+      "normalizedTitle": "中年職場卡關期不敢轉職也能提升年薪的5個實戰策略"
+    },
+    {
+      "articleId": "0mI3C4qDQiyXvKAW5TYzFA",
+      "title": "【少子化讓我失業，也逼我看清現金流：一位幼教老師的真實轉職故事與現金流思維】",
+      "normalizedTitle": "少子化讓我失業也逼我看清現金流一位幼教老師的真實轉職故事與現金流思維"
+    },
+    {
+      "articleId": "u2I87sRCTyaDgGCiTWBiJg",
+      "title": "【文獻/期刊整理】 【導讀】債務處理與家計重建-社工對債務家庭的協助策略初探",
+      "normalizedTitle": "文獻/期刊整理導讀債務處理與家計重建社工對債務家庭的協助策略初探"
+    },
+    {
+      "articleId": "69kYDoaRRXaiJVco2Bvg",
+      "title": "【欠債不只傷荷包，還傷未來！】家庭債務如何影響信用評分與未來借貸",
+      "normalizedTitle": "欠債不只傷荷包還傷未來家庭債務如何影響信用評分與未來借貸"
+    },
+    {
+      "articleId": "5TAwBeLjQHULARPGzA",
+      "title": "【生病沒存款，債務壓垮全家？】醫療費該怎麼辦？",
+      "normalizedTitle": "生病沒存款債務壓垮全家醫療費該怎麼辦"
+    },
+    {
+      "articleId": "qL4WQLSpQOWqHcBujWAHSA",
+      "title": "【由儉入奢易，由奢入儉難】棘輪效應（Ratchet Effect）",
+      "normalizedTitle": "由儉入奢易由奢入儉難棘輪效應ratcheteffect"
+    },
+    {
+      "articleId": "WN5JxENQQVu7zvhjqWrA",
+      "title": "【快錢的幻象 : 從月息10%的甜頭，到債務的無底洞】",
+      "normalizedTitle": "快錢的幻象從月息10%的甜頭到債務的無底洞"
+    },
+    {
+      "articleId": "0ydUPdfDAQon0HswZCiV1A",
+      "title": "【車牌被註銷了才知道強制險不能拖！一位外送員的沉痛教訓】",
+      "normalizedTitle": "車牌被註銷了才知道強制險不能拖一位外送員的沉痛教訓"
+    },
+    {
+      "articleId": "37TP8g2SS3FGEPTWvrhQ",
+      "title": "【房貸壓力山大？】這對夫妻還款策略讓他們10年無債一身輕！",
+      "normalizedTitle": "房貸壓力山大這對夫妻還款策略讓他們10年無債一身輕"
+    },
+    {
+      "articleId": "GInk9BNT0OsWxLJAiCUw",
+      "title": "【為什麼明明想還債，卻總是還不清？】3個你忽略的還款障礙！",
+      "normalizedTitle": "為什麼明明想還債卻總是還不清3個你忽略的還款障礙"
+    },
+    {
+      "articleId": "0o4DGOZsTXGulHdOMV6CNw",
+      "title": "【家庭理財必讀】理財不是夢，選對金融工具讓錢為你工作！",
+      "normalizedTitle": "家庭理財必讀理財不是夢選對金融工具讓錢為你工作"
+    },
+    {
+      "articleId": "tSn1m08JQg21SjsuKOZDRw",
+      "title": "【現金流，才是生活底線：從一個貸款案例，看見財務規劃的重要】",
+      "normalizedTitle": "現金流才是生活底線從一個貸款案例看見財務規劃的重要"
+    },
+    {
+      "articleId": "Y6VaPqBSTL6PC7cxE7Sd3g",
+      "title": "【期貨與風險：金融小白也能懂的入門指南】",
+      "normalizedTitle": "期貨與風險金融小白也能懂的入門指南"
+    },
+    {
+      "articleId": "cfg7hYriQyOpt9OKEXlH3A",
+      "title": "【新青安大限倒數】當寬限期退場，你想守住的是房子還是家庭關係？",
+      "normalizedTitle": "新青安大限倒數當寬限期退場你想守住的是房子還是家庭關係"
+    },
+    {
+      "articleId": "xDmaSfFuRsGmtfStFYaFDg",
+      "title": "【擔保借款，卻變成自己的債】家人一時好心，結果債務上身！",
+      "normalizedTitle": "擔保借款卻變成自己的債家人一時好心結果債務上身"
+    },
+    {
+      "articleId": "73Uq61OqQsKRspPJlRB3YA",
+      "title": "【穩健致富】月收入5萬元家庭的投資計畫：打造長期3%以上報酬的財富藍圖  ",
+      "normalizedTitle": "穩健致富月收入5萬元家庭的投資計畫打造長期3%以上報酬的財富藍圖"
+    },
+    {
+      "articleId": "AvUNgR5QCpMSYmB2VRsw",
+      "title": "<面向一>與家人共同溝通討論因應方式",
+      "normalizedTitle": "<面向一>與家人共同溝通討論因應方式"
+    },
+    {
+      "articleId": "FbANz6OLQAG13WJWK63Q",
+      "title": "<面向二>失業補助請領流程與選擇之間的權衡",
+      "normalizedTitle": "<面向二>失業補助請領流程與選擇之間的權衡"
+    },
+    {
+      "articleId": "0xxRBz4LkRyqgSNCiBXPCg",
+      "title": "<面向三>失業後，從盤點家庭收支，了解缺口開始",
+      "normalizedTitle": "<面向三>失業後從盤點家庭收支了解缺口開始"
+    },
+    {
+      "articleId": "8l4wh4sVTDyHvT3OZH3ExQ",
+      "title": "<面向五>失業家庭如何穩健週轉？5大借貸工具與還款能力全解析",
+      "normalizedTitle": "<面向五>失業家庭如何穩健週轉5大借貸工具與還款能力全解析"
+    },
+    {
+      "articleId": "7Glzht4RTAa05uQUIe23YQ",
+      "title": "<面向四>思考現有家庭支出可調節的可能性，降低每個月的不足額",
+      "normalizedTitle": "<面向四>思考現有家庭支出可調節的可能性降低每個月的不足額"
+    },
+    {
+      "articleId": "Kii0b598Sf2PYV0wm0nItQ",
+      "title": "<理財漫畫>分期付款好輕鬆真的嗎",
+      "normalizedTitle": "<理財漫畫>分期付款好輕鬆真的嗎"
+    },
+    {
+      "articleId": "0JUCoAUc1QKpVEH5W9tfTw",
+      "title": "<理財漫畫>沒繳強制險？一撞下去，錢包哭給你看！",
+      "normalizedTitle": "<理財漫畫>沒繳強制險一撞下去錢包哭給你看"
+    },
+    {
+      "articleId": "0Ppz353MR3Sku0dteQcibA",
+      "title": "114/06/05家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/06/05家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "Fl4dkC9HRXyM78el5uxhRw",
+      "title": "114/06/11家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/06/11家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "5hD4vax3Ra6KcKzDXsdG8g",
+      "title": "114/06/12家庭經濟研討會【社救法之外的脫貧賦能】-北區分享人綱要",
+      "normalizedTitle": "114/06/12家庭經濟研討會社救法之外的脫貧賦能北區分享人綱要"
+    },
+    {
+      "articleId": "WOK2ZcrTliebH5S3fMrg",
+      "title": "114/06/19家庭經濟研討會【社救法之外的脫貧賦能】-中區分享人綱要",
+      "normalizedTitle": "114/06/19家庭經濟研討會社救法之外的脫貧賦能中區分享人綱要"
+    },
+    {
+      "articleId": "0c4b5lCmSFKcTGYhDiUwTQ",
+      "title": "114/06/26家庭經濟研討會【社救法之外的脫貧賦能】-南區分享人綱要",
+      "normalizedTitle": "114/06/26家庭經濟研討會社救法之外的脫貧賦能南區分享人綱要"
+    },
+    {
+      "articleId": "09B6sJLQ8TLOiVqgff93DA",
+      "title": "114/07/11家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/07/11家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "em8MOkKdTx2jfs6CrUGjUA",
+      "title": "114/08/05家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/08/05家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "0xJWbzxwQamc0Igut2ztBw",
+      "title": "114/09/02家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/09/02家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "0vxDF4A98Qtm3tI9Xt5axA",
+      "title": "114/5/23 4R社會診斷模式",
+      "normalizedTitle": "114/5/234r社會診斷模式"
+    },
+    {
+      "articleId": "0yCLXPAeWQAFLksu14snxQ",
+      "title": "114/5/26家庭經濟輔導經驗分享與風險評估-課程摘要 (工作坊限定)",
+      "normalizedTitle": "114/5/26家庭經濟輔導經驗分享與風險評估課程摘要工作坊限定"
+    },
+    {
+      "articleId": "0Ub4BFQXSYO0Qt5mwuyzRg",
+      "title": "1140117經濟議題實務線上分享會-親職引導員與育兒指導員服務介紹-分享人：謝怡君財務健康諮詢師",
+      "normalizedTitle": "1140117經濟議題實務線上分享會親職引導員與育兒指導員服務介紹分享人謝怡君財務健康諮詢師"
+    },
+    {
+      "articleId": "IkONpluTfuMWVqsj29Pg",
+      "title": "1140214經濟議題實務線上分享會-商業保險與資產活化摘要，善用價值準備金的七個魔法-分享人：賴芳伶財務健康諮詢師",
+      "normalizedTitle": "1140214經濟議題實務線上分享會商業保險與資產活化摘要善用價值準備金的七個魔法分享人賴芳伶財務健康諮詢師"
+    },
+    {
+      "articleId": "t4TTt1DsR0OrPMxQNdYZ1Q",
+      "title": "1140314經濟議題實務線上分享會-家事商談服務~談離婚前，你可以知道的事!-分享人：波德琳財務健康諮詢師",
+      "normalizedTitle": "1140314經濟議題實務線上分享會家事商談服務談離婚前你可以知道的事分享人波德琳財務健康諮詢師"
+    },
+    {
+      "articleId": "tAojjIjPTQuO42xerW17gg",
+      "title": "1140418經濟議題實務線上分享會-別讓荷包餓肚子(助人者的財務療癒之旅從我的經歷談起)-分享人：陳俊伶諮商心理師",
+      "normalizedTitle": "1140418經濟議題實務線上分享會別讓荷包餓肚子助人者的財務療癒之旅從我的經歷談起分享人陳俊伶諮商心理師"
+    },
+    {
+      "articleId": "fibbun5dT1OHpGcXqZUvwQ",
+      "title": "1140516經濟議題實務線上分享會摘要-繼承停.看.聽(談繼承前，你可以知道的事)-分享人：藍家保顧問",
+      "normalizedTitle": "1140516經濟議題實務線上分享會摘要繼承停看聽談繼承前你可以知道的事分享人藍家保顧問"
+    },
+    {
+      "articleId": "J17w8IIyTVekOe5CPpATvA",
+      "title": "1140522「資訊與通訊技術」線上會談實務工作坊摘要",
+      "normalizedTitle": "1140522資訊與通訊技術線上會談實務工作坊摘要"
+    },
+    {
+      "articleId": "8EUJxRFmTP6DcUIV5lSbAA",
+      "title": "1140524 法扶新型債務有法可解說明會摘要",
+      "normalizedTitle": "1140524法扶新型債務有法可解說明會摘要"
+    },
+    {
+      "articleId": "ZOc3r3v7T8SYda9YNqRk3w",
+      "title": "1140613經濟議題實務線上分享會-暑假一到，鬼門開了! 親子整理師分享家事變遊戲魔法-分享人：王璟琦親子整理師",
+      "normalizedTitle": "1140613經濟議題實務線上分享會暑假一到鬼門開了親子整理師分享家事變遊戲魔法分享人王璟琦親子整理師"
+    },
+    {
+      "articleId": "iTAUS0jxQleQFNgOVK5Q",
+      "title": "1140617 經濟評估與處遇知能 2",
+      "normalizedTitle": "1140617經濟評估與處遇知能2"
+    },
+    {
+      "articleId": "0XQnnINJSRmRDA3Xii8TLA",
+      "title": "1140718經濟議題實務線上分享會-陪青少年走一段路! 從生活對話到財務陪伴-分享人：廖麗萍督導",
+      "normalizedTitle": "1140718經濟議題實務線上分享會陪青少年走一段路從生活對話到財務陪伴分享人廖麗萍督導"
+    },
+    {
+      "articleId": "UgdUI3AZTnSRQCQSAmK8vw",
+      "title": "1140815經濟議題實務線上分享會-和孩子一起長出金腦袋-分享人： 黃瓈瑩社工",
+      "normalizedTitle": "1140815經濟議題實務線上分享會和孩子一起長出金腦袋分享人黃瓈瑩社工"
+    },
+    {
+      "articleId": "DiNkLN0Ql2UliUr7NZPQ",
+      "title": "1140919經濟議題實務線上分享會-談錢!等長大再說-分享人：郭白白社工師",
+      "normalizedTitle": "1140919經濟議題實務線上分享會談錢等長大再說分享人郭白白社工師"
+    },
+    {
+      "articleId": "0PfLQpDKkQg2XtFsGCXH8Q",
+      "title": "1141017經濟議題實務線上分享會-從社會保險談保險-張雅富 高齡金融規劃顧問師",
+      "normalizedTitle": "1141017經濟議題實務線上分享會從社會保險談保險張雅富高齡金融規劃顧問師"
+    },
+    {
+      "articleId": "0JHpXOZdQ3y58ORP4XZGAg",
+      "title": "1141121經濟議題實務線上分享會-癌症的社區照顧資源-木魚 社工師",
+      "normalizedTitle": "1141121經濟議題實務線上分享會癌症的社區照顧資源木魚社工師"
+    },
+    {
+      "articleId": "KeuJHu4HRNiM8vJExmBXKA",
+      "title": "1141219經濟議題實務線上分享會-信託與財務規劃-從醫務社工的角度與家屬的對話歷程-陳妍妙 社工師",
+      "normalizedTitle": "1141219經濟議題實務線上分享會信託與財務規劃從醫務社工的角度與家屬的對話歷程陳妍妙社工師"
+    },
+    {
+      "articleId": "ZTtoqLb0RtKVyybXgk9vhQ",
+      "title": "114年3月底職位空缺調查首度公布：揭示勞動市場需求全貌",
+      "normalizedTitle": "114年3月底職位空缺調查首度公布揭示勞動市場需求全貌"
+    },
+    {
+      "articleId": "gl1Kyv7sQZCQCkfkQ0DAwg",
+      "title": "1150130經濟議題實務線上分享會-當經濟支柱倒下，家庭如何度過失業風暴?-阮翎-CDA國際生涯發展諮詢師",
+      "normalizedTitle": "1150130經濟議題實務線上分享會當經濟支柱倒下家庭如何度過失業風暴阮翎cda國際生涯發展諮詢師"
+    },
+    {
+      "articleId": "A4tJ7ASUScaQZDHdS16d7w",
+      "title": "1150206經濟議題實務線上分享會-從紅包談起：把親子理財變成「可操作」的財務教養設計-分享人：謝怡君財務健康諮詢師",
+      "normalizedTitle": "1150206經濟議題實務線上分享會從紅包談起把親子理財變成可操作的財務教養設計分享人謝怡君財務健康諮詢師"
+    },
+    {
+      "articleId": "w3hH1lUWQt6lhg74eIy5zQ",
+      "title": "1150312 好理家在 · 家庭經濟研討會《從社工看家庭財務韌性》台北場",
+      "normalizedTitle": "1150312好理家在·家庭經濟研討會從社工看家庭財務韌性台北場"
+    },
+    {
+      "articleId": "IQoponu5Q1ujgmvaQ5NfKg",
+      "title": "1150312台北場 場次一：從風險訊號到評估行動—家庭經濟脆弱樣貌的實務觀察-討論區",
+      "normalizedTitle": "1150312台北場場次一從風險訊號到評估行動家庭經濟脆弱樣貌的實務觀察討論區"
+    },
+    {
+      "articleId": "00tSWWqGCT22zMGBdALQBg",
+      "title": "1150312台北場 場次二：焦點對話—本土化的家庭財務韌性面向內涵與發展-討論區",
+      "normalizedTitle": "1150312台北場場次二焦點對話本土化的家庭財務韌性面向內涵與發展討論區"
+    },
+    {
+      "articleId": "0f467UW1RYWwl6Wbh8PBjg",
+      "title": "1150312台北場 場次三：從扶助到自立—財務韌性重建的多元服務經驗-討論區",
+      "normalizedTitle": "1150312台北場場次三從扶助到自立財務韌性重建的多元服務經驗討論區"
+    },
+    {
+      "articleId": "0AVRLLI1yTWuKJngO31q2w",
+      "title": "1150312台北場 場次四：讓家庭撐得住—家庭經濟服務中的實務行動與整合經驗-討論區",
+      "normalizedTitle": "1150312台北場場次四讓家庭撐得住家庭經濟服務中的實務行動與整合經驗討論區"
+    },
+    {
+      "articleId": "03clYNSWPQs6AwmT1YUgtA",
+      "title": "1150320 好理家在 · 家庭經濟研討會《從社工看家庭財務韌性》台中場",
+      "normalizedTitle": "1150320好理家在·家庭經濟研討會從社工看家庭財務韌性台中場"
+    },
+    {
+      "articleId": "qIjuTeD5Q1yXVIFZHFpw",
+      "title": "1150320台中場 場次一：從風險訊號到評估行動—家庭經濟脆弱樣貌的實務觀察-討論區",
+      "normalizedTitle": "1150320台中場場次一從風險訊號到評估行動家庭經濟脆弱樣貌的實務觀察討論區"
+    },
+    {
+      "articleId": "0d5FHvVYS5yjkooLMjXaQw",
+      "title": "1150320台中場 場次二：焦點對話—本土化的家庭財務韌性面向內涵與發展-討論區",
+      "normalizedTitle": "1150320台中場場次二焦點對話本土化的家庭財務韌性面向內涵與發展討論區"
+    },
+    {
+      "articleId": "0u20hVxKmTX6e7fimd8BgA",
+      "title": "1150320台中場 場次三：從扶助到自立—財務韌性重建的多元服務經驗-討論區",
+      "normalizedTitle": "1150320台中場場次三從扶助到自立財務韌性重建的多元服務經驗討論區"
+    },
+    {
+      "articleId": "0V2P6yGrqSry2fsthUpjtA",
+      "title": "1150320台中場 場次四：讓家庭撐得住—家庭經濟服務中的實務行動與整合經驗-討論區",
+      "normalizedTitle": "1150320台中場場次四讓家庭撐得住家庭經濟服務中的實務行動與整合經驗討論區"
+    },
+    {
+      "articleId": "IIwq5n01TAqSCqXfQFmKiw",
+      "title": "1150320經濟議題實務線上分享會-當家裡變了樣 子女成年 長輩照顧 我們能做什麼準備-孟琳 社工師",
+      "normalizedTitle": "1150320經濟議題實務線上分享會當家裡變了樣子女成年長輩照顧我們能做什麼準備孟琳社工師"
+    },
+    {
+      "articleId": "63YOyyfYQsu3k0h4e9qYeQ",
+      "title": "1150401 好理家在 · 家庭經濟研討會《從社工看家庭財務韌性》高雄場",
+      "normalizedTitle": "1150401好理家在·家庭經濟研討會從社工看家庭財務韌性高雄場"
+    },
+    {
+      "articleId": "l1NTpY5ZRiKoMzjZtNwg",
+      "title": "1150401高雄場  場次四：讓家庭撐得住—家庭經濟服務中的實務行動與整合經驗-討論區",
+      "normalizedTitle": "1150401高雄場場次四讓家庭撐得住家庭經濟服務中的實務行動與整合經驗討論區"
+    },
+    {
+      "articleId": "StleU9ACQTeckhnhybxdzA",
+      "title": "1150401高雄場 場次一：從風險訊號到評估行動—家庭經濟脆弱樣貌的實務觀察-討論區",
+      "normalizedTitle": "1150401高雄場場次一從風險訊號到評估行動家庭經濟脆弱樣貌的實務觀察討論區"
+    },
+    {
+      "articleId": "BHAAm8LTxe5ziExF9PWg",
+      "title": "1150401高雄場 場次二：焦點對話—本土化的家庭財務韌性面向內涵與發展-討論區",
+      "normalizedTitle": "1150401高雄場場次二焦點對話本土化的家庭財務韌性面向內涵與發展討論區"
+    },
+    {
+      "articleId": "00uyqxlKsQD2U71lGNe3Kw",
+      "title": "1150401高雄場 場次三：從扶助到自立—財務韌性重建的多元服務經驗-討論區",
+      "normalizedTitle": "1150401高雄場場次三從扶助到自立財務韌性重建的多元服務經驗討論區"
+    },
+    {
+      "articleId": "FjfZ8NxXTZ2s6jsVZDKaBQ",
+      "title": "1150417 經濟議題實務線上分享會-負債壓力大?諮詢師教你債務協商，遠離高利重建信用!-分享人：徐慕怡財務健康諮詢師",
+      "normalizedTitle": "1150417經濟議題實務線上分享會負債壓力大諮詢師教你債務協商遠離高利重建信用分享人徐慕怡財務健康諮詢師"
+    },
+    {
+      "articleId": "0A1XE73tRUyyjpJl7dITYA",
+      "title": "1150421 馴錢養成班-第1梯次-第一堂：你不是不會理財，而是你一直用錯方式在看自己的錢",
+      "normalizedTitle": "1150421馴錢養成班第1梯次第一堂你不是不會理財而是你一直用錯方式在看自己的錢"
+    },
+    {
+      "articleId": "0w55VvAZKTSqWrNrOIFTJg",
+      "title": "1150428 馴錢養成班：第1梯次-第二堂-你不是不會理財，而是從來沒看清楚自己的錢",
+      "normalizedTitle": "1150428馴錢養成班第1梯次第二堂你不是不會理財而是從來沒看清楚自己的錢"
+    },
+    {
+      "articleId": "003XpciXoSvLNoS6MQdWhQ",
+      "title": "1150505 馴錢養成班-第1梯次-第三堂：為生活創造餘裕，找回更多選擇的空間",
+      "normalizedTitle": "1150505馴錢養成班第1梯次第三堂為生活創造餘裕找回更多選擇的空間"
+    },
+    {
+      "articleId": "coT5sCWCRcC7cQyo07ncWA",
+      "title": "1150512 馴錢養成班-第1梯次-第四堂：當生活被固定支出卡住 - 如何看懂財務盲點，找回人生的轉身空間",
+      "normalizedTitle": "1150512馴錢養成班第1梯次第四堂當生活被固定支出卡住如何看懂財務盲點找回人生的轉身空間"
+    },
+    {
+      "articleId": "ENNYQEZATFG3x55w65Kbhg",
+      "title": "1150515經濟議題實務線上分享會-斜槓人生，你的槓在哪裡?-分享人：李婉仙財務健康諮詢師",
+      "normalizedTitle": "1150515經濟議題實務線上分享會斜槓人生你的槓在哪裡分享人李婉仙財務健康諮詢師"
+    },
+    {
+      "articleId": "aPvc0Yb9Tn6sxUEiuB9Ymg",
+      "title": "1150519 馴錢養成班-第1梯次-第五堂：看懂財務結構，找回可以調整的生活空間",
+      "normalizedTitle": "1150519馴錢養成班第1梯次第五堂看懂財務結構找回可以調整的生活空間"
+    },
+    {
+      "articleId": "0BuUWGhvTkCZFZkK49PD2A",
+      "title": "115年社福補助加發政策：經濟弱勢族群生活補助金全解析與社工切入建議",
+      "normalizedTitle": "115年社福補助加發政策經濟弱勢族群生活補助金全解析與社工切入建議"
+    },
+    {
+      "articleId": "Q9ptCcWzTtGks47PE1XfkQ",
+      "title": "115年家庭經濟評估工作坊-督導場",
+      "normalizedTitle": "115年家庭經濟評估工作坊督導場"
+    },
+    {
+      "articleId": "f9bQB9xpQFGvwIDz3nuGLw",
+      "title": "115年家庭經濟輔導工作坊-社工場",
+      "normalizedTitle": "115年家庭經濟輔導工作坊社工場"
+    },
+    {
+      "articleId": "a3tfrdt5SgCvUn2R4GV7tQ",
+      "title": "15-29歲青年就業方案與相關補助介紹",
+      "normalizedTitle": "1529歲青年就業方案與相關補助介紹"
+    },
+    {
+      "articleId": "0ghZdLr1TCWhJI2gQinXOw",
+      "title": "17歲買了權利車，還沒成年就背上債務黑歷史",
+      "normalizedTitle": "17歲買了權利車還沒成年就背上債務黑歷史"
+    },
+    {
+      "articleId": "0PzN1ASJSiqe8mbrZvjOFQ",
+      "title": "2026年台灣經濟展望",
+      "normalizedTitle": "2026年台灣經濟展望"
+    },
+    {
+      "articleId": "0U9xFkVYSNKsfyBmCs8SOQ",
+      "title": "20歲身障大學生怎麼靠父母理賠金規劃未來？",
+      "normalizedTitle": "20歲身障大學生怎麼靠父母理賠金規劃未來"
+    },
+    {
+      "articleId": "xNb2tDqpSL6eeIU2IpJSUA",
+      "title": "40年房貸的秘密 : 這樣做，比加速還款更划算",
+      "normalizedTitle": "40年房貸的秘密這樣做比加速還款更划算"
+    },
+    {
+      "articleId": "I9cSusnpTCewQS9GJs8bZw",
+      "title": "45年老屋的抉擇：修繕、重建、出租還是出售？",
+      "normalizedTitle": "45年老屋的抉擇修繕重建出租還是出售"
+    },
+    {
+      "articleId": "24Z3EX0aRAel1wHN8fV4jA",
+      "title": "一次性失能補助，讓生活多一份希望",
+      "normalizedTitle": "一次性失能補助讓生活多一份希望"
+    },
+    {
+      "articleId": "iB3t01rHQVex2xqlxUm5cg",
+      "title": "一紙契約，媽媽的房子沒了",
+      "normalizedTitle": "一紙契約媽媽的房子沒了"
+    },
+    {
+      "articleId": "uMCauPVRQYitLguac2893g",
+      "title": "一場理財夢，夢醒時傾家蕩產",
+      "normalizedTitle": "一場理財夢夢醒時傾家蕩產"
+    },
+    {
+      "articleId": "0QwY7lLKzTKmK1SUibMEVQ",
+      "title": "一場關於家庭財務的「體檢」",
+      "normalizedTitle": "一場關於家庭財務的體檢"
+    },
+    {
+      "articleId": "0sBbK1vhRS8uTW9Y4GbJWA",
+      "title": "一萬元即將入帳：用心理帳戶思維打造正向財務練習",
+      "normalizedTitle": "一萬元即將入帳用心理帳戶思維打造正向財務練習"
+    },
+    {
+      "articleId": "u2lmDzxzQceiBBiJI9xaMw",
+      "title": "人口結構海嘯來襲：當毛小孩比新生兒還多的台灣社會",
+      "normalizedTitle": "人口結構海嘯來襲當毛小孩比新生兒還多的台灣社會"
+    },
+    {
+      "articleId": "v8SGh5GqSGCV9e2IJnBK7g",
+      "title": "人生備用計畫：你該認識的意定監護",
+      "normalizedTitle": "人生備用計畫你該認識的意定監護"
+    },
+    {
+      "articleId": "V5VuMgMJS1u0FG1ACfmU3w",
+      "title": "人在情境中 (Person in Situation, PIS)",
+      "normalizedTitle": "人在情境中personinsituationpis"
+    },
+    {
+      "articleId": "0aj76rJoRDW3jCOA5S4gOQ",
+      "title": "人寵情感連結評估",
+      "normalizedTitle": "人寵情感連結評估"
+    },
+    {
+      "articleId": "xLlwTjzRyfHUO4oFGg9g",
+      "title": "入監前家庭財務應變規劃",
+      "normalizedTitle": "入監前家庭財務應變規劃"
+    },
+    {
+      "articleId": "xhdTfk3nR8u7WHJYJFPwYA",
+      "title": "入監前家庭經濟緊急準備",
+      "normalizedTitle": "入監前家庭經濟緊急準備"
+    },
+    {
+      "articleId": "0uabpVeKdREx1FtXC78Bfg",
+      "title": "入監家庭子女心理支持規劃",
+      "normalizedTitle": "入監家庭子女心理支持規劃"
+    },
+    {
+      "articleId": "Ybab5a55QEeZfn4LUrx2hg",
+      "title": "入監家庭污名化因應",
+      "normalizedTitle": "入監家庭污名化因應"
+    },
+    {
+      "articleId": "05qG0xX1QTruQBpLcMTyfQ",
+      "title": "入監家庭法律權益與保障",
+      "normalizedTitle": "入監家庭法律權益與保障"
+    },
+    {
+      "articleId": "5HIxaPrYSJihIFKbVc7UBA",
+      "title": "入監家庭社會支持網絡建構",
+      "normalizedTitle": "入監家庭社會支持網絡建構"
+    },
+    {
+      "articleId": "zhpxcCjxTCKyG0MGwEAJSg",
+      "title": "入監期間子女照護財務規劃",
+      "normalizedTitle": "入監期間子女照護財務規劃"
+    },
+    {
+      "articleId": "Vi3ViF2HSH2ZqZkMTvM3KQ",
+      "title": "入監期間家庭功能維持策略",
+      "normalizedTitle": "入監期間家庭功能維持策略"
+    },
+    {
+      "articleId": "jJSHMvWvSRoe2ySNx9kA",
+      "title": "入監焦慮心理支持費用規劃",
+      "normalizedTitle": "入監焦慮心理支持費用規劃"
+    },
+    {
+      "articleId": "0ztEH41ZS8SWDmGn2TXo7Q",
+      "title": "入監對家庭信用的影響處理",
+      "normalizedTitle": "入監對家庭信用的影響處理"
+    },
+    {
+      "articleId": "17lmw806R0q1og3Dek05sQ",
+      "title": "八十歲免評聘看護移工新制：社工處遇實務指引",
+      "normalizedTitle": "八十歲免評聘看護移工新制社工處遇實務指引"
+    },
+    {
+      "articleId": "0ujQkoHESCWEqLeRn4mByQ",
+      "title": "三餐怎麼省？一家四口的真實經驗",
+      "normalizedTitle": "三餐怎麼省一家四口的真實經驗"
+    },
+    {
+      "articleId": "01LEJkp5QmmGuOYEOTmbvw",
+      "title": "上班族的「隱性支出」：交際費、團購、聚餐",
+      "normalizedTitle": "上班族的隱性支出交際費團購聚餐"
+    },
+    {
+      "articleId": "1PYODdNAR62wsd2sEo54IQ",
+      "title": "下班後的小副業，讓我多點安全感",
+      "normalizedTitle": "下班後的小副業讓我多點安全感"
+    },
+    {
+      "articleId": "0nbdztb1eS1SagDR0QOK8Q",
+      "title": "土地與建物不同人持有，真正的風險不是現在，而是未來 !",
+      "normalizedTitle": "土地與建物不同人持有真正的風險不是現在而是未來"
+    },
+    {
+      "articleId": "0SfZiFZGS2yauHYBl4Eg",
+      "title": "子女參與家庭財務教育規劃",
+      "normalizedTitle": "子女參與家庭財務教育規劃"
+    },
+    {
+      "articleId": "vtqCr6YsTjaL66nPA3iydQ",
+      "title": "小心「便宜的代價」：我的消費陷阱自救筆記",
+      "normalizedTitle": "小心便宜的代價我的消費陷阱自救筆記"
+    },
+    {
+      "articleId": "0NGheEZoRiWo4JPUxxzZjw",
+      "title": "小忽略，大代價：罰單與欠繳的隱形壓力",
+      "normalizedTitle": "小忽略大代價罰單與欠繳的隱形壓力"
+    },
+    {
+      "articleId": "rjLqr5v4RzOQGdPE1GbYGg",
+      "title": "小芳的韌性與重生之路：與諮詢師、社工在債務與育兒夾縫中一起尋找希望",
+      "normalizedTitle": "小芳的韌性與重生之路與諮詢師社工在債務與育兒夾縫中一起尋找希望"
+    },
+    {
+      "articleId": "MnrQzmTVRuiBdPhQqMcw",
+      "title": "小孩三歲了，我想出去工作可以嗎？",
+      "normalizedTitle": "小孩三歲了我想出去工作可以嗎"
+    },
+    {
+      "articleId": "06a1u97iERzM8Wxp4yQemg",
+      "title": "小孩牙齒矯正動輒十幾萬，家庭財務如何規劃？",
+      "normalizedTitle": "小孩牙齒矯正動輒十幾萬家庭財務如何規劃"
+    },
+    {
+      "articleId": "q1lSJITrTUO2MRwmaxpiXw",
+      "title": "小孩剛出生，媽媽要不要重返職場？找保母划算嗎？",
+      "normalizedTitle": "小孩剛出生媽媽要不要重返職場找保母划算嗎"
+    },
+    {
+      "articleId": "LWy8wJkbSjGE7y5z3yuNFw",
+      "title": "小家庭到底要外食還是自己煮比較划算？",
+      "normalizedTitle": "小家庭到底要外食還是自己煮比較划算"
+    },
+    {
+      "articleId": "4NfLcAD3R2CfaLdychLQJA",
+      "title": "小家庭租屋成家：家電家具該買全新、二手還是租賃？",
+      "normalizedTitle": "小家庭租屋成家家電家具該買全新二手還是租賃"
+    },
+    {
+      "articleId": "sZA5ZkQOTSqggEE2b3MzWg",
+      "title": "小曼的故事：從「頻繁轉職」的逃離到「穩定收入」的定錨",
+      "normalizedTitle": "小曼的故事從頻繁轉職的逃離到穩定收入的定錨"
+    },
+    {
+      "articleId": "0T884Vi3AQ5WzsIWnHlnbw",
+      "title": "小欽的故事：從信用卡陷阱到財務重生",
+      "normalizedTitle": "小欽的故事從信用卡陷阱到財務重生"
+    },
+    {
+      "articleId": "nrGskRSxav0CPfO3QV0g",
+      "title": "小資族也能滾出大財富",
+      "normalizedTitle": "小資族也能滾出大財富"
+    },
+    {
+      "articleId": "Prn2jCuDRxO3OWb2AAnNMg",
+      "title": "小編合作與文章審查機制",
+      "normalizedTitle": "小編合作與文章審查機制"
+    },
+    {
+      "articleId": "o6pEBMn0RYOAVJzeUVePpQ",
+      "title": "小錢存久了，也能變大錢",
+      "normalizedTitle": "小錢存久了也能變大錢"
+    },
+    {
+      "articleId": "0HKl9Adw2RyCBptXo8gqlw",
+      "title": "小額信用貸款基礎與自我評估｜經濟弱勢家庭該如何理性申請？",
+      "normalizedTitle": "小額信用貸款基礎與自我評估|經濟弱勢家庭該如何理性申請"
+    },
+    {
+      "articleId": "frwbuBBARKCJ5SWK4zEWRQ",
+      "title": "工地臨時工如何轉型以穩定收入?",
+      "normalizedTitle": "工地臨時工如何轉型以穩定收入"
+    },
+    {
+      "articleId": "Jgf1SvY1TLuuVvtiiIWjOA",
+      "title": "工作能力評估與復工準備：重返職場的關鍵指南",
+      "normalizedTitle": "工作能力評估與復工準備重返職場的關鍵指南"
+    },
+    {
+      "articleId": "Gl2ARFlGQXaxCgEEHPb2zA",
+      "title": "工會欠費怎麼辦？勞保權益自保攻略",
+      "normalizedTitle": "工會欠費怎麼辦勞保權益自保攻略"
+    },
+    {
+      "articleId": "arMTbcg5TsyhK9zrkM62bg",
+      "title": "工讀生暑期打工及勞動保障",
+      "normalizedTitle": "工讀生暑期打工及勞動保障"
+    },
+    {
+      "articleId": "0LnoTXzJWTeSEkasCFn5XQ",
+      "title": "不只存錢，更要存「自由」：我的北漂財務告白",
+      "normalizedTitle": "不只存錢更要存自由我的北漂財務告白"
+    },
+    {
+      "articleId": "aZn48gT1TBOqNDkLsBszcQ",
+      "title": "不只是教孩子省錢，而是教他怎麼用錢過人生  ——家長如何協助青少年建立真正的財務知能",
+      "normalizedTitle": "不只是教孩子省錢而是教他怎麼用錢過人生家長如何協助青少年建立真正的財務知能"
+    },
+    {
+      "articleId": "TJcMrDabTACIhoEBcNxNTg",
+      "title": "不只理財，更要理「帳」！防範詐騙，從清查閒置銀行帳戶開始",
+      "normalizedTitle": "不只理財更要理帳防範詐騙從清查閒置銀行帳戶開始"
+    },
+    {
+      "articleId": "SQdC9pNyS9yfAFSfHVLE7Q",
+      "title": "不同宮廟工作者的介紹與收入架構",
+      "normalizedTitle": "不同宮廟工作者的介紹與收入架構"
+    },
+    {
+      "articleId": "LkDk8OBiTrSMOt3qHDGaxw",
+      "title": "不同階段適合的財務規劃工具:由初階到高階",
+      "normalizedTitle": "不同階段適合的財務規劃工具由初階到高階"
+    },
+    {
+      "articleId": "nUAzvgBtR1ig6UVXuXxtLQ",
+      "title": "不怕風險來敲門，只怕口袋空空等 —談風險管理與財務的關聯性 —",
+      "normalizedTitle": "不怕風險來敲門只怕口袋空空等談風險管理與財務的關聯性"
+    },
+    {
+      "articleId": "0AJhin2UThSN68F6io4mUQ",
+      "title": "不是不努力，是現實太重：債務還款的選擇題",
+      "normalizedTitle": "不是不努力是現實太重債務還款的選擇題"
+    },
+    {
+      "articleId": "0LJeuHoR8ROLST8wmbavnw",
+      "title": "不是你的錯！詐騙受害後，教你如何自保與重拾生活",
+      "normalizedTitle": "不是你的錯詐騙受害後教你如何自保與重拾生活"
+    },
+    {
+      "articleId": "0WjA0XaBREWBfzwGkX7otQ",
+      "title": "不動產繼承登記實務",
+      "normalizedTitle": "不動產繼承登記實務"
+    },
+    {
+      "articleId": "3ww9wRcNQMOaKgWParkpPQ",
+      "title": "不想傷感情！教你如何和孩子討論分擔家計",
+      "normalizedTitle": "不想傷感情教你如何和孩子討論分擔家計"
+    },
+    {
+      "articleId": "0pXgWEOJOQTSLk3JD2YpOg",
+      "title": "不靠省到痛苦，也能存到錢——「無痛存錢」的5個理財設計",
+      "normalizedTitle": "不靠省到痛苦也能存到錢無痛存錢的5個理財設計"
+    },
+    {
+      "articleId": "46f0NgtYQieZxrIlUodrvg",
+      "title": "不穩定收入心理調適策略",
+      "normalizedTitle": "不穩定收入心理調適策略"
+    },
+    {
+      "articleId": "4rqmBqTHCQqMlvGrCA",
+      "title": "不穩定收入保險規劃策略",
+      "normalizedTitle": "不穩定收入保險規劃策略"
+    },
+    {
+      "articleId": "04FDPCuPS5uaVgdlmIGIgw",
+      "title": "不穩定收入家庭協調策略",
+      "normalizedTitle": "不穩定收入家庭協調策略"
+    },
+    {
+      "articleId": "0qklwe3jS8CnsgPXkuurrg",
+      "title": "不穩定收入財務管理策略",
+      "normalizedTitle": "不穩定收入財務管理策略"
+    },
+    {
+      "articleId": "zgwIo25KTZCitkTKAF21hg",
+      "title": "不穩定收入退休準備策略",
+      "normalizedTitle": "不穩定收入退休準備策略"
+    },
+    {
+      "articleId": "0KxFQZ8fRqux9RLjJQaoOA",
+      "title": "中年失業，我選擇成為自己的老闆",
+      "normalizedTitle": "中年失業我選擇成為自己的老闆"
+    },
+    {
+      "articleId": "0iaIl94d5RhSdeZqj3Njvw",
+      "title": "中年再起的轉折點——從失業到再適應職場的實戰案例",
+      "normalizedTitle": "中年再起的轉折點從失業到再適應職場的實戰案例"
+    },
+    {
+      "articleId": "0fxKt3p2UT7CI1lMZd7Nzg",
+      "title": "中年被迫轉業：如何在逆境中守住家庭的財務安全",
+      "normalizedTitle": "中年被迫轉業如何在逆境中守住家庭的財務安全"
+    },
+    {
+      "articleId": "PmEAErT2WLmXcwdGsqBA",
+      "title": "中低收入戶申請與福利",
+      "normalizedTitle": "中低收入戶申請與福利"
+    },
+    {
+      "articleId": "x0VFiQf2rGbtEadXwQ",
+      "title": "中秋與雙十假期：法定休假權益解析",
+      "normalizedTitle": "中秋與雙十假期法定休假權益解析"
+    },
+    {
+      "articleId": "0njEKIvLQAKo76tGcZOVkQ",
+      "title": "中高年齡再就業：找到出路的三大策略（含方向與實際工作清單）",
+      "normalizedTitle": "中高年齡再就業找到出路的三大策略含方向與實際工作清單"
+    },
+    {
+      "articleId": "pS07vftbQPODhWUIw1USPQ",
+      "title": "中高齡再就業的安全網：為什麼職災保險不可或缺？",
+      "normalizedTitle": "中高齡再就業的安全網為什麼職災保險不可或缺"
+    },
+    {
+      "articleId": "BqQ0ciOFQvasaAHl2LVs7g",
+      "title": "中高齡者及高齡者就業促進法",
+      "normalizedTitle": "中高齡者及高齡者就業促進法"
+    },
+    {
+      "articleId": "2oOsjmZOTIetQihBT1Jx5A",
+      "title": "中高齡婦女照顧支持",
+      "normalizedTitle": "中高齡婦女照顧支持"
+    },
+    {
+      "articleId": "02aE9GLWLRFGeUSpo70XOA",
+      "title": "中高齡就業困境突破策略",
+      "normalizedTitle": "中高齡就業困境突破策略"
+    },
+    {
+      "articleId": "0GxzSC2bSS4uRhdepW9YXA",
+      "title": "中高齡就業資源運用",
+      "normalizedTitle": "中高齡就業資源運用"
+    },
+    {
+      "articleId": "0PepsOfCrSc2eASKEgd8Wg",
+      "title": "什麼是農漁保？ 相關福利內容、加保條件與常見被取消資格原因",
+      "normalizedTitle": "什麼是農漁保相關福利內容加保條件與常見被取消資格原因"
+    },
+    {
+      "articleId": "0xa8rL4EDTWmDl5kOCQzzw",
+      "title": "分期零利率，真的比較便宜嗎？",
+      "normalizedTitle": "分期零利率真的比較便宜嗎"
+    },
+    {
+      "articleId": "womlukNrTdK2m2HYUJQiSw",
+      "title": "化危機為轉機：運用政府資源協助服務對象穩定就業與技能提升",
+      "normalizedTitle": "化危機為轉機運用政府資源協助服務對象穩定就業與技能提升"
+    },
+    {
+      "articleId": "jwCcy0ZZTACD3VjWhoHMnQ",
+      "title": "化解矛盾：高齡社會中世代間的和諧共處之道",
+      "normalizedTitle": "化解矛盾高齡社會中世代間的和諧共處之道"
+    },
+    {
+      "articleId": "purVF7rhStyY7fqFsK3KIw",
+      "title": "友善轉銜×穩定扶持：庇護工場的再進化路徑",
+      "normalizedTitle": "友善轉銜×穩定扶持庇護工場的再進化路徑"
+    },
+    {
+      "articleId": "0wpHkNPt7RGhiQaZ8gHryg",
+      "title": "天災相關保險與協助資源",
+      "normalizedTitle": "天災相關保險與協助資源"
+    },
+    {
+      "articleId": "0JG5GQ2QpWtYm5jVkjWQ",
+      "title": "天災通勤保障與職場霸凌防治：新行政指引下的弱勢勞工保護",
+      "normalizedTitle": "天災通勤保障與職場霸凌防治新行政指引下的弱勢勞工保護"
+    },
+    {
+      "articleId": "nGdhOsqmQfqfjlgxeFw7qw",
+      "title": "夫妻財務溝通技巧與衝突解決",
+      "normalizedTitle": "夫妻財務溝通技巧與衝突解決"
+    },
+    {
+      "articleId": "iUQ4k6gFRNql6JBellnSfw",
+      "title": "夫妻財產制度基本認知",
+      "normalizedTitle": "夫妻財產制度基本認知"
+    },
+    {
+      "articleId": "epoNymiBSMiOGn891JVfkA",
+      "title": "少年事件處理法",
+      "normalizedTitle": "少年事件處理法"
+    },
+    {
+      "articleId": "1JYlOJuaS1WJUfJ0FfzP0Q",
+      "title": "少年事件處理法施行細則",
+      "normalizedTitle": "少年事件處理法施行細則"
+    },
+    {
+      "articleId": "S4IVsGZlT2KwtjZwwEsTMA",
+      "title": "心理分析理論",
+      "normalizedTitle": "心理分析理論"
+    },
+    {
+      "articleId": "0EFUsjACARHObTFEc5lSfQ",
+      "title": "心理帳戶對財務決策的影響",
+      "normalizedTitle": "心理帳戶對財務決策的影響"
+    },
+    {
+      "articleId": "TvnZO3kATnm1KNiasvo92w",
+      "title": "戶籍謄本裡的人生故事",
+      "normalizedTitle": "戶籍謄本裡的人生故事"
+    },
+    {
+      "articleId": "0qQwVVAbfT8ORm8efJ5EBQ",
+      "title": "支出結構分析與優化策略",
+      "normalizedTitle": "支出結構分析與優化策略"
+    },
+    {
+      "articleId": "i39RPqRSQjm2DviLIrWDOg",
+      "title": "月月都月光？其實花在娛樂的小錢才最傷",
+      "normalizedTitle": "月月都月光其實花在娛樂的小錢才最傷"
+    },
+    {
+      "articleId": "J82rpcA7Q2u99jw1SSd6pQ",
+      "title": "月光族必看！學會這套收入分配術，財務自由不是夢",
+      "normalizedTitle": "月光族必看學會這套收入分配術財務自由不是夢"
+    },
+    {
+      "articleId": "1Ncs09KThVITCCp6rPpw",
+      "title": "月光族怎麼管理債務？先盤點再行動──4 步驟找回財務主導權",
+      "normalizedTitle": "月光族怎麼管理債務先盤點再行動──4步驟找回財務主導權"
+    },
+    {
+      "articleId": "dDyTukEToKl00Y5EMJSQ",
+      "title": "月光族翻身計畫——用「四週理財重整」把財務拉回正軌",
+      "normalizedTitle": "月光族翻身計畫用四週理財重整把財務拉回正軌"
+    },
+    {
+      "articleId": "PgHlJDbNR9e4Wqn5rO5u0A",
+      "title": "月初刷卡很爽，月末繳款很痛：陷在循環裡財務花費",
+      "normalizedTitle": "月初刷卡很爽月末繳款很痛陷在循環裡財務花費"
+    },
+    {
+      "articleId": "Nioyl2QzyNdrcYA2Zg",
+      "title": "欠稅被扣薪，讓育兒家庭喘不過氣",
+      "normalizedTitle": "欠稅被扣薪讓育兒家庭喘不過氣"
+    },
+    {
+      "articleId": "83U5WlJjRzmv5mvSYPkf1Q",
+      "title": "欠債者的保單是否會被強制執行？現行法規與案例解析",
+      "normalizedTitle": "欠債者的保單是否會被強制執行現行法規與案例解析"
+    },
+    {
+      "articleId": "KweMr1TdC5zimW06rKzw",
+      "title": "比收入更重要的是「分配」——家庭財務管理的關鍵心法",
+      "normalizedTitle": "比收入更重要的是分配家庭財務管理的關鍵心法"
+    },
+    {
+      "articleId": "dZpQTYFtTWOjGqrmiybN6A",
+      "title": "水電師傅的收入起伏：從工程案子到家庭收支的平衡挑戰",
+      "normalizedTitle": "水電師傅的收入起伏從工程案子到家庭收支的平衡挑戰"
+    },
+    {
+      "articleId": "OjaltoRbi4bveRBjJGrQ",
+      "title": "火吻人生：林家重建之路",
+      "normalizedTitle": "火吻人生林家重建之路"
+    },
+    {
+      "articleId": "zbx4uAArRf232VnHLY1Dzg",
+      "title": "世代債務循環中斷策略",
+      "normalizedTitle": "世代債務循環中斷策略"
+    },
+    {
+      "articleId": "90vsoxXXToGk9BSLE83jsQ",
+      "title": "他們連你的身分證號都知道！小心新型電信詐騙",
+      "normalizedTitle": "他們連你的身分證號都知道小心新型電信詐騙"
+    },
+    {
+      "articleId": "7p5AzOzSTZaGHgkv8ZSg4w",
+      "title": "代理人理論 (Agency Theory)",
+      "normalizedTitle": "代理人理論agencytheory"
+    },
+    {
+      "articleId": "RiCzX7BhQLWbPv1oDD2g",
+      "title": "代購、代儲知多少?",
+      "normalizedTitle": "代購代儲知多少"
+    },
+    {
+      "articleId": "0hGDEfQgvQlWUIAFwqeeaQ",
+      "title": "以不同「人生階段」出發，該怎麼用這筆普發金？",
+      "normalizedTitle": "以不同人生階段出發該怎麼用這筆普發金"
+    },
+    {
+      "articleId": "INej5OcLSpOHEmbCRgtnTA",
+      "title": "以房養老方案介紹——當資產轉為現金流，退休生活不必勉強",
+      "normalizedTitle": "以房養老方案介紹當資產轉為現金流退休生活不必勉強"
+    },
+    {
+      "articleId": "0CTK7W6qmTpGdp8dmwKk9w",
+      "title": "出身不是限制，而是力量—我在外商銀行的築夢故事",
+      "normalizedTitle": "出身不是限制而是力量我在外商銀行的築夢故事"
+    },
+    {
+      "articleId": "0oOg8dNy9T6k6dyChJsjKA",
+      "title": "出監後經濟重建準備策略",
+      "normalizedTitle": "出監後經濟重建準備策略"
+    },
+    {
+      "articleId": "hNQeHv1QSD2lgc1haEQcEg",
+      "title": "加密貨幣槓桿爆倉，財富歸零：破產自救的實務指南",
+      "normalizedTitle": "加密貨幣槓桿爆倉財富歸零破產自救的實務指南"
+    },
+    {
+      "articleId": "bbbCfw1cRg7L5sISWfxg",
+      "title": "台灣寵物經濟現況認知",
+      "normalizedTitle": "台灣寵物經濟現況認知"
+    },
+    {
+      "articleId": "5p5MKh4iRPaVcyJ11I7M3g",
+      "title": "司法後果長期規劃與適應",
+      "normalizedTitle": "司法後果長期規劃與適應"
+    },
+    {
+      "articleId": "0E52uPL79RlOuCf2Iuamjg",
+      "title": "司法案件保密與隱私保護",
+      "normalizedTitle": "司法案件保密與隱私保護"
+    },
+    {
+      "articleId": "EtNBRzebRtaHxljSopxMhQ",
+      "title": "司法案件對就業的影響評估",
+      "normalizedTitle": "司法案件對就業的影響評估"
+    },
+    {
+      "articleId": "sJBIuHt5SnGhgwFq0dL5kQ",
+      "title": "司法程序中的家庭危機管理",
+      "normalizedTitle": "司法程序中的家庭危機管理"
+    },
+    {
+      "articleId": "06LvUb7MSViVg4s4CgCPxA",
+      "title": "司法程序與刑期評估分析",
+      "normalizedTitle": "司法程序與刑期評估分析"
+    },
+    {
+      "articleId": "NvvOgu7JTheJZt8MEhVkLg",
+      "title": "外籍看護工與本國照服員成本分析",
+      "normalizedTitle": "外籍看護工與本國照服員成本分析"
+    },
+    {
+      "articleId": "0yW4A993PQes2QpFEFKS6A",
+      "title": "外籍配偶家庭相關福利介紹",
+      "normalizedTitle": "外籍配偶家庭相關福利介紹"
+    },
+    {
+      "articleId": "oYHK7OinQoSh6PHRIaIozA",
+      "title": "外籍配偶權益保障與協助",
+      "normalizedTitle": "外籍配偶權益保障與協助"
+    },
+    {
+      "articleId": "Wz2EcOPHS2i12x6Cjz2g",
+      "title": "外籍移工的司法脆弱與跨專業介入",
+      "normalizedTitle": "外籍移工的司法脆弱與跨專業介入"
+    },
+    {
+      "articleId": "lXb7582RrQ3S6DySuKQQ",
+      "title": "失智症照護特殊財務規劃",
+      "normalizedTitle": "失智症照護特殊財務規劃"
+    },
+    {
+      "articleId": "0gK0VcxjTySMhkClohCoOQ",
+      "title": "失業不可怕，重啟有方法——建築工地臨時工的再出發之路",
+      "normalizedTitle": "失業不可怕重啟有方法建築工地臨時工的再出發之路"
+    },
+    {
+      "articleId": "nVQ8oIKsRqKGXI4rj4TQ",
+      "title": "失業家庭25條實用省錢大作戰",
+      "normalizedTitle": "失業家庭25條實用省錢大作戰"
+    },
+    {
+      "articleId": "0LN1g6pSQEmObWCOvNLpfQ",
+      "title": "失業家庭可使用的免費資源",
+      "normalizedTitle": "失業家庭可使用的免費資源"
+    },
+    {
+      "articleId": "qw04snX3QWmAgzrnev8YbA",
+      "title": "失蹤人口協尋與家庭支援",
+      "normalizedTitle": "失蹤人口協尋與家庭支援"
+    },
+    {
+      "articleId": "0Tfwh4fu8TweOdlbdCuRVw",
+      "title": "打工別踩雷：受雇族的常見工作型態、以及應有的權益有哪些？真的缺錢如何安全周轉？",
+      "normalizedTitle": "打工別踩雷受雇族的常見工作型態以及應有的權益有哪些真的缺錢如何安全周轉"
+    },
+    {
+      "articleId": "RN0iTXUUROOLHaT98ysbYw",
+      "title": "打造生活安全網-談社會保險與商業保險",
+      "normalizedTitle": "打造生活安全網談社會保險與商業保險"
+    },
+    {
+      "articleId": "0TIblpI3QRGvIvTZlMBw",
+      "title": "未成年母親支持服務",
+      "normalizedTitle": "未成年母親支持服務"
+    },
+    {
+      "articleId": "qSjxQ33EQmi1K2vmg9Fjnw",
+      "title": "未成年懷孕支援服務整合",
+      "normalizedTitle": "未成年懷孕支援服務整合"
+    },
+    {
+      "articleId": "kXgYjUkqR22kzrMluNKerg",
+      "title": "正職／兼職／計時人員的就業保障與財務議題分析",
+      "normalizedTitle": "正職/兼職/計時人員的就業保障與財務議題分析"
+    },
+    {
+      "articleId": "0vgkJw9G5SUCS4mhK6Vafg",
+      "title": "民法扶養義務說明",
+      "normalizedTitle": "民法扶養義務說明"
+    },
+    {
+      "articleId": "fGhvQIlqQbOpFGJpqJ1H3Q",
+      "title": "犯罪被害人家庭補償",
+      "normalizedTitle": "犯罪被害人家庭補償"
+    },
+    {
+      "articleId": "S3iBW34bQiOujHYHx3aFJA",
+      "title": "生活品質、家庭關係與發展機會：外地工作和在地工作的人生成本比較",
+      "normalizedTitle": "生活品質家庭關係與發展機會外地工作和在地工作的人生成本比較"
+    },
+    {
+      "articleId": "xoSOVSEMT1mymBITeHGzzg",
+      "title": "生態系統理論",
+      "normalizedTitle": "生態系統理論"
+    },
+    {
+      "articleId": "0wU1PEzTRZuVQ8N2GlzGEQ",
+      "title": "用 ETF 打造家庭財務安全網",
+      "normalizedTitle": "用etf打造家庭財務安全網"
+    },
+    {
+      "articleId": "DwdPeacJT6e0TTqD20Kd5g",
+      "title": "用「三桶金」打造一般人也做得到的理財系統——先穩、再存、最後才投資",
+      "normalizedTitle": "用三桶金打造一般人也做得到的理財系統先穩再存最後才投資"
+    },
+    {
+      "articleId": "lnJd9LlQpgo6NEqESeiA",
+      "title": "用心待人才是真正的經營",
+      "normalizedTitle": "用心待人才是真正的經營"
+    },
+    {
+      "articleId": "f8EKPFMGSG6dPTBbHDmIxA",
+      "title": "用心經營每一碗粥，顧客感受得到",
+      "normalizedTitle": "用心經營每一碗粥顧客感受得到"
+    },
+    {
+      "articleId": "HOHMysj3T3m2XGXPErRhmg",
+      "title": "用財務打理你要的未來",
+      "normalizedTitle": "用財務打理你要的未來"
+    },
+    {
+      "articleId": "pYi6U8CXRUOmT87bsxN6QQ",
+      "title": "用熱情創造收入，她從全職媽轉型為瑜珈老師",
+      "normalizedTitle": "用熱情創造收入她從全職媽轉型為瑜珈老師"
+    },
+    {
+      "articleId": "rQj5KOJfSGuVra1nByDerg",
+      "title": "企業倒閉員工債務處理",
+      "normalizedTitle": "企業倒閉員工債務處理"
+    },
+    {
+      "articleId": "0i7afRna7SFe8tdOL27ljQ",
+      "title": "休息時的一口：菸酒、電子煙與檳榔的代價",
+      "normalizedTitle": "休息時的一口菸酒電子煙與檳榔的代價"
+    },
+    {
+      "articleId": "1b5lSQfSpmYQntVLMiYw",
+      "title": "先繳哪一筆？這是我每天最難的選擇",
+      "normalizedTitle": "先繳哪一筆這是我每天最難的選擇"
+    },
+    {
+      "articleId": "PBsvkmZwT3W6tQMwetuZ7g",
+      "title": "全民健康保險一直都在",
+      "normalizedTitle": "全民健康保險一直都在"
+    },
+    {
+      "articleId": "eAqfir8SWVQA2smAK3SQ",
+      "title": "全職媽媽沒有薪水，卻是家庭最重要的資產",
+      "normalizedTitle": "全職媽媽沒有薪水卻是家庭最重要的資產"
+    },
+    {
+      "articleId": "FDVMmt85RLuxJFhIcbpZQQ",
+      "title": "共同債務人權責釐清策略",
+      "normalizedTitle": "共同債務人權責釐清策略"
+    },
+    {
+      "articleId": "IDY8GZoXTb2Hq0TAI0Bz1g",
+      "title": "共有房地產繼承好頭痛，可以怎麼處理？",
+      "normalizedTitle": "共有房地產繼承好頭痛可以怎麼處理"
+    },
+    {
+      "articleId": "0mmneUXpTOKjtb967Y2Zzw",
+      "title": "危機介入：無力照顧寵物時",
+      "normalizedTitle": "危機介入無力照顧寵物時"
+    },
+    {
+      "articleId": "Yt1DTBC4R3isCRKB5MK08w",
+      "title": "吃得健康又不破產：外食族最常掉的飲食消費陷阱",
+      "normalizedTitle": "吃得健康又不破產外食族最常掉的飲食消費陷阱"
+    },
+    {
+      "articleId": "h3Iqwl9TTbqJ4N7lVdaCDQ",
+      "title": "各階段財務分配攻略：讓錢自動找出路的人生劇本！",
+      "normalizedTitle": "各階段財務分配攻略讓錢自動找出路的人生劇本"
+    },
+    {
+      "articleId": "00kA746GRQkqugN60Y4nwg",
+      "title": "各縣市生育獎勵金整合申請",
+      "normalizedTitle": "各縣市生育獎勵金整合申請"
+    },
+    {
+      "articleId": "DX9HPbcBSyCE589cmvUzDA",
+      "title": "同志友善財務諮詢技巧：建立信任與專業",
+      "normalizedTitle": "同志友善財務諮詢技巧建立信任與專業"
+    },
+    {
+      "articleId": "I9Orv6i7R4yDxatO0Vcuew",
+      "title": "同志老年照顧與規劃：擁抱尊嚴與安心的晚年生活",
+      "normalizedTitle": "同志老年照顧與規劃擁抱尊嚴與安心的晚年生活"
+    },
+    {
+      "articleId": "0tmRpuCoSKxh5JUgiIOw",
+      "title": "同志的民法權益篇-婚姻、收養",
+      "normalizedTitle": "同志的民法權益篇婚姻收養"
+    },
+    {
+      "articleId": "2TaceGE5SWm0oKhyukHKwQ",
+      "title": "同志社群資源網絡",
+      "normalizedTitle": "同志社群資源網絡"
+    },
+    {
+      "articleId": "irnXaWNKSu3iz3SvfCUA",
+      "title": "同志青少年支持服務：陪伴彩虹世代，擁抱自信成長",
+      "normalizedTitle": "同志青少年支持服務陪伴彩虹世代擁抱自信成長"
+    },
+    {
+      "articleId": "0ofCeAkGQQOdR9MTFY6Hgw",
+      "title": "同志家庭出櫃與接納：愛與理解的橋樑",
+      "normalizedTitle": "同志家庭出櫃與接納愛與理解的橋樑"
+    },
+    {
+      "articleId": "QBLz9xmS0qA1MqrVqLwQ",
+      "title": "同志婚姻與伴侶權益",
+      "normalizedTitle": "同志婚姻與伴侶權益"
+    },
+    {
+      "articleId": "MKGN5hQnSuySwhzDVeCFbg",
+      "title": "同志族群經濟困境與成因",
+      "normalizedTitle": "同志族群經濟困境與成因"
+    },
+    {
+      "articleId": "4fuobSs0QiSINls0US9sXw",
+      "title": "同志與原生家庭的財務拉扯：愛與金錢的兩難",
+      "normalizedTitle": "同志與原生家庭的財務拉扯愛與金錢的兩難"
+    },
+    {
+      "articleId": "zJkX2VRSu3NyKolF2AIQ",
+      "title": "同志親密關係暴力防治：看見、理解與支持",
+      "normalizedTitle": "同志親密關係暴力防治看見理解與支持"
+    },
+    {
+      "articleId": "oQDj96tiSRSiGCXH8SNsfg",
+      "title": "同志職場權益與就業：打造多元共融的職場環境",
+      "normalizedTitle": "同志職場權益與就業打造多元共融的職場環境"
+    },
+    {
+      "articleId": "zy45KTi8SdGytv4G4Cgf2Q",
+      "title": "同志醫療健康與費用：打造安心就醫的彩虹橋",
+      "normalizedTitle": "同志醫療健康與費用打造安心就醫的彩虹橋"
+    },
+    {
+      "articleId": "hemAu9KsT3iJ4lXb7jEYiw",
+      "title": "同居未婚育兒家庭的財務與法律隱憂",
+      "normalizedTitle": "同居未婚育兒家庭的財務與法律隱憂"
+    },
+    {
+      "articleId": "0GJnzwR0TF6fZbbe4a6L4w",
+      "title": "同樣過日子，為什麼有些家庭花得比較不吃力",
+      "normalizedTitle": "同樣過日子為什麼有些家庭花得比較不吃力"
+    },
+    {
+      "articleId": "0ZwW84LoT6iUCakTPzew",
+      "title": "在台灣原住民兒童與青少年可獲得的福利資源與補助",
+      "normalizedTitle": "在台灣原住民兒童與青少年可獲得的福利資源與補助"
+    },
+    {
+      "articleId": "fo1p9f7jTNGCRRuepD6yqg",
+      "title": "在災後金流暗潮中，尋找一條能回家的重建路",
+      "normalizedTitle": "在災後金流暗潮中尋找一條能回家的重建路"
+    },
+    {
+      "articleId": "0WQQQoTvyQ383YgEKkVFzA",
+      "title": "在流動與困境中重整生活—小筱的故事",
+      "normalizedTitle": "在流動與困境中重整生活小筱的故事"
+    },
+    {
+      "articleId": "5ARw9g4RFW9JdnvLLmog",
+      "title": "在重新開始之前：一位更生人的工作與家庭經濟修復之路",
+      "normalizedTitle": "在重新開始之前一位更生人的工作與家庭經濟修復之路"
+    },
+    {
+      "articleId": "0Y6TU7RRgTE2twIFU5HUKA",
+      "title": "在海外就醫或發生意外怎麼辦？",
+      "normalizedTitle": "在海外就醫或發生意外怎麼辦"
+    },
+    {
+      "articleId": "0iTt43Z4RkK8xxmkjK14ew",
+      "title": "在破碎中長出力量——專業支持下的女性創傷復原之路",
+      "normalizedTitle": "在破碎中長出力量專業支持下的女性創傷復原之路"
+    },
+    {
+      "articleId": "U86k6l8qQZ29oo9PTKVkcg",
+      "title": "在崩解邊緣、慢慢走回來：一位中年男子的復歸與家庭財務重建",
+      "normalizedTitle": "在崩解邊緣慢慢走回來一位中年男子的復歸與家庭財務重建"
+    },
+    {
+      "articleId": "0nTOX0ou2SFOnaJcnyxd7A",
+      "title": "地下錢莊騷擾家人，該怎麼處理？",
+      "normalizedTitle": "地下錢莊騷擾家人該怎麼處理"
+    },
+    {
+      "articleId": "YojI91cBRgCCS39Upu6ULg",
+      "title": "地下錢莊騷擾家人怎麼辦？5大方法教你自保，守護家人不再受害！",
+      "normalizedTitle": "地下錢莊騷擾家人怎麼辦5大方法教你自保守護家人不再受害"
+    },
+    {
+      "articleId": "hfZogXQpRZujcvRkn3u1iQ",
+      "title": "多元文化社會工作理論",
+      "normalizedTitle": "多元文化社會工作理論"
+    },
+    {
+      "articleId": "00qQvVOHSTtyqU6OszxcWw",
+      "title": "多元收入來源開發策略",
+      "normalizedTitle": "多元收入來源開發策略"
+    },
+    {
+      "articleId": "0kC9ZJmxIRqWiarS8smLnQ",
+      "title": "多元家庭親子議題",
+      "normalizedTitle": "多元家庭親子議題"
+    },
+    {
+      "articleId": "qpoPf3k3ShmrdXyf1v8AGw",
+      "title": "多元族群危機介入",
+      "normalizedTitle": "多元族群危機介入"
+    },
+    {
+      "articleId": "i2enAmvhRSHJ9j8y1ZxA",
+      "title": "多元族群家庭動力",
+      "normalizedTitle": "多元族群家庭動力"
+    },
+    {
+      "articleId": "l5ej89gSS86Krq9xGHA7EQ",
+      "title": "多元族群資源連結",
+      "normalizedTitle": "多元族群資源連結"
+    },
+    {
+      "articleId": "jXkqztxwQvOIao6dpz3p1A",
+      "title": "多胞胎與特殊需求補助",
+      "normalizedTitle": "多胞胎與特殊需求補助"
+    },
+    {
+      "articleId": "9rWXIuAgSdSBPSzGiO0BEA",
+      "title": "多重收入來源風險管理",
+      "normalizedTitle": "多重收入來源風險管理"
+    },
+    {
+      "articleId": "0V8omlgnSFKGvQJPcAYjQA",
+      "title": "多重保險理賠協調與整合",
+      "normalizedTitle": "多重保險理賠協調與整合"
+    },
+    {
+      "articleId": "Rp2Ma1HTRkeMEgFj57wXPg",
+      "title": "多重障礙兒童早療成本規劃",
+      "normalizedTitle": "多重障礙兒童早療成本規劃"
+    },
+    {
+      "articleId": "0NTgLBGHlROa8MlchuPxlg",
+      "title": "她靠斜槓創業，從零撐起孩子與家的未來",
+      "normalizedTitle": "她靠斜槓創業從零撐起孩子與家的未來"
+    },
+    {
+      "articleId": "0HGKnmlGSMe1QuFegZaJUQ",
+      "title": "好孕好生也要好好坐月子",
+      "normalizedTitle": "好孕好生也要好好坐月子"
+    },
+    {
+      "articleId": "0M5NsOzDTZC7QZF73acZQQ",
+      "title": "好理家在知識庫主題認領",
+      "normalizedTitle": "好理家在知識庫主題認領"
+    },
+    {
+      "articleId": "4fw7jkFkSgSE8HGUNAF2pw",
+      "title": "好理家使用經驗分享：透過平台的工具幫助個案脫離家暴、走向自立",
+      "normalizedTitle": "好理家使用經驗分享透過平台的工具幫助個案脫離家暴走向自立"
+    },
+    {
+      "articleId": "0jjvi0dNyTyCqbHRLrY6mw",
+      "title": "好貴呀!數位時代的線上教學成為家庭財務壓力!",
+      "normalizedTitle": "好貴呀數位時代的線上教學成為家庭財務壓力"
+    },
+    {
+      "articleId": "uyRlW2GRW2ZABCVPvk1Q",
+      "title": "如何利用最新科技『AI』幫我們提升工作效率外還能加薪？",
+      "normalizedTitle": "如何利用最新科技ai幫我們提升工作效率外還能加薪"
+    },
+    {
+      "articleId": "0JKkg64TKS0yjXrfUgVS6Q",
+      "title": "如何利用銀行錢滾錢",
+      "normalizedTitle": "如何利用銀行錢滾錢"
+    },
+    {
+      "articleId": "0gDJkEfeRtCaXV4xWGFMug",
+      "title": "如何和孩子談錢？生日禮物/過年紅包的財務教育",
+      "normalizedTitle": "如何和孩子談錢生日禮物/過年紅包的財務教育"
+    },
+    {
+      "articleId": "0opfTMZY1SDSf5eRmbijiA",
+      "title": "如何從所得稅清單看出資產狀況?",
+      "normalizedTitle": "如何從所得稅清單看出資產狀況"
+    },
+    {
+      "articleId": "pC9yZk82QWOabLZbhIVIPg",
+      "title": "如何從債權人清冊判斷財務狀況與信用風險？",
+      "normalizedTitle": "如何從債權人清冊判斷財務狀況與信用風險"
+    },
+    {
+      "articleId": "tH3WmLpDThGqjMsslTwNpg",
+      "title": "如何理債，理出更好的人生",
+      "normalizedTitle": "如何理債理出更好的人生"
+    },
+    {
+      "articleId": "YwvSIYZcSYyB7987UOdZ3w",
+      "title": "如何透過保險或補助，減輕老人缺牙治療的家庭財務壓力？",
+      "normalizedTitle": "如何透過保險或補助減輕老人缺牙治療的家庭財務壓力"
+    },
+    {
+      "articleId": "OBcOFTmTS9W84abAlFVyDA",
+      "title": "如何善用共享經濟來節約生活開銷",
+      "normalizedTitle": "如何善用共享經濟來節約生活開銷"
+    },
+    {
+      "articleId": "Lhj02Ta6RLGASZovbm2RJg",
+      "title": "如何善用普發一萬元：用一次機會提升家庭財務健康",
+      "normalizedTitle": "如何善用普發一萬元用一次機會提升家庭財務健康"
+    },
+    {
+      "articleId": "MI8xPs1uTD2pOreqdk1ICg",
+      "title": "如何提高家庭儲蓄率？建立「三大帳戶制」實作分享",
+      "normalizedTitle": "如何提高家庭儲蓄率建立三大帳戶制實作分享"
+    },
+    {
+      "articleId": "3eHxlu02RTm4dNOsfAv1sA",
+      "title": "如何量身打造最適合自己的投資模式",
+      "normalizedTitle": "如何量身打造最適合自己的投資模式"
+    },
+    {
+      "articleId": "qjwfisCmRzq0D6KWluxMbw",
+      "title": "如何搬好家？搬家省錢攻略與注意事項",
+      "normalizedTitle": "如何搬好家搬家省錢攻略與注意事項"
+    },
+    {
+      "articleId": "PBj5jkGWTo6AssVBKzpr9A",
+      "title": "如何解讀信用報告",
+      "normalizedTitle": "如何解讀信用報告"
+    },
+    {
+      "articleId": "0VpsJezFyTJB0kVc00qhSA",
+      "title": "如何幫助孩子重返學校？社工面對中輟生可以做些什麼",
+      "normalizedTitle": "如何幫助孩子重返學校社工面對中輟生可以做些什麼"
+    },
+    {
+      "articleId": "H9tIftsSQAyYGMLn6k6hSw",
+      "title": "守住經濟的底線，也守住關係的溫度",
+      "normalizedTitle": "守住經濟的底線也守住關係的溫度"
+    },
+    {
+      "articleId": "066hr9e6bTje4mwERnL8Yg",
+      "title": "守護保戶權益：金管會「挪用保費零容忍」新制報你知！",
+      "normalizedTitle": "守護保戶權益金管會挪用保費零容忍新制報你知"
+    },
+    {
+      "articleId": "0mJppCaroRpmtlmPRhsS9A",
+      "title": "守護弱勢勞工：職業安全衛生法修正如何翻轉經濟弱勢族群的職場處境",
+      "normalizedTitle": "守護弱勢勞工職業安全衛生法修正如何翻轉經濟弱勢族群的職場處境"
+    },
+    {
+      "articleId": "0jI1sFK5QxSkjHgZYcMdkw",
+      "title": "守護勞工穩定生活：五大安定就業措施與勞保基金的支援策略",
+      "normalizedTitle": "守護勞工穩定生活五大安定就業措施與勞保基金的支援策略"
+    },
+    {
+      "articleId": "YgaaaQ3KSfSlRJRrMm2Q0w",
+      "title": "守護彈性就業者權益：部分工時勞工應持續整月加保，避免出勤日加退保的風險",
+      "normalizedTitle": "守護彈性就業者權益部分工時勞工應持續整月加保避免出勤日加退保的風險"
+    },
+    {
+      "articleId": "0YTHe92XTwKNzjFUv69i2Q",
+      "title": "安心懷孕友善生養：懷孕/生產相關補助與支持資源",
+      "normalizedTitle": "安心懷孕友善生養懷孕/生產相關補助與支持資源"
+    },
+    {
+      "articleId": "fcoyLt4fQButVMVLjRH9cw",
+      "title": "安居之道：面對居住挑戰，如何做出明智的財務選擇？",
+      "normalizedTitle": "安居之道面對居住挑戰如何做出明智的財務選擇"
+    },
+    {
+      "articleId": "0SDpRcWyuRfmKCzQsswhCQ",
+      "title": "年底到了！忙爸媽必看的家庭財務大檢查",
+      "normalizedTitle": "年底到了忙爸媽必看的家庭財務大檢查"
+    },
+    {
+      "articleId": "HOkmr2UHTh5qqohh58FQ",
+      "title": "年底財務整理：我的錢往哪去，我的時間留給誰，我正在成為誰",
+      "normalizedTitle": "年底財務整理我的錢往哪去我的時間留給誰我正在成為誰"
+    },
+    {
+      "articleId": "0jZM9DXtSuaqjK05qB2awQ",
+      "title": "年前失業，不只是工作的中斷 ─ 陪伴家庭在年關前重建韌力的實務歷程分享",
+      "normalizedTitle": "年前失業不只是工作的中斷─陪伴家庭在年關前重建韌力的實務歷程分享"
+    },
+    {
+      "articleId": "0zysz6glpTz8l0ZvLv9aBA",
+      "title": "年終獎金別一下就沒了！小資育兒家庭的四步驟財務配置法",
+      "normalizedTitle": "年終獎金別一下就沒了小資育兒家庭的四步驟財務配置法"
+    },
+    {
+      "articleId": "QLNNMzcWSLOFLdhNtfV1Ow",
+      "title": "年輕銀行員的真實投資告白：三次慘賠教會我最重要的事",
+      "normalizedTitle": "年輕銀行員的真實投資告白三次慘賠教會我最重要的事"
+    },
+    {
+      "articleId": "AxqtgLHkRrmh19YXn1FRtw",
+      "title": "成年子女啃老不願工作，如何引導其獨立？",
+      "normalizedTitle": "成年子女啃老不願工作如何引導其獨立"
+    },
+    {
+      "articleId": "0ioVlONrZS0aDjredKDpzw",
+      "title": "成癮行為",
+      "normalizedTitle": "成癮行為"
+    },
+    {
+      "articleId": "HpdLL0heTcKy15JDDwKUYA",
+      "title": "托育補助與幼教資源",
+      "normalizedTitle": "托育補助與幼教資源"
+    },
+    {
+      "articleId": "0pT8NJ2PzQJqxJrpw09nYQ",
+      "title": "扛家的長女，與獨立人生的拉鋸 ",
+      "normalizedTitle": "扛家的長女與獨立人生的拉鋸"
+    },
+    {
+      "articleId": "0MrkABs7RfupRALzK61KAg",
+      "title": "收入不足心理壓力調適",
+      "normalizedTitle": "收入不足心理壓力調適"
+    },
+    {
+      "articleId": "NTxdlFW5R52VlwUV424lZQ",
+      "title": "收入不足社會支持網絡建構",
+      "normalizedTitle": "收入不足社會支持網絡建構"
+    },
+    {
+      "articleId": "0JYMlRgcUR5WRxZgEBuYWQ",
+      "title": "收入不足長期規劃與脫貧",
+      "normalizedTitle": "收入不足長期規劃與脫貧"
+    },
+    {
+      "articleId": "uJ7br5MWQTKMwNkBonjvnw",
+      "title": "收入不穩定長期財務安全規劃",
+      "normalizedTitle": "收入不穩定長期財務安全規劃"
+    },
+    {
+      "articleId": "0S1QgZph5QeXIJX9aopIJQ",
+      "title": "收入不穩定稅務規劃技巧",
+      "normalizedTitle": "收入不穩定稅務規劃技巧"
+    },
+    {
+      "articleId": "eFxtzyKCTeiARcW5FUAZUg",
+      "title": "收入不穩定管理與平穩化",
+      "normalizedTitle": "收入不穩定管理與平穩化"
+    },
+    {
+      "articleId": "0TOQSGMSQk2gzjTxLCv60g",
+      "title": "收入不穩定職涯發展規劃",
+      "normalizedTitle": "收入不穩定職涯發展規劃"
+    },
+    {
+      "articleId": "07auQCvjSS6PT5FoXOAR5A",
+      "title": "收入平穩化技巧與工具運用",
+      "normalizedTitle": "收入平穩化技巧與工具運用"
+    },
+    {
+      "articleId": "9Oy08OcSQKK9OXo2D8469g",
+      "title": "收入波動期間支出管理",
+      "normalizedTitle": "收入波動期間支出管理"
+    },
+    {
+      "articleId": "SthR4kpET5Cl78ZzZE2g9g",
+      "title": "收入波動模式分析與預測",
+      "normalizedTitle": "收入波動模式分析與預測"
+    },
+    {
+      "articleId": "nolCNktnTSGlfoPWcsHEDQ",
+      "title": "收入差距對財務分工的影響",
+      "normalizedTitle": "收入差距對財務分工的影響"
+    },
+    {
+      "articleId": "xL8AcJsuScGtwZOUEjvrjw",
+      "title": "收入現況評估與提升潛力分析",
+      "normalizedTitle": "收入現況評估與提升潛力分析"
+    },
+    {
+      "articleId": "uN2TWw03T8iL5pXbCF783g",
+      "title": "收入提升目標設定與追蹤",
+      "normalizedTitle": "收入提升目標設定與追蹤"
+    },
+    {
+      "articleId": "5dXCzcQuK3HdBkUas2TA",
+      "title": "收入提升期間財務過渡規劃",
+      "normalizedTitle": "收入提升期間財務過渡規劃"
+    },
+    {
+      "articleId": "o5o2zYBuThuU8H6njqYTwA",
+      "title": "收入提升機會評估與行動",
+      "normalizedTitle": "收入提升機會評估與行動"
+    },
+    {
+      "articleId": "0AqgC95oiRWSMD8SSb7XRQ",
+      "title": "收入預測與現金流管理",
+      "normalizedTitle": "收入預測與現金流管理"
+    },
+    {
+      "articleId": "0pZn3kwrST3erd8UyPLJiQ",
+      "title": "收入與寵物支出平衡",
+      "normalizedTitle": "收入與寵物支出平衡"
+    },
+    {
+      "articleId": "WTPHGkzlRk2qarotUqbiFw",
+      "title": "收入穩定性提升行動計畫",
+      "normalizedTitle": "收入穩定性提升行動計畫"
+    },
+    {
+      "articleId": "0o3nhLGcSDeaKRIgZOdqqQ",
+      "title": "收支不平衡心理調適策略",
+      "normalizedTitle": "收支不平衡心理調適策略"
+    },
+    {
+      "articleId": "e4hxahgkRXeKCEIjTa9TRg",
+      "title": "收支不平衡外部協助資源",
+      "normalizedTitle": "收支不平衡外部協助資源"
+    },
+    {
+      "articleId": "0e9JiBel6TyVoJIQ19c5xw",
+      "title": "收支不平衡案例分析學習",
+      "normalizedTitle": "收支不平衡案例分析學習"
+    },
+    {
+      "articleId": "N6HB8r6qTXu7elS4FO68Ag",
+      "title": "收支平衡長期維持策略",
+      "normalizedTitle": "收支平衡長期維持策略"
+    },
+    {
+      "articleId": "29DKPdi1SUmglRojtoTBiQ",
+      "title": "收支平衡教育與能力培養",
+      "normalizedTitle": "收支平衡教育與能力培養"
+    },
+    {
+      "articleId": "rERZ9WPVSWCQIoDsorKC1A",
+      "title": "收支平衡維持監督機制",
+      "normalizedTitle": "收支平衡維持監督機制"
+    },
+    {
+      "articleId": "3s0iBcggQ5WMHyFilXRxZg",
+      "title": "收支狀況全面診斷與分析",
+      "normalizedTitle": "收支狀況全面診斷與分析"
+    },
+    {
+      "articleId": "CimoVsgRS0eNDmGVMWc17w",
+      "title": "收支管理工具選擇與運用",
+      "normalizedTitle": "收支管理工具選擇與運用"
+    },
+    {
+      "articleId": "0SmPip0QHeeYPT3QWvCA",
+      "title": "收支管理數位化工具運用",
+      "normalizedTitle": "收支管理數位化工具運用"
+    },
+    {
+      "articleId": "5Z8xtl5QTx2scHBce2Wo9Q",
+      "title": "早療交通費用管理與補助申請",
+      "normalizedTitle": "早療交通費用管理與補助申請"
+    },
+    {
+      "articleId": "4j8rG9oNRwagpsq64CDuFQ",
+      "title": "早療成效長期追蹤與投資調整",
+      "normalizedTitle": "早療成效長期追蹤與投資調整"
+    },
+    {
+      "articleId": "0WWSIUPjHSHeatywdRp1lg",
+      "title": "早療服務申請與費用規劃策略",
+      "normalizedTitle": "早療服務申請與費用規劃策略"
+    },
+    {
+      "articleId": "d50kmQb7RLit40FBQ2FMwQ",
+      "title": "早療服務品質評估與選擇",
+      "normalizedTitle": "早療服務品質評估與選擇"
+    },
+    {
+      "articleId": "xncGguFoTkCunTWRmafI1Q",
+      "title": "早療政策變動影響與應變",
+      "normalizedTitle": "早療政策變動影響與應變"
+    },
+    {
+      "articleId": "0JxHIRvbQRKTIvC7bje9Bg",
+      "title": "早療科技輔助工具投資評估",
+      "normalizedTitle": "早療科技輔助工具投資評估"
+    },
+    {
+      "articleId": "wKvbxQ46TRukuAuCIZgDXw",
+      "title": "早療家庭兄弟姊妹照顧平衡",
+      "normalizedTitle": "早療家庭兄弟姊妹照顧平衡"
+    },
+    {
+      "articleId": "5nCcaQ1CR86PL47oheQFLw",
+      "title": "早療家庭災害應變與重建",
+      "normalizedTitle": "早療家庭災害應變與重建"
+    },
+    {
+      "articleId": "0EuNQoZKkRxSCLpAuTo9cQ",
+      "title": "早療家庭法律權益與保障",
+      "normalizedTitle": "早療家庭法律權益與保障"
+    },
+    {
+      "articleId": "0dV1erRQFqBFcvKdxJpA",
+      "title": "早療家庭社會參與與倡議能力",
+      "normalizedTitle": "早療家庭社會參與與倡議能力"
+    },
+    {
+      "articleId": "LoFo3EKjQSGHkBywnDDjgw",
+      "title": "早療家庭社會資源網絡建構",
+      "normalizedTitle": "早療家庭社會資源網絡建構"
+    },
+    {
+      "articleId": "0DWSWs2GTDKZo0p8V884mg",
+      "title": "早療家庭緊急備用金規劃",
+      "normalizedTitle": "早療家庭緊急備用金規劃"
+    },
+    {
+      "articleId": "giMVpvUtTSufJ1aF4OPffQ",
+      "title": "早療家庭職涯發展重新規劃",
+      "normalizedTitle": "早療家庭職涯發展重新規劃"
+    },
+    {
+      "articleId": "EkVVikAaRcuXVlRJy48lgw",
+      "title": "早療效果評估與投資調整",
+      "normalizedTitle": "早療效果評估與投資調整"
+    },
+    {
+      "articleId": "0tSCXLrceQuamEmygMe63A",
+      "title": "早療期間家庭收入維持策略",
+      "normalizedTitle": "早療期間家庭收入維持策略"
+    },
+    {
+      "articleId": "0fO4UbpzITNuiP6U7xIG1A",
+      "title": "早療期間婚姻關係維護投資",
+      "normalizedTitle": "早療期間婚姻關係維護投資"
+    },
+    {
+      "articleId": "dA9d2WfORCSDseEKEbDAvg",
+      "title": "早療輔具與教材投資規劃",
+      "normalizedTitle": "早療輔具與教材投資規劃"
+    },
+    {
+      "articleId": "0ngFYXAEQVeZ8UmNFLROdQ",
+      "title": "早療轉銜學齡期準備規劃",
+      "normalizedTitle": "早療轉銜學齡期準備規劃"
+    },
+    {
+      "articleId": "F5YYh3lhRP2k3QVHXZmjCw",
+      "title": "有生活品質又存得到錢！我的快樂消費理財術～",
+      "normalizedTitle": "有生活品質又存得到錢我的快樂消費理財術"
+    },
+    {
+      "articleId": "LtmKroYDRCGzbfbAwP9F0g",
+      "title": "有些改變，不是人生突然變順利，而是開始願意「一步一步把未來存下來」",
+      "normalizedTitle": "有些改變不是人生突然變順利而是開始願意一步一步把未來存下來"
+    },
+    {
+      "articleId": "kGtHm8C7TWwDBtCERenw",
+      "title": "有些改變，不是被拯救，而是重新找回相信「自己還做得到」",
+      "normalizedTitle": "有些改變不是被拯救而是重新找回相信自己還做得到"
+    },
+    {
+      "articleId": "L1QEseR0QSi1tRvBX1dgVw",
+      "title": "有些改變很慢，卻足以讓一個家庭重新看見未來",
+      "normalizedTitle": "有些改變很慢卻足以讓一個家庭重新看見未來"
+    },
+    {
+      "articleId": "J5aWfMGxShOBwsN1VPo9Ag",
+      "title": "有房萬事足? 房子也需要買保險嗎?",
+      "normalizedTitle": "有房萬事足房子也需要買保險嗎"
+    },
+    {
+      "articleId": "m3g4RZtRUWKy6pnFOBDQ",
+      "title": "有孩子後，副業怎麼做才不會把自己累垮？從收入焦慮到斜槓發展，重新找回家庭的選擇權",
+      "normalizedTitle": "有孩子後副業怎麼做才不會把自己累垮從收入焦慮到斜槓發展重新找回家庭的選擇權"
+    },
+    {
+      "articleId": "gJruVAA6RAmQIZadE9KL3w",
+      "title": "有限資源下的成長：為未來建立底氣的投資思維",
+      "normalizedTitle": "有限資源下的成長為未來建立底氣的投資思維"
+    },
+    {
+      "articleId": "26rCk3zSxod58CF5mo6w",
+      "title": "有情緒障礙的孩子可以申請什麼資源協助教養? 如果孩子打父母可以強制送醫嗎?",
+      "normalizedTitle": "有情緒障礙的孩子可以申請什麼資源協助教養如果孩子打父母可以強制送醫嗎"
+    },
+    {
+      "articleId": "y52gFszWRpKi6UhVUxZF7w",
+      "title": "死亡通報與緊急事務處理",
+      "normalizedTitle": "死亡通報與緊急事務處理"
+    },
+    {
+      "articleId": "WDkaHmm2Rua6hnFpw7XqSw",
+      "title": "老人送餐服務介紹：從財務角度看長者照護的另一選擇",
+      "normalizedTitle": "老人送餐服務介紹從財務角度看長者照護的另一選擇"
+    },
+    {
+      "articleId": "0ucRGC5XTdK5NGptR7iAvw",
+      "title": "老人福利服務資源",
+      "normalizedTitle": "老人福利服務資源"
+    },
+    {
+      "articleId": "0CqJw7uT6TrAPxXtVkjcXQ",
+      "title": "老人福利法",
+      "normalizedTitle": "老人福利法"
+    },
+    {
+      "articleId": "T3WE12edTVqSbbg45ryzcA",
+      "title": "老人與寵物照顧",
+      "normalizedTitle": "老人與寵物照顧"
+    },
+    {
+      "articleId": "4LVzog8lQA2vmoZlRcfMMg",
+      "title": "老公欠債，該不該幫他還？婚姻裡的債務界線，誰來劃？",
+      "normalizedTitle": "老公欠債該不該幫他還婚姻裡的債務界線誰來劃"
+    },
+    {
+      "articleId": "CQIaZ5bnTeioavmqkV0Q",
+      "title": "老老照顧時代的社會與財務雙重挑戰",
+      "normalizedTitle": "老老照顧時代的社會與財務雙重挑戰"
+    },
+    {
+      "articleId": "ol3yuA5kRAmBXhVkY9syEw",
+      "title": "老家被偷偷出租？共同持有人的財務權益該如何保障!",
+      "normalizedTitle": "老家被偷偷出租共同持有人的財務權益該如何保障"
+    },
+    {
+      "articleId": "0xvEXs4pIQCBfuXORRY5gQ",
+      "title": "自由工作者的財務脆弱性與風險管理：在自由的外表下，藏著最硬的現實",
+      "normalizedTitle": "自由工作者的財務脆弱性與風險管理在自由的外表下藏著最硬的現實"
+    },
+    {
+      "articleId": "0POkwrSeQtKnk0NjMAnmDg",
+      "title": "自由工作者財務規劃策略",
+      "normalizedTitle": "自由工作者財務規劃策略"
+    },
+    {
+      "articleId": "0y9HsGrPxRESheI6jZI5Eg",
+      "title": "自我財務的安心預習:當疑似罹癌時，我的財務資源盤點",
+      "normalizedTitle": "自我財務的安心預習當疑似罹癌時我的財務資源盤點"
+    },
+    {
+      "articleId": "0RL1X9xhTyazYiKHDatT9A",
+      "title": "自我盤點表",
+      "normalizedTitle": "自我盤點表"
+    },
+    {
+      "articleId": "0ChJTbyBhRIiCNESOZWM3w",
+      "title": "自殺遺族特殊支援服務",
+      "normalizedTitle": "自殺遺族特殊支援服務"
+    },
+    {
+      "articleId": "CYvOqWx2QU6oYsqdCU1GUQ",
+      "title": "艾瑞克森心理社會發展論",
+      "normalizedTitle": "艾瑞克森心理社會發展論"
+    },
+    {
+      "articleId": "0FU0ntZDTlOe93IVtca49g",
+      "title": "行為學習理論",
+      "normalizedTitle": "行為學習理論"
+    },
+    {
+      "articleId": "0TfNAVw6Ru6dtIyMwSSDCw",
+      "title": "低成本喪葬安排指南",
+      "normalizedTitle": "低成本喪葬安排指南"
+    },
+    {
+      "articleId": "M3Oq8jmuT824Vs2BYXAiLQ",
+      "title": "低成本寵物照護資源",
+      "normalizedTitle": "低成本寵物照護資源"
+    },
+    {
+      "articleId": "RD3l0SzbSdufFoN24oWWhg",
+      "title": "低收入戶及中低收入戶住宅補貼辦法",
+      "normalizedTitle": "低收入戶及中低收入戶住宅補貼辦法"
+    },
+    {
+      "articleId": "0g2PAoJTWRz2tK3prorYIQ",
+      "title": "低收入戶申請與福利",
+      "normalizedTitle": "低收入戶申請與福利"
+    },
+    {
+      "articleId": "0txcnQBkFS4qwBPNHT3EJw",
+      "title": "低收入戶學生及中低收入戶學生就讀高級中等以上學校學雜費減免辦法",
+      "normalizedTitle": "低收入戶學生及中低收入戶學生就讀高級中等以上學校學雜費減免辦法"
+    },
+    {
+      "articleId": "Nenx7ioMTX6TtiyhqRFiSg",
+      "title": "低收入家庭婚姻諮商支援",
+      "normalizedTitle": "低收入家庭婚姻諮商支援"
+    },
+    {
+      "articleId": "2GitzKYDQ9G337nOfFOeFA",
+      "title": "低收入家庭教養支持",
+      "normalizedTitle": "低收入家庭教養支持"
+    },
+    {
+      "articleId": "MWO7TkrfRhWWj3ldEVxbKQ",
+      "title": "低收入家庭資源申請策略",
+      "normalizedTitle": "低收入家庭資源申請策略"
+    },
+    {
+      "articleId": "uQDephpuSnu7Fda7FUFA",
+      "title": "低價值遺產簡化處理",
+      "normalizedTitle": "低價值遺產簡化處理"
+    },
+    {
+      "articleId": "9iDgM5H0TBKWrw6uKn0D0A",
+      "title": "低薪勞工退休現實評估",
+      "normalizedTitle": "低薪勞工退休現實評估"
+    },
+    {
+      "articleId": "0Da2T8YZgSd2MEzkhOEOpA",
+      "title": "住宅資源與居住權益",
+      "normalizedTitle": "住宅資源與居住權益"
+    },
+    {
+      "articleId": "0Y0evz4JSDqGHw1ZcDOa1A",
+      "title": "你不可不知：繼承之實務分享",
+      "normalizedTitle": "你不可不知繼承之實務分享"
+    },
+    {
+      "articleId": "Uy6XC0n2TsCEHol6Jda23A",
+      "title": "你真的買到屬於你的房子嗎??(購買未保存登記不動產)",
+      "normalizedTitle": "你真的買到屬於你的房子嗎購買未保存登記不動產"
+    },
+    {
+      "articleId": "oQYkHfu4S82xUHeHEZRuhQ",
+      "title": "你真的撐得住一次財務意外嗎？三明治家庭壓力測試",
+      "normalizedTitle": "你真的撐得住一次財務意外嗎三明治家庭壓力測試"
+    },
+    {
+      "articleId": "0JhfKwiogRex6G9Sr6U8jQ",
+      "title": "免費試用變高額帳單：自動續約的財務陷阱",
+      "normalizedTitle": "免費試用變高額帳單自動續約的財務陷阱"
+    },
+    {
+      "articleId": "szXZrDllRdGJDDcTKlQ47Q",
+      "title": "免運門檻真的划算嗎？",
+      "normalizedTitle": "免運門檻真的划算嗎"
+    },
+    {
+      "articleId": "UGPOM0eTWKUm13jmhiEg",
+      "title": "別怕問，社工知道：醫院社工陪你認識出院準備與長期照護",
+      "normalizedTitle": "別怕問社工知道醫院社工陪你認識出院準備與長期照護"
+    },
+    {
+      "articleId": "qsJo9lGgQ0Sxf6qTpdGIKA",
+      "title": "別讓「窮忙」偷走你的未來：小資族靠定期定額存下第一桶金的終極攻略",
+      "normalizedTitle": "別讓窮忙偷走你的未來小資族靠定期定額存下第一桶金的終極攻略"
+    },
+    {
+      "articleId": "CWomZ7AVRZWQShvC2VzgDw",
+      "title": "別讓債務拖垮家庭—如何用正確方法重建財務安全",
+      "normalizedTitle": "別讓債務拖垮家庭如何用正確方法重建財務安全"
+    },
+    {
+      "articleId": "02HBaDzhTNWj9zlOeNRLuA",
+      "title": "告別中高齡職場焦慮：50+女性的退休規劃與職涯再造指南",
+      "normalizedTitle": "告別中高齡職場焦慮50+女性的退休規劃與職涯再造指南"
+    },
+    {
+      "articleId": "09qBdMhsQAuzhiMqkavR0w",
+      "title": "告別月光，擁抱財富：從「支出優先」到「為夢想儲蓄」的轉變之路",
+      "normalizedTitle": "告別月光擁抱財富從支出優先到為夢想儲蓄的轉變之路"
+    },
+    {
+      "articleId": "0e6dSmVCTKOjBVYAGkWSPA",
+      "title": "快錢背後的陷阱：辨識求職風險與避免成為詐騙目標",
+      "normalizedTitle": "快錢背後的陷阱辨識求職風險與避免成為詐騙目標"
+    },
+    {
+      "articleId": "ALpphzSyTbWVjmGuZKTqaQ",
+      "title": "我不是沒錢，是不知道錢去哪了：一個大學生的財務盤點",
+      "normalizedTitle": "我不是沒錢是不知道錢去哪了一個大學生的財務盤點"
+    },
+    {
+      "articleId": "XuJtCYgNQLeNzXovFWcU5w",
+      "title": "我以為他有保險，沒想到我們卻一無所有",
+      "normalizedTitle": "我以為他有保險沒想到我們卻一無所有"
+    },
+    {
+      "articleId": "cM1OKn5uQvKWc43BXts3vw",
+      "title": "我以為努力工作一輩子就能安穩退休，沒想到越老越窮",
+      "normalizedTitle": "我以為努力工作一輩子就能安穩退休沒想到越老越窮"
+    },
+    {
+      "articleId": "KjUA9ir0T9q0wRIaq3wxyg",
+      "title": "我以為強迫儲蓄是好事，沒想到卻變成壓力來源",
+      "normalizedTitle": "我以為強迫儲蓄是好事沒想到卻變成壓力來源"
+    },
+    {
+      "articleId": "0B0UFp2o7ST2QIntwyucRQ",
+      "title": "我以為嫁對人能少奮鬥20年，沒想到卻賠上了自由和未來",
+      "normalizedTitle": "我以為嫁對人能少奮鬥20年沒想到卻賠上了自由和未來"
+    },
+    {
+      "articleId": "0lvieNEv3RvWQglCymOS0Q",
+      "title": "我只是想多跑一趟，沒想到代價這麼大",
+      "normalizedTitle": "我只是想多跑一趟沒想到代價這麼大"
+    },
+    {
+      "articleId": "Fo4WHzVGTKWiPXAFaFjxbg",
+      "title": "我只想找個人一起過日子，卻變成一個人的撐與養",
+      "normalizedTitle": "我只想找個人一起過日子卻變成一個人的撐與養"
+    },
+    {
+      "articleId": "0HTK1xOxqQlSCd8buxAnmg",
+      "title": "我有債務困難，該怎麼和銀行辦理前置協商",
+      "normalizedTitle": "我有債務困難該怎麼和銀行辦理前置協商"
+    },
+    {
+      "articleId": "LIhIWw0WTL6XufGwq18oPQ",
+      "title": "我的丈夫失蹤了~相關法律與財務議題討論",
+      "normalizedTitle": "我的丈夫失蹤了相關法律與財務議題討論"
+    },
+    {
+      "articleId": "71gySv45R0Whx76NVZjW5Q",
+      "title": "我的個人財務規劃：穩健又不失彈性的資產配置分享",
+      "normalizedTitle": "我的個人財務規劃穩健又不失彈性的資產配置分享"
+    },
+    {
+      "articleId": "03fVABmmiRY68i9a4sRGLw",
+      "title": "我怎麼熬過卡費壓力，一步步翻身的",
+      "normalizedTitle": "我怎麼熬過卡費壓力一步步翻身的"
+    },
+    {
+      "articleId": "H1W3D3HSo6DuTfBBC4ZA",
+      "title": "我是如何接納保險的？",
+      "normalizedTitle": "我是如何接納保險的"
+    },
+    {
+      "articleId": "0WkMXyyBTGO65VqYuzgvMQ",
+      "title": "我們不是不努力，但為什麼每個月都月光？",
+      "normalizedTitle": "我們不是不努力但為什麼每個月都月光"
+    },
+    {
+      "articleId": "jNlNWqESDePfyCfmuHUw",
+      "title": "我該再生第二胎嗎？從時間規劃與資源分配的角度來思考(上篇)",
+      "normalizedTitle": "我該再生第二胎嗎從時間規劃與資源分配的角度來思考上篇"
+    },
+    {
+      "articleId": "4mA21NuST767ZOf3c7VwcQ",
+      "title": "我該再生第二胎嗎？從時間規劃與資源分配的角度來思考(下篇)",
+      "normalizedTitle": "我該再生第二胎嗎從時間規劃與資源分配的角度來思考下篇"
+    },
+    {
+      "articleId": "eVMel7zcTJSe4FFLuGZUGw",
+      "title": "找出自身可變現的價值，兼職與低成本創業成為失業家庭生計的新出路",
+      "normalizedTitle": "找出自身可變現的價值兼職與低成本創業成為失業家庭生計的新出路"
+    },
+    {
+      "articleId": "O2lUJet0SneyX6uX40HQDA",
+      "title": "技能轉換與重新培訓規劃：開創職涯新契機",
+      "normalizedTitle": "技能轉換與重新培訓規劃開創職涯新契機"
+    },
+    {
+      "articleId": "0G1zb6E7WRK6IHzhVdFPVA",
+      "title": "把自己當成一間公司經營：我的個人理財實踐筆記",
+      "normalizedTitle": "把自己當成一間公司經營我的個人理財實踐筆記"
+    },
+    {
+      "articleId": "g0pKwlqBQLKQUPDxgAuNGw",
+      "title": "把爭吵變成數字：婚姻破局時的財務盤點與協商",
+      "normalizedTitle": "把爭吵變成數字婚姻破局時的財務盤點與協商"
+    },
+    {
+      "articleId": "VZKsJG4QlqFoVeXSYx4w",
+      "title": "把數字延伸到生活：離婚條件下的財務行動與成果",
+      "normalizedTitle": "把數字延伸到生活離婚條件下的財務行動與成果"
+    },
+    {
+      "articleId": "bEEOokbQTiS0nj0sdXZQ",
+      "title": "投資的真諦：是否真的需要追求極致的買低賣高？",
+      "normalizedTitle": "投資的真諦是否真的需要追求極致的買低賣高"
+    },
+    {
+      "articleId": "0t2bnEnMCTV81sthhXopNw",
+      "title": "投機與投資最大的差異,如何建立投資基本功",
+      "normalizedTitle": "投機與投資最大的差異如何建立投資基本功"
+    },
+    {
+      "articleId": "lyViGdLjRMOsrV5Bzf1tVA",
+      "title": "每天一點點，找回財務安全感",
+      "normalizedTitle": "每天一點點找回財務安全感"
+    },
+    {
+      "articleId": "6g6gZWKzSeiSYl00NVLPrw",
+      "title": "每月少掉的6%，到底划算嗎？—勞退自提的現金流與退休準備",
+      "normalizedTitle": "每月少掉的6%到底划算嗎勞退自提的現金流與退休準備"
+    },
+    {
+      "articleId": "0PR6GgikTRA2RpyoVlEBOQ",
+      "title": "每月花 5000 元讓孩子補習、上才藝班，真的有必要嗎？",
+      "normalizedTitle": "每月花5000元讓孩子補習上才藝班真的有必要嗎"
+    },
+    {
+      "articleId": "0EQ9nxEbCSefHyCN7QHcmw",
+      "title": "每月花 5000 元讓孩子補習、上才藝班，真的有必要嗎？",
+      "normalizedTitle": "每月花5000元讓孩子補習上才藝班真的有必要嗎"
+    },
+    {
+      "articleId": "vTJVHaXRSrWhSUUTpRDxCQ",
+      "title": "每到開學就要借錢？社工和家長如何一起解決難題",
+      "normalizedTitle": "每到開學就要借錢社工和家長如何一起解決難題"
+    },
+    {
+      "articleId": "F00CamRoQWWrbxHHXktA3g",
+      "title": "每筆小額消費，累積大大負債",
+      "normalizedTitle": "每筆小額消費累積大大負債"
+    },
+    {
+      "articleId": "ezCrSapuQB6ohh6sPDXuFQ",
+      "title": "求職策略規劃與技巧提升",
+      "normalizedTitle": "求職策略規劃與技巧提升"
+    },
+    {
+      "articleId": "0NGPkO019SXuZwoo7NcVow",
+      "title": "沉睡帳戶變詐騙漏洞：銀行管制閒置帳戶下的財務規劃",
+      "normalizedTitle": "沉睡帳戶變詐騙漏洞銀行管制閒置帳戶下的財務規劃"
+    },
+    {
+      "articleId": "mlD4jdFcQbiUDhL91nJFQg",
+      "title": "沒收入先喘口氣：非自願離職三大脫困關鍵，先止血再補血",
+      "normalizedTitle": "沒收入先喘口氣非自願離職三大脫困關鍵先止血再補血"
+    },
+    {
+      "articleId": "dCz4qDG3RrKHuD5GvaoHXw",
+      "title": "沒繳強制險，車禍後賠償百萬，陷入民事刑責雙重打擊？！",
+      "normalizedTitle": "沒繳強制險車禍後賠償百萬陷入民事刑責雙重打擊"
+    },
+    {
+      "articleId": "IaWHBohYS3eIydoiPabTeA",
+      "title": "災後重建修繕的錢，要從哪裡來？",
+      "normalizedTitle": "災後重建修繕的錢要從哪裡來"
+    },
+    {
+      "articleId": "ARPasqKJQySyK9kvhzv1Ag",
+      "title": "災後修屋遇上裝修蟑螂，該如何自救與求償？",
+      "normalizedTitle": "災後修屋遇上裝修蟑螂該如何自救與求償"
+    },
+    {
+      "articleId": "oAt1V4zMSuydM4Qh9XdPYw",
+      "title": "災後修繕要花多少？錢怎麼分配才不陷入困境？",
+      "normalizedTitle": "災後修繕要花多少錢怎麼分配才不陷入困境"
+    },
+    {
+      "articleId": "TZGExQ8zRDKHFcZPzG9w",
+      "title": "罕見疾病生存指南｜弱勢家庭必備的日常照護與民間協助",
+      "normalizedTitle": "罕見疾病生存指南|弱勢家庭必備的日常照護與民間協助"
+    },
+    {
+      "articleId": "k1WYThhYT96JkReWb6iCaw",
+      "title": "罕見疾病資源介紹｜弱勢族群必知的政府醫療補助與協助管道",
+      "normalizedTitle": "罕見疾病資源介紹|弱勢族群必知的政府醫療補助與協助管道"
+    },
+    {
+      "articleId": "8hFEdlA1QBuEK2gX6kSJXQ",
+      "title": "走出暴力後，從零開始的生活規劃：當妳沒有收入時，如何重建安全與經濟自主？",
+      "normalizedTitle": "走出暴力後從零開始的生活規劃當妳沒有收入時如何重建安全與經濟自主"
+    },
+    {
+      "articleId": "gkbog5nNRXGoYXKC8P4Whw",
+      "title": "走進案家時的寵物觀察",
+      "normalizedTitle": "走進案家時的寵物觀察"
+    },
+    {
+      "articleId": "0XjNpmd29SVi8WvDxdA9oA",
+      "title": "走進部落的心：原住民族文化理解與服務實務指引",
+      "normalizedTitle": "走進部落的心原住民族文化理解與服務實務指引"
+    },
+    {
+      "articleId": "QB3WvP8TQ66zheKrpWHz2Q",
+      "title": "身心障礙兒少的家庭壓力",
+      "normalizedTitle": "身心障礙兒少的家庭壓力"
+    },
+    {
+      "articleId": "0sKyQuXDTlKR7uWc2qqyLQ",
+      "title": "身心障礙者車輛使用牌照稅免徵政策放寬分析",
+      "normalizedTitle": "身心障礙者車輛使用牌照稅免徵政策放寬分析"
+    },
+    {
+      "articleId": "0LxRLWA6YSdfo8z9z9n5pg",
+      "title": "身心障礙者家庭照顧者服務辦法",
+      "normalizedTitle": "身心障礙者家庭照顧者服務辦法"
+    },
+    {
+      "articleId": "wB5OoD2WTSS2lFalU4hftw",
+      "title": "身心障礙者就業支持資源",
+      "normalizedTitle": "身心障礙者就業支持資源"
+    },
+    {
+      "articleId": "0MxrD2tiQ3q4EWJkIC4yYQ",
+      "title": "身心障礙者經濟支援",
+      "normalizedTitle": "身心障礙者經濟支援"
+    },
+    {
+      "articleId": "WZHb6nqWRuSg77X4aztQBA",
+      "title": "身心障礙者權利公約施行法",
+      "normalizedTitle": "身心障礙者權利公約施行法"
+    },
+    {
+      "articleId": "uf7dhpgeTYmPtbKChS6zoA",
+      "title": "身心障礙者權益保障法",
+      "normalizedTitle": "身心障礙者權益保障法"
+    },
+    {
+      "articleId": "z8inBlYqSdyPbwonTdTkbg",
+      "title": "身心障礙者權益保障法施行細則",
+      "normalizedTitle": "身心障礙者權益保障法施行細則"
+    },
+    {
+      "articleId": "07SNsc7kGSqqX9tKokH1AQ",
+      "title": "身心障礙津貼與早療補助整合",
+      "normalizedTitle": "身心障礙津貼與早療補助整合"
+    },
+    {
+      "articleId": "BQs1RBotTG6AagrD4dfSdA",
+      "title": "身心障礙婦女支援",
+      "normalizedTitle": "身心障礙婦女支援"
+    },
+    {
+      "articleId": "6eDCvyaVSHqm03DUm9gQZw",
+      "title": "身障者的生活挑戰",
+      "normalizedTitle": "身障者的生活挑戰"
+    },
+    {
+      "articleId": "9M0PyupxT4mzsH6JRQPNSQ",
+      "title": "身障者的保險挑戰",
+      "normalizedTitle": "身障者的保險挑戰"
+    },
+    {
+      "articleId": "WSpbIwpRQlKrwzMBeDJNWQ",
+      "title": "身障者的家庭照顧者壓力與支持系統",
+      "normalizedTitle": "身障者的家庭照顧者壓力與支持系統"
+    },
+    {
+      "articleId": "nbZNArhmRGyxhTJ5jj7G5w",
+      "title": "身障者的財務安全與信託制度",
+      "normalizedTitle": "身障者的財務安全與信託制度"
+    },
+    {
+      "articleId": "zWEtBbSRHSp1OYBJMtnw",
+      "title": "身障者租屋困境與社工支持",
+      "normalizedTitle": "身障者租屋困境與社工支持"
+    },
+    {
+      "articleId": "0iJvdGDRLaNEAiL4zN7A",
+      "title": "身障者遇到強力推銷時的財務保護傘-輔助宣告與監護宣告",
+      "normalizedTitle": "身障者遇到強力推銷時的財務保護傘輔助宣告與監護宣告"
+    },
+    {
+      "articleId": "DIpZOA1xT1mGS6KZw7cszg",
+      "title": "身障者監護、輔助宣告與成年後的照顧安排",
+      "normalizedTitle": "身障者監護輔助宣告與成年後的照顧安排"
+    },
+    {
+      "articleId": "0KdIxI28lTqWgPEHoCTerA",
+      "title": "身障者職業自立：就業與工作支持",
+      "normalizedTitle": "身障者職業自立就業與工作支持"
+    },
+    {
+      "articleId": "WLcOIfz9SJy7z4wyzrIuxQ",
+      "title": "車禍和解前必看：後遺症、醫療費與家庭財務風險全解析",
+      "normalizedTitle": "車禍和解前必看後遺症醫療費與家庭財務風險全解析"
+    },
+    {
+      "articleId": "0LvZ6JicZRA1eniZbAatGw",
+      "title": "車禍理賠申請流程與策略",
+      "normalizedTitle": "車禍理賠申請流程與策略"
+    },
+    {
+      "articleId": "0vp8EmXcQlWY2FvHcLcqAg",
+      "title": "車禍理賠的財務風險與相關保障",
+      "normalizedTitle": "車禍理賠的財務風險與相關保障"
+    },
+    {
+      "articleId": "a6kWaQhdQ32ZLb8gTfNJUg",
+      "title": "車禍調解懶人包－關鍵字運用沒煩惱",
+      "normalizedTitle": "車禍調解懶人包關鍵字運用沒煩惱"
+    },
+    {
+      "articleId": "0ivd5nmlSQWLyX1m0X5dnw",
+      "title": "辛苦錢全泡湯？遇到店家倒閉，訂金自救指南必看！",
+      "normalizedTitle": "辛苦錢全泡湯遇到店家倒閉訂金自救指南必看"
+    },
+    {
+      "articleId": "SpXyFZnpSU6gR78wayrB8Q",
+      "title": "那些撐起一個家的，不只是收入，還有重新整理生活的能力",
+      "normalizedTitle": "那些撐起一個家的不只是收入還有重新整理生活的能力"
+    },
+    {
+      "articleId": "8j5DijMQaObPDtHR5uoA",
+      "title": "兒少教育與照顧資源",
+      "normalizedTitle": "兒少教育與照顧資源"
+    },
+    {
+      "articleId": "e3QyLmqZRMaJIC3gRWqWZw",
+      "title": "兒童及少年未來教育與發展帳戶條例",
+      "normalizedTitle": "兒童及少年未來教育與發展帳戶條例"
+    },
+    {
+      "articleId": "lBFGualeRZKaWvSygJQZjA",
+      "title": "兒童及少年收出養媒合服務者許可及管理辦法",
+      "normalizedTitle": "兒童及少年收出養媒合服務者許可及管理辦法"
+    },
+    {
+      "articleId": "00khiM5wQlK2nUYyE5C9FA",
+      "title": "兒童及少年福利與權益保障法",
+      "normalizedTitle": "兒童及少年福利與權益保障法"
+    },
+    {
+      "articleId": "UVgy2sQSZCKoPczMLzeQ",
+      "title": "兒童及少年醫療補助辦法",
+      "normalizedTitle": "兒童及少年醫療補助辦法"
+    },
+    {
+      "articleId": "0xLnj5YHjRCacBY5JaAT8Q",
+      "title": "兒童托育方案的經濟考量與優劣勢分析",
+      "normalizedTitle": "兒童托育方案的經濟考量與優劣勢分析"
+    },
+    {
+      "articleId": "0iJJby4o0R92Wx9ztrA2Ww",
+      "title": "兒童保單購買建議與相關限制",
+      "normalizedTitle": "兒童保單購買建議與相關限制"
+    },
+    {
+      "articleId": "V1NH5J0QR0iYVyQerS0jFA",
+      "title": "兒童保護與家庭功能重建",
+      "normalizedTitle": "兒童保護與家庭功能重建"
+    },
+    {
+      "articleId": "EQsKXrHQo6jShpfd0jpA",
+      "title": "兒童教育費用規劃與補助",
+      "normalizedTitle": "兒童教育費用規劃與補助"
+    },
+    {
+      "articleId": "iDZW8cbTxiKcJ44BtgBA",
+      "title": "刷得很精明，錢卻越來越少？你可能也這樣花",
+      "normalizedTitle": "刷得很精明錢卻越來越少你可能也這樣花"
+    },
+    {
+      "articleId": "0yGJ1ivMYRC6brJs17O6xw",
+      "title": "協助身心障礙者邁向自立之路",
+      "normalizedTitle": "協助身心障礙者邁向自立之路"
+    },
+    {
+      "articleId": "0IhOYG4roRriZeF7HtljXg",
+      "title": "協議離婚文件與程序",
+      "normalizedTitle": "協議離婚文件與程序"
+    },
+    {
+      "articleId": "08elaxqBJTwetPmbt9T79A",
+      "title": "卸下代理父母的重擔──從家庭經濟枷鎖到自我翻轉的人生",
+      "normalizedTitle": "卸下代理父母的重擔──從家庭經濟枷鎖到自我翻轉的人生"
+    },
+    {
+      "articleId": "0diWVR4mISjnQlQczHortA",
+      "title": "受刑人子女教育與照顧",
+      "normalizedTitle": "受刑人子女教育與照顧"
+    },
+    {
+      "articleId": "0yvHkmDwAShhgN8NGLWo3Q",
+      "title": "受刑人子女教育與照顧",
+      "normalizedTitle": "受刑人子女教育與照顧"
+    },
+    {
+      "articleId": "0wL85ysWRj6uUw3IVWtsFw",
+      "title": "受刑人作業金與家庭匯款",
+      "normalizedTitle": "受刑人作業金與家庭匯款"
+    },
+    {
+      "articleId": "b1dk5JbLQnGWOpZDk0XA7A",
+      "title": "受刑人家庭社會支持網絡",
+      "normalizedTitle": "受刑人家庭社會支持網絡"
+    },
+    {
+      "articleId": "058xzWHlYSsCJOH5FaHBOg",
+      "title": "受刑人家庭急難救助申請",
+      "normalizedTitle": "受刑人家庭急難救助申請"
+    },
+    {
+      "articleId": "sH9IcOa3SeSMtDIVhoxRhQ",
+      "title": "受刑人復歸就業輔導專業指南",
+      "normalizedTitle": "受刑人復歸就業輔導專業指南"
+    },
+    {
+      "articleId": "0I0xFivqrTHzjPdaOM5Zrw",
+      "title": "受暴婦女經濟安全規劃",
+      "normalizedTitle": "受暴婦女經濟安全規劃"
+    },
+    {
+      "articleId": "0FMwJXL7iQJuGp59ITmSZQ",
+      "title": "季節性收支變動應對策略",
+      "normalizedTitle": "季節性收支變動應對策略"
+    },
+    {
+      "articleId": "Z1Fd8gFbQQKpOMDmuHsW7Q",
+      "title": "孤獨感與陪伴需求評估",
+      "normalizedTitle": "孤獨感與陪伴需求評估"
+    },
+    {
+      "articleId": "LFnubxM5RX2SZjYXgnHE1w",
+      "title": "定期定額投資：小錢也能變大錢的好方法！",
+      "normalizedTitle": "定期定額投資小錢也能變大錢的好方法"
+    },
+    {
+      "articleId": "Hn9h0CyDRTGrWNlsYIoXtg",
+      "title": "居家工作機會評估與準備：打造高效遠端職涯",
+      "normalizedTitle": "居家工作機會評估與準備打造高效遠端職涯"
+    },
+    {
+      "articleId": "07f5V2EYREOYiVyWF8KetA",
+      "title": "居家早療與機構服務成本比較",
+      "normalizedTitle": "居家早療與機構服務成本比較"
+    },
+    {
+      "articleId": "qIw4hSzuQ3elnCdg7NPrdQ",
+      "title": "居家服務與日間照顧費用比較",
+      "normalizedTitle": "居家服務與日間照顧費用比較"
+    },
+    {
+      "articleId": "znQBcng7RGiL5cPDdiZGoA",
+      "title": "彼得的翻身記：從月光族到理財達人",
+      "normalizedTitle": "彼得的翻身記從月光族到理財達人"
+    },
+    {
+      "articleId": "0V1wZkOVR7qlkTru7sTGSg",
+      "title": "房子有房貸被銀行設定抵押權時，怎麼賣?",
+      "normalizedTitle": "房子有房貸被銀行設定抵押權時怎麼賣"
+    },
+    {
+      "articleId": "0mViG59S6QGqDuTiSsyxVg",
+      "title": "房子淹了，債務卻沒停？災情發生後，該怎麼處理債務？",
+      "normalizedTitle": "房子淹了債務卻沒停災情發生後該怎麼處理債務"
+    },
+    {
+      "articleId": "J9wt8cQnRjSFFuekrNzSag",
+      "title": "房子提早過戶給子女的10個財務陷阱",
+      "normalizedTitle": "房子提早過戶給子女的10個財務陷阱"
+    },
+    {
+      "articleId": "lnjFsNeTJeP694Se12Lg",
+      "title": "房屋抵押借款被高額設定的風險與影響",
+      "normalizedTitle": "房屋抵押借款被高額設定的風險與影響"
+    },
+    {
+      "articleId": "jcbzSDL7RaWgvwV1HyjQtQ",
+      "title": "房屋抵押貸款繳不出來該怎麼辦？銀行房貸與民間二胎房貸的處理差異",
+      "normalizedTitle": "房屋抵押貸款繳不出來該怎麼辦銀行房貸與民間二胎房貸的處理差異"
+    },
+    {
+      "articleId": "0k6OhoilTS5mngav4it8DA",
+      "title": "房屋被查封怎麼辦?",
+      "normalizedTitle": "房屋被查封怎麼辦"
+    },
+    {
+      "articleId": "5b2CtnGlSL2qFHkK0fULJQ",
+      "title": "房屋毀損怎麼辦？！颱風後修繕補助與資源指南",
+      "normalizedTitle": "房屋毀損怎麼辦颱風後修繕補助與資源指南"
+    },
+    {
+      "articleId": "0hV1Rcc3SbmQULgxJCP7DA",
+      "title": "房貸、車貸壓力大，還能存錢嗎？",
+      "normalizedTitle": "房貸車貸壓力大還能存錢嗎"
+    },
+    {
+      "articleId": "FdURopv9SCW7oFwTH2WOXg",
+      "title": "房貸、車貸壓力大，還能存錢嗎？",
+      "normalizedTitle": "房貸車貸壓力大還能存錢嗎"
+    },
+    {
+      "articleId": "YL7kXDfYREWLKeQwBr9xrg",
+      "title": "房貸利率上升、每月供款變重時：照顧者可執行的家庭經濟調整流程",
+      "normalizedTitle": "房貸利率上升每月供款變重時照顧者可執行的家庭經濟調整流程"
+    },
+    {
+      "articleId": "0eK00frNUQeaXv5dhRNFog",
+      "title": "房貸壓力這麼大？弱勢族群貸款買房的4個必知重點！",
+      "normalizedTitle": "房貸壓力這麼大弱勢族群貸款買房的4個必知重點"
+    },
+    {
+      "articleId": "gMqiidAOTeGJlrztXhUW0Q",
+      "title": "拋棄繼承程序實務",
+      "normalizedTitle": "拋棄繼承程序實務"
+    },
+    {
+      "articleId": "e5FG3jS7QUeCNw3I0VhMqw",
+      "title": "放假去哪裡？如何善用社會資源，用低預算豐富孩子的快樂童年",
+      "normalizedTitle": "放假去哪裡如何善用社會資源用低預算豐富孩子的快樂童年"
+    },
+    {
+      "articleId": "0zilgTtR2iUmS6hq2Hlg",
+      "title": "明明有記帳還是月光？如何找出「不見的錢」不吵架",
+      "normalizedTitle": "明明有記帳還是月光如何找出不見的錢不吵架"
+    },
+    {
+      "articleId": "bJ3LxfICRECLNL04VkcyNA",
+      "title": "服務對象選擇借地下金融不跟銀行貸款的原因與輔導策略",
+      "normalizedTitle": "服務對象選擇借地下金融不跟銀行貸款的原因與輔導策略"
+    },
+    {
+      "articleId": "0yYuPOpYzRc2Jhu3gvNXBQ",
+      "title": "歧視與偏見識別處理",
+      "normalizedTitle": "歧視與偏見識別處理"
+    },
+    {
+      "articleId": "0x0O1BG6SQX3n1KFMtcP3w",
+      "title": "法律扶助法",
+      "normalizedTitle": "法律扶助法"
+    },
+    {
+      "articleId": "4VV7PsF2TUy0fJTYGGIrTw",
+      "title": "法律扶助與權益救濟",
+      "normalizedTitle": "法律扶助與權益救濟"
+    },
+    {
+      "articleId": "LdiWduvfRRqLuJ4kBzKlGg",
+      "title": "法律協助費用規劃與申請",
+      "normalizedTitle": "法律協助費用規劃與申請"
+    },
+    {
+      "articleId": "0x23h3DVjTAKWVyvNgVQ0w",
+      "title": "社工人員在出養必要性評估中的角色與挑戰",
+      "normalizedTitle": "社工人員在出養必要性評估中的角色與挑戰"
+    },
+    {
+      "articleId": "0e8hWi7cdS9e8tieekZD8A",
+      "title": "社工如何協助青少年提升財務知能  ——從理解行為到建立決策能力的輔導實務",
+      "normalizedTitle": "社工如何協助青少年提升財務知能從理解行為到建立決策能力的輔導實務"
+    },
+    {
+      "articleId": "0WLBAUGLSK2EyNBP6pCBIA",
+      "title": "社工面對照顧經濟議題服務對象之輔導策略",
+      "normalizedTitle": "社工面對照顧經濟議題服務對象之輔導策略"
+    },
+    {
+      "articleId": "Rpnay57cRu7YYe6jDBcg",
+      "title": "社工教會我的事-我的家中有人需要照顧！怎麼辦？— 在育兒與職場之間做出選擇的故事",
+      "normalizedTitle": "社工教會我的事我的家中有人需要照顧怎麼辦在育兒與職場之間做出選擇的故事"
+    },
+    {
+      "articleId": "82HIJh1gRWGRQ2SQ8HknnQ",
+      "title": "社工教會我的事-長照百寶箱──解鎖家庭照顧壓力的希望之鑰",
+      "normalizedTitle": "社工教會我的事長照百寶箱──解鎖家庭照顧壓力的希望之鑰"
+    },
+    {
+      "articleId": "0rWX8LFeDSTSpGk6LfnjzA",
+      "title": "社工實務中的財務風險評估：建立專業判斷框架",
+      "normalizedTitle": "社工實務中的財務風險評估建立專業判斷框架"
+    },
+    {
+      "articleId": "xPSVS6SMR1Ka1gwXnEUvtg",
+      "title": "社交花費無傷大局？家庭財務慢性亮紅燈",
+      "normalizedTitle": "社交花費無傷大局家庭財務慢性亮紅燈"
+    },
+    {
+      "articleId": "0eJnMuydYTaKfj2qrFokzw",
+      "title": "社區寵物友善環境",
+      "normalizedTitle": "社區寵物友善環境"
+    },
+    {
+      "articleId": "JlVlS6qARQCDPMErpLMA8A",
+      "title": "社會工作個案管理",
+      "normalizedTitle": "社會工作個案管理"
+    },
+    {
+      "articleId": "t7t7hrPWRLaMETLW9LtsmQ",
+      "title": "社會工作與財務的關聯性(新)",
+      "normalizedTitle": "社會工作與財務的關聯性新"
+    },
+    {
+      "articleId": "jDjtVRJYSrmujzK7JLIw",
+      "title": "社會交換理論",
+      "normalizedTitle": "社會交換理論"
+    },
+    {
+      "articleId": "fKGMVE0GTGa2PGkm67sjQA",
+      "title": "社會保險制度整合運用",
+      "normalizedTitle": "社會保險制度整合運用"
+    },
+    {
+      "articleId": "03yGjRAGURvilFhkRIp4Tw",
+      "title": "社會個案工作的腦部極速運轉",
+      "normalizedTitle": "社會個案工作的腦部極速運轉"
+    },
+    {
+      "articleId": "0vxktomiT3OYzMdSrhurHA",
+      "title": "社會排除理論",
+      "normalizedTitle": "社會排除理論"
+    },
+    {
+      "articleId": "qIaCB9IGSLiSVFGnHY2JwA",
+      "title": "社會救助制度與寵物",
+      "normalizedTitle": "社會救助制度與寵物"
+    },
+    {
+      "articleId": "RA8buKCiThmEXf3KGzAYOg",
+      "title": "社會救助法",
+      "normalizedTitle": "社會救助法"
+    },
+    {
+      "articleId": "98h8MP44QhSRBc7LO2LC8A",
+      "title": "社會救助法施行細則",
+      "normalizedTitle": "社會救助法施行細則"
+    },
+    {
+      "articleId": "0rblX7kw2Sqqok6YxYcWDQ",
+      "title": "社會救助資源知識庫-台北市公部門114年版",
+      "normalizedTitle": "社會救助資源知識庫台北市公部門114年版"
+    },
+    {
+      "articleId": "04lwOBfkT9ubHpgNqFEbTg",
+      "title": "社會救助資源知識庫-桃園市公部門114年版",
+      "normalizedTitle": "社會救助資源知識庫桃園市公部門114年版"
+    },
+    {
+      "articleId": "WSBlLt5TZuAxhSqoJFbw",
+      "title": "社會救助資源知識庫-基隆市公部門114年版",
+      "normalizedTitle": "社會救助資源知識庫基隆市公部門114年版"
+    },
+    {
+      "articleId": "0jYyBvpuYQgZu0l1Xy6Jaw",
+      "title": "社會救助資源知識庫-新北市公部門114年版",
+      "normalizedTitle": "社會救助資源知識庫新北市公部門114年版"
+    },
+    {
+      "articleId": "5JwydDbTrunJBCTjnlUQ",
+      "title": "社會資源-中國信託慈善基金會-信扶專案",
+      "normalizedTitle": "社會資源中國信託慈善基金會信扶專案"
+    },
+    {
+      "articleId": "0Z9YbhNecRCafa86AVCAgA",
+      "title": "社會福利基本法",
+      "normalizedTitle": "社會福利基本法"
+    },
+    {
+      "articleId": "otfMHQisQYK8by0sWgvxZQ",
+      "title": "社會標籤下的生存戰：更生人如何兼顧生活與財務規劃？",
+      "normalizedTitle": "社會標籤下的生存戰更生人如何兼顧生活與財務規劃"
+    },
+    {
+      "articleId": "uyzHXTnR6O32a4kLF1Zw",
+      "title": "社會學習理論",
+      "normalizedTitle": "社會學習理論"
+    },
+    {
+      "articleId": "0oBrTphOTTGAxHwRXAS8uQ",
+      "title": "社福單位知識庫-台中市-公部門114年版上篇",
+      "normalizedTitle": "社福單位知識庫台中市公部門114年版上篇"
+    },
+    {
+      "articleId": "psTuoaHARLu6tclHbcOSYA",
+      "title": "社福單位知識庫-台中市-公部門114年版下篇",
+      "normalizedTitle": "社福單位知識庫台中市公部門114年版下篇"
+    },
+    {
+      "articleId": "0dOJdy9fXRgayAjx1XSnnw",
+      "title": "社福單位知識庫-宜蘭縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫宜蘭縣公部門114年版"
+    },
+    {
+      "articleId": "0yBXjrWoQyiv5sralCdVFg",
+      "title": "社福單位知識庫-社會救助資源-新竹縣",
+      "normalizedTitle": "社福單位知識庫社會救助資源新竹縣"
+    },
+    {
+      "articleId": "bwvLCh0eRceWfgY31ElqYQ",
+      "title": "社福單位知識庫-花蓮縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫花蓮縣公部門114年版"
+    },
+    {
+      "articleId": "yz2eUYDrRBKvOE67LzuQ9g",
+      "title": "社福單位知識庫-金門縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫金門縣公部門114年版"
+    },
+    {
+      "articleId": "ZkGHwqFMTemdYq0YW4a5Tg",
+      "title": "社福單位知識庫-南投縣公部門114年版-老人篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版老人篇"
+    },
+    {
+      "articleId": "bUyJ1vK4RwWeR6js6cL4Jw",
+      "title": "社福單位知識庫-南投縣公部門114年版-身心障礙篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版身心障礙篇"
+    },
+    {
+      "articleId": "qkeE59N5TYm14rtA8JtQ",
+      "title": "社福單位知識庫-南投縣公部門114年版-兒少篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版兒少篇"
+    },
+    {
+      "articleId": "cfY81SZvTjeD08shbSrw",
+      "title": "社福單位知識庫-南投縣公部門114年版-社會救助篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版社會救助篇"
+    },
+    {
+      "articleId": "0LPhYyfnBQwqv9Vvow0ZdA",
+      "title": "社福單位知識庫-南投縣公部門114年版-長照篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版長照篇"
+    },
+    {
+      "articleId": "7gU1ki86RlycadMxMMj7cA",
+      "title": "社福單位知識庫-南投縣公部門114年版-婦女篇",
+      "normalizedTitle": "社福單位知識庫南投縣公部門114年版婦女篇"
+    },
+    {
+      "articleId": "0VQ7uK414S6uGEmMyjjPiw",
+      "title": "社福單位知識庫-屏東縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫屏東縣公部門114年版"
+    },
+    {
+      "articleId": "0HyLalE2mSbav7WA14S4Rg",
+      "title": "社福單位知識庫-苗栗縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫苗栗縣公部門114年版"
+    },
+    {
+      "articleId": "hb5rtquWRyWGkTwFGk3i8A",
+      "title": "社福單位知識庫-高雄市-公部門114年版",
+      "normalizedTitle": "社福單位知識庫高雄市公部門114年版"
+    },
+    {
+      "articleId": "0dK5hlzgRbaWF9dYdrf8vA",
+      "title": "社福單位知識庫-連江縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫連江縣公部門114年版"
+    },
+    {
+      "articleId": "01ALhW6XSayKNWBY6k7Wkw",
+      "title": "社福單位知識庫-雲林縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫雲林縣公部門114年版"
+    },
+    {
+      "articleId": "6IptrxSSWI1zmo8xQmRA",
+      "title": "社福單位知識庫-新竹市公部門114年版",
+      "normalizedTitle": "社福單位知識庫新竹市公部門114年版"
+    },
+    {
+      "articleId": "TtgwZB2jRkOn9uTbjdJSvA",
+      "title": "社福單位知識庫-嘉義市公部門114年版",
+      "normalizedTitle": "社福單位知識庫嘉義市公部門114年版"
+    },
+    {
+      "articleId": "0VoU16aGTBGC49gPNEEmaw",
+      "title": "社福單位知識庫-嘉義縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫嘉義縣公部門114年版"
+    },
+    {
+      "articleId": "TxfCLaIjTOeFL7jzF4Yg",
+      "title": "社福單位知識庫-彰化縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫彰化縣公部門114年版"
+    },
+    {
+      "articleId": "div1nHTPu2B0pFOkQFLg",
+      "title": "社福單位知識庫-臺東縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫臺東縣公部門114年版"
+    },
+    {
+      "articleId": "0AKAQniT6RjOtxdBMukA",
+      "title": "社福單位知識庫-臺南市-公部門114年版",
+      "normalizedTitle": "社福單位知識庫臺南市公部門114年版"
+    },
+    {
+      "articleId": "bHz02atjSqO49cfx8LdOPQ",
+      "title": "社福單位知識庫-澎湖縣-公部門114年版",
+      "normalizedTitle": "社福單位知識庫澎湖縣公部門114年版"
+    },
+    {
+      "articleId": "0AB7i8R7S9OFKhqe3OYlfA",
+      "title": "空有土地，卻沒錢生活怎麼辦?",
+      "normalizedTitle": "空有土地卻沒錢生活怎麼辦"
+    },
+    {
+      "articleId": "0TjjiksnQJqZPZVhHOIvjQ",
+      "title": "股市大跌時的定心丸—另類投資：黃金",
+      "normalizedTitle": "股市大跌時的定心丸另類投資黃金"
+    },
+    {
+      "articleId": "oLst7SGRdjra2duIK8NQ",
+      "title": "育兒指導服務：家長與照顧者的支持與資源",
+      "normalizedTitle": "育兒指導服務家長與照顧者的支持與資源"
+    },
+    {
+      "articleId": "JEIl2UUQomHR3QVqnbbg",
+      "title": "育嬰留職停薪津貼規劃",
+      "normalizedTitle": "育嬰留職停薪津貼規劃"
+    },
+    {
+      "articleId": "UouQG96tSzyCVTL65qNC2w",
+      "title": "育嬰留職停薪津貼與薪資補助：經濟弱勢家庭的重要支持資源",
+      "normalizedTitle": "育嬰留職停薪津貼與薪資補助經濟弱勢家庭的重要支持資源"
+    },
+    {
+      "articleId": "0T7WZM9OcR5SO6Kyr429UA",
+      "title": "育齡婦女再就業財務案例",
+      "normalizedTitle": "育齡婦女再就業財務案例"
+    },
+    {
+      "articleId": "q9Q277ZRXJs7bIXpMHqA",
+      "title": "迎接新生：讓愛與規劃成為家庭最強後盾",
+      "normalizedTitle": "迎接新生讓愛與規劃成為家庭最強後盾"
+    },
+    {
+      "articleId": "pXuAJF77SDCu0GZ6MyTzyg",
+      "title": "金融投資素養：駕馭您的財富之路",
+      "normalizedTitle": "金融投資素養駕馭您的財富之路"
+    },
+    {
+      "articleId": "fXjfdTf1Q5KvNtnavkdgbg",
+      "title": "金融消費者保護法",
+      "normalizedTitle": "金融消費者保護法"
+    },
+    {
+      "articleId": "0r3SAr7YRb6EeOk7KLMk2Q",
+      "title": "金錢不是問題，行為才是問題：如何協助反覆借貸的身心障礙成年家人？",
+      "normalizedTitle": "金錢不是問題行為才是問題如何協助反覆借貸的身心障礙成年家人"
+    },
+    {
+      "articleId": "qCyGKHauQoCGIDlWHOx8bA",
+      "title": "金錢的優先順序：我如何透過「消費決策排序法」終結透支人生",
+      "normalizedTitle": "金錢的優先順序我如何透過消費決策排序法終結透支人生"
+    },
+    {
+      "articleId": "b0gDM4yhSd6LH9rKmk9qrg",
+      "title": "長期照顧服務法",
+      "normalizedTitle": "長期照顧服務法"
+    },
+    {
+      "articleId": "0Ar12ZAT9RpiHKXRMlA8CA",
+      "title": "長照2.0服務項目與自負額計算",
+      "normalizedTitle": "長照20服務項目與自負額計算"
+    },
+    {
+      "articleId": "qNY9E2ZkRnufkwXR2oQmTw",
+      "title": "長照文化敏感性與多元服務：看見每個生命的獨特色彩",
+      "normalizedTitle": "長照文化敏感性與多元服務看見每個生命的獨特色彩"
+    },
+    {
+      "articleId": "joSubFTQhOxfDtygvqeQ",
+      "title": "長照永續發展與世代責任規劃:共創有尊嚴的晚年生活",
+      "normalizedTitle": "長照永續發展與世代責任規劃共創有尊嚴的晚年生活"
+    },
+    {
+      "articleId": "3QIYbskOSHyo8mfdBAUJ1w",
+      "title": "長照決策參與與家庭協調機制：凝聚共識，走穩長照路",
+      "normalizedTitle": "長照決策參與與家庭協調機制凝聚共識走穩長照路"
+    },
+    {
+      "articleId": "0VlBRwtMhQKbbAGzQthaag",
+      "title": "長照服務中斷應變與銜接策略：守護不間斷的溫暖照護",
+      "normalizedTitle": "長照服務中斷應變與銜接策略守護不間斷的溫暖照護"
+    },
+    {
+      "articleId": "0ggTw6tEFRBqDaXOnWag1g",
+      "title": "長照服務怎麼用：羅爸使用長照服務的經驗談",
+      "normalizedTitle": "長照服務怎麼用羅爸使用長照服務的經驗談"
+    },
+    {
+      "articleId": "e8qYBA5PSnWwnMOcdWQVEg",
+      "title": "長照服務個人化與成本效益：兼顧尊嚴與永續的解方",
+      "normalizedTitle": "長照服務個人化與成本效益兼顧尊嚴與永續的解方"
+    },
+    {
+      "articleId": "04DsIsScSW20IluM0xmRQQ",
+      "title": "長照服務資源與費用",
+      "normalizedTitle": "長照服務資源與費用"
+    },
+    {
+      "articleId": "HbuefhG5RxCZCBnq6xU3HQ",
+      "title": "長照法律權益與契約管理：守護您與家人的安心照護",
+      "normalizedTitle": "長照法律權益與契約管理守護您與家人的安心照護"
+    },
+    {
+      "articleId": "tExMUj6ZRw2uHu1UAxOx8w",
+      "title": "長照社區資源整合與志工運用：打造在地安老的支持網絡",
+      "normalizedTitle": "長照社區資源整合與志工運用打造在地安老的支持網絡"
+    },
+    {
+      "articleId": "IJMRMvcRRly0OiBcxtOHxg",
+      "title": "長照保險與商業保險整合規劃",
+      "normalizedTitle": "長照保險與商業保險整合規劃"
+    },
+    {
+      "articleId": "bbnbSnvsR2iOVokdkolTWw",
+      "title": "長照品質監督與消費者權益：守護照護品質，安心安老",
+      "normalizedTitle": "長照品質監督與消費者權益守護照護品質安心安老"
+    },
+    {
+      "articleId": "lunAajrhQRa3bS9tE2F0oQ",
+      "title": "長照政策變動影響與應變策略：掌握先機，保障你我權益",
+      "normalizedTitle": "長照政策變動影響與應變策略掌握先機保障你我權益"
+    },
+    {
+      "articleId": "1g8a1c5eS6KCBsMopKHqog",
+      "title": "長照家庭財務壓力評估與支持：減輕重擔，安心前行",
+      "normalizedTitle": "長照家庭財務壓力評估與支持減輕重擔安心前行"
+    },
+    {
+      "articleId": "c8n9ew5kTmW3a8QPSAIImQ",
+      "title": "長照稅務優惠與節稅策略運用：聰明規劃，減輕家庭負擔",
+      "normalizedTitle": "長照稅務優惠與節稅策略運用聰明規劃減輕家庭負擔"
+    },
+    {
+      "articleId": "0Xyjlb4nZTIuAVN18eog",
+      "title": "長照資源整合與個案管理策略",
+      "normalizedTitle": "長照資源整合與個案管理策略"
+    },
+    {
+      "articleId": "LB04MRYxRpOapQBEpUzX7Q",
+      "title": "長照預防性投資與健康促進：讓晚年生活更精彩的關鍵",
+      "normalizedTitle": "長照預防性投資與健康促進讓晚年生活更精彩的關鍵"
+    },
+    {
+      "articleId": "1WN270pyTlC1t1n3n5TVCA",
+      "title": "長照緊急應變與備用方案規劃：未雨綢繆，安心照護",
+      "normalizedTitle": "長照緊急應變與備用方案規劃未雨綢繆安心照護"
+    },
+    {
+      "articleId": "bFZfmsocTniz1rx8YSsNcg",
+      "title": "長照與醫療費用整合管理：精打細算，照護更到位",
+      "normalizedTitle": "長照與醫療費用整合管理精打細算照護更到位"
+    },
+    {
+      "articleId": "SHMUcxsaREinoduYUUD1Ww",
+      "title": "長照輔具租借與購買財務規劃",
+      "normalizedTitle": "長照輔具租借與購買財務規劃"
+    },
+    {
+      "articleId": "VnyWo1n8TuGustpuuJiU9A",
+      "title": "長照需求評估與分級申請實務",
+      "normalizedTitle": "長照需求評估與分級申請實務"
+    },
+    {
+      "articleId": "pDcpXFfpS2KOhgByuCiYDg",
+      "title": "長照險購買的考量與運用",
+      "normalizedTitle": "長照險購買的考量與運用"
+    },
+    {
+      "articleId": "0h5HoV017RXD7uytVzYECg",
+      "title": "長輩有債務可以拋棄繼承嗎？拋棄繼承與限定繼承的說明與財務建議",
+      "normalizedTitle": "長輩有債務可以拋棄繼承嗎拋棄繼承與限定繼承的說明與財務建議"
+    },
+    {
+      "articleId": "giPPMN20Q7292QsOaVAfCA",
+      "title": "長輩理財健康檢查：警惕「專業投資人」陷阱，守護您的財富！",
+      "normalizedTitle": "長輩理財健康檢查警惕專業投資人陷阱守護您的財富"
+    },
+    {
+      "articleId": "00dsWjqbYRo6m8W4zUdwuQ",
+      "title": "阿甘的職業災害與生活再起",
+      "normalizedTitle": "阿甘的職業災害與生活再起"
+    },
+    {
+      "articleId": "0PYv6TLGRUyvIqa1Vl6QXQ",
+      "title": "阿浩的舞台與人生：從赤字到重建之路",
+      "normalizedTitle": "阿浩的舞台與人生從赤字到重建之路"
+    },
+    {
+      "articleId": "k8ZdDXFAT56CZUGuIdhzAA",
+      "title": "青少年打工族的財務教育與法律界線說明",
+      "normalizedTitle": "青少年打工族的財務教育與法律界線說明"
+    },
+    {
+      "articleId": "48wb5TMcTxaVzbFaOK2fSw",
+      "title": "青少年親子關係與經濟",
+      "normalizedTitle": "青少年親子關係與經濟"
+    },
+    {
+      "articleId": "DOiPZ4PfTXCOTeMEKhh4hA",
+      "title": "促進新住民就業補助作業要點運用指南",
+      "normalizedTitle": "促進新住民就業補助作業要點運用指南"
+    },
+    {
+      "articleId": "7a1tOBOQQlC1R7Bf0eP2gA",
+      "title": "保費怎麼繳最划算？一次算給你看",
+      "normalizedTitle": "保費怎麼繳最划算一次算給你看"
+    },
+    {
+      "articleId": "8NHmAPUWRcWV01UnyuI6kw",
+      "title": "保險公司評估與選擇策略",
+      "normalizedTitle": "保險公司評估與選擇策略"
+    },
+    {
+      "articleId": "EfCN0Vl2TKOGsgWPFN48XA",
+      "title": "保險強制執行規範調整：社工實務指南",
+      "normalizedTitle": "保險強制執行規範調整社工實務指南"
+    },
+    {
+      "articleId": "0mdhOmUATKmujQpnjqsqmw",
+      "title": "保險理賠與稅務申報規劃",
+      "normalizedTitle": "保險理賠與稅務申報規劃"
+    },
+    {
+      "articleId": "0Z3gfk8b4S26zkeuayAlhQ",
+      "title": "信用卡初體驗：給兒女一堂價值非凡的金錢課",
+      "normalizedTitle": "信用卡初體驗給兒女一堂價值非凡的金錢課"
+    },
+    {
+      "articleId": "FJthYDApToSaXuwwx516LA",
+      "title": "信用卡與分期的溫柔自救法：把便利留著，但不被利息綁架",
+      "normalizedTitle": "信用卡與分期的溫柔自救法把便利留著但不被利息綁架"
+    },
+    {
+      "articleId": "npiRqcQmQrKuonHBra1RrA",
+      "title": "信仰花費大體檢：當香、紙錢與奉獻都變成月支出",
+      "normalizedTitle": "信仰花費大體檢當香紙錢與奉獻都變成月支出"
+    },
+    {
+      "articleId": "M3DGcapWTMm0zq9sZih4qA",
+      "title": "信義區老公寓，如何滿足養老與安家的財務抉擇",
+      "normalizedTitle": "信義區老公寓如何滿足養老與安家的財務抉擇"
+    },
+    {
+      "articleId": "0tJKDnXgdQrn40k3wKHg",
+      "title": "孩子，我們一起要贏在學習之路上！別讓補習班繳費單，變成家庭財務的隱形地雷",
+      "normalizedTitle": "孩子我們一起要贏在學習之路上別讓補習班繳費單變成家庭財務的隱形地雷"
+    },
+    {
+      "articleId": "15ts2OhpTCicLIEh2qLxeA",
+      "title": "孩子一句「同學都有」:「想要」與「必要」的家庭財務價值觀",
+      "normalizedTitle": "孩子一句同學都有想要與必要的家庭財務價值觀"
+    },
+    {
+      "articleId": "0AdgrH6QzQiGWI12ujkqvw",
+      "title": "孩子六歲前，善用政府補助，讓我們照顧孩子更安心",
+      "normalizedTitle": "孩子六歲前善用政府補助讓我們照顧孩子更安心"
+    },
+    {
+      "articleId": "SDQSECVSQZ6DTATFQACXIQ",
+      "title": "孩子的比較心理變得很重，做為父母的我們可以怎麼做？",
+      "normalizedTitle": "孩子的比較心理變得很重做為父母的我們可以怎麼做"
+    },
+    {
+      "articleId": "04T3WORLIT1uZpoZr8dyYg",
+      "title": "孩子的普發金是零用錢？還是先幫家裡撐過去？",
+      "normalizedTitle": "孩子的普發金是零用錢還是先幫家裡撐過去"
+    },
+    {
+      "articleId": "01Otg9771QTO32FUSHXGEw",
+      "title": "孩子要花錢，父母收入卻不穩定",
+      "normalizedTitle": "孩子要花錢父母收入卻不穩定"
+    },
+    {
+      "articleId": "pxk3pnyQgOiKjaZvafOQ",
+      "title": "孩子遭霸凌拒學怎麼辦?",
+      "normalizedTitle": "孩子遭霸凌拒學怎麼辦"
+    },
+    {
+      "articleId": "0E4YvvIrKTS6V9q5eV7Eqg",
+      "title": "孩子還小、父母已老：晚婚世代最現實的財務壓力，你準備好了嗎？",
+      "normalizedTitle": "孩子還小父母已老晚婚世代最現實的財務壓力你準備好了嗎"
+    },
+    {
+      "articleId": "P8FQqisVRryzGCQQR1KnZw",
+      "title": "建立家庭財務會議制度：強化溝通與理財習慣",
+      "normalizedTitle": "建立家庭財務會議制度強化溝通與理財習慣"
+    },
+    {
+      "articleId": "yomrqSwOTwaFb9xCHUUkbw",
+      "title": "待業期的財務保衛戰：為什麼「由奢入儉」對她並不難？一場重新定義生活的革命",
+      "normalizedTitle": "待業期的財務保衛戰為什麼由奢入儉對她並不難一場重新定義生活的革命"
+    },
+    {
+      "articleId": "AqPEUm20SXyKgiYGXCQ9Yg",
+      "title": "很多家庭不是不會投資，而是根本沒有「能安心投資」的條件",
+      "normalizedTitle": "很多家庭不是不會投資而是根本沒有能安心投資的條件"
+    },
+    {
+      "articleId": "H3J2yRrpSmgHGiAfwE2A",
+      "title": "急難型債務緊急處理策略",
+      "normalizedTitle": "急難型債務緊急處理策略"
+    },
+    {
+      "articleId": "MgdS9YGZTeCSfdTHF0ke1A",
+      "title": "急難救助申請",
+      "normalizedTitle": "急難救助申請"
+    },
+    {
+      "articleId": "If7hFYwpTEJI8vhdLS8Q",
+      "title": "急難救助怎麼申請？小心「卡關」，避免錯失補助！",
+      "normalizedTitle": "急難救助怎麼申請小心卡關避免錯失補助"
+    },
+    {
+      "articleId": "whgQBgKDQ12vS6ERwQwJWg",
+      "title": "按呢妳嘛敢嫁？愛情與財務的警示",
+      "normalizedTitle": "按呢妳嘛敢嫁愛情與財務的警示"
+    },
+    {
+      "articleId": "XmBlV2MQRK998WnLWPcA",
+      "title": "政府津貼與補助整合申請：讓您的權益不漏接！",
+      "normalizedTitle": "政府津貼與補助整合申請讓您的權益不漏接"
+    },
+    {
+      "articleId": "aVzVSgBSs2adAgVn81ug",
+      "title": "政府就業補助資源整合運用",
+      "normalizedTitle": "政府就業補助資源整合運用"
+    },
+    {
+      "articleId": "eKV1KOIBTzq66MTqnIMmwg",
+      "title": "政府與NPO的照顧方案整合",
+      "normalizedTitle": "政府與npo的照顧方案整合"
+    },
+    {
+      "articleId": "lt0cqBTdQByAYOlr3X3FvA",
+      "title": "為了自由搬家，卻被帳單壓垮？帶子小夫妻脫離婆家後的「財務生存攻略」",
+      "normalizedTitle": "為了自由搬家卻被帳單壓垮帶子小夫妻脫離婆家後的財務生存攻略"
+    },
+    {
+      "articleId": "7kMaVDUvSe2KApbCIrjErg",
+      "title": "為三餐、為生活、與為妻兒:中年的你，退休金、保險與投資準備好了嗎？",
+      "normalizedTitle": "為三餐為生活與為妻兒中年的你退休金保險與投資準備好了嗎"
+    },
+    {
+      "articleId": "2IGgvliS8a3OX4WocJig",
+      "title": "為什麼要關注失能風險？失能險相關介紹",
+      "normalizedTitle": "為什麼要關注失能風險失能險相關介紹"
+    },
+    {
+      "articleId": "w4PwHZWpQ42F5t7dDj2Zaw",
+      "title": "為什麼會被強制執行？該怎麼防？這6種常見債務陷阱你中了嗎？",
+      "normalizedTitle": "為什麼會被強制執行該怎麼防這6種常見債務陷阱你中了嗎"
+    },
+    {
+      "articleId": "0119We4fSzWr1OiArgeELg",
+      "title": "為什麼經濟脆弱者更難堅持健康從生活壓力、環境到消費心理的連鎖反應",
+      "normalizedTitle": "為什麼經濟脆弱者更難堅持健康從生活壓力環境到消費心理的連鎖反應"
+    },
+    {
+      "articleId": "0RY7sXxFvTVKAAubfai5hg",
+      "title": "為何月月能過，一到開學季卻繳不出學費？",
+      "normalizedTitle": "為何月月能過一到開學季卻繳不出學費"
+    },
+    {
+      "articleId": "u6Au93l0SfKiRGeZHFTMqQ",
+      "title": "為孩子放棄餐飲，她靠清潔開創新事業",
+      "normalizedTitle": "為孩子放棄餐飲她靠清潔開創新事業"
+    },
+    {
+      "articleId": "0xMZwmCGZS5i0NlaPupYFA",
+      "title": "為孩子買儲蓄險，卻掉進信用卡債務的財務陷阱",
+      "normalizedTitle": "為孩子買儲蓄險卻掉進信用卡債務的財務陷阱"
+    },
+    {
+      "articleId": "LgB2Bx65SVi333MFx9m8ew",
+      "title": "疫情紓困貸款實務",
+      "normalizedTitle": "疫情紓困貸款實務"
+    },
+    {
+      "articleId": "0xiWhLmMTlW6SUrzEUdfTg",
+      "title": "相關就學補助資源介紹",
+      "normalizedTitle": "相關就學補助資源介紹"
+    },
+    {
+      "articleId": "0oB8vMxBgQtmB6ynwlRB7Q",
+      "title": "看見看不見的財務地雷：提升家庭財務韌性的四大核心策略",
+      "normalizedTitle": "看見看不見的財務地雷提升家庭財務韌性的四大核心策略"
+    },
+    {
+      "articleId": "0Ui0G6iKTcOFtsHCi8c3Rg",
+      "title": "突發死亡家庭債務處理",
+      "normalizedTitle": "突發死亡家庭債務處理"
+    },
+    {
+      "articleId": "0B0TPUErSrCmijABZTfZJw",
+      "title": "紅白包的人情世故：如何因應避免造成財務壓力",
+      "normalizedTitle": "紅白包的人情世故如何因應避免造成財務壓力"
+    },
+    {
+      "articleId": "xR2TTdmzSJaLA3uZchrPLQ",
+      "title": "美麗的代價：從美甲到醫美，我們到底花了多少？",
+      "normalizedTitle": "美麗的代價從美甲到醫美我們到底花了多少"
+    },
+    {
+      "articleId": "QchU244LTpe1alpaSQfiag",
+      "title": "致勝功略：教你穩健生意的關鍵秘訣",
+      "normalizedTitle": "致勝功略教你穩健生意的關鍵秘訣"
+    },
+    {
+      "articleId": "ANhzd29RIO17a0WAVIqg",
+      "title": "要不要幫小孩買保單？先保大人還是小孩？",
+      "normalizedTitle": "要不要幫小孩買保單先保大人還是小孩"
+    },
+    {
+      "articleId": "1WBHAkQqQiaoF0gXkKEnfQ",
+      "title": "要讓孩子讀公立或私立？當愛與荷包拉扯，夫妻如何不吵翻？",
+      "normalizedTitle": "要讓孩子讀公立或私立當愛與荷包拉扯夫妻如何不吵翻"
+    },
+    {
+      "articleId": "0f9xuilPQQ1m2wRQx6HBCQ",
+      "title": "負責人及其眷屬的勞健保該怎麼保才比較划算？",
+      "normalizedTitle": "負責人及其眷屬的勞健保該怎麼保才比較划算"
+    },
+    {
+      "articleId": "D5tayLFKTmyMeDj0qKQwbg",
+      "title": "軍公教退休制度說明",
+      "normalizedTitle": "軍公教退休制度說明"
+    },
+    {
+      "articleId": "lZwv7l7STWiVDi1i03nA",
+      "title": "軍公教撫卹金申請實務",
+      "normalizedTitle": "軍公教撫卹金申請實務"
+    },
+    {
+      "articleId": "SOfBngEJRjyaQKZjofB6yQ",
+      "title": "重大理賠案件專業協助資源",
+      "normalizedTitle": "重大理賠案件專業協助資源"
+    },
+    {
+      "articleId": "Y56vDuE1T9adTZG2sIzLdg",
+      "title": "重利罪完整說明：認識高利貸的法律界線",
+      "normalizedTitle": "重利罪完整說明認識高利貸的法律界線"
+    },
+    {
+      "articleId": "KiGePIW5S2yxDNsMrTCQ",
+      "title": "重組家庭經濟整合",
+      "normalizedTitle": "重組家庭經濟整合"
+    },
+    {
+      "articleId": "d399gfrqT5qXdufO9Kvdpg",
+      "title": "限定繼承申請指南",
+      "normalizedTitle": "限定繼承申請指南"
+    },
+    {
+      "articleId": "0HddffUVTFmSrS4nwxNsNQ",
+      "title": "面對突發事件，如何與銀行協商減降還款壓力之技巧",
+      "normalizedTitle": "面對突發事件如何與銀行協商減降還款壓力之技巧"
+    },
+    {
+      "articleId": "0EqlE8QwzTi6XcsOrSMnvA",
+      "title": "面對財務困境，我學會記帳與節制",
+      "normalizedTitle": "面對財務困境我學會記帳與節制"
+    },
+    {
+      "articleId": "0xZXFNWsTXKaeIKradYb0g",
+      "title": "面對財務困境，我學會記帳與節制",
+      "normalizedTitle": "面對財務困境我學會記帳與節制"
+    },
+    {
+      "articleId": "FuECe8GwRdiQgxbG0mO8pw",
+      "title": "個人或家庭的財務規劃分享",
+      "normalizedTitle": "個人或家庭的財務規劃分享"
+    },
+    {
+      "articleId": "tqz1y7uPQTi51uxhyF0NZQ",
+      "title": "個人財務調整歷程分享：我和金錢的和解之路",
+      "normalizedTitle": "個人財務調整歷程分享我和金錢的和解之路"
+    },
+    {
+      "articleId": "M88qBaARQROiDog4wPpokw",
+      "title": "個人資料保護法修正案：AI財務時代下，您的「錢包隱私」如何升級？",
+      "normalizedTitle": "個人資料保護法修正案ai財務時代下您的錢包隱私如何升級"
+    },
+    {
+      "articleId": "zyepqfwLSoeQ1EuSYieA",
+      "title": "個案教會我的事-生命的韌性與不容易-個案教會我的- 胡嘉君社工師",
+      "normalizedTitle": "個案教會我的事生命的韌性與不容易個案教會我的胡嘉君社工師"
+    },
+    {
+      "articleId": "AH9DNc0pR5CvH489kCIfkg",
+      "title": "借名登記車主的各種風險及後續處理方式",
+      "normalizedTitle": "借名登記車主的各種風險及後續處理方式"
+    },
+    {
+      "articleId": "HwpxC5OeQsWNbEbcPZEMcg",
+      "title": "借名登記房產的財務與法律風險──財務視角下的隱性風暴",
+      "normalizedTitle": "借名登記房產的財務與法律風險──財務視角下的隱性風暴"
+    },
+    {
+      "articleId": "0YOplIWPQQDqYwU600cOgg",
+      "title": "兼職與副業選擇評估策略",
+      "normalizedTitle": "兼職與副業選擇評估策略"
+    },
+    {
+      "articleId": "NzCqdfcTKGz6dEkDFSfA",
+      "title": "原本幫家人一起買房，卻因結婚生子人生大翻轉，房貸差點繳不出來！",
+      "normalizedTitle": "原本幫家人一起買房卻因結婚生子人生大翻轉房貸差點繳不出來"
+    },
+    {
+      "articleId": "Oj666s3pTo29ARg8KIwbTQ",
+      "title": "原住民的理財服務、貸款，與相關現金補助、福利資源",
+      "normalizedTitle": "原住民的理財服務貸款與相關現金補助福利資源"
+    },
+    {
+      "articleId": "0vqb02WpRgmk0gbr4luaow",
+      "title": "原住民族土地居住權益",
+      "normalizedTitle": "原住民族土地居住權益"
+    },
+    {
+      "articleId": "jJO1XHEHRDaNWizr1VTs2A",
+      "title": "原住民族長者照顧服務專業指引",
+      "normalizedTitle": "原住民族長者照顧服務專業指引"
+    },
+    {
+      "articleId": "RjybES9USHmv4cc3zH7ZjQ",
+      "title": "原住民族青年教育就業輔導",
+      "normalizedTitle": "原住民族青年教育就業輔導"
+    },
+    {
+      "articleId": "Nlx68vVPSGK6lGrvO2dFXQ",
+      "title": "原住民族家庭暴力防治：文化脈絡下的挑戰與處遇策略",
+      "normalizedTitle": "原住民族家庭暴力防治文化脈絡下的挑戰與處遇策略"
+    },
+    {
+      "articleId": "98mF1LdHSUqx2U8VI2JQWA",
+      "title": "原住民族特殊財務議題",
+      "normalizedTitle": "原住民族特殊財務議題"
+    },
+    {
+      "articleId": "0X6bHgc6QQcqyBq6R6SNCg",
+      "title": "原住民族酒癮藥癮問題處理",
+      "normalizedTitle": "原住民族酒癮藥癮問題處理"
+    },
+    {
+      "articleId": "SbkIkUKUShSxhOnp7u4ulw",
+      "title": "原住民族傳統儀式與現代生活",
+      "normalizedTitle": "原住民族傳統儀式與現代生活"
+    },
+    {
+      "articleId": "0C5bYzrtSfSzfUaGtm8dGA",
+      "title": "原住民族跨文化溝通技巧",
+      "normalizedTitle": "原住民族跨文化溝通技巧"
+    },
+    {
+      "articleId": "NM6BWY7cSQWXM9SHdBbpkA",
+      "title": "原住民微笑貸款實務",
+      "normalizedTitle": "原住民微笑貸款實務"
+    },
+    {
+      "articleId": "Uhi7lYzAQySXKlo16C8oKw",
+      "title": "原來，不是賺太少，而是生活結構太脆弱",
+      "normalizedTitle": "原來不是賺太少而是生活結構太脆弱"
+    },
+    {
+      "articleId": "0icJ89HYBTiSEDitYQrkRA",
+      "title": "宮廟工作者的背景因素、收入來源與財務困境",
+      "normalizedTitle": "宮廟工作者的背景因素收入來源與財務困境"
+    },
+    {
+      "articleId": "LeJJUCfGTqqfHWncJ9s92A",
+      "title": "家事事件法",
+      "normalizedTitle": "家事事件法"
+    },
+    {
+      "articleId": "j75FfCa4T4mhPqSBXZRBRg",
+      "title": "家事調解程序與財產分割",
+      "normalizedTitle": "家事調解程序與財產分割"
+    },
+    {
+      "articleId": "0hjvGo8ZzQHyvJf4YuzhxA",
+      "title": "家長必看：替孩子開戶、學習理財時有哪些法律注意事項？",
+      "normalizedTitle": "家長必看替孩子開戶學習理財時有哪些法律注意事項"
+    },
+    {
+      "articleId": "0lylzSUoHTqWvEmOhecbGw",
+      "title": "家庭支持系統建構與維護",
+      "normalizedTitle": "家庭支持系統建構與維護"
+    },
+    {
+      "articleId": "7u1Wa2raTIeePoFi4F2omQ",
+      "title": "家庭主要收入來源喪失危機處理",
+      "normalizedTitle": "家庭主要收入來源喪失危機處理"
+    },
+    {
+      "articleId": "0xYWgr5LkR1ayts6XrOKsA",
+      "title": "家庭生命週期理論",
+      "normalizedTitle": "家庭生命週期理論"
+    },
+    {
+      "articleId": "sRPQo3ZRRFmhs7kUKjM9Hg",
+      "title": "家庭危機中的親子關係",
+      "normalizedTitle": "家庭危機中的親子關係"
+    },
+    {
+      "articleId": "J6TEDwZwREmu4kz8bdD1ag",
+      "title": "家庭危機時期財務分工調整",
+      "normalizedTitle": "家庭危機時期財務分工調整"
+    },
+    {
+      "articleId": "0QCcCaWxvSq2yiSAQKdASg",
+      "title": "家庭成員財務責任分工",
+      "normalizedTitle": "家庭成員財務責任分工"
+    },
+    {
+      "articleId": "0NGuCT87SYqiUBXeEMhUgQ",
+      "title": "家庭成員照顧責任重新分配",
+      "normalizedTitle": "家庭成員照顧責任重新分配"
+    },
+    {
+      "articleId": "0MS5d07YRcKvJkyBHhG0zQ",
+      "title": "家庭收入分配與管理策略",
+      "normalizedTitle": "家庭收入分配與管理策略"
+    },
+    {
+      "articleId": "OXHUnRygQgCWMms7gb0IPA",
+      "title": "家庭系統理論",
+      "normalizedTitle": "家庭系統理論"
+    },
+    {
+      "articleId": "Es6VSKQ8TNGcIa3mS7oFAw",
+      "title": "家庭重大財務決策參與機制",
+      "normalizedTitle": "家庭重大財務決策參與機制"
+    },
+    {
+      "articleId": "5xFmpYTgRtm4gKoobRI45A",
+      "title": "家庭財務中的隱形支出：照顧與醫療壓力下的真實生活",
+      "normalizedTitle": "家庭財務中的隱形支出照顧與醫療壓力下的真實生活"
+    },
+    {
+      "articleId": "0CmyOqlrGS2yxs5nFcIfvQ",
+      "title": "家庭財務分工文化適應",
+      "normalizedTitle": "家庭財務分工文化適應"
+    },
+    {
+      "articleId": "UTqnFb2MSrO4l33krDS7ow",
+      "title": "家庭財務分工效果評估",
+      "normalizedTitle": "家庭財務分工效果評估"
+    },
+    {
+      "articleId": "ni41i8JlSwWU3YUmgk9DXQ",
+      "title": "家庭財務目標設定與追蹤",
+      "normalizedTitle": "家庭財務目標設定與追蹤"
+    },
+    {
+      "articleId": "Z4M3RZLDTFSSoSwtojjWvA",
+      "title": "家庭財務角色與責任分工評估",
+      "normalizedTitle": "家庭財務角色與責任分工評估"
+    },
+    {
+      "articleId": "0Aj6BRMhzSNdFjRc4CTvQw",
+      "title": "家庭財務常見的漏洞",
+      "normalizedTitle": "家庭財務常見的漏洞"
+    },
+    {
+      "articleId": "5HoEO4UyShSTKJLBHaVmyQ",
+      "title": "家庭財務教育與能力培養",
+      "normalizedTitle": "家庭財務教育與能力培養"
+    },
+    {
+      "articleId": "01oFz0JkTDGLAeBN1p9ffA",
+      "title": "家庭財務現況盤點的專業價值：重新定義社工經濟輔導",
+      "normalizedTitle": "家庭財務現況盤點的專業價值重新定義社工經濟輔導"
+    },
+    {
+      "articleId": "VU2alNA9SEa3ardOWsL4KQ",
+      "title": "家庭財務透明度與信任建立",
+      "normalizedTitle": "家庭財務透明度與信任建立"
+    },
+    {
+      "articleId": "4F8Ud4toQXyIFo6SXT9amQ",
+      "title": "家庭財務會議：讓金錢討論不再尷尬",
+      "normalizedTitle": "家庭財務會議讓金錢討論不再尷尬"
+    },
+    {
+      "articleId": "0qplYMsaSIiOvxTL0Ang",
+      "title": "家庭財務溝通：讓錢成為夥伴，而不是導火線",
+      "normalizedTitle": "家庭財務溝通讓錢成為夥伴而不是導火線"
+    },
+    {
+      "articleId": "07pg5z0mqQzWYfiJgypu0w",
+      "title": "家庭財務壓力分擔與支持",
+      "normalizedTitle": "家庭財務壓力分擔與支持"
+    },
+    {
+      "articleId": "FwGJbbQMS8zsSUFa5EFA",
+      "title": "家庭帳單管理技巧：三招搞定現金流、不漏繳，善用金融工具助節流！",
+      "normalizedTitle": "家庭帳單管理技巧三招搞定現金流不漏繳善用金融工具助節流"
+    },
+    {
+      "articleId": "arR22P4RT5aeYpo1JAriJg",
+      "title": "家庭常見的消費陷阱，談如何節約和設定合理的財務預算",
+      "normalizedTitle": "家庭常見的消費陷阱談如何節約和設定合理的財務預算"
+    },
+    {
+      "articleId": "cjg9s36HTWKZsef3h8pFNQ",
+      "title": "家庭理財不難：從我家經驗看財務規劃與工具選擇",
+      "normalizedTitle": "家庭理財不難從我家經驗看財務規劃與工具選擇"
+    },
+    {
+      "articleId": "0eRSX1avQ1O1sW2Gmpp1Ug",
+      "title": "家庭債務分工與界限設定",
+      "normalizedTitle": "家庭債務分工與界限設定"
+    },
+    {
+      "articleId": "N4nRihwjTiWbF5kET5eyug",
+      "title": "家庭債務危機處理",
+      "normalizedTitle": "家庭債務危機處理"
+    },
+    {
+      "articleId": "09mw3ZeTjCqPMFsvHSkw",
+      "title": "家庭債務到底是怎麼累積的？3大原因讓你不知不覺欠下一屁股債！",
+      "normalizedTitle": "家庭債務到底是怎麼累積的3大原因讓你不知不覺欠下一屁股債"
+    },
+    {
+      "articleId": "4EzJpV5aTmaW4LAjEzdPVQ",
+      "title": "家庭照顧者經濟支持與喘息規劃",
+      "normalizedTitle": "家庭照顧者經濟支持與喘息規劃"
+    },
+    {
+      "articleId": "0pQyD7yzRQ2B7ODVSou5HA",
+      "title": "家庭經濟自立發展實務季刊-2025.06創刊號-我的個案被騙了！該怎麼辦？",
+      "normalizedTitle": "家庭經濟自立發展實務季刊202506創刊號我的個案被騙了該怎麼辦"
+    },
+    {
+      "articleId": "WBNyPE7gTxymedNo5XiE9A",
+      "title": "家庭經濟自立發展實務季刊-2025.09秋季號：我的個案有債務！該怎麼辦？",
+      "normalizedTitle": "家庭經濟自立發展實務季刊202509秋季號我的個案有債務該怎麼辦"
+    },
+    {
+      "articleId": "P3hS3hAZQfaBIswHKu7Ilw",
+      "title": "家庭經濟自立發展實務季刊-202512冬季號：我變成家庭照顧者！該怎麼辦？",
+      "normalizedTitle": "家庭經濟自立發展實務季刊202512冬季號我變成家庭照顧者該怎麼辦"
+    },
+    {
+      "articleId": "gPJ58354Tt66GxJx3yhsug",
+      "title": "家庭經濟自立發展實務季刊-202603春季號：除了補助 改善家庭經濟 怎麼辦？",
+      "normalizedTitle": "家庭經濟自立發展實務季刊202603春季號除了補助改善家庭經濟怎麼辦"
+    },
+    {
+      "articleId": "0v9FrzZjSkqRftXIFo3p2Q",
+      "title": "家庭經濟研討會導讀",
+      "normalizedTitle": "家庭經濟研討會導讀"
+    },
+    {
+      "articleId": "3G9Uk9EESISN2exLBtc7Yw",
+      "title": "家庭經濟重組與適應策略：穩健前行的藍圖",
+      "normalizedTitle": "家庭經濟重組與適應策略穩健前行的藍圖"
+    },
+    {
+      "articleId": "0J5Abzj63QoCFD89f1ChVw",
+      "title": "家庭經濟脫貧研討會中部場-到底在急什麼？以實物啟動經濟評估的可能-社團法人台灣陽光婦女協會 楊雅筑副主任",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場到底在急什麼以實物啟動經濟評估的可能社團法人台灣陽光婦女協會楊雅筑副主任"
+    },
+    {
+      "articleId": "tuQDCTiJTUqCYvJ7dAz5yA",
+      "title": "家庭經濟脫貧研討會中部場-到底在急什麼？因應個案需求的輔導培力與實踐-中國信託慈善基金會 李婉如主任",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場到底在急什麼因應個案需求的輔導培力與實踐中國信託慈善基金會李婉如主任"
+    },
+    {
+      "articleId": "0S1Hw9gpCS2STi5FAOQwpA",
+      "title": "家庭經濟脫貧研討會中部場-社工能談錢？因地制宜的家庭經濟服務策略-財團法人台灣兒童暨家庭扶助基金會 南台中家扶中心 蕭舜鴻主任",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場社工能談錢因地制宜的家庭經濟服務策略財團法人台灣兒童暨家庭扶助基金會南台中家扶中心蕭舜鴻主任"
+    },
+    {
+      "articleId": "0EUNRNk8RdqXRu1iRrUF3Q",
+      "title": "家庭經濟脫貧研討會中部場-社工能談錢？脆弱家庭的財務樣貌-台中市政府社會局石岡家庭福利服務中心 崔俊傑副主任",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場社工能談錢脆弱家庭的財務樣貌台中市政府社會局石岡家庭福利服務中心崔俊傑副主任"
+    },
+    {
+      "articleId": "z8g7lBAbSkmGBRY9txFv9g",
+      "title": "家庭經濟脫貧研討會中部場-社工能談錢？經扶社工的困境與反思-財團法人台灣世界展望會中區辦事處中濱中心 蔡佳蓁社工",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場社工能談錢經扶社工的困境與反思財團法人台灣世界展望會中區辦事處中濱中心蔡佳蓁社工"
+    },
+    {
+      "articleId": "0u9V41LQwTGA8B0MYPkA",
+      "title": "家庭經濟脫貧研討會中部場-從債務看人生-徐慕怡財務健康諮詢師",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場從債務看人生徐慕怡財務健康諮詢師"
+    },
+    {
+      "articleId": "l4330Dk1StOPUtWSc6E5wQ",
+      "title": "家庭經濟脫貧研討會中部場-從債務看人生？從債務啟動家庭財務改變契機- 臺中市政府社會局沙鹿家庭福利服務中心-黃雅音社工師",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場從債務看人生從債務啟動家庭財務改變契機臺中市政府社會局沙鹿家庭福利服務中心黃雅音社工師"
+    },
+    {
+      "articleId": "J7LS3U8AT26kHcV4a18mOw",
+      "title": "家庭經濟脫貧研討會中部場-救急還是救窮？以工代賑經驗的回應與反思-東海大學社會工作學系 呂朝賢教授",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場救急還是救窮以工代賑經驗的回應與反思東海大學社會工作學系呂朝賢教授"
+    },
+    {
+      "articleId": "t4HKfVLwS6C9CgTTHhSxBA",
+      "title": "家庭經濟脫貧研討會中部場-救急還是救窮？以工代賑與社勞政合作實務-台中市政府社會局 張娟華股長",
+      "normalizedTitle": "家庭經濟脫貧研討會中部場救急還是救窮以工代賑與社勞政合作實務台中市政府社會局張娟華股長"
+    },
+    {
+      "articleId": "0mb75iOtT4Gd0gKYZ2bb4A",
+      "title": "家庭經濟脫貧研討會北部場-到底急什麼？從急難看見經濟輔導的必要-萬海航運慈善基金會 陳欣惠副執行長",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場到底急什麼從急難看見經濟輔導的必要萬海航運慈善基金會陳欣惠副執行長"
+    },
+    {
+      "articleId": "wxDZVE7jQzykOIgDtsDpnw",
+      "title": "家庭經濟脫貧研討會北部場-到底急什麼？從脫貧輔導到社工培力-中國信託慈善基金會 林美吟副執行長",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場到底急什麼從脫貧輔導到社工培力中國信託慈善基金會林美吟副執行長"
+    },
+    {
+      "articleId": "0FNYx2ioST69Mpx67YtaBw",
+      "title": "家庭經濟脫貧研討會北部場-社工能談錢？社區脈絡中的家庭經濟培力-台灣社區實踐協會 馬明毅社工",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場社工能談錢社區脈絡中的家庭經濟培力台灣社區實踐協會馬明毅社工"
+    },
+    {
+      "articleId": "I4O0wu4qRjSg8erF64DKZA",
+      "title": "家庭經濟脫貧研討會北部場-社工能談錢？從會談釐清家庭財務樣貌-財團法人基督教芥菜種會北區助人網中心-周佳儀副處長",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場社工能談錢從會談釐清家庭財務樣貌財團法人基督教芥菜種會北區助人網中心周佳儀副處長"
+    },
+    {
+      "articleId": "feI3E6yBT028jpXX55Dhhw",
+      "title": "家庭經濟脫貧研討會北部場-社工能談錢？從經濟扶助到能力賦權- 財團法人台灣兒童暨家庭扶助基金會社會工作處 李羿佩高級專員",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場社工能談錢從經濟扶助到能力賦權財團法人台灣兒童暨家庭扶助基金會社會工作處李羿佩高級專員"
+    },
+    {
+      "articleId": "0CR3ZAhdfQtyWLdWbOnTXA",
+      "title": "家庭經濟脫貧研討會北部場-社工能談錢？萬華社工的賦能挑戰現場-台北市政府社會局萬華社福中心 廖芳瑩主任",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場社工能談錢萬華社工的賦能挑戰現場台北市政府社會局萬華社福中心廖芳瑩主任"
+    },
+    {
+      "articleId": "PhDcKFt7Q6q7nNtwNfm2TA",
+      "title": "家庭經濟脫貧研討會北部場-從債看人生-蔣穎萱財務健康諮詢師",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場從債看人生蔣穎萱財務健康諮詢師"
+    },
+    {
+      "articleId": "0pwUYykwjThKPoeU4VvcHA",
+      "title": "家庭經濟脫貧研討會北部場-從債務看人生？債務歷程中的陪伴與轉化-漢慈公益基金會 尹春瑜執行長",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場從債務看人生債務歷程中的陪伴與轉化漢慈公益基金會尹春瑜執行長"
+    },
+    {
+      "articleId": "0tgSBkUCQhud1KJ4BsT3DQ",
+      "title": "家庭經濟脫貧研討會北部場-救急還是救窮？救助制度的限制與可能-社會救助法修法聯盟 林建宇共同發起人",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場救急還是救窮救助制度的限制與可能社會救助法修法聯盟林建宇共同發起人"
+    },
+    {
+      "articleId": "0WMXgPSjjRnN9GB9S8qQ",
+      "title": "家庭經濟脫貧研討會北部場-救急還是救窮？脫貧政策與實務作為之看見-桃園市政府社會局 陳煒婷社會工作督導",
+      "normalizedTitle": "家庭經濟脫貧研討會北部場救急還是救窮脫貧政策與實務作為之看見桃園市政府社會局陳煒婷社會工作督導"
+    },
+    {
+      "articleId": "HTutiFzQdCV712PEZJhA",
+      "title": "家庭經濟脫貧研討會南部場-到底在急什麼？社區網絡資源協助家庭經濟重建-高雄市慈善團體聯合總會 劉雅玲執行長",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場到底在急什麼社區網絡資源協助家庭經濟重建高雄市慈善團體聯合總會劉雅玲執行長"
+    },
+    {
+      "articleId": "0fU2Vs1gTrm2hCqU8GTJYg",
+      "title": "家庭經濟脫貧研討會南部場-到底在急什麼？從急難啟動財務翻轉之路- 萬海航運慈善基金會 謝佳靜專員",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場到底在急什麼從急難啟動財務翻轉之路萬海航運慈善基金會謝佳靜專員"
+    },
+    {
+      "articleId": "RnpZDwEQSUynHEZk1KXyaw",
+      "title": "家庭經濟脫貧研討會南部場-社工能談錢？「脫貧」觀點與角色反思-高雄市中區社福中心 趙若新區主任",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場社工能談錢脫貧觀點與角色反思高雄市中區社福中心趙若新區主任"
+    },
+    {
+      "articleId": "0IrVO2zDTyq8OdQFFUQXRQ",
+      "title": "家庭經濟脫貧研討會南部場-社工能談錢？建構以財務為基礎的會談-財團法人中華民國兒童福利聯盟基金會 南區社工處家庭服務一組 吳慧珊副主任",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場社工能談錢建構以財務為基礎的會談財團法人中華民國兒童福利聯盟基金會南區社工處家庭服務一組吳慧珊副主任"
+    },
+    {
+      "articleId": "xBNoNFCGT7ChUcw06BGYiQ",
+      "title": "家庭經濟脫貧研討會南部場-社工能談錢？原住民族在家庭經濟的困境-台東縣成功鎮長濱鄉原住民族家庭服務中心 吳青玲督導",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場社工能談錢原住民族在家庭經濟的困境台東縣成功鎮長濱鄉原住民族家庭服務中心吳青玲督導"
+    },
+    {
+      "articleId": "fnMJpIY5QXa2fwKEAr9zzA",
+      "title": "家庭經濟脫貧研討會南部場-從債看人生-李婉仙財務健康諮詢師",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場從債看人生李婉仙財務健康諮詢師"
+    },
+    {
+      "articleId": "LbXLC5ECQL2gTG5VYVSAJQ",
+      "title": "家庭經濟脫貧研討會南部場-從債務看人生？債務的能與不能-高雄市政府社會局鳳山五甲社會福利服務中心-黃政愉督導",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場從債務看人生債務的能與不能高雄市政府社會局鳳山五甲社會福利服務中心黃政愉督導"
+    },
+    {
+      "articleId": "SUxAIIrXRima03bbJPsw",
+      "title": "家庭經濟脫貧研討會南部場-救急還是救窮？社會救助制度困境與實務挑戰-高雄市政府社會局 葉玉如副局長",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場救急還是救窮社會救助制度困境與實務挑戰高雄市政府社會局葉玉如副局長"
+    },
+    {
+      "articleId": "0ayTphaDiTvGWL1nx37HTA",
+      "title": "家庭經濟脫貧研討會南部場-救急還是救窮？從社安網看救助的脈絡與反思-國立屏東科技大學研究總中心 李麗芬研究員",
+      "normalizedTitle": "家庭經濟脫貧研討會南部場救急還是救窮從社安網看救助的脈絡與反思國立屏東科技大學研究總中心李麗芬研究員"
+    },
+    {
+      "articleId": "0hPaW1EgeS1mEDu9KaeYbg",
+      "title": "家庭經濟翻轉人生——小芳的重生之路",
+      "normalizedTitle": "家庭經濟翻轉人生小芳的重生之路"
+    },
+    {
+      "articleId": "0BSHLo2lToO7B3lxlHN7uA",
+      "title": "家庭預算制定與執行監督",
+      "normalizedTitle": "家庭預算制定與執行監督"
+    },
+    {
+      "articleId": "AQ9l67E8TnaP8GK1KEpg",
+      "title": "家庭預算重新編列與調整",
+      "normalizedTitle": "家庭預算重新編列與調整"
+    },
+    {
+      "articleId": "KpGil6GlSq2oER9iZcSzcA",
+      "title": "家庭暴力防治法",
+      "normalizedTitle": "家庭暴力防治法"
+    },
+    {
+      "articleId": "4KoKxbBTQnuVeEu043yEpA",
+      "title": "家庭暴力受害者經濟安全",
+      "normalizedTitle": "家庭暴力受害者經濟安全"
+    },
+    {
+      "articleId": "RcZjNjeqTQ6pmph44G3ESA",
+      "title": "家庭壓力理論",
+      "normalizedTitle": "家庭壓力理論"
+    },
+    {
+      "articleId": "8fO0yTzTTOfdGpxHAXBQ",
+      "title": "家族財產分割協議",
+      "normalizedTitle": "家族財產分割協議"
+    },
+    {
+      "articleId": "doIrz9ooQ4iibLCPD2fBcw",
+      "title": "家裡的錢該給老婆管嗎？夫妻必談的金錢共識",
+      "normalizedTitle": "家裡的錢該給老婆管嗎夫妻必談的金錢共識"
+    },
+    {
+      "articleId": "ekPJaKLBRwaPu5lc44TrjQ",
+      "title": "家裡的錢該給老婆管嗎？夫妻必談的金錢共識",
+      "normalizedTitle": "家裡的錢該給老婆管嗎夫妻必談的金錢共識"
+    },
+    {
+      "articleId": "2Uuvlrj3QqGA1x9UxICTVQ",
+      "title": "家屬就業緊急輔導服務",
+      "normalizedTitle": "家屬就業緊急輔導服務"
+    },
+    {
+      "articleId": "QDBNnRkRkHUmPsiVpjmg",
+      "title": "弱勢兒童發展與早期介入",
+      "normalizedTitle": "弱勢兒童發展與早期介入"
+    },
+    {
+      "articleId": "Ck3WtIyeQRWmvuZqdWAnqA",
+      "title": "弱勢家庭理財新思維：普發 1 萬變 2 萬，政府陪你存第一桶金",
+      "normalizedTitle": "弱勢家庭理財新思維普發1萬變2萬政府陪你存第一桶金"
+    },
+    {
+      "articleId": "TjQ1jfHSOA6Kj1g181yw",
+      "title": "弱勢家庭遇到通勤車禍時，在財務與法律層面應該注意的重點",
+      "normalizedTitle": "弱勢家庭遇到通勤車禍時在財務與法律層面應該注意的重點"
+    },
+    {
+      "articleId": "7pYfoI3dS629obvTLcIg",
+      "title": "弱勢族群也能買房？購屋貸款這樣申請最省力",
+      "normalizedTitle": "弱勢族群也能買房購屋貸款這樣申請最省力"
+    },
+    {
+      "articleId": "57t8D2oQyrFZdoF9Ywvg",
+      "title": "柴米油鹽的重量：日常開銷背後的家庭財務焦慮",
+      "normalizedTitle": "柴米油鹽的重量日常開銷背後的家庭財務焦慮"
+    },
+    {
+      "articleId": "0QD1ZmltSRBSYCiTK8KPeA",
+      "title": "桃園市清償計畫助弱勢&國民年金與勞保喪葬給付整理",
+      "normalizedTitle": "桃園市清償計畫助弱勢&國民年金與勞保喪葬給付整理"
+    },
+    {
+      "articleId": "0YREawKaOT76NTlyUrnKeQ",
+      "title": "海外房產投資高報酬背後的陷阱：從穩賺幻象到血本無歸的警示",
+      "normalizedTitle": "海外房產投資高報酬背後的陷阱從穩賺幻象到血本無歸的警示"
+    },
+    {
+      "articleId": "0h441AkWyTnrYOYoOg8OUA",
+      "title": "消費性債務行為改變策略",
+      "normalizedTitle": "消費性債務行為改變策略"
+    },
+    {
+      "articleId": "0uKksLY5BRuSoj4KzpWWLQ",
+      "title": "消費者保護法",
+      "normalizedTitle": "消費者保護法"
+    },
+    {
+      "articleId": "PLfxT3c0RpC2RWuH7UpPaA",
+      "title": "消費者債務清理條例",
+      "normalizedTitle": "消費者債務清理條例"
+    },
+    {
+      "articleId": "nPHa1xXpS3mzdehJOBEqyw",
+      "title": "特殊工作(八大行業)認識",
+      "normalizedTitle": "特殊工作八大行業認識"
+    },
+    {
+      "articleId": "YOwu14bqTJ6213V0G97CKQ",
+      "title": "特殊境遇家庭扶助條例",
+      "normalizedTitle": "特殊境遇家庭扶助條例"
+    },
+    {
+      "articleId": "Gu9UnlteR7Wwg8t5tbvgaA",
+      "title": "特殊境遇家庭補助申請",
+      "normalizedTitle": "特殊境遇家庭補助申請"
+    },
+    {
+      "articleId": "rd9UbI71QfKbo6QMMpjLvw",
+      "title": "特殊需求兒童家庭經濟支援指南",
+      "normalizedTitle": "特殊需求兒童家庭經濟支援指南"
+    },
+    {
+      "articleId": "n7Oza1RATBSFeH34cUyIAg",
+      "title": "特教資源與早療服務銜接規劃",
+      "normalizedTitle": "特教資源與早療服務銜接規劃"
+    },
+    {
+      "articleId": "0Je10KYNBR4SQiJtGw7Trw",
+      "title": "真正的經濟改善，不只是收入增加，而是相信努力有價值",
+      "normalizedTitle": "真正的經濟改善不只是收入增加而是相信努力有價值"
+    },
+    {
+      "articleId": "6vOATYlyReCNzZawAzSq8g",
+      "title": "真正的穩定，不是永遠不跌倒，而是仍有能力重新開始",
+      "normalizedTitle": "真正的穩定不是永遠不跌倒而是仍有能力重新開始"
+    },
+    {
+      "articleId": "RMrc8jNVQIiWWb5E5Fwdug",
+      "title": "真正的穩定，不是沒有風暴，而是重新「找回生活的掌控感」",
+      "normalizedTitle": "真正的穩定不是沒有風暴而是重新找回生活的掌控感"
+    },
+    {
+      "articleId": "6rI2HKk0TA20HXEMhD4vkg",
+      "title": "真正撐住一個家的，不只是責任，而是重新「拿回人生的方向盤」",
+      "normalizedTitle": "真正撐住一個家的不只是責任而是重新拿回人生的方向盤"
+    },
+    {
+      "articleId": "0znNcxllORG6k6hLIZp95Q",
+      "title": "破裂後的重建：當多重壓力同時出現，社工如何陪伴小雅一家走出財務黑洞",
+      "normalizedTitle": "破裂後的重建當多重壓力同時出現社工如何陪伴小雅一家走出財務黑洞"
+    },
+    {
+      "articleId": "PrVMli6LTbSHg5FaHtGfhg",
+      "title": "租房不是小事：合約內容與財務的必懂重點",
+      "normalizedTitle": "租房不是小事合約內容與財務的必懂重點"
+    },
+    {
+      "articleId": "qDSSqOHwS3atWBPWKOqQ9Q",
+      "title": "租屋限制與寵物",
+      "normalizedTitle": "租屋限制與寵物"
+    },
+    {
+      "articleId": "CqzoDgauRXWdyy8lgNsxlw",
+      "title": "脆弱家庭",
+      "normalizedTitle": "脆弱家庭"
+    },
+    {
+      "articleId": "J8uvP5d4RXGQzD4nBcqciA",
+      "title": "記帳如何真的幫助我們省出錢？",
+      "normalizedTitle": "記帳如何真的幫助我們省出錢"
+    },
+    {
+      "articleId": "ln5ROSGZTam4pgdLf3IA",
+      "title": "財務工具-保險入門課",
+      "normalizedTitle": "財務工具保險入門課"
+    },
+    {
+      "articleId": "0exfKt2gwQIyJgTnSfyjcQ",
+      "title": "財務分工中的性別角色檢視",
+      "normalizedTitle": "財務分工中的性別角色檢視"
+    },
+    {
+      "articleId": "J7MpumLvS0iCCDOH713OJg",
+      "title": "財務分工協議制定與執行",
+      "normalizedTitle": "財務分工協議制定與執行"
+    },
+    {
+      "articleId": "2ItvkknwTyqa58h6HOyYrA",
+      "title": "財務可視化與行動策略：運用好理家在協助家庭改善經濟困境",
+      "normalizedTitle": "財務可視化與行動策略運用好理家在協助家庭改善經濟困境"
+    },
+    {
+      "articleId": "0mpMMK7LlR7krR1MzNlmIQ",
+      "title": "財務目標設定與達成策略",
+      "normalizedTitle": "財務目標設定與達成策略"
+    },
+    {
+      "articleId": "011wSOZZR9CqWSONqldp9w",
+      "title": "財務危機早期預警系統",
+      "normalizedTitle": "財務危機早期預警系統"
+    },
+    {
+      "articleId": "6kCanR7gTTKSijjDdiw2zg",
+      "title": "財務自由的基石：從普發一萬到月薪配置的全方位規劃",
+      "normalizedTitle": "財務自由的基石從普發一萬到月薪配置的全方位規劃"
+    },
+    {
+      "articleId": "MvtZQbXbSKiI0GQmvv2Mbw",
+      "title": "財務知能在少年輔導的運用",
+      "normalizedTitle": "財務知能在少年輔導的運用"
+    },
+    {
+      "articleId": "60PtwW7xT1SY2BJFL4qBfw",
+      "title": "財務知識建立_如何分配家庭財務",
+      "normalizedTitle": "財務知識建立如何分配家庭財務"
+    },
+    {
+      "articleId": "0WKZrZSodQXeRQRrkJMaKQ",
+      "title": "財務知識建立_投資基金的好處有什麼?",
+      "normalizedTitle": "財務知識建立投資基金的好處有什麼"
+    },
+    {
+      "articleId": "T0jt1LfuTE2Dr2HHX01vbg",
+      "title": "財務知識建立_投資債券的好處有什麼?",
+      "normalizedTitle": "財務知識建立投資債券的好處有什麼"
+    },
+    {
+      "articleId": "EvY8KA7QmV19TmT8MQYQ",
+      "title": "財務知識建立_基礎外匯知識",
+      "normalizedTitle": "財務知識建立基礎外匯知識"
+    },
+    {
+      "articleId": "nqqwdhRmS5y1ggMciAZHAg",
+      "title": "財務社會工作實務手冊",
+      "normalizedTitle": "財務社會工作實務手冊"
+    },
+    {
+      "articleId": "0BMnveSxMSnulDhFGZM3Mw",
+      "title": "財務相談室-1 從借款訊息讀懂個案的財務真相",
+      "normalizedTitle": "財務相談室1從借款訊息讀懂個案的財務真相"
+    },
+    {
+      "articleId": "RBd6MWZWTTCJenJsX6X1dA",
+      "title": "財務相談室-10：當孩子開始「處理錢」：青少年金錢行為可能失序的三種現場",
+      "normalizedTitle": "財務相談室10當孩子開始處理錢青少年金錢行為可能失序的三種現場"
+    },
+    {
+      "articleId": "ZZOrTeSHSFmaNBk3OTJrqA",
+      "title": "財務相談室-11：從醫療危機切入高齡詐騙處遇",
+      "normalizedTitle": "財務相談室11從醫療危機切入高齡詐騙處遇"
+    },
+    {
+      "articleId": "0tZ8jhLKQk23UX45cWuaoQ",
+      "title": "財務相談室-12-當補助無法解決問題：社工如何重建家庭財務工作的判斷軸線",
+      "normalizedTitle": "財務相談室12當補助無法解決問題社工如何重建家庭財務工作的判斷軸線"
+    },
+    {
+      "articleId": "i4DgrohzQPqfKhfkgD2w",
+      "title": "財務相談室-13- 在高壓照顧家庭中的經濟介入策略",
+      "normalizedTitle": "財務相談室13在高壓照顧家庭中的經濟介入策略"
+    },
+    {
+      "articleId": "0zdLHxRqsR1madjbtwCKHg",
+      "title": "財務相談室-14- 從財務缺口到工作重建：身障個案經濟處遇的評估邏輯與實務操作",
+      "normalizedTitle": "財務相談室14從財務缺口到工作重建身障個案經濟處遇的評估邏輯與實務操作"
+    },
+    {
+      "articleId": "7JJHoDO1TDa7rxkxdMKkAA",
+      "title": "財務相談室-15-在投資熱潮中重建財務評估邏輯：從「想投資」回到「能承擔」",
+      "normalizedTitle": "財務相談室15在投資熱潮中重建財務評估邏輯從想投資回到能承擔"
+    },
+    {
+      "articleId": "gbn36jK1QDKY3J03tBdy9Q",
+      "title": "財務相談室-16-當收入不低，家庭為何仍會迅速失衡？——社工如何從財務健康走向財務韌性的判讀與介入",
+      "normalizedTitle": "財務相談室16當收入不低家庭為何仍會迅速失衡社工如何從財務健康走向財務韌性的判讀與介入"
+    },
+    {
+      "articleId": "5eVWJE1fR96vAkRXjAjFXg",
+      "title": "財務相談室-17-搬遷決策背後的結構判讀：社工如何理解財務壓力下的快速選擇",
+      "normalizedTitle": "財務相談室17搬遷決策背後的結構判讀社工如何理解財務壓力下的快速選擇"
+    },
+    {
+      "articleId": "0Q0lc6032QPagwoozx3LxA",
+      "title": "財務相談室-2 債務的週轉力與溝通策略",
+      "normalizedTitle": "財務相談室2債務的週轉力與溝通策略"
+    },
+    {
+      "articleId": "UxYYVCQRG6AJ0MPcvjzg",
+      "title": "財務相談室-3 將「理債」導向「理財」：家庭財務的介入實務",
+      "normalizedTitle": "財務相談室3將理債導向理財家庭財務的介入實務"
+    },
+    {
+      "articleId": "YFIVi7bJS1K8QaTg8rnzgQ",
+      "title": "財務相談室-4 父職轉換下的財務重建：從債務盤整到生活重整",
+      "normalizedTitle": "財務相談室4父職轉換下的財務重建從債務盤整到生活重整"
+    },
+    {
+      "articleId": "0vkffq8JT8WOIUXHEEzo0w",
+      "title": "財務相談室-5 未成年家計的財務界線：從評估到系統整合的實務指引",
+      "normalizedTitle": "財務相談室5未成年家計的財務界線從評估到系統整合的實務指引"
+    },
+    {
+      "articleId": "0TUVCLRbETKSJXlEB1HMYA",
+      "title": "財務相談室-6 財務自立的社工實務：從救急援助到長期穩健",
+      "normalizedTitle": "財務相談室6財務自立的社工實務從救急援助到長期穩健"
+    },
+    {
+      "articleId": "fmKZptYpSbahmkzPH60ZyQ",
+      "title": "財務相談室-7 資產變現的思考：當家庭財務出現壓力時的應對策略",
+      "normalizedTitle": "財務相談室7資產變現的思考當家庭財務出現壓力時的應對策略"
+    },
+    {
+      "articleId": "tbJV4yXKSJyQYDQ8oiZ13w",
+      "title": "財務相談室-8 透視財務行為背後的真實需求：從身心評估到精準處遇",
+      "normalizedTitle": "財務相談室8透視財務行為背後的真實需求從身心評估到精準處遇"
+    },
+    {
+      "articleId": "0BcvfH5ccTQK2l667vcH3A",
+      "title": "財務相談室-9 繼承債務與照顧責任：財務脈絡中的兩種家庭困境",
+      "normalizedTitle": "財務相談室9繼承債務與照顧責任財務脈絡中的兩種家庭困境"
+    },
+    {
+      "articleId": "G9mw1mZ0TX2ZAyeVt6hHUA",
+      "title": "財務重生：5個簡單有效的預算控管技巧",
+      "normalizedTitle": "財務重生5個簡單有效的預算控管技巧"
+    },
+    {
+      "articleId": "0pjcsA0oSluoduABQW1N1Q",
+      "title": "財務記錄建立與管理系統",
+      "normalizedTitle": "財務記錄建立與管理系統"
+    },
+    {
+      "articleId": "0LkogBDdmRtmn3tNf63X0g",
+      "title": "財務健康的關鍵：回歸本質，實踐改變",
+      "normalizedTitle": "財務健康的關鍵回歸本質實踐改變"
+    },
+    {
+      "articleId": "MLQLKsPiTFyEaj41zh8HFA",
+      "title": "財務習慣建立與維持策略",
+      "normalizedTitle": "財務習慣建立與維持策略"
+    },
+    {
+      "articleId": "cc0mmzuFT6a2Xx2i6oTuOQ",
+      "title": "財務透明度與家庭溝通",
+      "normalizedTitle": "財務透明度與家庭溝通"
+    },
+    {
+      "articleId": "0ge6U9ZQzuRwomO4n5Cw",
+      "title": "財務陷阱—實用案例保障應有權益",
+      "normalizedTitle": "財務陷阱實用案例保障應有權益"
+    },
+    {
+      "articleId": "0GPAFYMeoTbnyWukrUqElA",
+      "title": "財務槓桿眉角多-匯率錯配的風險",
+      "normalizedTitle": "財務槓桿眉角多匯率錯配的風險"
+    },
+    {
+      "articleId": "Xi3s5gA4S0KDmC3ijN5VqQ",
+      "title": "財務管理技巧：用記帳打造可控又不痛苦的金流生活",
+      "normalizedTitle": "財務管理技巧用記帳打造可控又不痛苦的金流生活"
+    },
+    {
+      "articleId": "0XbPDoqXRGKbIJZIr0vWQw",
+      "title": "財務管理技巧：從失控花費到有序現金流的 14 天啟動指南",
+      "normalizedTitle": "財務管理技巧從失控花費到有序現金流的14天啟動指南"
+    },
+    {
+      "articleId": "0F5PvnVMQOhcHTucp4Gw",
+      "title": "財務管理進化論：從記帳到全方位幸福生活",
+      "normalizedTitle": "財務管理進化論從記帳到全方位幸福生活"
+    },
+    {
+      "articleId": "4Yl46DqaRi64jl3a4Rk0iA",
+      "title": "財務與情感的界線：當「第一桶金」遇上親情與愛情的抉擇",
+      "normalizedTitle": "財務與情感的界線當第一桶金遇上親情與愛情的抉擇"
+    },
+    {
+      "articleId": "7GBgHm35TsSVKDEVXryLIQ",
+      "title": "財務盤點表",
+      "normalizedTitle": "財務盤點表"
+    },
+    {
+      "articleId": "0pJkafXHmQKaKQHBNIJ9sg",
+      "title": "財產爭議下的親權糾葛與不穩定照顧",
+      "normalizedTitle": "財產爭議下的親權糾葛與不穩定照顧"
+    },
+    {
+      "articleId": "0SiJU4PbMTseqHPswwxg5A",
+      "title": "追星的光與影：當熱愛遇上錢包的現實",
+      "normalizedTitle": "追星的光與影當熱愛遇上錢包的現實"
+    },
+    {
+      "articleId": "NTd9CTKBQcyffa2enfIPBQ",
+      "title": "退休金不再是煩惱！我的親身實證：兩檔ETF，帶你穩穩累積富足人生！",
+      "normalizedTitle": "退休金不再是煩惱我的親身實證兩檔etf帶你穩穩累積富足人生"
+    },
+    {
+      "articleId": "0ClfaX46QBWIHctLuOvgxw",
+      "title": "退休後基本生活維持",
+      "normalizedTitle": "退休後基本生活維持"
+    },
+    {
+      "articleId": "MmNpKYHpQziXzS2kihncwQ",
+      "title": "退休規劃－年金型保險介紹",
+      "normalizedTitle": "退休規劃年金型保險介紹"
+    },
+    {
+      "articleId": "01d9X0DwJT8amJXJeW1ciQ",
+      "title": "酒駕會面臨的法律與財務議題的影響",
+      "normalizedTitle": "酒駕會面臨的法律與財務議題的影響"
+    },
+    {
+      "articleId": "0gBRhV9BLQzaDWm6Yrl74g",
+      "title": "高利清償、低利可控：家庭債務翻轉實錄",
+      "normalizedTitle": "高利清償低利可控家庭債務翻轉實錄"
+    },
+    {
+      "articleId": "MCu5COChQ5OlGfAnR1r5FQ",
+      "title": "高利貸識別與脫離策略",
+      "normalizedTitle": "高利貸識別與脫離策略"
+    },
+    {
+      "articleId": "0bvbP5J6QLSnyf0R1fBKLA",
+      "title": "高風險孕產婦支援計畫",
+      "normalizedTitle": "高風險孕產婦支援計畫"
+    },
+    {
+      "articleId": "D43S8F4UQ9CGM6hr6DQjBw",
+      "title": "高風險青少年家庭的經濟支持與心理輔導機制",
+      "normalizedTitle": "高風險青少年家庭的經濟支持與心理輔導機制"
+    },
+    {
+      "articleId": "HZeDCfTTaPHw8AozPVIg",
+      "title": "高風險職業從業人員財務議題與保險建議",
+      "normalizedTitle": "高風險職業從業人員財務議題與保險建議"
+    },
+    {
+      "articleId": "0nOJss64wR1CyIwLTa8uSw",
+      "title": "高薪不代表財富自由：用信封理財法擺脫月光族",
+      "normalizedTitle": "高薪不代表財富自由用信封理財法擺脫月光族"
+    },
+    {
+      "articleId": "0QKwP3YnBTLievTTVl5Eag",
+      "title": "高額資金個案的財務諮詢策略",
+      "normalizedTitle": "高額資金個案的財務諮詢策略"
+    },
+    {
+      "articleId": "0ZB5MkM2pRe8J6Wfp2hUsg",
+      "title": "高齡者財產安全保護",
+      "normalizedTitle": "高齡者財產安全保護"
+    },
+    {
+      "articleId": "0MGYgG0JpQ42p1KyyOXB3Q",
+      "title": "高齡者就業方案介紹以財務自立與老年經濟安全為導向",
+      "normalizedTitle": "高齡者就業方案介紹以財務自立與老年經濟安全為導向"
+    },
+    {
+      "articleId": "FQGssG2CQASXTbZIcpcmzQ",
+      "title": "高齡婦女經濟安全",
+      "normalizedTitle": "高齡婦女經濟安全"
+    },
+    {
+      "articleId": "8UAeQ5fLRTmVdu5amDtaUA",
+      "title": "高齡貧窮預防與因應",
+      "normalizedTitle": "高齡貧窮預防與因應"
+    },
+    {
+      "articleId": "Ikpik7xSS1WFzobADUjGtw",
+      "title": "假釋準備與家庭重整",
+      "normalizedTitle": "假釋準備與家庭重整"
+    },
+    {
+      "articleId": "0xT17LPlpTK7J0TkNAKA",
+      "title": "做對產品定位，才能在市場被看見",
+      "normalizedTitle": "做對產品定位才能在市場被看見"
+    },
+    {
+      "articleId": "0uyba5deTkePlDo7A7KYtw",
+      "title": "停、看、聽：社工陪伴詐騙個案的資源工具包",
+      "normalizedTitle": "停看聽社工陪伴詐騙個案的資源工具包"
+    },
+    {
+      "articleId": "0lphGHdr5SvaKBpNyjKBkw",
+      "title": "健身房月繳好安心？還是在家練最省？見到看懂長期成本差異",
+      "normalizedTitle": "健身房月繳好安心還是在家練最省見到看懂長期成本差異"
+    },
+    {
+      "articleId": "YIw9KNbCSDK6y3faaxGS1Q",
+      "title": "健康問題與工作適應評估：打造友善且高效的職場環境",
+      "normalizedTitle": "健康問題與工作適應評估打造友善且高效的職場環境"
+    },
+    {
+      "articleId": "DhCdYO2JSvCdEbweH04zog",
+      "title": "動物保護法律知識",
+      "normalizedTitle": "動物保護法律知識"
+    },
+    {
+      "articleId": "hFVjjaXDRLSo3gjJYRUQSQ",
+      "title": "動物福利五大自由原則",
+      "normalizedTitle": "動物福利五大自由原則"
+    },
+    {
+      "articleId": "uYqTCAH2QWGxHgQh3QBJlg",
+      "title": "動保團體資源連結",
+      "normalizedTitle": "動保團體資源連結"
+    },
+    {
+      "articleId": "0oIf0OWAQRe6QjmF7wO6Lg",
+      "title": "務農家庭的財務建議",
+      "normalizedTitle": "務農家庭的財務建議"
+    },
+    {
+      "articleId": "00e9YFduTOC23pw49FPA",
+      "title": "啃老族子女帶給老父母的經濟重擔如何解決?",
+      "normalizedTitle": "啃老族子女帶給老父母的經濟重擔如何解決"
+    },
+    {
+      "articleId": "hmJakoVFTrah1li7yFgR9Q",
+      "title": "商業保險理賠處理協助",
+      "normalizedTitle": "商業保險理賠處理協助"
+    },
+    {
+      "articleId": "1lNO7Qe3TnyFzSSsULWjEw",
+      "title": "國中生要不要補習？是為孩子的未來投資？還是家長的焦慮在作祟？",
+      "normalizedTitle": "國中生要不要補習是為孩子的未來投資還是家長的焦慮在作祟"
+    },
+    {
+      "articleId": "0YLwyHSQTl6P9ppFvBofJw",
+      "title": "國中生零用錢怎麼給？才能不吵並化解親子金錢爭執？",
+      "normalizedTitle": "國中生零用錢怎麼給才能不吵並化解親子金錢爭執"
+    },
+    {
+      "articleId": "0qrtZYDhSYmd303EGuoZqA",
+      "title": "國民年金成失業家庭經濟重擔之自救指南與2026年修法曙光",
+      "normalizedTitle": "國民年金成失業家庭經濟重擔之自救指南與2026年修法曙光"
+    },
+    {
+      "articleId": "rW6SPs2DR8Cfo5MbeZc8YQ",
+      "title": "國民年金老年給付規劃",
+      "normalizedTitle": "國民年金老年給付規劃"
+    },
+    {
+      "articleId": "UgcjkbnqSBmgND6S41lyxA",
+      "title": "國民年金遺屬年金規劃",
+      "normalizedTitle": "國民年金遺屬年金規劃"
+    },
+    {
+      "articleId": "etCPA6lYQAaXoEhp4SpQhw",
+      "title": "國民教育法",
+      "normalizedTitle": "國民教育法"
+    },
+    {
+      "articleId": "SR819QyPRjGJ3YdqPibViw",
+      "title": "國民教育法施行細則",
+      "normalizedTitle": "國民教育法施行細則"
+    },
+    {
+      "articleId": "6KvICeyRRIiuhcVXMX0aXg",
+      "title": "國軍退除役官兵院外就養金及遺屬年金介紹",
+      "normalizedTitle": "國軍退除役官兵院外就養金及遺屬年金介紹"
+    },
+    {
+      "articleId": "0PjE0NWoxQXxn9HvTvRGWQ",
+      "title": "國軍退除役官兵就養安置全解析：退除役官兵老後安養福利",
+      "normalizedTitle": "國軍退除役官兵就養安置全解析退除役官兵老後安養福利"
+    },
+    {
+      "articleId": "ldjDIBYkSz6DDdajSPkgkA",
+      "title": "婚前協議的財務規劃：如何產出有效協議並維護雙方感情",
+      "normalizedTitle": "婚前協議的財務規劃如何產出有效協議並維護雙方感情"
+    },
+    {
+      "articleId": "KdgxMCqhRtaPebrE4t2DFg",
+      "title": "婚前經濟弱勢者財務協議",
+      "normalizedTitle": "婚前經濟弱勢者財務協議"
+    },
+    {
+      "articleId": "KgmmPWlIQNWT7lQhLcoWmg",
+      "title": "婚姻中的債務風險管理",
+      "normalizedTitle": "婚姻中的債務風險管理"
+    },
+    {
+      "articleId": "vD8S6oeZRVC1LRSKteoesA",
+      "title": "婦女法律權益保障",
+      "normalizedTitle": "婦女法律權益保障"
+    },
+    {
+      "articleId": "wMN68AKOQ1OWd9oGBQpQzw",
+      "title": "婦女財務自主與理財",
+      "normalizedTitle": "婦女財務自主與理財"
+    },
+    {
+      "articleId": "0QvHRU2rGQESWQhCsVf0yw",
+      "title": "婦女健康與醫療權益",
+      "normalizedTitle": "婦女健康與醫療權益"
+    },
+    {
+      "articleId": "U6UGKQ4aSeq81CxzPcECaA",
+      "title": "婦女貧窮成因與現況",
+      "normalizedTitle": "婦女貧窮成因與現況"
+    },
+    {
+      "articleId": "IoaFIKztQnGmX7Rbm7jYfg",
+      "title": "婦女創業與經濟發展",
+      "normalizedTitle": "婦女創業與經濟發展"
+    },
+    {
+      "articleId": "0KwxLcezTZH7oqFdiZyQ",
+      "title": "婦女就業與經濟參與",
+      "normalizedTitle": "婦女就業與經濟參與"
+    },
+    {
+      "articleId": "FAXNoWSleo96qz2AV0eQ",
+      "title": "婦女福利與性別平權指引",
+      "normalizedTitle": "婦女福利與性別平權指引"
+    },
+    {
+      "articleId": "1op81mDCQVya0VNd2PwZiA",
+      "title": "專業介入，翻轉阿凱的人生",
+      "normalizedTitle": "專業介入翻轉阿凱的人生"
+    },
+    {
+      "articleId": "mES3cmU5RI2gLieOrIuvoA",
+      "title": "帳戶不能用是發生什麼事?",
+      "normalizedTitle": "帳戶不能用是發生什麼事"
+    },
+    {
+      "articleId": "9jt9rXnHQ6ada0ZLogEK7w",
+      "title": "常見的高齡者金融剝削與詐騙樣態",
+      "normalizedTitle": "常見的高齡者金融剝削與詐騙樣態"
+    },
+    {
+      "articleId": "A3g8gn5SQiiYRlaUwkFHJw",
+      "title": "強制執行法",
+      "normalizedTitle": "強制執行法"
+    },
+    {
+      "articleId": "aFel9EuVQxKc1mahbe68Gg",
+      "title": "強制執行程序與權益保護",
+      "normalizedTitle": "強制執行程序與權益保護"
+    },
+    {
+      "articleId": "0hFXB4IHIRFKcwwBLcwntA",
+      "title": "彩券成癮：以為自己在買夢想，其實只是在買幻覺",
+      "normalizedTitle": "彩券成癮以為自己在買夢想其實只是在買幻覺"
+    },
+    {
+      "articleId": "5C7bl64qRumEyG8YSAKSMA",
+      "title": "從「奶爸」到「夥伴」：台灣父職參與實務指引",
+      "normalizedTitle": "從奶爸到夥伴台灣父職參與實務指引"
+    },
+    {
+      "articleId": "07DY1ezg2S6q41rb4WQklQ",
+      "title": "從「補洞」到「築路」：社工如何陪伴單親家長跨越扶養費制度的斷崖",
+      "normalizedTitle": "從補洞到築路社工如何陪伴單親家長跨越扶養費制度的斷崖"
+    },
+    {
+      "articleId": "qjA06cSXS4WxD9UgEffA3Q",
+      "title": "從「頭銜」到「貢獻」：陪伴高知識陷困者重建專業自尊",
+      "normalizedTitle": "從頭銜到貢獻陪伴高知識陷困者重建專業自尊"
+    },
+    {
+      "articleId": "0FyhHCCnsTYaB5ks06u6tw",
+      "title": "從一場脊髓損傷開始：一段沒人準備好的長照現實",
+      "normalizedTitle": "從一場脊髓損傷開始一段沒人準備好的長照現實"
+    },
+    {
+      "articleId": "9fzXwJIhQpqUl8ItHikXfA",
+      "title": "從日常習慣開始，讓金錢成為支持而不是壓力",
+      "normalizedTitle": "從日常習慣開始讓金錢成為支持而不是壓力"
+    },
+    {
+      "articleId": "5IhWoI7VSPWET5do4ehHTQ",
+      "title": "從月光到留餘：社工如何陪伴近貧個案建立安全緩衝",
+      "normalizedTitle": "從月光到留餘社工如何陪伴近貧個案建立安全緩衝"
+    },
+    {
+      "articleId": "d1yK4rYKSHKp3Jgs3FBg4g",
+      "title": "從月薪3萬變成底薪2萬6？求職必學的薪資拆解真相與應對策略",
+      "normalizedTitle": "從月薪3萬變成底薪2萬6求職必學的薪資拆解真相與應對策略"
+    },
+    {
+      "articleId": "0I93bsxj7T1K46aWjwH0Rw",
+      "title": "從台中新光三越氣爆談風險管理－淺談運用避險工具降低事故後的衝擊",
+      "normalizedTitle": "從台中新光三越氣爆談風險管理淺談運用避險工具降低事故後的衝擊"
+    },
+    {
+      "articleId": "YedmTSgIT9yTLIp0dHUVrQ",
+      "title": "從司法處遇到財務健康：一個被重新調整的生活結構",
+      "normalizedTitle": "從司法處遇到財務健康一個被重新調整的生活結構"
+    },
+    {
+      "articleId": "kCj29wyTTIOQn7vhMdRIpw",
+      "title": "從平台內部到街頭跑單：外送員收入真相及家庭壓力",
+      "normalizedTitle": "從平台內部到街頭跑單外送員收入真相及家庭壓力"
+    },
+    {
+      "articleId": "0Iu8tWyHCSSmDcwROnCUXg",
+      "title": "從生活經驗不花力氣增加存款減少支出",
+      "normalizedTitle": "從生活經驗不花力氣增加存款減少支出"
+    },
+    {
+      "articleId": "Y2WyCDKGT7mznsuwYBjOMg",
+      "title": "從危機到掌控——青年司法事件後的財務重整與家庭支持",
+      "normalizedTitle": "從危機到掌控青年司法事件後的財務重整與家庭支持"
+    },
+    {
+      "articleId": "ICWdwfTQ7m6HImo80Tfw",
+      "title": "從自立晚年到債務深淵",
+      "normalizedTitle": "從自立晚年到債務深淵"
+    },
+    {
+      "articleId": "WG1kemmDThCUwJmpYyDEBQ",
+      "title": "從自我消耗理論看被追債者的財務行為及輔導策略",
+      "normalizedTitle": "從自我消耗理論看被追債者的財務行為及輔導策略"
+    },
+    {
+      "articleId": "09Ic9JVjvQ8C78fEOkv3WQ",
+      "title": "從夜市小白到銷售高手：她用擺攤改寫家庭命運-曾郁卿",
+      "normalizedTitle": "從夜市小白到銷售高手她用擺攤改寫家庭命運曾郁卿"
+    },
+    {
+      "articleId": "kPwFyAkbRpyIsD696JjGNg",
+      "title": "從孤軍奮戰到家庭共擔：陪伴小晴重建財務韌性的實務紀實",
+      "normalizedTitle": "從孤軍奮戰到家庭共擔陪伴小晴重建財務韌性的實務紀實"
+    },
+    {
+      "articleId": "0WRaHDGaITkWwlON2706pw",
+      "title": "從借300、借500到欠10萬：你不知道的小額貧窮循環",
+      "normalizedTitle": "從借300借500到欠10萬你不知道的小額貧窮循環"
+    },
+    {
+      "articleId": "ueWGYJD1TKOt0WKLFtXOKg",
+      "title": "從記帳開始，看見自己的財務管理與價值選擇",
+      "normalizedTitle": "從記帳開始看見自己的財務管理與價值選擇"
+    },
+    {
+      "articleId": "ssZrKNkfSiuu9cyyFwYQ",
+      "title": "從財務韌性思考資產累積方案的可能",
+      "normalizedTitle": "從財務韌性思考資產累積方案的可能"
+    },
+    {
+      "articleId": "0zLwT4woYQxS517JUjLaBw",
+      "title": "從財稅清單、財產清單，讀懂個案財務狀況",
+      "normalizedTitle": "從財稅清單財產清單讀懂個案財務狀況"
+    },
+    {
+      "articleId": "0UxV24FHoTsOe3zKqr2HTw",
+      "title": "從救急到救窮的服務觀點—從財務盤點開始",
+      "normalizedTitle": "從救急到救窮的服務觀點從財務盤點開始"
+    },
+    {
+      "articleId": "0Y8nyeIiaRcmbUetksfbiw",
+      "title": "從救急到脫貧：社工財務知能與網絡協作的實務轉型",
+      "normalizedTitle": "從救急到脫貧社工財務知能與網絡協作的實務轉型"
+    },
+    {
+      "articleId": "dxIvPjggT5eYUIuoTWVCqw",
+      "title": "從深淵到光明──小花的經濟翻轉與家庭動能重啟-修改版",
+      "normalizedTitle": "從深淵到光明──小花的經濟翻轉與家庭動能重啟修改版"
+    },
+    {
+      "articleId": "C3U2FtySQaK0aFXjPgxuJA",
+      "title": "從混亂生活到重建經濟能力：一個家庭在精神健康與財務風險中的支持歷程",
+      "normalizedTitle": "從混亂生活到重建經濟能力一個家庭在精神健康與財務風險中的支持歷程"
+    },
+    {
+      "articleId": "CpQwQ3N1RF2m8k1JDrvs9Q",
+      "title": "從混亂到穩定：跨專業攜手重建服務對象的家庭經濟",
+      "normalizedTitle": "從混亂到穩定跨專業攜手重建服務對象的家庭經濟"
+    },
+    {
+      "articleId": "49RcMDwPQzyVJJdowsk4gw",
+      "title": "從被生活推著走，到重新學會安排未來",
+      "normalizedTitle": "從被生活推著走到重新學會安排未來"
+    },
+    {
+      "articleId": "eyvsLwzUT2mH3DKx0IXXxw",
+      "title": "從被錢追著跑，到穩穩掌握自己的人生",
+      "normalizedTitle": "從被錢追著跑到穩穩掌握自己的人生"
+    },
+    {
+      "articleId": "V36Lz3ugTuOmC8uUafdvFw",
+      "title": "從陪伴詐騙被害人中共學：實務現場社工該知道的法律筆記",
+      "normalizedTitle": "從陪伴詐騙被害人中共學實務現場社工該知道的法律筆記"
+    },
+    {
+      "articleId": "DO6miN8KRz20aTepM9McZA",
+      "title": "從短期補助到長期翻轉：不同教育體系對經濟弱勢家庭的影響",
+      "normalizedTitle": "從短期補助到長期翻轉不同教育體系對經濟弱勢家庭的影響"
+    },
+    {
+      "articleId": "01lBpRjAHQ2oMRH8v66ghQ",
+      "title": "從詐騙中奪回主導權：單親媽媽的冷靜應對與防詐學習",
+      "normalizedTitle": "從詐騙中奪回主導權單親媽媽的冷靜應對與防詐學習"
+    },
+    {
+      "articleId": "jSFXEqlqQVmwkZglfXIAIw",
+      "title": "從評估到療育：0-6歲孩子早療完整流程與補助指南",
+      "normalizedTitle": "從評估到療育06歲孩子早療完整流程與補助指南"
+    },
+    {
+      "articleId": "4WYzy8LS8iKZJ9ogdqyg",
+      "title": "從債主變債務人：親人之間的借貸，最難還的不是錢",
+      "normalizedTitle": "從債主變債務人親人之間的借貸最難還的不是錢"
+    },
+    {
+      "articleId": "01tCb2uBCRaW0U4dLGhrxg",
+      "title": "從債務迷霧到清晰步驟：年輕個管師的財務諮詢之路",
+      "normalizedTitle": "從債務迷霧到清晰步驟年輕個管師的財務諮詢之路"
+    },
+    {
+      "articleId": "BORsYAzQR8qxc22Ad31fOg",
+      "title": "從督導視角看經濟輔導—如何提供社工經濟處遇的專業支持？",
+      "normalizedTitle": "從督導視角看經濟輔導如何提供社工經濟處遇的專業支持"
+    },
+    {
+      "articleId": "RXFR5UClRMGqeS1F3HEQ",
+      "title": "從夢想墜落到重拾力量——阿鋒的重生之路",
+      "normalizedTitle": "從夢想墜落到重拾力量阿鋒的重生之路"
+    },
+    {
+      "articleId": "0sRTbP7ZRxyIHquTVcR95A",
+      "title": "從罰單到保單：一張表看懂個案所有財務線索",
+      "normalizedTitle": "從罰單到保單一張表看懂個案所有財務線索"
+    },
+    {
+      "articleId": "0dFT0h8bYTeyOwmktvnelg",
+      "title": "從豐原五口命案，看見家庭責任與財商教育的斷裂",
+      "normalizedTitle": "從豐原五口命案看見家庭責任與財商教育的斷裂"
+    },
+    {
+      "articleId": "0ULmnh7BHQ9iLqF6rnMKdA",
+      "title": "從穩定工作到圓滿人生——阿豪的親情回歸之旅",
+      "normalizedTitle": "從穩定工作到圓滿人生阿豪的親情回歸之旅"
+    },
+    {
+      "articleId": "0CU5vAfdRFK64qr2olD3ZQ",
+      "title": "情感與金錢的交錯：小志的財務迷宮與自我救贖",
+      "normalizedTitle": "情感與金錢的交錯小志的財務迷宮與自我救贖"
+    },
+    {
+      "articleId": "0d18ySunRQiuqRmV5VRBVw",
+      "title": "探視費用與交通協助指南",
+      "normalizedTitle": "探視費用與交通協助指南"
+    },
+    {
+      "articleId": "odSX9J6rTM25Y0CM8QBfCA",
+      "title": "斜槓不等於收入：如何把學過的東西變成實際收益",
+      "normalizedTitle": "斜槓不等於收入如何把學過的東西變成實際收益"
+    },
+    {
+      "articleId": "xPoMX6bqSwqM79mzXvQuYA",
+      "title": "淡旺季收入調節與規劃",
+      "normalizedTitle": "淡旺季收入調節與規劃"
+    },
+    {
+      "articleId": "OHopGkPbQqet4TR9w5Kl4w",
+      "title": "深夜「+1」不是省錢：從衝動消費到家庭理財失衡的全貌",
+      "normalizedTitle": "深夜+1不是省錢從衝動消費到家庭理財失衡的全貌"
+    },
+    {
+      "articleId": "VeDVrrFkQFGnXA1TSj3gBQ",
+      "title": "理財，不只是算錢：一場關於「人生選擇權」的華麗冒險",
+      "normalizedTitle": "理財不只是算錢一場關於人生選擇權的華麗冒險"
+    },
+    {
+      "articleId": "VHC1Qlb4RIGX7sLREWh3IA",
+      "title": "理財教育該從哪裡開始？一份給社工的設計指南",
+      "normalizedTitle": "理財教育該從哪裡開始一份給社工的設計指南"
+    },
+    {
+      "articleId": "0OOURZBJRWOvbmvQTaqb2Q",
+      "title": "理清亂麻才能攜手前行：三代同堂家庭的「邊際重建」與財務解套之路",
+      "normalizedTitle": "理清亂麻才能攜手前行三代同堂家庭的邊際重建與財務解套之路"
+    },
+    {
+      "articleId": "mdCV3aYPSIejW9pnbFkNGw",
+      "title": "理解與支持：原住民族經濟挑戰的六個面向",
+      "normalizedTitle": "理解與支持原住民族經濟挑戰的六個面向"
+    },
+    {
+      "articleId": "C3JJORo1TOSG9f3lUA34EA",
+      "title": "理賠文件保存與管理策略",
+      "normalizedTitle": "理賠文件保存與管理策略"
+    },
+    {
+      "articleId": "0qWRNstnLStuNLkY1WxN9g",
+      "title": "理賠申請被拒絕的申覆策略",
+      "normalizedTitle": "理賠申請被拒絕的申覆策略"
+    },
+    {
+      "articleId": "06cUynfRY6I6ct0ZR6oA",
+      "title": "理賠爭議調解與仲裁程序",
+      "normalizedTitle": "理賠爭議調解與仲裁程序"
+    },
+    {
+      "articleId": "jhZw6t9WRM6GKe5OeqlgfQ",
+      "title": "理賠金信託管理與保護",
+      "normalizedTitle": "理賠金信託管理與保護"
+    },
+    {
+      "articleId": "4qo61MvySb22TR4ufYeroQ",
+      "title": "理賠金運用與財務規劃策略",
+      "normalizedTitle": "理賠金運用與財務規劃策略"
+    },
+    {
+      "articleId": "zz1qOyTNWMWwyUa01xVg",
+      "title": "理賠金對社會福利資格的影響",
+      "normalizedTitle": "理賠金對社會福利資格的影響"
+    },
+    {
+      "articleId": "aXeMGuXPQoKyBEzPN6ymbg",
+      "title": "理賠後風險管理與保險調整",
+      "normalizedTitle": "理賠後風險管理與保險調整"
+    },
+    {
+      "articleId": "RM7FJk5YTpW4Wi7bodzlBQ",
+      "title": "理賠時效管理與追蹤技巧",
+      "normalizedTitle": "理賠時效管理與追蹤技巧"
+    },
+    {
+      "articleId": "1mGI6c64SdKW291f424UHw",
+      "title": "理賠案例分析與學習應用",
+      "normalizedTitle": "理賠案例分析與學習應用"
+    },
+    {
+      "articleId": "K5e5CKP5RYq4nECb2blkFQ",
+      "title": "理賠詐騙識別與防護措施",
+      "normalizedTitle": "理賠詐騙識別與防護措施"
+    },
+    {
+      "articleId": "kW8l5yaxQQWZoXysiUPyDA",
+      "title": "理賠過程中的權益保護措施",
+      "normalizedTitle": "理賠過程中的權益保護措施"
+    },
+    {
+      "articleId": "0mY3o7oSSMuXbj7vyykQ",
+      "title": "產前檢查費用減免與補助",
+      "normalizedTitle": "產前檢查費用減免與補助"
+    },
+    {
+      "articleId": "0WPQqGyfiQKQ4eLi9Rp84g",
+      "title": "產後憂鬱與心理健康支援",
+      "normalizedTitle": "產後憂鬱與心理健康支援"
+    },
+    {
+      "articleId": "ypzNYsnISAwuayz7vlfw",
+      "title": "異國素食小吃店的創業挑戰：從熱情到財務現實的轉捩點",
+      "normalizedTitle": "異國素食小吃店的創業挑戰從熱情到財務現實的轉捩點"
+    },
+    {
+      "articleId": "0Pvc7MNaNSIqdmKCI0vtmQ",
+      "title": "視障者如何創造財務掌控感",
+      "normalizedTitle": "視障者如何創造財務掌控感"
+    },
+    {
+      "articleId": "0EVBq9EhRM2wRTntxPh2zA",
+      "title": "視障者的穩健投資",
+      "normalizedTitle": "視障者的穩健投資"
+    },
+    {
+      "articleId": "0HAWdJH49SiWbkUcyCs2FA",
+      "title": "視障街頭藝人的艱難生活",
+      "normalizedTitle": "視障街頭藝人的艱難生活"
+    },
+    {
+      "articleId": "Ioe1MBtSKCHkGszXRHFw",
+      "title": "視覺障礙者的資源：政府與民間的支持體系",
+      "normalizedTitle": "視覺障礙者的資源政府與民間的支持體系"
+    },
+    {
+      "articleId": "0jsXy76SRxGwo27YyIqgWA",
+      "title": "符號互動理論",
+      "normalizedTitle": "符號互動理論"
+    },
+    {
+      "articleId": "0Hj65ZxBRSNafXWppbDdJw",
+      "title": "第一次接觸信用卡？怎麼評估自己適不適合使用信用卡",
+      "normalizedTitle": "第一次接觸信用卡怎麼評估自己適不適合使用信用卡"
+    },
+    {
+      "articleId": "Sczc2Zm1ScWB2FYmuEW7ug",
+      "title": "處理兒發帳戶遲繳的社工介入策略",
+      "normalizedTitle": "處理兒發帳戶遲繳的社工介入策略"
+    },
+    {
+      "articleId": "0DAnZJSFR0upFVRCqJ9vQA",
+      "title": "被迫搬遷或拆遷家庭的經濟補償與後續協助分析",
+      "normalizedTitle": "被迫搬遷或拆遷家庭的經濟補償與後續協助分析"
+    },
+    {
+      "articleId": "uL2u2gz4RTuOZNKZq0igvg",
+      "title": "被強制執行，家人生活費和保險金會被扣嗎？一次搞懂法律保障重點！",
+      "normalizedTitle": "被強制執行家人生活費和保險金會被扣嗎一次搞懂法律保障重點"
+    },
+    {
+      "articleId": "33uPPt9WQkejze3juakguQ",
+      "title": "被通知「動產不符」怎麼辦？社會福利資格被取消時你可以嘗試這樣申復",
+      "normalizedTitle": "被通知動產不符怎麼辦社會福利資格被取消時你可以嘗試這樣申復"
+    },
+    {
+      "articleId": "8OYUZpNkSwaZNpUFivvkLQ",
+      "title": "規劃好自己的安全感與未來，有選擇的媽媽，家庭才走得遠",
+      "normalizedTitle": "規劃好自己的安全感與未來有選擇的媽媽家庭才走得遠"
+    },
+    {
+      "articleId": "0zbZk9kbiR0TbZmWcHCA",
+      "title": "設計處理經濟議題社工需要具備的能力",
+      "normalizedTitle": "設計處理經濟議題社工需要具備的能力"
+    },
+    {
+      "articleId": "DZXK0LdRQAGBsLd5Ph2GoA",
+      "title": "許多家庭財務「月月能過」，卻繳不起半年學費或保費？",
+      "normalizedTitle": "許多家庭財務月月能過卻繳不起半年學費或保費"
+    },
+    {
+      "articleId": "0BLjaUyRCQZyYnrtXsXJgg",
+      "title": "透視家庭財務危機的隱藏訊號—從資訊分析評估風險程度",
+      "normalizedTitle": "透視家庭財務危機的隱藏訊號從資訊分析評估風險程度"
+    },
+    {
+      "articleId": "9kLuIquhTNOSBcG52IWDEA",
+      "title": "透過家庭生命週期啟發財務改變動機",
+      "normalizedTitle": "透過家庭生命週期啟發財務改變動機"
+    },
+    {
+      "articleId": "5sVoVGQaQHOuiBM5lTj67Q",
+      "title": "這個家不能只靠媽媽運轉，重新分工才能讓家庭系統穩定",
+      "normalizedTitle": "這個家不能只靠媽媽運轉重新分工才能讓家庭系統穩定"
+    },
+    {
+      "articleId": "0KpfGZGPkTSVWPNwohpKdA",
+      "title": "連續/持續理論",
+      "normalizedTitle": "連續/持續理論"
+    },
+    {
+      "articleId": "0VcBjjcdSJ2dfQJn40zlfA",
+      "title": "部分工時與彈性就業的成功之道",
+      "normalizedTitle": "部分工時與彈性就業的成功之道"
+    },
+    {
+      "articleId": "0kvlevR2ATNa3QeCtBDe9g",
+      "title": "都市原住民服務策略",
+      "normalizedTitle": "都市原住民服務策略"
+    },
+    {
+      "articleId": "0JAYDIVUQ52NYJPRUqPQgw",
+      "title": "陪伴而非控制：精神障礙者財務輔導的倫理與方法",
+      "normalizedTitle": "陪伴而非控制精神障礙者財務輔導的倫理與方法"
+    },
+    {
+      "articleId": "DbUmaf9mQN6hIng1voIPew",
+      "title": "陪伴走出戀愛詐騙，學會了辨識、查證與堅定溝通的能力",
+      "normalizedTitle": "陪伴走出戀愛詐騙學會了辨識查證與堅定溝通的能力"
+    },
+    {
+      "articleId": "0UUxaqCOTjudIyZmcO5Cog",
+      "title": "陪伴個案走出詐騙：從脈絡理解歷程，用數字重建生活",
+      "normalizedTitle": "陪伴個案走出詐騙從脈絡理解歷程用數字重建生活"
+    },
+    {
+      "articleId": "SoJvDEG9RuiHB3BZ0JwWaA",
+      "title": "陪伴詐騙受害者現場紀實",
+      "normalizedTitle": "陪伴詐騙受害者現場紀實"
+    },
+    {
+      "articleId": "0WWhoDonUSTAtOdQjj2Blg",
+      "title": "最低工資連十漲：經濟弱勢族群的財務新起點",
+      "normalizedTitle": "最低工資連十漲經濟弱勢族群的財務新起點"
+    },
+    {
+      "articleId": "03gw9R74vSMWyvf1eAQijg",
+      "title": "創作者的新挑戰：網紅課稅新制對經濟弱勢族群的影響與因應指南",
+      "normalizedTitle": "創作者的新挑戰網紅課稅新制對經濟弱勢族群的影響與因應指南"
+    },
+    {
+      "articleId": "06E1otzReQmIFjHb3f7Byw",
+      "title": "創傷知情多元文化照顧",
+      "normalizedTitle": "創傷知情多元文化照顧"
+    },
+    {
+      "articleId": "kmfSVn3RSpirLGgmyFHTKg",
+      "title": "創業，是認識自己的開始",
+      "normalizedTitle": "創業是認識自己的開始"
+    },
+    {
+      "articleId": "nHr9SJfjSFiARxOvUrdzVQ",
+      "title": "創業可行性評估與準備",
+      "normalizedTitle": "創業可行性評估與準備"
+    },
+    {
+      "articleId": "uwU1DBQt6SOmGk7xKWXQ",
+      "title": "創業與自僱可行性評估：開啟成功之路",
+      "normalizedTitle": "創業與自僱可行性評估開啟成功之路"
+    },
+    {
+      "articleId": "01R35Nx7LSVCsrUL8KbBUQ",
+      "title": "勞工退休金提領策略",
+      "normalizedTitle": "勞工退休金提領策略"
+    },
+    {
+      "articleId": "0t2rtCGtRcmgRJBzn7AKww",
+      "title": "勞保生育給付申請",
+      "normalizedTitle": "勞保生育給付申請"
+    },
+    {
+      "articleId": "2JrE9hhETGqEbba6ixYelw",
+      "title": "勞保死亡給付申請指南",
+      "normalizedTitle": "勞保死亡給付申請指南"
+    },
+    {
+      "articleId": "Csl9fDcTXAn9r8mWEsQQ",
+      "title": "勞保老年給付申請",
+      "normalizedTitle": "勞保老年給付申請"
+    },
+    {
+      "articleId": "0EuEZdb1vR2EvyA2laNJ9g",
+      "title": "勞保局紓困貸款實務",
+      "normalizedTitle": "勞保局紓困貸款實務"
+    },
+    {
+      "articleId": "O4y4SIzZRtiUqS5r7E9hDw",
+      "title": "勞退自提是好選擇嗎？分析優缺點與適合族群",
+      "normalizedTitle": "勞退自提是好選擇嗎分析優缺點與適合族群"
+    },
+    {
+      "articleId": "DLUxLQEvT06XZt454f7Uig",
+      "title": "勞動基準法",
+      "normalizedTitle": "勞動基準法"
+    },
+    {
+      "articleId": "3UUFFF1SRH6hHmHZVROB6A",
+      "title": "善用金融工具與債務處理：從2025年台灣普發一萬元談家庭財務規劃",
+      "normalizedTitle": "善用金融工具與債務處理從2025年台灣普發一萬元談家庭財務規劃"
+    },
+    {
+      "articleId": "SZ0o2lYyT9GjzD5MnOKVKA",
+      "title": "善用政府資源投資自己，創造投資本金",
+      "normalizedTitle": "善用政府資源投資自己創造投資本金"
+    },
+    {
+      "articleId": "0i54I6OLeRbmgjfyV185bg",
+      "title": "善用普發一萬元聊聊怎麼把錢用在對的地方",
+      "normalizedTitle": "善用普發一萬元聊聊怎麼把錢用在對的地方"
+    },
+    {
+      "articleId": "Ms5nKpTtSyaje6amLRXnuw",
+      "title": "善用短影音創造被看見的機會",
+      "normalizedTitle": "善用短影音創造被看見的機會"
+    },
+    {
+      "articleId": "PxP0ZhRsSUGBFjtE9ipYNw",
+      "title": "善用貸款圓一個家的夢",
+      "normalizedTitle": "善用貸款圓一個家的夢"
+    },
+    {
+      "articleId": "nhrB39FmQ46qfMR1orZHIg",
+      "title": "單一收入家庭的風險",
+      "normalizedTitle": "單一收入家庭的風險"
+    },
+    {
+      "articleId": "7DZJ4KKLRSOs38QfA3yrDA",
+      "title": "單親子女教養與發展",
+      "normalizedTitle": "單親子女教養與發展"
+    },
+    {
+      "articleId": "Spt2ct2bQ8ilPjSd0MPVBg",
+      "title": "單親子女教養與發展：支持子女健康成長的多元策略",
+      "normalizedTitle": "單親子女教養與發展支持子女健康成長的多元策略"
+    },
+    {
+      "articleId": "cSZvjjQHQ1OtnI9a1CxABQ",
+      "title": "單親父親特殊需求",
+      "normalizedTitle": "單親父親特殊需求"
+    },
+    {
+      "articleId": "0J3QC6F0zSOCoi7XC81xkQ",
+      "title": "單親母親經濟支援體系",
+      "normalizedTitle": "單親母親經濟支援體系"
+    },
+    {
+      "articleId": "0NGCcGZe7QPmbg7nsORvvg",
+      "title": "單親法律權益與保障",
+      "normalizedTitle": "單親法律權益與保障"
+    },
+    {
+      "articleId": "0dbnYzESLSNesbvoAhKkdw",
+      "title": "單親家庭危機處理",
+      "normalizedTitle": "單親家庭危機處理"
+    },
+    {
+      "articleId": "01a2ZgnlQpaOh3QCbiG5sg",
+      "title": "單親家庭如何重新整理收支──從家庭韌力性與支持網絡的建立財務安全感",
+      "normalizedTitle": "單親家庭如何重新整理收支──從家庭韌力性與支持網絡的建立財務安全感"
+    },
+    {
+      "articleId": "SnG4gik8TYCfyWtMHxeIew",
+      "title": "單親家庭成因與適應歷程",
+      "normalizedTitle": "單親家庭成因與適應歷程"
+    },
+    {
+      "articleId": "Qyp0IpvPTkG59yXkCnysNQ",
+      "title": "單親家庭托育與照顧",
+      "normalizedTitle": "單親家庭托育與照顧"
+    },
+    {
+      "articleId": "0YZxfHSgjT6khpIe2X3slQ",
+      "title": "單親家庭社會支持網絡",
+      "normalizedTitle": "單親家庭社會支持網絡"
+    },
+    {
+      "articleId": "0HTpCGSGnQuasX1Ap93meg",
+      "title": "單親家庭重組與再婚",
+      "normalizedTitle": "單親家庭重組與再婚"
+    },
+    {
+      "articleId": "sadfl4CBSPubN5Rr8FYwPQ",
+      "title": "單親家庭財務管理",
+      "normalizedTitle": "單親家庭財務管理"
+    },
+    {
+      "articleId": "09a7zIAiQCWuDlHpnAmXrQ",
+      "title": "單親家庭就業平衡策略",
+      "normalizedTitle": "單親家庭就業平衡策略"
+    },
+    {
+      "articleId": "0DawH94cTkibTjewIIArNw",
+      "title": "單親家庭經濟困境分析",
+      "normalizedTitle": "單親家庭經濟困境分析"
+    },
+    {
+      "articleId": "dOGHz4SiWbNCSqMKMXjg",
+      "title": "單親家庭經濟重建完整方案",
+      "normalizedTitle": "單親家庭經濟重建完整方案"
+    },
+    {
+      "articleId": "ZmfzmeuFTWOi8DADrgerzQ",
+      "title": "單親就業與經濟重建",
+      "normalizedTitle": "單親就業與經濟重建"
+    },
+    {
+      "articleId": "fVeIIzMASceGMIl1Ddkwmw",
+      "title": "單親媽媽的小步翻轉：從月光族到穩定收入的家計重建",
+      "normalizedTitle": "單親媽媽的小步翻轉從月光族到穩定收入的家計重建"
+    },
+    {
+      "articleId": "929w5kUhSeCFWsLXNTfA",
+      "title": "單薪與雙薪家庭分工差異",
+      "normalizedTitle": "單薪與雙薪家庭分工差異"
+    },
+    {
+      "articleId": "HvjWf75yQTGWFmik22gMsw",
+      "title": "富養與啃老之間:舉足輕重的理財教育",
+      "normalizedTitle": "富養與啃老之間舉足輕重的理財教育"
+    },
+    {
+      "articleId": "9mV2OKBKTPatUWpmpRsXlA",
+      "title": "尋求就業輔導評估自身未來職涯，學習二專長重新設計人生藍圖",
+      "normalizedTitle": "尋求就業輔導評估自身未來職涯學習二專長重新設計人生藍圖"
+    },
+    {
+      "articleId": "0Z6cZ81zyQ0nqsmsbxlaTQ",
+      "title": "就業服務與職業訓練",
+      "normalizedTitle": "就業服務與職業訓練"
+    },
+    {
+      "articleId": "0fFk6nrkkRuhFnfFfyMTRw",
+      "title": "就業能力評估與技能提升規劃",
+      "normalizedTitle": "就業能力評估與技能提升規劃"
+    },
+    {
+      "articleId": "0285KXc0QiCUIoxxP1J65g",
+      "title": "復工準備與適應支援措施：重返職場，安心啟程",
+      "normalizedTitle": "復工準備與適應支援措施重返職場安心啟程"
+    },
+    {
+      "articleId": "ttPB3cWuQxWKodLwpAdUYA",
+      "title": "掌握現金流，個人財務的核心關鍵",
+      "normalizedTitle": "掌握現金流個人財務的核心關鍵"
+    },
+    {
+      "articleId": "4F2kuTAOQNKVCEkiJIZg",
+      "title": "提升財務知識能力：從家庭財務案例到時事議題的全面解析",
+      "normalizedTitle": "提升財務知識能力從家庭財務案例到時事議題的全面解析"
+    },
+    {
+      "articleId": "cXPMkf2nT0C0C0BjAEnsJg",
+      "title": "換季折扣，該買還是不買？衣物與用品的聰明判斷法",
+      "normalizedTitle": "換季折扣該買還是不買衣物與用品的聰明判斷法"
+    },
+    {
+      "articleId": "oAJZFNiZQdWMw61tXz4U8w",
+      "title": "換屋全攻略：資金規劃、貸款申請、費用清單與政府補助一次搞懂",
+      "normalizedTitle": "換屋全攻略資金規劃貸款申請費用清單與政府補助一次搞懂"
+    },
+    {
+      "articleId": "ObHUPocZR8OXND5augnDRw",
+      "title": "換屋的節稅方式",
+      "normalizedTitle": "換屋的節稅方式"
+    },
+    {
+      "articleId": "ZpSg5yLRJ6eooqCezRIw",
+      "title": "普發1萬聰明運用",
+      "normalizedTitle": "普發1萬聰明運用"
+    },
+    {
+      "articleId": "ZzjedjD6SDqpQm5LU9oTiQ",
+      "title": "普發一萬元，如何真正用在刀口上？—從小額開始的實用財務管理技巧",
+      "normalizedTitle": "普發一萬元如何真正用在刀口上從小額開始的實用財務管理技巧"
+    },
+    {
+      "articleId": "pNBTLdn2ReyHExTvmo3Q",
+      "title": "普發一萬元到手！小資族這樣花讓錢滾錢，三個月後我多賺了2000元",
+      "normalizedTitle": "普發一萬元到手小資族這樣花讓錢滾錢三個月後我多賺了2000元"
+    },
+    {
+      "articleId": "azvr7UVUSnGLjp5W9FmCZw",
+      "title": "普發現金到手：家庭財務思考與選擇",
+      "normalizedTitle": "普發現金到手家庭財務思考與選擇"
+    },
+    {
+      "articleId": "IFdr0BCDQ6eDkD8TrAH6Bg",
+      "title": "智慧財務管理：打造穩健人生的行動指南",
+      "normalizedTitle": "智慧財務管理打造穩健人生的行動指南"
+    },
+    {
+      "articleId": "q5X2E7AfQ2yYRV6b9d5GMQ",
+      "title": "智慧婚禮規劃：在夢想與現實間找到完美平衡",
+      "normalizedTitle": "智慧婚禮規劃在夢想與現實間找到完美平衡"
+    },
+    {
+      "articleId": "0T6eGXYMQe6m3ZyfqhK08A",
+      "title": "替代收入來源開發策略：打造財務多元化與韌性！",
+      "normalizedTitle": "替代收入來源開發策略打造財務多元化與韌性"
+    },
+    {
+      "articleId": "hBtCI44pQVWT2U0ds87rKg",
+      "title": "減法生活的財務奇蹟：看見生活本質，你根本不需要花那麼多錢",
+      "normalizedTitle": "減法生活的財務奇蹟看見生活本質你根本不需要花那麼多錢"
+    },
+    {
+      "articleId": "2J95W5mCRpGBZOHEAfF3Yw",
+      "title": "無戶籍或無身分證者的福利資源與法律援助",
+      "normalizedTitle": "無戶籍或無身分證者的福利資源與法律援助"
+    },
+    {
+      "articleId": "6i6hncArRs2Cn3eYNzWVeA",
+      "title": "無法工作：長期規劃與適應的智慧",
+      "normalizedTitle": "無法工作長期規劃與適應的智慧"
+    },
+    {
+      "articleId": "0zt2UKPqKQgqSSRAsI1j7Q",
+      "title": "無法工作者的社會參與與價值實現：重新定義生命意義",
+      "normalizedTitle": "無法工作者的社會參與與價值實現重新定義生命意義"
+    },
+    {
+      "articleId": "6KA7uHCGTyGDA9cO6j98MA",
+      "title": "無法工作原因評估與分類",
+      "normalizedTitle": "無法工作原因評估與分類"
+    },
+    {
+      "articleId": "ZmafdcWGTreyb5Rk2wZxiw",
+      "title": "無法工作時的心理調適與支持：走過低谷，迎向復原之路",
+      "normalizedTitle": "無法工作時的心理調適與支持走過低谷迎向復原之路"
+    },
+    {
+      "articleId": "LwpbYapsRPSq4mUoMkOrtQ",
+      "title": "無法工作時的法律權益與保障：你該知道的一切",
+      "normalizedTitle": "無法工作時的法律權益與保障你該知道的一切"
+    },
+    {
+      "articleId": "04Cf2bKtSUajIh6xONl4Uw",
+      "title": "無法工作期間的技能維持策略：停工不停學，保持職場競爭力",
+      "normalizedTitle": "無法工作期間的技能維持策略停工不停學保持職場競爭力"
+    },
+    {
+      "articleId": "lmXFXdbDSmlhAA5E8afw",
+      "title": "無法工作期間財務管理：穩定生活，邁向復原",
+      "normalizedTitle": "無法工作期間財務管理穩定生活邁向復原"
+    },
+    {
+      "articleId": "PxoVx2DQSuOKFFXxJ3TMVA",
+      "title": "無法說出口的財務困擾，好理家在陪伴你",
+      "normalizedTitle": "無法說出口的財務困擾好理家在陪伴你"
+    },
+    {
+      "articleId": "0DCYrHIfQFSOnTSmSuL5Yg",
+      "title": "無痛存錢不靠撐！收入不穩、還在還債，也能默默存到一筆錢",
+      "normalizedTitle": "無痛存錢不靠撐收入不穩還在還債也能默默存到一筆錢"
+    },
+    {
+      "articleId": "0enVL0tPVTEtF2WpcYPTLQ",
+      "title": "無痛存錢術：月光族與弱勢族群都能做到的簡單儲蓄法！",
+      "normalizedTitle": "無痛存錢術月光族與弱勢族群都能做到的簡單儲蓄法"
+    },
+    {
+      "articleId": "a18rgCrETluYXb4DFmYVbw",
+      "title": "番茄工作法在社工實務中的應用指南",
+      "normalizedTitle": "番茄工作法在社工實務中的應用指南"
+    },
+    {
+      "articleId": "HambswpLShkAZsMPK3Lw",
+      "title": "發展遲緩兒童家庭支持服務",
+      "normalizedTitle": "發展遲緩兒童家庭支持服務"
+    },
+    {
+      "articleId": "rO60WySQrSBb6CstsTHw",
+      "title": "短期周轉工具怎麼選？給育兒家庭的提醒",
+      "normalizedTitle": "短期周轉工具怎麼選給育兒家庭的提醒"
+    },
+    {
+      "articleId": "8aLUv3DwQqK9ll613CKjcg",
+      "title": "給大眾的「理財＋防詐」生存手冊",
+      "normalizedTitle": "給大眾的理財+防詐生存手冊"
+    },
+    {
+      "articleId": "0sbZgEn0yS3ChicpO24sPQ",
+      "title": "街友與流浪動物議題",
+      "normalizedTitle": "街友與流浪動物議題"
+    },
+    {
+      "articleId": "wOSHQeuiRAqoGb0DS7xTsg",
+      "title": "裁判離婚與財產保全",
+      "normalizedTitle": "裁判離婚與財產保全"
+    },
+    {
+      "articleId": "xbGRorZQZiFgBfCyjLvQ",
+      "title": "詐騙中的成長故事：學會了資訊判讀力",
+      "normalizedTitle": "詐騙中的成長故事學會了資訊判讀力"
+    },
+    {
+      "articleId": "06kcxoEB9TmRpH1gU7SqfA",
+      "title": "詐騙之後，如何重建信任：談創傷、自責與療癒之路",
+      "normalizedTitle": "詐騙之後如何重建信任談創傷自責與療癒之路"
+    },
+    {
+      "articleId": "tKeB3uN9SNi9Ugzonv0C2w",
+      "title": "詐騙百百種~如何預防地面師騙走不動產",
+      "normalizedTitle": "詐騙百百種如何預防地面師騙走不動產"
+    },
+    {
+      "articleId": "0kNPQ8fvRUKV4WXzBkp4tw",
+      "title": "詐騙風暴：告誡戶的定義、法律規範與財務影響，如何解除？",
+      "normalizedTitle": "詐騙風暴告誡戶的定義法律規範與財務影響如何解除"
+    },
+    {
+      "articleId": "vXkhRJ6fQ6ynv6cXXVdvFA",
+      "title": "詐騙無所不在，遇到時要如何處理？帶你認識3大詐騙類型與常見詐騙手法",
+      "normalizedTitle": "詐騙無所不在遇到時要如何處理帶你認識3大詐騙類型與常見詐騙手法"
+    },
+    {
+      "articleId": "nuVonBqbQEi3kpSXI1YuCg",
+      "title": "買車不踩雷：購車實務全攻略",
+      "normalizedTitle": "買車不踩雷購車實務全攻略"
+    },
+    {
+      "articleId": "jQUemfsySZKoWRsLwCx0Dg",
+      "title": "買車真的好難？用最生活化的方式帶你搞懂買車流程",
+      "normalizedTitle": "買車真的好難用最生活化的方式帶你搞懂買車流程"
+    },
+    {
+      "articleId": "iNgFFPsgQZWRWgQou9DxSg",
+      "title": "買車買房完整指南：頭期款、貸款、隱藏費用與避坑技巧",
+      "normalizedTitle": "買車買房完整指南頭期款貸款隱藏費用與避坑技巧"
+    },
+    {
+      "articleId": "5IaxwCwRSDaT6v0NicrA",
+      "title": "買房子 透天厝or 公寓？不只是居住，更是家庭的選擇",
+      "normalizedTitle": "買房子透天厝or公寓不只是居住更是家庭的選擇"
+    },
+    {
+      "articleId": "xaFxTsT4QS2PPnu1ERD6Og",
+      "title": "買房前的心理建設：讓夢想與現實同行的心態準備",
+      "normalizedTitle": "買房前的心理建設讓夢想與現實同行的心態準備"
+    },
+    {
+      "articleId": "03eYX1VQ3SOShBgLmjCaBg",
+      "title": "買祕方、拖延就醫：長者醫療隱藏的財務危機",
+      "normalizedTitle": "買祕方拖延就醫長者醫療隱藏的財務危機"
+    },
+    {
+      "articleId": "ghVH5wJGTDC6oQ6iV4Qg",
+      "title": "貸款整修老屋，重啟人生計畫—阿中的翻轉之路",
+      "normalizedTitle": "貸款整修老屋重啟人生計畫阿中的翻轉之路"
+    },
+    {
+      "articleId": "0e66NGGoQvGtUWNATByzQw",
+      "title": "超市vs.傳統市場：同樣一週伙食費的差異",
+      "normalizedTitle": "超市vs傳統市場同樣一週伙食費的差異"
+    },
+    {
+      "articleId": "8soYUdtzTymMmgDf8nYHpA",
+      "title": "越努力省錢，為什麼心卻越累？別讓「貧窮感」吃掉你的未來",
+      "normalizedTitle": "越努力省錢為什麼心卻越累別讓貧窮感吃掉你的未來"
+    },
+    {
+      "articleId": "HMdaxBR6KzThDSTfgsCg",
+      "title": "債不只是數字，而是我跟世界的距離",
+      "normalizedTitle": "債不只是數字而是我跟世界的距離"
+    },
+    {
+      "articleId": "oMZVlHQmT6WptgavRALfuQ",
+      "title": "債務-二胎借款",
+      "normalizedTitle": "債務二胎借款"
+    },
+    {
+      "articleId": "0IqrSGt5SxWqXR4m7Rme5w",
+      "title": "債務-小額借款",
+      "normalizedTitle": "債務小額借款"
+    },
+    {
+      "articleId": "rpqpcsAURHav0H7mI89esw",
+      "title": "債務-先買後付(BNPL)",
+      "normalizedTitle": "債務先買後付bnpl"
+    },
+    {
+      "articleId": "00f01gX1YS6e1Pa6BpdY2A",
+      "title": "債務-信用卡知識",
+      "normalizedTitle": "債務信用卡知識"
+    },
+    {
+      "articleId": "0iH029bP5QWjgnycId3reQ",
+      "title": "債務-強制執行",
+      "normalizedTitle": "債務強制執行"
+    },
+    {
+      "articleId": "T3wcRvQSRgGjTcZcUqZX9A",
+      "title": "債務-當鋪",
+      "normalizedTitle": "債務當鋪"
+    },
+    {
+      "articleId": "0GgVgimCBSDPVHQWe1bCtg",
+      "title": "債務-預支薪水",
+      "normalizedTitle": "債務預支薪水"
+    },
+    {
+      "articleId": "03Zb7CJePQFOwn1buAfsew",
+      "title": "債務-銀行信貸",
+      "normalizedTitle": "債務銀行信貸"
+    },
+    {
+      "articleId": "IufYM8FTeDLxDmRHiVzA",
+      "title": "債務-標會",
+      "normalizedTitle": "債務標會"
+    },
+    {
+      "articleId": "ZvSCSS8mRkyA5OsfoJkrKQ",
+      "title": "債務-融資借款",
+      "normalizedTitle": "債務融資借款"
+    },
+    {
+      "articleId": "03tYWEilQf6T0ZevpLa7Tw",
+      "title": "債務-親友周轉",
+      "normalizedTitle": "債務親友周轉"
+    },
+    {
+      "articleId": "8yVQCiFMSQ6dWzo7mUUZ0w",
+      "title": "債務-應付帳務延遲付款",
+      "normalizedTitle": "債務應付帳務延遲付款"
+    },
+    {
+      "articleId": "YgUbNJzyRvWAFSkn81tMZA",
+      "title": "債務-購車貸款",
+      "normalizedTitle": "債務購車貸款"
+    },
+    {
+      "articleId": "0Ji6OKkFaTwuo3TUx1j1cg",
+      "title": "債務-購屋貸款",
+      "normalizedTitle": "債務購屋貸款"
+    },
+    {
+      "articleId": "k7N0dQWTRjif3BCY9No9Gg",
+      "title": "債務心理壓力調適與支持",
+      "normalizedTitle": "債務心理壓力調適與支持"
+    },
+    {
+      "articleId": "0PgW413B7TvC2Yvr7LZccA",
+      "title": "債務危機兒童保護措施",
+      "normalizedTitle": "債務危機兒童保護措施"
+    },
+    {
+      "articleId": "0socE6xWQp2qppLvuySO6A",
+      "title": "債務形成原因分析與預防",
+      "normalizedTitle": "債務形成原因分析與預防"
+    },
+    {
+      "articleId": "0i0UcwNeQaWJ34p94HJw",
+      "title": "債務協商失敗替代方案",
+      "normalizedTitle": "債務協商失敗替代方案"
+    },
+    {
+      "articleId": "0k2SKxZwQIyIzNLhkMqerQ",
+      "title": "債務協商實務對話技巧指南",
+      "normalizedTitle": "債務協商實務對話技巧指南"
+    },
+    {
+      "articleId": "SBpZa7QlQrOz3AVP3OrFiw",
+      "title": "債務法律程序協助資源",
+      "normalizedTitle": "債務法律程序協助資源"
+    },
+    {
+      "articleId": "MvPoVNF6RL6k17boySydkg",
+      "title": "債務重建後財務管理",
+      "normalizedTitle": "債務重建後財務管理"
+    },
+    {
+      "articleId": "0IbQC8nWQlOUXyD0E7b0VA",
+      "title": "債務教育與風險意識培養",
+      "normalizedTitle": "債務教育與風險意識培養"
+    },
+    {
+      "articleId": "0CRKshu1ORD6XuvkgXfSpw",
+      "title": "債務現況全面評估與分析",
+      "normalizedTitle": "債務現況全面評估與分析"
+    },
+    {
+      "articleId": "SOgVmgcTSWr5ZvkUmLtw",
+      "title": "債務處理心法：不是急著還錢，而是先把人生拉回正軌",
+      "normalizedTitle": "債務處理心法不是急著還錢而是先把人生拉回正軌"
+    },
+    {
+      "articleId": "2lXsJbl4SRCd5K13T2vkxA",
+      "title": "債務處理步驟1：如何辦理債務協商？債務協商與債務整合的優缺點分析",
+      "normalizedTitle": "債務處理步驟1如何辦理債務協商債務協商與債務整合的優缺點分析"
+    },
+    {
+      "articleId": "0Nc4BTPBRSAClPsnFz0znQ",
+      "title": "債務處理效果評估與追蹤",
+      "normalizedTitle": "債務處理效果評估與追蹤"
+    },
+    {
+      "articleId": "AW1R66g9Q8OxexZXjnkFoQ",
+      "title": "債務處理創新方法與工具",
+      "normalizedTitle": "債務處理創新方法與工具"
+    },
+    {
+      "articleId": "JzviNeuNRGZCS0l2Q2zg",
+      "title": "債務被強制執行後，生活會變怎樣？薪資、帳戶、財產通通被扣押嗎？",
+      "normalizedTitle": "債務被強制執行後生活會變怎樣薪資帳戶財產通通被扣押嗎"
+    },
+    {
+      "articleId": "cgM2BAgeTpmqU07WiPLHtw",
+      "title": "債務預防性財務規劃教育",
+      "normalizedTitle": "債務預防性財務規劃教育"
+    },
+    {
+      "articleId": "XC9MdUdTsajoyTvDR4iA",
+      "title": "債務對信用記錄的影響修復",
+      "normalizedTitle": "債務對信用記錄的影響修復"
+    },
+    {
+      "articleId": "gLWjRpJkRgqEkEQeJc8Q",
+      "title": "債務對家庭功能影響評估",
+      "normalizedTitle": "債務對家庭功能影響評估"
+    },
+    {
+      "articleId": "ExHEudTDTA2FJLpoZJrG3w",
+      "title": "債務盤點表",
+      "normalizedTitle": "債務盤點表"
+    },
+    {
+      "articleId": "072cZnfmfRxag16qmEiZAA",
+      "title": "債務整合：卡債與小額信貸的解套之道，學會財務規劃才能走出債務泥淖",
+      "normalizedTitle": "債務整合卡債與小額信貸的解套之道學會財務規劃才能走出債務泥淖"
+    },
+    {
+      "articleId": "0DVqxbccQXGyFx72OX5SdQ",
+      "title": "債務整合與重組策略選擇",
+      "normalizedTitle": "債務整合與重組策略選擇"
+    },
+    {
+      "articleId": "0CadnovvHRfGQoRBHENQiw",
+      "title": "債務關鍵詞，拆給你聽",
+      "normalizedTitle": "債務關鍵詞拆給你聽"
+    },
+    {
+      "articleId": "0ykSRI7WNQ2CsZEzhtzVjQ",
+      "title": "債務繼承風險處理",
+      "normalizedTitle": "債務繼承風險處理"
+    },
+    {
+      "articleId": "0Bapi0qiQYiDjq8LmYgFGA",
+      "title": "債務纏身卻顯得冷靜——從週轉力觀察債務人處境",
+      "normalizedTitle": "債務纏身卻顯得冷靜從週轉力觀察債務人處境"
+    },
+    {
+      "articleId": "ysOQ5MphQyaNw0lsdbHPTQ",
+      "title": "媽媽的辛苦值得被照顧，家庭更該一起建立安全感",
+      "normalizedTitle": "媽媽的辛苦值得被照顧家庭更該一起建立安全感"
+    },
+    {
+      "articleId": "0GX6opw7tQQy32CBBHKcog",
+      "title": "媽媽幫人作保借款，結果卻是我欠債！",
+      "normalizedTitle": "媽媽幫人作保借款結果卻是我欠債"
+    },
+    {
+      "articleId": "0iFnkTv8iRUa1YjulsFHLw",
+      "title": "微型創業鳳凰貸款介紹",
+      "normalizedTitle": "微型創業鳳凰貸款介紹"
+    },
+    {
+      "articleId": "0DiF6uYLyRAu8benwQS4qg",
+      "title": "想存錢看過來！5 種實用又接地氣的存錢方法，經濟弱勢也能做到！",
+      "normalizedTitle": "想存錢看過來5種實用又接地氣的存錢方法經濟弱勢也能做到"
+    },
+    {
+      "articleId": "0lYKLlA2Q6Oqrtc8zMUVQA",
+      "title": "想要金錢自立的身障者一定要認識的職業重建系統",
+      "normalizedTitle": "想要金錢自立的身障者一定要認識的職業重建系統"
+    },
+    {
+      "articleId": "0MgRK74AaRSKHAlvlNR7Vg",
+      "title": "意外死亡特殊補償申請",
+      "normalizedTitle": "意外死亡特殊補償申請"
+    },
+    {
+      "articleId": "0QvwYT2bRHysST260GnHoA",
+      "title": "意外險理賠範圍與限制說明",
+      "normalizedTitle": "意外險理賠範圍與限制說明"
+    },
+    {
+      "articleId": "eoFZR0PSQZeOCQomghie9Q",
+      "title": "愛他，就要跟他算清楚？談家庭理財中的「心理邊界」與減壓術",
+      "normalizedTitle": "愛他就要跟他算清楚談家庭理財中的心理邊界與減壓術"
+    },
+    {
+      "articleId": "ppzExr4WRout738y2WlZ4A",
+      "title": "愛情的陷阱：從甜言蜜語到傾家蕩產",
+      "normalizedTitle": "愛情的陷阱從甜言蜜語到傾家蕩產"
+    },
+    {
+      "articleId": "Qk6RqQZfQiG30eLALbIMAQ",
+      "title": "愛與債的邊界：臨終決策，留給家人的是智慧還是負擔？",
+      "normalizedTitle": "愛與債的邊界臨終決策留給家人的是智慧還是負擔"
+    },
+    {
+      "articleId": "TlWyKq3iTyinURmsg5xKXA",
+      "title": "感情詐騙案例-從受害到重生：社工如何協助詐騙受害者找回希望",
+      "normalizedTitle": "感情詐騙案例從受害到重生社工如何協助詐騙受害者找回希望"
+    },
+    {
+      "articleId": "0DRxS1yWZREOHuJhjbmrDA",
+      "title": "搶救青年「薪」希望：運用「支援青年就業計畫」陪伴經濟弱勢青年突破就業困境",
+      "normalizedTitle": "搶救青年薪希望運用支援青年就業計畫陪伴經濟弱勢青年突破就業困境"
+    },
+    {
+      "articleId": "H749MEkyRZqxOKDguPho2Q",
+      "title": "新生兒家庭理財攻略：告別「月光」，迎接財務自由",
+      "normalizedTitle": "新生兒家庭理財攻略告別月光迎接財務自由"
+    },
+    {
+      "articleId": "0jiRsTAHhTa6H1RTE9kDOQ",
+      "title": "新生兒基本需求資源連結",
+      "normalizedTitle": "新生兒基本需求資源連結"
+    },
+    {
+      "articleId": "0M1QBF9UPQiyNECR054XBg",
+      "title": "新住民人身安全與權益保護",
+      "normalizedTitle": "新住民人身安全與權益保護"
+    },
+    {
+      "articleId": "0rvguBzQMRRWwClqCzhNYg",
+      "title": "新住民女性經濟適應",
+      "normalizedTitle": "新住民女性經濟適應"
+    },
+    {
+      "articleId": "0pDiDXJjSji9EzdvCR37iQ",
+      "title": "新住民子女教育發展",
+      "normalizedTitle": "新住民子女教育發展"
+    },
+    {
+      "articleId": "DtYMVWLrQeWRj2CtkQHv9g",
+      "title": "新住民老年安養規劃",
+      "normalizedTitle": "新住民老年安養規劃"
+    },
+    {
+      "articleId": "UNyLn2AKQwuhDJ86oDEJhg",
+      "title": "新住民服務與權益",
+      "normalizedTitle": "新住民服務與權益"
+    },
+    {
+      "articleId": "m32s7n7ySMyjlyUGawHIAQ",
+      "title": "新住民社會融入與參與",
+      "normalizedTitle": "新住民社會融入與參與"
+    },
+    {
+      "articleId": "ArMlDfnHS1WfFCfKlONdKA",
+      "title": "新住民金融服務與財務管理",
+      "normalizedTitle": "新住民金融服務與財務管理"
+    },
+    {
+      "articleId": "0TdYE2IVTwKLNVsXWJFr0g",
+      "title": "新住民家庭經濟危機處理",
+      "normalizedTitle": "新住民家庭經濟危機處理"
+    },
+    {
+      "articleId": "D8RlT3dsSc6vXRnAgRzObA",
+      "title": "新住民基本權益與法律地位",
+      "normalizedTitle": "新住民基本權益與法律地位"
+    },
+    {
+      "articleId": "5oMjINBRfiph3qQH2SlQ",
+      "title": "新住民婚姻家庭關係",
+      "normalizedTitle": "新住民婚姻家庭關係"
+    },
+    {
+      "articleId": "rY3sP15LQuuzjGUn5d6tRA",
+      "title": "新住民喪偶困境：面對房貸和土地繼承，卻沒錢生活該如何安頓身心?",
+      "normalizedTitle": "新住民喪偶困境面對房貸和土地繼承卻沒錢生活該如何安頓身心"
+    },
+    {
+      "articleId": "PDJ36gSVTAaal4zpFQScFw",
+      "title": "新住民就業輔導與創業支持",
+      "normalizedTitle": "新住民就業輔導與創業支持"
+    },
+    {
+      "articleId": "kpZeQu83Su2lyJhpmoKZQQ",
+      "title": "新住民經濟弱勢特徵與成因",
+      "normalizedTitle": "新住民經濟弱勢特徵與成因"
+    },
+    {
+      "articleId": "qTBhBGcJSR2rD1lWuAbEmQ",
+      "title": "新住民跨國事務處理",
+      "normalizedTitle": "新住民跨國事務處理"
+    },
+    {
+      "articleId": "qnHMN01tSdSqBLYmlvTiQg",
+      "title": "新住民語言學習與教育",
+      "normalizedTitle": "新住民語言學習與教育"
+    },
+    {
+      "articleId": "ynHm5fvKRZ2W6AFwVy0Ptw",
+      "title": "新住民醫療健康服務",
+      "normalizedTitle": "新住民醫療健康服務"
+    },
+    {
+      "articleId": "0Bw4rwMcRxykUIyjFwosUg",
+      "title": "新婚夫妻財務規劃",
+      "normalizedTitle": "新婚夫妻財務規劃"
+    },
+    {
+      "articleId": "060FnyrbhQiaJQEf6v1DQg",
+      "title": "新婚夫妻財務整合與磨合",
+      "normalizedTitle": "新婚夫妻財務整合與磨合"
+    },
+    {
+      "articleId": "0qP17mKGwRBmoIGWBDopSQ",
+      "title": "新移民就業適應與發展",
+      "normalizedTitle": "新移民就業適應與發展"
+    },
+    {
+      "articleId": "0xDcJOkasQuaYrzfwtppaA",
+      "title": "新興借貸的發展脈絡與風險",
+      "normalizedTitle": "新興借貸的發展脈絡與風險"
+    },
+    {
+      "articleId": "0R22FEp5JRm8tbQC4OSA",
+      "title": "新鮮人如何建立財務安全感？從第一份工作開始的財務規劃提醒",
+      "normalizedTitle": "新鮮人如何建立財務安全感從第一份工作開始的財務規劃提醒"
+    },
+    {
+      "articleId": "5UmLVrFfRVOkpVV37PxSLg",
+      "title": "業務員的職涯減壓術：當薪水不再是唯一指標，如何跑出更有價值的「生活業績」？",
+      "normalizedTitle": "業務員的職涯減壓術當薪水不再是唯一指標如何跑出更有價值的生活業績"
+    },
+    {
+      "articleId": "rGc2bGChTCSUl2mLszP75w",
+      "title": "照顧者心理支持費用規劃",
+      "normalizedTitle": "照顧者心理支持費用規劃"
+    },
+    {
+      "articleId": "0b3FbVHkfQlt4j40A6rEnA",
+      "title": "照顧者技能培養與就業準備",
+      "normalizedTitle": "照顧者技能培養與就業準備"
+    },
+    {
+      "articleId": "wNQtt6S7OTqggzNeiwKw",
+      "title": "照顧者就業與早療時間協調",
+      "normalizedTitle": "照顧者就業與早療時間協調"
+    },
+    {
+      "articleId": "OaThpuBvRPiqWteAPpEmnA",
+      "title": "照顧責任與就業平衡策略",
+      "normalizedTitle": "照顧責任與就業平衡策略"
+    },
+    {
+      "articleId": "leRLJ4DS1KAB5Pg6WeJA",
+      "title": "照顧無力，政府來幫忙：帶你一步步了解老人公費安置",
+      "normalizedTitle": "照顧無力政府來幫忙帶你一步步了解老人公費安置"
+    },
+    {
+      "articleId": "0Xv6u0A3MThOF52hlMFphA",
+      "title": "當一家人重新並肩，混亂便開始化為從容",
+      "normalizedTitle": "當一家人重新並肩混亂便開始化為從容"
+    },
+    {
+      "articleId": "wRiwnpfYTZKfePmfio2Wtg",
+      "title": "當人生停在家裡：社工如何從財務對話，協助長期未就業者重新行動",
+      "normalizedTitle": "當人生停在家裡社工如何從財務對話協助長期未就業者重新行動"
+    },
+    {
+      "articleId": "0XvtfWaCzToW8OaztVrAvg",
+      "title": "當父親沉迷賭博，家庭如何避免被債務拖垮",
+      "normalizedTitle": "當父親沉迷賭博家庭如何避免被債務拖垮"
+    },
+    {
+      "articleId": "RlaYcAEIRSquyQqlRuUL3Q",
+      "title": "當市場需求改變，我們怎麼不被帶走：居服員媽媽的副業轉化與生活重整",
+      "normalizedTitle": "當市場需求改變我們怎麼不被帶走居服員媽媽的副業轉化與生活重整"
+    },
+    {
+      "articleId": "HqdoqTXHRIOIhSuGgRfsbw",
+      "title": "當生活越來越努力，為何財務卻越來越不穩？ ——現代人需要一套有效的財務評估工具",
+      "normalizedTitle": "當生活越來越努力為何財務卻越來越不穩現代人需要一套有效的財務評估工具"
+    },
+    {
+      "articleId": "0TkUroaYjSWKLwRIMigw",
+      "title": "當收入看起來不錯，為什麼財務還是會失衡？——從財務健全走向財務韌性的實務判讀",
+      "normalizedTitle": "當收入看起來不錯為什麼財務還是會失衡從財務健全走向財務韌性的實務判讀"
+    },
+    {
+      "articleId": "oPbsdLxURUqAYGfhFNkRvQ",
+      "title": "當有勞保身分的家人突然失蹤：勞工家屬必知的權益保障指南",
+      "normalizedTitle": "當有勞保身分的家人突然失蹤勞工家屬必知的權益保障指南"
+    },
+    {
+      "articleId": "i3ei4nUYQ4qXfpie69m7Cw",
+      "title": "當扶養義務缺席：社會救助第5條第3項第9款操作與案例解析",
+      "normalizedTitle": "當扶養義務缺席社會救助第5條第3項第9款操作與案例解析"
+    },
+    {
+      "articleId": "0MM8ycQLTUmIOVHzx5NwGQ",
+      "title": "當社工遇上個案有債務問題的處遇架構",
+      "normalizedTitle": "當社工遇上個案有債務問題的處遇架構"
+    },
+    {
+      "articleId": "7QjjVB8BRq2jgnq3kBjFZQ",
+      "title": "當孩子用爸媽的信用卡課金，法律與財務責任承擔與處理",
+      "normalizedTitle": "當孩子用爸媽的信用卡課金法律與財務責任承擔與處理"
+    },
+    {
+      "articleId": "00tGSxkCQ4eO5lAzxtcAPg",
+      "title": "當孩子需要被安置：家長必讀的安置服務流程與資源指南",
+      "normalizedTitle": "當孩子需要被安置家長必讀的安置服務流程與資源指南"
+    },
+    {
+      "articleId": "BnrySAPSSL2r1NMhum3emw",
+      "title": "當孩子覺得家裡「不夠有錢」時，父母可以怎麼說？",
+      "normalizedTitle": "當孩子覺得家裡不夠有錢時父母可以怎麼說"
+    },
+    {
+      "articleId": "DGbXVQZpRk2NLy8DKOIBtg",
+      "title": "當案主說『我在職場被霸凌』- 助人工作者可以做什麼?",
+      "normalizedTitle": "當案主說我在職場被霸凌助人工作者可以做什麼"
+    },
+    {
+      "articleId": "0vI4KczYFQIy8yWr3PIuCQ",
+      "title": "當高齡化遇上少子化： 未來變重的，不只是醫療費，而是「家庭韌性」和撐住風險的能力",
+      "normalizedTitle": "當高齡化遇上少子化未來變重的不只是醫療費而是家庭韌性和撐住風險的能力"
+    },
+    {
+      "articleId": "pagOuzjxS3OsN3QAmCKEOg",
+      "title": "當唯一的支柱生病：一個單親高風險勞動家長如何撐到孩子成年",
+      "normalizedTitle": "當唯一的支柱生病一個單親高風險勞動家長如何撐到孩子成年"
+    },
+    {
+      "articleId": "At8ojW4OSYOWcSmFKEyAHg",
+      "title": "當債務來敲門，夫妻吵翻變仇人？",
+      "normalizedTitle": "當債務來敲門夫妻吵翻變仇人"
+    },
+    {
+      "articleId": "0OQqxeFOLR0O3dd5g9Duww",
+      "title": "當媽媽生病、人生暫停：一位女兒的求助信，與財務諮詢師的回信",
+      "normalizedTitle": "當媽媽生病人生暫停一位女兒的求助信與財務諮詢師的回信"
+    },
+    {
+      "articleId": "05COwoZJQkCRL0xtCTDEMw",
+      "title": "當照顧成為生活的一部分：在選擇與調整之間找到自己的步調",
+      "normalizedTitle": "當照顧成為生活的一部分在選擇與調整之間找到自己的步調"
+    },
+    {
+      "articleId": "F0epVX1vT5CLqVNG3Dx1Eg",
+      "title": "當過世親人有高額債務，處理程序及應備文件懶人包",
+      "normalizedTitle": "當過世親人有高額債務處理程序及應備文件懶人包"
+    },
+    {
+      "articleId": "uAyusijvTH2w8p9QgqNqRg",
+      "title": "當福利資格被取消：年度複查後該怎麼辦？",
+      "normalizedTitle": "當福利資格被取消年度複查後該怎麼辦"
+    },
+    {
+      "articleId": "mecdbVbTFCeWH38E7i7g",
+      "title": "當精神議題家庭回到社區，讓照顧有了溫度。〈不屈的照顧守護：一位四哥的照顧故事〉",
+      "normalizedTitle": "當精神議題家庭回到社區讓照顧有了溫度不屈的照顧守護一位四哥的照顧故事"
+    },
+    {
+      "articleId": "iHZjZ2RrSbeo4qj2BRHMiw",
+      "title": "萬物皆可貸？看見借貸背後的風險與轉機",
+      "normalizedTitle": "萬物皆可貸看見借貸背後的風險與轉機"
+    },
+    {
+      "articleId": "0rYdmIonTsq9SJ0DEcnWNw",
+      "title": "節稅大作戰：家庭節稅方式說明",
+      "normalizedTitle": "節稅大作戰家庭節稅方式說明"
+    },
+    {
+      "articleId": "0eqKlrbVQUGOmFOBtWsfdg",
+      "title": "節慶支出控制技巧：如何設定合理預算不失禮",
+      "normalizedTitle": "節慶支出控制技巧如何設定合理預算不失禮"
+    },
+    {
+      "articleId": "0XyAJiXdETZGG5t9PNRNzA",
+      "title": "經濟困境中的希望之光：失業勞工子女就學補助新制度解析",
+      "normalizedTitle": "經濟困境中的希望之光失業勞工子女就學補助新制度解析"
+    },
+    {
+      "articleId": "BvwgDHo8QE2EpoAIdN9Xrw",
+      "title": "經濟困境中的新希望：減班休息勞工薪資補貼提升至70%",
+      "normalizedTitle": "經濟困境中的新希望減班休息勞工薪資補貼提升至70%"
+    },
+    {
+      "articleId": "0LL5jHaQSQW4A5cyf95cZQ",
+      "title": "經濟弱勢家庭親子關係",
+      "normalizedTitle": "經濟弱勢家庭親子關係"
+    },
+    {
+      "articleId": "C52P8lzQXaWZWk7C1Tnw",
+      "title": "經濟弱勢家庭寵物飼養挑戰",
+      "normalizedTitle": "經濟弱勢家庭寵物飼養挑戰"
+    },
+    {
+      "articleId": "YvlePL6LTSyLZp00Rv6uiA",
+      "title": "經濟弱勢族群如何提升信用評分？從日常理財到長期習慣，一步步打造銀行愛你的履歷",
+      "normalizedTitle": "經濟弱勢族群如何提升信用評分從日常理財到長期習慣一步步打造銀行愛你的履歷"
+    },
+    {
+      "articleId": "yp6HXGIWQL6wLCTMzUzLRg",
+      "title": "經濟弱勢勞工的安全網：僱用安定措施服務指引",
+      "normalizedTitle": "經濟弱勢勞工的安全網僱用安定措施服務指引"
+    },
+    {
+      "articleId": "0O0swV3ynTdBoJo6uh9mfg",
+      "title": "經濟弱勢繼承人權益保護",
+      "normalizedTitle": "經濟弱勢繼承人權益保護"
+    },
+    {
+      "articleId": "0a2lu1vlwTAGAqrtCxypmg",
+      "title": "萱萱的蛻變：從被動到主導的人生旅程",
+      "normalizedTitle": "萱萱的蛻變從被動到主導的人生旅程"
+    },
+    {
+      "articleId": "5le8TCmKSSqFBEMtuKZwqg",
+      "title": "補習班退費爭議的法律與財務處理建議",
+      "normalizedTitle": "補習班退費爭議的法律與財務處理建議"
+    },
+    {
+      "articleId": "UaFkfP4KQwSHDlQF39ng",
+      "title": "資源陪伴  走向疾病復原之路",
+      "normalizedTitle": "資源陪伴走向疾病復原之路"
+    },
+    {
+      "articleId": "0bVYaniNYSVSwwDq3MDaNw",
+      "title": "跟父母同住 vs. 自立門戶：我和朋友的金錢距離",
+      "normalizedTitle": "跟父母同住vs自立門戶我和朋友的金錢距離"
+    },
+    {
+      "articleId": "EDE6NsifSLiyKehxAF7EsQ",
+      "title": "跨文化財務諮詢技巧",
+      "normalizedTitle": "跨文化財務諮詢技巧"
+    },
+    {
+      "articleId": "0xu34M2HQIKY2BCRW6IBOQ",
+      "title": "跨世代財務責任界限設定",
+      "normalizedTitle": "跨世代財務責任界限設定"
+    },
+    {
+      "articleId": "n6Dotuo1QjK9rAAWRXhPKA",
+      "title": "跨性別者特殊需求服務：看見多元，共築友善社會",
+      "normalizedTitle": "跨性別者特殊需求服務看見多元共築友善社會"
+    },
+    {
+      "articleId": "saZ7IXF1TtefeydGP7Qjxw",
+      "title": "跨國工作者的家庭照顧架構與法律議題",
+      "normalizedTitle": "跨國工作者的家庭照顧架構與法律議題"
+    },
+    {
+      "articleId": "PQqAEVQTTimcO1AxX7hg",
+      "title": "跨國保險理賠處理策略",
+      "normalizedTitle": "跨國保險理賠處理策略"
+    },
+    {
+      "articleId": "5bxZkeSR9eMe1vQcQ32w",
+      "title": "跨國照護與移工管理財務規劃：打造安心的家庭照護方案",
+      "normalizedTitle": "跨國照護與移工管理財務規劃打造安心的家庭照護方案"
+    },
+    {
+      "articleId": "cJhn62uXTpmGDlX3WgfyWg",
+      "title": "跨域合作的新方向：社勞政聯合就業促進服務指引",
+      "normalizedTitle": "跨域合作的新方向社勞政聯合就業促進服務指引"
+    },
+    {
+      "articleId": "0EUK0L64QTKzHK3sD1TKfg",
+      "title": "跨專業助攻，債務不再滾雪球──阿智的穩健復元之路",
+      "normalizedTitle": "跨專業助攻債務不再滾雪球──阿智的穩健復元之路"
+    },
+    {
+      "articleId": "GLWgDC4FRqK9Lfw4DKHg2A",
+      "title": "跨專業接力、接住家庭與財務的崩塌——從絕望到重整的實務經驗",
+      "normalizedTitle": "跨專業接力接住家庭與財務的崩塌從絕望到重整的實務經驗"
+    },
+    {
+      "articleId": "7jU3EgAiRJqp3oxQQX123w",
+      "title": "跨專業資源連結網絡：經濟弱勢服務的協作模式",
+      "normalizedTitle": "跨專業資源連結網絡經濟弱勢服務的協作模式"
+    },
+    {
+      "articleId": "BmbqcHF7SMK94STeBAIgmw",
+      "title": "遇見更好的自己，還是交出人生的主權？揭開宗教PUA的溫柔陷阱與家庭財務黑洞",
+      "normalizedTitle": "遇見更好的自己還是交出人生的主權揭開宗教pua的溫柔陷阱與家庭財務黑洞"
+    },
+    {
+      "articleId": "fAQXFgKCQJ2x6MpgoeIb6Q",
+      "title": "遇到家庭暴力，財務資源如何安全轉移與保障？",
+      "normalizedTitle": "遇到家庭暴力財務資源如何安全轉移與保障"
+    },
+    {
+      "articleId": "LeJMxnNMQbCVE82LhMY2Ww",
+      "title": "遇到銀行或信用卡問題別慌張！教你三步驟找到正確的幫助管道",
+      "normalizedTitle": "遇到銀行或信用卡問題別慌張教你三步驟找到正確的幫助管道"
+    },
+    {
+      "articleId": "0ETzwKy7kQXWPdv3A3Nz3g",
+      "title": "運用社工專業，陪伴詐騙議題個案重建生活與經濟",
+      "normalizedTitle": "運用社工專業陪伴詐騙議題個案重建生活與經濟"
+    },
+    {
+      "articleId": "0AIOfaPpQCmY4FWvs3ji4w",
+      "title": "運用普發1萬兼顧基礎投資與公益的實用策略",
+      "normalizedTitle": "運用普發1萬兼顧基礎投資與公益的實用策略"
+    },
+    {
+      "articleId": "0nlyprfm0SWW2QFa2gPQ2w",
+      "title": "運用網絡資源強化經濟輔導知能，助弱勢家庭邁向財務自立",
+      "normalizedTitle": "運用網絡資源強化經濟輔導知能助弱勢家庭邁向財務自立"
+    },
+    {
+      "articleId": "sTmZVjpEQPKPn59ApWEPCQ",
+      "title": "過年前的大掃除，讓我重新整理了生活，也整理了財務",
+      "normalizedTitle": "過年前的大掃除讓我重新整理了生活也整理了財務"
+    },
+    {
+      "articleId": "rReOLFHbTLupLbzVL0XLCw",
+      "title": "過年前的大掃除，讓我重新整理了生活，也整理了財務",
+      "normalizedTitle": "過年前的大掃除讓我重新整理了生活也整理了財務"
+    },
+    {
+      "articleId": "0nKAUlvySXKvespCqB2VRA",
+      "title": "過年紅包，不只是錢! 一段睡前對話，教會孩子也提醒大人：為什麼要儲蓄",
+      "normalizedTitle": "過年紅包不只是錢一段睡前對話教會孩子也提醒大人為什麼要儲蓄"
+    },
+    {
+      "articleId": "0vkNgvm0BQc5FNffMEjkzA",
+      "title": "達克效應 (Dunning-Kruger Effect)",
+      "normalizedTitle": "達克效應dunningkrugereffect"
+    },
+    {
+      "articleId": "qAauuBBqTcq7Ts8ZXFv7yA",
+      "title": "預算控管失敗的常見心理因素與調整建議",
+      "normalizedTitle": "預算控管失敗的常見心理因素與調整建議"
+    },
+    {
+      "articleId": "0jpk7ZwkyTSOTpI8Z0qD1g",
+      "title": "團購對小家庭來說，是幫手還是荷包殺手？",
+      "normalizedTitle": "團購對小家庭來說是幫手還是荷包殺手"
+    },
+    {
+      "articleId": "KtdJFLYeQzOHpWPVcI11dg",
+      "title": "團體保險理賠申請實務",
+      "normalizedTitle": "團體保險理賠申請實務"
+    },
+    {
+      "articleId": "R1hPXd5lSWmpGgeR7yFLAg",
+      "title": "夢想的重擔：十九歲的百萬藍圖與高額保險的斷捨離",
+      "normalizedTitle": "夢想的重擔十九歲的百萬藍圖與高額保險的斷捨離"
+    },
+    {
+      "articleId": "UOlMzu65T2qditrcxlIfgg",
+      "title": "夢想買一間不遷徙的家：給小資家庭的務實告白—為何「理家」的順序，決定了你與房子的距離？",
+      "normalizedTitle": "夢想買一間不遷徙的家給小資家庭的務實告白為何理家的順序決定了你與房子的距離"
+    },
+    {
+      "articleId": "MWJLwSH5QkKVLMJMoX3zcg",
+      "title": "奪回生活的發球權：四步驟拆解「財務降級」的心理與實戰",
+      "normalizedTitle": "奪回生活的發球權四步驟拆解財務降級的心理與實戰"
+    },
+    {
+      "articleId": "5JkK0Q62R6qh3Ejcymi2lA",
+      "title": "實用工具篇：面對個案遭詐騙的行動地圖",
+      "normalizedTitle": "實用工具篇面對個案遭詐騙的行動地圖"
+    },
+    {
+      "articleId": "6zNW7BZRqqpbZF5iWBdw",
+      "title": "監獄探視與聯繫費用管理",
+      "normalizedTitle": "監獄探視與聯繫費用管理"
+    },
+    {
+      "articleId": "d3oOEytkQGyPHD6SVm7b5Q",
+      "title": "監護宣告與財產管理：失能長輩存款怎麼用才合法？",
+      "normalizedTitle": "監護宣告與財產管理失能長輩存款怎麼用才合法"
+    },
+    {
+      "articleId": "0tOo1eFVkQfuGtS2ZtTSTg",
+      "title": "精神障礙者的安置選項與相關費用比較",
+      "normalizedTitle": "精神障礙者的安置選項與相關費用比較"
+    },
+    {
+      "articleId": "0FqSf46nSreAYstxuI31pg",
+      "title": "綜融社會工作",
+      "normalizedTitle": "綜融社會工作"
+    },
+    {
+      "articleId": "0dhrkYrQQFm4H64R3pKguA",
+      "title": "網路創業看起來賺錢，為什麼現金卻越來越少？",
+      "normalizedTitle": "網路創業看起來賺錢為什麼現金卻越來越少"
+    },
+    {
+      "articleId": "0JmG3b6PaRw2oDG8h7Xsyg",
+      "title": "網路購物糾紛增加，家庭消費風險管理策略",
+      "normalizedTitle": "網路購物糾紛增加家庭消費風險管理策略"
+    },
+    {
+      "articleId": "Iracni8UTq6PwLS6vt6Kwg",
+      "title": "緊急備用金建立與管理",
+      "normalizedTitle": "緊急備用金建立與管理"
+    },
+    {
+      "articleId": "R6ozV01SQoK9BSLegU2p1Q",
+      "title": "緊急備用金動態管理策略",
+      "normalizedTitle": "緊急備用金動態管理策略"
+    },
+    {
+      "articleId": "2hVOiI7sR6WIvHeUWwXXDQ",
+      "title": "緊急預備金，讓生活繼續",
+      "normalizedTitle": "緊急預備金讓生活繼續"
+    },
+    {
+      "articleId": "xmvHO7sQTtKvoidlppUQ",
+      "title": "臺灣高等檢察署防詐手冊摘要",
+      "normalizedTitle": "臺灣高等檢察署防詐手冊摘要"
+    },
+    {
+      "articleId": "0LAv3gdSUS42LDilXs0vug",
+      "title": "與個案談錢：社工如何陪伴個案盤點財務與經濟需求",
+      "normalizedTitle": "與個案談錢社工如何陪伴個案盤點財務與經濟需求"
+    },
+    {
+      "articleId": "8pmVhHqQM6d71CyI0guQ",
+      "title": "與債權人協商對話技巧",
+      "normalizedTitle": "與債權人協商對話技巧"
+    },
+    {
+      "articleId": "0DvXXhTGRtOtogyPM8ewRQ",
+      "title": "認知閉合 (Cognitive Closure)",
+      "normalizedTitle": "認知閉合cognitiveclosure"
+    },
+    {
+      "articleId": "Uko4IQlmSfCs1hzg6x2H1Q",
+      "title": "語言與溝通障礙處理",
+      "normalizedTitle": "語言與溝通障礙處理"
+    },
+    {
+      "articleId": "B94qulzvRvKZkHuBKqQQhQ",
+      "title": "銀行家給你的一封信 ─ 如何善用普發一萬元及每月補助金",
+      "normalizedTitle": "銀行家給你的一封信─如何善用普發一萬元及每月補助金"
+    },
+    {
+      "articleId": "siQ6KWjjTJqWO9t97ymFbw",
+      "title": "銀行催繳電話響不停，嚇到想換號碼？內行人真心話：接起電話，銀行才能幫你",
+      "normalizedTitle": "銀行催繳電話響不停嚇到想換號碼內行人真心話接起電話銀行才能幫你"
+    },
+    {
+      "articleId": "lDjvOqn8RE6AVEbGX8E2Rw",
+      "title": "銀髮族居住安排",
+      "normalizedTitle": "銀髮族居住安排"
+    },
+    {
+      "articleId": "0kq3rAKoTvaMg6DC16Ce8Q",
+      "title": "銀髮族醫療費用規劃",
+      "normalizedTitle": "銀髮族醫療費用規劃"
+    },
+    {
+      "articleId": "LWAoTxNeT36EbYy0TPeTAQ",
+      "title": "颱風來襲與災後復建：經濟弱勢勞工權益保障實務指南",
+      "normalizedTitle": "颱風來襲與災後復建經濟弱勢勞工權益保障實務指南"
+    },
+    {
+      "articleId": "rWH2Zr04QQ6v4ehvOZybJA",
+      "title": "履歷投了，皮夾也空了？看阿文怎麼撐過求職期的財務壓力",
+      "normalizedTitle": "履歷投了皮夾也空了看阿文怎麼撐過求職期的財務壓力"
+    },
+    {
+      "articleId": "jnzpKdsiQBKEY9lEf0wA",
+      "title": "彈性育兒新時代：115年育嬰留停新制如何協助經濟弱勢家庭兼顧工作與照顧",
+      "normalizedTitle": "彈性育兒新時代115年育嬰留停新制如何協助經濟弱勢家庭兼顧工作與照顧"
+    },
+    {
+      "articleId": "Dh9CCO8BSaLUcCiCC3QA",
+      "title": "撐起家的更生人：照顧責任與資源支持反思",
+      "normalizedTitle": "撐起家的更生人照顧責任與資源支持反思"
+    },
+    {
+      "articleId": "0IjPp8pL9QaeGhJOWOW6oQ",
+      "title": "數位時代家庭財務管理工具",
+      "normalizedTitle": "數位時代家庭財務管理工具"
+    },
+    {
+      "articleId": "0cnby36rT4aUuGuiaYadzg",
+      "title": "數位轉型：提升效率與弱勢客戶體驗",
+      "normalizedTitle": "數位轉型提升效率與弱勢客戶體驗"
+    },
+    {
+      "articleId": "0qLLOEDOnTiWhCyY66byyg",
+      "title": "緩刑期間財務管理與規劃",
+      "normalizedTitle": "緩刑期間財務管理與規劃"
+    },
+    {
+      "articleId": "0p4wceEKTRtyr9ss1kaVQg",
+      "title": "衛生福利部社會及家庭署推展社會福利補助作業要點",
+      "normalizedTitle": "衛生福利部社會及家庭署推展社會福利補助作業要點"
+    },
+    {
+      "articleId": "9w7RYuRLSkGOwFL4Qwnq6A",
+      "title": "複合型詐騙案例《被騙還要被黑鍋?被利用的帳戶》",
+      "normalizedTitle": "複合型詐騙案例被騙還要被黑鍋被利用的帳戶"
+    },
+    {
+      "articleId": "EPFoYKtBQSaHlnTFyLNpLA",
+      "title": "誰說房子只能留給子孫？台灣長輩的「房子養我」新哲學！",
+      "normalizedTitle": "誰說房子只能留給子孫台灣長輩的房子養我新哲學"
+    },
+    {
+      "articleId": "0I3KsZMOTVedVxJOe9yI0w",
+      "title": "課金淺談－為什麼我們在手機遊戲裡越花越多？",
+      "normalizedTitle": "課金淺談為什麼我們在手機遊戲裡越花越多"
+    },
+    {
+      "articleId": "U8yIeyB8RKOYw2PWKX8LNg",
+      "title": "調皮搗蛋險-兒童個人責任險 與家庭責任險介紹",
+      "normalizedTitle": "調皮搗蛋險兒童個人責任險與家庭責任險介紹"
+    },
+    {
+      "articleId": "KhXMFZ4OQ2efYzoowsudgg",
+      "title": "談財務安全的未雨綢繆",
+      "normalizedTitle": "談財務安全的未雨綢繆"
+    },
+    {
+      "articleId": "Ij0dLRXaQn2eXZAt2v30IA",
+      "title": "論文不只燒腦，也很燒錢：青年碩士生的研究成本盤點",
+      "normalizedTitle": "論文不只燒腦也很燒錢青年碩士生的研究成本盤點"
+    },
+    {
+      "articleId": "0x2tCsx5fRdsoUU5meOAPQ",
+      "title": "賭博債務特殊處理策略",
+      "normalizedTitle": "賭博債務特殊處理策略"
+    },
+    {
+      "articleId": "eDWDfTnRsG6kTh1GGSVQ",
+      "title": "遭遇詐騙後怎麼辦？受害者必看！補救方法與自我保護守則一次整理",
+      "normalizedTitle": "遭遇詐騙後怎麼辦受害者必看補救方法與自我保護守則一次整理"
+    },
+    {
+      "articleId": "TCpMV8mSSSGE8hM0YSVaCQ",
+      "title": "養車血淚史：一次保養噴掉 2 萬 4，才懂什麼叫隱形成本",
+      "normalizedTitle": "養車血淚史一次保養噴掉2萬4才懂什麼叫隱形成本"
+    },
+    {
+      "articleId": "07TA9QQ8cT4Gup6Ie1BG0g",
+      "title": "養兒不防老-收養子女未盡扶養責任之實務處理",
+      "normalizedTitle": "養兒不防老收養子女未盡扶養責任之實務處理"
+    },
+    {
+      "articleId": "0W2jbEkhRo2UG5WqYsrOmw",
+      "title": "學貸是「壞債」還是「好債」？家長要不要讓孩子辦？",
+      "normalizedTitle": "學貸是壞債還是好債家長要不要讓孩子辦"
+    },
+    {
+      "articleId": "TMdGBPQw2NOU3DHUGmDw",
+      "title": "學貸壓力+家庭重擔，繳不出學貸會怎樣?",
+      "normalizedTitle": "學貸壓力+家庭重擔繳不出學貸會怎樣"
+    },
+    {
+      "articleId": "0j1jVBOYQS6mb1ry2Mpphw",
+      "title": "學歷不足的家庭，要怎麼幫孩子翻轉？",
+      "normalizedTitle": "學歷不足的家庭要怎麼幫孩子翻轉"
+    },
+    {
+      "articleId": "0UkcjRe2nRfupRUXuVyHgg",
+      "title": "機構照護費用評估與選擇策略",
+      "normalizedTitle": "機構照護費用評估與選擇策略"
+    },
+    {
+      "articleId": "0hFbSC2QTsu95xck6o4MZA",
+      "title": "獨生子女扶養父母的沉重財務壓力如何解?",
+      "normalizedTitle": "獨生子女扶養父母的沉重財務壓力如何解"
+    },
+    {
+      "articleId": "lUCh8yP0SALywTzWL0ug",
+      "title": "獨居長者生活支援",
+      "normalizedTitle": "獨居長者生活支援"
+    },
+    {
+      "articleId": "0314DYqZSpGV3pFxPqeXgQ",
+      "title": "築起幸福的防火牆：阿原與彤彤的家庭理財新篇章",
+      "normalizedTitle": "築起幸福的防火牆阿原與彤彤的家庭理財新篇章"
+    },
+    {
+      "articleId": "0tznK1DfQdeA5acsKq6sTw",
+      "title": "縣(市)醫療補助辦法",
+      "normalizedTitle": "縣市醫療補助辦法"
+    },
+    {
+      "articleId": "0e3zxvrxLQyirSZKAjx7CA",
+      "title": "融資公司掠奪性貸款介紹與案例分析",
+      "normalizedTitle": "融資公司掠奪性貸款介紹與案例分析"
+    },
+    {
+      "articleId": "ZszPGwrzQZZcywtZXorw",
+      "title": "親人有債務到底該不該幫忙還? 可以不要還嗎?",
+      "normalizedTitle": "親人有債務到底該不該幫忙還可以不要還嗎"
+    },
+    {
+      "articleId": "0Zw1u9cyCTfuLqFjPX7Z4A",
+      "title": "親人過世還留債？三個月內這樣做：鎖住責任、守住家計",
+      "normalizedTitle": "親人過世還留債三個月內這樣做鎖住責任守住家計"
+    },
+    {
+      "articleId": "Roz4UdbT4Iz3rNQNcA",
+      "title": "親子理財教育指導手冊",
+      "normalizedTitle": "親子理財教育指導手冊"
+    },
+    {
+      "articleId": "WY0N0zEYQky1bA9zx3s3yA",
+      "title": "親子溝通與情緒支持",
+      "normalizedTitle": "親子溝通與情緒支持"
+    },
+    {
+      "articleId": "0MKxwSJ5wQLEOK8GVoKlIw",
+      "title": "親友口頭借錢不還該怎麼辦？",
+      "normalizedTitle": "親友口頭借錢不還該怎麼辦"
+    },
+    {
+      "articleId": "nQgYdboRTba80rzd7DJytg",
+      "title": "親職教養",
+      "normalizedTitle": "親職教養"
+    },
+    {
+      "articleId": "YEG4q0XzTheVrYKJft27Bg",
+      "title": "辨識借款相關文件資料：協助社工釐清案主債務現況",
+      "normalizedTitle": "辨識借款相關文件資料協助社工釐清案主債務現況"
+    },
+    {
+      "articleId": "BNgvWP3oR2ihCIdkfFMQ",
+      "title": "遺孤照顧與監護安排",
+      "normalizedTitle": "遺孤照顧與監護安排"
+    },
+    {
+      "articleId": "03OOgk6CYRvugknumPYjvg",
+      "title": "遺產及贈與稅法",
+      "normalizedTitle": "遺產及贈與稅法"
+    },
+    {
+      "articleId": "0MvezJnVDRrOBGFyhfqsmw",
+      "title": "遺產及贈與稅法及施行細則",
+      "normalizedTitle": "遺產及贈與稅法及施行細則"
+    },
+    {
+      "articleId": "0C06M3AdTRSmb3t9o5AHiw",
+      "title": "遺產清查與財產確認",
+      "normalizedTitle": "遺產清查與財產確認"
+    },
+    {
+      "articleId": "09K1eLywuRUCgEUGrg1GmQ",
+      "title": "遺產稅申報與減免",
+      "normalizedTitle": "遺產稅申報與減免"
+    },
+    {
+      "articleId": "7LWzGkyFToycntX9Ia9zZg",
+      "title": "遺屬就業重建服務",
+      "normalizedTitle": "遺屬就業重建服務"
+    },
+    {
+      "articleId": "DCGJumS0ShCNtCMFRyBuNw",
+      "title": "遺囑相關權益保障",
+      "normalizedTitle": "遺囑相關權益保障"
+    },
+    {
+      "articleId": "EEMSQYsLQjCHNcchc5J4Qw",
+      "title": "鋼索上的家庭經濟：41.7萬「雙貸族」的無本套利幻覺與理財風險",
+      "normalizedTitle": "鋼索上的家庭經濟417萬雙貸族的無本套利幻覺與理財風險"
+    },
+    {
+      "articleId": "0J6XCTSROScWTGjfr0bR2g",
+      "title": "錢不夠用時，持分房產如何做資產轉換?",
+      "normalizedTitle": "錢不夠用時持分房產如何做資產轉換"
+    },
+    {
+      "articleId": "IFrRX6QZTRSdgxW9E8JwGg",
+      "title": "錢的價值不是金額，而是選擇──重建花費優先順序",
+      "normalizedTitle": "錢的價值不是金額而是選擇──重建花費優先順序"
+    },
+    {
+      "articleId": "0IsBv9pGtSfG4z7YMRJXNg",
+      "title": "隧道效應(Tunnel Effect)",
+      "normalizedTitle": "隧道效應tunneleffect"
+    },
+    {
+      "articleId": "0W8ApytYQRiaSlyBBiaRJA",
+      "title": "霏霏的掙扎：在家暴與財務勒索間尋找重生之路",
+      "normalizedTitle": "霏霏的掙扎在家暴與財務勒索間尋找重生之路"
+    },
+    {
+      "articleId": "0S8a32G3RTuJoHZ9WGTwbQ",
+      "title": "優勢觀點(Strengths Perspective)",
+      "normalizedTitle": "優勢觀點strengthsperspective"
+    },
+    {
+      "articleId": "tF9qhLoKSeWfk77bg7qzpw",
+      "title": "儲蓄互助社實務",
+      "normalizedTitle": "儲蓄互助社實務"
+    },
+    {
+      "articleId": "EA9J80BHTXacN7D6CNGv9g",
+      "title": "幫受災朋友「快一點」之前，先陪伴他慢下來",
+      "normalizedTitle": "幫受災朋友快一點之前先陪伴他慢下來"
+    },
+    {
+      "articleId": "0Q4P5X1nR1CzNSPyJjTwQg",
+      "title": "懂錢，是更有力量的助人——談社工與財務知能的專業連結",
+      "normalizedTitle": "懂錢是更有力量的助人談社工與財務知能的專業連結"
+    },
+    {
+      "articleId": "0bMx9k2jwRBa8E2jjLxHfQ",
+      "title": "臨時工、外送員與無保險族：新型態勞動下的風險缺口",
+      "normalizedTitle": "臨時工外送員與無保險族新型態勞動下的風險缺口"
+    },
+    {
+      "articleId": "JZlGjG7iQeOA8XCgvXazCQ",
+      "title": "臨時工的財務型態與財務困境",
+      "normalizedTitle": "臨時工的財務型態與財務困境"
+    },
+    {
+      "articleId": "0zh1UEszS2ea1YWfcJFdNQ",
+      "title": "臨終關懷與善終準備",
+      "normalizedTitle": "臨終關懷與善終準備"
+    },
+    {
+      "articleId": "LH6J3uqtScaUsM9xPEwiZw",
+      "title": "薪資談判技巧與策略運用",
+      "normalizedTitle": "薪資談判技巧與策略運用"
+    },
+    {
+      "articleId": "02FG5gMTZT9KATe8iYEk3g",
+      "title": "購屋前的功課，了解房貸怎麼算",
+      "normalizedTitle": "購屋前的功課了解房貸怎麼算"
+    },
+    {
+      "articleId": "uZQ2iMIQKC6ryiNDuhuA",
+      "title": "擴大服務 × 公私協力：讓弱勢就業更有力",
+      "normalizedTitle": "擴大服務×公私協力讓弱勢就業更有力"
+    },
+    {
+      "articleId": "sMuReASkeOhagSvfILFA",
+      "title": "擺脫情感勒索，重建經濟自主──阿虎的故事",
+      "normalizedTitle": "擺脫情感勒索重建經濟自主──阿虎的故事"
+    },
+    {
+      "articleId": "0twbrLIXaQiGwgfwOGVc7Q",
+      "title": "擺脫債務的行動指南：你也能重新出發",
+      "normalizedTitle": "擺脫債務的行動指南你也能重新出發"
+    },
+    {
+      "articleId": "bRXkxTM4QySXjKWV06ZjjA",
+      "title": "擺攤自營想快賺？合法設攤、成本到周轉風險一次看",
+      "normalizedTitle": "擺攤自營想快賺合法設攤成本到周轉風險一次看"
+    },
+    {
+      "articleId": "TFLSL19pQHSEu9f4f09QOw",
+      "title": "簡介個人信用貸款、信用卡循環信用，和信用卡預借現金",
+      "normalizedTitle": "簡介個人信用貸款信用卡循環信用和信用卡預借現金"
+    },
+    {
+      "articleId": "0AhmmQN9RKq0CMpHPhn24Q",
+      "title": "簡單理財方法：三個帳戶就夠了",
+      "normalizedTitle": "簡單理財方法三個帳戶就夠了"
+    },
+    {
+      "articleId": "AK5EtrMRAmxB4qaFA6xA",
+      "title": "翻轉退休夢想：勞退自提6%，讓每一分薪水都成為未來的希望",
+      "normalizedTitle": "翻轉退休夢想勞退自提6%讓每一分薪水都成為未來的希望"
+    },
+    {
+      "articleId": "TJD0MKznTA2LQWJIs9O1mA",
+      "title": "職業工會勞保投保方式與常見問題",
+      "normalizedTitle": "職業工會勞保投保方式與常見問題"
+    },
+    {
+      "articleId": "0qmVvepDfQa41xbutQRNiQ",
+      "title": "職業災害理賠申請與權益",
+      "normalizedTitle": "職業災害理賠申請與權益"
+    },
+    {
+      "articleId": "09Zhuu8eSPKf39axj66lCA",
+      "title": "職業重建服務資源運用：開啟重返職場的希望之門",
+      "normalizedTitle": "職業重建服務資源運用開啟重返職場的希望之門"
+    },
+    {
+      "articleId": "jMawxZcISlyrow1nLNZMxg",
+      "title": "職業訓練投資效益評估",
+      "normalizedTitle": "職業訓練投資效益評估"
+    },
+    {
+      "articleId": "SnwMXYygRsaR2mmp4agp0A",
+      "title": "轉換性別者（男變女/女變男）的家庭財務與法律相關議題說明",
+      "normalizedTitle": "轉換性別者男變女/女變男的家庭財務與法律相關議題說明"
+    },
+    {
+      "articleId": "75VTLqRQhWbLnyw0DkYQ",
+      "title": "醫療保險理賠實務與技巧",
+      "normalizedTitle": "醫療保險理賠實務與技巧"
+    },
+    {
+      "articleId": "XHSqVeNOQTGqTbiAOimfKQ",
+      "title": "醫療相關保險介紹——從風險防護到現金流規劃的完整思考",
+      "normalizedTitle": "醫療相關保險介紹從風險防護到現金流規劃的完整思考"
+    },
+    {
+      "articleId": "nNzuOC4Qwm3qlkpFrlNw",
+      "title": "離婚協議財務重點",
+      "normalizedTitle": "離婚協議財務重點"
+    },
+    {
+      "articleId": "RjBXfOHgS5KlSClnPY988g",
+      "title": "離婚後的財務重建三步驟！不只是守住經濟底線，更是奪回人生主導權",
+      "normalizedTitle": "離婚後的財務重建三步驟不只是守住經濟底線更是奪回人生主導權"
+    },
+    {
+      "articleId": "AuDUGgStSR69ABDW6ebzKA",
+      "title": "離婚家庭財務重新分工",
+      "normalizedTitle": "離婚家庭財務重新分工"
+    },
+    {
+      "articleId": "0UHKIoeFcSWz1UeI2HXaAw",
+      "title": "寵物失去的哀傷輔導",
+      "normalizedTitle": "寵物失去的哀傷輔導"
+    },
+    {
+      "articleId": "vOJuIZGMQWy1q3QsqlgimA",
+      "title": "寵物行為問題處理",
+      "normalizedTitle": "寵物行為問題處理"
+    },
+    {
+      "articleId": "j0hl87EiQnG6o9p2JAgsRA",
+      "title": "寵物虐待與家暴關聯",
+      "normalizedTitle": "寵物虐待與家暴關聯"
+    },
+    {
+      "articleId": "B9VIm1QvSXQpwj4A2Q",
+      "title": "寵物基本開支預算規劃",
+      "normalizedTitle": "寵物基本開支預算規劃"
+    },
+    {
+      "articleId": "0tkAcaQyqQ4W8x2H7zJNdw",
+      "title": "寵物照顧能力評估",
+      "normalizedTitle": "寵物照顧能力評估"
+    },
+    {
+      "articleId": "0BN3uX9m3TpWOm9DCH6kKQ",
+      "title": "寵物繁殖與絕育教育",
+      "normalizedTitle": "寵物繁殖與絕育教育"
+    },
+    {
+      "articleId": "0Ll9qXlJTNmHqYa4TtIRzA",
+      "title": "寵物醫療費用管理",
+      "normalizedTitle": "寵物醫療費用管理"
+    },
+    {
+      "articleId": "7PrtVvT7SpS3x99UfHJg",
+      "title": "寵物議題-志工服務體系資源",
+      "normalizedTitle": "寵物議題志工服務體系資源"
+    },
+    {
+      "articleId": "kcHwSVLbRiCTdwfS2vpGLQ",
+      "title": "寵物議題與多專業團隊合作",
+      "normalizedTitle": "寵物議題與多專業團隊合作"
+    },
+    {
+      "articleId": "rDgHUqGnSbeBsmyzbLuRqQ",
+      "title": "懷孕到產後完整權益保障指南",
+      "normalizedTitle": "懷孕到產後完整權益保障指南"
+    },
+    {
+      "articleId": "017Vr9SyQzWPKaxqYKCXQg",
+      "title": "懷孕的理財規劃：從容迎接新生命的財務智慧",
+      "normalizedTitle": "懷孕的理財規劃從容迎接新生命的財務智慧"
+    },
+    {
+      "articleId": "KOKQpd2VTI6g8fU8cMFW1w",
+      "title": "懷孕期間的女性:職場挑戰與育兒財務準備",
+      "normalizedTitle": "懷孕期間的女性職場挑戰與育兒財務準備"
+    },
+    {
+      "articleId": "ePrx75TfR7Ww3lL0HQdVVg",
+      "title": "懷孕發現時的緊急經濟評估",
+      "normalizedTitle": "懷孕發現時的緊急經濟評估"
+    },
+    {
+      "articleId": "0RvPfC2PTEqa4OgjXtugjw",
+      "title": "穩定經濟重拾生活—阿豪的中高齡重生之路",
+      "normalizedTitle": "穩定經濟重拾生活阿豪的中高齡重生之路"
+    },
+    {
+      "articleId": "sAjwdd6GRE6JIWGqNURw",
+      "title": "關稅風暴下的勞工保護傘：社工協助經濟弱勢族群應對就業衝擊指南",
+      "normalizedTitle": "關稅風暴下的勞工保護傘社工協助經濟弱勢族群應對就業衝擊指南"
+    },
+    {
+      "articleId": "Lymzl9FITfWDZP4DXlqGpQ",
+      "title": "繼承土地真的賺到？小心資產變負債！",
+      "normalizedTitle": "繼承土地真的賺到小心資產變負債"
+    },
+    {
+      "articleId": "0igGSAURSGOcZ5QpjssMZg",
+      "title": "繼承方式選擇策略",
+      "normalizedTitle": "繼承方式選擇策略"
+    },
+    {
+      "articleId": "0L7Lg4aVTRYWIIH6pgjkXQ",
+      "title": "繼承糾紛與調解",
+      "normalizedTitle": "繼承糾紛與調解"
+    },
+    {
+      "articleId": "kDZR5hakRQW075cDuP64rg",
+      "title": "繼承基本法律概念入門",
+      "normalizedTitle": "繼承基本法律概念入門"
+    },
+    {
+      "articleId": "0m5d4fMC8TsOdSkFhPnSuA",
+      "title": "繼承過世親人的債務該如何處理？瞭解限定繼承與拋棄繼承的差別！",
+      "normalizedTitle": "繼承過世親人的債務該如何處理瞭解限定繼承與拋棄繼承的差別"
+    },
+    {
+      "articleId": "92Us4yJYROG4LyR5NoFwuw",
+      "title": "覺得快被帳單淹沒？這份「財務減壓」清單，帶你找回生活的掌控感",
+      "normalizedTitle": "覺得快被帳單淹沒這份財務減壓清單帶你找回生活的掌控感"
+    },
+    {
+      "articleId": "E30t5QVSSIGzoy0tQv5Zrg",
+      "title": "攜手共贏：建構勞資夥伴關係計畫在經濟弱勢服務中的應用與實踐",
+      "normalizedTitle": "攜手共贏建構勞資夥伴關係計畫在經濟弱勢服務中的應用與實踐"
+    },
+    {
+      "articleId": "9avpwWhRuKiujuGMnXzA",
+      "title": "聽障長者照護資源與溝通支持，讓「聲」活更美好",
+      "normalizedTitle": "聽障長者照護資源與溝通支持讓聲活更美好"
+    },
+    {
+      "articleId": "6D9WNffoQnWbbslXgbBwCw",
+      "title": "聽覺障礙者的資源：政府與民間的支持體系",
+      "normalizedTitle": "聽覺障礙者的資源政府與民間的支持體系"
+    },
+    {
+      "articleId": "0nXJLyU0OSS2iwPheJKS6w",
+      "title": "戀愛靠浪漫，婚姻靠算盤？家庭財務習慣差異的磨合",
+      "normalizedTitle": "戀愛靠浪漫婚姻靠算盤家庭財務習慣差異的磨合"
+    },
+    {
+      "articleId": "ty3etLX2Su6IGFnkYa7iVA",
+      "title": "讓信用卡不「卡」",
+      "normalizedTitle": "讓信用卡不卡"
+    },
+    {
+      "articleId": "aUF5A9twTcC6n3aaKHZeaA",
+      "title": "讓客人一眼記住你：打造具有吸引力的文宣品",
+      "normalizedTitle": "讓客人一眼記住你打造具有吸引力的文宣品"
+    },
+    {
+      "articleId": "TSKbEPO9TOCdGjXkwggzKw",
+      "title": "讓顧客主動找上你：如何提升廣告效益",
+      "normalizedTitle": "讓顧客主動找上你如何提升廣告效益"
+    },
+    {
+      "articleId": "rv6z9RSiTZ62Ws7S3uziJg",
+      "title": "鷹架理論(Scaffolding Theory)",
+      "normalizedTitle": "鷹架理論scaffoldingtheory"
+    },
+    {
+      "articleId": "uUkhl9Y9R2yvJTKwkoDr8Q",
+      "title": "AI時代的職涯新劇本：32K世代用「暫停鍵基金」買回人生選擇權",
+      "normalizedTitle": "ai時代的職涯新劇本32k世代用暫停鍵基金買回人生選擇權"
+    },
+    {
+      "articleId": "01aURenK8QzTw5PwKN6Ohw",
+      "title": "CP值可能使你誤入消費陷阱",
+      "normalizedTitle": "cp值可能使你誤入消費陷阱"
+    },
+    {
+      "articleId": "fwcLtp1sQJiUAr9BZTIeyw",
+      "title": "EP10-家裡大掃除學財務管理:孩子的第一堂財商實戰課",
+      "normalizedTitle": "ep10家裡大掃除學財務管理孩子的第一堂財商實戰課"
+    },
+    {
+      "articleId": "NUNDBWTuQFCTGX2TxaAzYQ",
+      "title": "EP11-擺脫以債養債的黑洞循環，運用「先盤點再協商」心法，找回財務自主權",
+      "normalizedTitle": "ep11擺脫以債養債的黑洞循環運用先盤點再協商心法找回財務自主權"
+    },
+    {
+      "articleId": "9SHHtg4R7uAFF2I1iaQw",
+      "title": "EP12-別讓醫療費拖垮人生! 從一萬救助金到重新開始，單親癌爸的財務重建之路",
+      "normalizedTitle": "ep12別讓醫療費拖垮人生從一萬救助金到重新開始單親癌爸的財務重建之路"
+    },
+    {
+      "articleId": "B65hXyfSBi2AyNI6STWA",
+      "title": "EP15-居家看護媽媽「以債養債」借高利還低利，月收9萬也不夠還債：債務失控5大警訊",
+      "normalizedTitle": "ep15居家看護媽媽以債養債借高利還低利月收9萬也不夠還債債務失控5大警訊"
+    },
+    {
+      "articleId": "0jV9T1T7rQjwwJYgDrLZDg",
+      "title": "EP17:存到20萬想翻身，卻掉進LINE投資群陷阱： 假投資APP用「先出金」誘騙加碼信貸100萬最後人間蒸發",
+      "normalizedTitle": "ep17存到20萬想翻身卻掉進line投資群陷阱假投資app用先出金誘騙加碼信貸100萬最後人間蒸發"
+    },
+    {
+      "articleId": "jvIABh0QR2qUuZ2VrZsY5A",
+      "title": "EP18-孩子會模仿你怎麼花錢:看見金錢基因用日常財務管理建立親子安全感與價值觀",
+      "normalizedTitle": "ep18孩子會模仿你怎麼花錢看見金錢基因用日常財務管理建立親子安全感與價值觀"
+    },
+    {
+      "articleId": "VqVc8WLVRja7OGUUfeJMuw",
+      "title": "EP18:孩子會模仿你怎麼花錢:看見金錢基因用日常財務管理建立親子安全感與價值觀",
+      "normalizedTitle": "ep18孩子會模仿你怎麼花錢看見金錢基因用日常財務管理建立親子安全感與價值觀"
+    },
+    {
+      "articleId": "w4MIcZORfyrl1vZWv2hQ",
+      "title": "EP19-四個孩子的單親媽媽，在照顧壓力與收支失衡下，如何看見真正的財務破口並開始調整 ：熱炒店媽媽的財務重整路",
+      "normalizedTitle": "ep19四個孩子的單親媽媽在照顧壓力與收支失衡下如何看見真正的財務破口並開始調整熱炒店媽媽的財務重整路"
+    },
+    {
+      "articleId": "AaUj7GqMSleLvC71uLpEzw",
+      "title": "EP20-財務自由第一步： 從現金流到記帳，看清錢的流向，找出金錢黑洞",
+      "normalizedTitle": "ep20財務自由第一步從現金流到記帳看清錢的流向找出金錢黑洞"
+    },
+    {
+      "articleId": "rs82i8aQiVTtsuYh1VAw",
+      "title": "EP7-鐵工爸爸走出財務黑洞：不穩定收入下的金錢自救課",
+      "normalizedTitle": "ep7鐵工爸爸走出財務黑洞不穩定收入下的金錢自救課"
+    },
+    {
+      "articleId": "0aFP65Q1Rc2egc7NqxYAJg",
+      "title": "EP8-月光族自救課 用現金流照妖鏡看懂你的花錢習慣",
+      "normalizedTitle": "ep8月光族自救課用現金流照妖鏡看懂你的花錢習慣"
+    },
+    {
+      "articleId": "LaA6QRASxmhxfyhqWwpA",
+      "title": "EP9-從月入50萬到負債700萬，一堂最痛也最重要的財商課",
+      "normalizedTitle": "ep9從月入50萬到負債700萬一堂最痛也最重要的財商課"
+    },
+    {
+      "articleId": "0HhmyRVBQT68aDzr7rHOmg",
+      "title": "LGBT+多元性別基礎認知",
+      "normalizedTitle": "lgbt+多元性別基礎認知"
+    },
+    {
+      "articleId": "vqZIF059QXiw41iXHNaEww",
+      "title": "LGBTQ+族群的財務偏好與財務議題",
+      "normalizedTitle": "lgbtq+族群的財務偏好與財務議題"
+    },
+    {
+      "articleId": "0jnRKor5jSQm7jnABKcdfA",
+      "title": "Podcast 上線",
+      "normalizedTitle": "podcast上線"
+    },
+    {
+      "articleId": "0dSVNCpOCQRCdWReL7LLFA",
+      "title": "SOAP紀錄法",
+      "normalizedTitle": "soap紀錄法"
+    }
+  ]
+}

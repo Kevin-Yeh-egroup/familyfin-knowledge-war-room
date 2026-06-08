@@ -408,10 +408,24 @@
       gap: 10px;
     }
 
-    .weekly-records details {
+    .pack-history-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .weekly-records details,
+    .pack-history-item {
       border: 1px solid var(--line);
       border-radius: 8px;
       background: #fbfcfe;
+    }
+
+    .pack-history-item {
+      padding: 14px;
+    }
+
+    .pack-history-item h4 {
+      margin-bottom: 6px;
     }
 
     .weekly-records summary {
@@ -604,6 +618,16 @@
             <p>文章包改為純文字正文與複製流程。審核焦點從「欄位完整」往前移到「是否太概念、是否有生活畫面、資料是否自然融入」。</p>
           </div>
         </div>
+        <div class="box" style="margin-top:16px">
+          <div class="detail-top">
+            <div>
+              <h3>文章包產出紀錄</h3>
+              <p class="sub" id="articlePackHistoryStatus">讀取 article-pack-history.json 中...</p>
+            </div>
+          </div>
+          <div id="articlePackHistory" class="pack-history-list" style="margin-top:14px"></div>
+          <div class="copy-note" id="articlePackHistoryCopyNote">每次純文字文章包產出或被 gate 擋下，都會在這裡留下批次紀錄。</div>
+        </div>
       </div>
     </section>
 
@@ -770,6 +794,7 @@
 
     let data = { articlePack: { articles: [] }, metrics: {}, qualityGates: [] };
     let analysisHistory = { entries: [] };
+    let articlePackHistory = { records: [], generationAttempts: [] };
     let activeId = null;
     let activeBody = "";
     let activeWeeklyId = null;
@@ -981,7 +1006,7 @@
         meta.className = "meta-line";
         meta.append(makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold"));
         meta.append(makeTag(article.audience, article.audience === "社工" ? "blue" : "green"));
-        meta.append(makeTag(article.bodyChars + " 字正文", "rose"));
+        meta.append(makeTag(article.bodyChars + " 字非空白正文", "rose"));
         meta.append(makeTag(article.primaryTag));
         button.append(title, meta);
         list.appendChild(button);
@@ -1083,6 +1108,54 @@
       renderHistoryDetail();
     }
 
+    function renderArticlePackHistory() {
+      const wrap = document.getElementById("articlePackHistory");
+      if (!wrap) return;
+      wrap.textContent = "";
+      const records = articlePackHistory.records || [];
+      const attempts = articlePackHistory.generationAttempts || [];
+      if (!records.length && !attempts.length) {
+        wrap.appendChild(paragraph("目前還沒有文章包產出紀錄。"));
+        return;
+      }
+
+      records.forEach((record) => {
+        const item = document.createElement("div");
+        item.className = "pack-history-item";
+        const title = document.createElement("h4");
+        title.textContent = record.title;
+        const meta = document.createElement("div");
+        meta.className = "meta-line";
+        meta.append(makeTag(record.date || "未標日期", "green"));
+        meta.append(makeTag(record.statusLabel || record.status || "已記錄", record.status === "current_review_pack" ? "green" : "gold"));
+        meta.append(makeTag(`${record.articleCount || 0} 篇`, "blue"));
+        meta.append(makeTag(`${record.bodyCharsMin || 0}-${record.bodyCharsMax || 0} 字非空白正文`, "rose"));
+        const note = paragraph(`${record.directory || ""}。${(record.notes || [])[0] || ""}`);
+        const checks = makeRuleListElement(record.checks || [], "尚未填寫檢查紀錄。");
+        const actions = document.createElement("div");
+        actions.className = "actions";
+        actions.append(actionButton("複製批次紀錄", "", () => copyText(record.copyText || record.title, "已複製文章包批次紀錄。", "articlePackHistoryCopyNote")));
+        item.append(title, meta, note, checks, actions);
+        wrap.appendChild(item);
+      });
+
+      attempts.forEach((attempt) => {
+        const item = document.createElement("div");
+        item.className = "pack-history-item";
+        const title = document.createElement("h4");
+        title.textContent = attempt.title;
+        const meta = document.createElement("div");
+        meta.className = "meta-line";
+        meta.append(makeTag(attempt.date || "未標日期", "green"));
+        meta.append(makeTag(attempt.statusLabel || "未產出", "gold"));
+        meta.append(makeTag("0 篇", "rose"));
+        const reason = paragraph(attempt.reason || "本次未產出文章包。");
+        const next = makeRuleListElement(attempt.nextActions || [], "尚未填寫下一步。");
+        item.append(title, meta, reason, next);
+        wrap.appendChild(item);
+      });
+    }
+
     function renderDetail() {
       const detail = document.getElementById("articleDetail");
       const articles = data.articlePack.articles || [];
@@ -1101,7 +1174,7 @@
       title.textContent = article.title;
       const meta = document.createElement("p");
       meta.className = "sub";
-      meta.textContent = `${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字 / ${article.categoryType}`;
+      meta.textContent = `${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`;
       titleWrap.append(title, meta);
       top.append(titleWrap, makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold"));
       detail.appendChild(top);
@@ -1245,11 +1318,13 @@
       renderList();
       renderDetail();
       renderVault();
+      renderArticlePackHistory();
     }
 
     async function init() {
       const status = document.getElementById("dataStatus");
       const historyStatus = document.getElementById("historyStatus");
+      const articlePackHistoryStatus = document.getElementById("articlePackHistoryStatus");
       try {
         const response = await fetch("suggestions.json", { cache: "no-store" });
         if (!response.ok) throw new Error("suggestions.json " + response.status);
@@ -1268,6 +1343,14 @@
         historyStatus.textContent = `已載入 ${analysisHistory.weeklyReportCount || 0} 份週報、${analysisHistory.count || 0} 筆分析紀錄，更新時間 ${analysisHistory.updatedAt || ""}`;
       } catch (error) {
         historyStatus.textContent = "讀取 analysis-history.json 失敗：" + error.message;
+      }
+      try {
+        const packHistoryResponse = await fetch("article-pack-history.json", { cache: "no-store" });
+        if (!packHistoryResponse.ok) throw new Error("article-pack-history.json " + packHistoryResponse.status);
+        articlePackHistory = await packHistoryResponse.json();
+        articlePackHistoryStatus.textContent = `已載入 ${articlePackHistory.packCount || 0} 個文章包、${articlePackHistory.generationAttemptCount || 0} 次未產出紀錄，更新時間 ${articlePackHistory.updatedAt || ""}`;
+      } catch (error) {
+        articlePackHistoryStatus.textContent = "讀取 article-pack-history.json 失敗：" + error.message;
       }
       render();
     }

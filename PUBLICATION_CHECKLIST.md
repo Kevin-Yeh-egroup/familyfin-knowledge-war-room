@@ -20,6 +20,12 @@ Current package:
 - First submission pack: `articles/2026-06-02-weekly-pack/`
 - Suggestions data: `suggestions.json`
 - Weekly report and analysis history data: `analysis-history.json`
+- Plain-text article pack history data: `article-pack-history.json`
+- Public knowledge-base title index: `data/knowledge-base-title-index.json`
+- War room state validator: `tools/validate-war-room-state.js`
+- Biweekly prewrite checklist: `docs/biweekly-prewrite-checklist-2026-06-08.md`
+- Source-of-truth reconciliation: `reports/2026-06-08-source-of-truth-reconciliation.md`
+- Submission mechanism chat review: `reports/2026-06-08-submission-mechanism-chat-review.md`
 
 2026-06-02 update:
 
@@ -39,9 +45,19 @@ Current package:
 
 - [x] Analysis history panel added to the public review page.
 - [x] Analysis history is now grouped into weekly reports with status, outcomes, blockers, next actions, and expandable records.
+- [x] Plain-text article pack outputs are logged in `article-pack-history.json`, including generated packs and blocked attempts.
 - [x] Previous reports and logs are exposed only as public-safe derived summaries.
 - [x] Local private paths are normalized before writing `analysis-history.json`.
 - [x] Copy and TXT download actions added for each analysis record.
+
+2026-06-08 local gate upgrade:
+
+- [x] Current article body length gate changed to non-whitespace body characters.
+- [x] `tools/validate-war-room-state.js` added for JSON, gate-count, role-leak, body-length, bodyPath, title novelty, and article-pack-history drift checks.
+- [x] Source-of-truth reconciliation report added so weekly and biweekly flows know which repo files are authoritative.
+- [x] Biweekly prewrite checklist added; formal 10-article packs should stop at blocker report when live review/comment learning is insufficient.
+- [x] 「檢核投稿機制」聊天本體回查完成，已將標題新意、內容差異、新讀者價值與案例數字判斷回填到產稿前 gate。
+- [x] Public knowledge-base title index added; validator now checks current candidate titles against 1323 existing public knowledge-base titles.
 
 Production proof:
 

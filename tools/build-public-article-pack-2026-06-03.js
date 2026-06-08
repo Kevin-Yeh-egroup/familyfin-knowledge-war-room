@@ -2,6 +2,7 @@
 
 const fs = require("fs");
 const path = require("path");
+const { execFileSync } = require("child_process");
 
 const repoRoot = path.resolve(__dirname, "..");
 const packId = "2026-06-03-public-regenerated-pack";
@@ -73,6 +74,45 @@ function body(paragraphs) {
   return paragraphs.map((line) => line.trim()).filter(Boolean).join("\n\n");
 }
 
+function bodyCharCount(text) {
+  return (text.match(/\S/g) || []).length;
+}
+
+function normalizeTitleForSimilarity(title) {
+  return String(title || "")
+    .normalize("NFKC")
+    .toLowerCase()
+    .replace(/[「」『』《》〈〉（）()【】\[\]{}、，。！？!?:：；;,.．・\-—_~～\s]/g, "")
+    .trim();
+}
+
+function levenshteinDistance(a, b) {
+  const rows = a.length + 1;
+  const cols = b.length + 1;
+  const matrix = Array.from({ length: rows }, () => Array(cols).fill(0));
+  for (let i = 0; i < rows; i += 1) matrix[i][0] = i;
+  for (let j = 0; j < cols; j += 1) matrix[0][j] = j;
+  for (let i = 1; i < rows; i += 1) {
+    for (let j = 1; j < cols; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      matrix[i][j] = Math.min(
+        matrix[i - 1][j] + 1,
+        matrix[i][j - 1] + 1,
+        matrix[i - 1][j - 1] + cost,
+      );
+    }
+  }
+  return matrix[a.length][b.length];
+}
+
+function titleSimilarityScore(a, b) {
+  const left = normalizeTitleForSimilarity(a);
+  const right = normalizeTitleForSimilarity(b);
+  if (!left || !right) return 0;
+  if (left === right) return 1;
+  return 1 - levenshteinDistance(left, right) / Math.max(left.length, right.length);
+}
+
 const articles = [
   {
     id: "rent-subsidy-cashflow",
@@ -109,6 +149,7 @@ const articles = [
       "租屋壓力也常藏在合約細節裡。管理費是否另計、電費是否用較高單價、網路和第四台是否綁在房租裡、退租是否要提前一個月告知，這些都會改變家庭實際負擔。假設房租看起來是20,000元，但管理費1,500元、電費每月多700元，實際居住成本就是22,200元。若只用房租名目估算，家庭每月會少估2,200元，一年就是26,400元。",
       "還有一個常被忽略的是搬家成本。就算找到每月少2,000元的房子，如果搬家、清潔、押金差額和通勤增加合計要40,000元，前20個月才開始真正省到錢。對手上沒有緩衝的家庭來說，搬家可能短期更危險。這時要比較的不是新房租和舊房租，而是搬家後多久能回收成本，以及孩子通學、工作通勤會不會把省下的錢吃掉。",
       "如果家庭已經快繳不出房租，順序也要清楚。先確認本月到期金額，再確認能否與房東溝通分期或延後幾天，同時查當地是否有急難或租屋協助。不要一開始就用高利借款補房租，因為下個月房租還會再來。能先爭取時間、減少一次性支出、把補貼申請接上，家庭才不會因一個月的缺口滾成長期債務。",
+      "如果想知道房租到底壓到哪裡，可以先抓兩個比例。第一是房租加管理費占收入多少，第二是房租到期前帳戶剩多少。假設收入58,000元，實際居住成本22,200元，占38.3%。若薪水十號進來、房租五號扣款，五號前帳戶只剩8,000元，就算整月收入沒有赤字，月初仍然會出事。這時調整的重點不是責備自己花太多，而是先讓扣款日、補貼日和薪水日不要互相撞在一起。",
       "房租讓人焦慮，不代表你不會生活。很多時候，是住的地方、工作的收入、孩子的需求和制度時間沒有排在同一條線上。當你開始看懂房租不是單一支出，而是一個會影響整個家庭節奏的固定壓力，才有機會重新安排手上的選擇。能不能住得穩，不只看有沒有補貼，也看家庭能不能在房租到期前，保留一點可以呼吸的空間。",
     ]),
   },
@@ -148,6 +189,7 @@ const articles = [
       "單親家庭也常遇到「看起來有幫忙，實際不穩定」的狀況。家人願意接孩子，但只能偶爾；朋友可以代接，但不能長期；前伴侶說會付費用，卻常常延遲。這些不確定都會變成照顧者的風險。若每月應收到6,000元扶養費，但平均只收到3,000元，家庭就不能用6,000元安排生活，而要把3,000元差額列成風險。",
       "再看一個假設調整。原本托育和接送讓照顧者每月少收入3,200元，又常因扶養費延遲少3,000元，合計6,200元缺口。後來把孩子接送固定成每週三天由親友接、兩天使用延托，每月延托費1,200元，但請假損失降到1,600元；扶養費則改成先以保守金額3,000元估生活。家庭沒有突然變輕鬆，卻少了每月把不存在的錢算進預算的風險。",
       "這裡的重點不是要求每個人都找到完美後援，而是先區分穩定和不穩定。穩定支援可以放進每月安排，不穩定支援只能當作加分。當家庭用穩定支援安排基本生活，用不穩定支援處理臨時狀況，照顧者比較不會每個月都在失望和補洞之間來回。",
+      "也可以替自己設一個最低可用餘額。不是每月剩多少都可以花，而是扣掉下個月托育、房租和交通後，至少要留下3,000元到5,000元處理孩子臨時生病、學校通知或工作請假。若目前每月只剩1,000元，就代表家庭不是沒有節制，而是任何小變動都會變成債務。把這個數字說清楚，和家人、工作現場或承辦窗口討論時，也比較不會只剩一句「我真的撐不住」。",
       "單親家庭不是比較脆弱，而是生活容錯率比較低。一次延遲接送、一次孩子發燒、一次薪水晚入帳，都可能讓整個月重新洗牌。當你把托育、收入和時間放在同一張表上看，壓力會從一團混亂變成幾個可以處理的缺口。真正重要的，不是要求自己更堅強，而是讓家庭不再每個月都靠硬撐通過。",
     ]),
   },
@@ -266,6 +308,7 @@ const articles = [
       "照顧安排還要看持續性。第一個月家人願意輪流請假，第三個月可能就開始困難；剛出院時親友會來探望，半年後可能只剩主要照顧者每天面對。若家庭只用第一個月的支援程度估算未來，很容易低估長期成本。比較實際的是用三個月、六個月、一年的尺度來看誰能固定做什麼。",
       "假設第一個月親友協助讓臨時看護費只有2,000元，第二個月變成5,000元，第三個月到8,000元，平均每月其實是5,000元。若家庭只記第一個月，就會以為壓力還好。照顧成本表要持續更新，因為人的體力、病況和支援都會變。",
       "還有一個容易被忽略的風險，是照顧者自己的健康。長期睡不好、吃不好、一直請假，可能讓照顧者也需要就醫，甚至影響工作。若照顧者因此每月多出1,500元醫療與交通費，家庭缺口會再擴大。喘息和替手不是奢侈，而是避免第二個人也倒下的基本安排。",
+      "家人討論長照時，也可以先把最容易吵架的地方換成數字。主要照顧者每月少收入4,000元、耗材3,500元、交通2,400元，合計9,900元。如果另一位家人每月只能支援3,000元，缺口仍有6,900元。這不是要算誰比較孝順，而是讓大家看見：若沒有制度服務、固定分工或支出調整，主要照顧者其實是在用自己的收入補整個家的照顧缺口。",
       "若家中有兄弟姊妹，也可以把支持換算成具體項目。有人每月出3,000元，有人每週陪診一次，有人負責查長照窗口，有人整理收據。不要只問誰比較有心，因為心意很難結帳。把錢、時間和文件分清楚，家庭比較容易知道缺的是費用、陪伴，還是行政處理。",
     ]),
   },
@@ -352,6 +395,7 @@ const articles = [
       "假設每月分期多4,000元，原本剩1,200元的生活會直接變成少2,800元。若把購買延後三個月，先存到10,000元緩衝，再決定是否分期，風險就不同。不是不能買，而是先確認這份工作能不能穩定撐過試用期，以及每月是否還有現金留下來。",
       "家用也可以談成階段式。前六個月每月2,500元，半年後若薪水提高或工作穩定，再調回4,000元。對家庭來說，總支援可能只是晚一點增加；對剛就業的人來說，前六個月多出的9,000元緩衝，可能避免第一張信用卡債出現。這不是逃避責任，而是讓責任不會壓垮起步期。",
       "如果一定要搬出去，也要把押金和第一個月生活費分開。假設租金9,500元，兩個月押金19,000元，加上第一個月租金和基本家具，可能一開始就要35,000元以上。若手上只有40,000元，搬完只剩5,000元，接下來任何小意外都會變成卡債。搬出去之前先存到搬家成本加一個月生活費，會比只看每月租金更穩。這一點越早看見，越不容易把獨立誤會成硬撐。",
+      "第一份薪水真正要看的，不是能不能立刻做出漂亮計畫，而是月底是不是還有一點現金。只要每月能留下2,000元到3,000元，三個月就有6,000元到9,000元，至少能處理一次小修車、看診或臨時交通。這筆錢不會讓人馬上寬裕，卻能讓剛開始工作的生活少一次刷卡補洞。起步期先保住這一點距離，之後才比較有力氣談存款、進修和更好的工作。",
     ]),
   },
   {
@@ -392,6 +436,7 @@ const articles = [
       "假設每月5號房貸扣27,000元，8號保費扣6,000元，10號才發薪。原本帳戶有緩衝時沒問題，收入減少後就會很危險。若能把保費改到15號，或保留一個只放固定扣款的帳戶，家庭至少不會每個月月初就陷入緊張。收入下降時，日期安排本身就是風險管理。",
       "也要留意孩子和長輩的固定承諾。補習、安親、長輩生活費、醫療回診，通常不會因為家中有人減班就自然停止。若要調整，越早說越容易保留選擇。等到欠費或臨時取消，關係和信用都會一起受影響。提早一個月溝通，比月底才道歉更有空間。",
       "收入下降時，也要把資源查詢當成工作的一部分。每天花20分鐘確認勞動部、地方就業服務站、公司人資或工會資訊，比等到赤字擴大後才慌張有效。這不是悲觀，而是把可能的出口先放在手邊。若後來工時恢復，這些資料只是備用；若沒有恢復，家庭就少走一段彎路。",
+      "最怕的是把減班當成單月意外，卻連續三個月都用信用卡補生活費。假設每月少2,400元，三個月就是7,200元；如果再加上利息和最低應繳，原本只是收入少一段，可能變成新的債務壓力。先把30天、90天、半年三種情境分開看，家庭才知道現在要先調哪一筆固定扣款、哪一個支援可以暫緩、哪一個資源要趁早詢問。",
     ]),
   },
   {
@@ -428,6 +473,7 @@ const articles = [
       "真正改善的關鍵有三個。第一，先判斷家庭變故屬於哪一種資格，不要用聽說代替確認。第二，把需求分成生活費、孩子、教育、醫療四類，對應不同扶助項目。第三，確認地方政府最新規定與文件清單，因為中央法律提供架構，實際申請仍要看所在地承辦單位。",
       "也要避免把特殊境遇理解成一次性救急。很多家庭最困難的不是第一天，而是三個月後。剛開始親友可能會幫忙，之後生活逐漸回到自己負擔，壓力才真正浮出來。緊急生活扶助如果只能接住短期，就要同時思考工作、托育、租屋、債務和孩子就學安排。這不是貪心，而是家庭要從危機回到可以安排，需要不只一個支點。",
       "申請資源時，也不用把自己說得很失敗。制度存在，是因為家庭遇到變故時，常常會暫時撐不住原本的生活。你需要說清楚的，不是證明自己多可憐，而是收入少了多少、支出增加多少、孩子和醫療需要什麼、目前最急的期限是哪一天。當生活缺口被講清楚，資源才比較可能接到正確的位置。",
+      "如果不知道要先問哪一個窗口，可以先把問題拆成兩層。第一層是本月會不會斷，像房租、餐費、孩子照顧和醫療。第二層是接下來三個月會不會回到赤字，像工作收入、托育安排、債務月付。假設本月缺12,000元，但三個月後每月仍少4,000元，就不能只處理眼前12,000元，也要同步找出每月4,000元從哪裡補回來。這樣問資源時，才不會只拿到一次協助，卻沒有處理下一個月的生活。",
       "特殊境遇扶助真正要幫忙的，不只是一個身分，而是一段家庭突然失去平衡的時間。當你把文件、期限和金額放在一起看，壓力會從一團混亂變成幾個可以處理的步驟。能不能重新站穩，不只是看有沒有補助，也看協助能不能在最急的時候，先補上房租、孩子或醫療那一塊。",
       "還要注意，補助不是一次申請就代表所有問題都被處理。緊急生活扶助有期間限制，子女津貼也有年齡和資格條件，教育與醫療補助各有用途。家庭如果把所有支出都期待同一個補助解決，三個月後可能又回到原點。比較穩的方式，是把短期救急和中期生活安排分開。",
       "假設家庭因變故前三個月取得緊急生活扶助，短期房租和生活費比較能撐住。但三個月後若工作、托育或債務沒有整理，每月赤字仍會回來。這時緊急扶助的價值，是爭取時間讓家庭處理工作、孩子照顧和住處，而不是取代長期收入。",
@@ -510,10 +556,16 @@ function validateArticles() {
   const ids = new Set();
   const titleFamilyCounts = {};
   const repeatedTitleFrames = [];
+  const normalizedTitles = [];
   for (const article of articles) {
     if (ids.has(article.id)) fail(`Duplicate article id: ${article.id}`);
     ids.add(article.id);
-    if (article.text.length <= 2000) fail(`${article.id} body too short: ${article.text.length}`);
+    const normalizedTitle = normalizeTitleForSimilarity(article.title);
+    normalizedTitles.push({ id: article.id, title: article.title, normalizedTitle });
+    const nonWhitespaceChars = bodyCharCount(article.text);
+    if (nonWhitespaceChars <= 2000) {
+      fail(`${article.id} body too short: ${nonWhitespaceChars} non-whitespace chars`);
+    }
     const leaks = findBodyLeaks(article.text);
     if (leaks.length) fail(`${article.id} has role/meta leaks: ${leaks.join(", ")}`);
     const bodyNaturalnessIssues = findBodyNaturalnessIssues(article.text);
@@ -536,6 +588,26 @@ function validateArticles() {
   if (repeatedTitleFrames.length) {
     fail(`Title frame too repetitive: ${repeatedTitleFrames.join(", ")}`);
   }
+  for (let i = 0; i < normalizedTitles.length; i += 1) {
+    for (let j = i + 1; j < normalizedTitles.length; j += 1) {
+      const left = normalizedTitles[i];
+      const right = normalizedTitles[j];
+      if (!left.normalizedTitle || !right.normalizedTitle) continue;
+      const pair = `${left.id} <-> ${right.id}`;
+      const score = titleSimilarityScore(left.title, right.title);
+      const shorter = left.normalizedTitle.length <= right.normalizedTitle.length ? left : right;
+      const longer = shorter === left ? right : left;
+      if (left.normalizedTitle === right.normalizedTitle) {
+        fail(`Duplicate normalized title: ${pair}`);
+      }
+      if (score >= 0.9) {
+        fail(`Near-duplicate title: ${pair} (${score.toFixed(2)})`);
+      }
+      if (shorter.normalizedTitle.length >= 12 && longer.normalizedTitle.includes(shorter.normalizedTitle)) {
+        fail(`Contained/reused core title: ${pair}`);
+      }
+    }
+  }
 }
 
 function articleRecord(article) {
@@ -546,7 +618,15 @@ function articleRecord(article) {
     primaryTag: article.primaryTag,
     secondaryTags: article.secondaryTags,
     categoryType: article.categoryType,
-    bodyChars: article.text.length,
+    bodyChars: bodyCharCount(article.text),
+    bodyCharsIncludingWhitespace: article.text.length,
+    bodyLengthGate: {
+      status: "passed",
+      mode: "non_whitespace",
+      minRequired: 2001,
+      nonWhitespaceChars: bodyCharCount(article.text),
+      charsIncludingWhitespace: article.text.length,
+    },
     readiness: "可投稿初稿，待 Kevin 核准",
     approvalStatus: "pending",
     bodyPath: `articles/${packId}/${article.fileName}`,
@@ -564,6 +644,7 @@ function articleRecord(article) {
       "nonConceptReview",
       "bodyNaturalnessReview",
       "roleIntegrityReview",
+      "titleNoveltyReview",
     ],
     nonConceptReview: {
       status: "passed_draft_gate",
@@ -576,6 +657,11 @@ function articleRecord(article) {
     roleIntegrityReview: {
       status: "passed_prewrite_gate",
       note: "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。",
+    },
+    titleNoveltyReview: {
+      status: "passed_current_pack_gate",
+      normalizedTitle: normalizeTitleForSimilarity(article.title),
+      note: "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。",
     },
   };
 }
@@ -593,6 +679,14 @@ function updateSuggestions() {
     roleIntegrityGateRequired: true,
     bodyNaturalnessGateRequired: true,
     familyEconomicGateRequired: true,
+    bodyLengthGateRequired: true,
+    bodyLengthCountMode: "non_whitespace",
+    titleNoveltyGateRequired: true,
+    contentDifferenceReviewRequired: true,
+    submissionSimilarityMethodologyIntegrated: true,
+    knowledgeBaseTitleIndexRequired: true,
+    knowledgeBaseTitleIndexPath: "data/knowledge-base-title-index.json",
+    submissionQualityGateCount: Object.keys(gateDrivenContract.gateToGenerationMoves || {}).length,
     defaultAudience: "一般民眾",
   };
   suggestions.articlePack = {
@@ -613,9 +707,11 @@ function updateSuggestions() {
       seoAioVisible: false,
       bodyOnlyCopy: true,
       bodyMinChars: 2000,
+      bodyCountMode: "non_whitespace",
       titleDiversityRequired: true,
       titleNaturalTaiwanChineseRequired: true,
       bodyNaturalTaiwanChineseRequired: true,
+      existingKnowledgeBaseTitleCheckRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     files: {
@@ -647,6 +743,9 @@ function updateSuggestions() {
       status: "required",
       note: "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句，且必須是自然台灣中文，不可像美語直譯或顧問簡報。",
       maxNotColonReframeTitles: 2,
+      titleNoveltyGate: "同批標題不得正規化後相同、不得 90% 以上近似，也不得把另一篇核心題名完整包進長副標。",
+      existingKnowledgeBaseGate: "正式產稿前需比對好理家在既有知識庫題名；同題可寫，但必須提出新情境、新數字、新決策判斷，不能只沿用成功標題再換副標。",
+      titleIndexCommand: "node tools/build-knowledge-base-title-index.js",
       awkwardTitleExamples: [
         "緊急預備金要先回答收入空窗",
         "家庭要先做的財務止血",
@@ -703,6 +802,20 @@ function updateSuggestions() {
         "把希望感建立在具體可整理的缺口上，不寫成雞湯。",
       ],
     },
+    submissionSimilarityLearningPolicy: {
+      status: "integrated_from_chat_review",
+      source: "檢核投稿機制聊天本體，2026-06-06",
+      note: "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
+      titleGate: [
+        "標題是第一提醒點，需檢查同批重複、既有題名包含、近似成功標題加副標。",
+        "標題一致或高度相似不直接代表抄襲，但正式產稿前不得忽略，需寫出差異價值。",
+      ],
+      contentGate: [
+        "正文要比對案例角色、金額/比例/時間、段落順序、核心建議與結論是否沿用。",
+        "短稿若低於字數門檻且缺具體情境、缺數字或決策歷程，不能標示為可投稿。",
+      ],
+      generationMove: "每篇候選題在開寫前先寫一句：本題和既有文章最大的新增價值是什麼。答不出來就換題。",
+    },
   };
   suggestions.roleIntegrityCorrection = {
     status: "implemented",
@@ -713,6 +826,12 @@ function updateSuggestions() {
   };
   suggestions.gateDrivenArticleGeneration = gateDrivenContract;
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
+}
+
+function updateArticlePackHistory() {
+  execFileSync(process.execPath, [path.join(__dirname, "build-article-pack-history.js")], {
+    stdio: "inherit",
+  });
 }
 
 function writeArticleFiles() {
@@ -737,6 +856,7 @@ function writeArticleFiles() {
 validateArticles();
 writeArticleFiles();
 updateSuggestions();
+updateArticlePackHistory();
 
 console.log(
   JSON.stringify(
@@ -744,7 +864,11 @@ console.log(
       packId,
       count: articles.length,
       directory: path.relative(repoRoot, packDir).replace(/\\/g, "/"),
-      bodyChars: articles.map((article) => ({ id: article.id, bodyChars: article.text.length })),
+      bodyChars: articles.map((article) => ({
+        id: article.id,
+        bodyChars: bodyCharCount(article.text),
+        bodyCharsIncludingWhitespace: article.text.length,
+      })),
     },
     null,
     2,

@@ -22,7 +22,7 @@
     "reviewRejectionTotalFromUi": 290,
     "reviewRejectionTextRows": 143,
     "reviewRejectionEmptyReviewModalRows": 147,
-    "submissionQualityGateCount": 11,
+    "submissionQualityGateCount": 12,
     "submissionQualityFatalGateCount": 4,
     "familyEconomicGateRequired": true,
     "roleIntegrityGateRequired": true,
@@ -30,7 +30,14 @@
     "currentArticlePackRoleAuditMatches": 0,
     "cleanPublicArticlePackCount": 10,
     "latestCleanPackRoleAuditMatches": 0,
-    "bodyNaturalnessGateRequired": true
+    "bodyNaturalnessGateRequired": true,
+    "bodyLengthGateRequired": true,
+    "bodyLengthCountMode": "non_whitespace",
+    "titleNoveltyGateRequired": true,
+    "contentDifferenceReviewRequired": true,
+    "submissionSimilarityMethodologyIntegrated": true,
+    "knowledgeBaseTitleIndexRequired": true,
+    "knowledgeBaseTitleIndexPath": "data/knowledge-base-title-index.json"
   },
   "learningSummary": {
     "status": "completed",
@@ -164,7 +171,15 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2051,
+        "bodyChars": 2195,
+        "bodyCharsIncludingWhitespace": 2227,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2195,
+          "charsIncludingWhitespace": 2227
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/01-rent-subsidy-cashflow.txt",
@@ -190,7 +205,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -203,6 +219,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "房租五號到期補貼還沒進來租屋家庭最容易卡住的時間差",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -216,7 +237,15 @@
           "家庭重大事件-兒少照顧"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2035,
+        "bodyChars": 2169,
+        "bodyCharsIncludingWhitespace": 2203,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2169,
+          "charsIncludingWhitespace": 2203
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/02-single-parent-childcare-gap.txt",
@@ -242,7 +271,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -255,6 +285,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "一個人接孩子也一個人接帳單單親家庭的托育費為什麼常變成收入缺口",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -268,7 +303,15 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "資源制度型",
-        "bodyChars": 2115,
+        "bodyChars": 2081,
+        "bodyCharsIncludingWhitespace": 2115,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2081,
+          "charsIncludingWhitespace": 2115
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/03-debt-negotiation-cashflow.txt",
@@ -294,7 +337,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -307,6 +351,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "每月都在繳債卻沒變少債務協商前先看懂家庭還款壓力",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -320,7 +369,15 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2113,
+        "bodyChars": 2081,
+        "bodyCharsIncludingWhitespace": 2113,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2081,
+          "charsIncludingWhitespace": 2113
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/04-emergency-buffer-income-gap.txt",
@@ -346,7 +403,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -359,6 +417,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "手上只剩一萬元能撐到下次薪水嗎先把緊急預備金換成天數看",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -372,7 +435,15 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "家庭經濟轉譯型",
-        "bodyChars": 2057,
+        "bodyChars": 2188,
+        "bodyCharsIncludingWhitespace": 2222,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2188,
+          "charsIncludingWhitespace": 2222
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/05-long-term-care-family-budget.txt",
@@ -398,7 +469,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -411,6 +483,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "爸爸出院後家裡多了哪些帳單長照成本常從看不見的地方開始",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -424,7 +501,15 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2107,
+        "bodyChars": 2071,
+        "bodyCharsIncludingWhitespace": 2107,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2071,
+          "charsIncludingWhitespace": 2107
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/06-scam-loss-family-recovery.txt",
@@ -454,7 +539,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -467,6 +553,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "錢被騙走以後這個月怎麼過先把房租吃飯和帳單排出來",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -480,7 +571,15 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2023,
+        "bodyChars": 2151,
+        "bodyCharsIncludingWhitespace": 2187,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2151,
+          "charsIncludingWhitespace": 2187
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/07-first-job-family-support.txt",
@@ -506,7 +605,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -519,6 +619,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "第一份薪水進來前房租和家用已經排隊青年獨立的第一張收支表",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -532,7 +637,15 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2021,
+        "bodyChars": 2134,
+        "bodyCharsIncludingWhitespace": 2170,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2134,
+          "charsIncludingWhitespace": 2170
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/08-reduced-hours-income-warning.txt",
@@ -558,7 +671,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -571,6 +685,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "減班休息先看三筆錢收入少一截時帳單不會跟著少",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -584,7 +703,15 @@
           "評估與輔導觀點-資源盤點"
         ],
         "categoryType": "資源制度型",
-        "bodyChars": 2035,
+        "bodyChars": 2183,
+        "bodyCharsIncludingWhitespace": 2219,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2183,
+          "charsIncludingWhitespace": 2219
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/09-special-circumstance-support.txt",
@@ -610,7 +737,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -623,6 +751,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "變故後的三個月怎麼撐特殊境遇家庭扶助要接住的是生活缺口",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       },
       {
@@ -636,7 +769,15 @@
           "財務管理與規劃-緊急預備金"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2134,
+        "bodyChars": 2098,
+        "bodyCharsIncludingWhitespace": 2134,
+        "bodyLengthGate": {
+          "status": "passed",
+          "mode": "non_whitespace",
+          "minRequired": 2001,
+          "nonWhitespaceChars": 2098,
+          "charsIncludingWhitespace": 2134
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt",
@@ -666,7 +807,8 @@
           "readiness",
           "nonConceptReview",
           "bodyNaturalnessReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleNoveltyReview"
         ],
         "nonConceptReview": {
           "status": "passed_draft_gate",
@@ -679,6 +821,11 @@
         "roleIntegrityReview": {
           "status": "passed_prewrite_gate",
           "note": "正文只保留一般民眾閱讀內容，未混入作者、審稿、agent 或社工版本建議。"
+        },
+        "titleNoveltyReview": {
+          "status": "passed_current_pack_gate",
+          "normalizedTitle": "退休金每月都有進來為什麼醫療照顧和詐騙還是會讓家裡緊張",
+          "note": "同批標題已檢查正規化重複、近似與核心題名包含。正式投稿包仍需與知識庫既有標題和最新投稿審核紀錄比對。"
         }
       }
     ],
@@ -688,9 +835,11 @@
       "seoAioVisible": false,
       "bodyOnlyCopy": true,
       "bodyMinChars": 2000,
+      "bodyCountMode": "non_whitespace",
       "titleDiversityRequired": true,
       "titleNaturalTaiwanChineseRequired": true,
       "bodyNaturalTaiwanChineseRequired": true,
+      "existingKnowledgeBaseTitleCheckRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "files": {
@@ -733,6 +882,9 @@
       "status": "required",
       "note": "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句，且必須是自然台灣中文，不可像美語直譯或顧問簡報。",
       "maxNotColonReframeTitles": 2,
+      "titleNoveltyGate": "同批標題不得正規化後相同、不得 90% 以上近似，也不得把另一篇核心題名完整包進長副標。",
+      "existingKnowledgeBaseGate": "正式產稿前需比對好理家在既有知識庫題名；同題可寫，但必須提出新情境、新數字、新決策判斷，不能只沿用成功標題再換副標。",
+      "titleIndexCommand": "node tools/build-knowledge-base-title-index.js",
       "awkwardTitleExamples": [
         "緊急預備金要先回答收入空窗",
         "家庭要先做的財務止血",
@@ -788,6 +940,20 @@
         "指出讀者要先整理日期、金額、順序、支出缺口或支持來源中的哪一個。",
         "把希望感建立在具體可整理的缺口上，不寫成雞湯。"
       ]
+    },
+    "submissionSimilarityLearningPolicy": {
+      "status": "integrated_from_chat_review",
+      "source": "檢核投稿機制聊天本體，2026-06-06",
+      "note": "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
+      "titleGate": [
+        "標題是第一提醒點，需檢查同批重複、既有題名包含、近似成功標題加副標。",
+        "標題一致或高度相似不直接代表抄襲，但正式產稿前不得忽略，需寫出差異價值。"
+      ],
+      "contentGate": [
+        "正文要比對案例角色、金額/比例/時間、段落順序、核心建議與結論是否沿用。",
+        "短稿若低於字數門檻且缺具體情境、缺數字或決策歷程，不能標示為可投稿。"
+      ],
+      "generationMove": "每篇候選題在開寫前先寫一句：本題和既有文章最大的新增價值是什麼。答不出來就換題。"
     }
   },
   "readerResearch": {

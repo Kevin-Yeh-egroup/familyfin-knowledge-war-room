@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-05T08:57:06.365Z",
+  "updatedAt": "2026-06-08T04:13:32.189Z",
   "source": "public-safe derived analysis logs and reports",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
@@ -7,11 +7,61 @@
     "localPrivatePathsNormalized": true,
     "publicSafeDerivedSummariesOnly": true
   },
-  "latestEntryId": "2026-06-05-biweekly-check",
-  "latestWeeklyReportId": "week-2026-06-01",
-  "count": 10,
-  "weeklyReportCount": 2,
+  "latestEntryId": "2026-06-08-knowledge-base-title-index",
+  "latestWeeklyReportId": "week-2026-06-08",
+  "count": 13,
+  "weeklyReportCount": 3,
   "weeklyReports": [
+    {
+      "id": "week-2026-06-08",
+      "weekStart": "2026-06-08",
+      "weekEnd": "2026-06-14",
+      "title": "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核與產稿前 gate",
+      "status": "需處理",
+      "summary": "本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程。重點不是立刻多產文章，而是讓下一次正式產稿前先擋掉標題過近、內容沒有新價值、缺案例數字與紀錄來源漂移。",
+      "outcomes": [
+        "完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。",
+        "回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。",
+        "validator 增加同批標題正規化重複、近似與核心題名包含檢查。",
+        "新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。"
+      ],
+      "blockers": [
+        "live review/comment learning 仍低於正式 10 篇文章包門檻。",
+        "正式產稿前仍需每次重新更新公開標題索引，避免用舊索引判斷題目新意。"
+      ],
+      "nextActions": [
+        "下一輪正式產稿前，先補每題 new_reader_value 與 content_difference_plan。",
+        "若要產正式 10 篇，需先恢復或確認 live review/comment 交叉學習。",
+        "考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。"
+      ],
+      "records": [
+        {
+          "id": "2026-06-08-knowledge-base-title-index",
+          "date": "2026-06-08",
+          "type": "知識庫標題索引",
+          "title": "既有知識庫標題索引接入 validator",
+          "summary": "新增公開知識庫標題索引，讓 validator 可比對候選文章是否撞到站上既有公開文章標題。",
+          "sourcePath": "reports/2026-06-08-knowledge-base-title-index-log.md"
+        },
+        {
+          "id": "2026-06-08-submission-mechanism-chat-review",
+          "date": "2026-06-08",
+          "type": "投稿檢核機制回查",
+          "title": "把投稿檢核聊天本體回填到產稿前 gate",
+          "summary": "回查「檢核投稿機制」聊天本體，將標題新意、內容差異、新讀者價值與案例數字判斷，轉成戰情室產稿前規則。",
+          "sourcePath": "reports/2026-06-08-submission-mechanism-chat-review.md"
+        },
+        {
+          "id": "2026-06-08-source-of-truth-reconciliation",
+          "date": "2026-06-08",
+          "type": "Source-of-truth 對帳",
+          "title": "戰情室正式索引與紀錄來源對帳",
+          "summary": "整理 repo 內目前可作為戰情室正式索引、週報、文章包與 blocker 判斷的資料來源，避免工作流從不同檔案讀到互相矛盾的狀態。",
+          "sourcePath": "reports/2026-06-08-source-of-truth-reconciliation.md"
+        }
+      ],
+      "copyText": "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核與產稿前 gate\n\n狀態：需處理\n週期：2026-06-08 至 2026-06-14\n\n本週摘要\n本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程。重點不是立刻多產文章，而是讓下一次正式產稿前先擋掉標題過近、內容沒有新價值、缺案例數字與紀錄來源漂移。\n\n本週完成\n- 完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。\n- 回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。\n- validator 增加同批標題正規化重複、近似與核心題名包含檢查。\n- 新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。\n\n阻擋或風險\n- live review/comment learning 仍低於正式 10 篇文章包門檻。\n- 正式產稿前仍需每次重新更新公開標題索引，避免用舊索引判斷題目新意。\n\n下一步\n- 下一輪正式產稿前，先補每題 new_reader_value 與 content_difference_plan。\n- 若要產正式 10 篇，需先恢復或確認 live review/comment 交叉學習。\n- 考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。\n\n本週紀錄\n- 2026-06-08｜知識庫標題索引｜既有知識庫標題索引接入 validator\n- 2026-06-08｜投稿檢核機制回查｜把投稿檢核聊天本體回填到產稿前 gate\n- 2026-06-08｜Source-of-truth 對帳｜戰情室正式索引與紀錄來源對帳"
+    },
     {
       "id": "week-2026-06-01",
       "weekStart": "2026-06-01",
@@ -144,6 +194,51 @@
     }
   ],
   "entries": [
+    {
+      "id": "2026-06-08-knowledge-base-title-index",
+      "sourcePath": "reports/2026-06-08-knowledge-base-title-index-log.md",
+      "type": "知識庫標題索引",
+      "title": "既有知識庫標題索引接入 validator",
+      "summary": "新增公開知識庫標題索引，讓 validator 可比對候選文章是否撞到站上既有公開文章標題。",
+      "highlights": [
+        "索引只保存公開 articleId、公開標題與正規化標題，不保存正文或後台資料。",
+        "目前索引包含 1323 筆公開知識庫標題。",
+        "目前 10 篇候選稿與既有標題為 0 exact match、0 near match、0 warning。"
+      ],
+      "date": "2026-06-08",
+      "content": "# 2026-06-08 既有知識庫標題索引接入紀錄\n\n## 目的\n\n將「檢核投稿機制」學到的標題相似與內容差異判斷，前移到戰情室正式產稿前。\n\n過去 validator 只能檢查同批候選稿是否標題太像。  \n本次新增公開知識庫標題索引後，也能檢查候選稿是否撞到站上既有公開文章標題。\n\n## 已完成\n\n1. 新增 `tools/build-knowledge-base-title-index.js`。\n2. 從好理家在公開知識庫文章搜尋 API 讀取公開標題。\n3. 輸出 `data/knowledge-base-title-index.json`。\n4. 目前索引包含 1323 筆公開知識庫標題。\n5. `tools/validate-war-room-state.js` 已接入此索引。\n\n## 隱私邊界\n\n此索引只保存：\n\n- articleId\n- 公開文章標題\n- 正規化後標題\n\n此索引不保存：\n\n- 文章正文\n- InfoCenter 後台評論\n- 審核內容\n- 作者內部資料\n- Cookie、token 或私有 API 回應\n\n## 驗證結果\n\n執行：\n\n- `node tools/build-knowledge-base-title-index.js`\n- `node tools/validate-war-room-state.js`\n\n結果：\n\n- 公開標題索引：1323 筆。\n- 目前 10 篇候選稿與既有知識庫標題：0 exact match、0 near match、0 warning。\n- validator 狀態：`pass_with_warnings`。\n- 唯一 warning 仍是 `review learning still below formal 10-article threshold: 3/8 ready cards`。\n\n## 下次產稿前規則\n\n正式產稿前需先執行：\n\n`node tools/build-knowledge-base-title-index.js`\n\n再執行：\n\n`node tools/validate-war-room-state.js`\n\n若 validator 回報與既有標題 exact 或 near duplicate，該題不可直接進正文。  \n需先補 `new_reader_value` 與 `content_difference_plan`，或改題。",
+      "copyText": "既有知識庫標題索引接入 validator\n\n# 2026-06-08 既有知識庫標題索引接入紀錄\n\n## 目的\n\n將「檢核投稿機制」學到的標題相似與內容差異判斷，前移到戰情室正式產稿前。\n\n過去 validator 只能檢查同批候選稿是否標題太像。  \n本次新增公開知識庫標題索引後，也能檢查候選稿是否撞到站上既有公開文章標題。\n\n## 已完成\n\n1. 新增 `tools/build-knowledge-base-title-index.js`。\n2. 從好理家在公開知識庫文章搜尋 API 讀取公開標題。\n3. 輸出 `data/knowledge-base-title-index.json`。\n4. 目前索引包含 1323 筆公開知識庫標題。\n5. `tools/validate-war-room-state.js` 已接入此索引。\n\n## 隱私邊界\n\n此索引只保存：\n\n- articleId\n- 公開文章標題\n- 正規化後標題\n\n此索引不保存：\n\n- 文章正文\n- InfoCenter 後台評論\n- 審核內容\n- 作者內部資料\n- Cookie、token 或私有 API 回應\n\n## 驗證結果\n\n執行：\n\n- `node tools/build-knowledge-base-title-index.js`\n- `node tools/validate-war-room-state.js`\n\n結果：\n\n- 公開標題索引：1323 筆。\n- 目前 10 篇候選稿與既有知識庫標題：0 exact match、0 near match、0 warning。\n- validator 狀態：`pass_with_warnings`。\n- 唯一 warning 仍是 `review learning still below formal 10-article threshold: 3/8 ready cards`。\n\n## 下次產稿前規則\n\n正式產稿前需先執行：\n\n`node tools/build-knowledge-base-title-index.js`\n\n再執行：\n\n`node tools/validate-war-room-state.js`\n\n若 validator 回報與既有標題 exact 或 near duplicate，該題不可直接進正文。  \n需先補 `new_reader_value` 與 `content_difference_plan`，或改題。"
+    },
+    {
+      "id": "2026-06-08-submission-mechanism-chat-review",
+      "sourcePath": "reports/2026-06-08-submission-mechanism-chat-review.md",
+      "type": "投稿檢核機制回查",
+      "title": "把投稿檢核聊天本體回填到產稿前 gate",
+      "summary": "回查「檢核投稿機制」聊天本體，將標題新意、內容差異、新讀者價值與案例數字判斷，轉成戰情室產稿前規則。",
+      "highlights": [
+        "相似度分數只是審稿訊號，不等於抄襲判定。",
+        "標題是第一提醒點，但正文也要逐篇檢查案例、數字、段落順序與核心建議。",
+        "戰情室新增 title novelty、content difference 與 new reader value 產稿前 gate。"
+      ],
+      "date": "2026-06-08",
+      "content": "# 2026-06-08 投稿檢核機制聊天本體回查與戰情室優化紀錄\n\n## 回查範圍\n\n- 來源：Codex thread「檢核投稿機制」\n- 回查重點：投稿審核流程、標題相似、正文差異、案例數字、agent / skill 候選規格\n- 本報告只記錄公開安全的流程學習，不保存內部作者姓名、事件 ID、評論正文或審稿原文。\n\n## 本次讀到的關鍵發現\n\n1. 投稿問題不只是「抄襲」或「內文相似度」。\n   更常見的風險是沿用既有成功題名、加長副標、同批重複題目，或正文雖然沒有大量逐字重疊，但沒有提供新的案例、數字與判斷。\n\n2. 標題是第一提醒點，但不能只看標題。\n   需要同時看標題、正文內容、案例角色、金額/比例/時間、段落順序、核心建議與結尾判斷。\n\n3. 相似度分數只是訊號，不是判決。\n   機器分數用來提示風險，agent 要補上「哪裡相同、哪裡不同、是否真的新增讀者價值」，最後仍需人工審稿決定。\n\n4. 「缺案例數字」要拆得更細。\n   不是文章有日期、法條、步驟或泛泛的百分比就算有數字。數字要能支撐家庭財務判斷，例如收支前後差異、月付壓力、缺口大小、時間差或改善關鍵。\n\n5. 投稿審核的學習應該前移到產稿前。\n   戰情室不應只在文章產完後打分退件，而要在題目規劃時先檢查：是否和既有文章太像、是否有新情境、新數字、新決策過程。\n\n## 已落地調整\n\n1. `tools/validate-war-room-state.js`\n   - 新增同批標題新意檢查。\n   - 阻擋正規化後相同標題。\n   - 阻擋 90% 以上近似標題。\n   - 阻擋核心題名被完整包進另一個長副標的情形。\n   - 輸出 title novelty 統計到 validator 結果。\n\n2. `tools/build-public-article-pack-2026-06-03.js`\n   - 新增標題正規化與相似度 gate。\n   - 每篇文章 metadata 加入 `titleNoveltyReview`。\n   - `suggestions.json` 會記錄 `titleNoveltyGateRequired`、`contentDifferenceReviewRequired`、`submissionSimilarityMethodologyIntegrated`。\n   - 新增 `submissionSimilarityLearningPolicy`，把投稿檢核的學習轉成產稿前規則。\n\n3. `docs/biweekly-prewrite-checklist-2026-06-08.md`\n   - 新增「投稿檢核機制回填 gate」。\n   - 每篇候選題開寫前需補 `similar_existing_topic`、`title_risk`、`new_reader_value`、`content_difference_plan`、`case_number_decision_plan`。\n   - 明確要求同題可以寫，但必須有新家庭情境、新數字、新判斷。\n\n## Agent 討論後的操作原則\n\n### 題目規劃\n\n每篇候選題要先回答一句話：\n\n這篇和既有知識庫文章相比，新增給讀者的價值是什麼？\n\n若答案只是「寫得更白話」「換一個角度」「補一些數字」，還不夠。  \n需要具體到家庭情境、數字缺口、前後差異或決策順序。\n\n### 正文生成\n\n正文不能只把資料排進文章。  \n每篇至少要呈現：\n\n- 一個具體家庭或生活情境。\n- 一組收入、支出、缺口、時間差或風險數字。\n- 一段調整前後差異。\n- 一到三個改善關鍵。\n- 一個回到生活選擇的結尾。\n\n### 審核輸出\n\n若未來做投稿審核報告，不再使用「優先處理稿件」作為主要呈現。  \n應改為逐篇列出：\n\n- 標題提醒。\n- 內容相似與差異。\n- 案例數字狀態。\n- 決策歷程是否足夠。\n- 建議處置。\n\n## 待補事項\n\n1. 最新知識庫題名索引已完成第一版接入；後續正式產稿前仍需先執行 `node tools/build-knowledge-base-title-index.js` 取得最新公開標題。\n2. 若 InfoCenter live review/comment 仍未完成交叉對照，正式文章包應維持 blocked 或小批次試產。\n3. 投稿審核 skill / agent 候選規格目前仍停在另一個專案輸出資料夾，尚未升級為全域 skill 或 Agent OS roster。\n4. 若要升級，需先做 governance review，確認資料權限、人工覆核、證據格式與 no-op 規則。",
+      "copyText": "把投稿檢核聊天本體回填到產稿前 gate\n\n# 2026-06-08 投稿檢核機制聊天本體回查與戰情室優化紀錄\n\n## 回查範圍\n\n- 來源：Codex thread「檢核投稿機制」\n- 回查重點：投稿審核流程、標題相似、正文差異、案例數字、agent / skill 候選規格\n- 本報告只記錄公開安全的流程學習，不保存內部作者姓名、事件 ID、評論正文或審稿原文。\n\n## 本次讀到的關鍵發現\n\n1. 投稿問題不只是「抄襲」或「內文相似度」。\n   更常見的風險是沿用既有成功題名、加長副標、同批重複題目，或正文雖然沒有大量逐字重疊，但沒有提供新的案例、數字與判斷。\n\n2. 標題是第一提醒點，但不能只看標題。\n   需要同時看標題、正文內容、案例角色、金額/比例/時間、段落順序、核心建議與結尾判斷。\n\n3. 相似度分數只是訊號，不是判決。\n   機器分數用來提示風險，agent 要補上「哪裡相同、哪裡不同、是否真的新增讀者價值」，最後仍需人工審稿決定。\n\n4. 「缺案例數字」要拆得更細。\n   不是文章有日期、法條、步驟或泛泛的百分比就算有數字。數字要能支撐家庭財務判斷，例如收支前後差異、月付壓力、缺口大小、時間差或改善關鍵。\n\n5. 投稿審核的學習應該前移到產稿前。\n   戰情室不應只在文章產完後打分退件，而要在題目規劃時先檢查：是否和既有文章太像、是否有新情境、新數字、新決策過程。\n\n## 已落地調整\n\n1. `tools/validate-war-room-state.js`\n   - 新增同批標題新意檢查。\n   - 阻擋正規化後相同標題。\n   - 阻擋 90% 以上近似標題。\n   - 阻擋核心題名被完整包進另一個長副標的情形。\n   - 輸出 title novelty 統計到 validator 結果。\n\n2. `tools/build-public-article-pack-2026-06-03.js`\n   - 新增標題正規化與相似度 gate。\n   - 每篇文章 metadata 加入 `titleNoveltyReview`。\n   - `suggestions.json` 會記錄 `titleNoveltyGateRequired`、`contentDifferenceReviewRequired`、`submissionSimilarityMethodologyIntegrated`。\n   - 新增 `submissionSimilarityLearningPolicy`，把投稿檢核的學習轉成產稿前規則。\n\n3. `docs/biweekly-prewrite-checklist-2026-06-08.md`\n   - 新增「投稿檢核機制回填 gate」。\n   - 每篇候選題開寫前需補 `similar_existing_topic`、`title_risk`、`new_reader_value`、`content_difference_plan`、`case_number_decision_plan`。\n   - 明確要求同題可以寫，但必須有新家庭情境、新數字、新判斷。\n\n## Agent 討論後的操作原則\n\n### 題目規劃\n\n每篇候選題要先回答一句話：\n\n這篇和既有知識庫文章相比，新增給讀者的價值是什麼？\n\n若答案只是「寫得更白話」「換一個角度」「補一些數字」，還不夠。  \n需要具體到家庭情境、數字缺口、前後差異或決策順序。\n\n### 正文生成\n\n正文不能只把資料排進文章。  \n每篇至少要呈現：\n\n- 一個具體家庭或生活情境。\n- 一組收入、支出、缺口、時間差或風險數字。\n- 一段調整前後差異。\n- 一到三個改善關鍵。\n- 一個回到生活選擇的結尾。\n\n### 審核輸出\n\n若未來做投稿審核報告，不再使用「優先處理稿件」作為主要呈現。  \n應改為逐篇列出：\n\n- 標題提醒。\n- 內容相似與差異。\n- 案例數字狀態。\n- 決策歷程是否足夠。\n- 建議處置。\n\n## 待補事項\n\n1. 最新知識庫題名索引已完成第一版接入；後續正式產稿前仍需先執行 `node tools/build-knowledge-base-title-index.js` 取得最新公開標題。\n2. 若 InfoCenter live review/comment 仍未完成交叉對照，正式文章包應維持 blocked 或小批次試產。\n3. 投稿審核 skill / agent 候選規格目前仍停在另一個專案輸出資料夾，尚未升級為全域 skill 或 Agent OS roster。\n4. 若要升級，需先做 governance review，確認資料權限、人工覆核、證據格式與 no-op 規則。"
+    },
+    {
+      "id": "2026-06-08-source-of-truth-reconciliation",
+      "sourcePath": "reports/2026-06-08-source-of-truth-reconciliation.md",
+      "type": "Source-of-truth 對帳",
+      "title": "戰情室正式索引與紀錄來源對帳",
+      "summary": "整理 repo 內目前可作為戰情室正式索引、週報、文章包與 blocker 判斷的資料來源，避免工作流從不同檔案讀到互相矛盾的狀態。",
+      "highlights": [
+        "`suggestions.json` 是目前 review board 與文章包 metadata 的第一來源。",
+        "`article-pack-history.json` 記錄每次純文字文章包產出或 blocked attempt。",
+        "`analysis-history.json` 將 reports/logs 轉成公開安全的週報與分析紀錄。"
+      ],
+      "date": "2026-06-08",
+      "content": "# 2026-06-08 戰情室 Source-of-Truth 對帳\n\n狀態：local reconciliation  \n用途：釐清週戰情室、文章包、blocked attempt、automation 記錄與公開衍生資料之間的可信來源。\n\n## 對帳結論\n\n目前應以 repo 可驗證檔案作為戰情室公開與產稿判斷的第一來源。  \n若 automation memory 提到的檔案不在 repo 或被 `.gitignore` 排除，不能直接當作公開戰情室已完成證據。\n\n## 來源表\n\n| 項目 | 目前可信來源 | 狀態 | 用途 |\n| --- | --- | --- | --- |\n| 目前工作台文章包 | `suggestions.json` 的 `articlePack` | 可用，但需 validator 檢查 | 前台審核、複製、核准/退修 |\n| 文章包批次紀錄 | `article-pack-history.json` | 可用 | 顯示 current/superseded/blocked attempt |\n| 週報與歷次分析 | `analysis-history.json`、`reports/`、`logs/` | 可用 | 前台週報與任務回看 |\n| 既有知識庫標題索引 | `data/knowledge-base-title-index.json` | 可用 | 正式產稿前比對候選標題是否撞到既有公開文章 |\n| 最新週檢視結果 | `reports/2026-06-06-weekly-war-room-review.md` | blocked | live review/comment 未恢復 |\n| 雙週正式產稿狀態 | `reports/2026-06-05-biweekly-article-generation-check.md` | blocked | 不應硬產正式 10 篇 |\n| 投稿檢核機制回填 | `reports/2026-06-08-submission-mechanism-chat-review.md` | 可用 | 將標題新意、內容差異與案例數字判斷前移到產稿前 |\n| reviewer 規則增量 | `docs/reviewer-rule-delta-2026-06-06.md` | draft delta | 可轉成 prewrite checklist |\n| 產稿前 checklist | `docs/biweekly-prewrite-checklist-2026-06-08.md` | draft | 正式產包前檢查用 |\n| validator | `tools/validate-war-room-state.js` | local tool | 檢查 JSON、字數、role leak、同批標題新意、既有知識庫標題、history drift |\n| 實驗雙週產稿腳本 | `tools/build-biweekly-article-pack-2026-06-05.js` | ignored experiment | 不可當作正式產稿證據 |\n| 私有原始學習資料 | `work/`、`work-private/` | ignored/private | 不進公開 repo |\n\n## 現階段 blocking truth\n\n1. `reviewLearningReadyCards` 曾記錄為 3，尚不足以支撐正式 10 題。\n2. `EVENT_REVIEW` / `EVENT_COMMENT` live 讀取仍需重新確認。\n3. 沒有 `reviewContentFound=true` 且沒有交叉打開評論文章正文時，不可宣稱完成完整 rejection learning。\n4. 若 validator 發現文章包字數、role leak、標題新意或 history drift，正式產稿需停下。\n5. 每次正式產稿前需先更新 `data/knowledge-base-title-index.json`，避免用舊索引判斷題目新意。\n\n## 下游規則\n\n每次週戰情室或雙週文章包流程結束時，至少更新或確認：\n\n1. `reports/` 中有本次 report 或 blocker。\n2. `analysis-history.json` 有可見摘要。\n3. `article-pack-history.json` 有產包或未產出紀錄。\n4. 若是正式文章包，`tools/validate-war-room-state.js` 必須通過。\n5. 若是 blocked，不得在工作台標示為可投稿。",
+      "copyText": "戰情室正式索引與紀錄來源對帳\n\n# 2026-06-08 戰情室 Source-of-Truth 對帳\n\n狀態：local reconciliation  \n用途：釐清週戰情室、文章包、blocked attempt、automation 記錄與公開衍生資料之間的可信來源。\n\n## 對帳結論\n\n目前應以 repo 可驗證檔案作為戰情室公開與產稿判斷的第一來源。  \n若 automation memory 提到的檔案不在 repo 或被 `.gitignore` 排除，不能直接當作公開戰情室已完成證據。\n\n## 來源表\n\n| 項目 | 目前可信來源 | 狀態 | 用途 |\n| --- | --- | --- | --- |\n| 目前工作台文章包 | `suggestions.json` 的 `articlePack` | 可用，但需 validator 檢查 | 前台審核、複製、核准/退修 |\n| 文章包批次紀錄 | `article-pack-history.json` | 可用 | 顯示 current/superseded/blocked attempt |\n| 週報與歷次分析 | `analysis-history.json`、`reports/`、`logs/` | 可用 | 前台週報與任務回看 |\n| 既有知識庫標題索引 | `data/knowledge-base-title-index.json` | 可用 | 正式產稿前比對候選標題是否撞到既有公開文章 |\n| 最新週檢視結果 | `reports/2026-06-06-weekly-war-room-review.md` | blocked | live review/comment 未恢復 |\n| 雙週正式產稿狀態 | `reports/2026-06-05-biweekly-article-generation-check.md` | blocked | 不應硬產正式 10 篇 |\n| 投稿檢核機制回填 | `reports/2026-06-08-submission-mechanism-chat-review.md` | 可用 | 將標題新意、內容差異與案例數字判斷前移到產稿前 |\n| reviewer 規則增量 | `docs/reviewer-rule-delta-2026-06-06.md` | draft delta | 可轉成 prewrite checklist |\n| 產稿前 checklist | `docs/biweekly-prewrite-checklist-2026-06-08.md` | draft | 正式產包前檢查用 |\n| validator | `tools/validate-war-room-state.js` | local tool | 檢查 JSON、字數、role leak、同批標題新意、既有知識庫標題、history drift |\n| 實驗雙週產稿腳本 | `tools/build-biweekly-article-pack-2026-06-05.js` | ignored experiment | 不可當作正式產稿證據 |\n| 私有原始學習資料 | `work/`、`work-private/` | ignored/private | 不進公開 repo |\n\n## 現階段 blocking truth\n\n1. `reviewLearningReadyCards` 曾記錄為 3，尚不足以支撐正式 10 題。\n2. `EVENT_REVIEW` / `EVENT_COMMENT` live 讀取仍需重新確認。\n3. 沒有 `reviewContentFound=true` 且沒有交叉打開評論文章正文時，不可宣稱完成完整 rejection learning。\n4. 若 validator 發現文章包字數、role leak、標題新意或 history drift，正式產稿需停下。\n5. 每次正式產稿前需先更新 `data/knowledge-base-title-index.json`，避免用舊索引判斷題目新意。\n\n## 下游規則\n\n每次週戰情室或雙週文章包流程結束時，至少更新或確認：\n\n1. `reports/` 中有本次 report 或 blocker。\n2. `analysis-history.json` 有可見摘要。\n3. `article-pack-history.json` 有產包或未產出紀錄。\n4. 若是正式文章包，`tools/validate-war-room-state.js` 必須通過。\n5. 若是 blocked，不得在工作台標示為可投稿。"
+    },
     {
       "id": "2026-06-05-biweekly-check",
       "sourcePath": "reports/2026-06-05-biweekly-article-generation-check.md",
