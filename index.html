@@ -595,8 +595,7 @@
         <a href="#learning">學習進度</a>
         <a href="#workflow">每週流程</a>
         <a href="#history">週報紀錄</a>
-        <a href="#trial-pack">2 篇試產稿</a>
-        <a href="#pack">純文字文章包</a>
+        <a href="#pack">文章包工作台</a>
         <a href="#agent">非概念文檢查</a>
         <a href="#quality">品質門檻</a>
       </div>
@@ -607,13 +606,13 @@
     <div class="hero-inner">
       <div>
         <div class="eyebrow">2026-06-02 plain-text workbench</div>
-        <h1>10 篇可投稿文章工作台</h1>
-        <p>這版只顯示純文字正文，可一鍵複製。來源查核與平台欄位改放在內部規則，不佔用投稿預覽；每篇正文扣除欄位後都需超過 2000 字。</p>
+        <h1>文章包工作台</h1>
+        <p>正式純文字文章包與試產文章包已合併檢視，可用下拉選擇批次與文章。來源查核與平台欄位改放在內部規則，不佔用投稿預覽。</p>
       </div>
       <div class="status-board">
         <div class="status-tile"><strong id="heroBatches">17</strong><span>已完成全文學習批次</span></div>
         <div class="status-tile"><strong id="heroBodies">540</strong><span>可學文章正文</span></div>
-        <div class="status-tile"><strong id="heroArticles">10</strong><span>本批投稿草稿</span></div>
+        <div class="status-tile"><strong id="heroArticles">12</strong><span>可檢視文章</span></div>
         <div class="status-tile"><strong>五 14:00</strong><span>每週檢視與生成</span></div>
       </div>
     </div>
@@ -734,39 +733,23 @@
       </div>
     </section>
 
-    <section id="trial-pack" class="panel">
-      <div class="section-head">
-        <h2>2 篇試產文章包</h2>
-        <p class="sub" id="trialPackStatus">讀取 trialArticlePacks 中...</p>
-      </div>
-      <div class="section-body">
-        <div class="review-board">
-          <div>
-            <div class="box">
-              <h3>試產包選擇</h3>
-              <p>這區先放退件學習後的新試產稿，不取代目前 10 篇主文章包。</p>
-              <div class="selector-row" style="margin-top:14px">
-                <select id="trialPackSelect" class="field-select" aria-label="選擇試產文章包"></select>
-                <select id="trialArticleSelect" class="field-select" aria-label="選擇試產文章"></select>
-              </div>
-            </div>
-            <div id="trialPackSummary" class="pack-history-list" style="margin-top:14px"></div>
-          </div>
-          <div id="trialArticleDetail" class="detail"></div>
-        </div>
-      </div>
-    </section>
-
     <section id="pack" class="panel">
       <div class="section-head">
-        <h2>純文字文章包</h2>
+        <h2>文章包工作台</h2>
         <p class="sub" id="dataStatus">讀取 suggestions.json 中...</p>
       </div>
       <div class="section-body">
         <div class="review-board">
           <div>
-            <div id="articleList" class="article-list"></div>
-            <div class="box" style="margin-top:14px">
+            <div class="box">
+              <h3>文章包與文章選擇</h3>
+              <p id="selectedPackSummary">讀取文章包中...</p>
+              <div class="selector-row" style="margin-top:14px">
+                <select id="articlePackSelect" class="field-select" aria-label="選擇文章包"></select>
+                <select id="articleSelect" class="field-select" aria-label="選擇文章"></select>
+              </div>
+            </div>
+            <div class="box" id="approvalBox" style="margin-top:14px">
               <h3>核准分類</h3>
               <p>核准、退修與駁回先保存在此瀏覽器。核准後可依主要標籤匯出純文字文章包。</p>
               <div class="actions">
@@ -851,12 +834,10 @@
     let data = { articlePack: { articles: [] }, metrics: {}, qualityGates: [] };
     let analysisHistory = { entries: [] };
     let articlePackHistory = { records: [], generationAttempts: [] };
+    let activePackId = "current-review-pack";
     let activeId = null;
     let activeBody = "";
     let activeWeeklyId = null;
-    let activeTrialPackId = null;
-    let activeTrialArticleId = null;
-    let activeTrialBody = "";
 
     function loadReviews() {
       try {
@@ -876,7 +857,8 @@
 
     function setStatus(id, status, note) {
       const reviews = loadReviews();
-      const article = data.articlePack.articles.find((item) => item.id === id);
+      const article = (data.articlePack.articles || []).find((item) => item.id === id);
+      if (!article) return;
       const previous = reviews[id] || {};
       reviews[id] = {
         ...previous,
@@ -949,14 +931,15 @@
 
     function renderMetrics() {
       const metrics = data.metrics || {};
-      const articles = data.articlePack?.articles || [];
+      const packs = availableArticlePacks();
+      const articleTotal = packs.reduce((sum, pack) => sum + (pack.articles?.length || 0), 0);
       const set = (id, value) => {
         const el = document.getElementById(id);
         if (el && value !== undefined) el.textContent = value;
       };
       set("heroBatches", metrics.chronologicalBatchesCompleted);
       set("heroBodies", metrics.learnableArticleBodies);
-      set("heroArticles", articles.length);
+      set("heroArticles", articleTotal);
       set("published", metrics.indexedPublishedArticles);
       set("events", metrics.indexedEvents);
       set("successBodies", metrics.successfulBodies);
@@ -1101,31 +1084,102 @@
       fillList("discussionReviewers", (agent.discussionReviewers || []).map((item) => `${item.name}：${item.purpose}`));
     }
 
-    function renderList() {
-      const list = document.getElementById("articleList");
-      list.textContent = "";
-      data.articlePack.articles.forEach((article, index) => {
-        const button = document.createElement("button");
-        button.type = "button";
-        button.className = "article-item" + (article.id === activeId ? " active" : "");
-        button.addEventListener("click", async () => {
-          activeId = article.id;
-          activeBody = await loadArticleBody(article);
-          render();
+    function availableArticlePacks() {
+      const packs = [];
+      if (data.articlePack) {
+        packs.push({
+          id: "current-review-pack",
+          kind: "current",
+          title: data.articlePack.title || "目前純文字文章包",
+          status: data.articlePack.status || "目前工作台文章包",
+          statusLabel: "正式核准台",
+          audience: data.articlePack.audience || "一般民眾",
+          description: data.articlePack.description || "目前 10 篇純文字文章包，可核准、退修、駁回與匯出。",
+          articles: data.articlePack.articles || [],
         });
-        const title = document.createElement("strong");
-        title.textContent = `${index + 1}. ${article.title}`;
-        const meta = document.createElement("div");
-        meta.className = "meta-line";
-        const reviewGate = article.articlePackReviewGate || {};
-        meta.append(makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold"));
-        meta.append(makeTag(reviewGate.status === "green" ? "生成審核綠燈" : "生成審核未過", reviewGate.status === "green" ? "green" : "gold"));
-        meta.append(makeTag(article.audience, article.audience === "社工" ? "blue" : "green"));
-        meta.append(makeTag(article.bodyChars + " 字非空白正文", "rose"));
-        meta.append(makeTag(article.primaryTag));
-        button.append(title, meta);
-        list.appendChild(button);
+      }
+      (data.trialArticlePacks || []).forEach((pack) => {
+        packs.push({
+          id: pack.id,
+          kind: "trial",
+          title: pack.title,
+          status: pack.status || "待看效果",
+          statusLabel: "試產稿",
+          audience: pack.audience || "一般民眾",
+          description: pack.description || "退件學習後的新試產稿。",
+          articles: pack.articles || [],
+        });
       });
+      return packs;
+    }
+
+    function currentArticlePack() {
+      const packs = availableArticlePacks();
+      return packs.find((pack) => pack.id === activePackId) || packs[0] || null;
+    }
+
+    function currentArticle(pack) {
+      const articles = pack?.articles || [];
+      return articles.find((article) => article.id === activeId) || articles[0] || null;
+    }
+
+    function isCurrentReviewPack(pack) {
+      return pack?.kind === "current";
+    }
+
+    async function selectArticlePack(packId) {
+      activePackId = packId;
+      const pack = currentArticlePack();
+      const article = pack?.articles?.[0] || null;
+      activeId = article?.id || null;
+      activeBody = article ? await loadArticleBody(article) : "";
+      render();
+    }
+
+    async function selectArticle(articleId) {
+      activeId = articleId;
+      const pack = currentArticlePack();
+      const article = currentArticle(pack);
+      activeBody = article ? await loadArticleBody(article) : "";
+      render();
+    }
+
+    function renderArticlePackSelectors(pack, article) {
+      const packSelect = document.getElementById("articlePackSelect");
+      const articleSelect = document.getElementById("articleSelect");
+      const summary = document.getElementById("selectedPackSummary");
+      const approvalBox = document.getElementById("approvalBox");
+      if (!packSelect || !articleSelect) return;
+
+      const packs = availableArticlePacks();
+      packSelect.textContent = "";
+      packs.forEach((item) => {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.textContent = `${item.statusLabel}｜${item.title}`;
+        option.selected = item.id === pack?.id;
+        packSelect.appendChild(option);
+      });
+      packSelect.onchange = (event) => selectArticlePack(event.target.value);
+
+      articleSelect.textContent = "";
+      (pack?.articles || []).forEach((item, index) => {
+        const option = document.createElement("option");
+        option.value = item.id;
+        option.textContent = `${index + 1}. ${item.title}`;
+        option.selected = item.id === article?.id;
+        articleSelect.appendChild(option);
+      });
+      articleSelect.onchange = (event) => selectArticle(event.target.value);
+
+      if (summary) {
+        summary.textContent = pack
+          ? `${pack.statusLabel}，共 ${pack.articles.length} 篇。${pack.description}`
+          : "目前沒有可選文章包。";
+      }
+      if (approvalBox) {
+        approvalBox.style.display = isCurrentReviewPack(pack) ? "" : "none";
+      }
     }
 
     function renderHistoryList() {
@@ -1271,174 +1325,18 @@
       });
     }
 
-    function currentTrialPack() {
-      const packs = data.trialArticlePacks || [];
-      return packs.find((pack) => pack.id === activeTrialPackId) || packs[0] || null;
-    }
-
-    function currentTrialArticle(pack) {
-      const articles = pack?.articles || [];
-      return articles.find((article) => article.id === activeTrialArticleId) || articles[0] || null;
-    }
-
-    async function selectTrialPack(packId) {
-      activeTrialPackId = packId;
-      const pack = currentTrialPack();
-      const article = pack?.articles?.[0] || null;
-      activeTrialArticleId = article?.id || null;
-      activeTrialBody = article ? await loadArticleBody(article) : "";
-      renderTrialPack();
-    }
-
-    async function selectTrialArticle(articleId) {
-      activeTrialArticleId = articleId;
-      const pack = currentTrialPack();
-      const article = currentTrialArticle(pack);
-      activeTrialBody = article ? await loadArticleBody(article) : "";
-      renderTrialPack();
-    }
-
-    function renderTrialSelectors(pack, article) {
-      const packSelect = document.getElementById("trialPackSelect");
-      const articleSelect = document.getElementById("trialArticleSelect");
-      if (!packSelect || !articleSelect) return;
-      const packs = data.trialArticlePacks || [];
-
-      packSelect.textContent = "";
-      packs.forEach((item) => {
-        const option = document.createElement("option");
-        option.value = item.id;
-        option.textContent = item.title;
-        option.selected = item.id === pack?.id;
-        packSelect.appendChild(option);
-      });
-      packSelect.onchange = (event) => selectTrialPack(event.target.value);
-
-      articleSelect.textContent = "";
-      (pack?.articles || []).forEach((item, index) => {
-        const option = document.createElement("option");
-        option.value = item.id;
-        option.textContent = `${index + 1}. ${item.title}`;
-        option.selected = item.id === article?.id;
-        articleSelect.appendChild(option);
-      });
-      articleSelect.onchange = (event) => selectTrialArticle(event.target.value);
-    }
-
-    function renderTrialPackSummary(pack) {
-      const wrap = document.getElementById("trialPackSummary");
-      if (!wrap) return;
-      wrap.textContent = "";
-      if (!pack) {
-        wrap.appendChild(paragraph("目前沒有試產文章包。"));
-        return;
-      }
-
-      const item = document.createElement("div");
-      item.className = "pack-history-item";
-      const title = document.createElement("h4");
-      title.textContent = pack.title;
-      const meta = document.createElement("div");
-      meta.className = "meta-line";
-      meta.append(makeTag(pack.status || "待看效果", "gold"));
-      meta.append(makeTag(`${pack.articles?.length || 0} 篇`, "blue"));
-      meta.append(makeTag(pack.audience || "一般民眾", "green"));
-      meta.append(makeTag("獨立試產區", "rose"));
-      const note = paragraph(pack.description || "");
-      const adopt = makeRuleListElement(pack.agentConvergence?.adoptNow || [], "尚未填寫採用規則。");
-      item.append(title, meta, note, adopt);
-      wrap.appendChild(item);
-    }
-
-    function renderTrialArticleDetail(pack, article) {
-      const detail = document.getElementById("trialArticleDetail");
-      if (!detail) return;
-      detail.textContent = "";
-      if (!pack || !article) {
-        detail.textContent = "目前沒有試產文章。";
-        return;
-      }
-
-      const top = document.createElement("div");
-      top.className = "detail-top";
-      const titleWrap = document.createElement("div");
-      const title = document.createElement("h3");
-      title.textContent = article.title;
-      const meta = document.createElement("p");
-      meta.className = "sub";
-      meta.textContent = `${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`;
-      titleWrap.append(title, meta);
-      top.append(titleWrap, makeTag(article.articlePackReviewGate?.status === "green" ? "試產綠燈" : "待補審", article.articlePackReviewGate?.status === "green" ? "green" : "gold"));
-      detail.appendChild(top);
-
-      const tagWrap = document.createElement("p");
-      tagWrap.append(makeTag("主要：" + article.primaryTag, "green"));
-      (article.secondaryTags || []).forEach((tag) => tagWrap.append(makeTag("次要：" + tag, "blue")));
-      detailSection(detail, "正式標籤", [tagWrap]);
-
-      const pre = article.preGenerationReview || {};
-      detailSection(detail, "生成前判斷", [
-        paragraph("題目驗證：" + (pre.topicEvidenceCard?.status || "未記錄")),
-        paragraph("讀者切角：" + (pre.readerFitCard?.hook || "尚未記錄")),
-        paragraph("財務評估任務：" + (pre.financialDecisionCard?.assessmentTask || "尚未記錄")),
-        paragraph("財務知能轉移：" + (pre.financialLiteracyTransfer?.capability || "尚未記錄"))
-      ]);
-
-      detailSection(detail, "通過稿結構學習", approvedAuthorUseElements(pre));
-
-      const gate = article.articlePackReviewGate || {};
-      detailSection(detail, "生成審核綠燈 Gate", [
-        paragraph("狀態：" + (gate.status || "未審")),
-        paragraph("參與 reviewer：" + ((gate.reviewers || []).join("、") || "尚未記錄")),
-        paragraph(gate.note || "尚未記錄生成審核摘要。")
-      ]);
-
-      const plain = splitArticleText(activeTrialBody, article);
-      const body = document.createElement("div");
-      body.className = "article-body";
-      body.textContent = plain.titleAndBody || "正在讀取純文字正文...";
-      detailSection(detail, "純文字正文", [body]);
-
-      const actions = document.createElement("div");
-      actions.className = "actions";
-      actions.append(
-        actionButton("複製正文", "primary", () => copyText(plain.body, "已複製試產稿正文。", "trialCopyNote")),
-        actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製試產稿標題與正文。", "trialCopyNote")),
-        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8"))
-      );
-      detail.appendChild(actions);
-
-      const copyNote = document.createElement("div");
-      copyNote.className = "copy-note";
-      copyNote.id = "trialCopyNote";
-      copyNote.textContent = "試產稿預設只複製標題與正文，不包含來源清單、審稿建議或 agent 討論。";
-      detail.appendChild(copyNote);
-    }
-
-    function renderTrialPack() {
-      const status = document.getElementById("trialPackStatus");
-      const pack = currentTrialPack();
-      const article = currentTrialArticle(pack);
-      renderTrialSelectors(pack, article);
-      renderTrialPackSummary(pack);
-      renderTrialArticleDetail(pack, article);
-      if (status) {
-        status.textContent = pack
-          ? `已載入：${pack.title}，共 ${pack.articles?.length || 0} 篇，更新時間 ${data.updatedAt || ""}`
-          : "目前沒有 trialArticlePacks。";
-      }
-    }
-
     function renderDetail() {
       const detail = document.getElementById("articleDetail");
-      const articles = data.articlePack.articles || [];
-      const article = articles.find((item) => item.id === activeId) || articles[0];
+      const pack = currentArticlePack();
+      const article = currentArticle(pack);
       detail.textContent = "";
-      if (!article) {
-        detail.textContent = "目前沒有文章。";
+      renderArticlePackSelectors(pack, article);
+      if (!pack || !article) {
+        detail.textContent = "目前沒有文章包或文章。";
         return;
       }
       activeId = article.id;
+      const currentPack = isCurrentReviewPack(pack);
 
       const top = document.createElement("div");
       top.className = "detail-top";
@@ -1447,9 +1345,14 @@
       title.textContent = article.title;
       const meta = document.createElement("p");
       meta.className = "sub";
-      meta.textContent = `${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`;
+      meta.textContent = `${pack.statusLabel} / ${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`;
       titleWrap.append(title, meta);
-      top.append(titleWrap, makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold"));
+      top.append(
+        titleWrap,
+        currentPack
+          ? makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold")
+          : makeTag(pack.statusLabel, "blue")
+      );
       detail.appendChild(top);
 
       const tagWrap = document.createElement("p");
@@ -1484,15 +1387,18 @@
 
       detailSection(detail, "Agent 討論摘要", [paragraph(article.agentDiscussion || "尚未填寫。")]);
 
-      const currentReview = loadReviews()[article.id] || {};
-      const reviewNote = document.createElement("textarea");
-      reviewNote.className = "review-note-input";
-      reviewNote.placeholder = "輸入退修、駁回或核准原因。這會先存於此瀏覽器，之後可轉成 review_feedback_card。";
-      reviewNote.value = currentReview.note || "";
-      detailSection(detail, "人工審核意見 / 退修原因", [
-        reviewNote,
-        paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
-      ]);
+      let reviewNote = null;
+      if (currentPack) {
+        const currentReview = loadReviews()[article.id] || {};
+        reviewNote = document.createElement("textarea");
+        reviewNote.className = "review-note-input";
+        reviewNote.placeholder = "輸入退修、駁回或核准原因。這會先存於此瀏覽器，之後可轉成 review_feedback_card。";
+        reviewNote.value = currentReview.note || "";
+        detailSection(detail, "人工審核意見 / 退修原因", [
+          reviewNote,
+          paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
+        ]);
+      }
 
       const body = document.createElement("div");
       body.className = "article-body";
@@ -1506,12 +1412,16 @@
         actionButton("複製正文", "primary", () => copyText(plain.body, "已複製正文。")),
         actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
         actionButton("複製審稿版", "", () => copyText(plain.reviewText, "已複製含標籤的審稿版。")),
-        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8")),
-        actionButton("儲存審核意見", "", () => saveReviewNote(article.id, reviewNote.value.trim())),
-        actionButton("核准投稿", "primary", () => setStatus(article.id, "approved", reviewNote.value.trim())),
-        actionButton("退修", "warn", () => setStatus(article.id, "revise", reviewNote.value.trim())),
-        actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim()))
+        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8"))
       );
+      if (currentPack && reviewNote) {
+        actions.append(
+          actionButton("儲存審核意見", "", () => saveReviewNote(article.id, reviewNote.value.trim())),
+          actionButton("核准投稿", "primary", () => setStatus(article.id, "approved", reviewNote.value.trim())),
+          actionButton("退修", "warn", () => setStatus(article.id, "revise", reviewNote.value.trim())),
+          actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim()))
+        );
+      }
       detail.appendChild(actions);
       const copyNote = document.createElement("div");
       copyNote.className = "copy-note";
@@ -1608,9 +1518,7 @@
       renderApprovedAuthorLearning();
       renderAgent();
       renderHistory();
-      renderList();
       renderDetail();
-      renderTrialPack();
       renderVault();
       renderArticlePackHistory();
     }
@@ -1623,14 +1531,12 @@
         const response = await fetch("suggestions.json", { cache: "no-store" });
         if (!response.ok) throw new Error("suggestions.json " + response.status);
         data = await response.json();
-        activeId = data.articlePack.articles[0]?.id || null;
-        if (activeId) activeBody = await loadArticleBody(data.articlePack.articles[0]);
-        activeTrialPackId = data.currentTrialArticlePackId || data.trialArticlePacks?.[0]?.id || null;
-        const trialPack = currentTrialPack();
-        const trialArticle = trialPack?.articles?.[0] || null;
-        activeTrialArticleId = trialArticle?.id || null;
-        if (trialArticle) activeTrialBody = await loadArticleBody(trialArticle);
-        status.textContent = `已載入：${data.articlePack.title}，更新時間 ${data.updatedAt}`;
+        const firstPack = currentArticlePack();
+        const firstArticle = firstPack?.articles?.[0] || null;
+        activePackId = firstPack?.id || "current-review-pack";
+        activeId = firstArticle?.id || null;
+        if (firstArticle) activeBody = await loadArticleBody(firstArticle);
+        status.textContent = `已載入 ${availableArticlePacks().length} 個文章包，更新時間 ${data.updatedAt}`;
       } catch (error) {
         status.textContent = "讀取 suggestions.json 失敗：" + error.message;
       }
