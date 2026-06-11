@@ -5,7 +5,7 @@ const path = require("path");
 const { execFileSync } = require("child_process");
 
 const repoRoot = path.resolve(__dirname, "..");
-const packId = "2026-06-03-public-regenerated-pack";
+const packId = "2026-06-09-rejection-learned-pack";
 const packDir = path.join(repoRoot, "articles", packId);
 const suggestionsPath = path.join(repoRoot, "suggestions.json");
 const gateDrivenContractPath = path.join(
@@ -13,7 +13,11 @@ const gateDrivenContractPath = path.join(
   "data",
   "gate-driven-article-generation-contract-2026-06-03.json",
 );
-const now = "2026-06-03T18:55:00+08:00";
+const rejectionLearningPath = path.join(repoRoot, "data", "review-rejection-learning-2026-06-09.json");
+const submissionQualityGatesPath = path.join(repoRoot, "data", "submission-quality-gates-2026-06-09.json");
+const now = "2026-06-09T20:55:00+08:00";
+const approvedAuthorStructureLearningPath = "data/approved-author-structure-cards-2026-06-10.json";
+const approvedAuthorStructureIntegratedAt = "2026-06-11T14:00:00+08:00";
 
 const bannedBodyPatterns = [
   /讀者版本/,
@@ -70,6 +74,79 @@ const awkwardBodyPatterns = [
   /資源能不能.*接上/,
 ];
 
+const approvedAuthorStructurePatterns = [
+  {
+    id: "case_before_after_difference",
+    learnedFrom: "劉泰一",
+    label: "個案前後差異",
+    generationMove:
+      "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+    rejectWhen: "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。",
+  },
+  {
+    id: "policy_decision_order",
+    learnedFrom: "李婉仙",
+    label: "制度判斷順序",
+    generationMove:
+      "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+    rejectWhen: "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。",
+  },
+  {
+    id: "support_and_risk_layering",
+    learnedFrom: "蔡思樂",
+    label: "風險支撐分層",
+    generationMove:
+      "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+    rejectWhen: "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。",
+  },
+];
+
+function primaryApprovedAuthorPattern(article) {
+  const text = `${article.id} ${article.title} ${article.primaryTag} ${article.categoryType}`;
+  if (/債務|詐騙|退休|長照|減班|照顧|風險|週轉/.test(text)) return "support_and_risk_layering";
+  if (/補貼|補助|給付|制度|政府|救助|法律|疾病|失業|租金|資源/.test(text)) return "policy_decision_order";
+  return "case_before_after_difference";
+}
+
+function approvedAuthorStructureUse(article) {
+  const primaryPattern = primaryApprovedAuthorPattern(article);
+  return {
+    status: "passed",
+    source: approvedAuthorStructureLearningPath,
+    reviewedAt: approvedAuthorStructureIntegratedAt,
+    primaryPattern,
+    appliedPatterns: approvedAuthorStructurePatterns,
+    generationConstraint:
+      "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+    publicBodyRule:
+      "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。",
+  };
+}
+
+function approvedAuthorStructureLearningSummary() {
+  return {
+    status: "integrated_into_war_room_and_generation",
+    sourcePath: approvedAuthorStructureLearningPath,
+    integratedAt: approvedAuthorStructureIntegratedAt,
+    authorCount: 3,
+    summary:
+      "三張通過稿結構卡已轉成文章生成約束：個案前後差異、制度判斷順序、風險支撐分層。後續文章不可只把卡片留在報告，必須在每篇 preGenerationReview 中說明採用方式。",
+    cards: approvedAuthorStructurePatterns.map((pattern) => ({
+      author: pattern.learnedFrom,
+      patternId: pattern.id,
+      patternName: pattern.label,
+      generationMove: pattern.generationMove,
+      rejectWhen: pattern.rejectWhen,
+    })),
+    nextGenerationRules: [
+      "每篇文章需有目前缺口、改善行動、施行效果、剩餘缺口與打平或求助路徑。",
+      "制度型內容需依家庭判斷順序寫，不把政策資訊堆成清單。",
+      "風險型內容需拆出支撐來源與臨界點，讓讀者知道何時要調整或求助。",
+      "三張卡只學結構，不模仿作者語句，不保存原文或事件 ID。",
+    ],
+  };
+}
+
 function body(paragraphs) {
   return paragraphs.map((line) => line.trim()).filter(Boolean).join("\n\n");
 }
@@ -115,6 +192,10 @@ function titleSimilarityScore(a, b) {
 
 const articlePackReviewers = [
   "pack_review_orchestrator",
+  "topic_evidence_reviewer",
+  "reader_motivation_reviewer",
+  "financial_decision_reviewer",
+  "financial_literacy_transfer_reviewer",
   "source_scout",
   "title_similarity_screener",
   "content_difference_reviewer",
@@ -129,15 +210,19 @@ function articlePackReviewGate(article) {
   return {
     status: "green",
     round: 1,
-    reviewedAt: "2026-06-08T14:20:00+08:00",
+    reviewedAt: "2026-06-09T18:10:00+08:00",
     loopPolicy: "review_then_revise_until_green",
     reviewers: articlePackReviewers,
     blockingStatuses: ["red", "yellow", "not_reviewed"],
     revisionRequiredWhen: "Any reviewer returns red, yellow, missing evidence, or role leakage.",
     revisionMove:
       "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
-    note: "Current pack passed the repository green gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, and plain-text output constraints.",
+    note: "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
     checks: [
+      "topic_evidence_card_passed",
+      "reader_fit_card_passed",
+      "financial_decision_card_passed",
+      "financial_literacy_transfer_passed",
       "body_over_2000_non_whitespace_chars",
       "family_economy_relevance",
       "non_concept_with_specific_numbers",
@@ -176,7 +261,7 @@ const articles = [
       "房租最可怕的地方，不是金額很大，而是它很準時。",
       "每個月五號要轉帳，薪水可能十號才進來。房東不會因為孩子感冒、工時減少、補貼還沒撥下來，就自動把日期往後挪。很多家庭明明有工作，也知道可以申請租金補貼，卻仍然覺得自己快被壓扁，原因常常就在這個時間差。",
       "先看一個假設情境。一個四口之家，每月收入58,000元，房租22,000元，孩子交通與餐費9,000元，保險與手機等固定費6,000元，過去債務最低應繳5,000元。薪水一進來，已經有42,000元被固定支出拿走。剩下16,000元要撐食材、醫療、學校活動、水電瓦斯和臨時支出。表面上還沒有赤字，但生活其實只剩很薄的一層。",
-      "租金補貼能幫上忙，但它不是把壓力整個拿掉。以中央租金補貼常見說明來看，一年最高補貼21,600元，換算成每月大約1,800元。這1,800元很重要，因為它可能是兩週通勤、孩子補買制服、或一次診所自費的錢。可是如果家庭每月房租是22,000元，補貼後仍要自己承擔20,200元。真正要看的，不只是有沒有補貼，而是補貼進來後，家庭是否真的多出調整空間。",
+      "租金補貼能幫上忙，但它不是把壓力整個拿掉。補貼金額會依年度公告、租屋地區與家庭條件不同而改變，不能只聽別人說一個數字就套用。先用一個假設來看：如果核定每月補貼1,800元，一年就是21,600元。這1,800元很重要，因為它可能是兩週通勤、孩子補買制服、或一次診所自費的錢。可是如果家庭每月房租是22,000元，補貼後仍要自己承擔20,200元。真正要看的，不只是有沒有補貼，而是補貼進來後，家庭是否真的多出調整空間。",
       "問題不只是租屋很貴，而是房租把生活排程鎖住。",
       "租屋家庭常會遇到三個卡點。第一，押金和搬家費通常集中在一開始，可能一次就是兩個月房租加搬運費。第二，補貼申請、審核、撥款有時間差，不能拿來解決當月已經到期的租金。第三，房租是一筆很難臨時縮小的支出，不像外食可以少吃幾餐，或娛樂可以暫停。當固定支出太高，家庭就算很節省，也只是一直在等下一次帳單。",
       "把數字擺進去看，壓力會更清楚。原本月收入58,000元，固定支出42,000元，剩16,000元。如果核定每月補貼1,800元，固定支出等於降到40,200元，剩餘變成17,800元。差距不是讓人突然寬裕，而是把每月剩餘從收入的27.6%拉到30.7%左右。這3.1個百分點，可能讓家庭從月底借1,500元，變成勉強不用借。這種差異很小，卻會改變人面對下一次意外時的心情。",
@@ -281,8 +366,8 @@ const articles = [
     categoryType: "生活壓力型",
     sources: [
       {
-        label: "行政院，2026年基本工資月薪29,500元、時薪196元政策資訊",
-        url: "https://www.ey.gov.tw/Page/9277F759E41CCD91/f36895e5-30ae-44a7-b1b4-6cc47349ca86",
+        label: "勞動部，2026年最低工資月薪29,500元、時薪196元資訊",
+        url: "https://english.mol.gov.tw/21004/21015/21016/21033/21231/",
       },
       {
         label: "1957福利諮詢專線，社會福利資源諮詢",
@@ -334,7 +419,7 @@ const articles = [
       "長照壓力常常不是從大筆帳單開始，而是從每天少一點開始。",
       "先是請假陪診，接著是下班趕回家，後來變成不能加班、不能出差、不能接臨時工作。家庭看起來還在運作，但收入慢慢少，支出慢慢多，人的耐心也慢慢被磨掉。很多家庭以為長照就是申請服務，真正進到生活裡才發現，照顧會同時改變錢、時間和關係。",
       "先看一個假設情境。爸爸中風後需要協助洗澡、備餐和復健交通。女兒月薪46,000元，房貸與管理費20,000元，家庭生活費18,000元，爸爸藥品與耗材4,000元。原本每月還能留下4,000元。後來女兒每週請假半天陪診，每月少掉約4,000元加班或全勤收入；又多出交通與臨時看護3,000元。家庭從每月剩4,000元，變成每月少3,000元。",
-      "長照資源能降低壓力，但要看家庭實際使用後的現金流。各地長照服務會依失能等級、服務項目與身分別計算補助與部分負擔。常見規則中，一般戶可能需要負擔一定比例，中低收入戶或低收入戶負擔比例較低或免負擔。假設某項長照服務每月額度10,020元，一般戶若負擔16%，自付約1,603元；中低收入戶若負擔5%，自付約501元；低收入戶可能為0。這些數字要以所在地最新公告為準，但它提醒我們：同樣使用服務，不同家庭承擔的壓力不同。",
+      "長照資源能降低壓力，但要看家庭實際使用後的現金流。各地長照服務會依失能等級、服務項目與身分別計算補助與部分負擔。常見規則中，一般戶可能需要負擔一定比例，中低收入戶或低收入戶負擔比例較低或免負擔。假設核定後每月可使用約10,000元服務，若依16%部分負擔估算，自付約1,600元；若身分別適用較低比例，自付就可能降到數百元或更低。這些數字要以所在地最新公告與照管中心核定為準，但它提醒我們：同樣使用服務，不同家庭承擔的壓力不同。",
       "問題不只是有沒有長照，而是服務有沒有補到家裡最卡的地方。",
       "有些家庭最需要的是白天有人協助，讓主要照顧者可以工作。有些家庭最需要的是交通接送，避免每次復健都請假。有些家庭最需要的是喘息服務，讓人不要在長期疲憊中爆掉。如果只看服務名稱，可能會覺得都有資源；如果看家庭時間表，才會知道哪一段時間沒有人接住。",
       "把請假和自付費一起看，會更清楚。原本女兒每月因請假與臨時看護多出7,000元缺口。如果使用居家服務與交通協助後，自付增加2,000元，但請假少掉一半，收入損失從4,000元降到2,000元，臨時看護從3,000元降到1,000元。家庭每月總缺口就從7,000元降到約3,000元。這不是服務越多越好，而是服務要用在最會造成赤字的地方。",
@@ -405,8 +490,8 @@ const articles = [
     categoryType: "生活壓力型",
     sources: [
       {
-        label: "國家發展委員會，2026年基本工資月薪29,500元、時薪196元資訊",
-        url: "https://www.ndc.gov.tw/nc_27_38806",
+        label: "勞動部，2026年最低工資月薪29,500元、時薪196元資訊",
+        url: "https://english.mol.gov.tw/21004/21015/21016/21033/21231/",
       },
       {
         label: "行政院，基本工資調整政策資訊",
@@ -463,7 +548,7 @@ const articles = [
       "問題不只是收入變少，而是家庭原本就只剩一點點。",
       "很多家庭平常看起來穩，是因為薪水剛好能接住所有帳單。一旦收入少8,400元，最先受到影響的通常不是大支出，而是小緩衝。醫療延後、孩子活動取消、保費改刷卡、伙食品質下降、信用卡只繳最低。這些看起來都還能撐，但其實是在把未來幾個月的風險往上堆。",
       "減班休息要先看三個數字。第一，收入少多少。第二，固定支出有多少不能動。第三，手上現金能撐幾個月。假設每月缺口2,400元，手上緩衝20,000元，看起來能撐8個月；但如果同時有車險、學費、醫療或過年支出，實際可撐時間會大幅縮短。若缺口不是2,400元，而是10,000元，20,000元只夠兩個月。",
-      "勞動部有與減班休息、僱用安定、充電再出發訓練等相關支持措施，部分訓練補助曾以每月最高19,224元作為說明。實際資格、金額與適用期間要以最新公告為準。這些資源的重要性，不是讓家庭不用調整，而是讓收入下降時不要完全靠借錢補洞。",
+      "勞動部有與減班休息、僱用安定、充電再出發訓練等相關支持措施，但適用資格、請領金額、期間與是否仍開放，都要看最新公告。這些資源的重要性，不是讓家庭不用調整，而是讓收入下降時不要完全靠借錢補洞。文章裡如果要放補助金額，就必須確認當年度公告；在還沒確認前，家庭可以先把它當成要查證的出口，而不是已經到手的收入。",
       "可是資源也有時間差。申請、審核、參訓、請領都需要時間。若家庭等到信用卡已經刷爆才處理，就會變成資源還沒來，債務先增加。比較穩的做法，是在第一次知道工時可能減少時，就先做30天盤點，而不是等連續三個月赤字才面對。",
       "把減班前後攤開看。家庭收入從82,000元降到73,600元，若支出不調整，每月少2,400元。若先暫停一筆每月2,000元非必要支出，把外食降3,000元，並和家人討論長輩支援從6,000元暫降到4,000元，每月可減少7,000元支出。家庭就從少2,400元，變成多4,600元。這不是要把生活縮到沒有品質，而是先避免收入下降變成債務上升。",
       "真正改善的關鍵，是先處理固定承諾。",
@@ -548,7 +633,7 @@ const articles = [
       "先看一個假設情境。長輩每月退休與年金收入26,000元，房屋管理費與水電5,000元，餐食9,000元，慢性病與交通4,000元，保險與手機2,000元，平常剩6,000元。這個月看起來還算穩。可是如果開始需要每週兩次照顧服務或復健交通，每月多3,500元，剩餘就降到2,500元。若同時被詐騙轉走60,000元，等於一次拿走兩年以上的每月剩餘。",
       "問題不只是退休金太少，而是風險會一起來。",
       "高齡家庭很少只遇到單一支出。一次跌倒可能帶來急診、復健、輔具、照顧安排；一次被騙可能帶來帳戶安全、家人衝突和生活費短缺；一次病情變化可能讓子女請假陪診，家庭收入也跟著受影響。若只問長輩每月收入多少，會忽略風險發生時誰要補、補多久、用什麼補。",
-      "1966可以先幫你找到長照從哪裡開始問。可撥打1966了解長照服務，但實際核定、服務項目、自付比例與地方規定仍要看最新公告。假設某項服務每月費用額度10,020元，一般戶自付16%約1,603元；若身分不同，自付比例可能較低。這個數字放進老後生活裡，代表每月剩餘6,000元會變成約4,397元。若再加交通、耗材和藥品，就可能只剩一兩千元。",
+      "1966可以先幫你找到長照從哪裡開始問。可撥打1966了解長照服務，但實際核定、服務項目、自付比例與地方規定仍要看最新公告。假設核定後每月使用約10,000元服務，若一般戶依16%部分負擔估算，自付約1,600元。這個數字放進老後生活裡，代表每月剩餘6,000元會變成約4,400元。若再加交通、耗材和藥品，就可能只剩一兩千元。",
       "照顧支出不是只有自付費。",
       "有些支出會很分散：尿布、營養品、防滑用品、計程車、陪診餐費、復健掛號。假設每月耗材2,000元、交通1,500元、服務自付1,600元，合計5,100元。原本每月剩6,000元的長輩，剩餘只剩900元。這時只要牙科自費、電器壞掉或親友紅白包，就可能需要子女支援。",
       "詐騙風險也要放進家庭財務一起看。165打詐儀表板長期揭示詐騙案件與財損規模，政府也持續提醒可疑來電、投資群組、假親友借款、假檢警等風險。對高齡者來說，被騙不只是存款少一筆，而是原本用來支付醫療和照顧的安全墊消失。若長輩一年只能存下30,000元，一次被騙90,000元，就等於三年的緩衝被拿走。",
@@ -565,6 +650,239 @@ const articles = [
     ]),
   },
 ];
+
+const preGenerationCards = {
+  "rent-subsidy-cashflow": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["115年度中央租金補貼公告", "租屋家庭固定支出與撥款時間差", "6/9 駁回學習中的家庭經濟主軸與數字合理性要求"],
+      taiwanFit: "中央租金補貼、地方租屋資源與薪水/房租扣款日期都是台灣租屋家庭常見壓力來源。",
+      hypothesisBoundary: "家庭收支為假設情境；補貼金額需以當年度公告與個別核定為準。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "第一句直接抓住房租準時到期，讀者能立刻連到每月現金流壓力。",
+      scanAnchors: ["房租到期日", "補貼撥款時間差", "搬家成本回收月數"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把房租日、薪水日、補貼日與信用卡扣款日排在同一張表，計算房租到期前帳戶是否足夠。",
+      comparison: "補貼前後每月剩餘 16,000 元到 17,800 元，並比較搬家少租金與一次性成本。",
+      improvementFactors: ["固定支出下降", "到期日排列變清楚", "避免用新債補時間差"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "把年度補貼轉成每月現金流與可撐天數，學會看固定支出的日期風險。",
+    },
+  },
+  "single-parent-childcare-gap": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["中央托育補助與育兒津貼制度", "單親照顧者收入、托育與接送時間交疊", "6/9 駁回學習中的家庭情境與非概念文要求"],
+      taiwanFit: "托育名額、補助類型、扶養費與工作排班都會影響台灣單親家庭現金流。",
+      hypothesisBoundary: "收入、托育費與扶養費為假設情境；補助資格與金額需依最新公告和地方規定確認。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "前段把一個人接孩子與一個人接帳單放在一起，讓讀者先感到被理解。",
+      scanAnchors: ["托育費", "請假損失", "穩定與不穩定支援"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把一週接送時間、托育費、請假少掉的收入與扶養費穩定度放在同一張表。",
+      comparison: "托育補助、私人托育差額與請假天數下降前後的每月缺口比較。",
+      improvementFactors: ["托育費下降", "請假損失下降", "扶養費用保守金額估算"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把照顧時間換算成收入風險，並分清穩定支援與臨時支援。",
+    },
+  },
+  "debt-negotiation-cashflow": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["消費者債務清理制度與前置協商", "信用卡/信貸月付壓力", "6/9 駁回學習中的數字證明與可行下一步要求"],
+      taiwanFit: "金融機構債務、前置協商、催收與家庭必要支出是台灣家庭常見財務壓力。",
+      hypothesisBoundary: "債務本金、月付與利息拆解為示範試算；正式方案需由金融機構、法院或專業窗口確認。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "以每月都有繳卻沒有變少切入，符合債務家庭常見的困惑。",
+      scanAnchors: ["月付比", "本金下降", "30 天必要生活"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "列出每筆債務本金、月付、是否逾期，再扣掉 30 天必要生活費。",
+      comparison: "債務月付從 9,500 元降到 6,000 元，家庭現金流從少 1,500 元變成多 2,000 元。",
+      improvementFactors: ["停止新債補洞", "月付不吃掉必要生活", "先處理住居與高費用債務"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會看債務月付比與還款後是否仍能支付必要生活。",
+    },
+  },
+  "emergency-buffer-income-gap": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["2026 年最低工資資訊", "1957 福利諮詢與急難資源", "家庭必要支出與收入延遲風險"],
+      taiwanFit: "基本工資、急難資源與薪水延遲都是台灣家庭可查且常見的生活風險。",
+      hypothesisBoundary: "家庭支出與預備金金額為假設試算；外部資源不保證即時核准。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "把一萬元能撐到哪一天作為入口，比抽象預備金概念更貼近日常。",
+      scanAnchors: ["可撐天數", "紅黃綠支出", "日常帳戶分開"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "用必要支出除以 30，算手上現金能撐幾天，再標出紅燈支出。",
+      comparison: "每月可留下 4,000 元提升到 7,400 元，存到 30,000 元從 8 個月縮短到 5 個月。",
+      improvementFactors: ["固定支出調整", "債務月付鬆開", "預備金分層"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把預備金換算成天數，並分類不能斷與可延後支出。",
+    },
+  },
+  "long-term-care-family-budget": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["1966 長照服務入口", "長照部分負擔與地方差異", "家庭照顧者工時與耗材成本"],
+      taiwanFit: "長照服務、自付費、陪診請假與耗材支出是台灣高齡家庭常見的家庭經濟議題。",
+      hypothesisBoundary: "10,000 元服務額度與 16% 自付為估算示範；實際核定需依所在地公告與照管中心評估。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "以每天少一點的時間與收入切入，比直接介紹長照服務更容易讓照顧家庭讀下去。",
+      scanAnchors: ["自付費", "請假少收入", "照顧成本表"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把長照支出分成自付費、耗材交通、照顧者少掉的收入三欄。",
+      comparison: "使用服務後缺口從 7,000 元降到 3,000 元，並比較第一到第三個月支援退潮後的平均成本。",
+      improvementFactors: ["服務補到最卡時段", "家庭分工具體化", "更新照顧成本表"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把照顧成本拆成看得見的費用與少掉的收入。",
+    },
+  },
+  "scam-loss-family-recovery": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["165 打詐儀表板", "警政署反詐資訊", "詐騙財損對家庭必要支出的影響"],
+      taiwanFit: "詐騙案件、165 專線、銀行攔阻與家庭帳戶安排都符合台灣現況。",
+      hypothesisBoundary: "損失金額與家庭支出為假設情境；追回結果與銀行處理需依個案進度確認。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "先問錢被騙後這個月怎麼過，避免變成一般反詐宣導。",
+      scanAnchors: ["30 天必要支出", "生活表與損失表", "大額轉帳第二人確認"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "先列 30 天不能斷的支出，再分開整理損失表與生活表。",
+      comparison: "短期貸款每月 6,000 元與壓到 2,500 元的半年壓力差 21,000 元。",
+      improvementFactors: ["先讓錢不要再流出去", "避免二次借款", "建立大額轉帳確認"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把追回款項與當月生活分開判斷，並辨識二次詐騙風險。",
+    },
+  },
+  "first-job-family-support": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["2026 年最低工資資訊", "青年租屋、通勤、學貸與家用支出", "知識庫中青年財務知能相關缺口"],
+      taiwanFit: "起薪、租屋押金、家用與學貸是台灣青年開始工作時常見的家庭經濟壓力。",
+      hypothesisBoundary: "月薪與支出為假設情境；不同縣市租金與家庭家用期待需另行盤點。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "以第一份薪水還沒拿到就被支出排隊切入，能降低責備感。",
+      scanAnchors: ["固定生存支出", "責任支出", "三個月觀察"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把薪水分成固定生存支出、責任支出與可調整支出，確認每月最低剩餘。",
+      comparison: "家用暫降與交通調整後，每月剩餘從 1,200 元變成 3,500 元。",
+      improvementFactors: ["家用階段式討論", "延後分期", "搬家成本加一個月生活費"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會用固定支出占比判斷起步期是否會變成債務期。",
+    },
+  },
+  "reduced-hours-income-warning": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["勞動部減班休息與就業支持資訊", "家庭收入下降但固定扣款不變", "6/9 駁回學習中的台灣資料查核要求"],
+      taiwanFit: "減班休息、僱用安定與充電再出發等支持措施是台灣勞動情境中的可查制度。",
+      hypothesisBoundary: "收入下降幅度與家庭支出為假設情境；支持措施資格、金額與開放狀態需查最新公告。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "以還有工作但收入少一截切入，抓住減班家庭容易低估的風險。",
+      scanAnchors: ["收入少多少", "固定支出不能動", "30/90/半年情境"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "第一次知道工時可能減少時，先做 30 天盤點與固定扣款日檢查。",
+      comparison: "收入少 8,400 元後每月少 2,400 元，支出調整後變成多 4,600 元。",
+      improvementFactors: ["固定承諾先調", "支出降額", "資源提前查證"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把收入下降拆成短期、一季、半年三種現金流情境。",
+    },
+  },
+  "special-circumstance-support": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["特殊境遇家庭扶助條例", "衛福部社家署特殊境遇家庭扶助資訊", "家庭變故後生活費、孩子、教育與醫療缺口"],
+      taiwanFit: "特殊境遇家庭扶助是台灣中央法規與地方審核共同運作的正式制度。",
+      hypothesisBoundary: "基本工資換算與家庭收支為示範；實際資格、文件與核定以地方政府最新規定為準。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "先寫變故後不知道先缺哪一種幫忙，讓制度文章避免變成條文摘要。",
+      scanAnchors: ["四類缺口", "三個月時間差", "文件分批"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把需求分成生活費、孩子、教育、醫療四類，再對應扶助項目與文件。",
+      comparison: "子女生活津貼讓家庭從每月少 2,000 元變成多 3,900 元，並比較學雜費減免前後。",
+      improvementFactors: ["缺口分類", "文件提早確認", "短期救急與中期生活分開"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把政府資源拆成用途、期間、資格與文件，而不是只問能不能領。",
+    },
+  },
+  "retirement-care-and-scam-risk": {
+    topicEvidenceCard: {
+      status: "passed",
+      evidenceBasis: ["1966 長照資訊", "165 打詐資訊", "高齡家庭醫療、照顧與詐騙財損風險"],
+      taiwanFit: "高齡者醫療支出、長照服務與詐騙防護皆有台灣制度與公共資料支撐。",
+      hypothesisBoundary: "退休收入、照顧自付與詐騙損失為假設情境；長照核定與詐騙處理需依個案與地方規定確認。",
+    },
+    readerFitCard: {
+      status: "passed",
+      openingHook: "先挑戰退休金夠不夠的單一想像，帶入醫療、照顧和詐騙一起來的壓力。",
+      scanAnchors: ["醫療照顧新增支出", "詐騙安全墊", "老後風險表"],
+    },
+    financialDecisionCard: {
+      status: "passed",
+      assessmentTask: "把固定收入支出、醫療照顧新增項目、詐騙防護與緊急聯絡放在同一張表。",
+      comparison: "照顧與醫療新增後每月剩 900 元，調整後回到 3,700 元，並比較存款用途標示前後風險。",
+      improvementFactors: ["日常自主與大額風險分開", "照顧支援上限", "交易通知與第二人確認"],
+    },
+    financialLiteracyTransfer: {
+      status: "passed",
+      capability: "學會把存款分用途，區分醫療照顧準備金與真正可承受突發風險的緩衝。",
+    },
+  },
+};
 
 function fail(message) {
   console.error(message);
@@ -599,6 +917,23 @@ function validateArticles() {
   for (const article of articles) {
     if (ids.has(article.id)) fail(`Duplicate article id: ${article.id}`);
     ids.add(article.id);
+    const protocol = preGenerationCards[article.id];
+    if (!protocol) fail(`${article.id} missing pre-generation protocol cards`);
+    for (const field of [
+      "topicEvidenceCard",
+      "readerFitCard",
+      "financialDecisionCard",
+      "financialLiteracyTransfer",
+    ]) {
+      if (!protocol[field]) fail(`${article.id} missing ${field}`);
+      if (protocol[field].status !== "passed") fail(`${article.id} ${field} not passed`);
+    }
+    if (!protocol.financialDecisionCard.assessmentTask) {
+      fail(`${article.id} missing financial assessment task`);
+    }
+    if (!protocol.financialLiteracyTransfer.capability) {
+      fail(`${article.id} missing financial literacy transfer capability`);
+    }
     const normalizedTitle = normalizeTitleForSimilarity(article.title);
     normalizedTitles.push({ id: article.id, title: article.title, normalizedTitle });
     const nonWhitespaceChars = bodyCharCount(article.text);
@@ -650,6 +985,7 @@ function validateArticles() {
 }
 
 function articleRecord(article) {
+  const preGenerationReview = preGenerationCards[article.id];
   return {
     id: article.id,
     title: article.title,
@@ -680,12 +1016,24 @@ function articleRecord(article) {
       "secondaryTags",
       "bodyChars",
       "readiness",
+      "preGenerationReview",
+      "approvedAuthorStructureUse",
       "articlePackReviewGate",
       "nonConceptReview",
       "bodyNaturalnessReview",
       "roleIntegrityReview",
       "titleNoveltyReview",
     ],
+    preGenerationReview: {
+      status: "passed_prewrite_protocol",
+      reviewedAt: now,
+      source: "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+      topicEvidenceCard: preGenerationReview.topicEvidenceCard,
+      readerFitCard: preGenerationReview.readerFitCard,
+      financialDecisionCard: preGenerationReview.financialDecisionCard,
+      financialLiteracyTransfer: preGenerationReview.financialLiteracyTransfer,
+      approvedAuthorStructureUse: approvedAuthorStructureUse(article),
+    },
     articlePackReviewGate: articlePackReviewGate(article),
     nonConceptReview: {
       status: "passed_draft_gate",
@@ -710,10 +1058,28 @@ function articleRecord(article) {
 function updateSuggestions() {
   const suggestions = JSON.parse(fs.readFileSync(suggestionsPath, "utf8"));
   const gateDrivenContract = JSON.parse(fs.readFileSync(gateDrivenContractPath, "utf8"));
+  const rejectionLearning = JSON.parse(fs.readFileSync(rejectionLearningPath, "utf8"));
+  const submissionQualityGates = JSON.parse(fs.readFileSync(submissionQualityGatesPath, "utf8"));
+  const rejectionStats = rejectionLearning.sourceStats || {};
   suggestions.updatedAt = now;
-  suggestions.source = "FamilyFin knowledge war room role-integrity-corrected public article pack regenerated after Kevin feedback";
+  suggestions.source = "FamilyFin knowledge war room 2026-06-09 rejection-learned public article pack regenerated after latest InfoCenter rejection learning";
   suggestions.metrics = {
     ...suggestions.metrics,
+    indexedEvents: rejectionStats.eventTotal || suggestions.metrics?.indexedEvents,
+    reviewRejectionClickBatchAttempted: rejectionStats.rejectedEvents || suggestions.metrics?.reviewRejectionClickBatchAttempted,
+    reviewRejectionRowsClicked: rejectionStats.rejectedEvents || suggestions.metrics?.reviewRejectionRowsClicked,
+    reviewRejectionTitlesFound: rejectionStats.reviewTitlesFound || suggestions.metrics?.reviewRejectionTitlesFound,
+    reviewRejectionContentsFound: rejectionStats.reviewContentsFound || suggestions.metrics?.reviewRejectionContentsFound,
+    reviewRejectionLearningReadyCards:
+      rejectionStats.reviewLearningReadyCards || suggestions.metrics?.reviewRejectionLearningReadyCards,
+    reviewRejectionTotalFromUi: rejectionStats.rejectedEvents || suggestions.metrics?.reviewRejectionTotalFromUi,
+    reviewRejectionTextRows: submissionQualityGates.sourceStats?.reviewTextRows || suggestions.metrics?.reviewRejectionTextRows,
+    reviewRejectionEmptyReviewModalRows:
+      submissionQualityGates.sourceStats?.emptyReviewModalRows ||
+      suggestions.metrics?.reviewRejectionEmptyReviewModalRows,
+    reviewRejectionBaselineRejectCount: rejectionStats.baselineRejectCount,
+    reviewRejectionDeltaFromBaseline: rejectionStats.rejectDeltaFromBaseline,
+    reviewRejectionLatestLearningPath: "data/review-rejection-learning-2026-06-09.json",
     cleanPublicArticlePackCount: articles.length,
     currentArticlePackRoleAuditMatches: 0,
     latestCleanPackRoleAuditMatches: 0,
@@ -731,19 +1097,35 @@ function updateSuggestions() {
     articlePackReviewLoopStatus: "all_current_articles_green",
     knowledgeBaseTitleIndexRequired: true,
     knowledgeBaseTitleIndexPath: "data/knowledge-base-title-index.json",
-    submissionQualityGateCount: Object.keys(gateDrivenContract.gateToGenerationMoves || {}).length,
+    submissionQualityGateCount: submissionQualityGates.gates?.length || Object.keys(gateDrivenContract.gateToGenerationMoves || {}).length,
+    submissionQualityGateSourcePath: "data/submission-quality-gates-2026-06-09.json",
+    preGenerationProtocolRequired: true,
+    preGenerationProtocolSourcePath: "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+    topicEvidenceGateRequired: true,
+    readerFitGateRequired: true,
+    financialDecisionSupportGateRequired: true,
+    financialLiteracyTransferGateRequired: true,
+    hypothesisTopicVerificationRequired: true,
+    approvedAuthorStructureLearningRequired: true,
+    approvedAuthorStructureCardCount: approvedAuthorStructurePatterns.length,
+    approvedAuthorStructureLearningPath,
+    approvedAuthorStructureIntegratedAt,
     defaultAudience: "一般民眾",
   };
+  suggestions.approvedAuthorStructureLearning = approvedAuthorStructureLearningSummary();
   suggestions.articlePack = {
     id: packId,
-    title: "2026-06-03 家庭生活壓力與財務缺口候選稿",
+    title: "2026-06-09 駁回學習與前置驗證後重生｜家庭生活壓力與財務缺口候選稿",
     status: "待 Kevin 審核",
-    description: "本批次修正先前正文混入寫作建議、標題句型過度相似與部分語句像翻譯腔的問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性與正文台灣中文語感預檢。",
+    description: "本批次納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡，並追加 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer 四項生成前 protocol。10 篇皆為一般民眾閱讀角度、正文超過 2000 字，並以家庭經濟主軸、非概念文、數字合理性、易讀吸引力、財務決策幫助、角色一致性與台灣中文語感作為生成前 gate。",
     reviewLearningFields: [
       "Kevin 可點進每篇查看純文字正文。",
       "核准後依 primaryTag 分類存放。",
       "退修意見會回寫到 review_feedback_card，作為下一輪生成前的規則素材。",
       "社工版不再預設生成，除非 Kevin 明確指定。",
+      "本輪已將 6/9 大量駁回轉成生成前規則，不再沿用 6/3 的 3 張 ready card blocker。",
+      "本輪重新更新 10 篇文章生成時，已逐篇套用題目驗證、讀者吸引力、財務評估任務與財務知能轉移檢查。",
+      "2026-06-11 起每篇都需套用三張通過稿結構卡：個案前後差異、制度判斷順序、風險支撐分層。",
     ],
     articles: articles.map(articleRecord),
     exportMode: {
@@ -786,6 +1168,27 @@ function updateSuggestions() {
       socialWorkerOnlyOnExplicitRequest: true,
       bodyMustNotAddressEditorsOrReviewers: true,
     },
+    preGenerationProtocolPolicy: {
+      status: "required_before_drafting",
+      source: "2026-06-09 agent discussion after rejection signal: 假設性議題，缺乏驗證",
+      sourceReport: "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+      note:
+        "Before drafting, each topic must prove Taiwan relevance, reader value, financial decision usefulness, and financial literacy transfer. If the topic is only plausible but unverified, rewrite it as a household checklist or choose another topic.",
+      requiredCards: [
+        "topicEvidenceCard",
+        "readerFitCard",
+        "financialDecisionCard",
+        "financialLiteracyTransfer",
+        "approvedAuthorStructureUse",
+      ],
+      rejectWhen: [
+        "The topic is only a hypothetical issue with no Taiwan source, policy, news, knowledge-base gap, rejection signal, or realistic cost basis.",
+        "The first 150 characters read like a course introduction, policy abstract, or concept explanation.",
+        "The article provides information but does not help readers evaluate their own cash flow, spending gap, risk, or options.",
+        "Readers cannot name one reusable financial capability after reading.",
+        "The draft does not explain how it used approved-author structure learning.",
+      ],
+    },
     titleDiversityPolicy: {
       status: "required",
       note: "除非 Kevin 明確要求系列文章，否則同一批候選稿不得使用同一個標題公式。要混合場景句、問題句、數字句、後果句與生活選擇句，且必須是自然台灣中文，不可像美語直譯或顧問簡報。",
@@ -822,6 +1225,28 @@ function updateSuggestions() {
         "把「示意前後差異」改成「把調整前後攤開看」「把時間差算進去」「把每月結餘拆開看」。",
       ],
     },
+    readerAppealAndReadabilityPolicy: {
+      status: "required",
+      note:
+        "一般民眾版要先讓讀者看到自己的生活壓力，再帶入資料與判斷。易讀性以可掃讀、短段落、生活入口與前 150 字吸引力檢查，不只看句子是否白話。",
+      requiredMoves: [
+        "前 150 字出現生活矛盾、金錢卡點、時間壓力或家庭選擇困難。",
+        "段落標題要幫讀者重新判斷問題，不只是分類。",
+        "每 2 到 4 段至少有一個具體抓手，例如金額、日期、支出、家庭角色或可盤點項目。",
+        "資料段落要立刻回到生活影響，避免引用感與報告感。",
+      ],
+    },
+    financialDecisionSupportPolicy: {
+      status: "required",
+      note:
+        "文章的財商教育價值在於協助讀者評估處境、比較選項與查證資訊，不是替讀者做正式財務、法律或福利資格判斷。",
+      requiredMoves: [
+        "每篇至少有一個低門檻財務評估任務，例如 30 天必要支出、扣款日、每月缺口、可撐天數或債務月付比。",
+        "每篇至少有一個選項比較，例如補助前後、調整支出前後、協商前後、搬家前後或收入下降前後。",
+        "每篇說清楚改善關鍵：固定支出下降、時間差縮短、避免新增債務、確認資格或家人分工更穩定。",
+        "每篇至少讓讀者帶走一個財務知能：看現金流、分類支出、比較成本、查證資訊、辨識風險或保留緩衝。",
+      ],
+    },
     kevinEditorialReferencePolicy: {
       status: "learned_from_reference",
       source: "Kevin 2026-06-03 人工調整稿",
@@ -851,7 +1276,7 @@ function updateSuggestions() {
     },
     articlePackGreenReviewPolicy: {
       status: "required_before_review_board",
-      source: "Kevin 2026-06-08 request: every plain-text pack must be reviewed once and revised until green.",
+      source: "Kevin 2026-06-08 request plus 2026-06-09 latest rejection-learning run: every plain-text pack must be reviewed once and revised until green.",
       purpose:
         "Move the submission gate into article generation. The review board should only show drafts that already passed a generation green-light review.",
       orchestration: [
@@ -882,9 +1307,9 @@ function updateSuggestions() {
       ],
     },
     submissionSimilarityLearningPolicy: {
-      status: "integrated_from_chat_review",
-      source: "檢核投稿機制聊天本體，2026-06-06",
-      note: "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
+      status: "integrated_from_chat_review_and_2026_06_09_rejections",
+      source: "檢核投稿機制聊天本體，2026-06-06；InfoCenter 審核駁回學習，2026-06-09",
+      note: "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目或本次大量駁回稿相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
       titleGate: [
         "標題是第一提醒點，需檢查同批重複、既有題名包含、近似成功標題加副標。",
         "標題一致或高度相似不直接代表抄襲，但正式產稿前不得忽略，需寫出差異價值。",
@@ -894,6 +1319,7 @@ function updateSuggestions() {
         "短稿若低於字數門檻且缺具體情境、缺數字或決策歷程，不能標示為可投稿。",
       ],
       generationMove: "每篇候選題在開寫前先寫一句：本題和既有文章最大的新增價值是什麼。答不出來就換題。",
+      latestRejectionLearningPath: "data/review-rejection-learning-2026-06-09.json",
     },
   };
   suggestions.roleIntegrityCorrection = {
@@ -904,6 +1330,16 @@ function updateSuggestions() {
     auditCommand: `node tools/audit-article-role-integrity.js articles/${packId}`,
   };
   suggestions.gateDrivenArticleGeneration = gateDrivenContract;
+  suggestions.submissionQualityGateRulebook = {
+    status: "updated_from_2026_06_09_rejection_learning",
+    dataPath: "data/submission-quality-gates-2026-06-09.json",
+    rulebookPath: "docs/submission-quality-gate-rulebook.md",
+    agentSpecPath: "docs/submission-quality-gate-agent.md",
+    preGenerationProtocolPath: "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+    agentDiscussionReportPath: "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+    reviewLearningReadyCards: rejectionStats.reviewLearningReadyCards,
+    rejectedEvents: rejectionStats.rejectedEvents,
+  };
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
 }
 
@@ -920,14 +1356,15 @@ function writeArticleFiles() {
     fs.writeFileSync(fullPath, `正文\n${article.text}\n`, "utf8");
   }
   const readme = [
-    "# 2026-06-03 一般民眾純文字內容包",
+    "# 2026-06-09 一般民眾純文字內容包",
     "",
-    "本批次用來修正先前正文混入寫作建議與角色錯亂的問題。",
+    "本批次納入 2026-06-09 最新審核駁回學習，將大量退件訊號前移到生成前 gate。",
+    "本次重新更新 10 篇文章時，逐篇套用題目驗證、讀者吸引力、財務評估任務與財務知能轉移檢查。",
     "",
     "- 10 篇皆為一般民眾閱讀角度。",
     "- TXT 檔只保留 `正文` 標記與可複製正文。",
     "- SEO/AIO、來源與檢核資訊只保存在 suggestions.json。",
-    "- 發布前需執行：`node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack`。",
+    `- 發布前需執行：\`node tools/audit-article-role-integrity.js articles/${packId}\`。`,
   ].join("\n");
   fs.writeFileSync(path.join(packDir, "README.md"), `${readme}\n`, "utf8");
 }

@@ -2,8 +2,8 @@
 
 建立日期：2026-06-08
 
-狀態：project-local draft checklist  
-來源：2026-06-06 reviewer 規則增量、投稿品質 gate、Kevin 人工修稿回饋  
+狀態：project-local active checklist
+來源：2026-06-06 reviewer 規則增量、2026-06-09 最新駁回學習、投稿品質 gate、Kevin 人工修稿回饋
 用途：正式產出 10 篇純文字可投稿文章包前，先判斷題目、資料、數字與寫作角度是否足夠。
 
 ## 使用原則
@@ -22,11 +22,12 @@
 3. `analysis-history.json` 可解析。
 4. 本週週戰情室 report 或 checkpoint 已存在。
 5. `data/knowledge-base-title-index.json` 已由 `node tools/build-knowledge-base-title-index.js` 更新。
-6. `reviewLearningReadyCards` 足以支撐正式產稿；建議門檻為至少 8 張。
-7. 最新 `EVENT_REVIEW` / `EVENT_COMMENT` 讀取狀態已明確記錄。
+6. `reviewLearningReadyCards` 足以支撐正式產稿；建議門檻為至少 8 張，目前 2026-06-09 最新值為 50 張。
+7. 最新 `EVENT_REVIEW` / `EVENT_COMMENT` 讀取狀態已明確記錄；目前最新公開安全摘要為 `data/review-rejection-learning-2026-06-09.json`。
 8. 若 live review/comment 仍 blocked，只能產候選題卡或 blocker report。
 9. 每篇文章皆預設一般民眾版；社工版需 Kevin 明確指定。
 10. 正文輸出只允許純文字，不顯示 SEO/AIO、FAQ、來源清單、gate 自評或 agent 討論。
+11. 每篇純文字文章進入工作台前，必須先有 `articlePackReviewGate.status = green`。
 
 ## 二、每題三道題材門
 
@@ -89,6 +90,10 @@
 8. 官方政策、補助、法規、年度、地方方案必須查核最新台灣來源。
 9. 假設情境必須明確是示意，不可偽裝成真實案例。
 10. 結尾需回扣開頭生活機制，最後一句要落在一個具體盤點點。
+11. `articlePackReviewGate` 必須記錄審核輪次、reviewer、非綠燈條件與回修方式。
+
+若任何一項未通過，不應送到 Kevin 核准台。
+處理方式是回到生成端調整題目、數字、角度、正文或結尾，再跑下一輪審核。
 
 ## 五、同批標題 gate
 
@@ -136,8 +141,9 @@
 6. 若被 blocked，留下 blocker report，不產正式 10 篇。
 7. 每篇 `new_reader_value` 與 `content_difference_plan` 摘要，方便後續退修或核准時回查。
 8. `data/knowledge-base-title-index.json` 更新時間與 validator 中的 knowledge-base title index 檢查結果。
+9. 每篇 `articlePackReviewGate` 綠燈紀錄；非綠燈時，改存 blocker 或 revision log，不存成可投稿文章包。
 
 ## 八、目前判斷
 
-截至 2026-06-08，這份 checklist 應先作為 project-local draft。  
-正式 10 篇雙週文章包仍應等待 live rejection/comment learning 恢復，或先由 Kevin 批准小批次試產。
+截至 2026-06-09，live rejection/comment learning 已恢復到可支撐正式產稿的門檻。
+正式 10 篇雙週文章包仍需每次重跑最新駁回學習、官方資料查核、知識庫標題索引與 validator；若任一 gate 退回 blocker，才停止產稿。

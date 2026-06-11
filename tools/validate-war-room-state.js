@@ -10,9 +10,14 @@ const paths = {
   suggestions: "suggestions.json",
   articlePackHistory: "article-pack-history.json",
   analysisHistory: "analysis-history.json",
-  submissionGates: "data/submission-quality-gates-2026-06-03.json",
+  submissionGates: "data/submission-quality-gates-2026-06-09.json",
   gateContract: "data/gate-driven-article-generation-contract-2026-06-03.json",
   knowledgeBaseTitleIndex: "data/knowledge-base-title-index.json",
+  improvementRuleDelta: "docs/reviewer-rule-delta-2026-06-10.md",
+  approvedAuthorStructureTemplate: "data/approved-author-structure-card-template-2026-06-10.json",
+  approvedAuthorStructureCards: "data/approved-author-structure-cards-2026-06-10.json",
+  improvementPlanReport: "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
+  approvedAuthorStructureReport: "reports/2026-06-10-approved-author-structure-cards.md",
 };
 
 const errors = [];
@@ -188,6 +193,49 @@ function pushCheck(name, status, detail) {
   checks.push({ name, status, detail });
 }
 
+function validateApprovedAuthorStructureUse(scopeId, approvedAuthorStructureUse) {
+  if (!approvedAuthorStructureUse) {
+    errors.push(`${scopeId} approvedAuthorStructureUse missing`);
+    return false;
+  }
+
+  const requiredPatternIds = [
+    "case_before_after_difference",
+    "policy_decision_order",
+    "support_and_risk_layering",
+  ];
+  const appliedPatterns = approvedAuthorStructureUse.appliedPatterns || [];
+  const appliedPatternIds = appliedPatterns.map((pattern) => pattern.id || pattern.patternId);
+  const missingPatternIds = requiredPatternIds.filter((id) => !appliedPatternIds.includes(id));
+
+  if (approvedAuthorStructureUse.status !== "passed") {
+    errors.push(`${scopeId} approvedAuthorStructureUse status drift: ${approvedAuthorStructureUse.status}`);
+    return false;
+  }
+  if (approvedAuthorStructureUse.source !== paths.approvedAuthorStructureCards) {
+    errors.push(`${scopeId} approvedAuthorStructureUse source drift: ${approvedAuthorStructureUse.source}`);
+    return false;
+  }
+  if (!approvedAuthorStructureUse.primaryPattern) {
+    errors.push(`${scopeId} approvedAuthorStructureUse primaryPattern missing`);
+    return false;
+  }
+  if (!Array.isArray(appliedPatterns) || appliedPatterns.length < 3 || missingPatternIds.length) {
+    errors.push(
+      `${scopeId} approvedAuthorStructureUse pattern coverage invalid: missing=${
+        missingPatternIds.join(",") || "none"
+      }`,
+    );
+    return false;
+  }
+  if (!approvedAuthorStructureUse.generationConstraint || !approvedAuthorStructureUse.publicBodyRule) {
+    errors.push(`${scopeId} approvedAuthorStructureUse generation/public body rules missing`);
+    return false;
+  }
+
+  return true;
+}
+
 function checkExists(relativePath, label = relativePath) {
   const fullPath = path.join(repoRoot, relativePath);
   if (!fs.existsSync(fullPath)) {
@@ -223,6 +271,72 @@ const submissionGates = readJson(paths.submissionGates);
 const gateContract = readJson(paths.gateContract);
 const knowledgeBaseTitleIndex = readJsonIfExists(paths.knowledgeBaseTitleIndex);
 
+const improvementRuleAssets = [
+  paths.improvementRuleDelta,
+  paths.approvedAuthorStructureTemplate,
+  paths.approvedAuthorStructureCards,
+  paths.improvementPlanReport,
+  paths.approvedAuthorStructureReport,
+];
+const missingImprovementRuleAssets = improvementRuleAssets.filter((relativePath) => !checkExists(relativePath));
+if (missingImprovementRuleAssets.length === 0) {
+  pushCheck("2026-06-10 improvement plan rule assets", "pass", `${improvementRuleAssets.length} files found`);
+}
+
+const approvedAuthorStructureCards = readJson(paths.approvedAuthorStructureCards);
+if (approvedAuthorStructureCards) {
+  const cards = approvedAuthorStructureCards.cards || [];
+  const expectedAuthors = ["劉泰一", "李婉仙", "蔡思樂"];
+  const foundAuthors = cards.map((card) => card.targetAuthor);
+  const missingAuthors = expectedAuthors.filter((author) => !foundAuthors.includes(author));
+  const unsafeSourceCards = cards.filter(
+    (card) =>
+      !card.fullBodyRead ||
+      card.reviewStatus !== "審核成功" ||
+      card.sourceKind?.includes("FB短文") ||
+      card.sourceKind?.includes("社群導流"),
+  );
+  const incompleteImprovementCards = cards.filter((card) => {
+    const plan = card.improvementPlanPattern;
+    return !plan || !plan.hasCurrentGap || !plan.hasActions || !plan.hasBreakEvenOrHelpPath;
+  });
+
+  if (cards.length !== 3) {
+    errors.push(`approved author structure card count should be 3, found ${cards.length}`);
+  }
+  if (missingAuthors.length) {
+    errors.push(`approved author structure cards missing authors: ${missingAuthors.join(", ")}`);
+  }
+  if (unsafeSourceCards.length) {
+    errors.push(
+      `approved author structure cards have unsafe or incomplete source boundaries: ${unsafeSourceCards
+        .map((card) => card.cardId || card.targetAuthor)
+        .join(", ")}`,
+    );
+  }
+  if (incompleteImprovementCards.length) {
+    errors.push(
+      `approved author structure cards missing improvement plan signals: ${incompleteImprovementCards
+        .map((card) => card.cardId || card.targetAuthor)
+        .join(", ")}`,
+    );
+  }
+  if (!cards.some((card) => card.improvementPlanPattern?.hasBeforeAfterEffect)) {
+    errors.push("approved author structure cards need at least one before/after effect sample");
+  }
+  if (!approvedAuthorStructureCards.sourceBoundary?.publicSafety?.storesOnlyDeidentifiedStructure) {
+    errors.push("approved author structure cards public safety boundary missing deidentified-only flag");
+  }
+  if (
+    cards.length === 3 &&
+    !missingAuthors.length &&
+    !unsafeSourceCards.length &&
+    !incompleteImprovementCards.length
+  ) {
+    pushCheck("approved author structure cards", "pass", `${cards.length} authors, deidentified structure only`);
+  }
+}
+
 if (suggestions && submissionGates) {
   const expectedGateCount = submissionGates.gates?.length || 0;
   const metricGateCount = suggestions.metrics?.submissionQualityGateCount;
@@ -242,6 +356,27 @@ if (suggestions && gateContract) {
   }
 }
 
+if (suggestions) {
+  if (suggestions.metrics?.approvedAuthorStructureLearningRequired !== true) {
+    errors.push("approvedAuthorStructureLearningRequired metric missing or false");
+  }
+  if (suggestions.metrics?.approvedAuthorStructureCardCount !== 3) {
+    errors.push(
+      `approvedAuthorStructureCardCount drift: suggestions=${suggestions.metrics?.approvedAuthorStructureCardCount}, expected=3`,
+    );
+  }
+  if (suggestions.metrics?.approvedAuthorStructureLearningPath !== paths.approvedAuthorStructureCards) {
+    errors.push(
+      `approvedAuthorStructureLearningPath drift: suggestions=${suggestions.metrics?.approvedAuthorStructureLearningPath}`,
+    );
+  }
+  if (suggestions.approvedAuthorStructureLearning?.status !== "integrated_into_war_room_and_generation") {
+    errors.push("approvedAuthorStructureLearning summary missing or status drift");
+  } else {
+    pushCheck("approved author structure generation integration", "pass", "metrics and public summary present");
+  }
+}
+
 if (analysisHistory) {
   const weeklyCount = analysisHistory.weeklyReports?.length || 0;
   const entryCount = analysisHistory.entries?.length || 0;
@@ -255,6 +390,10 @@ if (suggestions?.articlePack) {
   const articles = pack.articles || [];
   const bodyFiles = pack.files?.bodyFiles || articles.map((article) => article.bodyPath).filter(Boolean);
   const computed = [];
+  let greenReviewCount = 0;
+  let preGenerationPassCount = 0;
+  const nonGreenReviewIds = [];
+  const preGenerationFailures = [];
   const titleNovelty = analyzeTitleNovelty(articles);
   const knowledgeBaseTitleComparison = knowledgeBaseTitleIndex
     ? compareTitlesWithKnowledgeBase(articles, knowledgeBaseTitleIndex)
@@ -306,6 +445,70 @@ if (suggestions?.articlePack) {
   }
 
   for (const article of articles) {
+    const preGenerationReview = article.preGenerationReview;
+    if (!preGenerationReview) {
+      errors.push(`${article.id} preGenerationReview missing`);
+      preGenerationFailures.push(`${article.id}:missing`);
+    } else {
+      const requiredCards = [
+        "topicEvidenceCard",
+        "readerFitCard",
+        "financialDecisionCard",
+        "financialLiteracyTransfer",
+        "approvedAuthorStructureUse",
+      ];
+      const missingCards = requiredCards.filter((field) => !preGenerationReview[field]);
+      const failedCards = requiredCards.filter(
+        (field) => preGenerationReview[field] && preGenerationReview[field].status !== "passed",
+      );
+      if (preGenerationReview.status !== "passed_prewrite_protocol") {
+        errors.push(`${article.id} preGenerationReview status drift: ${preGenerationReview.status}`);
+        preGenerationFailures.push(`${article.id}:status`);
+      } else if (missingCards.length || failedCards.length) {
+        errors.push(
+          `${article.id} preGenerationReview cards invalid: missing=${missingCards.join(",") || "none"} failed=${
+            failedCards.join(",") || "none"
+          }`,
+        );
+        preGenerationFailures.push(`${article.id}:cards`);
+      } else if (
+        !preGenerationReview.financialDecisionCard.assessmentTask ||
+        !preGenerationReview.financialLiteracyTransfer.capability
+      ) {
+        errors.push(`${article.id} preGenerationReview lacks financial assessment task or literacy transfer`);
+        preGenerationFailures.push(`${article.id}:financial`);
+      } else if (!validateApprovedAuthorStructureUse(article.id, preGenerationReview.approvedAuthorStructureUse)) {
+        preGenerationFailures.push(`${article.id}:approvedAuthorStructureUse`);
+      } else {
+        preGenerationPassCount += 1;
+      }
+    }
+
+    const reviewGate = article.articlePackReviewGate;
+    if (!reviewGate) {
+      errors.push(`${article.id} articlePackReviewGate missing`);
+      nonGreenReviewIds.push(`${article.id}:missing`);
+    } else {
+      if (reviewGate.status !== "green") {
+        errors.push(`${article.id} articlePackReviewGate not green: ${reviewGate.status}`);
+        nonGreenReviewIds.push(`${article.id}:${reviewGate.status || "unknown"}`);
+      } else {
+        greenReviewCount += 1;
+      }
+      if (!Number.isFinite(reviewGate.round) || reviewGate.round < 1) {
+        errors.push(`${article.id} articlePackReviewGate round missing or invalid`);
+      }
+      if (!Array.isArray(reviewGate.reviewers) || reviewGate.reviewers.length < 5) {
+        errors.push(`${article.id} articlePackReviewGate reviewers missing or too shallow`);
+      }
+      if (reviewGate.loopPolicy !== "review_then_revise_until_green") {
+        errors.push(`${article.id} articlePackReviewGate loopPolicy drift: ${reviewGate.loopPolicy}`);
+      }
+      if (!reviewGate.revisionRequiredWhen || !reviewGate.revisionMove) {
+        errors.push(`${article.id} articlePackReviewGate revision rule missing`);
+      }
+    }
+
     if (!article.bodyPath || !checkExists(article.bodyPath, `bodyPath for ${article.id}`)) continue;
     const raw = fs.readFileSync(path.join(repoRoot, article.bodyPath), "utf8");
     const body = bodyText(raw);
@@ -335,6 +538,14 @@ if (suggestions?.articlePack) {
     pushCheck("article body files", "pass", `${bodyFiles.length} files found`);
   }
 
+  if (greenReviewCount === articles.length && nonGreenReviewIds.length === 0) {
+    pushCheck("article pack green review", "pass", `${greenReviewCount}/${articles.length} articles green`);
+  }
+
+  if (preGenerationPassCount === articles.length && preGenerationFailures.length === 0) {
+    pushCheck("article pack pre-generation protocol", "pass", `${preGenerationPassCount}/${articles.length} articles passed`);
+  }
+
   const audit = auditRoleIntegrity(pack.files?.directory || "articles/2026-06-03-public-regenerated-pack");
   if (audit?.pass) {
     pushCheck("role integrity audit", "pass", `${audit.scannedFiles} files, ${audit.matches} matches`);
@@ -348,6 +559,16 @@ if (suggestions?.articlePack) {
     bodyCharsMin: computed.length ? Math.min(...computed.map((item) => item.chars)) : 0,
     bodyCharsMax: computed.length ? Math.max(...computed.map((item) => item.chars)) : 0,
     computed,
+    greenReview: {
+      green: greenReviewCount,
+      nonGreen: nonGreenReviewIds.length,
+      nonGreenReviewIds,
+    },
+    preGenerationReview: {
+      passed: preGenerationPassCount,
+      failed: preGenerationFailures.length,
+      failures: preGenerationFailures,
+    },
     titleNovelty: {
       exactPairs: titleNovelty.exactPairs.length,
       nearPairs: titleNovelty.nearPairs.length,
@@ -364,6 +585,35 @@ if (suggestions?.articlePack) {
         }
       : null,
   };
+
+  const metricGreenReviewCount = suggestions.metrics?.articlePackGreenReviewCount;
+  if (metricGreenReviewCount !== undefined && metricGreenReviewCount !== articles.length) {
+    errors.push(`articlePackGreenReviewCount drift: suggestions=${metricGreenReviewCount}, articles=${articles.length}`);
+  }
+  if (suggestions.metrics?.articlePackGreenReviewRequired !== true) {
+    errors.push("articlePackGreenReviewRequired metric missing or false");
+  }
+  if (suggestions.metrics?.preGenerationProtocolRequired !== true) {
+    errors.push("preGenerationProtocolRequired metric missing or false");
+  }
+  if (suggestions.metrics?.topicEvidenceGateRequired !== true) {
+    errors.push("topicEvidenceGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.readerFitGateRequired !== true) {
+    errors.push("readerFitGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.financialDecisionSupportGateRequired !== true) {
+    errors.push("financialDecisionSupportGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.financialLiteracyTransferGateRequired !== true) {
+    errors.push("financialLiteracyTransferGateRequired metric missing or false");
+  }
+  if (pack.exportMode?.greenReviewRequired !== true) {
+    errors.push("articlePack exportMode.greenReviewRequired missing or false");
+  }
+  if (pack.articlePackGreenReviewPolicy?.status !== "required_before_review_board") {
+    errors.push("articlePackGreenReviewPolicy missing or status drift");
+  }
 }
 
 if (articlePackHistory && currentPackStats) {
@@ -386,6 +636,187 @@ if (articlePackHistory && currentPackStats) {
   for (const attempt of articlePackHistory.generationAttempts || []) {
     for (const logPath of attempt.relatedLogs || []) {
       checkExists(logPath, `generation attempt log ${attempt.id}`);
+    }
+  }
+}
+
+if (suggestions?.trialArticlePacks?.length) {
+  const trialPacks = suggestions.trialArticlePacks;
+  let currentTrialPackStats = null;
+
+  for (const trialPack of trialPacks) {
+    const articles = trialPack.articles || [];
+    const computed = [];
+    let greenReviewCount = 0;
+    let preGenerationPassCount = 0;
+    const nonGreenReviewIds = [];
+    const preGenerationFailures = [];
+
+    if (!articles.length) {
+      errors.push(`${trialPack.id} trial pack has no articles`);
+    }
+
+    for (const article of articles) {
+      const preGenerationReview = article.preGenerationReview;
+      if (!preGenerationReview) {
+        errors.push(`${trialPack.id}/${article.id} preGenerationReview missing`);
+        preGenerationFailures.push(`${article.id}:missing`);
+      } else {
+        const requiredCards = [
+          "topicEvidenceCard",
+          "readerFitCard",
+          "financialDecisionCard",
+          "financialLiteracyTransfer",
+          "approvedAuthorStructureUse",
+        ];
+        const missingCards = requiredCards.filter((field) => !preGenerationReview[field]);
+        const failedCards = requiredCards.filter(
+          (field) => preGenerationReview[field] && preGenerationReview[field].status !== "passed",
+        );
+        if (preGenerationReview.status !== "passed_prewrite_protocol") {
+          errors.push(`${trialPack.id}/${article.id} preGenerationReview status drift: ${preGenerationReview.status}`);
+          preGenerationFailures.push(`${article.id}:status`);
+        } else if (missingCards.length || failedCards.length) {
+          errors.push(
+            `${trialPack.id}/${article.id} preGenerationReview cards invalid: missing=${
+              missingCards.join(",") || "none"
+            } failed=${failedCards.join(",") || "none"}`,
+          );
+          preGenerationFailures.push(`${article.id}:cards`);
+        } else if (
+          !preGenerationReview.financialDecisionCard.assessmentTask ||
+          !preGenerationReview.financialLiteracyTransfer.capability
+        ) {
+          errors.push(`${trialPack.id}/${article.id} lacks financial assessment task or literacy transfer`);
+          preGenerationFailures.push(`${article.id}:financial`);
+        } else if (
+          !validateApprovedAuthorStructureUse(
+            `${trialPack.id}/${article.id}`,
+            preGenerationReview.approvedAuthorStructureUse,
+          )
+        ) {
+          preGenerationFailures.push(`${article.id}:approvedAuthorStructureUse`);
+        } else {
+          preGenerationPassCount += 1;
+        }
+      }
+
+      const reviewGate = article.articlePackReviewGate;
+      if (!reviewGate) {
+        errors.push(`${trialPack.id}/${article.id} articlePackReviewGate missing`);
+        nonGreenReviewIds.push(`${article.id}:missing`);
+      } else {
+        if (reviewGate.status !== "green") {
+          errors.push(`${trialPack.id}/${article.id} articlePackReviewGate not green: ${reviewGate.status}`);
+          nonGreenReviewIds.push(`${article.id}:${reviewGate.status || "unknown"}`);
+        } else {
+          greenReviewCount += 1;
+        }
+        if (!Array.isArray(reviewGate.reviewers) || reviewGate.reviewers.length < 5) {
+          errors.push(`${trialPack.id}/${article.id} articlePackReviewGate reviewers missing or too shallow`);
+        }
+        if (reviewGate.loopPolicy !== "review_then_revise_until_green") {
+          errors.push(`${trialPack.id}/${article.id} articlePackReviewGate loopPolicy drift: ${reviewGate.loopPolicy}`);
+        }
+      }
+
+      if (!article.bodyPath || !checkExists(article.bodyPath, `trial bodyPath for ${trialPack.id}/${article.id}`)) {
+        continue;
+      }
+
+      const raw = fs.readFileSync(path.join(repoRoot, article.bodyPath), "utf8");
+      const body = bodyText(raw);
+      const chars = nonWhitespaceCount(body);
+      const includingWhitespace = body.length;
+      computed.push({ id: article.id, path: article.bodyPath, chars, includingWhitespace });
+
+      if (chars <= 2000) {
+        errors.push(`${trialPack.id}/${article.id} body length gate failed: ${chars} non-whitespace chars`);
+      }
+      if (article.bodyChars !== chars) {
+        errors.push(`${trialPack.id}/${article.id} bodyChars drift: suggestions=${article.bodyChars}, computed=${chars}`);
+      }
+      if (article.bodyCharsIncludingWhitespace && article.bodyCharsIncludingWhitespace !== includingWhitespace) {
+        errors.push(
+          `${trialPack.id}/${article.id} bodyCharsIncludingWhitespace drift: suggestions=${article.bodyCharsIncludingWhitespace}, computed=${includingWhitespace}`,
+        );
+      }
+    }
+
+    const auditTarget = trialPack.files?.directory || `articles/${trialPack.id}`;
+    const audit = auditRoleIntegrity(auditTarget);
+    if (audit?.pass) {
+      pushCheck(`${trialPack.id} role integrity audit`, "pass", `${audit.scannedFiles} files, ${audit.matches} matches`);
+    } else if (audit) {
+      errors.push(`${trialPack.id} role integrity audit failed: ${audit.matches} matches`);
+    }
+
+    if (greenReviewCount === articles.length && nonGreenReviewIds.length === 0) {
+      pushCheck(`${trialPack.id} green review`, "pass", `${greenReviewCount}/${articles.length} articles green`);
+    }
+    if (preGenerationPassCount === articles.length && preGenerationFailures.length === 0) {
+      pushCheck(`${trialPack.id} pre-generation protocol`, "pass", `${preGenerationPassCount}/${articles.length} articles passed`);
+    }
+
+    const stats = {
+      id: trialPack.id,
+      articleCount: articles.length,
+      bodyCharsMin: computed.length ? Math.min(...computed.map((item) => item.chars)) : 0,
+      bodyCharsMax: computed.length ? Math.max(...computed.map((item) => item.chars)) : 0,
+      computed,
+      greenReview: {
+        green: greenReviewCount,
+        nonGreen: nonGreenReviewIds.length,
+        nonGreenReviewIds,
+      },
+      preGenerationReview: {
+        passed: preGenerationPassCount,
+        failed: preGenerationFailures.length,
+        failures: preGenerationFailures,
+      },
+    };
+
+    if (trialPack.id === suggestions.currentTrialArticlePackId) {
+      currentTrialPackStats = stats;
+    }
+  }
+
+  const metricTrialPackCount = suggestions.metrics?.trialArticlePackCount;
+  if (metricTrialPackCount !== undefined && metricTrialPackCount !== trialPacks.length) {
+    errors.push(`trialArticlePackCount drift: suggestions=${metricTrialPackCount}, packs=${trialPacks.length}`);
+  }
+  const currentTrial = trialPacks.find((pack) => pack.id === suggestions.currentTrialArticlePackId) || trialPacks[0];
+  const metricCurrentTrialCount = suggestions.metrics?.currentTrialArticlePackArticleCount;
+  if (metricCurrentTrialCount !== undefined && metricCurrentTrialCount !== (currentTrial?.articles || []).length) {
+    errors.push(
+      `currentTrialArticlePackArticleCount drift: suggestions=${metricCurrentTrialCount}, articles=${
+        (currentTrial?.articles || []).length
+      }`,
+    );
+  }
+
+  if (articlePackHistory && currentTrialPackStats) {
+    const currentTrialRecord = (articlePackHistory.records || []).find((record) => record.currentTrialPack);
+    if (!currentTrialRecord) {
+      errors.push("article-pack-history currentTrialPack record missing");
+    } else {
+      if (currentTrialRecord.id !== currentTrialPackStats.id) {
+        errors.push(`article-pack-history trial record drift: ${currentTrialRecord.id} !== ${currentTrialPackStats.id}`);
+      }
+      if (
+        currentTrialRecord.bodyCharsMin !== currentTrialPackStats.bodyCharsMin ||
+        currentTrialRecord.bodyCharsMax !== currentTrialPackStats.bodyCharsMax
+      ) {
+        errors.push(
+          `article-pack-history trial body range drift: history=${currentTrialRecord.bodyCharsMin}-${currentTrialRecord.bodyCharsMax}, computed=${currentTrialPackStats.bodyCharsMin}-${currentTrialPackStats.bodyCharsMax}`,
+        );
+      } else {
+        pushCheck(
+          "article-pack-history trial body range",
+          "pass",
+          `${currentTrialRecord.bodyCharsMin}-${currentTrialRecord.bodyCharsMax}`,
+        );
+      }
     }
   }
 }

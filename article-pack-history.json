@@ -1,35 +1,163 @@
 {
-  "updatedAt": "2026-06-08T04:13:32.301Z",
+  "updatedAt": "2026-06-11T01:55:56.251Z",
   "source": "FamilyFin plain-text article pack generation records",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
     "rawReviewTextStored": false,
     "publicSafeDerivedRecordsOnly": true
   },
-  "latestPackId": "2026-06-03-public-regenerated-pack",
-  "packCount": 2,
+  "latestPackId": "2026-06-10-two-article-trial-pack",
+  "packCount": 4,
   "generationAttemptCount": 1,
   "records": [
+    {
+      "id": "2026-06-10-two-article-trial-pack",
+      "date": "2026-06-10",
+      "title": "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試",
+      "status": "trial_review_pack",
+      "statusLabel": "2 篇試產稿",
+      "audience": "一般民眾",
+      "directory": "articles/2026-06-10-two-article-trial-pack",
+      "generatedBy": "tools/build-trial-article-pack-2026-06-10.js",
+      "currentReviewBoard": false,
+      "currentTrialPack": true,
+      "notes": [
+        "本批先產 2 篇，不取代目前 10 篇主工作台文章包。",
+        "動用 Agent OS 討論後，將「假設性議題，缺乏驗證」拆成 verified topic、source-to-life-number、reader appeal 與 financial decision gate。",
+        "兩篇題目均以台灣勞保局官方制度為證據底盤，來源留在 metadata，正文不放來源清單或審稿語。",
+        "正文以一般民眾閱讀角度、家庭現金流、日期壓力、前後差異與可帶走的財務判斷能力為主。",
+        "2026-06-11 已補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。",
+        "後續 8 篇需待 Kevin 看完語感與效果後再補。"
+      ],
+      "checks": [
+        "正文非空白字數均超過 2000 字。",
+        "role leak audit 通過。",
+        "preGenerationReview 逐篇通過。",
+        "approvedAuthorStructureUse 逐篇通過。",
+        "articlePackReviewGate 綠燈 2/2。",
+        "前端以獨立下拉選單呈現，不混入 10 篇主包核准台。"
+      ],
+      "relatedLogs": [
+        "reports/2026-06-10-two-article-trial-pack-agent-discussion.md",
+        "reports/2026-06-10-two-article-trial-pack.md",
+        "logs/2026-06-10-two-article-trial-pack-log.md",
+        "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
+        "docs/reviewer-rule-delta-2026-06-10.md",
+        "reports/2026-06-11-approved-author-learning-generation-optimization.md",
+        "logs/2026-06-11-approved-author-learning-generation-optimization-log.md"
+      ],
+      "outputType": "plain_text_article_pack",
+      "format": "txt",
+      "articleCount": 2,
+      "bodyCountMode": "non_whitespace",
+      "bodyCharsMin": 2085,
+      "bodyCharsMax": 2120,
+      "bodyCharsIncludingWhitespaceMin": 2121,
+      "bodyCharsIncludingWhitespaceMax": 2166,
+      "bodyFiles": [
+        "articles/2026-06-10-two-article-trial-pack/01-unemployment-benefit-first-month.txt",
+        "articles/2026-06-10-two-article-trial-pack/02-sickness-benefit-hospital-cashflow.txt"
+      ],
+      "titles": [
+        "被資遣後最先少的不是薪水，是家裡可以等的時間",
+        "住院時收入停下來，家裡卻每天還在花錢"
+      ],
+      "copyText": "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試\n\n日期：2026-06-10\n狀態：2 篇試產稿\n目錄：articles/2026-06-10-two-article-trial-pack\n篇數：2\n正文非空白字數：2085 到 2120 字\n含空白正文長度：2121 到 2166 字\n\n紀錄重點\n- 本批先產 2 篇，不取代目前 10 篇主工作台文章包。\n- 動用 Agent OS 討論後，將「假設性議題，缺乏驗證」拆成 verified topic、source-to-life-number、reader appeal 與 financial decision gate。\n- 兩篇題目均以台灣勞保局官方制度為證據底盤，來源留在 metadata，正文不放來源清單或審稿語。\n- 正文以一般民眾閱讀角度、家庭現金流、日期壓力、前後差異與可帶走的財務判斷能力為主。\n- 2026-06-11 已補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 後續 8 篇需待 Kevin 看完語感與效果後再補。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- 前端以獨立下拉選單呈現，不混入 10 篇主包核准台。"
+    },
+    {
+      "id": "2026-06-09-rejection-learned-pack",
+      "date": "2026-06-09",
+      "title": "2026-06-09 駁回學習與前置驗證後重生文章包",
+      "status": "current_review_pack",
+      "statusLabel": "目前工作台文章包",
+      "audience": "一般民眾",
+      "directory": "articles/2026-06-09-rejection-learned-pack",
+      "generatedBy": "tools/build-public-article-pack-2026-06-09.js",
+      "currentReviewBoard": true,
+      "notes": [
+        "納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。",
+        "2026-06-09 重新更新 10 篇文章生成時，逐篇套用 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。",
+        "2026-06-11 補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。",
+        "本批次仍以一般民眾閱讀角度生成，社工版需 Kevin 明確指定。",
+        "正文維持純文字，不顯示 SEO/AIO、來源清單、審稿建議或 agent 討論。",
+        "6/9 gate 加嚴重點：同題換標題、數字拼湊、處遇建議未盤點、概念文、內部審稿語、假設性議題驗證、讀者吸引力與財務知能轉移。"
+      ],
+      "checks": [
+        "正文非空白字數均超過 2000 字。",
+        "role leak audit 通過。",
+        "preGenerationReview 逐篇通過。",
+        "approvedAuthorStructureUse 逐篇通過。",
+        "articlePackReviewGate 綠燈 10/10。",
+        "validator 使用 data/submission-quality-gates-2026-06-09.json 檢查。",
+        "reviewRejectionLearningReadyCards 已更新為 50，解除舊 3/8 blocker。"
+      ],
+      "relatedLogs": [
+        "reports/2026-06-09-review-rejection-learning.md",
+        "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+        "logs/2026-06-09-review-rejection-learning-log.md",
+        "logs/2026-06-09-topic-verification-reader-decision-agent-log.md",
+        "docs/reviewer-rule-delta-2026-06-09.md",
+        "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
+        "docs/reviewer-rule-delta-2026-06-10.md",
+        "reports/2026-06-11-approved-author-learning-generation-optimization.md",
+        "logs/2026-06-11-approved-author-learning-generation-optimization-log.md"
+      ],
+      "outputType": "plain_text_article_pack",
+      "format": "txt",
+      "articleCount": 10,
+      "bodyCountMode": "non_whitespace",
+      "bodyCharsMin": 2071,
+      "bodyCharsMax": 2230,
+      "bodyCharsIncludingWhitespaceMin": 2107,
+      "bodyCharsIncludingWhitespaceMax": 2262,
+      "bodyFiles": [
+        "articles/2026-06-09-rejection-learned-pack/01-rent-subsidy-cashflow.txt",
+        "articles/2026-06-09-rejection-learned-pack/02-single-parent-childcare-gap.txt",
+        "articles/2026-06-09-rejection-learned-pack/03-debt-negotiation-cashflow.txt",
+        "articles/2026-06-09-rejection-learned-pack/04-emergency-buffer-income-gap.txt",
+        "articles/2026-06-09-rejection-learned-pack/05-long-term-care-family-budget.txt",
+        "articles/2026-06-09-rejection-learned-pack/06-scam-loss-family-recovery.txt",
+        "articles/2026-06-09-rejection-learned-pack/07-first-job-family-support.txt",
+        "articles/2026-06-09-rejection-learned-pack/08-reduced-hours-income-warning.txt",
+        "articles/2026-06-09-rejection-learned-pack/09-special-circumstance-support.txt",
+        "articles/2026-06-09-rejection-learned-pack/10-retirement-care-and-scam-risk.txt"
+      ],
+      "titles": [
+        "房租五號到期，補貼還沒進來：租屋家庭最容易卡住的時間差",
+        "一個人接孩子，也一個人接帳單：單親家庭的托育費為什麼常變成收入缺口",
+        "每月都在繳，債卻沒變少：債務協商前先看懂家庭還款壓力",
+        "手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看",
+        "爸爸出院後，家裡多了哪些帳單？長照成本常從看不見的地方開始",
+        "錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來",
+        "第一份薪水進來前，房租和家用已經排隊：青年獨立的第一張收支表",
+        "減班休息先看三筆錢，收入少一截時帳單不會跟著少",
+        "變故後的三個月怎麼撐？特殊境遇家庭扶助要接住的是生活缺口",
+        "退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張"
+      ],
+      "copyText": "2026-06-09 駁回學習與前置驗證後重生文章包\n\n日期：2026-06-09\n狀態：目前工作台文章包\n目錄：articles/2026-06-09-rejection-learned-pack\n篇數：10\n正文非空白字數：2071 到 2230 字\n含空白正文長度：2107 到 2262 字\n\n紀錄重點\n- 納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。\n- 2026-06-09 重新更新 10 篇文章生成時，逐篇套用 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。\n- 2026-06-11 補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 本批次仍以一般民眾閱讀角度生成，社工版需 Kevin 明確指定。\n- 正文維持純文字，不顯示 SEO/AIO、來源清單、審稿建議或 agent 討論。\n- 6/9 gate 加嚴重點：同題換標題、數字拼湊、處遇建議未盤點、概念文、內部審稿語、假設性議題驗證、讀者吸引力與財務知能轉移。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 10/10。\n- validator 使用 data/submission-quality-gates-2026-06-09.json 檢查。\n- reviewRejectionLearningReadyCards 已更新為 50，解除舊 3/8 blocker。"
+    },
     {
       "id": "2026-06-03-public-regenerated-pack",
       "date": "2026-06-03",
       "title": "2026-06-03 家庭生活壓力與財務缺口候選稿",
-      "status": "current_review_pack",
-      "statusLabel": "目前工作台文章包",
+      "status": "superseded_by_2026_06_09",
+      "statusLabel": "已由 6/9 駁回學習版取代",
       "audience": "一般民眾",
       "directory": "articles/2026-06-03-public-regenerated-pack",
       "generatedBy": "tools/build-public-article-pack-2026-06-03.js",
-      "currentReviewBoard": true,
+      "currentReviewBoard": false,
       "notes": [
         "修正角色錯亂、標題語感、正文翻譯腔與內部轉場語問題。",
         "10 篇皆為一般民眾閱讀角度。",
-        "SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。"
+        "SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。",
+        "每篇純文字正文進入工作台前，必須先有 articlePackReviewGate 綠燈紀錄。"
       ],
       "checks": [
         "正文非空白字數均超過 2000 字。",
         "role leak audit 通過。",
         "正文台灣中文語感 gate 通過。",
-        "Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。"
+        "Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。",
+        "articlePackReviewGate 綠燈 10/10；非綠燈稿件不得進入 Kevin 核准工作台。"
       ],
       "relatedLogs": [
         "logs/2026-06-03-public-article-pack-regeneration-log.md",
@@ -57,19 +185,8 @@
         "articles/2026-06-03-public-regenerated-pack/09-special-circumstance-support.txt",
         "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt"
       ],
-      "titles": [
-        "房租五號到期，補貼還沒進來：租屋家庭最容易卡住的時間差",
-        "一個人接孩子，也一個人接帳單：單親家庭的托育費為什麼常變成收入缺口",
-        "每月都在繳，債卻沒變少：債務協商前先看懂家庭還款壓力",
-        "手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看",
-        "爸爸出院後，家裡多了哪些帳單？長照成本常從看不見的地方開始",
-        "錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來",
-        "第一份薪水進來前，房租和家用已經排隊：青年獨立的第一張收支表",
-        "減班休息先看三筆錢，收入少一截時帳單不會跟著少",
-        "變故後的三個月怎麼撐？特殊境遇家庭扶助要接住的是生活缺口",
-        "退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張"
-      ],
-      "copyText": "2026-06-03 家庭生活壓力與財務缺口候選稿\n\n日期：2026-06-03\n狀態：目前工作台文章包\n目錄：articles/2026-06-03-public-regenerated-pack\n篇數：10\n正文非空白字數：2071 到 2195 字\n含空白正文長度：2107 到 2227 字\n\n紀錄重點\n- 修正角色錯亂、標題語感、正文翻譯腔與內部轉場語問題。\n- 10 篇皆為一般民眾閱讀角度。\n- SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- 正文台灣中文語感 gate 通過。\n- Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。"
+      "titles": [],
+      "copyText": "2026-06-03 家庭生活壓力與財務缺口候選稿\n\n日期：2026-06-03\n狀態：已由 6/9 駁回學習版取代\n目錄：articles/2026-06-03-public-regenerated-pack\n篇數：10\n正文非空白字數：2071 到 2195 字\n含空白正文長度：2107 到 2227 字\n\n紀錄重點\n- 修正角色錯亂、標題語感、正文翻譯腔與內部轉場語問題。\n- 10 篇皆為一般民眾閱讀角度。\n- SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。\n- 每篇純文字正文進入工作台前，必須先有 articlePackReviewGate 綠燈紀錄。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- 正文台灣中文語感 gate 通過。\n- Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。\n- articlePackReviewGate 綠燈 10/10；非綠燈稿件不得進入 Kevin 核准工作台。"
     },
     {
       "id": "2026-06-02-weekly-pack",
@@ -89,7 +206,8 @@
       "checks": [
         "每篇正文扣除欄位後均超過 2000 字；此批保留為錯誤樣本，不作投稿依據。",
         "後續掃描發現角色錯亂，因此整批降級。",
-        "已由 2026-06-03 public regenerated pack 取代。"
+        "已由 2026-06-03 public regenerated pack 取代。",
+        "此批沒有 articlePackReviewGate，不可視為可投稿綠燈包。"
       ],
       "relatedLogs": [
         "logs/2026-06-02-full-learning-and-automation-log.md",
@@ -117,7 +235,7 @@
         "articles/2026-06-02-weekly-pack/10-resource-access-social-work.txt"
       ],
       "titles": [],
-      "copyText": "2026-06-02 首批 10 篇純文字投稿文章包\n\n日期：2026-06-02\n狀態：保留為錯誤樣本\n目錄：articles/2026-06-02-weekly-pack\n篇數：10\n正文非空白字數：2004 到 2087 字\n含空白正文長度：2060 到 2153 字\n\n紀錄重點\n- 首批文章已降級為需重生，不可直接投稿。\n- 保留作為角色錯亂、後台語混入正文與預設社工版風險的學習樣本。\n- 後續文章包需通過 role_leak_reviewer 後才可進入 Kevin 核准清單。\n\n檢查\n- 每篇正文扣除欄位後均超過 2000 字；此批保留為錯誤樣本，不作投稿依據。\n- 後續掃描發現角色錯亂，因此整批降級。\n- 已由 2026-06-03 public regenerated pack 取代。"
+      "copyText": "2026-06-02 首批 10 篇純文字投稿文章包\n\n日期：2026-06-02\n狀態：保留為錯誤樣本\n目錄：articles/2026-06-02-weekly-pack\n篇數：10\n正文非空白字數：2004 到 2087 字\n含空白正文長度：2060 到 2153 字\n\n紀錄重點\n- 首批文章已降級為需重生，不可直接投稿。\n- 保留作為角色錯亂、後台語混入正文與預設社工版風險的學習樣本。\n- 後續文章包需通過 role_leak_reviewer 後才可進入 Kevin 核准清單。\n\n檢查\n- 每篇正文扣除欄位後均超過 2000 字；此批保留為錯誤樣本，不作投稿依據。\n- 後續掃描發現角色錯亂，因此整批降級。\n- 已由 2026-06-03 public regenerated pack 取代。\n- 此批沒有 articlePackReviewGate，不可視為可投稿綠燈包。"
     }
   ],
   "generationAttempts": [

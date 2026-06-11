@@ -43,6 +43,12 @@
    - 每篇候選題開寫前需補 `similar_existing_topic`、`title_risk`、`new_reader_value`、`content_difference_plan`、`case_number_decision_plan`。
    - 明確要求同題可以寫，但必須有新家庭情境、新數字、新判斷。
 
+4. `articlePackReviewGate` 綠燈迴圈
+   - 每篇純文字文章包進入工作台前，必須先有一輪生成審核結果。
+   - 若任一 reviewer 判為 yellow、red 或 not_reviewed，不進 Kevin 核准台，直接退回生成端調整。
+   - `tools/validate-war-room-state.js` 已把非綠燈、缺輪次、缺 reviewer、缺回修規則列為 fail。
+   - 詳細設計記錄在 `reports/2026-06-08-green-review-loop-design.md`。
+
 ## Agent 討論後的操作原則
 
 ### 題目規劃
@@ -80,5 +86,5 @@
 
 1. 最新知識庫題名索引已完成第一版接入；後續正式產稿前仍需先執行 `node tools/build-knowledge-base-title-index.js` 取得最新公開標題。
 2. 若 InfoCenter live review/comment 仍未完成交叉對照，正式文章包應維持 blocked 或小批次試產。
-3. 投稿審核 skill / agent 候選規格目前仍停在另一個專案輸出資料夾，尚未升級為全域 skill 或 Agent OS roster。
-4. 若要升級，需先做 governance review，確認資料權限、人工覆核、證據格式與 no-op 規則。
+3. 投稿審核 skill / agent 候選規格目前仍先保留為 project-local workflow，尚未升級為全域 skill 或 Agent OS roster。
+4. 下一次正式產稿需保留每篇 reviewer verdict trace；若連續一到兩次證明能降低退修，再做 governance review，確認是否升級。

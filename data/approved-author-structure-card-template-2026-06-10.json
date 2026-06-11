@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "2026-06-10",
+  "purpose": "approved author structure learning without storing raw private article text",
+  "sourceRules": {
+    "requiredUnit": "好理家在文章管理區",
+    "requiredSource": "InfoCenter event list",
+    "requiredCustomerPersonMatchesTargetAuthor": true,
+    "requiredReviewStatus": ["審核成功", "已定稿行政審即可上架"],
+    "requiresFullArticleBody": true,
+    "excludedSources": [
+      "FB短文",
+      "社群導流文",
+      "只有全文連結但尚未讀全文的評論",
+      "客戶-個人不等於目標作者本人的事件",
+      "未確認審核通過狀態的事件"
+    ],
+    "publicSafety": [
+      "do not store raw article body",
+      "do not store private review text",
+      "do not store event_id or article_id",
+      "do not quote long passages"
+    ]
+  },
+  "cardTemplate": {
+    "targetAuthor": "",
+    "sourceKind": "",
+    "reviewStatus": "",
+    "articleTopic": "",
+    "articleAudience": "",
+    "tagSignals": [],
+    "openingPattern": "",
+    "problemFrame": "",
+    "structurePattern": [],
+    "evidenceUsePattern": "",
+    "numericOrCaseUsePattern": "",
+    "improvementPlanPattern": {
+      "hasCurrentGap": false,
+      "hasActions": false,
+      "hasBeforeAfterEffect": false,
+      "hasRemainingGap": false,
+      "hasBreakEvenOrHelpPath": false,
+      "notes": ""
+    },
+    "readerLoadPattern": {
+      "mainProblemCount": 0,
+      "supportingProblemCount": 0,
+      "actionCount": 0,
+      "safetyReminderCount": 0,
+      "needsSplit": false
+    },
+    "endingPattern": "",
+    "rulesToReuse": [],
+    "rulesToAvoid": [],
+    "confidence": "low"
+  }
+}

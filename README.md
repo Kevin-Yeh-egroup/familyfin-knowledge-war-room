@@ -9,7 +9,7 @@
 - 每週產出知識庫擴充建議與 10 篇可投稿文章草稿。
 - 以週報方式回看上一次與歷次任務的分析整理、執行日誌、阻擋原因與下一步。
 - 記錄每次純文字文章包的產出批次、狀態、篇數、字數範圍、檢查結果與未產出原因。
-- 以 validator 檢查工作台資料、文章包紀錄、非空白正文 2000 字 gate、role leak 與 history drift。
+- 以 validator 檢查工作台資料、文章包紀錄、非空白正文 2000 字 gate、role leak、生成審核綠燈與 history drift。
 - 提供 Kevin 可點選全文、複製純文字、核准、退修、駁回、分類存放的審核台。
 - 透過 GitHub + Vercel Production 提供穩定 public review URL。
 
@@ -17,12 +17,14 @@
 
 - 正式索引已發布文章：1320
 - 草稿文章：27
-- InfoCenter 事件列表：2026
+- InfoCenter 事件列表：2086
+- 審核駁回：350
+- 可交叉學習駁回卡：50
 - 已完成全文學習批次：17
 - 可學文章正文：540
 - 成功樣本：340
 - 退修/駁回樣本：187
-- 首批純文字投稿草稿：10
+- 目前工作台純文字投稿草稿：10
 
 ## 本次規則升級
 
@@ -34,12 +36,12 @@
 - 新增 `writing_angle_reviewer`，分開檢查一般民眾版與社工版的切入角度，避免責備、教訓、政策報告感或 AI 摘要感。
 - 新增學習資料庫欄位規格，用來累積文章角度、數值證明、退修意見、禁用語句與 agent 討論紀錄。
 - 新增 Agent 訓練閉環規格：將評論文章、審核評語、退修差異、agent 討論與學習卡串成 `Review Contrast Learning Loop`。
-- 目前可確認已完成「文章正文＋審核狀態」的群體學習；尚未能確認已逐則完成「評論文章全文＋審核評語原文」的交叉對照，下一輪流程會優先補齊。
+- 2026-06-09 已完成最新 InfoCenter read-only 回讀，取得 350 筆審核駁回、51 筆完整審核內容與 50 張可交叉學習卡；公開 repo 只保存去識別衍生規則。
 - 退修/駁回建議會優先轉成下週必查規則。
 - 正文長度以「非空白字數」作為硬性 gate；低於或等於 2000 不得標示為可投稿。
 - 標題新意與內容差異已納入產稿前 gate：同批標題不得正規化重複、近似或互相包含核心題名；與既有題目相近時，必須先寫出新情境、新數字與新判斷。
 - 既有知識庫標題索引已接入 validator；正式產稿前需先更新 `data/knowledge-base-title-index.json`，再檢查候選題是否撞到站上既有標題。
-- 雙週正式 10 篇文章包產出前，需先通過 prewrite checklist 與 validator；若 live review/comment learning 不足，應產 blocker report，不硬湊文章。
+- 雙週正式 10 篇文章包產出前，需先通過 prewrite checklist、`articlePackReviewGate` 綠燈審核與 validator；若最新 review/comment learning 再次不足，才產 blocker report，不硬湊文章。
 
 ## 每週自動化
 
@@ -58,8 +60,15 @@
 - `tools/build-analysis-history.js`：從 `reports/` 與 `logs/` 重建週報與分析紀錄資料檔。
 - `tools/build-article-pack-history.js`：從 `articles/`、`suggestions.json` 與日誌重建文章包產出紀錄。
 - `tools/build-knowledge-base-title-index.js`：從好理家在公開知識庫 API 更新既有文章標題索引。
-- `tools/validate-war-room-state.js`：檢查 JSON、目前文章包非空白字數、role leak、gate count 與文章包 history drift。
+- `tools/validate-war-room-state.js`：檢查 JSON、目前文章包非空白字數、role leak、生成審核綠燈、gate count 與文章包 history drift。
+- `tools/build-review-rejection-learning-2026-06-09.js`：從私有 raw 駁回資料產生公開安全的 6/9 規則、日報與 gate。
+- `tools/build-public-article-pack-2026-06-09.js`：依 6/9 駁回學習重生目前工作台 10 篇一般民眾純文字文章。
+- `articles/2026-06-09-rejection-learned-pack/`：目前工作台文章包。
+- `data/review-rejection-learning-2026-06-09.json`：6/9 駁回學習公開安全衍生統計與規則。
+- `data/submission-quality-gates-2026-06-09.json`：最新版投稿前品質 gate。
+- `reports/2026-06-09-review-rejection-learning.md`：大量駁回回讀與文章重生規則日報。
 - `reports/2026-06-08-submission-mechanism-chat-review.md`：回查「檢核投稿機制」聊天本體後，轉成戰情室產稿前標題新意與內容差異 gate 的紀錄。
+- `reports/2026-06-08-green-review-loop-design.md`：純文字文章包生成後先審一輪，非綠燈就回修生成的 agent workflow 設計。
 - `articles/2026-06-02-weekly-pack/`：首批 10 篇純文字文章。
 - `docs/biweekly-prewrite-checklist-2026-06-08.md`：雙週正式產稿前的題材、claims table、標題、正文與紀錄 checklist。
 - `reports/2026-06-08-source-of-truth-reconciliation.md`：repo、history、report、automation/experiment 邊界對帳。

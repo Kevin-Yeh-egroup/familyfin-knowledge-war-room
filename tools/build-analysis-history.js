@@ -5,6 +5,102 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const sources = [
   {
+    id: "2026-06-11-approved-author-learning-generation-optimization",
+    sourcePath: "reports/2026-06-11-approved-author-learning-generation-optimization.md",
+    type: "Agent 生成規則優化",
+    title: "三張通過稿結構卡正式接入戰情室與文章生成",
+    summary: "依 Kevin 要求，將劉泰一、李婉仙、蔡思樂三張通過稿結構卡從學習報告推進到正式生成流程，成為每篇文章必須記錄的 approvedAuthorStructureUse。",
+    highlights: [
+      "三種結構正式成為生成約束：個案前後差異、制度判斷順序、風險支撐分層。",
+      "十篇正式文章包與兩篇試產文章包都會輸出 approvedAuthorStructureUse。",
+      "validator 已將三張卡採用紀錄升級為硬性檢查，缺少即不得進核准台。"
+    ]
+  },
+  {
+    id: "2026-06-10-approved-author-structure-cards",
+    sourcePath: "reports/2026-06-10-approved-author-structure-cards.md",
+    type: "通過稿作者學習",
+    title: "劉泰一、李婉仙、蔡思樂三位作者完整文章結構卡",
+    summary: "依 Kevin 要求，從好理家在文章管理區事件列表出發，只收「客戶-個人等於作者本人、審核成功、可讀完整正文」的通過稿樣本，排除 FB 短文與社群導流，整理成去識別化結構卡。",
+    highlights: [
+      "劉泰一樣本建立個案翻轉型結構卡：時間線、前後收入差異、家庭決策權與支持系統。",
+      "李婉仙樣本建立制度整理型結構卡：稅務資格、期限、數值門檻與家庭規劃順序。",
+      "蔡思樂樣本建立專業判讀型結構卡：常見誤判、週轉力來源、風險分層與介入時機。"
+    ]
+  },
+  {
+    id: "2026-06-10-improvement-plan-gap-author-learning",
+    sourcePath: "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
+    type: "Agent 生成規則優化",
+    title: "改善計畫、剩餘缺口與通過稿作者學習規則",
+    summary: "依 Kevin 新觀察，將文章必須討論改善計畫、施行效果、剩餘缺口、打平或合理求助路徑升級為產稿前 gate；並修正通過稿作者學習來源，只能使用事件列表中客戶-個人等於作者本人的完整文章，排除 FB 短文與社群導流。",
+    highlights: [
+      "新增 improvementPlanCard：目前缺口、改善行動、施行效果、剩餘缺口、是否打平、未打平時的求助路徑。",
+      "新增 readerLoadCard：單篇文章限制為 1 個主問題、最多 2 個支撐問題、最多 3 個行動與 1 個安全提醒。",
+      "後續已補齊三位通過稿作者結構卡，並修正劉泰一可用樣本狀態。"
+    ]
+  },
+  {
+    id: "2026-06-10-two-article-trial-pack",
+    sourcePath: "reports/2026-06-10-two-article-trial-pack.md",
+    type: "兩篇試產文章包",
+    title: "退件學習後先生成 2 篇一般民眾試產稿",
+    summary: "依 Kevin 要求先不補滿 10 篇，而是用最新 Agent OS 討論後的新 gate，產出 2 篇一般民眾純文字試產稿，並獨立於目前 10 篇主包呈現。",
+    highlights: [
+      "兩篇題目均以台灣官方制度作為證據底盤，避免「假設性議題，缺乏驗證」。",
+      "來源與查核資訊保存在 metadata，正文只保留生活數字、日期壓力、前後差異與決策順序。",
+      "新增 trialArticlePacks 與前端獨立下拉區，不混入目前 10 篇主包。"
+    ]
+  },
+  {
+    id: "2026-06-10-agent-discussion-trial-pack",
+    sourcePath: "reports/2026-06-10-two-article-trial-pack-agent-discussion.md",
+    type: "Agent 生成規則優化",
+    title: "題目驗證、去 AI 感與財務決策幫助的 6/10 收斂",
+    summary: "動用 topic evidence、human copy 與 financial decision 三個 agent，將退件學習轉成 verified topic、source-behind-metadata、reader appeal 與 financial literacy transfer 規格。",
+    highlights: [
+      "已驗證題目需有台灣現實、家庭財務壓力、決策場景、生活數字與限制條件。",
+      "不像 AI 的關鍵是生活現場，不是修飾語；開頭三段內要看到具體家庭壓力。",
+      "每篇文章至少讓讀者帶走一個財務判斷能力。"
+    ]
+  },
+  {
+    id: "2026-06-09-article-pack-regeneration-after-preprotocol",
+    sourcePath: "reports/2026-06-09-article-pack-regeneration-after-preprotocol.md",
+    type: "文章包重新生成",
+    title: "10 篇文章重新套用前置驗證 protocol",
+    summary: "依 Kevin 要求重新更新目前 10 篇一般民眾版文章生成，將 topicEvidenceCard、readerFitCard、financialDecisionCard 與 financialLiteracyTransfer 寫入每篇文章 metadata，並讓 validator 檢查前置 protocol。",
+    highlights: [
+      "保留目前 10 篇主題，重新輸出純文字文章包與 suggestions metadata。",
+      "每篇文章新增題目驗證、讀者吸引力、家庭財務評估與財務知能轉移欄位。",
+      "validator 新增 article pack pre-generation protocol 檢查，缺卡或未通過會失敗。"
+    ]
+  },
+  {
+    id: "2026-06-09-agent-discussion-topic-verification",
+    sourcePath: "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+    type: "Agent 生成規則優化",
+    title: "假設性議題先驗證，文章要幫讀者做家庭財務判斷",
+    summary: "依 Kevin 對大量駁回的追問，動用多代理視角收斂出生成前 protocol：題目證據、讀者易讀吸引力、財務評估幫助與財務知能轉移。",
+    highlights: [
+      "新增 topicEvidenceCard：題目不能只靠合理想像，需有台灣資料、制度、新聞、知識庫缺口或駁回訊號支撐。",
+      "新增 readerFitCard：前 150 字需有生活矛盾、金錢卡點、時間壓力或家庭選擇困難。",
+      "新增 financialDecisionCard 與 financialLiteracyTransfer：文章需協助讀者看現金流、分類支出、比較成本、查證資訊或辨識風險。"
+    ]
+  },
+  {
+    id: "2026-06-09-review-rejection-learning",
+    sourcePath: "reports/2026-06-09-review-rejection-learning.md",
+    type: "審核駁回學習",
+    title: "大量駁回回讀與 6/9 文章重生規則",
+    summary: "重新讀取 InfoCenter 最新 2086 筆事件，確認審核駁回已增至 350 筆，並將 51 筆完整審核內容與 50 張可交叉學習卡轉成產稿前 gate。",
+    highlights: [
+      "審核駁回從 290 筆增加到 350 筆，完整審核內容從 20 筆增加到 51 筆。",
+      "新增 6/9 規則增量：同題換標題、數字拼湊、處遇建議未盤點、概念文與內部審稿語。",
+      "重新生成 2026-06-09 一般民眾純文字文章包，解除舊 3/8 ready card blocker。"
+    ]
+  },
+  {
     id: "2026-06-08-knowledge-base-title-index",
     sourcePath: "reports/2026-06-08-knowledge-base-title-index-log.md",
     type: "知識庫標題索引",
@@ -26,6 +122,18 @@ const sources = [
       "相似度分數只是審稿訊號，不等於抄襲判定。",
       "標題是第一提醒點，但正文也要逐篇檢查案例、數字、段落順序與核心建議。",
       "戰情室新增 title novelty、content difference 與 new reader value 產稿前 gate。"
+    ]
+  },
+  {
+    id: "2026-06-08-green-review-loop-design",
+    sourcePath: "reports/2026-06-08-green-review-loop-design.md",
+    type: "純文字文章包綠燈審核迴圈",
+    title: "純文字文章包先審綠燈，非綠燈直接回修生成",
+    summary: "把 Kevin 的最新要求落地為 `articlePackReviewGate`：每篇文章進工作台前必須先通過一輪生成審核；非綠燈不得送核准，需回到題目、資料、數字、角度、正文或結尾重生。",
+    highlights: [
+      "每篇文章新增 `articlePackReviewGate.status`、`round`、`reviewers` 與 `revisionMove`。",
+      "validator 現在會阻擋非綠燈、缺 reviewer、缺回修規則的文章包。",
+      "agent 設計收斂為 pack_review_orchestrator 串接 source、title、content difference、numeric proof、reader appeal、role leak 與 final quality reviewer。"
     ]
   },
   {
@@ -164,22 +272,42 @@ const sources = [
 
 const weeklyNotes = {
   "2026-06-08": {
-    title: "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核與產稿前 gate",
-    status: "需處理",
-    summary: "本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程。重點不是立刻多產文章，而是讓下一次正式產稿前先擋掉標題過近、內容沒有新價值、缺案例數字與紀錄來源漂移。",
+    title: "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核、駁回學習與文章重生",
+    status: "進行中",
+    summary: "本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程，接著重新讀取 6/9 大量審核駁回，將最新 350 筆駁回、51 筆完整審核內容與 50 張可交叉學習卡轉成產稿前 gate，並重生一般民眾純文字文章包。6/10 再依「假設性議題，缺乏驗證」、去 AI 感、讀者吸引力與財務決策幫助，動用 Agent OS 收斂新規格，先產出 2 篇一般民眾試產稿。後續依 Kevin 新觀察，新增改善計畫、施行效果、剩餘缺口、打平或求助路徑 gate，並確認通過稿作者學習不得使用 FB 短文。6/11 已將三張通過稿結構卡正式接入生成器、validator 與戰情室前台。",
     outcomes: [
+      "完成劉泰一、李婉仙、蔡思樂三位通過稿作者完整文章結構卡，來源限定為客戶-個人等於作者本人、審核成功、可讀完整正文。",
+      "將三張通過稿結構卡轉成 `approvedAuthorStructureUse`，接入十篇正式文章包、兩篇試產文章包、validator 與前台展示。",
+      "完成 2026-06-10 改善計畫與剩餘缺口 agent 討論，新增 `improvementPlanCard`、`readerLoadCard` 與 `approvedAuthorStructureCard` 來源邊界。",
+      "只讀檢查 InfoCenter 事件列表作者來源：李婉仙與蔡思樂有多筆審核成功事件；劉泰一後續已從 live 事件頁補回可讀完整正文的通過樣本；FB 短文已排除於正式學習樣本之外。",
+      "完成 2026-06-10 Agent OS 討論：題目驗證、去 AI 感、讀者吸引力與財務決策幫助。",
+      "新增 2026-06-10 兩篇一般民眾試產稿，均以台灣官方制度作為證據底盤，正文超過 2000 字。",
+      "新增 `trialArticlePacks` 與前端獨立下拉區，讓試產稿和目前 10 篇主包分開呈現。",
+      "完成 2026-06-09 InfoCenter read-only 回讀：2086 筆事件、350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。",
+      "新增 6/9 駁回學習衍生資料、投稿品質 gate、規則增量、日報與日誌。",
+      "重新生成 2026-06-09 一般民眾純文字文章包，10 篇皆通過生成綠燈。",
+      "新增生成前 protocol：topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。",
+      "重新更新 10 篇文章生成，將前置 protocol 寫入每篇文章 metadata，並新增 validator 檢查。",
       "完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。",
       "回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。",
       "validator 增加同批標題正規化重複、近似與核心題名包含檢查。",
-      "新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。"
+      "新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。",
+      "新增純文字文章包 `articlePackReviewGate` 綠燈迴圈；非綠燈直接回修生成，不進 Kevin 核准台。"
     ],
     blockers: [
-      "live review/comment learning 仍低於正式 10 篇文章包門檻。",
-      "正式產稿前仍需每次重新更新公開標題索引，避免用舊索引判斷題目新意。"
+      "公開戰情室仍只保存去識別衍生資料；私有 raw 駁回內容留在 work-private，不進 repo。",
+      "正式投稿前仍需人工確認每篇引用的年度補助、地方規範與最新官方資料。",
+      "通過稿結構卡已接入生成流程，但下一輪新文章仍需人工看語感、可投稿感與正文是否真正自然。"
     ],
     nextActions: [
-      "下一輪正式產稿前，先補每題 new_reader_value 與 content_difference_plan。",
-      "若要產正式 10 篇，需先恢復或確認 live review/comment 交叉學習。",
+      "先讓 Kevin 看 2 篇試產稿的語感、結尾、數字自然度與可投稿感。",
+      "下一輪文章生成前，逐篇補 `improvementPlanCard`：若調整後未打平，必須加入具體求助路徑。",
+      "下一輪文章生成時，逐篇確認 `approvedAuthorStructureUse` 是否真的影響正文，而不是只停在 metadata。",
+      "若 Kevin 接受這兩篇方向，再用同一套 gate 補後續 8 篇。",
+      "下一輪正式產稿前，先重跑 InfoCenter rejection learning，確認 ready cards 是否有新增。",
+      "每次重生文章包後，逐篇保存 reviewer verdict trace，缺綠燈就回修題目、數字、角度或正文。",
+      "若 Kevin 提供新的退稿理由，直接接到 6/9 gate 的 reinforced rules 與文章重生迴圈。",
+      "下一輪產稿逐篇保存三張前置卡與財務知能轉移欄位，確認不是假設性議題，且讀者可帶走一個家庭財務判斷能力。",
       "考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。"
     ]
   },

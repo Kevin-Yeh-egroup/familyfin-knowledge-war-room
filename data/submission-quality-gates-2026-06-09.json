@@ -1,0 +1,798 @@
+{
+  "updatedAt": "2026-06-09T09:42:04.390Z",
+  "source": "Derived from InfoCenter rejected review records collected on 2026-06-09.",
+  "privacy": {
+    "rawReviewTextStoredInThisFile": false,
+    "rawArticleTextStoredInThisFile": false,
+    "rawEventIdsStoredInThisFile": false,
+    "privateSourcePath": "work-private/all-review-rejections-raw-2026-06-09.jsonl",
+    "publicSafeDerivedOnly": true
+  },
+  "sourceStats": {
+    "rejectedEventsOpened": 350,
+    "reviewTextRows": 349,
+    "titleAndContentRows": 51,
+    "titleOnlyRows": 298,
+    "emptyReviewModalRows": 1,
+    "reviewLearningReadyCards": 50
+  },
+  "signalCounts": {
+    "conceptual_or_general": 140,
+    "platform_scope_mismatch": 82,
+    "needs_specific_numbers_actions": 108,
+    "oversimplified_complex_context": 29,
+    "duplicate_or_existing_content": 23,
+    "story_or_case_angle_issue": 21,
+    "accuracy_or_grounding_risk": 25,
+    "structure_or_readability_issue": 41,
+    "too_narrow_or_off_topic": 11,
+    "missing_depth_or_content": 159,
+    "family_context_required": 120,
+    "policy_locality_required": 14,
+    "realistic_number_required": 20
+  },
+  "gates": [
+    {
+      "id": "gate-01-platform-fit",
+      "name": "家庭經濟主軸關卡",
+      "severity": "fatal",
+      "evidenceSignals": [
+        "platform_scope_mismatch",
+        "too_narrow_or_off_topic"
+      ],
+      "reviewerAgents": [
+        "quality_reviewer",
+        "tag_mapper"
+      ],
+      "rejectWhen": [
+        "主題只是一般投資、健康、法律、關係、反詐或生活提醒，沒有回到家庭經濟與助人工作處境。",
+        "文章可以放在任何理財或生活平台，缺少好理家在的辨識度。",
+        "文章只有情緒、觀念或個人選擇，沒有說清楚家庭收入、支出、債務、照顧成本、遇到變故時是否撐得住，或資源取得如何影響生活。"
+      ],
+      "mustHave": [
+        "明確連到家庭財務壓力、生活風險、服務對象決策、支持系統或助人工作現場。",
+        "說清楚這篇為何適合好理家在，而不是一般宣導文章。",
+        "至少呈現一個家庭經濟連結：收入變動、固定支出、債務壓力、照顧成本、托育/長照/醫療支出、居住成本、補助資源、或家庭成員分工造成的財務影響。"
+      ],
+      "revisionMove": "把主題重新框回家庭經濟困境、遇到變故時是否撐得住、服務現場判讀或一般民眾可理解的生活壓力；若無法連到家庭經濟，就換題。",
+      "evidence": {
+        "matchedReviewTextRows": 93,
+        "evidenceSignals": [
+          {
+            "signal": "platform_scope_mismatch",
+            "count": 82,
+            "shareOfReviewTextRows": 23.5
+          },
+          {
+            "signal": "too_narrow_or_off_topic",
+            "count": 11,
+            "shareOfReviewTextRows": 3.2
+          }
+        ]
+      },
+      "reinforcedRules": []
+    },
+    {
+      "id": "gate-02-non-concept",
+      "name": "非概念文關卡",
+      "severity": "fatal",
+      "evidenceSignals": [
+        "conceptual_or_general",
+        "missing_depth_or_content"
+      ],
+      "reviewerAgents": [
+        "non_concept_reviewer",
+        "reader_appeal_reviewer"
+      ],
+      "rejectWhen": [
+        "全文主要是在說觀念、價值、提醒或口號，缺少場景、數字、決策困難與可辨識的生活壓力。",
+        "讀者看完只知道應該要重視，卻不知道問題在現實中如何發生。"
+      ],
+      "mustHave": [
+        "至少一個具體生活場景。",
+        "至少兩個可檢查的現實細節，例如金額、時間、比例、頻率、角色分工或流程。",
+        "指出問題從表面現象到結構限制的變化。"
+      ],
+      "revisionMove": "把抽象句改成生活中的前後差異，例如支出怎麼卡住、收入中斷會如何影響選擇、社工能從哪裡開始盤點。",
+      "evidence": {
+        "matchedReviewTextRows": 299,
+        "evidenceSignals": [
+          {
+            "signal": "conceptual_or_general",
+            "count": 140,
+            "shareOfReviewTextRows": 40.1
+          },
+          {
+            "signal": "missing_depth_or_content",
+            "count": 159,
+            "shareOfReviewTextRows": 45.6
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-04"
+      ]
+    },
+    {
+      "id": "gate-03-numeric-proof",
+      "name": "數值證明關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "needs_specific_numbers_actions"
+      ],
+      "reviewerAgents": [
+        "numeric_proof_reviewer",
+        "fact_case_reviewer"
+      ],
+      "rejectWhen": [
+        "有改善建議，但沒有任何前後數字、比例、金額、時間或可衡量差異。",
+        "引用資料很多，但沒有把資料轉成讀者看得懂的生活判斷。"
+      ],
+      "mustHave": [
+        "至少一組前後差異或可比較數值。",
+        "至少一個改善關鍵因素，例如固定支出降低、緊急預備金月數增加、債務月付比下降。",
+        "若用假設情境，需標示為示意，避免像真實個案或官方統計。"
+      ],
+      "revisionMove": "加入一段小型算式或前後對照，讓讀者看到調整後多出多少餘裕、風險少在哪裡。",
+      "evidence": {
+        "matchedReviewTextRows": 128,
+        "evidenceSignals": [
+          {
+            "signal": "needs_specific_numbers_actions",
+            "count": 108,
+            "shareOfReviewTextRows": 30.9
+          },
+          {
+            "signal": "realistic_number_required",
+            "count": 20,
+            "shareOfReviewTextRows": 5.7
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-02"
+      ]
+    },
+    {
+      "id": "gate-04-complexity",
+      "name": "複雜處境不可簡化關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "oversimplified_complex_context",
+        "family_context_required"
+      ],
+      "reviewerAgents": [
+        "social_work_writer",
+        "quality_reviewer"
+      ],
+      "rejectWhen": [
+        "把照顧、婚姻、托育、債務、買房、工作轉換等複雜處境寫成單一答案。",
+        "忽略家庭成員、制度限制、資源可近性、關係壓力或時間壓力。"
+      ],
+      "mustHave": [
+        "列出至少兩個限制條件。",
+        "說明為什麼不能只從個人努力或單一理財技巧理解。",
+        "保留不同家庭狀況下的判斷彈性。"
+      ],
+      "revisionMove": "把建議改成判讀框架：先盤點限制，再看選項，而不是直接告訴讀者該怎麼做。",
+      "evidence": {
+        "matchedReviewTextRows": 149,
+        "evidenceSignals": [
+          {
+            "signal": "oversimplified_complex_context",
+            "count": 29,
+            "shareOfReviewTextRows": 8.3
+          },
+          {
+            "signal": "family_context_required",
+            "count": 120,
+            "shareOfReviewTextRows": 34.4
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-03"
+      ]
+    },
+    {
+      "id": "gate-05-originality-gap",
+      "name": "重複與內容缺口關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "duplicate_or_existing_content"
+      ],
+      "reviewerAgents": [
+        "knowledge_gap_mapper",
+        "article_pattern_miner"
+      ],
+      "rejectWhen": [
+        "主題已經有更完整文章，新增稿件沒有新的場景、數據、對象、地區、制度或判讀角度。",
+        "只是同一篇文章換標題、換故事、換說法。"
+      ],
+      "mustHave": [
+        "說明新稿與既有知識庫的差異。",
+        "新增至少一個新的讀者問題、台灣現況、案例角度或實務判讀點。"
+      ],
+      "revisionMove": "先查知識庫同標籤文章，決定要補缺口、更新資料、或放棄這個題目。",
+      "evidence": {
+        "matchedReviewTextRows": 23,
+        "evidenceSignals": [
+          {
+            "signal": "duplicate_or_existing_content",
+            "count": 23,
+            "shareOfReviewTextRows": 6.6
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-01"
+      ]
+    },
+    {
+      "id": "gate-06-story-precision",
+      "name": "故事與案例精準度關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "story_or_case_angle_issue"
+      ],
+      "reviewerAgents": [
+        "writing_angle_reviewer",
+        "reader_appeal_reviewer"
+      ],
+      "rejectWhen": [
+        "故事性很強，但案例只是情緒鋪陳，沒有支持核心判讀。",
+        "角色關係、責任位置或生活條件不合理。"
+      ],
+      "mustHave": [
+        "案例只服務概念，不喧賓奪主。",
+        "角色關係與責任位置要符合台灣生活語境與助人工作常識。",
+        "故事後必須回到可判讀的結構或可行下一步。"
+      ],
+      "revisionMove": "縮短故事，補上角色限制、金錢流向、壓力來源與選擇困難。",
+      "evidence": {
+        "matchedReviewTextRows": 41,
+        "evidenceSignals": [
+          {
+            "signal": "story_or_case_angle_issue",
+            "count": 21,
+            "shareOfReviewTextRows": 6
+          },
+          {
+            "signal": "realistic_number_required",
+            "count": 20,
+            "shareOfReviewTextRows": 5.7
+          }
+        ]
+      },
+      "reinforcedRules": []
+    },
+    {
+      "id": "gate-07-fact-and-policy",
+      "name": "台灣事實與政策正確性關卡",
+      "severity": "fatal",
+      "evidenceSignals": [
+        "accuracy_or_grounding_risk"
+      ],
+      "reviewerAgents": [
+        "source_scout",
+        "fact_case_reviewer"
+      ],
+      "rejectWhen": [
+        "政府補助、地方方案、法規、年度資格或金額沒有確認是最新台灣資訊。",
+        "用單一研究、新聞或特殊個案推論所有家庭。",
+        "真實案例與示意案例界線不清。"
+      ],
+      "mustHave": [
+        "政策與補助類內容以最新中央或地方政府來源為準。",
+        "標示資料年份與適用地區。",
+        "把資料轉成生活判讀，不讓文章讀起來像引用堆疊。"
+      ],
+      "revisionMove": "先做 current Taiwan source check，再把來源濃縮成讀者需要的資格、限制、流程與風險提醒。",
+      "evidence": {
+        "matchedReviewTextRows": 39,
+        "evidenceSignals": [
+          {
+            "signal": "accuracy_or_grounding_risk",
+            "count": 25,
+            "shareOfReviewTextRows": 7.2
+          },
+          {
+            "signal": "policy_locality_required",
+            "count": 14,
+            "shareOfReviewTextRows": 4
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-02"
+      ]
+    },
+    {
+      "id": "gate-08-structure",
+      "name": "結構清晰關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "structure_or_readability_issue",
+        "missing_depth_or_content"
+      ],
+      "reviewerAgents": [
+        "quality_reviewer",
+        "doc_scribe"
+      ],
+      "rejectWhen": [
+        "段落像資料堆疊，讀者看不出問題如何從現象推到結構。",
+        "一篇文章同時處理太多議題，沒有主線。"
+      ],
+      "mustHave": [
+        "前言直接切入矛盾或實務困境。",
+        "核心段落依序呈現現象、不能只這樣理解、真正影響因素、生活或介入連結。",
+        "結語回到重新理解自己或實務判讀，不收在口號。"
+      ],
+      "revisionMove": "重排成 4 到 6 個主段，每段只處理一個判讀問題。",
+      "evidence": {
+        "matchedReviewTextRows": 200,
+        "evidenceSignals": [
+          {
+            "signal": "structure_or_readability_issue",
+            "count": 41,
+            "shareOfReviewTextRows": 11.7
+          },
+          {
+            "signal": "missing_depth_or_content",
+            "count": 159,
+            "shareOfReviewTextRows": 45.6
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-01"
+      ]
+    },
+    {
+      "id": "gate-09-audience-angle",
+      "name": "讀者角度關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "family_context_required",
+        "story_or_case_angle_issue"
+      ],
+      "reviewerAgents": [
+        "writing_angle_reviewer",
+        "reader_appeal_reviewer"
+      ],
+      "rejectWhen": [
+        "一般民眾版像課程講義，社工版像對民眾說教。",
+        "語氣讓讀者覺得被責備，或讓助人工作者覺得只是重講常識。"
+      ],
+      "mustHave": [
+        "一般民眾版要讓讀者感覺被理解，先看懂處境，再談選擇。",
+        "社工版要自然帶出評估、判讀、介入焦點與常見誤判。",
+        "同一主題需先決定主要讀者，不要兩種口吻混在一起。"
+      ],
+      "revisionMove": "先寫出這篇要回答的讀者問題，再決定前言角度與段落標題。",
+      "evidence": {
+        "matchedReviewTextRows": 141,
+        "evidenceSignals": [
+          {
+            "signal": "family_context_required",
+            "count": 120,
+            "shareOfReviewTextRows": 34.4
+          },
+          {
+            "signal": "story_or_case_angle_issue",
+            "count": 21,
+            "shareOfReviewTextRows": 6
+          }
+        ]
+      },
+      "reinforcedRules": []
+    },
+    {
+      "id": "gate-10-actionability",
+      "name": "可行下一步關卡",
+      "severity": "required",
+      "evidenceSignals": [
+        "needs_specific_numbers_actions",
+        "missing_depth_or_content"
+      ],
+      "reviewerAgents": [
+        "quality_reviewer",
+        "numeric_proof_reviewer",
+        "ending_strength_reviewer"
+      ],
+      "rejectWhen": [
+        "文章只有理解，沒有讓讀者或社工知道下一步可以盤點什麼。",
+        "建議太大、太正確，卻沒有第一個可操作行動。",
+        "結尾只是重複前文、抽象鼓勵或漂亮收束，沒有把核心困境收回生活選擇。",
+        "結尾突然冒出新概念、新建議或泛泛的希望感，讓讀者感覺詞不達意。"
+      ],
+      "mustHave": [
+        "一般民眾版至少留下一個可以自我檢查的問題或盤點方向。",
+        "社工版至少留下一個評估焦點或提問方向。",
+        "下一步不能變成財務建議或政策承諾。",
+        "結尾需回扣文章開頭的生活機制，收成一個清楚判斷：讀者現在要先看日期、金額、順序、支出缺口或支持來源中的哪一個。",
+        "結尾最後一句要有落點，不用口號、不用雞湯、不用只說「重新站穩」。"
+      ],
+      "revisionMove": "把結尾從抽象鼓勵改成一個低門檻盤點動作或服務現場提問；最後一段要回扣開頭的生活矛盾，並指出最值得先整理的缺口。",
+      "evidence": {
+        "matchedReviewTextRows": 267,
+        "evidenceSignals": [
+          {
+            "signal": "needs_specific_numbers_actions",
+            "count": 108,
+            "shareOfReviewTextRows": 30.9
+          },
+          {
+            "signal": "missing_depth_or_content",
+            "count": 159,
+            "shareOfReviewTextRows": 45.6
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-03"
+      ]
+    },
+    {
+      "id": "gate-11-role-integrity",
+      "name": "角色一致與內部語言隔離關卡",
+      "severity": "fatal",
+      "evidenceSignals": [],
+      "reviewerAgents": [
+        "role_leak_reviewer",
+        "writing_angle_reviewer",
+        "quality_reviewer"
+      ],
+      "rejectWhen": [
+        "正文出現給作者、編輯、agent 或審稿者看的建議，例如「這篇文章應」「文章最後也應」「對一般民眾版而言」「如果這篇要投稿」。",
+        "正文用後台語言評論文章本身，例如讀者版本、知識庫、投稿、本文可以、建議每篇、寫法上、文章發展上。",
+        "一般民眾文混入社工、陪伴者或助人工作者的工作指令，讓主要讀者不知道文章到底在對誰說話。"
+      ],
+      "mustHave": [
+        "正文只能對目標讀者說話，不對作者、編輯、agent、審稿者或文章本身說話。",
+        "所有寫作建議、審稿建議、來源查核、SEO/AIO、brief 與 gate 自評都只能留在內部欄位，不得進入正文。",
+        "預設生成一般民眾版；只有 Kevin 明確指定社工版時，才允許社工評估、判讀或介入語言進入正文。"
+      ],
+      "revisionMove": "刪除所有後台語言與角色錯位句，把句子改成直接面向一般民眾的生活判讀；若需要給作者的提醒，移到內部 review note，不放正文。",
+      "evidence": {
+        "matchedReviewTextRows": 0,
+        "evidenceSignals": []
+      },
+      "reinforcedRules": [
+        "rule-20260609-05"
+      ]
+    },
+    {
+      "id": "gate-12-body-naturalness",
+      "name": "正文台灣中文語感關卡",
+      "severity": "required",
+      "evidenceSignals": [],
+      "reviewerAgents": [
+        "taiwanese_body_voice_reviewer",
+        "kevin_editorial_reference_reviewer",
+        "reader_appeal_reviewer",
+        "role_leak_reviewer"
+      ],
+      "rejectWhen": [
+        "正文雖然意思可懂，但讀起來像美語直譯、顧問簡報、內部訓練語或過度抽象組合詞。",
+        "數據、政策或案例被堆成引用感，沒有融進一般民眾的生活敘述。",
+        "正文出現「收入空窗」「進帳空窗」「財務止血」「承接風險」「正式資源」「策略可以是」「生活被接住」等不自然語句。",
+        "正文出現「示意前後差異」「示意看前後差異」這類寫給作者看的轉場語。",
+        "開頭只是在介紹主題，沒有先抓到讀者生活裡真正卡住的機制。",
+        "數字只是在證明文章有資料，沒有轉成日期、支出、前後差異、可撐天數或家庭選擇。"
+      ],
+      "mustHave": [
+        "正文用台灣一般讀者會自然理解的說法。",
+        "數字和政策放在讀者能想像的生活畫面裡。",
+        "抽象判讀需改成日常說法，例如薪水突然少一段、先讓錢不要再流出去、遇到變故時還撐不撐得住、可以查證的協助管道。",
+        "開頭要先寫出生活機制或壓力來源，例如日期準時、收入和托育同時變少、照顧讓時間每天少一點。",
+        "至少一段把政策或金額翻成具體生活用途，例如兩週通勤、一次診所自費、幾天房租緩衝或少一次刷卡補洞。",
+        "可使用短列點整理三個卡點、三個數字或三個順序，但列點後必須回到家庭生活壓力，不寫成講義。"
+      ],
+      "revisionMove": "逐段把翻譯腔、簡報腔或抽象詞改成生活語句；若一段只剩概念或引用，就重寫成生活機制、場景、數字、前後差異、日期順序與讀者能做的盤點。",
+      "evidence": {
+        "matchedReviewTextRows": 181,
+        "evidenceSignals": [
+          {
+            "signal": "conceptual_or_general",
+            "count": 140,
+            "shareOfReviewTextRows": 40.1
+          },
+          {
+            "signal": "structure_or_readability_issue",
+            "count": 41,
+            "shareOfReviewTextRows": 11.7
+          }
+        ]
+      },
+      "reinforcedRules": [
+        "rule-20260609-04",
+        "rule-20260609-05"
+      ]
+    }
+  ],
+  "scoreModel": {
+    "approveThreshold": 82,
+    "reviseThreshold": 70,
+    "fatalRule": "Any failed fatal gate means reject or major rewrite, even if total score is high.",
+    "scoring": [
+      {
+        "dimension": "家庭經濟主軸與讀者角度",
+        "points": 18,
+        "gates": [
+          "gate-01-platform-fit",
+          "gate-09-audience-angle"
+        ]
+      },
+      {
+        "dimension": "非概念與生活具體度",
+        "points": 20,
+        "gates": [
+          "gate-02-non-concept",
+          "gate-06-story-precision"
+        ]
+      },
+      {
+        "dimension": "數值證明與台灣事實",
+        "points": 20,
+        "gates": [
+          "gate-03-numeric-proof",
+          "gate-07-fact-and-policy"
+        ]
+      },
+      {
+        "dimension": "結構判讀與複雜性",
+        "points": 22,
+        "gates": [
+          "gate-04-complexity",
+          "gate-08-structure"
+        ]
+      },
+      {
+        "dimension": "可投稿新意、可行下一步、角色一致與正文語感",
+        "points": 20,
+        "gates": [
+          "gate-05-originality-gap",
+          "gate-10-actionability",
+          "gate-11-role-integrity",
+          "gate-12-body-naturalness"
+        ]
+      }
+    ]
+  },
+  "discussionProtocol": [
+    {
+      "step": 1,
+      "agent": "review_feedback_miner",
+      "job": "用本規則庫先標出可能退件原因，禁止直接引用私有審稿原文。"
+    },
+    {
+      "step": 2,
+      "agent": "writing_angle_reviewer",
+      "job": "判斷一般民眾版或社工版的入口角度是否正確。"
+    },
+    {
+      "step": 3,
+      "agent": "non_concept_reviewer",
+      "job": "檢查文章是否停在概念宣導，是否有場景、數字、限制與決策困難。"
+    },
+    {
+      "step": 4,
+      "agent": "numeric_proof_reviewer",
+      "job": "檢查至少一組前後數值或可衡量改善，並確認假設與事實界線。"
+    },
+    {
+      "step": 5,
+      "agent": "fact_case_reviewer",
+      "job": "檢查台灣資料、政策、補助、案例或新聞是否最新且適用。"
+    },
+    {
+      "step": 6,
+      "agent": "role_leak_reviewer",
+      "job": "檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。"
+    },
+    {
+      "step": 7,
+      "agent": "taiwanese_body_voice_reviewer",
+      "job": "檢查正文是否像台灣一般讀者會自然理解的說法，是否有翻譯腔、簡報腔、引用感或過度抽象組合詞。"
+    },
+    {
+      "step": 8,
+      "agent": "kevin_editorial_reference_reviewer",
+      "job": "用 Kevin 修稿樣本萃取的口味檢查文章：開頭是否有生活機制、數字是否推動判讀、政策是否被翻成日常用途、結尾是否回到生活選擇。"
+    },
+    {
+      "step": 9,
+      "agent": "ending_strength_reviewer",
+      "job": "檢查結尾是否回扣開頭生活機制、收成清楚判斷，並避免爛尾、空泛希望、詞不達意或突然新增概念。"
+    },
+    {
+      "step": 10,
+      "agent": "quality_reviewer",
+      "job": "合併評分，輸出核准、修正後核准或退回重寫。"
+    }
+  ],
+  "articleDecisionOutputs": [
+    "decision: approve | revise | reject",
+    "failedFatalGates: gate ids",
+    "score: 0-100",
+    "topRevisionFocus: max 3 items",
+    "requiredEvidenceToAdd: numbers, Taiwan sources, scenario details, structure fixes",
+    "copyReadyPlainText: true only after all fatal gates pass"
+  ],
+  "preGenerationProtocols": {
+    "discussionUpdatedAt": "2026-06-09T20:30:00+08:00",
+    "sourceReport": "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+    "purpose": "Block unverified hypothetical topics before drafting, and require reader appeal plus financial decision support for public-facing articles.",
+    "appliesBeforeGateIds": [
+      "gate-01-platform-fit",
+      "gate-02-non-concept",
+      "gate-07-fact-and-policy",
+      "gate-09-audience-angle",
+      "gate-10-actionability",
+      "gate-12-body-naturalness"
+    ],
+    "protocols": [
+      {
+        "id": "protocol-01-topic-evidence",
+        "name": "議題驗證卡",
+        "severity": "fatal_prewrite",
+        "reviewerAgent": "topic_evidence_reviewer",
+        "rejectWhen": [
+          "題目只是合理想像，沒有台灣資料、制度、新聞案例、知識庫缺口或駁回訊號支撐。",
+          "把少數情境寫成普遍現象。",
+          "用假設家庭支撐整篇文章，卻沒有說明這個問題為什麼值得寫。"
+        ],
+        "mustHave": [
+          "說明這個議題在台灣為什麼存在。",
+          "至少一種證據來源：官方資料、制度公告、可信新聞、既有知識庫缺口、InfoCenter 駁回訊號或可查核生活成本。",
+          "若證據不足，只能寫成家庭盤點型文章，不可寫成趨勢或普遍困境。"
+        ],
+        "outputField": "topicEvidenceCard"
+      },
+      {
+        "id": "protocol-02-reader-fit",
+        "name": "易讀與吸引力卡",
+        "severity": "required_prewrite",
+        "reviewerAgent": "reader_motivation_reviewer",
+        "rejectWhen": [
+          "前 150 字像課程導言、政策摘要或概念介紹。",
+          "讀者看不出這和自己的生活有什麼關係。",
+          "段落太密、句子太像報告、標題只在分類而沒有重新框架問題。"
+        ],
+        "mustHave": [
+          "前 150 字要出現生活矛盾、金錢卡點、時間壓力或家庭選擇困難。",
+          "每 2 到 4 段有一個具體抓手，例如金額、日期、支出種類、家庭角色或可做的盤點。",
+          "段落標題要幫讀者掃讀，不只是標示主題。"
+        ],
+        "outputField": "readerFitCard"
+      },
+      {
+        "id": "protocol-03-financial-decision",
+        "name": "財務評估與決策幫助卡",
+        "severity": "required_prewrite",
+        "reviewerAgent": "financial_decision_reviewer",
+        "rejectWhen": [
+          "文章只讓讀者知道一件事，沒有幫他評估自己的處境。",
+          "有建議，但讀者不知道該先看哪個數字、日期、支出或風險。",
+          "把正確財務決策寫成單一答案，忽略家庭限制。"
+        ],
+        "mustHave": [
+          "至少一個低門檻財務評估任務，例如看 30 天必要支出、固定扣款日、每月缺口、債務月付比或可撐天數。",
+          "至少一個選項比較，例如申請補助前後、調整支出前後、協商前後、搬家前後或收入下降前後。",
+          "明確說出改善關鍵，例如固定支出下降、時間差縮短、避免新增債務、確認資格或家人分工更穩定。"
+        ],
+        "outputField": "financialDecisionCard"
+      },
+      {
+        "id": "protocol-04-financial-literacy-transfer",
+        "name": "財務知能轉移卡",
+        "severity": "required_prewrite",
+        "reviewerAgent": "financial_literacy_transfer_reviewer",
+        "rejectWhen": [
+          "文章只是在替讀者整理資訊，沒有讓讀者學會一個可重複使用的判斷方式。",
+          "全文只講制度或案例，沒有把財務知能落回生活操作。"
+        ],
+        "mustHave": [
+          "讀者讀完至少帶走一個能力：分類支出、看現金流、比較成本、查證資訊、辨識風險或保留緩衝。",
+          "財務知能要用生活語言呈現，不用教科書名詞堆疊。",
+          "不替讀者做正式財務、法律或福利資格判定，只協助他更清楚地評估與查證。"
+        ],
+        "outputField": "financialLiteracyTransfer"
+      }
+    ]
+  },
+  "governance": {
+    "maturityLevel": "project-local candidate",
+    "ownerAgent": "quality_reviewer",
+    "trigger": "Before any generated article is shown as ready for Kevin approval or InfoCenter submission.",
+    "doNotUseFor": [
+      "Do not auto-submit articles.",
+      "Do not expose private review text.",
+      "Do not decide legal, financial, medical, or welfare eligibility for readers.",
+      "Do not replace human editorial approval."
+    ],
+    "verification": [
+      "Generated JSON parses.",
+      "No raw event ids or long raw review comments appear in public files.",
+      "Every gate has reviewer agents, reject conditions, must-have checks, and revision moves."
+    ]
+  },
+  "integrityHash": "b35aee0b2b8168f09d4dfa5db832965038f3abba35e4d78eb143dee76ac2a969",
+  "latestReinforcedRules": [
+    {
+      "id": "rule-20260609-01",
+      "name": "同題換標題仍算高風險",
+      "appliesTo": [
+        "gate-05-originality-gap",
+        "gate-08-structure"
+      ],
+      "generationMove": "候選題若與既有文章或本週駁回稿相近，先寫出新家庭情境、新數字與新決策順序；只改標題不准進正文。"
+    },
+    {
+      "id": "rule-20260609-02",
+      "name": "數字不能拼湊",
+      "appliesTo": [
+        "gate-03-numeric-proof",
+        "gate-07-fact-and-policy"
+      ],
+      "generationMove": "所有交通、薪資、補助、看護、租金與成本數字要有官方來源、可查資料或清楚假設；不能為了讓算式成立而硬放金額。"
+    },
+    {
+      "id": "rule-20260609-03",
+      "name": "處遇或下一步要先盤點再建議",
+      "appliesTo": [
+        "gate-04-complexity",
+        "gate-10-actionability"
+      ],
+      "generationMove": "涉及家庭重大決策時，先寫收入、支出、債務、照顧、資源與限制條件；沒有盤點前不能直接給單一路線。"
+    },
+    {
+      "id": "rule-20260609-04",
+      "name": "概念文要退回生活機制",
+      "appliesTo": [
+        "gate-02-non-concept",
+        "gate-12-body-naturalness"
+      ],
+      "generationMove": "每段都要回到一個生活機制，例如日期、缺口、月付、收入少掉、支出被鎖住、補助時間差或家人分工。"
+    },
+    {
+      "id": "rule-20260609-05",
+      "name": "假設情境用自然語句，不用審稿語",
+      "appliesTo": [
+        "gate-11-role-integrity",
+        "gate-12-body-naturalness"
+      ],
+      "generationMove": "正文可寫「先看一個假設情境」「把調整前後攤開看」，不可寫「示意前後差異」「本文建議」「對一般民眾版而言」。"
+    },
+    {
+      "id": "rule-20260609-06",
+      "name": "假設性議題先驗證",
+      "appliesTo": [
+        "gate-01-platform-fit",
+        "gate-07-fact-and-policy"
+      ],
+      "generationMove": "題目需有台灣資料、制度、新聞、知識庫缺口或駁回訊號支撐；若證據不足，只能改為家庭盤點型文章，不得寫成普遍現象或趨勢。"
+    },
+    {
+      "id": "rule-20260609-07",
+      "name": "易讀吸引力要可檢查",
+      "appliesTo": [
+        "gate-08-structure",
+        "gate-09-audience-angle",
+        "gate-12-body-naturalness"
+      ],
+      "generationMove": "前 150 字需有生活矛盾或金錢卡點，段落標題需協助掃讀，長段資料需拆成讀者能理解的判斷。"
+    },
+    {
+      "id": "rule-20260609-08",
+      "name": "財務知能要能帶走",
+      "appliesTo": [
+        "gate-03-numeric-proof",
+        "gate-10-actionability",
+        "gate-12-body-naturalness"
+      ],
+      "generationMove": "每篇至少讓讀者練習一個財務判斷能力，例如看現金流、分類支出、比較成本、查證資訊、辨識風險或保留緩衝。"
+    }
+  ]
+}

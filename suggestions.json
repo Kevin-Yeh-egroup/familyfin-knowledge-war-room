@@ -1,10 +1,10 @@
 {
-  "updatedAt": "2026-06-03T18:55:00+08:00",
-  "source": "FamilyFin knowledge war room role-integrity-corrected public article pack regenerated after Kevin feedback",
+  "updatedAt": "2026-06-10T18:40:00+08:00",
+  "source": "FamilyFin knowledge war room 2026-06-10 two-article trial pack after Agent OS discussion",
   "metrics": {
     "indexedPublishedArticles": 1320,
     "indexedDraftArticles": 27,
-    "indexedEvents": 2026,
+    "indexedEvents": 2086,
     "chronologicalBatchesCompleted": 17,
     "eventsScannedForLearning": 2026,
     "learnableArticleBodies": 540,
@@ -14,14 +14,14 @@
     "unknownBodies": 1,
     "nextOffset": 2026,
     "completed": true,
-    "reviewRejectionClickBatchAttempted": 10,
-    "reviewRejectionRowsClicked": 10,
-    "reviewRejectionTitlesFound": 10,
-    "reviewRejectionContentsFound": 3,
-    "reviewRejectionLearningReadyCards": 3,
-    "reviewRejectionTotalFromUi": 290,
-    "reviewRejectionTextRows": 143,
-    "reviewRejectionEmptyReviewModalRows": 147,
+    "reviewRejectionClickBatchAttempted": 350,
+    "reviewRejectionRowsClicked": 350,
+    "reviewRejectionTitlesFound": 349,
+    "reviewRejectionContentsFound": 51,
+    "reviewRejectionLearningReadyCards": 50,
+    "reviewRejectionTotalFromUi": 350,
+    "reviewRejectionTextRows": 349,
+    "reviewRejectionEmptyReviewModalRows": 1,
     "submissionQualityGateCount": 12,
     "submissionQualityFatalGateCount": 4,
     "familyEconomicGateRequired": true,
@@ -37,7 +37,31 @@
     "contentDifferenceReviewRequired": true,
     "submissionSimilarityMethodologyIntegrated": true,
     "knowledgeBaseTitleIndexRequired": true,
-    "knowledgeBaseTitleIndexPath": "data/knowledge-base-title-index.json"
+    "knowledgeBaseTitleIndexPath": "data/knowledge-base-title-index.json",
+    "articlePackGreenReviewRequired": true,
+    "articlePackGreenReviewCount": 10,
+    "articlePackReviewLoopRequired": true,
+    "articlePackReviewLoopStatus": "all_current_articles_green",
+    "reviewRejectionBaselineRejectCount": 290,
+    "reviewRejectionDeltaFromBaseline": 60,
+    "reviewRejectionLatestLearningPath": "data/review-rejection-learning-2026-06-09.json",
+    "submissionQualityGateSourcePath": "data/submission-quality-gates-2026-06-09.json",
+    "preGenerationProtocolRequired": true,
+    "preGenerationProtocolSourcePath": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+    "topicEvidenceGateRequired": true,
+    "readerFitGateRequired": true,
+    "financialDecisionSupportGateRequired": true,
+    "financialLiteracyTransferGateRequired": true,
+    "hypothesisTopicVerificationRequired": true,
+    "trialArticlePackCount": 1,
+    "currentTrialArticlePackArticleCount": 2,
+    "latestTrialArticlePackGeneratedAt": "2026-06-10T18:40:00+08:00",
+    "topicEvidenceGateStrengthenedAt": "2026-06-10T18:40:00+08:00",
+    "sourceBehindMetadataBodyModeRequired": true,
+    "approvedAuthorStructureLearningRequired": true,
+    "approvedAuthorStructureCardCount": 3,
+    "approvedAuthorStructureLearningPath": "data/approved-author-structure-cards-2026-06-10.json",
+    "approvedAuthorStructureIntegratedAt": "2026-06-11T14:00:00+08:00"
   },
   "learningSummary": {
     "status": "completed",
@@ -149,15 +173,18 @@
     }
   ],
   "articlePack": {
-    "id": "2026-06-03-public-regenerated-pack",
-    "title": "2026-06-03 家庭生活壓力與財務缺口候選稿",
+    "id": "2026-06-09-rejection-learned-pack",
+    "title": "2026-06-09 駁回學習與前置驗證後重生｜家庭生活壓力與財務缺口候選稿",
     "status": "待 Kevin 審核",
-    "description": "本批次修正先前正文混入寫作建議、標題句型過度相似與部分語句像翻譯腔的問題；10 篇皆為一般民眾閱讀角度、正文超過 2000 字、保留台灣資料與數值化情境，並通過角色一致性與正文台灣中文語感預檢。",
+    "description": "本批次納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡，並追加 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer 四項生成前 protocol。10 篇皆為一般民眾閱讀角度、正文超過 2000 字，並以家庭經濟主軸、非概念文、數字合理性、易讀吸引力、財務決策幫助、角色一致性與台灣中文語感作為生成前 gate。",
     "reviewLearningFields": [
       "Kevin 可點進每篇查看純文字正文。",
       "核准後依 primaryTag 分類存放。",
       "退修意見會回寫到 review_feedback_card，作為下一輪生成前的規則素材。",
-      "社工版不再預設生成，除非 Kevin 明確指定。"
+      "社工版不再預設生成，除非 Kevin 明確指定。",
+      "本輪已將 6/9 大量駁回轉成生成前規則，不再沿用 6/3 的 3 張 ready card blocker。",
+      "本輪重新更新 10 篇文章生成時，已逐篇套用題目驗證、讀者吸引力、財務評估任務與財務知能轉移檢查。",
+      "2026-06-11 起每篇都需套用三張通過稿結構卡：個案前後差異、制度判斷順序、風險支撐分層。"
     ],
     "articles": [
       {
@@ -171,18 +198,18 @@
           "評估與輔導觀點-財務韌性"
         ],
         "categoryType": "生活壓力型",
-        "bodyChars": 2195,
-        "bodyCharsIncludingWhitespace": 2227,
+        "bodyChars": 2230,
+        "bodyCharsIncludingWhitespace": 2262,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2195,
-          "charsIncludingWhitespace": 2227
+          "nonWhitespaceChars": 2230,
+          "charsIncludingWhitespace": 2262
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/01-rent-subsidy-cashflow.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/01-rent-subsidy-cashflow.txt",
         "sources": [
           {
             "label": "內政部國土管理署不動產資訊平台，300億元中央擴大租金補貼專區",
@@ -203,11 +230,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "115年度中央租金補貼公告",
+              "租屋家庭固定支出與撥款時間差",
+              "6/9 駁回學習中的家庭經濟主軸與數字合理性要求"
+            ],
+            "taiwanFit": "中央租金補貼、地方租屋資源與薪水/房租扣款日期都是台灣租屋家庭常見壓力來源。",
+            "hypothesisBoundary": "家庭收支為假設情境；補貼金額需以當年度公告與個別核定為準。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "第一句直接抓住房租準時到期，讀者能立刻連到每月現金流壓力。",
+            "scanAnchors": [
+              "房租到期日",
+              "補貼撥款時間差",
+              "搬家成本回收月數"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把房租日、薪水日、補貼日與信用卡扣款日排在同一張表，計算房租到期前帳戶是否足夠。",
+            "comparison": "補貼前後每月剩餘 16,000 元到 17,800 元，並比較搬家少租金與一次性成本。",
+            "improvementFactors": [
+              "固定支出下降",
+              "到期日排列變清楚",
+              "避免用新債補時間差"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "把年度補貼轉成每月現金流與可撐天數，學會看固定支出的日期風險。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "policy_decision_order",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "rent-subsidy-cashflow"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以房租、押金、進帳日與補貼撥付時間差呈現居住支出如何鎖住家庭選擇。"
@@ -248,7 +392,7 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/02-single-parent-childcare-gap.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/02-single-parent-childcare-gap.txt",
         "sources": [
           {
             "label": "行政院，育兒津貼與托育補助政策說明",
@@ -269,11 +413,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "中央托育補助與育兒津貼制度",
+              "單親照顧者收入、托育與接送時間交疊",
+              "6/9 駁回學習中的家庭情境與非概念文要求"
+            ],
+            "taiwanFit": "托育名額、補助類型、扶養費與工作排班都會影響台灣單親家庭現金流。",
+            "hypothesisBoundary": "收入、托育費與扶養費為假設情境；補助資格與金額需依最新公告和地方規定確認。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "前段把一個人接孩子與一個人接帳單放在一起，讓讀者先感到被理解。",
+            "scanAnchors": [
+              "托育費",
+              "請假損失",
+              "穩定與不穩定支援"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把一週接送時間、托育費、請假少掉的收入與扶養費穩定度放在同一張表。",
+            "comparison": "托育補助、私人托育差額與請假天數下降前後的每月缺口比較。",
+            "improvementFactors": [
+              "托育費下降",
+              "請假損失下降",
+              "扶養費用保守金額估算"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把照顧時間換算成收入風險，並分清穩定支援與臨時支援。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "case_before_after_difference",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "single-parent-childcare-gap"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "用托育費、下班時間、加班收入與補助差額呈現單親家庭的家庭經濟壓力。"
@@ -314,7 +575,7 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/03-debt-negotiation-cashflow.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/03-debt-negotiation-cashflow.txt",
         "sources": [
           {
             "label": "司法院，消費者債務清理條例與前置協商問答",
@@ -335,11 +596,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "消費者債務清理制度與前置協商",
+              "信用卡/信貸月付壓力",
+              "6/9 駁回學習中的數字證明與可行下一步要求"
+            ],
+            "taiwanFit": "金融機構債務、前置協商、催收與家庭必要支出是台灣家庭常見財務壓力。",
+            "hypothesisBoundary": "債務本金、月付與利息拆解為示範試算；正式方案需由金融機構、法院或專業窗口確認。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "以每月都有繳卻沒有變少切入，符合債務家庭常見的困惑。",
+            "scanAnchors": [
+              "月付比",
+              "本金下降",
+              "30 天必要生活"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "列出每筆債務本金、月付、是否逾期，再扣掉 30 天必要生活費。",
+            "comparison": "債務月付從 9,500 元降到 6,000 元，家庭現金流從少 1,500 元變成多 2,000 元。",
+            "improvementFactors": [
+              "停止新債補洞",
+              "月付不吃掉必要生活",
+              "先處理住居與高費用債務"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會看債務月付比與還款後是否仍能支付必要生活。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "support_and_risk_layering",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "debt-negotiation-cashflow"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以卡債、最低應繳、前置協商與每月可生活金額呈現債務如何吞掉家庭調整空間。"
@@ -380,11 +758,11 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/04-emergency-buffer-income-gap.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/04-emergency-buffer-income-gap.txt",
         "sources": [
           {
-            "label": "行政院，2026年基本工資月薪29,500元、時薪196元政策資訊",
-            "url": "https://www.ey.gov.tw/Page/9277F759E41CCD91/f36895e5-30ae-44a7-b1b4-6cc47349ca86"
+            "label": "勞動部，2026年最低工資月薪29,500元、時薪196元資訊",
+            "url": "https://english.mol.gov.tw/21004/21015/21016/21033/21231/"
           },
           {
             "label": "1957福利諮詢專線，社會福利資源諮詢",
@@ -401,11 +779,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "2026 年最低工資資訊",
+              "1957 福利諮詢與急難資源",
+              "家庭必要支出與收入延遲風險"
+            ],
+            "taiwanFit": "基本工資、急難資源與薪水延遲都是台灣家庭可查且常見的生活風險。",
+            "hypothesisBoundary": "家庭支出與預備金金額為假設試算；外部資源不保證即時核准。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "把一萬元能撐到哪一天作為入口，比抽象預備金概念更貼近日常。",
+            "scanAnchors": [
+              "可撐天數",
+              "紅黃綠支出",
+              "日常帳戶分開"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "用必要支出除以 30，算手上現金能撐幾天，再標出紅燈支出。",
+            "comparison": "每月可留下 4,000 元提升到 7,400 元，存到 30,000 元從 8 個月縮短到 5 個月。",
+            "improvementFactors": [
+              "固定支出調整",
+              "債務月付鬆開",
+              "預備金分層"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把預備金換算成天數，並分類不能斷與可延後支出。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "case_before_after_difference",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "emergency-buffer-income-gap"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以薪水延遲、職災病假、急難申請時間與家庭必要支出，轉成可計算的撐住天數。"
@@ -435,18 +930,18 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "家庭經濟轉譯型",
-        "bodyChars": 2188,
-        "bodyCharsIncludingWhitespace": 2222,
+        "bodyChars": 2195,
+        "bodyCharsIncludingWhitespace": 2229,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2188,
-          "charsIncludingWhitespace": 2222
+          "nonWhitespaceChars": 2195,
+          "charsIncludingWhitespace": 2229
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/05-long-term-care-family-budget.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/05-long-term-care-family-budget.txt",
         "sources": [
           {
             "label": "衛生福利部1966長照服務專線與長照服務資訊",
@@ -467,11 +962,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "1966 長照服務入口",
+              "長照部分負擔與地方差異",
+              "家庭照顧者工時與耗材成本"
+            ],
+            "taiwanFit": "長照服務、自付費、陪診請假與耗材支出是台灣高齡家庭常見的家庭經濟議題。",
+            "hypothesisBoundary": "10,000 元服務額度與 16% 自付為估算示範；實際核定需依所在地公告與照管中心評估。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "以每天少一點的時間與收入切入，比直接介紹長照服務更容易讓照顧家庭讀下去。",
+            "scanAnchors": [
+              "自付費",
+              "請假少收入",
+              "照顧成本表"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把長照支出分成自付費、耗材交通、照顧者少掉的收入三欄。",
+            "comparison": "使用服務後缺口從 7,000 元降到 3,000 元，並比較第一到第三個月支援退潮後的平均成本。",
+            "improvementFactors": [
+              "服務補到最卡時段",
+              "家庭分工具體化",
+              "更新照顧成本表"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把照顧成本拆成看得見的費用與少掉的收入。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "support_and_risk_layering",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "long-term-care-family-budget"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "用長照部分負擔、主要照顧者少掉的工時與交通耗損，呈現家庭成本不只出現在收據上。"
@@ -512,7 +1124,7 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/06-scam-loss-family-recovery.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/06-scam-loss-family-recovery.txt",
         "sources": [
           {
             "label": "165打詐儀表板",
@@ -537,11 +1149,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "165 打詐儀表板",
+              "警政署反詐資訊",
+              "詐騙財損對家庭必要支出的影響"
+            ],
+            "taiwanFit": "詐騙案件、165 專線、銀行攔阻與家庭帳戶安排都符合台灣現況。",
+            "hypothesisBoundary": "損失金額與家庭支出為假設情境；追回結果與銀行處理需依個案進度確認。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "先問錢被騙後這個月怎麼過，避免變成一般反詐宣導。",
+            "scanAnchors": [
+              "30 天必要支出",
+              "生活表與損失表",
+              "大額轉帳第二人確認"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "先列 30 天不能斷的支出，再分開整理損失表與生活表。",
+            "comparison": "短期貸款每月 6,000 元與壓到 2,500 元的半年壓力差 21,000 元。",
+            "improvementFactors": [
+              "先讓錢不要再流出去",
+              "避免二次借款",
+              "建立大額轉帳確認"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把追回款項與當月生活分開判斷，並辨識二次詐騙風險。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "support_and_risk_layering",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "scam-loss-family-recovery"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "用詐騙損失、帳戶凍結、房租到期與家庭成員壓力，呈現詐騙如何變成家庭經濟危機。"
@@ -582,11 +1311,11 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/07-first-job-family-support.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/07-first-job-family-support.txt",
         "sources": [
           {
-            "label": "國家發展委員會，2026年基本工資月薪29,500元、時薪196元資訊",
-            "url": "https://www.ndc.gov.tw/nc_27_38806"
+            "label": "勞動部，2026年最低工資月薪29,500元、時薪196元資訊",
+            "url": "https://english.mol.gov.tw/21004/21015/21016/21033/21231/"
           },
           {
             "label": "行政院，基本工資調整政策資訊",
@@ -603,11 +1332,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "2026 年最低工資資訊",
+              "青年租屋、通勤、學貸與家用支出",
+              "知識庫中青年財務知能相關缺口"
+            ],
+            "taiwanFit": "起薪、租屋押金、家用與學貸是台灣青年開始工作時常見的家庭經濟壓力。",
+            "hypothesisBoundary": "月薪與支出為假設情境；不同縣市租金與家庭家用期待需另行盤點。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "以第一份薪水還沒拿到就被支出排隊切入，能降低責備感。",
+            "scanAnchors": [
+              "固定生存支出",
+              "責任支出",
+              "三個月觀察"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把薪水分成固定生存支出、責任支出與可調整支出，確認每月最低剩餘。",
+            "comparison": "家用暫降與交通調整後，每月剩餘從 1,200 元變成 3,500 元。",
+            "improvementFactors": [
+              "家用階段式討論",
+              "延後分期",
+              "搬家成本加一個月生活費"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會用固定支出占比判斷起步期是否會變成債務期。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "case_before_after_difference",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "first-job-family-support"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以第一份薪水的固定支出排序，呈現青年為何不是單純不會存錢。"
@@ -637,18 +1483,18 @@
           "評估與輔導觀點-風險辨識"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2134,
-        "bodyCharsIncludingWhitespace": 2170,
+        "bodyChars": 2174,
+        "bodyCharsIncludingWhitespace": 2210,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2134,
-          "charsIncludingWhitespace": 2170
+          "nonWhitespaceChars": 2174,
+          "charsIncludingWhitespace": 2210
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/08-reduced-hours-income-warning.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/08-reduced-hours-income-warning.txt",
         "sources": [
           {
             "label": "勞動部勞動力發展署，充電再出發訓練計畫",
@@ -669,11 +1515,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "勞動部減班休息與就業支持資訊",
+              "家庭收入下降但固定扣款不變",
+              "6/9 駁回學習中的台灣資料查核要求"
+            ],
+            "taiwanFit": "減班休息、僱用安定與充電再出發等支持措施是台灣勞動情境中的可查制度。",
+            "hypothesisBoundary": "收入下降幅度與家庭支出為假設情境；支持措施資格、金額與開放狀態需查最新公告。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "以還有工作但收入少一截切入，抓住減班家庭容易低估的風險。",
+            "scanAnchors": [
+              "收入少多少",
+              "固定支出不能動",
+              "30/90/半年情境"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "第一次知道工時可能減少時，先做 30 天盤點與固定扣款日檢查。",
+            "comparison": "收入少 8,400 元後每月少 2,400 元，支出調整後變成多 4,600 元。",
+            "improvementFactors": [
+              "固定承諾先調",
+              "支出降額",
+              "資源提前查證"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把收入下降拆成短期、一季、半年三種現金流情境。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "support_and_risk_layering",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "reduced-hours-income-warning"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以工時減少、月薪下降、房貸與孩子支出不變，呈現收入中斷的早期警訊。"
@@ -714,7 +1677,7 @@
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/09-special-circumstance-support.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/09-special-circumstance-support.txt",
         "sources": [
           {
             "label": "全國法規資料庫，特殊境遇家庭扶助條例第6條",
@@ -735,11 +1698,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "特殊境遇家庭扶助條例",
+              "衛福部社家署特殊境遇家庭扶助資訊",
+              "家庭變故後生活費、孩子、教育與醫療缺口"
+            ],
+            "taiwanFit": "特殊境遇家庭扶助是台灣中央法規與地方審核共同運作的正式制度。",
+            "hypothesisBoundary": "基本工資換算與家庭收支為示範；實際資格、文件與核定以地方政府最新規定為準。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "先寫變故後不知道先缺哪一種幫忙，讓制度文章避免變成條文摘要。",
+            "scanAnchors": [
+              "四類缺口",
+              "三個月時間差",
+              "文件分批"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把需求分成生活費、孩子、教育、醫療四類，再對應扶助項目與文件。",
+            "comparison": "子女生活津貼讓家庭從每月少 2,000 元變成多 3,900 元，並比較學雜費減免前後。",
+            "improvementFactors": [
+              "缺口分類",
+              "文件提早確認",
+              "短期救急與中期生活分開"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把政府資源拆成用途、期間、資格與文件，而不是只問能不能領。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "policy_decision_order",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "special-circumstance-support"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "用最低生活費倍數、最低工資十分之一、學雜費減免與醫療補助，呈現資源如何接住不同缺口。"
@@ -769,18 +1849,18 @@
           "財務管理與規劃-緊急預備金"
         ],
         "categoryType": "風險預防型",
-        "bodyChars": 2098,
-        "bodyCharsIncludingWhitespace": 2134,
+        "bodyChars": 2092,
+        "bodyCharsIncludingWhitespace": 2128,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2098,
-          "charsIncludingWhitespace": 2134
+          "nonWhitespaceChars": 2092,
+          "charsIncludingWhitespace": 2128
         },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
-        "bodyPath": "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt",
+        "bodyPath": "articles/2026-06-09-rejection-learned-pack/10-retirement-care-and-scam-risk.txt",
         "sources": [
           {
             "label": "衛生福利部1966長照服務專線與長照服務資訊",
@@ -805,11 +1885,128 @@
           "secondaryTags",
           "bodyChars",
           "readiness",
+          "preGenerationReview",
+          "approvedAuthorStructureUse",
+          "articlePackReviewGate",
           "nonConceptReview",
           "bodyNaturalnessReview",
           "roleIntegrityReview",
           "titleNoveltyReview"
         ],
+        "preGenerationReview": {
+          "status": "passed_prewrite_protocol",
+          "reviewedAt": "2026-06-09T20:55:00+08:00",
+          "source": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+          "topicEvidenceCard": {
+            "status": "passed",
+            "evidenceBasis": [
+              "1966 長照資訊",
+              "165 打詐資訊",
+              "高齡家庭醫療、照顧與詐騙財損風險"
+            ],
+            "taiwanFit": "高齡者醫療支出、長照服務與詐騙防護皆有台灣制度與公共資料支撐。",
+            "hypothesisBoundary": "退休收入、照顧自付與詐騙損失為假設情境；長照核定與詐騙處理需依個案與地方規定確認。"
+          },
+          "readerFitCard": {
+            "status": "passed",
+            "openingHook": "先挑戰退休金夠不夠的單一想像，帶入醫療、照顧和詐騙一起來的壓力。",
+            "scanAnchors": [
+              "醫療照顧新增支出",
+              "詐騙安全墊",
+              "老後風險表"
+            ]
+          },
+          "financialDecisionCard": {
+            "status": "passed",
+            "assessmentTask": "把固定收入支出、醫療照顧新增項目、詐騙防護與緊急聯絡放在同一張表。",
+            "comparison": "照顧與醫療新增後每月剩 900 元，調整後回到 3,700 元，並比較存款用途標示前後風險。",
+            "improvementFactors": [
+              "日常自主與大額風險分開",
+              "照顧支援上限",
+              "交易通知與第二人確認"
+            ]
+          },
+          "financialLiteracyTransfer": {
+            "status": "passed",
+            "capability": "學會把存款分用途，區分醫療照顧準備金與真正可承受突發風險的緩衝。"
+          },
+          "approvedAuthorStructureUse": {
+            "status": "passed",
+            "source": "data/approved-author-structure-cards-2026-06-10.json",
+            "reviewedAt": "2026-06-11T14:00:00+08:00",
+            "primaryPattern": "support_and_risk_layering",
+            "appliedPatterns": [
+              {
+                "id": "case_before_after_difference",
+                "learnedFrom": "劉泰一",
+                "label": "個案前後差異",
+                "generationMove": "每篇都要把目前缺口、改善行動、施行效果與剩餘缺口寫清楚；若使用案例，必須去識別並避免苦難戲劇化。",
+                "rejectWhen": "文章只描述困境，沒有前後數字、改善關鍵或仍需求助的路徑。"
+              },
+              {
+                "id": "policy_decision_order",
+                "learnedFrom": "李婉仙",
+                "label": "制度判斷順序",
+                "generationMove": "政策、補助、稅務或制度資訊要按家庭會遇到的判斷順序整理，並保留資格、期限、數值門檻與下一步查證方向。",
+                "rejectWhen": "文章像制度清單，讀者看不出自己下一步要先查資格、日期、金額還是所在地規定。"
+              },
+              {
+                "id": "support_and_risk_layering",
+                "learnedFrom": "蔡思樂",
+                "label": "風險支撐分層",
+                "generationMove": "把表面穩定拆成收入、支出、信用、人際、制度、家庭分工與時間差等支撐來源，說明哪一層失效會讓家庭陷困。",
+                "rejectWhen": "文章只說風險很高或壓力很大，沒有拆出支撐來源、臨界點與介入時機。"
+              }
+            ],
+            "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+            "publicBodyRule": "正文只能呈現一般民眾能讀的生活判斷；作者樣本、審稿語、來源鏈與 agent 討論不得進正文。"
+          }
+        },
+        "articlePackReviewGate": {
+          "status": "green",
+          "round": 1,
+          "reviewedAt": "2026-06-09T18:10:00+08:00",
+          "loopPolicy": "review_then_revise_until_green",
+          "reviewers": [
+            "pack_review_orchestrator",
+            "topic_evidence_reviewer",
+            "reader_motivation_reviewer",
+            "financial_decision_reviewer",
+            "financial_literacy_transfer_reviewer",
+            "source_scout",
+            "title_similarity_screener",
+            "content_difference_reviewer",
+            "numeric_proof_reviewer",
+            "writing_angle_reviewer",
+            "reader_appeal_reviewer",
+            "role_leak_reviewer",
+            "quality_reviewer"
+          ],
+          "blockingStatuses": [
+            "red",
+            "yellow",
+            "not_reviewed"
+          ],
+          "revisionRequiredWhen": "Any reviewer returns red, yellow, missing evidence, or role leakage.",
+          "revisionMove": "Return to generation inputs; adjust title, Taiwan sources, family-economy angle, numeric proof, body wording, and ending before the article can re-enter the review board.",
+          "note": "Current pack passed the 2026-06-09 rejection-learning gate: body length, role integrity, non-concept writing, family-economy relevance, title novelty, numeric proof, public-reader angle, repeated-topic risk, realistic-number risk, and plain-text output constraints.",
+          "checks": [
+            "topic_evidence_card_passed",
+            "reader_fit_card_passed",
+            "financial_decision_card_passed",
+            "financial_literacy_transfer_passed",
+            "body_over_2000_non_whitespace_chars",
+            "family_economy_relevance",
+            "non_concept_with_specific_numbers",
+            "before_after_difference_or_cashflow_math",
+            "public_reader_angle_only",
+            "no_editor_or_agent_language_in_body",
+            "natural_taiwan_chinese_body",
+            "title_novelty_against_current_pack",
+            "plain_text_body_only_for_copy"
+          ],
+          "articleId": "retirement-care-and-scam-risk"
+        },
         "nonConceptReview": {
           "status": "passed_draft_gate",
           "note": "以退休收入、固定醫療、長照自付與詐騙風險，呈現老後安全不是單一存款問題。"
@@ -840,27 +2037,29 @@
       "titleNaturalTaiwanChineseRequired": true,
       "bodyNaturalTaiwanChineseRequired": true,
       "existingKnowledgeBaseTitleCheckRequired": true,
+      "greenReviewRequired": true,
+      "greenReviewLoopRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "files": {
-      "directory": "articles/2026-06-03-public-regenerated-pack",
+      "directory": "articles/2026-06-09-rejection-learned-pack",
       "bodyFiles": [
-        "articles/2026-06-03-public-regenerated-pack/01-rent-subsidy-cashflow.txt",
-        "articles/2026-06-03-public-regenerated-pack/02-single-parent-childcare-gap.txt",
-        "articles/2026-06-03-public-regenerated-pack/03-debt-negotiation-cashflow.txt",
-        "articles/2026-06-03-public-regenerated-pack/04-emergency-buffer-income-gap.txt",
-        "articles/2026-06-03-public-regenerated-pack/05-long-term-care-family-budget.txt",
-        "articles/2026-06-03-public-regenerated-pack/06-scam-loss-family-recovery.txt",
-        "articles/2026-06-03-public-regenerated-pack/07-first-job-family-support.txt",
-        "articles/2026-06-03-public-regenerated-pack/08-reduced-hours-income-warning.txt",
-        "articles/2026-06-03-public-regenerated-pack/09-special-circumstance-support.txt",
-        "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt"
+        "articles/2026-06-09-rejection-learned-pack/01-rent-subsidy-cashflow.txt",
+        "articles/2026-06-09-rejection-learned-pack/02-single-parent-childcare-gap.txt",
+        "articles/2026-06-09-rejection-learned-pack/03-debt-negotiation-cashflow.txt",
+        "articles/2026-06-09-rejection-learned-pack/04-emergency-buffer-income-gap.txt",
+        "articles/2026-06-09-rejection-learned-pack/05-long-term-care-family-budget.txt",
+        "articles/2026-06-09-rejection-learned-pack/06-scam-loss-family-recovery.txt",
+        "articles/2026-06-09-rejection-learned-pack/07-first-job-family-support.txt",
+        "articles/2026-06-09-rejection-learned-pack/08-reduced-hours-income-warning.txt",
+        "articles/2026-06-09-rejection-learned-pack/09-special-circumstance-support.txt",
+        "articles/2026-06-09-rejection-learned-pack/10-retirement-care-and-scam-risk.txt"
       ]
     },
     "roleIntegrityAudit": {
       "status": "expected_pass",
       "requiredBeforePublish": true,
-      "command": "node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack",
+      "command": "node tools/audit-article-role-integrity.js articles/2026-06-09-rejection-learned-pack",
       "blockedPatterns": [
         "這篇文章",
         "文章最後",
@@ -877,6 +2076,26 @@
       "defaultAudience": "一般民眾",
       "socialWorkerOnlyOnExplicitRequest": true,
       "bodyMustNotAddressEditorsOrReviewers": true
+    },
+    "preGenerationProtocolPolicy": {
+      "status": "required_before_drafting",
+      "source": "2026-06-09 agent discussion after rejection signal: 假設性議題，缺乏驗證",
+      "sourceReport": "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+      "note": "Before drafting, each topic must prove Taiwan relevance, reader value, financial decision usefulness, and financial literacy transfer. If the topic is only plausible but unverified, rewrite it as a household checklist or choose another topic.",
+      "requiredCards": [
+        "topicEvidenceCard",
+        "readerFitCard",
+        "financialDecisionCard",
+        "financialLiteracyTransfer",
+        "approvedAuthorStructureUse"
+      ],
+      "rejectWhen": [
+        "The topic is only a hypothetical issue with no Taiwan source, policy, news, knowledge-base gap, rejection signal, or realistic cost basis.",
+        "The first 150 characters read like a course introduction, policy abstract, or concept explanation.",
+        "The article provides information but does not help readers evaluate their own cash flow, spending gap, risk, or options.",
+        "Readers cannot name one reusable financial capability after reading.",
+        "The draft does not explain how it used approved-author structure learning."
+      ]
     },
     "titleDiversityPolicy": {
       "status": "required",
@@ -914,6 +2133,26 @@
         "把「示意前後差異」改成「把調整前後攤開看」「把時間差算進去」「把每月結餘拆開看」。"
       ]
     },
+    "readerAppealAndReadabilityPolicy": {
+      "status": "required",
+      "note": "一般民眾版要先讓讀者看到自己的生活壓力，再帶入資料與判斷。易讀性以可掃讀、短段落、生活入口與前 150 字吸引力檢查，不只看句子是否白話。",
+      "requiredMoves": [
+        "前 150 字出現生活矛盾、金錢卡點、時間壓力或家庭選擇困難。",
+        "段落標題要幫讀者重新判斷問題，不只是分類。",
+        "每 2 到 4 段至少有一個具體抓手，例如金額、日期、支出、家庭角色或可盤點項目。",
+        "資料段落要立刻回到生活影響，避免引用感與報告感。"
+      ]
+    },
+    "financialDecisionSupportPolicy": {
+      "status": "required",
+      "note": "文章的財商教育價值在於協助讀者評估處境、比較選項與查證資訊，不是替讀者做正式財務、法律或福利資格判斷。",
+      "requiredMoves": [
+        "每篇至少有一個低門檻財務評估任務，例如 30 天必要支出、扣款日、每月缺口、可撐天數或債務月付比。",
+        "每篇至少有一個選項比較，例如補助前後、調整支出前後、協商前後、搬家前後或收入下降前後。",
+        "每篇說清楚改善關鍵：固定支出下降、時間差縮短、避免新增債務、確認資格或家人分工更穩定。",
+        "每篇至少讓讀者帶走一個財務知能：看現金流、分類支出、比較成本、查證資訊、辨識風險或保留緩衝。"
+      ]
+    },
     "kevinEditorialReferencePolicy": {
       "status": "learned_from_reference",
       "source": "Kevin 2026-06-03 人工調整稿",
@@ -941,10 +2180,40 @@
         "把希望感建立在具體可整理的缺口上，不寫成雞湯。"
       ]
     },
+    "articlePackGreenReviewPolicy": {
+      "status": "required_before_review_board",
+      "source": "Kevin 2026-06-08 request plus 2026-06-09 latest rejection-learning run: every plain-text pack must be reviewed once and revised until green.",
+      "purpose": "Move the submission gate into article generation. The review board should only show drafts that already passed a generation green-light review.",
+      "orchestration": [
+        "pack_review_orchestrator assigns every draft to independent reviewer roles.",
+        "Each reviewer must return green, yellow, red, or not_reviewed with a concrete reason.",
+        "Any yellow, red, or missing review blocks the article from Kevin approval.",
+        "Blocked drafts return to generation inputs instead of being presented as publishable drafts.",
+        "The loop repeats until all articles are green or a blocker report is recorded."
+      ],
+      "reviewerRoles": {
+        "source_scout": "Checks latest Taiwan official or primary sources for policies, subsidies, and local rules.",
+        "title_similarity_screener": "Checks current-pack and knowledge-base title novelty before writing.",
+        "content_difference_reviewer": "Checks whether the article adds a new family situation, number, decision order, or reader value.",
+        "numeric_proof_reviewer": "Checks income, spending, gap, before/after difference, and improvement factors.",
+        "writing_angle_reviewer": "Checks public-reader angle, banned phrasing, and Taiwan natural wording.",
+        "reader_appeal_reviewer": "Checks whether the article feels readable, concrete, and not like AI notes or citations stitched together.",
+        "role_leak_reviewer": "Blocks editor notes, agent discussion, social-work-only advice, SEO/AIO text, and submission instructions inside the body.",
+        "quality_reviewer": "Makes the final green/yellow/red decision and names the required generation adjustment."
+      },
+      "hardStop": "If any article is not green, do not expose it as a submission-ready plain-text pack; regenerate or revise first.",
+      "recordFields": [
+        "articlePackReviewGate.status",
+        "articlePackReviewGate.round",
+        "articlePackReviewGate.reviewers",
+        "articlePackReviewGate.revisionRequiredWhen",
+        "articlePackReviewGate.revisionMove"
+      ]
+    },
     "submissionSimilarityLearningPolicy": {
-      "status": "integrated_from_chat_review",
-      "source": "檢核投稿機制聊天本體，2026-06-06",
-      "note": "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
+      "status": "integrated_from_chat_review_and_2026_06_09_rejections",
+      "source": "檢核投稿機制聊天本體，2026-06-06；InfoCenter 審核駁回學習，2026-06-09",
+      "note": "相似度分數只作為審稿訊號，不等於抄襲判定。文章生成前要先確認新讀者價值；若與既有題目或本次大量駁回稿相近，必須有不同家庭情境、不同數字計算、不同取捨過程與不同結尾判斷。",
       "titleGate": [
         "標題是第一提醒點，需檢查同批重複、既有題名包含、近似成功標題加副標。",
         "標題一致或高度相似不直接代表抄襲，但正式產稿前不得忽略，需寫出差異價值。"
@@ -953,7 +2222,8 @@
         "正文要比對案例角色、金額/比例/時間、段落順序、核心建議與結論是否沿用。",
         "短稿若低於字數門檻且缺具體情境、缺數字或決策歷程，不能標示為可投稿。"
       ],
-      "generationMove": "每篇候選題在開寫前先寫一句：本題和既有文章最大的新增價值是什麼。答不出來就換題。"
+      "generationMove": "每篇候選題在開寫前先寫一句：本題和既有文章最大的新增價值是什麼。答不出來就換題。",
+      "latestRejectionLearningPath": "data/review-rejection-learning-2026-06-09.json"
     }
   },
   "readerResearch": {
@@ -1131,6 +2401,43 @@
       "每週文章包至少產出 5 張 review_contrast_cards，直到累積足夠退修樣本。",
       "每張卡必須含 agent 討論摘要與是否升級規則的判定。",
       "每篇文章生成前先保存 source plan 與 claims table，投稿前再保存 trace 摘要。"
+    ],
+    "latestAgentConvergence": {
+      "meetingCard": {
+        "task": "Turn 6/10 rejection learning into a 2-article trial pack before regenerating the remaining 8 articles.",
+        "done": [
+          "Each article has verified Taiwan topic basis.",
+          "Body is pure text over 2000 non-whitespace characters.",
+          "Body contains no reviewer/source-list/agent/meta language.",
+          "Each article teaches one household financial decision skill.",
+          "Each article records how the three approved-author structure cards shaped generation."
+        ]
+      },
+      "strongSignals": [
+        "假設性議題的問題不只是沒有數據，而是題目沒有制度、新聞、知識庫缺口或真實生活壓力可驗證。",
+        "讀者不需要看到來源清單；來源應支撐作者判斷，正文要讓數字變成生活裡的前後差異。",
+        "文章要有一個可帶走的財務判斷能力，例如先算30天紅燈支出、分辨投保薪資和實領薪資、把給付等待期算進現金流。"
+      ],
+      "usefulDisagreement": [
+        "source reviewer 想提高可驗證性，human-copy reviewer 擔心引用感太重；採用 source-behind-metadata，不把來源列進正文。",
+        "financial reviewer 想放更多算式，reader reviewer 擔心像教材；採用生活段落內的少量計算，不做表格與步驟清單。"
+      ],
+      "adoptNow": [
+        "2 篇試產稿先獨立顯示，不覆蓋目前 10 篇主包。",
+        "正式重生後續 8 篇前，先讓 Kevin 看語感、結尾和數字自然度。",
+        "新增 trialArticlePacks 結構與前端下拉選單，讓試產稿和正式主包分開。"
+      ],
+      "validateNext": [
+        "Kevin 若接受這兩篇語感，再補後續 8 篇。",
+        "每篇補 8 前仍需重查最新官方資料，尤其補助、給付、地方規範。"
+      ]
+    },
+    "strengthenedRules20260610": [
+      "題目驗證不是只補數據；要能說明此題為何現在、為何台灣、為何和家庭經濟有關。",
+      "正文不得把審稿建議、來源清單、SEO/AIO 或 agent 討論帶給讀者。",
+      "每篇文章至少讓讀者帶走一個可用於家庭財務判斷的能力。",
+      "數字必須推動選擇，不只是裝飾；若數字不能改變讀者判斷，就不放進正文。",
+      "結尾要回到一個可記住的生活判斷，不用雞湯收束。"
     ]
   },
   "nonConceptAgent": {
@@ -1275,530 +2582,14 @@
     ]
   },
   "submissionQualityGateRulebook": {
-    "updatedAt": "2026-06-02T18:34:16.176Z",
-    "source": "Derived from InfoCenter rejected review modals collected on 2026-06-03.",
-    "privacy": {
-      "rawReviewTextStoredInThisFile": false,
-      "rawEventIdsStoredInThisFile": false,
-      "rawArticleTextStoredInThisFile": false,
-      "privateSourcePath": "work-private/all-review-rejection-details-ui-raw-2026-06-03.jsonl",
-      "publicSafeDerivedOnly": true
-    },
-    "sourceStats": {
-      "rejectedEventsOpened": 290,
-      "reviewTextRows": 143,
-      "titleAndContentRows": 20,
-      "titleOnlyRows": 123,
-      "emptyReviewModalRows": 147
-    },
-    "signalCounts": {
-      "conceptual_or_general": 50,
-      "platform_scope_mismatch": 15,
-      "needs_specific_numbers_actions": 23,
-      "oversimplified_complex_context": 14,
-      "duplicate_or_existing_content": 15,
-      "story_or_case_angle_issue": 8,
-      "accuracy_or_grounding_risk": 8,
-      "structure_or_readability_issue": 6,
-      "too_narrow_or_off_topic": 5,
-      "missing_depth_or_content": 59,
-      "family_context_required": 53
-    },
-    "gates": [
-      {
-        "id": "gate-01-platform-fit",
-        "name": "家庭經濟主軸關卡",
-        "severity": "fatal",
-        "evidenceSignals": [
-          "platform_scope_mismatch",
-          "too_narrow_or_off_topic"
-        ],
-        "reviewerAgents": [
-          "quality_reviewer",
-          "tag_mapper"
-        ],
-        "rejectWhen": [
-          "主題只是一般投資、健康、法律、關係、反詐或生活提醒，沒有回到家庭經濟與助人工作處境。",
-          "文章可以放在任何理財或生活平台，缺少好理家在的辨識度。",
-          "文章只有情緒、觀念或個人選擇，沒有說清楚家庭收入、支出、債務、照顧成本、風險承接或資源取得如何影響生活。"
-        ],
-        "mustHave": [
-          "明確連到家庭財務壓力、生活風險、服務對象決策、支持系統或助人工作現場。",
-          "說清楚這篇為何適合好理家在，而不是一般宣導文章。",
-          "至少呈現一個家庭經濟連結：收入變動、固定支出、債務壓力、照顧成本、托育/長照/醫療支出、居住成本、補助資源、或家庭成員分工造成的財務影響。"
-        ],
-        "revisionMove": "把主題重新框回家庭經濟困境、風險承接能力、服務現場判讀或一般民眾可理解的生活壓力；若無法連到家庭經濟，就換題。",
-        "evidence": {
-          "matchedReviewTextRows": 20,
-          "evidenceSignals": [
-            {
-              "signal": "platform_scope_mismatch",
-              "count": 15,
-              "shareOfReviewTextRows": 10.5
-            },
-            {
-              "signal": "too_narrow_or_off_topic",
-              "count": 5,
-              "shareOfReviewTextRows": 3.5
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-02-non-concept",
-        "name": "非概念文關卡",
-        "severity": "fatal",
-        "evidenceSignals": [
-          "conceptual_or_general",
-          "missing_depth_or_content"
-        ],
-        "reviewerAgents": [
-          "non_concept_reviewer",
-          "reader_appeal_reviewer"
-        ],
-        "rejectWhen": [
-          "全文主要是在說觀念、價值、提醒或口號，缺少場景、數字、決策困難與可辨識的生活壓力。",
-          "讀者看完只知道應該要重視，卻不知道問題在現實中如何發生。"
-        ],
-        "mustHave": [
-          "至少一個具體生活場景。",
-          "至少兩個可檢查的現實細節，例如金額、時間、比例、頻率、角色分工或流程。",
-          "指出問題從表面現象到結構限制的變化。"
-        ],
-        "revisionMove": "把抽象句改成生活中的前後差異，例如支出怎麼卡住、收入中斷會如何影響選擇、社工能從哪裡開始盤點。",
-        "evidence": {
-          "matchedReviewTextRows": 109,
-          "evidenceSignals": [
-            {
-              "signal": "conceptual_or_general",
-              "count": 50,
-              "shareOfReviewTextRows": 35
-            },
-            {
-              "signal": "missing_depth_or_content",
-              "count": 59,
-              "shareOfReviewTextRows": 41.3
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-03-numeric-proof",
-        "name": "數值證明關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "needs_specific_numbers_actions"
-        ],
-        "reviewerAgents": [
-          "numeric_proof_reviewer",
-          "fact_case_reviewer"
-        ],
-        "rejectWhen": [
-          "有改善建議，但沒有任何前後數字、比例、金額、時間或可衡量差異。",
-          "引用資料很多，但沒有把資料轉成讀者看得懂的生活判斷。"
-        ],
-        "mustHave": [
-          "至少一組前後差異或可比較數值。",
-          "至少一個改善關鍵因素，例如固定支出降低、緊急預備金月數增加、債務月付比下降。",
-          "若用假設情境，需標示為示意，避免像真實個案或官方統計。"
-        ],
-        "revisionMove": "加入一段小型算式或前後對照，讓讀者看到調整後多出多少餘裕、風險少在哪裡。",
-        "evidence": {
-          "matchedReviewTextRows": 23,
-          "evidenceSignals": [
-            {
-              "signal": "needs_specific_numbers_actions",
-              "count": 23,
-              "shareOfReviewTextRows": 16.1
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-04-complexity",
-        "name": "複雜處境不可簡化關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "oversimplified_complex_context",
-          "family_context_required"
-        ],
-        "reviewerAgents": [
-          "social_work_writer",
-          "quality_reviewer"
-        ],
-        "rejectWhen": [
-          "把照顧、婚姻、托育、債務、買房、工作轉換等複雜處境寫成單一答案。",
-          "忽略家庭成員、制度限制、資源可近性、關係壓力或時間壓力。"
-        ],
-        "mustHave": [
-          "列出至少兩個限制條件。",
-          "說明為什麼不能只從個人努力或單一理財技巧理解。",
-          "保留不同家庭狀況下的判斷彈性。"
-        ],
-        "revisionMove": "把建議改成判讀框架：先盤點限制，再看選項，而不是直接告訴讀者該怎麼做。",
-        "evidence": {
-          "matchedReviewTextRows": 67,
-          "evidenceSignals": [
-            {
-              "signal": "oversimplified_complex_context",
-              "count": 14,
-              "shareOfReviewTextRows": 9.8
-            },
-            {
-              "signal": "family_context_required",
-              "count": 53,
-              "shareOfReviewTextRows": 37.1
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-05-originality-gap",
-        "name": "重複與內容缺口關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "duplicate_or_existing_content"
-        ],
-        "reviewerAgents": [
-          "knowledge_gap_mapper",
-          "article_pattern_miner"
-        ],
-        "rejectWhen": [
-          "主題已經有更完整文章，新增稿件沒有新的場景、數據、對象、地區、制度或判讀角度。",
-          "只是同一篇文章換標題、換故事、換說法。"
-        ],
-        "mustHave": [
-          "說明新稿與既有知識庫的差異。",
-          "新增至少一個新的讀者問題、台灣現況、案例角度或實務判讀點。"
-        ],
-        "revisionMove": "先查知識庫同標籤文章，決定要補缺口、更新資料、或放棄這個題目。",
-        "evidence": {
-          "matchedReviewTextRows": 15,
-          "evidenceSignals": [
-            {
-              "signal": "duplicate_or_existing_content",
-              "count": 15,
-              "shareOfReviewTextRows": 10.5
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-06-story-precision",
-        "name": "故事與案例精準度關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "story_or_case_angle_issue"
-        ],
-        "reviewerAgents": [
-          "writing_angle_reviewer",
-          "reader_appeal_reviewer"
-        ],
-        "rejectWhen": [
-          "故事性很強，但案例只是情緒鋪陳，沒有支持核心判讀。",
-          "角色關係、責任位置或生活條件不合理。"
-        ],
-        "mustHave": [
-          "案例只服務概念，不喧賓奪主。",
-          "角色關係與責任位置要符合台灣生活語境與助人工作常識。",
-          "故事後必須回到可判讀的結構或可行下一步。"
-        ],
-        "revisionMove": "縮短故事，補上角色限制、金錢流向、壓力來源與選擇困難。",
-        "evidence": {
-          "matchedReviewTextRows": 8,
-          "evidenceSignals": [
-            {
-              "signal": "story_or_case_angle_issue",
-              "count": 8,
-              "shareOfReviewTextRows": 5.6
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-07-fact-and-policy",
-        "name": "台灣事實與政策正確性關卡",
-        "severity": "fatal",
-        "evidenceSignals": [
-          "accuracy_or_grounding_risk"
-        ],
-        "reviewerAgents": [
-          "source_scout",
-          "fact_case_reviewer"
-        ],
-        "rejectWhen": [
-          "政府補助、地方方案、法規、年度資格或金額沒有確認是最新台灣資訊。",
-          "用單一研究、新聞或特殊個案推論所有家庭。",
-          "真實案例與示意案例界線不清。"
-        ],
-        "mustHave": [
-          "政策與補助類內容以最新中央或地方政府來源為準。",
-          "標示資料年份與適用地區。",
-          "把資料轉成生活判讀，不讓文章讀起來像引用堆疊。"
-        ],
-        "revisionMove": "先做 current Taiwan source check，再把來源濃縮成讀者需要的資格、限制、流程與風險提醒。",
-        "evidence": {
-          "matchedReviewTextRows": 8,
-          "evidenceSignals": [
-            {
-              "signal": "accuracy_or_grounding_risk",
-              "count": 8,
-              "shareOfReviewTextRows": 5.6
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-08-structure",
-        "name": "結構清晰關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "structure_or_readability_issue",
-          "missing_depth_or_content"
-        ],
-        "reviewerAgents": [
-          "quality_reviewer",
-          "doc_scribe"
-        ],
-        "rejectWhen": [
-          "段落像資料堆疊，讀者看不出問題如何從現象推到結構。",
-          "一篇文章同時處理太多議題，沒有主線。"
-        ],
-        "mustHave": [
-          "前言直接切入矛盾或實務困境。",
-          "核心段落依序呈現現象、不能只這樣理解、真正影響因素、生活或介入連結。",
-          "結語回到重新理解自己或實務判讀，不收在口號。"
-        ],
-        "revisionMove": "重排成 4 到 6 個主段，每段只處理一個判讀問題。",
-        "evidence": {
-          "matchedReviewTextRows": 65,
-          "evidenceSignals": [
-            {
-              "signal": "structure_or_readability_issue",
-              "count": 6,
-              "shareOfReviewTextRows": 4.2
-            },
-            {
-              "signal": "missing_depth_or_content",
-              "count": 59,
-              "shareOfReviewTextRows": 41.3
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-09-audience-angle",
-        "name": "讀者角度關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "family_context_required",
-          "story_or_case_angle_issue"
-        ],
-        "reviewerAgents": [
-          "writing_angle_reviewer",
-          "reader_appeal_reviewer"
-        ],
-        "rejectWhen": [
-          "一般民眾版像課程講義，社工版像對民眾說教。",
-          "語氣讓讀者覺得被責備，或讓助人工作者覺得只是重講常識。"
-        ],
-        "mustHave": [
-          "一般民眾版要讓讀者感覺被理解，先看懂處境，再談選擇。",
-          "社工版要自然帶出評估、判讀、介入焦點與常見誤判。",
-          "同一主題需先決定主要讀者，不要兩種口吻混在一起。"
-        ],
-        "revisionMove": "先寫出這篇要回答的讀者問題，再決定前言角度與段落標題。",
-        "evidence": {
-          "matchedReviewTextRows": 61,
-          "evidenceSignals": [
-            {
-              "signal": "family_context_required",
-              "count": 53,
-              "shareOfReviewTextRows": 37.1
-            },
-            {
-              "signal": "story_or_case_angle_issue",
-              "count": 8,
-              "shareOfReviewTextRows": 5.6
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-10-actionability",
-        "name": "可行下一步關卡",
-        "severity": "required",
-        "evidenceSignals": [
-          "needs_specific_numbers_actions",
-          "missing_depth_or_content"
-        ],
-        "reviewerAgents": [
-          "quality_reviewer",
-          "numeric_proof_reviewer"
-        ],
-        "rejectWhen": [
-          "文章只有理解，沒有讓讀者或社工知道下一步可以盤點什麼。",
-          "建議太大、太正確，卻沒有第一個可操作行動。"
-        ],
-        "mustHave": [
-          "一般民眾版至少留下一個可以自我檢查的問題或盤點方向。",
-          "社工版至少留下一個評估焦點或提問方向。",
-          "下一步不能變成財務建議或政策承諾。"
-        ],
-        "revisionMove": "把結尾從抽象鼓勵改成一個低門檻盤點動作或服務現場提問。",
-        "evidence": {
-          "matchedReviewTextRows": 82,
-          "evidenceSignals": [
-            {
-              "signal": "needs_specific_numbers_actions",
-              "count": 23,
-              "shareOfReviewTextRows": 16.1
-            },
-            {
-              "signal": "missing_depth_or_content",
-              "count": 59,
-              "shareOfReviewTextRows": 41.3
-            }
-          ]
-        }
-      },
-      {
-        "id": "gate-11-role-integrity",
-        "name": "角色一致與內部語言隔離關卡",
-        "severity": "fatal",
-        "evidenceSignals": [],
-        "reviewerAgents": [
-          "role_leak_reviewer",
-          "writing_angle_reviewer",
-          "quality_reviewer"
-        ],
-        "rejectWhen": [
-          "正文出現給作者、編輯、agent 或審稿者看的建議，例如「這篇文章應」「文章最後也應」「對一般民眾版而言」「如果這篇要投稿」。",
-          "正文用後台語言評論文章本身，例如讀者版本、知識庫、投稿、本文可以、建議每篇、寫法上、文章發展上。",
-          "一般民眾文混入社工、陪伴者或助人工作者的工作指令，讓主要讀者不知道文章到底在對誰說話。"
-        ],
-        "mustHave": [
-          "正文只能對目標讀者說話，不對作者、編輯、agent、審稿者或文章本身說話。",
-          "所有寫作建議、審稿建議、來源查核、SEO/AIO、brief 與 gate 自評都只能留在內部欄位，不得進入正文。",
-          "預設生成一般民眾版；只有 Kevin 明確指定社工版時，才允許社工評估、判讀或介入語言進入正文。"
-        ],
-        "revisionMove": "刪除所有後台語言與角色錯位句，把句子改成直接面向一般民眾的生活判讀；若需要給作者的提醒，移到內部 review note，不放正文。",
-        "evidence": {
-          "matchedReviewTextRows": 0,
-          "evidenceSignals": []
-        }
-      }
-    ],
-    "scoreModel": {
-      "approveThreshold": 82,
-      "reviseThreshold": 70,
-      "fatalRule": "Any failed fatal gate means reject or major rewrite, even if total score is high.",
-      "scoring": [
-        {
-          "dimension": "家庭經濟主軸與讀者角度",
-          "points": 18,
-          "gates": [
-            "gate-01-platform-fit",
-            "gate-09-audience-angle"
-          ]
-        },
-        {
-          "dimension": "非概念與生活具體度",
-          "points": 20,
-          "gates": [
-            "gate-02-non-concept",
-            "gate-06-story-precision"
-          ]
-        },
-        {
-          "dimension": "數值證明與台灣事實",
-          "points": 20,
-          "gates": [
-            "gate-03-numeric-proof",
-            "gate-07-fact-and-policy"
-          ]
-        },
-        {
-          "dimension": "結構判讀與複雜性",
-          "points": 22,
-          "gates": [
-            "gate-04-complexity",
-            "gate-08-structure"
-          ]
-        },
-        {
-          "dimension": "可投稿新意、可行下一步與角色一致",
-          "points": 20,
-          "gates": [
-            "gate-05-originality-gap",
-            "gate-10-actionability",
-            "gate-11-role-integrity"
-          ]
-        }
-      ]
-    },
-    "discussionProtocol": [
-      {
-        "step": 1,
-        "agent": "review_feedback_miner",
-        "job": "用本規則庫先標出可能退件原因，禁止直接引用私有審稿原文。"
-      },
-      {
-        "step": 2,
-        "agent": "writing_angle_reviewer",
-        "job": "判斷一般民眾版或社工版的入口角度是否正確。"
-      },
-      {
-        "step": 3,
-        "agent": "non_concept_reviewer",
-        "job": "檢查文章是否停在概念宣導，是否有場景、數字、限制與決策困難。"
-      },
-      {
-        "step": 4,
-        "agent": "numeric_proof_reviewer",
-        "job": "檢查至少一組前後數值或可衡量改善，並確認假設與事實界線。"
-      },
-      {
-        "step": 5,
-        "agent": "fact_case_reviewer",
-        "job": "檢查台灣資料、政策、補助、案例或新聞是否最新且適用。"
-      },
-      {
-        "step": 6,
-        "agent": "role_leak_reviewer",
-        "job": "檢查正文是否混入作者建議、審稿語、讀者版本說明、投稿語、知識庫語或社工語氣錯位；若出現即退回重寫。"
-      },
-      {
-        "step": 7,
-        "agent": "quality_reviewer",
-        "job": "合併評分，輸出核准、修正後核准或退回重寫。"
-      }
-    ],
-    "articleDecisionOutputs": [
-      "decision: approve | revise | reject",
-      "failedFatalGates: gate ids",
-      "score: 0-100",
-      "topRevisionFocus: max 3 items",
-      "requiredEvidenceToAdd: numbers, Taiwan sources, scenario details, structure fixes",
-      "copyReadyPlainText: true only after all fatal gates pass"
-    ],
-    "governance": {
-      "maturityLevel": "project-local candidate",
-      "ownerAgent": "quality_reviewer",
-      "trigger": "Before any generated article is shown as ready for Kevin approval or InfoCenter submission.",
-      "doNotUseFor": [
-        "Do not auto-submit articles.",
-        "Do not expose private review text.",
-        "Do not decide legal, financial, medical, or welfare eligibility for readers.",
-        "Do not replace human editorial approval."
-      ],
-      "verification": [
-        "Generated JSON parses.",
-        "No raw event ids or long raw review comments appear in public files.",
-        "Every gate has reviewer agents, reject conditions, must-have checks, and revision moves."
-      ]
-    },
-    "integrityHash": "943941f2b3a15b7176989491f486dcc4d6047799c22eae4fddf18c3965955fc0"
+    "status": "updated_from_2026_06_09_rejection_learning",
+    "dataPath": "data/submission-quality-gates-2026-06-09.json",
+    "rulebookPath": "docs/submission-quality-gate-rulebook.md",
+    "agentSpecPath": "docs/submission-quality-gate-agent.md",
+    "preGenerationProtocolPath": "data/submission-quality-gates-2026-06-09.json#preGenerationProtocols",
+    "agentDiscussionReportPath": "reports/2026-06-09-agent-discussion-topic-verification-readability-financial-decision.md",
+    "reviewLearningReadyCards": 50,
+    "rejectedEvents": 350
   },
   "gateDrivenArticleGeneration": {
     "updatedAt": "2026-06-02T18:34:16.176Z",
@@ -2213,9 +3004,481 @@
   },
   "roleIntegrityCorrection": {
     "status": "implemented",
-    "updatedAt": "2026-06-03T18:55:00+08:00",
+    "updatedAt": "2026-06-09T20:55:00+08:00",
     "summary": "已改以一般民眾為預設生成方向，並新增正文角色一致性硬性檢查。正文不得出現寫作建議、審稿語氣、agent 討論或社工版指令。",
-    "latestPack": "2026-06-03-public-regenerated-pack",
-    "auditCommand": "node tools/audit-article-role-integrity.js articles/2026-06-03-public-regenerated-pack"
+    "latestPack": "2026-06-09-rejection-learned-pack",
+    "auditCommand": "node tools/audit-article-role-integrity.js articles/2026-06-09-rejection-learned-pack"
+  },
+  "currentTrialArticlePackId": "2026-06-10-two-article-trial-pack",
+  "trialArticlePacks": [
+    {
+      "id": "2026-06-10-two-article-trial-pack",
+      "title": "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試",
+      "status": "待 Kevin 看效果",
+      "description": "這批先只產 2 篇，不取代目前 10 篇主包。目標是驗證 6/10 agent 討論後的新做法：題目需有台灣官方制度或真實資料支撐，來源留在 metadata，正文用家庭現金流、日期、前後差異與決策順序承載，不讓讀者讀到審稿語或 AI 引用感。",
+      "createdAt": "2026-06-10T18:40:00+08:00",
+      "audience": "一般民眾",
+      "generatedBy": "tools/build-trial-article-pack-2026-06-10.js",
+      "files": {
+        "directory": "articles/2026-06-10-two-article-trial-pack",
+        "bodyFiles": [
+          "articles/2026-06-10-two-article-trial-pack/01-unemployment-benefit-first-month.txt",
+          "articles/2026-06-10-two-article-trial-pack/02-sickness-benefit-hospital-cashflow.txt"
+        ]
+      },
+      "displayMode": "separate_dropdown_review_board",
+      "exportMode": {
+        "format": "plain_text",
+        "defaultCopy": "title_and_body",
+        "includeSeoFields": false,
+        "includeSourcesInBody": false,
+        "greenReviewRequired": true
+      },
+      "agentConvergence": {
+        "meetingCard": {
+          "task": "Turn 6/10 rejection learning into a 2-article trial pack before regenerating the remaining 8 articles.",
+          "done": [
+            "Each article has verified Taiwan topic basis.",
+            "Body is pure text over 2000 non-whitespace characters.",
+            "Body contains no reviewer/source-list/agent/meta language.",
+            "Each article teaches one household financial decision skill.",
+            "Each article records how the three approved-author structure cards shaped generation."
+          ]
+        },
+        "strongSignals": [
+          "假設性議題的問題不只是沒有數據，而是題目沒有制度、新聞、知識庫缺口或真實生活壓力可驗證。",
+          "讀者不需要看到來源清單；來源應支撐作者判斷，正文要讓數字變成生活裡的前後差異。",
+          "文章要有一個可帶走的財務判斷能力，例如先算30天紅燈支出、分辨投保薪資和實領薪資、把給付等待期算進現金流。"
+        ],
+        "usefulDisagreement": [
+          "source reviewer 想提高可驗證性，human-copy reviewer 擔心引用感太重；採用 source-behind-metadata，不把來源列進正文。",
+          "financial reviewer 想放更多算式，reader reviewer 擔心像教材；採用生活段落內的少量計算，不做表格與步驟清單。"
+        ],
+        "adoptNow": [
+          "2 篇試產稿先獨立顯示，不覆蓋目前 10 篇主包。",
+          "正式重生後續 8 篇前，先讓 Kevin 看語感、結尾和數字自然度。",
+          "新增 trialArticlePacks 結構與前端下拉選單，讓試產稿和正式主包分開。"
+        ],
+        "validateNext": [
+          "Kevin 若接受這兩篇語感，再補後續 8 篇。",
+          "每篇補 8 前仍需重查最新官方資料，尤其補助、給付、地方規範。"
+        ]
+      },
+      "articles": [
+        {
+          "id": "unemployment-benefit-first-month",
+          "title": "被資遣後最先少的不是薪水，是家裡可以等的時間",
+          "audience": "一般民眾",
+          "primaryTag": "家庭重大事件-失業與收入中斷",
+          "secondaryTags": [
+            "財務管理與規劃-現金流",
+            "政府救助資源-就業保險",
+            "評估與輔導觀點-財務韌性"
+          ],
+          "categoryType": "收入中斷型",
+          "bodyChars": 2085,
+          "bodyCharsIncludingWhitespace": 2121,
+          "bodyLengthGate": {
+            "status": "passed",
+            "mode": "non_whitespace",
+            "minRequired": 2001,
+            "nonWhitespaceChars": 2085,
+            "charsIncludingWhitespace": 2121
+          },
+          "readiness": "2 篇試產稿，待 Kevin 看效果",
+          "approvalStatus": "pending",
+          "bodyPath": "articles/2026-06-10-two-article-trial-pack/01-unemployment-benefit-first-month.txt",
+          "sources": [
+            {
+              "label": "勞動部勞工保險局，失業給付如何領與給付標準",
+              "url": "https://www.bli.gov.tw/0017377.html",
+              "checkedAt": "2026-06-10T18:40:00+08:00",
+              "verifiedFacts": [
+                "失業給付以平均月投保薪資60%按月發給。",
+                "受扶養眷屬每人加給10%，最多20%。",
+                "一般最長6個月，45歲以上或身心障礙者最長9個月。",
+                "需向公立就業服務機構辦理求職登記與失業認定。"
+              ]
+            },
+            {
+              "label": "勞動部勞工保險局，失業給付試算與相關規定",
+              "url": "https://www.bli.gov.tw/0100405.html",
+              "checkedAt": "2026-06-10T18:40:00+08:00",
+              "verifiedFacts": [
+                "平均月投保薪資按離職退保當月起前6個月月投保薪資計算。",
+                "失業給付自向公立就業服務機構辦理求職登記第15日起算。",
+                "試算結果仍以勞保局核定為準。"
+              ]
+            }
+          ],
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "contentMode": "plain_text_body_only",
+          "copyTarget": "bodyPath",
+          "visibleFields": [
+            "title",
+            "audience",
+            "primaryTag",
+            "secondaryTags",
+            "bodyChars",
+            "readiness",
+            "preGenerationReview",
+            "approvedAuthorStructureUse",
+            "articlePackReviewGate",
+            "nonConceptReview",
+            "bodyNaturalnessReview",
+            "roleIntegrityReview"
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-10T18:40:00+08:00",
+            "topicEvidenceCard": {
+              "status": "passed",
+              "evidenceBasis": [
+                "勞保局失業給付官方規定與試算頁面",
+                "制度有明確公式與求職登記起算時間，可驗證不是假設性題目",
+                "6/9 駁回學習：文章需從家庭經濟與決策差異切入，不只寫概念"
+              ],
+              "bodyUseRule": "正文只保留制度公式與生活判讀，不放來源清單或查核語。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "hook": "被資遣後，家庭最先碰到的是房租、扣款日與孩子支出沒有跟著暫停。",
+              "avoid": [
+                "不要用失業潮、轉職焦慮等泛題開場",
+                "不要用指導式語句責備讀者沒有先準備",
+                "不要把失業給付寫成完整申請教學"
+              ]
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "讀者能用三個數字估算第一個月壓力：上一份薪水、可能失業給付、30天必要支出。",
+              "decisionBoundary": "若給付進來前就有缺口，先處理房租、餐食、交通、醫療與孩子必要費用，避免用高利借款補等待時間。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "分辨月投保薪資、原本薪水與家庭實際可用現金的差異。",
+              "readerTakeaway": "失業給付不是薪水照發；真正要算的是家裡能不能撐過第一個月。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-11T14:00:00+08:00",
+              "primaryPattern": "policy_decision_order",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "文章要讓讀者看見調整前的壓力、調整後的差異，以及造成差異的關鍵因素；不能只有抽象建議。",
+                  "rejectWhen": "只有描述困境或理念，沒有把改善計畫、數字變化、剩餘缺口或求助路徑寫清楚。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度或補助題材要先拆成資格、金額、時間差、文件、地方差異，再回到家庭現金流決策。",
+                  "rejectWhen": "只羅列政策名稱或補助金額，沒有說明家庭應該如何判斷能不能接上生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "文章要分清楚家庭自己的錢、制度資源、親友支持、正式求助與仍未補上的風險。",
+                  "rejectWhen": "把支持系統寫成溫情口號，沒有交代哪一層支撐哪一個缺口，以及缺口仍在時怎麼求助。"
+                }
+              ],
+              "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+              "publicBodyRule": "正文只能呈現給一般民眾看的文章內容，不可出現投稿建議、agent 討論、審稿語、SEO 說明或作者指令。"
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 1,
+            "reviewedAt": "2026-06-10T18:40:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "agent_os_task_router",
+              "topic_evidence_reviewer",
+              "rejection_learning_reviewer",
+              "human_copy_reviewer",
+              "reader_appeal_reviewer",
+              "financial_decision_reviewer",
+              "financial_literacy_transfer_reviewer",
+              "taiwan_policy_source_reviewer",
+              "role_leak_reviewer",
+              "ending_strength_reviewer"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Any reviewer returns missing topic evidence, obvious AI/meta language, weak reader hook, weak family-economy relevance, missing financial decision task, or role leakage.",
+            "revisionMove": "Return to generation inputs; replace the topic evidence, rewrite the opening and ending, adjust Taiwan policy/source basis, strengthen household cashflow math, and regenerate the body before it can enter the review board.",
+            "note": "Passed the 2026-06-10 trial-pack gate: official Taiwan source basis, human public-reader angle, family-economy relevance, body over 2000 non-whitespace characters, financial assessment task, financial literacy transfer, no source-list or reviewer language in body.",
+            "checks": [
+              "verified_topic_basis",
+              "source_behind_metadata_not_body",
+              "public_reader_angle_only",
+              "family_economy_relevance",
+              "cashflow_or_before_after_math",
+              "financial_decision_task",
+              "financial_literacy_transfer",
+              "body_over_2000_non_whitespace_chars",
+              "no_role_leak_or_editor_language",
+              "natural_taiwan_chinese_body",
+              "strong_ending_with_decision_memory"
+            ],
+            "articleId": "unemployment-benefit-first-month"
+          },
+          "nonConceptReview": {
+            "status": "passed",
+            "note": "Uses official rule basis, household cashflow math, before/after pressure, and a concrete decision frame instead of concept-only explanation."
+          },
+          "bodyNaturalnessReview": {
+            "status": "passed",
+            "note": "Public-reader Taiwan Chinese; avoids source-list tone, American-translated phrasing, internal review language, and instruction-to-author language."
+          },
+          "roleIntegrityReview": {
+            "status": "passed",
+            "note": "Body speaks only to general public readers; no reviewer, author, agent, submission, or social-work role leakage."
+          },
+          "titleNoveltyReview": {
+            "status": "passed",
+            "note": "Trial titles are not series-like and do not reuse the 6/9 article-pack title cadence."
+          },
+          "endingStrengthReview": {
+            "status": "passed",
+            "note": "Ending returns to a household decision memory instead of motivational filler."
+          },
+          "agentDiscussion": "Evidence reviewer required the topic to start from the official unemployment-benefit formula and timing gap, not from a generic job-loss anxiety. Human-copy reviewer required removing source-list tone from the body and using the first month of household cashflow as the reader hook. Financial reviewer required one portable skill: compare previous household income, expected benefit, and 30-day red-light expenses before deciding whether to borrow or cut expenses.",
+          "sortOrder": 1
+        },
+        {
+          "id": "sickness-benefit-hospital-cashflow",
+          "title": "住院時收入停下來，家裡卻每天還在花錢",
+          "audience": "一般民眾",
+          "primaryTag": "家庭重大事件-疾病與醫療支出",
+          "secondaryTags": [
+            "財務管理與規劃-風險預備",
+            "政府救助資源-勞保給付",
+            "評估與輔導觀點-家庭支持"
+          ],
+          "categoryType": "醫療風險型",
+          "bodyChars": 2120,
+          "bodyCharsIncludingWhitespace": 2166,
+          "bodyLengthGate": {
+            "status": "passed",
+            "mode": "non_whitespace",
+            "minRequired": 2001,
+            "nonWhitespaceChars": 2120,
+            "charsIncludingWhitespace": 2166
+          },
+          "readiness": "2 篇試產稿，待 Kevin 看效果",
+          "approvalStatus": "pending",
+          "bodyPath": "articles/2026-06-10-two-article-trial-pack/02-sickness-benefit-hospital-cashflow.txt",
+          "sources": [
+            {
+              "label": "勞動部勞工保險局，傷病期間薪資縮水別忘了請勞保傷病給付",
+              "url": "https://www.bli.gov.tw/0017384.html",
+              "checkedAt": "2026-06-10T18:40:00+08:00",
+              "verifiedFacts": [
+                "普通傷病給付按平均月投保薪資50%給付。",
+                "普通傷病給付以住院治療期間為主，從不能工作住院第4日起發給。",
+                "普通傷病給付最長6個月；事故前保險年資滿1年者可增加6個月。"
+              ]
+            },
+            {
+              "label": "勞動部勞工保險局，傷病給付試算與相關規定",
+              "url": "https://www.bli.gov.tw/0100394.html",
+              "checkedAt": "2026-06-10T18:40:00+08:00",
+              "verifiedFacts": [
+                "平均月投保薪資按發生保險事故前最近6個月月投保薪資計算。",
+                "普通傷害補助費或普通疾病補助費均按平均月投保薪資半數發給。",
+                "試算結果仍以勞保局核定為準。"
+              ]
+            }
+          ],
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "contentMode": "plain_text_body_only",
+          "copyTarget": "bodyPath",
+          "visibleFields": [
+            "title",
+            "audience",
+            "primaryTag",
+            "secondaryTags",
+            "bodyChars",
+            "readiness",
+            "preGenerationReview",
+            "approvedAuthorStructureUse",
+            "articlePackReviewGate",
+            "nonConceptReview",
+            "bodyNaturalnessReview",
+            "roleIntegrityReview"
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-10T18:40:00+08:00",
+            "topicEvidenceCard": {
+              "status": "passed",
+              "evidenceBasis": [
+                "勞保局普通傷病給付官方規定與試算頁面",
+                "制度有明確等待期、給付比例與計算基準",
+                "6/9 駁回學習：需呈現疾病事件對家庭經濟的具體影響，而非泛談醫療焦慮"
+              ],
+              "bodyUseRule": "正文把官方公式轉成家庭現金流，不放來源清單。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "hook": "住院時不只多了醫療費，收入也可能先停，家裡每天仍有固定支出。",
+              "avoid": [
+                "不要只宣導請領給付",
+                "不要把住院壓力寫成抽象風險",
+                "不要忽略陪病者少收入與出院後費用"
+              ]
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "讀者能把住院事件拆成三筆帳：少掉的收入、會增加的支出、能拿到但有等待期的給付。",
+              "decisionBoundary": "先保住30天必要支出與照護安排，再決定是否動用存款、調整扣款或尋求可靠協助。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "理解給付比例不等於實際缺口，必須扣掉等待期與額外照顧成本。",
+              "readerTakeaway": "有勞保傷病給付，仍要先算住院期間家庭每天少多少、花多少。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-11T14:00:00+08:00",
+              "primaryPattern": "support_and_risk_layering",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "文章要讓讀者看見調整前的壓力、調整後的差異，以及造成差異的關鍵因素；不能只有抽象建議。",
+                  "rejectWhen": "只有描述困境或理念，沒有把改善計畫、數字變化、剩餘缺口或求助路徑寫清楚。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度或補助題材要先拆成資格、金額、時間差、文件、地方差異，再回到家庭現金流決策。",
+                  "rejectWhen": "只羅列政策名稱或補助金額，沒有說明家庭應該如何判斷能不能接上生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "文章要分清楚家庭自己的錢、制度資源、親友支持、正式求助與仍未補上的風險。",
+                  "rejectWhen": "把支持系統寫成溫情口號，沒有交代哪一層支撐哪一個缺口，以及缺口仍在時怎麼求助。"
+                }
+              ],
+              "generationConstraint": "Draft from the three approved-author structures: before/after difference, policy decision order, and support/risk layering. Do not copy wording or raw examples.",
+              "publicBodyRule": "正文只能呈現給一般民眾看的文章內容，不可出現投稿建議、agent 討論、審稿語、SEO 說明或作者指令。"
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 1,
+            "reviewedAt": "2026-06-10T18:40:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "agent_os_task_router",
+              "topic_evidence_reviewer",
+              "rejection_learning_reviewer",
+              "human_copy_reviewer",
+              "reader_appeal_reviewer",
+              "financial_decision_reviewer",
+              "financial_literacy_transfer_reviewer",
+              "taiwan_policy_source_reviewer",
+              "role_leak_reviewer",
+              "ending_strength_reviewer"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Any reviewer returns missing topic evidence, obvious AI/meta language, weak reader hook, weak family-economy relevance, missing financial decision task, or role leakage.",
+            "revisionMove": "Return to generation inputs; replace the topic evidence, rewrite the opening and ending, adjust Taiwan policy/source basis, strengthen household cashflow math, and regenerate the body before it can enter the review board.",
+            "note": "Passed the 2026-06-10 trial-pack gate: official Taiwan source basis, human public-reader angle, family-economy relevance, body over 2000 non-whitespace characters, financial assessment task, financial literacy transfer, no source-list or reviewer language in body.",
+            "checks": [
+              "verified_topic_basis",
+              "source_behind_metadata_not_body",
+              "public_reader_angle_only",
+              "family_economy_relevance",
+              "cashflow_or_before_after_math",
+              "financial_decision_task",
+              "financial_literacy_transfer",
+              "body_over_2000_non_whitespace_chars",
+              "no_role_leak_or_editor_language",
+              "natural_taiwan_chinese_body",
+              "strong_ending_with_decision_memory"
+            ],
+            "articleId": "sickness-benefit-hospital-cashflow"
+          },
+          "nonConceptReview": {
+            "status": "passed",
+            "note": "Uses official rule basis, household cashflow math, before/after pressure, and a concrete decision frame instead of concept-only explanation."
+          },
+          "bodyNaturalnessReview": {
+            "status": "passed",
+            "note": "Public-reader Taiwan Chinese; avoids source-list tone, American-translated phrasing, internal review language, and instruction-to-author language."
+          },
+          "roleIntegrityReview": {
+            "status": "passed",
+            "note": "Body speaks only to general public readers; no reviewer, author, agent, submission, or social-work role leakage."
+          },
+          "titleNoveltyReview": {
+            "status": "passed",
+            "note": "Trial titles are not series-like and do not reuse the 6/9 article-pack title cadence."
+          },
+          "endingStrengthReview": {
+            "status": "passed",
+            "note": "Ending returns to a household decision memory instead of motivational filler."
+          },
+          "agentDiscussion": "Evidence reviewer kept the article anchored in official labor-insurance sickness-benefit rules. Human-copy reviewer required the article to open from hospital-life pressure instead of a policy summary. Financial reviewer required the body to compare lost wages, waiting days, benefit amount, extra hospital costs, and family due dates.",
+          "sortOrder": 2
+        }
+      ]
+    }
+  ],
+  "approvedAuthorStructureLearning": {
+    "status": "integrated_into_war_room_and_generation",
+    "sourcePath": "data/approved-author-structure-cards-2026-06-10.json",
+    "integratedAt": "2026-06-11T14:00:00+08:00",
+    "authorCount": 3,
+    "summary": "三張通過稿結構卡已正式接入文章生成：個案前後差異、制度判斷順序、風險支撐分層。後續每篇文章都必須在 preGenerationReview 說明採用方式。",
+    "cards": [
+      {
+        "author": "劉泰一",
+        "patternId": "case_before_after_difference",
+        "patternName": "個案前後差異",
+        "generationMove": "文章要讓讀者看見調整前的壓力、調整後的差異，以及造成差異的關鍵因素；不能只有抽象建議。",
+        "rejectWhen": "只有描述困境或理念，沒有把改善計畫、數字變化、剩餘缺口或求助路徑寫清楚。"
+      },
+      {
+        "author": "李婉仙",
+        "patternId": "policy_decision_order",
+        "patternName": "制度判斷順序",
+        "generationMove": "制度或補助題材要先拆成資格、金額、時間差、文件、地方差異，再回到家庭現金流決策。",
+        "rejectWhen": "只羅列政策名稱或補助金額，沒有說明家庭應該如何判斷能不能接上生活缺口。"
+      },
+      {
+        "author": "蔡思樂",
+        "patternId": "support_and_risk_layering",
+        "patternName": "風險支撐分層",
+        "generationMove": "文章要分清楚家庭自己的錢、制度資源、親友支持、正式求助與仍未補上的風險。",
+        "rejectWhen": "把支持系統寫成溫情口號，沒有交代哪一層支撐哪一個缺口，以及缺口仍在時怎麼求助。"
+      }
+    ],
+    "nextGenerationRules": [
+      "每篇文章要有可被讀者理解的改善計畫、前後差異或可執行效果。",
+      "如果家庭調整後仍無法打平，正文必須寫出合理求助路徑，而不是用鼓勵收尾。",
+      "一次文章只處理一個主要問題，避免把太多制度、風險與建議塞在同一篇。",
+      "學習通過稿只學結構與判讀，不保存全文、事件 ID 或私有審核內容。"
+    ]
   }
 }

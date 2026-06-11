@@ -1,0 +1,229 @@
+{
+  "schemaVersion": "2026-06-10",
+  "createdAt": "2026-06-10T00:00:00+08:00",
+  "purpose": "approved author structure learning for FamilyFin article generation, without storing raw private article text",
+  "sourceBoundary": {
+    "requiredSystem": "好理家在文章管理區",
+    "requiredSurface": "InfoCenter event list and event comment",
+    "requiredCustomerPersonMatchesTargetAuthor": true,
+    "requiredReviewStatus": "審核成功",
+    "requiresFullBodyReadable": true,
+    "excludedAsTrainingSample": [
+      "FB短文",
+      "社群導流文",
+      "只有摘要但未讀全文的評論",
+      "事件標題有作者名但客戶-個人不是作者本人的事件",
+      "無法讀到完整正文的通過事件"
+    ],
+    "publicSafety": {
+      "storesRawArticleBody": false,
+      "storesPrivateReviewText": false,
+      "storesEventIds": false,
+      "storesArticleIdsOrShortUrls": false,
+      "storesOnlyDeidentifiedStructure": true
+    }
+  },
+  "agentReview": {
+    "reviewers": [
+      "approved_author_structure_reviewer",
+      "reader_load_reviewer",
+      "financial_decision_reviewer",
+      "non_concept_reviewer",
+      "quality_reviewer"
+    ],
+    "decision": "usable_as_structure_learning",
+    "notes": [
+      "只學文章結構、證據放法、段落轉折與結尾功能，不模仿作者私有句子。",
+      "若通過事件評論本身只是導流短文，必須讀完其連到的完整知識庫正文才可建卡。",
+      "後續一般民眾版產稿可借用結構，但需把社工語彙轉成生活語言。"
+    ]
+  },
+  "cards": [
+    {
+      "targetAuthor": "劉泰一",
+      "cardId": "approved-author-structure-20260610-liu-tai-yi",
+      "sourceKind": "InfoCenter approved event comment full body",
+      "reviewStatus": "審核成功",
+      "fullBodyRead": true,
+      "bodyCharCountObserved": 1408,
+      "articleTopic": "去識別化家庭經濟翻轉個案",
+      "articleAudience": "助人工作與財務健康讀者皆可讀",
+      "tagSignals": [
+        "公開徵稿",
+        "個案轉變",
+        "家庭經濟",
+        "專業介入"
+      ],
+      "openingPattern": "先用短導語說明人物如何在低谷中抓到經濟翻轉契機，並立即連到家庭財務穩定、生活品質與決策權的變化。",
+      "problemFrame": "問題不是單一收入不足，而是自主收入、家庭權力、照顧壓力與可支配金錢長期綁在一起。",
+      "structurePattern": [
+        "導語：一句話建立人生低谷與經濟轉折。",
+        "背景與挑戰：交代家庭角色、收入來源、可支配金額與生活限制。",
+        "翻轉契機：描述新收入或技能入口如何出現。",
+        "技能與就業：說明穩定化過程，不只停在情緒轉好。",
+        "前後對照表：把收入來源、金額、家庭可用資源與家庭動能放在同一張表。",
+        "專業介入：整理支持者如何讓改變可持續。",
+        "結語：把個人改變收束成家庭動能與財務選擇感。"
+      ],
+      "evidenceUsePattern": "以同一家庭前後狀態作為證據，避免只用概念描述。數字不是點綴，而是推動讀者看見權力、選擇與生活品質如何改變。",
+      "numericOrCaseUsePattern": "使用月收入、家庭交付金額、可支配零用、原薪資、新收入與家庭總收入形成前後差異。",
+      "improvementPlanPattern": {
+        "hasCurrentGap": true,
+        "hasActions": true,
+        "hasBeforeAfterEffect": true,
+        "hasRemainingGap": false,
+        "hasBreakEvenOrHelpPath": true,
+        "notes": "改善計畫由技能訓練、穩定就業、第二收入與專業陪伴構成；強項是前後差異清楚，弱項是剩餘風險較少展開。"
+      },
+      "readerLoadPattern": {
+        "mainProblemCount": 1,
+        "supportingProblemCount": 2,
+        "actionCount": 3,
+        "safetyReminderCount": 1,
+        "needsSplit": false,
+        "notes": "主線維持在經濟翻轉，支線包含家庭權力與照顧壓力；因個案細節敏感，後續生成要降低戲劇化。"
+      },
+      "familyFinanceConnection": "可支配金錢增加後，家庭決策權、孩子教育選項、婚姻互動與生活穩定感同步改變。",
+      "endingPattern": "不是雞湯式希望，而是回扣經濟能力如何重啟家庭動能與選擇空間。",
+      "rulesToReuse": [
+        "個案文要用時間線與前後表，不只寫感受改變。",
+        "家庭收入要拆成總收入、可支配收入與誰能決定怎麼用。",
+        "專業介入要寫成支持系統如何讓改善持續，而不是只稱讚服務有效。"
+      ],
+      "rulesToAvoid": [
+        "不要保存或重述敏感創傷細節。",
+        "不要為了戲劇張力放大個案苦難。",
+        "不要把改善寫成單靠個人努力。"
+      ],
+      "confidence": "medium"
+    },
+    {
+      "targetAuthor": "李婉仙",
+      "cardId": "approved-author-structure-20260610-li-wan-xian",
+      "sourceKind": "InfoCenter approved event plus full public knowledge-base article resolved from comment",
+      "reviewStatus": "審核成功",
+      "fullBodyRead": true,
+      "bodyCharCountObserved": 1933,
+      "articleTopic": "換屋節稅與家庭買賣屋規劃",
+      "articleAudience": "一般民眾",
+      "tagSignals": [
+        "家庭重大事件",
+        "買房",
+        "稅務規劃",
+        "自用住宅"
+      ],
+      "openingPattern": "從換屋時一般家庭最在意的稅負切入，直接指出買賣屋不是只看價格，也要看稅務時序與資格。",
+      "problemFrame": "問題不是有沒有節稅方法，而是家庭是否知道哪些優惠有資格、期限與順序限制。",
+      "structurePattern": [
+        "前言：界定換屋的財務壓力與稅負風險。",
+        "房地合一稅：先說最大宗風險，再列自用住宅免稅額與遞延課稅。",
+        "土地增值稅：用自用住宅稅率對比一般稅率。",
+        "契稅：切到買方成本，提醒自住優惠。",
+        "房屋稅：把長期持有成本放進規劃。",
+        "規劃建議：以買賣順序、資格檢查、家庭持有安排與專業協助收束。",
+        "結語：回到自用住宅與持有年限是關鍵。"
+      ],
+      "evidenceUsePattern": "以制度門檻、稅率、年限與資格作為文章骨架，讀者能立即知道要查哪一項。",
+      "numericOrCaseUsePattern": "使用稅率、免稅額、年限與期限形成判讀點，例如自用住宅免稅額、兩年內重購、一般稅率與優惠稅率。",
+      "improvementPlanPattern": {
+        "hasCurrentGap": true,
+        "hasActions": true,
+        "hasBeforeAfterEffect": false,
+        "hasRemainingGap": true,
+        "hasBreakEvenOrHelpPath": true,
+        "notes": "有清楚規劃動作與專業求助路徑，但缺少家庭試算前後差異；後續生成應補一組家庭換屋現金流或稅負比較。"
+      },
+      "readerLoadPattern": {
+        "mainProblemCount": 1,
+        "supportingProblemCount": 4,
+        "actionCount": 4,
+        "safetyReminderCount": 2,
+        "needsSplit": true,
+        "notes": "稅目較多，適合知識整理；若改寫一般民眾可投稿文，需減少稅目或加入一條家庭主線避免過載。"
+      },
+      "familyFinanceConnection": "換屋稅負會影響新屋頭期款、搬家資金、短期現金流與家庭是否有餘裕處理下一步。",
+      "endingPattern": "回到資格與時序，讓讀者知道節稅不是技巧堆疊，而是提前確認自住、持有與買賣順序。",
+      "rulesToReuse": [
+        "制度型文章要按家庭會遇到的順序排列，而不是只照法規條文排列。",
+        "每一段都要有明確資格、期限或數值門檻。",
+        "最後要整理成讀者下一步可查的順序。"
+      ],
+      "rulesToAvoid": [
+        "不要讓全文變成稅率清單。",
+        "不要只說可以節稅，卻沒有說資格與期限。",
+        "不要把未驗證地方規範寫成全台通用。"
+      ],
+      "confidence": "high"
+    },
+    {
+      "targetAuthor": "蔡思樂",
+      "cardId": "approved-author-structure-20260610-tsai-si-le",
+      "sourceKind": "InfoCenter approved event plus full public knowledge-base article resolved from comment",
+      "reviewStatus": "審核成功",
+      "fullBodyRead": true,
+      "bodyCharCountObserved": 1358,
+      "articleTopic": "債務週轉力與介入時機判讀",
+      "articleAudience": "社工與助人工作者",
+      "tagSignals": [
+        "財務相談室",
+        "債務",
+        "週轉力",
+        "專業判讀"
+      ],
+      "openingPattern": "先指出現場常見誤判：個案看似還得下去，不代表債務真的穩定，而可能只是週轉力尚未耗盡。",
+      "problemFrame": "問題不是有沒有債務，而是家庭用哪些信用、人際與資產資源維持表面穩定，以及這些支撐何時會失效。",
+      "structurePattern": [
+        "前言：從社工現場的判讀困難進入。",
+        "財務評估基礎：收支、債務盤點與週轉力來源。",
+        "週轉力運用：拆分銀行信用、親友人脈、產業與家戶資產。",
+        "債務處理策略：依風險層次選擇觀察、協商或其他正式路徑。",
+        "溝通策略：把專業判斷轉成服務對象能理解的下一步。",
+        "結語：週轉力不是解決，而是介入時機的警訊。"
+      ],
+      "evidenceUsePattern": "用風險分層與週轉來源作為證據，而不是大量引用外部資料；強調判讀框架與服務現場可操作性。",
+      "numericOrCaseUsePattern": "數字使用較少，重點在期限、債務清償軌道與風險層級；後續一般民眾版應補月付、缺口與可撐時間。",
+      "improvementPlanPattern": {
+        "hasCurrentGap": true,
+        "hasActions": true,
+        "hasBeforeAfterEffect": false,
+        "hasRemainingGap": true,
+        "hasBreakEvenOrHelpPath": true,
+        "notes": "有盤點、分層與正式協商方向，但缺少具體家庭試算；後續生成應把週轉力轉成可衡量的每月缺口與打平條件。"
+      },
+      "readerLoadPattern": {
+        "mainProblemCount": 1,
+        "supportingProblemCount": 3,
+        "actionCount": 3,
+        "safetyReminderCount": 1,
+        "needsSplit": false,
+        "notes": "主線集中在週轉力判讀，支線為信用、人際與家戶資產；一般民眾版需去除過度社工術語。"
+      },
+      "familyFinanceConnection": "債務表面穩定可能依靠信用額度、親友借款與家戶資產，若未盤點，家庭會誤把週轉當成解決。",
+      "endingPattern": "把核心概念收束成一句實務立場：週轉力要用來判斷何時介入，而不是被當成債務已經安全。",
+      "rulesToReuse": [
+        "先抓常見誤判，再建立判讀框架。",
+        "把看似穩定拆成不同支撐來源。",
+        "文章要說清楚什麼狀況需要從觀察轉向正式協商或求助。"
+      ],
+      "rulesToAvoid": [
+        "不要把社工專業語直接放進一般民眾版。",
+        "不要只講週轉力概念，卻沒有月付、缺口或打平條件。",
+        "不要把借新還舊包裝成穩定。"
+      ],
+      "confidence": "high"
+    }
+  ],
+  "generationUse": {
+    "defaultAudience": "一般民眾",
+    "mustConvertBeforeUse": [
+      "社工判讀語要轉成生活判斷語。",
+      "制度型文章要補家庭現金流或前後差異。",
+      "個案型文章要去識別化、降低戲劇化，保留改善計畫。"
+    ],
+    "prewriteChecksAdded": [
+      "通過稿學習來源需通過客戶-個人本人檢查。",
+      "若樣本只有導流短文，必須讀完整知識庫正文。",
+      "每篇新稿需有目前缺口、改善行動、施行效果、剩餘缺口與打平或求助路徑。"
+    ]
+  }
+}

@@ -26,6 +26,9 @@ Current package:
 - Biweekly prewrite checklist: `docs/biweekly-prewrite-checklist-2026-06-08.md`
 - Source-of-truth reconciliation: `reports/2026-06-08-source-of-truth-reconciliation.md`
 - Submission mechanism chat review: `reports/2026-06-08-submission-mechanism-chat-review.md`
+- Plain-text article pack green review loop: `reports/2026-06-08-green-review-loop-design.md`
+- 2026-06-09 rejection learning report: `reports/2026-06-09-review-rejection-learning.md`
+- Current rejection-learned article pack: `articles/2026-06-09-rejection-learned-pack/`
 
 2026-06-02 update:
 
@@ -58,6 +61,16 @@ Current package:
 - [x] Biweekly prewrite checklist added; formal 10-article packs should stop at blocker report when live review/comment learning is insufficient.
 - [x] 「檢核投稿機制」聊天本體回查完成，已將標題新意、內容差異、新讀者價值與案例數字判斷回填到產稿前 gate。
 - [x] Public knowledge-base title index added; validator now checks current candidate titles against 1323 existing public knowledge-base titles.
+- [x] Plain-text article packs must now include `articlePackReviewGate.status = green` before entering Kevin approval; validator fails non-green or missing review traces.
+
+2026-06-09 rejection-learning regeneration:
+
+- [x] Latest InfoCenter read-only collection completed: 2086 events, 350 rejected reviews.
+- [x] Complete review content increased to 51 rows; review/comment cross-learning-ready cards increased to 50.
+- [x] Public-safe derived files written without raw event ids, raw review text, or raw article bodies.
+- [x] Submission quality gates updated to `data/submission-quality-gates-2026-06-09.json`.
+- [x] Current review board regenerated as `2026-06-09-rejection-learned-pack`.
+- [x] Validator passes with no warnings.
 
 Production proof:
 
