@@ -41,7 +41,7 @@
 結果：
 
 - 公開標題索引：1323 筆。
-- 目前 10 篇候選稿與既有知識庫標題：0 exact match、0 near match、0 warning。
+- 當時 10 篇候選稿與既有知識庫標題：0 exact match、0 near match、0 warning。
 - validator 狀態：`pass_with_warnings`。
 - 唯一 warning 仍是 `review learning still below formal 10-article threshold: 3/8 ready cards`。
 

@@ -3,7 +3,7 @@
 ## 執行內容
 
 - 重新執行 `tools/build-public-article-pack-2026-06-09.js`。
-- 保留目前 10 篇一般民眾版主題。
+- 保留當時 10 篇一般民眾版主題。
 - 將 `topicEvidenceCard`、`readerFitCard`、`financialDecisionCard`、`financialLiteracyTransfer` 寫入每篇文章 metadata。
 - 更新 `suggestions.json`。
 - 更新 `article-pack-history.json`。

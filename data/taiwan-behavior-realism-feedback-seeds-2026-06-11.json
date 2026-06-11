@@ -1,0 +1,69 @@
+{
+  "id": "taiwan-behavior-realism-feedback-seeds-2026-06-11",
+  "createdAt": "2026-06-11T16:20:00+08:00",
+  "purpose": "Seed observations for checking whether article suggestions match ordinary Taiwan behavior, social pressure, contracts, and reader trust.",
+  "principles": [
+    "Do not suggest actions as easy if ordinary people may avoid them because of contract, face, relationship pressure, fear of being labeled, or power imbalance.",
+    "A realistic action can still be suggested, but it must be placed in the right order and with social friction acknowledged.",
+    "Real feedback is used to understand behavior and tone; official/legal sources are used only to confirm constraints.",
+    "Avoid turning articles into legal advice. Keep actions as practical financial planning and help-seeking decisions."
+  ],
+  "seedSources": [
+    {
+      "sourceType": "public_discussion_forum",
+      "url": "https://www.dcard.tw/f/mood/p/239096656",
+      "topic": "income affected and rent payment delayed",
+      "observedBehavior": [
+        "Public feedback questions whether the tenant informed the landlord in advance.",
+        "Readers do not treat rent delay as a casual option; they focus on timing, notice, and responsibility.",
+        "The social judgment around late rent is strong, so many readers may not accept advice that sounds too easy."
+      ],
+      "writingRule": "If mentioning delayed rent, do not write as if asking the landlord is a simple first move. First show contract pressure, embarrassment, and the need to check the shortfall and timing."
+    },
+    {
+      "sourceType": "public_discussion_forum",
+      "url": "https://www.ptt.cc/bbs/home-sale/M.1674006918.A.FAF.html",
+      "topic": "tenant delayed rent and landlord distress",
+      "observedBehavior": [
+        "A landlord-facing discussion describes repeated late payment requests and frustration.",
+        "Rent delay affects the landlord's own mortgage or rent obligations, so the article should not imply the landlord will naturally absorb the delay.",
+        "When readers have seen similar disputes, an article that says simply negotiate with the landlord may feel naive."
+      ],
+      "writingRule": "When describing landlord communication, frame it as a last-mile verification step with clear date, amount, and written record, not as the main solution."
+    },
+    {
+      "sourceType": "legal_constraint_reference",
+      "url": "https://glrs.moi.gov.tw/LawContent.aspx?id=GL001049",
+      "topic": "rental housing law and delayed rent",
+      "observedBehavior": [
+        "Rental relationships have legal and contractual constraints.",
+        "Delayed payment is not merely a personal conversation; it can trigger催告, termination conditions, or conflict."
+      ],
+      "writingRule": "Articles should remind readers to check the lease and not assume payment date can be changed casually."
+    },
+    {
+      "sourceType": "housing_market_explainer",
+      "url": "https://www.sinyinews.com.tw/sinyipedia/rentarticle/233",
+      "topic": "landlord rights when tenant owes rent",
+      "observedBehavior": [
+        "Housing market explainers describe欠租 as a legal and trust issue, not just a scheduling inconvenience.",
+        "This reinforces that delayed rent should be framed carefully."
+      ],
+      "writingRule": "Replace 'talk to landlord to delay rent' with 'if unavoidable, check lease, explain before due date, leave written record, and prepare an alternative plan'."
+    }
+  ],
+  "currentArticleRisk": {
+    "riskyPhrase": "若和房東談成十號後匯款",
+    "risk": "This makes rent-date negotiation sound too easy and may feel unrealistic to readers who worry about contracts, face, and landlord reaction.",
+    "preferredMove": "Acknowledge that many people will not want to ask the landlord. Put landlord communication after shortfall check, rent reserve account, official help, and lease review."
+  },
+  "futureGate": {
+    "name": "behavior_realism_gate",
+    "questions": [
+      "Would an ordinary Taiwan reader actually do this action?",
+      "Is there contract, face, shame, family pressure, workplace pressure, landlord-tenant power imbalance, or fear that makes this action hard?",
+      "Does the article make a socially difficult action sound too simple?",
+      "If the action is still necessary, does the article put it in a realistic order and offer a safer fallback?"
+    ]
+  }
+}

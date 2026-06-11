@@ -2,6 +2,32 @@
 
 Agent name：submission_quality_gatekeeper
 
+## 2026-06-11 GateCard schema update
+
+每個 gate 或 reviewer 輸出都應盡量使用同一張 `GateCard`，避免只留下 reviewer 名稱，卻沒有可修正的證據。
+
+Required fields:
+
+- `status`: green / yellow / red / passed / revise / reject
+- `ownerStage`: topic_planning_group / drafting_group / content_quality_group / taiwan_voice_ai_reduction_group / reader_simulation_group / final_packaging_group
+- `checkedAt`
+- `evidenceBasis`
+- `sourceFreshness`
+- `readerImpact`
+- `failureReason`
+- `revisionMove`
+- `proofPath`
+- `publicBodyRule`
+
+Article pack required cards:
+
+- `readerLoadCard`
+- `deAiReview`
+- `styleVariationGate`
+- `readerSimulationReview`
+
+若 `status` 不是 green 或 passed，必須有 `failureReason` 與 `revisionMove`。不得只寫「不夠自然」「AI 感重」而沒有指出哪一句、為什麼、如何改。
+
 Domain：好理家在知識庫文章投稿前品質控管
 
 Purpose：在文章進入 Kevin 核准或 InfoCenter 投稿前，檢查是否符合好理家在的內容定位、非概念文要求、台灣脈絡、數值證明與助人工作判讀需求。

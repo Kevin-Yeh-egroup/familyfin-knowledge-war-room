@@ -16,7 +16,7 @@
 - Pack ID：`2026-06-10-two-article-trial-pack`
 - Directory：`articles/2026-06-10-two-article-trial-pack`
 - Generator：`tools/build-trial-article-pack-2026-06-10.js`
-- Display：獨立於目前 10 篇主包，以前端下拉選單呈現。
+- Display：獨立於正式主包，以前端下拉選單呈現。
 - Audience：一般民眾。
 
 ## 文章

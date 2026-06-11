@@ -495,7 +495,7 @@ function updateSuggestions(enrichedArticles) {
     title: "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試",
     status: "待 Kevin 看效果",
     description:
-      "這批先只產 2 篇，不取代目前 10 篇主包。目標是驗證 6/10 agent 討論後的新做法：題目需有台灣官方制度或真實資料支撐，來源留在 metadata，正文用家庭現金流、日期、前後差異與決策順序承載，不讓讀者讀到審稿語或 AI 引用感。",
+      "這批先只產 2 篇，不取代正式主包。目標是驗證 6/10 agent 討論後的新做法：題目需有台灣官方制度或真實資料支撐，來源留在 metadata，正文用家庭現金流、日期、前後差異與決策順序承載，不讓讀者讀到審稿語或 AI 引用感。",
     createdAt: now,
     audience: "一般民眾",
     generatedBy: "tools/build-trial-article-pack-2026-06-10.js",
@@ -532,7 +532,7 @@ function updateSuggestions(enrichedArticles) {
         "financial reviewer 想放更多算式，reader reviewer 擔心像教材；採用生活段落內的少量計算，不做表格與步驟清單。",
       ],
       adoptNow: [
-        "2 篇試產稿先獨立顯示，不覆蓋目前 10 篇主包。",
+        "2 篇試產稿先獨立顯示，不覆蓋正式主包。",
         "正式重生後續 8 篇前，先讓 Kevin 看語感、結尾和數字自然度。",
         "新增 trialArticlePacks 結構與前端下拉選單，讓試產稿和正式主包分開。",
       ],

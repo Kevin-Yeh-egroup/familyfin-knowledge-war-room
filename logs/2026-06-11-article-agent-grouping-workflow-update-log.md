@@ -1,0 +1,21 @@
+# 2026-06-11 article agent grouping workflow update log
+
+- Created project workflow doc for staged article generation groups.
+- Added Article Generation Grouping Overlay v2 to `.agents/familyfin-grounded-workflow-agent-roster-2026-06-11.md`.
+- Updated project `familyfin-grounded-workflow` skill article output contract.
+- Added `readerLoadCard`, `deAiReview`, and `readerSimulationReview` to the 2026-06-11 grounded 12-article generator.
+- Replaced broad question-mark counting with fake-QA transition detection.
+- Added package-level style density checks for contrast-formula wording.
+- Updated article pack history generation to store style variation stats.
+- Updated `validate-war-room-state.js` to recompute style variation from TXT body files and compare metadata/history drift.
+- Regenerated `articles/2026-06-11-grounded-12-article-pack`.
+- Rebuilt `article-pack-history.json`.
+- Verification passed:
+  - `node tools/build-grounded-12-article-pack-2026-06-11.js`
+  - `node tools/build-article-pack-history.js`
+  - `node --check tools/build-grounded-12-article-pack-2026-06-11.js`
+  - `node --check tools/build-article-pack-history.js`
+  - `node --check tools/validate-war-room-state.js`
+  - `node tools/validate-war-room-state.js`
+  - `node tools/audit-article-role-integrity.js articles/2026-06-11-grounded-12-article-pack`
+- No commit, push, deployment, submission, or InfoCenter write was performed.

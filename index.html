@@ -23,6 +23,12 @@
 
     * { box-sizing: border-box; }
 
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+
     body {
       margin: 0;
       font-family: "Noto Sans TC", "Microsoft JhengHei", system-ui, sans-serif;
@@ -175,6 +181,7 @@
       border: 1px solid var(--line);
       border-radius: 8px;
       box-shadow: var(--shadow);
+      min-width: 0;
     }
 
     .section-head {
@@ -183,6 +190,7 @@
 
     .section-body {
       padding: 24px 26px 28px;
+      min-width: 0;
     }
 
     h2 {
@@ -329,6 +337,12 @@
       grid-template-columns: minmax(300px, .82fr) minmax(0, 1.55fr);
       gap: 16px;
       align-items: start;
+      min-width: 0;
+    }
+
+    .review-board > *,
+    .history-board > * {
+      min-width: 0;
     }
 
     .history-board {
@@ -376,6 +390,7 @@
     .detail {
       min-height: 760px;
       padding: 22px;
+      min-width: 0;
     }
 
     .history-detail {
@@ -405,10 +420,62 @@
       color: #344054;
     }
 
+    .detail-disclosure {
+      margin-top: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fbfcfe;
+      min-width: 0;
+    }
+
+    .detail-disclosure summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      cursor: pointer;
+      padding: 13px 14px;
+      color: var(--ink);
+      font-weight: 900;
+      list-style: none;
+    }
+
+    .detail-disclosure summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .detail-disclosure summary::after {
+      content: "展開";
+      flex: 0 0 auto;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .detail-disclosure[open] summary::after {
+      content: "收合";
+    }
+
+    .detail-disclosure-body {
+      padding: 0 14px 14px;
+    }
+
+    .detail-disclosure .detail-section {
+      margin-top: 14px;
+      padding-top: 14px;
+    }
+
+    .detail-disclosure .detail-section:first-child {
+      margin-top: 0;
+      padding-top: 6px;
+      border-top: 0;
+    }
+
     .article-body,
     .history-content {
       min-height: 520px;
       max-height: 680px;
+      max-width: 100%;
       overflow: auto;
       padding: 20px;
       border: 1px solid var(--line);
@@ -583,7 +650,20 @@
       }
 
       .detail-top { flex-direction: column; }
-      .article-body { font-size: 15px; }
+      .article-body {
+        padding: 16px;
+        font-size: 15px;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      button.action {
+        width: 100%;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -899,6 +979,20 @@
       wrap.appendChild(h);
       children.forEach((child) => wrap.appendChild(child));
       parent.appendChild(wrap);
+    }
+
+    function detailDisclosure(parent, title, children, open = false) {
+      const details = document.createElement("details");
+      details.className = "detail-disclosure";
+      details.open = open;
+      const summary = document.createElement("summary");
+      summary.textContent = title;
+      const body = document.createElement("div");
+      body.className = "detail-disclosure-body";
+      children.forEach((child) => body.appendChild(child));
+      details.append(summary, body);
+      parent.appendChild(details);
+      return details;
     }
 
     async function loadArticleBody(article) {
@@ -1337,41 +1431,65 @@
       }
       activeId = article.id;
       const currentPack = isCurrentReviewPack(pack);
+      const plain = splitArticleText(activeBody, article);
 
       const top = document.createElement("div");
       top.className = "detail-top";
       const titleWrap = document.createElement("div");
       const title = document.createElement("h3");
       title.textContent = article.title;
-      const meta = document.createElement("p");
-      meta.className = "sub";
-      meta.textContent = `${pack.statusLabel} / ${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`;
-      titleWrap.append(title, meta);
-      top.append(
-        titleWrap,
+      titleWrap.append(title);
+      top.append(titleWrap);
+      detail.appendChild(top);
+
+      const body = document.createElement("div");
+      body.className = "article-body";
+      body.textContent = plain.body || "正在讀取純文字正文...";
+      detailSection(detail, "正文", [body]);
+
+      const copyActions = document.createElement("div");
+      copyActions.className = "actions";
+      copyActions.append(
+        actionButton("複製正文", "primary", () => copyText(plain.body, "已複製正文。")),
+        actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
+        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8"))
+      );
+      detail.appendChild(copyActions);
+
+      const copyNote = document.createElement("div");
+      copyNote.className = "copy-note";
+      copyNote.id = "copyNote";
+      copyNote.textContent = "預設顯示與下載為標題＋正文，不包含平台欄位、來源清單或查核紀錄。";
+      detail.appendChild(copyNote);
+
+      const basicInfo = document.createElement("div");
+      const tagWrap = document.createElement("p");
+      tagWrap.append(
         currentPack
           ? makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold")
           : makeTag(pack.statusLabel, "blue")
       );
-      detail.appendChild(top);
-
-      const tagWrap = document.createElement("p");
       tagWrap.append(makeTag("主要：" + article.primaryTag, "green"));
       (article.secondaryTags || []).forEach((tag) => tagWrap.append(makeTag("次要：" + tag, "blue")));
-      detailSection(detail, "正式標籤", [tagWrap]);
+      detailSection(basicInfo, "文章標籤", [tagWrap]);
+      detailSection(basicInfo, "基本資料", [
+        paragraph(`${pack.statusLabel} / ${article.readiness} / ${article.audience} / 正文 ${article.bodyChars} 字（非空白） / ${article.categoryType}`)
+      ]);
+      detailDisclosure(detail, "文章標籤與基本資料", [basicInfo]);
 
+      const generationInfo = document.createElement("div");
       const pre = article.preGenerationReview || {};
-      detailSection(detail, "生成前判斷", [
+      detailSection(generationInfo, "生成前判斷", [
         paragraph("題目驗證：" + (pre.topicEvidenceCard?.status || "未記錄")),
         paragraph("讀者切角：" + (pre.readerFitCard?.hook || "尚未記錄")),
         paragraph("財務評估任務：" + (pre.financialDecisionCard?.assessmentTask || "尚未記錄")),
         paragraph("財務知能轉移：" + (pre.financialLiteracyTransfer?.capability || "尚未記錄"))
       ]);
 
-      detailSection(detail, "通過稿結構學習", approvedAuthorUseElements(pre));
+      detailSection(generationInfo, "通過稿結構學習", approvedAuthorUseElements(pre));
 
       const packGate = article.articlePackReviewGate || {};
-      detailSection(detail, "生成審核綠燈 Gate", [
+      detailSection(generationInfo, "生成審核綠燈 Gate", [
         paragraph("狀態：" + (packGate.status || "未審")),
         paragraph("審核輪次：" + (packGate.round || 0)),
         paragraph("參與 reviewer：" + ((packGate.reviewers || []).join("、") || "尚未記錄")),
@@ -1380,54 +1498,37 @@
       ]);
 
       const review = article.nonConceptReview || {};
-      detailSection(detail, "非概念檢查", [
+      detailSection(generationInfo, "非概念檢查", [
         paragraph("狀態：" + (review.status || "待檢查")),
         paragraph(review.note || "尚未建立檢查紀錄。")
       ]);
 
-      detailSection(detail, "Agent 討論摘要", [paragraph(article.agentDiscussion || "尚未填寫。")]);
+      detailSection(generationInfo, "Agent 討論摘要", [paragraph(article.agentDiscussion || "尚未填寫。")]);
+      detailDisclosure(detail, "生成、檢核與 Agent 紀錄", [generationInfo]);
 
-      let reviewNote = null;
       if (currentPack) {
         const currentReview = loadReviews()[article.id] || {};
-        reviewNote = document.createElement("textarea");
+        const reviewNote = document.createElement("textarea");
         reviewNote.className = "review-note-input";
         reviewNote.placeholder = "輸入退修、駁回或核准原因。這會先存於此瀏覽器，之後可轉成 review_feedback_card。";
         reviewNote.value = currentReview.note || "";
-        detailSection(detail, "人工審核意見 / 退修原因", [
-          reviewNote,
-          paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
-        ]);
-      }
-
-      const body = document.createElement("div");
-      body.className = "article-body";
-      const plain = splitArticleText(activeBody, article);
-      body.textContent = plain.titleAndBody || "正在讀取純文字正文...";
-      detailSection(detail, "純文字正文", [body]);
-
-      const actions = document.createElement("div");
-      actions.className = "actions";
-      actions.append(
-        actionButton("複製正文", "primary", () => copyText(plain.body, "已複製正文。")),
-        actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
-        actionButton("複製審稿版", "", () => copyText(plain.reviewText, "已複製含標籤的審稿版。")),
-        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8"))
-      );
-      if (currentPack && reviewNote) {
-        actions.append(
+        const approvalActions = document.createElement("div");
+        approvalActions.className = "actions";
+        approvalActions.append(
           actionButton("儲存審核意見", "", () => saveReviewNote(article.id, reviewNote.value.trim())),
           actionButton("核准投稿", "primary", () => setStatus(article.id, "approved", reviewNote.value.trim())),
           actionButton("退修", "warn", () => setStatus(article.id, "revise", reviewNote.value.trim())),
-          actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim()))
+          actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim())),
+          actionButton("複製審稿版", "", () => copyText(plain.reviewText, "已複製含標籤的審稿版。"))
         );
+        const reviewInfo = document.createElement("div");
+        detailSection(reviewInfo, "人工審核意見 / 退修原因", [
+          reviewNote,
+          paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
+        ]);
+        reviewInfo.appendChild(approvalActions);
+        detailDisclosure(detail, "人工審核與核准操作", [reviewInfo]);
       }
-      detail.appendChild(actions);
-      const copyNote = document.createElement("div");
-      copyNote.className = "copy-note";
-      copyNote.id = "copyNote";
-      copyNote.textContent = "預設顯示與下載為標題＋正文，不包含平台欄位、來源清單或查核紀錄。";
-      detail.appendChild(copyNote);
     }
 
     function actionButton(label, kind, onClick) {

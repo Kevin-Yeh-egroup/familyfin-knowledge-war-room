@@ -1,0 +1,117 @@
+{
+  "id": "taiwan-natural-language-feedback-seeds-2026-06-11",
+  "createdAt": "2026-06-11T16:00:00+08:00",
+  "purpose": "Seed observations for building a Taiwan real-feedback language corpus. This file stores aggregate language observations, not copied comment corpora.",
+  "principles": [
+    "Use official sources for facts and terms, not as the main tone model.",
+    "Use public reader feedback, comments, forums, and article reactions to learn natural phrasing.",
+    "Do not store account names, personal details, or long verbatim comments.",
+    "Convert observations into writing moves, not copied sentences.",
+    "Keep the article useful: every natural phrase must still help financial assessment or decision-making."
+  ],
+  "seedSources": [
+    {
+      "sourceType": "public_discussion_aggregated_article",
+      "url": "https://www.dcard.tw/f/trending/p/260700993",
+      "topic": "rent subsidy clawback and repayment pressure",
+      "observedReaderConcerns": [
+        "核定後又被追繳，讀者關心的是為什麼當初通過、現在又要還。",
+        "一次追繳大筆金額時，讀者會先想能不能分期、短期現金從哪裡來。",
+        "讀者會把補貼、房東、稅務、房租上漲和文件規定放在同一個焦慮裡。"
+      ],
+      "writingMoves": [
+        "不要只寫補貼好處，也要提醒後續資格變動、補件和追繳風險。",
+        "寫資源時要說明它處理的是眼前缺口、後續月付，還是追繳後的分期壓力。",
+        "用讀者會問的順序寫：現在差多少、會不會被追繳、繳不出來能問誰。"
+      ],
+      "naturalToneHints": [
+        "去哪裡生錢",
+        "一次要還這麼多",
+        "當初通過，後來又說不行",
+        "能不能分期"
+      ]
+    },
+    {
+      "sourceType": "forum_question",
+      "url": "https://www.ptt.cc/bbs/home-sale/M.1715791391.A.7CB.html",
+      "topic": "rent subsidy during housing status change",
+      "observedReaderConcerns": [
+        "讀者會用很直接的方式問資格變動會不會中止補助或被追回。",
+        "他們關心的是下一步風險，不只是制度條文。"
+      ],
+      "writingMoves": [
+        "文章可把制度風險翻成幾個生活問題：資格變了要不要通報、補貼會不會停、已領款會不會追回。",
+        "不要把制度說完就停，要接上家庭該如何先查證與預留現金。"
+      ],
+      "naturalToneHints": [
+        "會中止嗎",
+        "會被追回嗎",
+        "要不要先問清楚"
+      ]
+    },
+    {
+      "sourceType": "threads_public_discussion",
+      "url": "https://www.threads.com/@mymytsou/post/DYFFr2jGc97",
+      "topic": "waiting for rent subsidy and high rent pressure",
+      "observedReaderConcerns": [
+        "讀者常把租金補貼視為及時雨，但實際焦慮在於等不到、審核慢、房租已到期。",
+        "社群語氣會直接說房租貴、等不到、快撐不住，而不是先講政策目的。"
+      ],
+      "writingMoves": [
+        "開場應先寫房租已到期、補貼還沒進來的時間差。",
+        "資源說明要轉成對家庭的時間幫助：今天、這週、下個月各能處理什麼。"
+      ],
+      "naturalToneHints": [
+        "房租太貴",
+        "等不到補貼",
+        "這筆錢到底什麼時候會進來"
+      ]
+    },
+    {
+      "sourceType": "youtube_news_comment_surface",
+      "url": "https://www.youtube.com/watch?v=c5oiDiTDgAM",
+      "topic": "rent subsidy budget and renters saying income goes to rent",
+      "observedReaderConcerns": [
+        "新聞標題和留言區常用租屋族哭了、收入大半繳房租這類直接感受句。",
+        "一般讀者接收的是壓力感，不是制度設計細節。"
+      ],
+      "writingMoves": [
+        "第一段可先寫生活壓力，再寫政策或數字。",
+        "避免一開始就講年度、計畫名稱、主管機關。"
+      ],
+      "naturalToneHints": [
+        "收入大半繳房租",
+        "租屋族哭了",
+        "房租又要先繳"
+      ]
+    },
+    {
+      "sourceType": "financial_education_terms_reference",
+      "url": "https://moneywise.fsc.gov.tw/tabf/G1/G1_index.html",
+      "topic": "official financial literacy terms",
+      "observedReaderConcerns": [
+        "官方金融教育常用記帳、檢討支出、擬定收支計畫、從收支平衡做起、定期檢查預算等詞。"
+      ],
+      "writingMoves": [
+        "用這些詞確認概念方向，但不要模仿官方口吻。",
+        "把正式詞轉成生活句，例如把收入、房租、扣款和補貼放在同一張表裡看。"
+      ],
+      "naturalToneHints": [
+        "記帳",
+        "收支",
+        "收支計畫",
+        "定期檢查預算"
+      ]
+    }
+  ],
+  "currentRewriteDecision": {
+    "rejectedPhrase": "把補貼放進月曆裡看，感覺會比較清楚。",
+    "reason": "The metaphor was understandable but not close enough to ordinary Taiwan financial phrasing.",
+    "acceptedPhrase": "做一次簡單的收支核對，會比較清楚。把收入、房租和可能進來的補貼放在同一張表裡。",
+    "whyBetter": [
+      "Uses common words: 收支、核對、收入、房租、補貼。",
+      "Still keeps the reader inside a concrete household decision.",
+      "Avoids turning naturalness into a rigid banned-phrase list."
+    ]
+  }
+}

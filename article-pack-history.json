@@ -1,15 +1,176 @@
 {
-  "updatedAt": "2026-06-11T01:55:56.251Z",
+  "updatedAt": "2026-06-11T10:14:56.987Z",
   "source": "FamilyFin plain-text article pack generation records",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
     "rawReviewTextStored": false,
     "publicSafeDerivedRecordsOnly": true
   },
-  "latestPackId": "2026-06-10-two-article-trial-pack",
-  "packCount": 4,
+  "latestPackId": "2026-06-11-grounded-12-article-pack",
+  "packCount": 6,
   "generationAttemptCount": 1,
   "records": [
+    {
+      "id": "2026-06-11-grounded-12-article-pack",
+      "date": "2026-06-11",
+      "title": "2026-06-11 FamilyFin grounded workflow 重生 12 篇文章包",
+      "status": "current_review_pack",
+      "statusLabel": "目前工作台文章包，12 篇重生稿",
+      "audience": "一般民眾",
+      "directory": "articles/2026-06-11-grounded-12-article-pack",
+      "generatedBy": "tools/build-grounded-12-article-pack-2026-06-11.js",
+      "currentReviewBoard": true,
+      "currentTrialPack": false,
+      "notes": [
+        "將先前 6/9 正式 10 篇與 6/10 試產 2 篇合併重生。",
+        "套用全域 FamilyFin grounded workflow：分段討論、逐段放行、最後綠燈才進工作台。",
+        "每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。",
+        "每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。",
+        "每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。",
+        "資源段以家庭好處呈現，不寫成政策公告。",
+        "正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。"
+      ],
+      "checks": [
+        "正文非空白字數均超過 2000 字。",
+        "preGenerationReview 逐篇通過。",
+        "groundedWorkflowReview 逐篇通過。",
+        "articlePackReviewGate 綠燈 12/12。",
+        "resourceBenefitTranslation、scenarioNarrativeReview、behaviorRealismReview 已納入逐篇 metadata。",
+        "pseudonymNarrativeReview 已納入生成規則：化名角色只作情境載體，不宣稱真實案例。",
+        "paragraphRhythmGate 已納入生成規則：18-24 段、無過短提示段、平均段落不低於 100 字。",
+        "role leak audit 通過。"
+      ],
+      "relatedLogs": [
+        "reports/2026-06-11-grounded-12-article-pack.md",
+        "logs/2026-06-11-grounded-12-article-pack-log.md"
+      ],
+      "outputType": "plain_text_article_pack",
+      "format": "txt",
+      "articleCount": 12,
+      "bodyCountMode": "non_whitespace",
+      "bodyCharsMin": 2257,
+      "bodyCharsMax": 2389,
+      "bodyCharsIncludingWhitespaceMin": 2291,
+      "bodyCharsIncludingWhitespaceMax": 2427,
+      "paragraphRhythm": {
+        "paragraphsMin": 18,
+        "paragraphsMax": 21,
+        "averageParagraphMin": 108,
+        "averageParagraphMax": 126,
+        "shortestParagraphMin": 60,
+        "longestParagraphMax": 203,
+        "veryShortParagraphsTotal": 0
+      },
+      "styleVariation": {
+        "notButMax": 0,
+        "notButTotal": 0,
+        "articlesWithNotBut": 0,
+        "stablePhraseTotal": 0,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 3
+      },
+      "bodyFiles": [
+        "articles/2026-06-11-grounded-12-article-pack/01-rent-subsidy-payment-date.txt",
+        "articles/2026-06-11-grounded-12-article-pack/02-single-parent-childcare-work-hours.txt",
+        "articles/2026-06-11-grounded-12-article-pack/03-debt-minimum-payment-plan.txt",
+        "articles/2026-06-11-grounded-12-article-pack/04-emergency-buffer-days.txt",
+        "articles/2026-06-11-grounded-12-article-pack/05-long-term-care-cost-plan.txt",
+        "articles/2026-06-11-grounded-12-article-pack/06-scam-loss-thirty-days.txt",
+        "articles/2026-06-11-grounded-12-article-pack/07-first-job-fixed-costs.txt",
+        "articles/2026-06-11-grounded-12-article-pack/08-reduced-hours-three-bills.txt",
+        "articles/2026-06-11-grounded-12-article-pack/09-special-family-three-months.txt",
+        "articles/2026-06-11-grounded-12-article-pack/10-retirement-care-fraud-buffer.txt",
+        "articles/2026-06-11-grounded-12-article-pack/11-unemployment-first-month.txt",
+        "articles/2026-06-11-grounded-12-article-pack/12-sickness-benefit-hospital-cashflow.txt"
+      ],
+      "titles": [
+        "房租日比薪水早到，租金補貼要先放進收支表裡看",
+        "一個人接孩子也接帳單，單親家庭要先算托育和工時能不能配合",
+        "每月都有還錢，為什麼債務還是沒降下來",
+        "緊急預備金不用先想六個月，先看家裡能撐幾天",
+        "長照不是只有看護費，家裡少掉的工時也要一起算",
+        "被騙後先別急著補回全部損失，先保住接下來30天",
+        "第一份薪水不是全部都能花，先看房租、家用和學貸剩多少",
+        "公司開始減班，家裡先看房貸、保費和孩子費用",
+        "家庭突然少一個支撐，前三個月要先保住哪些支出",
+        "退休金每月都有進來，還是要把醫療、照顧和詐騙分開算",
+        "被資遣後第一個月，先算家裡能不能等到給付進來",
+        "住院時薪水少了，家裡還要先撐過哪幾筆錢"
+      ],
+      "copyText": "2026-06-11 FamilyFin grounded workflow 重生 12 篇文章包\n\n日期：2026-06-11\n狀態：目前工作台文章包，12 篇重生稿\n目錄：articles/2026-06-11-grounded-12-article-pack\n篇數：12\n正文非空白字數：2257 到 2389 字\n含空白正文長度：2291 到 2427 字\n段落節奏：18 到 21 段，平均 108 到 126 字，過短段落 0\n語氣變奏：不是...而是最多 0 次，整包 0 次／0 篇；比較穩 0 次，自問自答最多 0 次，真正最多 3 次\n\n紀錄重點\n- 將先前 6/9 正式 10 篇與 6/10 試產 2 篇合併重生。\n- 套用全域 FamilyFin grounded workflow：分段討論、逐段放行、最後綠燈才進工作台。\n- 每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。\n- 每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。\n- 每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。\n- 資源段以家庭好處呈現，不寫成政策公告。\n- 正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- groundedWorkflowReview 逐篇通過。\n- articlePackReviewGate 綠燈 12/12。\n- resourceBenefitTranslation、scenarioNarrativeReview、behaviorRealismReview 已納入逐篇 metadata。\n- pseudonymNarrativeReview 已納入生成規則：化名角色只作情境載體，不宣稱真實案例。\n- paragraphRhythmGate 已納入生成規則：18-24 段、無過短提示段、平均段落不低於 100 字。\n- role leak audit 通過。"
+    },
+    {
+      "id": "2026-06-11-staged-editorial-workflow-test",
+      "date": "2026-06-11",
+      "title": "2026-06-11 分段 agent 編輯工作流試驗｜房租日期現金流二修稿",
+      "status": "staged_editorial_workflow_test",
+      "statusLabel": "1 篇分段編輯試驗稿",
+      "audience": "一般民眾",
+      "directory": "articles/2026-06-11-staged-editorial-workflow-test",
+      "generatedBy": "tools/build-staged-editorial-workflow-test-2026-06-11.js",
+      "currentReviewBoard": false,
+      "currentTrialPack": true,
+      "notes": [
+        "本批只產 1 篇，用來測試分段 agent 工作流，不取代正式工作台文章包。",
+        "從 6/9 房租補貼稿抽出一篇做二修，主軸改成房租日前後五天的現金流盤點。",
+        "115年度租金補貼資訊已重新查核，原稿每月1,800元示例不再沿用為政策說明。",
+        "2026-06-11 依 Kevin 回饋補入資源利益轉譯：資源段不寫成公告布達，需說明能替家庭少掉哪一筆、爭取哪幾天、避免哪種債。",
+        "2026-06-11 依 Kevin 回饋補入情境敘事規則：故事性用來增加代入感，不偽裝真實案例，也不寫成假設題。",
+        "2026-06-11 依 Kevin 回饋補入台灣真實回饋語感規則：官方資料只作事實查核，語氣優先參考讀者留言、公共討論與文章回饋。",
+        "2026-06-11 依 Kevin 回饋補入行動常理檢查：文章建議不能把一般人因合約、面子或信用壓力不太會做的行動寫得太容易。",
+        "2026-06-11 依 Kevin 回饋升級為專案內 FamilyFin grounded workflow skill：不只用於文章，也用於檢查、工具生成、工作台、週報與 agent 工作流。",
+        "正文不放來源清單、審稿語、agent 語或 SEO/AIO 欄位。"
+      ],
+      "checks": [
+        "正文非空白字數超過 2000 字。",
+        "role leak audit 通過。",
+        "preGenerationReview 通過。",
+        "approvedAuthorStructureUse 通過。",
+        "articlePackReviewGate 綠燈 1/1。",
+        "resourceBenefitTranslation 通過。",
+        "scenarioNarrativeReview 通過。",
+        "taiwanNaturalLanguageFeedbackReview 已建立 seed。",
+        "behaviorRealismReview 通過。",
+        "projectScopedGroundedWorkflowSkill 已建立，尚未升級全域。",
+        "stagedEditorialWorkflowReview 通過試驗。"
+      ],
+      "relatedLogs": [
+        "reports/2026-06-11-staged-editorial-workflow-test.md",
+        "logs/2026-06-11-staged-editorial-workflow-test-log.md"
+      ],
+      "outputType": "plain_text_article_pack",
+      "format": "txt",
+      "articleCount": 1,
+      "bodyCountMode": "non_whitespace",
+      "bodyCharsMin": 2256,
+      "bodyCharsMax": 2256,
+      "bodyCharsIncludingWhitespaceMin": 2294,
+      "bodyCharsIncludingWhitespaceMax": 2294,
+      "paragraphRhythm": {
+        "paragraphsMin": 20,
+        "paragraphsMax": 20,
+        "averageParagraphMin": 113,
+        "averageParagraphMax": 113,
+        "shortestParagraphMin": 17,
+        "longestParagraphMax": 196,
+        "veryShortParagraphsTotal": 2
+      },
+      "styleVariation": {
+        "notButMax": 7,
+        "notButTotal": 7,
+        "articlesWithNotBut": 1,
+        "stablePhraseTotal": 1,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 5
+      },
+      "bodyFiles": [
+        "articles/2026-06-11-staged-editorial-workflow-test/01-rent-subsidy-date-cashflow-editorial-test.txt"
+      ],
+      "titles": [
+        "房租五號要繳，薪水十號才進來：租金補貼前先看這五天怎麼撐"
+      ],
+      "copyText": "2026-06-11 分段 agent 編輯工作流試驗｜房租日期現金流二修稿\n\n日期：2026-06-11\n狀態：1 篇分段編輯試驗稿\n目錄：articles/2026-06-11-staged-editorial-workflow-test\n篇數：1\n正文非空白字數：2256 到 2256 字\n含空白正文長度：2294 到 2294 字\n段落節奏：20 到 20 段，平均 113 到 113 字，過短段落 2\n語氣變奏：不是...而是最多 7 次，整包 7 次／1 篇；比較穩 1 次，自問自答最多 0 次，真正最多 5 次\n\n紀錄重點\n- 本批只產 1 篇，用來測試分段 agent 工作流，不取代正式工作台文章包。\n- 從 6/9 房租補貼稿抽出一篇做二修，主軸改成房租日前後五天的現金流盤點。\n- 115年度租金補貼資訊已重新查核，原稿每月1,800元示例不再沿用為政策說明。\n- 2026-06-11 依 Kevin 回饋補入資源利益轉譯：資源段不寫成公告布達，需說明能替家庭少掉哪一筆、爭取哪幾天、避免哪種債。\n- 2026-06-11 依 Kevin 回饋補入情境敘事規則：故事性用來增加代入感，不偽裝真實案例，也不寫成假設題。\n- 2026-06-11 依 Kevin 回饋補入台灣真實回饋語感規則：官方資料只作事實查核，語氣優先參考讀者留言、公共討論與文章回饋。\n- 2026-06-11 依 Kevin 回饋補入行動常理檢查：文章建議不能把一般人因合約、面子或信用壓力不太會做的行動寫得太容易。\n- 2026-06-11 依 Kevin 回饋升級為專案內 FamilyFin grounded workflow skill：不只用於文章，也用於檢查、工具生成、工作台、週報與 agent 工作流。\n- 正文不放來源清單、審稿語、agent 語或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 通過。\n- approvedAuthorStructureUse 通過。\n- articlePackReviewGate 綠燈 1/1。\n- resourceBenefitTranslation 通過。\n- scenarioNarrativeReview 通過。\n- taiwanNaturalLanguageFeedbackReview 已建立 seed。\n- behaviorRealismReview 通過。\n- projectScopedGroundedWorkflowSkill 已建立，尚未升級全域。\n- stagedEditorialWorkflowReview 通過試驗。"
+    },
     {
       "id": "2026-06-10-two-article-trial-pack",
       "date": "2026-06-10",
@@ -20,9 +181,9 @@
       "directory": "articles/2026-06-10-two-article-trial-pack",
       "generatedBy": "tools/build-trial-article-pack-2026-06-10.js",
       "currentReviewBoard": false,
-      "currentTrialPack": true,
+      "currentTrialPack": false,
       "notes": [
-        "本批先產 2 篇，不取代目前 10 篇主工作台文章包。",
+        "本批先產 2 篇，不取代正式主工作台文章包。",
         "動用 Agent OS 討論後，將「假設性議題，缺乏驗證」拆成 verified topic、source-to-life-number、reader appeal 與 financial decision gate。",
         "兩篇題目均以台灣勞保局官方制度為證據底盤，來源留在 metadata，正文不放來源清單或審稿語。",
         "正文以一般民眾閱讀角度、家庭現金流、日期壓力、前後差異與可帶走的財務判斷能力為主。",
@@ -35,7 +196,7 @@
         "preGenerationReview 逐篇通過。",
         "approvedAuthorStructureUse 逐篇通過。",
         "articlePackReviewGate 綠燈 2/2。",
-        "前端以獨立下拉選單呈現，不混入 10 篇主包核准台。"
+        "前端以獨立下拉選單呈現，不混入正式主包核准台。"
       ],
       "relatedLogs": [
         "reports/2026-06-10-two-article-trial-pack-agent-discussion.md",
@@ -54,6 +215,23 @@
       "bodyCharsMax": 2120,
       "bodyCharsIncludingWhitespaceMin": 2121,
       "bodyCharsIncludingWhitespaceMax": 2166,
+      "paragraphRhythm": {
+        "paragraphsMin": 19,
+        "paragraphsMax": 24,
+        "averageParagraphMin": 88,
+        "averageParagraphMax": 110,
+        "shortestParagraphMin": 13,
+        "longestParagraphMax": 199,
+        "veryShortParagraphsTotal": 16
+      },
+      "styleVariation": {
+        "notButMax": 7,
+        "notButTotal": 12,
+        "articlesWithNotBut": 2,
+        "stablePhraseTotal": 1,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 2
+      },
       "bodyFiles": [
         "articles/2026-06-10-two-article-trial-pack/01-unemployment-benefit-first-month.txt",
         "articles/2026-06-10-two-article-trial-pack/02-sickness-benefit-hospital-cashflow.txt"
@@ -62,7 +240,7 @@
         "被資遣後最先少的不是薪水，是家裡可以等的時間",
         "住院時收入停下來，家裡卻每天還在花錢"
       ],
-      "copyText": "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試\n\n日期：2026-06-10\n狀態：2 篇試產稿\n目錄：articles/2026-06-10-two-article-trial-pack\n篇數：2\n正文非空白字數：2085 到 2120 字\n含空白正文長度：2121 到 2166 字\n\n紀錄重點\n- 本批先產 2 篇，不取代目前 10 篇主工作台文章包。\n- 動用 Agent OS 討論後，將「假設性議題，缺乏驗證」拆成 verified topic、source-to-life-number、reader appeal 與 financial decision gate。\n- 兩篇題目均以台灣勞保局官方制度為證據底盤，來源留在 metadata，正文不放來源清單或審稿語。\n- 正文以一般民眾閱讀角度、家庭現金流、日期壓力、前後差異與可帶走的財務判斷能力為主。\n- 2026-06-11 已補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 後續 8 篇需待 Kevin 看完語感與效果後再補。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- 前端以獨立下拉選單呈現，不混入 10 篇主包核准台。"
+      "copyText": "2026-06-10 兩篇試產稿｜退件學習後的題目驗證與去 AI 感測試\n\n日期：2026-06-10\n狀態：2 篇試產稿\n目錄：articles/2026-06-10-two-article-trial-pack\n篇數：2\n正文非空白字數：2085 到 2120 字\n含空白正文長度：2121 到 2166 字\n段落節奏：19 到 24 段，平均 88 到 110 字，過短段落 16\n語氣變奏：不是...而是最多 7 次，整包 12 次／2 篇；比較穩 1 次，自問自答最多 0 次，真正最多 2 次\n\n紀錄重點\n- 本批先產 2 篇，不取代正式主工作台文章包。\n- 動用 Agent OS 討論後，將「假設性議題，缺乏驗證」拆成 verified topic、source-to-life-number、reader appeal 與 financial decision gate。\n- 兩篇題目均以台灣勞保局官方制度為證據底盤，來源留在 metadata，正文不放來源清單或審稿語。\n- 正文以一般民眾閱讀角度、家庭現金流、日期壓力、前後差異與可帶走的財務判斷能力為主。\n- 2026-06-11 已補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 後續 8 篇需待 Kevin 看完語感與效果後再補。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- 前端以獨立下拉選單呈現，不混入正式主包核准台。"
     },
     {
       "id": "2026-06-09-rejection-learned-pack",
@@ -73,7 +251,7 @@
       "audience": "一般民眾",
       "directory": "articles/2026-06-09-rejection-learned-pack",
       "generatedBy": "tools/build-public-article-pack-2026-06-09.js",
-      "currentReviewBoard": true,
+      "currentReviewBoard": false,
       "notes": [
         "納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。",
         "2026-06-09 重新更新 10 篇文章生成時，逐篇套用 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。",
@@ -110,6 +288,23 @@
       "bodyCharsMax": 2230,
       "bodyCharsIncludingWhitespaceMin": 2107,
       "bodyCharsIncludingWhitespaceMax": 2262,
+      "paragraphRhythm": {
+        "paragraphsMin": 17,
+        "paragraphsMax": 19,
+        "averageParagraphMin": 109,
+        "averageParagraphMax": 131,
+        "shortestParagraphMin": 12,
+        "longestParagraphMax": 225,
+        "veryShortParagraphsTotal": 32
+      },
+      "styleVariation": {
+        "notButMax": 10,
+        "notButTotal": 70,
+        "articlesWithNotBut": 10,
+        "stablePhraseTotal": 2,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 6
+      },
       "bodyFiles": [
         "articles/2026-06-09-rejection-learned-pack/01-rent-subsidy-cashflow.txt",
         "articles/2026-06-09-rejection-learned-pack/02-single-parent-childcare-gap.txt",
@@ -122,19 +317,8 @@
         "articles/2026-06-09-rejection-learned-pack/09-special-circumstance-support.txt",
         "articles/2026-06-09-rejection-learned-pack/10-retirement-care-and-scam-risk.txt"
       ],
-      "titles": [
-        "房租五號到期，補貼還沒進來：租屋家庭最容易卡住的時間差",
-        "一個人接孩子，也一個人接帳單：單親家庭的托育費為什麼常變成收入缺口",
-        "每月都在繳，債卻沒變少：債務協商前先看懂家庭還款壓力",
-        "手上只剩一萬元，能撐到下次薪水嗎？先把緊急預備金換成天數看",
-        "爸爸出院後，家裡多了哪些帳單？長照成本常從看不見的地方開始",
-        "錢被騙走以後，這個月怎麼過？先把房租、吃飯和帳單排出來",
-        "第一份薪水進來前，房租和家用已經排隊：青年獨立的第一張收支表",
-        "減班休息先看三筆錢，收入少一截時帳單不會跟著少",
-        "變故後的三個月怎麼撐？特殊境遇家庭扶助要接住的是生活缺口",
-        "退休金每月都有進來，為什麼醫療、照顧和詐騙還是會讓家裡緊張"
-      ],
-      "copyText": "2026-06-09 駁回學習與前置驗證後重生文章包\n\n日期：2026-06-09\n狀態：目前工作台文章包\n目錄：articles/2026-06-09-rejection-learned-pack\n篇數：10\n正文非空白字數：2071 到 2230 字\n含空白正文長度：2107 到 2262 字\n\n紀錄重點\n- 納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。\n- 2026-06-09 重新更新 10 篇文章生成時，逐篇套用 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。\n- 2026-06-11 補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 本批次仍以一般民眾閱讀角度生成，社工版需 Kevin 明確指定。\n- 正文維持純文字，不顯示 SEO/AIO、來源清單、審稿建議或 agent 討論。\n- 6/9 gate 加嚴重點：同題換標題、數字拼湊、處遇建議未盤點、概念文、內部審稿語、假設性議題驗證、讀者吸引力與財務知能轉移。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 10/10。\n- validator 使用 data/submission-quality-gates-2026-06-09.json 檢查。\n- reviewRejectionLearningReadyCards 已更新為 50，解除舊 3/8 blocker。"
+      "titles": [],
+      "copyText": "2026-06-09 駁回學習與前置驗證後重生文章包\n\n日期：2026-06-09\n狀態：目前工作台文章包\n目錄：articles/2026-06-09-rejection-learned-pack\n篇數：10\n正文非空白字數：2071 到 2230 字\n含空白正文長度：2107 到 2262 字\n段落節奏：17 到 19 段，平均 109 到 131 字，過短段落 32\n語氣變奏：不是...而是最多 10 次，整包 70 次／10 篇；比較穩 2 次，自問自答最多 0 次，真正最多 6 次\n\n紀錄重點\n- 納入 2026-06-09 最新 InfoCenter 駁回學習：350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。\n- 2026-06-09 重新更新 10 篇文章生成時，逐篇套用 topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。\n- 2026-06-11 補入三張通過稿結構卡的 `approvedAuthorStructureUse` 採用紀錄。\n- 本批次仍以一般民眾閱讀角度生成，社工版需 Kevin 明確指定。\n- 正文維持純文字，不顯示 SEO/AIO、來源清單、審稿建議或 agent 討論。\n- 6/9 gate 加嚴重點：同題換標題、數字拼湊、處遇建議未盤點、概念文、內部審稿語、假設性議題驗證、讀者吸引力與財務知能轉移。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 10/10。\n- validator 使用 data/submission-quality-gates-2026-06-09.json 檢查。\n- reviewRejectionLearningReadyCards 已更新為 50，解除舊 3/8 blocker。"
     },
     {
       "id": "2026-06-03-public-regenerated-pack",
@@ -173,6 +357,23 @@
       "bodyCharsMax": 2195,
       "bodyCharsIncludingWhitespaceMin": 2107,
       "bodyCharsIncludingWhitespaceMax": 2227,
+      "paragraphRhythm": {
+        "paragraphsMin": 17,
+        "paragraphsMax": 19,
+        "averageParagraphMin": 109,
+        "averageParagraphMax": 129,
+        "shortestParagraphMin": 12,
+        "longestParagraphMax": 225,
+        "veryShortParagraphsTotal": 32
+      },
+      "styleVariation": {
+        "notButMax": 10,
+        "notButTotal": 70,
+        "articlesWithNotBut": 10,
+        "stablePhraseTotal": 2,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 6
+      },
       "bodyFiles": [
         "articles/2026-06-03-public-regenerated-pack/01-rent-subsidy-cashflow.txt",
         "articles/2026-06-03-public-regenerated-pack/02-single-parent-childcare-gap.txt",
@@ -186,7 +387,7 @@
         "articles/2026-06-03-public-regenerated-pack/10-retirement-care-and-scam-risk.txt"
       ],
       "titles": [],
-      "copyText": "2026-06-03 家庭生活壓力與財務缺口候選稿\n\n日期：2026-06-03\n狀態：已由 6/9 駁回學習版取代\n目錄：articles/2026-06-03-public-regenerated-pack\n篇數：10\n正文非空白字數：2071 到 2195 字\n含空白正文長度：2107 到 2227 字\n\n紀錄重點\n- 修正角色錯亂、標題語感、正文翻譯腔與內部轉場語問題。\n- 10 篇皆為一般民眾閱讀角度。\n- SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。\n- 每篇純文字正文進入工作台前，必須先有 articlePackReviewGate 綠燈紀錄。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- 正文台灣中文語感 gate 通過。\n- Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。\n- articlePackReviewGate 綠燈 10/10；非綠燈稿件不得進入 Kevin 核准工作台。"
+      "copyText": "2026-06-03 家庭生活壓力與財務缺口候選稿\n\n日期：2026-06-03\n狀態：已由 6/9 駁回學習版取代\n目錄：articles/2026-06-03-public-regenerated-pack\n篇數：10\n正文非空白字數：2071 到 2195 字\n含空白正文長度：2107 到 2227 字\n段落節奏：17 到 19 段，平均 109 到 129 字，過短段落 32\n語氣變奏：不是...而是最多 10 次，整包 70 次／10 篇；比較穩 2 次，自問自答最多 0 次，真正最多 6 次\n\n紀錄重點\n- 修正角色錯亂、標題語感、正文翻譯腔與內部轉場語問題。\n- 10 篇皆為一般民眾閱讀角度。\n- SEO/AIO、來源與檢核資訊只保存在 suggestions.json，不放入投稿正文。\n- 每篇純文字正文進入工作台前，必須先有 articlePackReviewGate 綠燈紀錄。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- role leak audit 通過。\n- 正文台灣中文語感 gate 通過。\n- Kevin 修稿樣本與結尾強度規則已納入後續產稿 gate。\n- articlePackReviewGate 綠燈 10/10；非綠燈稿件不得進入 Kevin 核准工作台。"
     },
     {
       "id": "2026-06-02-weekly-pack",
@@ -222,6 +423,23 @@
       "bodyCharsMax": 2087,
       "bodyCharsIncludingWhitespaceMin": 2060,
       "bodyCharsIncludingWhitespaceMax": 2153,
+      "paragraphRhythm": {
+        "paragraphsMin": 28,
+        "paragraphsMax": 33,
+        "averageParagraphMin": 63,
+        "averageParagraphMax": 72,
+        "shortestParagraphMin": 7,
+        "longestParagraphMax": 207,
+        "veryShortParagraphsTotal": 156
+      },
+      "styleVariation": {
+        "notButMax": 13,
+        "notButTotal": 60,
+        "articlesWithNotBut": 10,
+        "stablePhraseTotal": 0,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 7
+      },
       "bodyFiles": [
         "articles/2026-06-02-weekly-pack/01-rent-subsidy-stability.txt",
         "articles/2026-06-02-weekly-pack/02-debt-negotiation-not-agency.txt",
@@ -235,7 +453,7 @@
         "articles/2026-06-02-weekly-pack/10-resource-access-social-work.txt"
       ],
       "titles": [],
-      "copyText": "2026-06-02 首批 10 篇純文字投稿文章包\n\n日期：2026-06-02\n狀態：保留為錯誤樣本\n目錄：articles/2026-06-02-weekly-pack\n篇數：10\n正文非空白字數：2004 到 2087 字\n含空白正文長度：2060 到 2153 字\n\n紀錄重點\n- 首批文章已降級為需重生，不可直接投稿。\n- 保留作為角色錯亂、後台語混入正文與預設社工版風險的學習樣本。\n- 後續文章包需通過 role_leak_reviewer 後才可進入 Kevin 核准清單。\n\n檢查\n- 每篇正文扣除欄位後均超過 2000 字；此批保留為錯誤樣本，不作投稿依據。\n- 後續掃描發現角色錯亂，因此整批降級。\n- 已由 2026-06-03 public regenerated pack 取代。\n- 此批沒有 articlePackReviewGate，不可視為可投稿綠燈包。"
+      "copyText": "2026-06-02 首批 10 篇純文字投稿文章包\n\n日期：2026-06-02\n狀態：保留為錯誤樣本\n目錄：articles/2026-06-02-weekly-pack\n篇數：10\n正文非空白字數：2004 到 2087 字\n含空白正文長度：2060 到 2153 字\n段落節奏：28 到 33 段，平均 63 到 72 字，過短段落 156\n語氣變奏：不是...而是最多 13 次，整包 60 次／10 篇；比較穩 0 次，自問自答最多 0 次，真正最多 7 次\n\n紀錄重點\n- 首批文章已降級為需重生，不可直接投稿。\n- 保留作為角色錯亂、後台語混入正文與預設社工版風險的學習樣本。\n- 後續文章包需通過 role_leak_reviewer 後才可進入 Kevin 核准清單。\n\n檢查\n- 每篇正文扣除欄位後均超過 2000 字；此批保留為錯誤樣本，不作投稿依據。\n- 後續掃描發現角色錯亂，因此整批降級。\n- 已由 2026-06-03 public regenerated pack 取代。\n- 此批沒有 articlePackReviewGate，不可視為可投稿綠燈包。"
     }
   ],
   "generationAttempts": [

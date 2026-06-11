@@ -48,7 +48,7 @@ Kevin 要求使用最新 Agent OS，動用 agent 討論以下問題：
 
 ## Adopt Now
 
-- 新增 `trialArticlePacks`，讓 2 篇試產稿和目前 10 篇主包分開。
+- 新增 `trialArticlePacks`，讓 2 篇試產稿和正式主包分開。
 - 前端新增「2 篇試產文章包」下拉選單，像週報一樣可選批次與文章。
 - 每篇試產稿必須通過：
   - verified topic basis

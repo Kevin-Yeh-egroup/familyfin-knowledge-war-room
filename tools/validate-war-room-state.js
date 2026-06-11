@@ -51,6 +51,41 @@ function bodyText(rawText) {
   return normalized.slice(bodyMarker.index + bodyMarker[0].length).trim();
 }
 
+function splitParagraphs(text) {
+  return String(text || "")
+    .replace(/\r\n/g, "\n")
+    .split(/\n\s*\n/)
+    .map((paragraph) => paragraph.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+}
+
+function paragraphStats(text) {
+  const paragraphs = splitParagraphs(text);
+  const lengths = paragraphs.map((paragraph) => nonWhitespaceCount(paragraph));
+  return {
+    paragraphs: paragraphs.length,
+    shortestParagraph: lengths.length ? Math.min(...lengths) : 0,
+    longestParagraph: lengths.length ? Math.max(...lengths) : 0,
+    averageParagraph: lengths.length
+      ? Math.round(lengths.reduce((sum, value) => sum + value, 0) / lengths.length)
+      : 0,
+    veryShortParagraphs: lengths.filter((value) => value < 45).length,
+  };
+}
+
+function stylePatternStats(text) {
+  const contrastPattern = /不是[^。！？\n]{0,80}(而是|而在|而要|只是)/g;
+  const stablePhrasePattern = /怎麼做比較穩|比較穩的做法|比較穩的順序|比較穩的是|比較穩，/g;
+  const fakeQuestionPattern =
+    /(?:但|可是|那|回到|這時).{0,30}(怎麼辦|能不能|要不要)[？?，,].{0,60}(還是要先|還是|先|所以|答案是|關鍵是|比較穩)|但這個月.{0,10}怎麼辦[，,].{0,20}還是要先/g;
+  return {
+    notButCount: (text.match(contrastPattern) || []).length,
+    stablePhraseCount: (text.match(stablePhrasePattern) || []).length,
+    selfQuestionTransitionCount: (text.match(fakeQuestionPattern) || []).length,
+    trueNeedCount: (text.match(/真正/g) || []).length,
+  };
+}
+
 function nonWhitespaceCount(text) {
   return (text.match(/\S/g) || []).length;
 }
@@ -399,8 +434,9 @@ if (suggestions?.articlePack) {
     ? compareTitlesWithKnowledgeBase(articles, knowledgeBaseTitleIndex)
     : null;
 
-  if (articles.length !== 10) {
-    errors.push(`current article pack should contain 10 articles, found ${articles.length}`);
+  const expectedArticleCount = Number.isFinite(pack.expectedArticleCount) ? pack.expectedArticleCount : 10;
+  if (articles.length !== expectedArticleCount) {
+    errors.push(`current article pack should contain ${expectedArticleCount} articles, found ${articles.length}`);
   }
 
   if (titleNovelty.exactPairs.length) {
@@ -453,7 +489,9 @@ if (suggestions?.articlePack) {
       const requiredCards = [
         "topicEvidenceCard",
         "readerFitCard",
+        "readerLoadCard",
         "financialDecisionCard",
+        "improvementPlanCard",
         "financialLiteracyTransfer",
         "approvedAuthorStructureUse",
       ];
@@ -477,11 +515,39 @@ if (suggestions?.articlePack) {
       ) {
         errors.push(`${article.id} preGenerationReview lacks financial assessment task or literacy transfer`);
         preGenerationFailures.push(`${article.id}:financial`);
+      } else if (
+        !preGenerationReview.readerLoadCard.mainProblem ||
+        !preGenerationReview.readerLoadCard.revisionMove ||
+        preGenerationReview.readerLoadCard.maxActionCount > 3
+      ) {
+        errors.push(`${article.id} readerLoadCard lacks main problem, revision move, or exceeds action count`);
+        preGenerationFailures.push(`${article.id}:reader_load`);
       } else if (!validateApprovedAuthorStructureUse(article.id, preGenerationReview.approvedAuthorStructureUse)) {
         preGenerationFailures.push(`${article.id}:approvedAuthorStructureUse`);
       } else {
         preGenerationPassCount += 1;
       }
+    }
+
+    if (!article.readerSimulationReview || article.readerSimulationReview.status !== "passed_simulated_reader_gate") {
+      errors.push(`${article.id} readerSimulationReview missing or not passed`);
+    } else {
+      const personas = article.readerSimulationReview.personas || [];
+      const questions = article.readerSimulationReview.questions || [];
+      if (personas.length < 4 || questions.length < 5) {
+        errors.push(`${article.id} readerSimulationReview too shallow`);
+      }
+      for (const persona of personas) {
+        if (!persona.role || !persona.check || !persona.expectedTakeaway) {
+          errors.push(`${article.id} readerSimulationReview persona incomplete: ${persona.id || "unknown"}`);
+        }
+      }
+    }
+
+    if (!article.deAiReview || article.deAiReview.status !== "passed_draft_gate") {
+      errors.push(`${article.id} deAiReview missing or not passed`);
+    } else if (!article.deAiReview.revisionMove || !article.deAiReview.publicBodyRule) {
+      errors.push(`${article.id} deAiReview lacks revision move or public body rule`);
     }
 
     const reviewGate = article.articlePackReviewGate;
@@ -514,7 +580,16 @@ if (suggestions?.articlePack) {
     const body = bodyText(raw);
     const chars = nonWhitespaceCount(body);
     const includingWhitespace = body.length;
-    computed.push({ id: article.id, path: article.bodyPath, chars, includingWhitespace });
+    const rhythm = paragraphStats(body);
+    const style = stylePatternStats(body);
+    computed.push({
+      id: article.id,
+      path: article.bodyPath,
+      chars,
+      includingWhitespace,
+      paragraphRhythm: rhythm,
+      styleVariation: style,
+    });
 
     if (chars <= 2000) {
       errors.push(`${article.id} body length gate failed: ${chars} non-whitespace chars`);
@@ -529,6 +604,45 @@ if (suggestions?.articlePack) {
     if (article.bodyCharsIncludingWhitespace && article.bodyCharsIncludingWhitespace !== includingWhitespace) {
       errors.push(
         `${article.id} bodyCharsIncludingWhitespace drift: suggestions=${article.bodyCharsIncludingWhitespace}, computed=${includingWhitespace}`,
+      );
+    }
+
+    if (!article.paragraphRhythmGate?.stats) {
+      errors.push(`${article.id} paragraphRhythmGate missing`);
+    } else {
+      const recordedRhythm = article.paragraphRhythmGate.stats;
+      for (const key of ["paragraphs", "shortestParagraph", "longestParagraph", "averageParagraph", "veryShortParagraphs"]) {
+        if (recordedRhythm[key] !== rhythm[key]) {
+          errors.push(`${article.id} paragraphRhythmGate.${key} drift: suggestions=${recordedRhythm[key]}, computed=${rhythm[key]}`);
+        }
+      }
+    }
+
+    if (rhythm.paragraphs > 24 || rhythm.veryShortParagraphs > 0 || rhythm.averageParagraph < 100 || rhythm.longestParagraph > 240) {
+      errors.push(
+        `${article.id} paragraph rhythm gate failed: paragraphs=${rhythm.paragraphs}, veryShort=${rhythm.veryShortParagraphs}, avg=${rhythm.averageParagraph}, longest=${rhythm.longestParagraph}`,
+      );
+    }
+
+    if (!article.styleVariationGate?.stats) {
+      errors.push(`${article.id} styleVariationGate missing`);
+    } else {
+      const recordedStyle = article.styleVariationGate.stats;
+      for (const key of ["notButCount", "stablePhraseCount", "selfQuestionTransitionCount", "trueNeedCount"]) {
+        if (recordedStyle[key] !== style[key]) {
+          errors.push(`${article.id} styleVariationGate.${key} drift: suggestions=${recordedStyle[key]}, computed=${style[key]}`);
+        }
+      }
+    }
+
+    if (
+      style.notButCount > 3 ||
+      style.stablePhraseCount > 0 ||
+      style.selfQuestionTransitionCount > 1 ||
+      style.trueNeedCount > 3
+    ) {
+      errors.push(
+        `${article.id} style variation gate failed: notBut=${style.notButCount}, 比較穩=${style.stablePhraseCount}, selfQuestion=${style.selfQuestionTransitionCount}, 真正=${style.trueNeedCount}`,
       );
     }
   }
@@ -558,6 +672,30 @@ if (suggestions?.articlePack) {
     articleCount: articles.length,
     bodyCharsMin: computed.length ? Math.min(...computed.map((item) => item.chars)) : 0,
     bodyCharsMax: computed.length ? Math.max(...computed.map((item) => item.chars)) : 0,
+    paragraphRhythm: computed.length
+      ? {
+          paragraphsMin: Math.min(...computed.map((item) => item.paragraphRhythm.paragraphs)),
+          paragraphsMax: Math.max(...computed.map((item) => item.paragraphRhythm.paragraphs)),
+          averageParagraphMin: Math.min(...computed.map((item) => item.paragraphRhythm.averageParagraph)),
+          averageParagraphMax: Math.max(...computed.map((item) => item.paragraphRhythm.averageParagraph)),
+          shortestParagraphMin: Math.min(...computed.map((item) => item.paragraphRhythm.shortestParagraph)),
+          longestParagraphMax: Math.max(...computed.map((item) => item.paragraphRhythm.longestParagraph)),
+          veryShortParagraphsTotal: computed.reduce(
+            (sum, item) => sum + item.paragraphRhythm.veryShortParagraphs,
+            0,
+          ),
+        }
+      : null,
+    styleVariation: computed.length
+      ? {
+          notButMax: Math.max(...computed.map((item) => item.styleVariation.notButCount)),
+          notButTotal: computed.reduce((sum, item) => sum + item.styleVariation.notButCount, 0),
+          articlesWithNotBut: computed.filter((item) => item.styleVariation.notButCount > 0).length,
+          stablePhraseTotal: computed.reduce((sum, item) => sum + item.styleVariation.stablePhraseCount, 0),
+          selfQuestionMax: Math.max(...computed.map((item) => item.styleVariation.selfQuestionTransitionCount)),
+          trueNeedMax: Math.max(...computed.map((item) => item.styleVariation.trueNeedCount)),
+        }
+      : null,
     computed,
     greenReview: {
       green: greenReviewCount,
@@ -586,6 +724,21 @@ if (suggestions?.articlePack) {
       : null,
   };
 
+  if (currentPackStats.styleVariation) {
+    const style = currentPackStats.styleVariation;
+    if (style.notButTotal > articles.length || style.articlesWithNotBut > Math.floor(articles.length / 2)) {
+      errors.push(
+        `article pack style variation density failed: notButTotal=${style.notButTotal}, articlesWithNotBut=${style.articlesWithNotBut}/${articles.length}`,
+      );
+    } else {
+      pushCheck(
+        "article pack style variation density",
+        "pass",
+        `not-but total ${style.notButTotal}, articles ${style.articlesWithNotBut}/${articles.length}`,
+      );
+    }
+  }
+
   const metricGreenReviewCount = suggestions.metrics?.articlePackGreenReviewCount;
   if (metricGreenReviewCount !== undefined && metricGreenReviewCount !== articles.length) {
     errors.push(`articlePackGreenReviewCount drift: suggestions=${metricGreenReviewCount}, articles=${articles.length}`);
@@ -607,6 +760,12 @@ if (suggestions?.articlePack) {
   }
   if (suggestions.metrics?.financialLiteracyTransferGateRequired !== true) {
     errors.push("financialLiteracyTransferGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.styleVariationGateRequired !== true) {
+    errors.push("styleVariationGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.readerSimulationGateRequired !== true) {
+    errors.push("readerSimulationGateRequired metric missing or false");
   }
   if (pack.exportMode?.greenReviewRequired !== true) {
     errors.push("articlePack exportMode.greenReviewRequired missing or false");
@@ -630,6 +789,54 @@ if (articlePackHistory && currentPackStats) {
       );
     } else {
       pushCheck("article-pack-history body range", "pass", `${currentRecord.bodyCharsMin}-${currentRecord.bodyCharsMax}`);
+    }
+    if (currentRecord.paragraphRhythm && currentPackStats.paragraphRhythm) {
+      const expected = currentRecord.paragraphRhythm;
+      const actual = currentPackStats.paragraphRhythm;
+      for (const key of [
+        "paragraphsMin",
+        "paragraphsMax",
+        "averageParagraphMin",
+        "averageParagraphMax",
+        "shortestParagraphMin",
+        "longestParagraphMax",
+        "veryShortParagraphsTotal",
+      ]) {
+        if (expected[key] !== actual[key]) {
+          errors.push(`article-pack-history paragraph rhythm drift ${key}: history=${expected[key]}, computed=${actual[key]}`);
+        }
+      }
+      pushCheck(
+        "article-pack-history paragraph rhythm",
+        "pass",
+        `${actual.paragraphsMin}-${actual.paragraphsMax} paragraphs, avg ${actual.averageParagraphMin}-${actual.averageParagraphMax}`,
+      );
+    }
+    if (currentRecord.styleVariation && currentPackStats.styleVariation) {
+      const expected = currentRecord.styleVariation;
+      const actual = currentPackStats.styleVariation;
+      for (const key of [
+        "notButMax",
+        "notButTotal",
+        "articlesWithNotBut",
+        "stablePhraseTotal",
+        "selfQuestionMax",
+        "trueNeedMax",
+      ]) {
+        if (expected[key] !== actual[key]) {
+          errors.push(`article-pack-history style variation drift ${key}: history=${expected[key]}, computed=${actual[key]}`);
+        }
+      }
+      if (actual.notButTotal > currentPackStats.articleCount || actual.articlesWithNotBut > Math.floor(currentPackStats.articleCount / 2)) {
+        errors.push(
+          `article-pack-history style variation density failed: notButTotal=${actual.notButTotal}, articlesWithNotBut=${actual.articlesWithNotBut}/${currentPackStats.articleCount}`,
+        );
+      }
+      pushCheck(
+        "article-pack-history style variation",
+        "pass",
+        `not-but max ${actual.notButMax}, total ${actual.notButTotal}/${actual.articlesWithNotBut} articles, 比較穩 total ${actual.stablePhraseTotal}, self-question max ${actual.selfQuestionMax}, 真正 max ${actual.trueNeedMax}`,
+      );
     }
   }
 

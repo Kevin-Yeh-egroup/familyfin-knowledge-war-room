@@ -45,11 +45,11 @@ const sources = [
     sourcePath: "reports/2026-06-10-two-article-trial-pack.md",
     type: "兩篇試產文章包",
     title: "退件學習後先生成 2 篇一般民眾試產稿",
-    summary: "依 Kevin 要求先不補滿 10 篇，而是用最新 Agent OS 討論後的新 gate，產出 2 篇一般民眾純文字試產稿，並獨立於目前 10 篇主包呈現。",
+    summary: "依 Kevin 要求先不補滿一整批，而是用最新 Agent OS 討論後的新 gate，產出 2 篇一般民眾純文字試產稿，並獨立於正式主包呈現。",
     highlights: [
       "兩篇題目均以台灣官方制度作為證據底盤，避免「假設性議題，缺乏驗證」。",
       "來源與查核資訊保存在 metadata，正文只保留生活數字、日期壓力、前後差異與決策順序。",
-      "新增 trialArticlePacks 與前端獨立下拉區，不混入目前 10 篇主包。"
+      "新增 trialArticlePacks 與前端獨立下拉區，不混入正式主包。"
     ]
   },
   {
@@ -69,9 +69,9 @@ const sources = [
     sourcePath: "reports/2026-06-09-article-pack-regeneration-after-preprotocol.md",
     type: "文章包重新生成",
     title: "10 篇文章重新套用前置驗證 protocol",
-    summary: "依 Kevin 要求重新更新目前 10 篇一般民眾版文章生成，將 topicEvidenceCard、readerFitCard、financialDecisionCard 與 financialLiteracyTransfer 寫入每篇文章 metadata，並讓 validator 檢查前置 protocol。",
+    summary: "依 Kevin 要求重新更新當時 10 篇一般民眾版文章生成，將 topicEvidenceCard、readerFitCard、financialDecisionCard 與 financialLiteracyTransfer 寫入每篇文章 metadata，並讓 validator 檢查前置 protocol。",
     highlights: [
-      "保留目前 10 篇主題，重新輸出純文字文章包與 suggestions metadata。",
+      "保留當時 10 篇主題，重新輸出純文字文章包與 suggestions metadata。",
       "每篇文章新增題目驗證、讀者吸引力、家庭財務評估與財務知能轉移欄位。",
       "validator 新增 article pack pre-generation protocol 檢查，缺卡或未通過會失敗。"
     ]
@@ -109,7 +109,7 @@ const sources = [
     highlights: [
       "索引只保存公開 articleId、公開標題與正規化標題，不保存正文或後台資料。",
       "目前索引包含 1323 筆公開知識庫標題。",
-      "目前 10 篇候選稿與既有標題為 0 exact match、0 near match、0 warning。"
+      "當時 10 篇候選稿與既有標題為 0 exact match、0 near match、0 warning。"
     ]
   },
   {
@@ -282,7 +282,7 @@ const weeklyNotes = {
       "只讀檢查 InfoCenter 事件列表作者來源：李婉仙與蔡思樂有多筆審核成功事件；劉泰一後續已從 live 事件頁補回可讀完整正文的通過樣本；FB 短文已排除於正式學習樣本之外。",
       "完成 2026-06-10 Agent OS 討論：題目驗證、去 AI 感、讀者吸引力與財務決策幫助。",
       "新增 2026-06-10 兩篇一般民眾試產稿，均以台灣官方制度作為證據底盤，正文超過 2000 字。",
-      "新增 `trialArticlePacks` 與前端獨立下拉區，讓試產稿和目前 10 篇主包分開呈現。",
+      "新增 `trialArticlePacks` 與前端獨立下拉區，讓試產稿和正式主包分開呈現。",
       "完成 2026-06-09 InfoCenter read-only 回讀：2086 筆事件、350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。",
       "新增 6/9 駁回學習衍生資料、投稿品質 gate、規則增量、日報與日誌。",
       "重新生成 2026-06-09 一般民眾純文字文章包，10 篇皆通過生成綠燈。",
