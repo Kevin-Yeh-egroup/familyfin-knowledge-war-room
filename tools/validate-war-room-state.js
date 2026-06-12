@@ -111,6 +111,10 @@ const awkwardTitlePatterns = [
   /放進.*表.*看/,
   /先看.*能不能/,
   /要先算.*能不能/,
+  /最難等的.*不是.*而是/,
+  /常比.*失業給付.*先到/,
+  /要繳、.*要扣，.*還沒下來/,
+  /先怎麼撐/,
 ];
 
 function levenshteinDistance(a, b) {
@@ -621,6 +625,36 @@ if (suggestions?.articlePack) {
       errors.push(`${article.id} titleNaturalnessReview lacks checked patterns or revision move`);
     }
 
+    if (!article.titleSemanticClarityReview || article.titleSemanticClarityReview.status !== "passed_title_logic_gate") {
+      errors.push(`${article.id} titleSemanticClarityReview missing or not passed`);
+    } else if (
+      !article.titleSemanticClarityReview.revisionMove ||
+      !Array.isArray(article.titleSemanticClarityReview.checkedPatterns) ||
+      article.titleSemanticClarityReview.checkedPatterns.length < 5
+    ) {
+      errors.push(`${article.id} titleSemanticClarityReview lacks checked patterns or revision move`);
+    }
+
+    if (!article.titleHookStrengthReview || article.titleHookStrengthReview.status !== "passed_title_hook_gate") {
+      errors.push(`${article.id} titleHookStrengthReview missing or not passed`);
+    } else if (
+      !article.titleHookStrengthReview.revisionMove ||
+      !Array.isArray(article.titleHookStrengthReview.checkedPatterns) ||
+      article.titleHookStrengthReview.checkedPatterns.length < 5
+    ) {
+      errors.push(`${article.id} titleHookStrengthReview lacks checked patterns or revision move`);
+    }
+
+    if (!article.titleReaderVoiceReview || article.titleReaderVoiceReview.status !== "passed_reader_voice_gate") {
+      errors.push(`${article.id} titleReaderVoiceReview missing or not passed`);
+    } else if (
+      !article.titleReaderVoiceReview.revisionMove ||
+      !Array.isArray(article.titleReaderVoiceReview.checkedPatterns) ||
+      article.titleReaderVoiceReview.checkedPatterns.length < 5
+    ) {
+      errors.push(`${article.id} titleReaderVoiceReview lacks checked patterns or revision move`);
+    }
+
     const reviewGate = article.articlePackReviewGate;
     if (!reviewGate) {
       errors.push(`${article.id} articlePackReviewGate missing`);
@@ -850,6 +884,15 @@ if (suggestions?.articlePack) {
   if (suggestions.metrics?.titleDeAiGateRequired !== true) {
     errors.push("titleDeAiGateRequired metric missing or false");
   }
+  if (suggestions.metrics?.titleSemanticClarityGateRequired !== true) {
+    errors.push("titleSemanticClarityGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.titleHookStrengthGateRequired !== true) {
+    errors.push("titleHookStrengthGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.titleReaderVoiceGateRequired !== true) {
+    errors.push("titleReaderVoiceGateRequired metric missing or false");
+  }
   if (pack.exportMode?.greenReviewRequired !== true) {
     errors.push("articlePack exportMode.greenReviewRequired missing or false");
   }
@@ -858,6 +901,15 @@ if (suggestions?.articlePack) {
   }
   if (pack.exportMode?.titleTaiwanVoiceRequired !== true || pack.exportMode?.titleDeAiRequired !== true) {
     errors.push("articlePack exportMode title Taiwan voice/de-AI flags missing or false");
+  }
+  if (pack.exportMode?.titleSemanticClarityRequired !== true) {
+    errors.push("articlePack exportMode title semantic clarity flag missing or false");
+  }
+  if (pack.exportMode?.titleHookStrengthRequired !== true) {
+    errors.push("articlePack exportMode title hook strength flag missing or false");
+  }
+  if (pack.exportMode?.titleReaderVoiceRequired !== true) {
+    errors.push("articlePack exportMode title reader voice flag missing or false");
   }
   if (pack.articlePackGreenReviewPolicy?.status !== "required_before_review_board") {
     errors.push("articlePackGreenReviewPolicy missing or status drift");

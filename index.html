@@ -1540,19 +1540,75 @@
       return button;
     }
 
+    function createManualCopyBox(text, note, message) {
+      const existing = document.getElementById("manualCopyBox");
+      if (existing) existing.remove();
+
+      const box = document.createElement("div");
+      box.id = "manualCopyBox";
+      box.className = "detail-section";
+
+      const title = document.createElement("h4");
+      title.textContent = "手動複製";
+      const help = paragraph(message || "瀏覽器暫時不允許自動複製，已替你選取文字，請按 Ctrl+C 複製。");
+      const area = document.createElement("textarea");
+      area.className = "review-note-input";
+      area.value = text;
+      area.rows = 8;
+      const actions = document.createElement("div");
+      actions.className = "actions";
+      actions.append(actionButton("關閉", "", () => box.remove()));
+      box.append(title, help, area, actions);
+
+      const host = note?.parentElement || document.getElementById("articleDetail") || document.body;
+      host.appendChild(box);
+      area.focus();
+      area.select();
+      area.setSelectionRange(0, area.value.length);
+      if (note) note.textContent = "瀏覽器未開放自動複製，請使用下方手動複製框。";
+    }
+
     async function copyText(text, successText, noteId = "copyNote") {
       const note = document.getElementById(noteId);
+      const value = String(text || "");
+      if (!value.trim()) {
+        if (note) note.textContent = "目前沒有可複製的文字。";
+        return false;
+      }
+
       try {
-        await navigator.clipboard.writeText(text);
-        if (note) note.textContent = successText || "已複製純文字。";
-      } catch (error) {
+        if (window.isSecureContext && navigator.clipboard?.writeText) {
+          await navigator.clipboard.writeText(value);
+          if (note) note.textContent = successText || "已複製純文字。";
+          return true;
+        }
+      } catch (_error) {
+        // Continue to the textarea fallback below.
+      }
+
+      try {
         const area = document.createElement("textarea");
-        area.value = text;
+        area.value = value;
+        area.setAttribute("readonly", "");
+        area.style.position = "fixed";
+        area.style.top = "0";
+        area.style.left = "0";
+        area.style.width = "1px";
+        area.style.height = "1px";
+        area.style.opacity = "0";
+        area.style.pointerEvents = "none";
         document.body.appendChild(area);
+        area.focus({ preventScroll: true });
         area.select();
-        document.execCommand("copy");
+        area.setSelectionRange(0, area.value.length);
+        const copied = document.execCommand("copy");
         area.remove();
+        if (!copied) throw new Error("execCommand copy returned false");
         if (note) note.textContent = successText || "已用備援方式複製純文字。";
+        return true;
+      } catch (error) {
+        createManualCopyBox(value, note, "瀏覽器擋下自動複製，已替你把文字放在這裡並選取。請按 Ctrl+C 複製。");
+        return false;
       }
     }
 

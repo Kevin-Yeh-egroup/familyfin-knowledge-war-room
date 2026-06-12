@@ -14,6 +14,9 @@
 - `human_copy_reviewer`：依外部閱讀研究與 Kevin 回饋，將過短提示段合併成較完整的敘述段，避免讀起來像卡片條列。
 - `topic_planning_group`：依 Kevin 回饋重擬標題，讓每篇使用不同入口，不用同一套「先看／要算／分開算」模板。
 - `taiwan_voice_ai_reduction_group`：標題也進入台灣用語與去 AI 感檢查，避免房租日、收入空窗、財務止血等硬造詞。
+- `human_copy_reviewer`：標題需先講得通，避免用聰明反差造成讀者不知道文章在說什麼。
+- `human_copy_reviewer`：標題還需有鉤子強度與完整重點，避免只像把文章主旨平鋪直述地講完，或把幾個壓力片語排在一起。
+- `taiwan_voice_ai_reduction_group`：標題最後需轉成讀者心聲，像搜尋框、朋友對話或心裡冒出的問題，不停在作者摘要。
 - `numeric_decision_reviewer`：每篇都有改善前後差異、施行效果與仍未打平時的求助路徑。
 - `role_privacy_boundary_reviewer`：正文不得出現審稿語、投稿語、agent、社工版、SEO/AIO 或來源清單。
 
@@ -30,6 +33,9 @@
 - 段落節奏規則：保留可掃讀性，但把短提示句合併到前後脈絡，讓情境、數字和改善計畫讀起來更連續。
 - 標題吸引力規則：12 篇分別使用不同標題型態，避免排在一起像系列模板或內部規劃表。
 - 標題語氣規則：標題需像台灣一般讀者會說的話，不使用硬造詞、翻譯腔、顧問式抽象詞或 AI 感漂亮句。
+- 標題語意規則：標題需清楚指出生活問題，不能讓讀者需要猜測『等帳單』這類不合常理的轉折。
+- 標題鉤子規則：標題不能只是正確摘要或片語排列，需有生活畫面、壓力衝突、具體後果或完整口語疑問，讓讀者有理由點進去。
+- 標題讀者心聲規則：標題要像台灣讀者會搜尋、跟朋友說、或在心裡冒出來的問題；整理型標題只能當中間稿，不可直接進工作台。
 
 ## 外部閱讀資料參考
 
@@ -37,6 +43,8 @@
 - GOV.UK content principles：重要資訊應前置，短網頁與短段落有助理解，但仍需清楚組織。https://www.gov.uk/government/publications/govuk-content-principles-conventions-and-research-background/govuk-content-principles-conventions-and-research-background
 - GCA style guide paragraph length：段落約 5 行、1 個重點較容易讀。https://www.gca.gov.uk/government-commercial-agency-style-guide/formatting
 - Poynter：短句、短段與留白能降低視覺壓力，本次採用的是合併過短提示段，不是拉成大塊文字。https://www.poynter.org/reporting-editing/2019/please-please-please-shorter-sentences-shorter-paragraphs-more-white-space/
+- 2026-06-12 台灣語句邏輯 web learning：失業給付官方流程、104 職場文章、PTT/Dcard/Mobile01 一般討論顯示，標題需把眼前壓力收束成完整問題，例如「這個月房租要怎麼辦」。
+- 台灣語感參考來源：https://emps.wda.gov.tw/Internet/Index/labor-benefits.aspx、https://blog.104.com.tw/what-can-i-deal-with-lay-off/、https://www.ptt.cc/bbs/Salary/M.1448386533.A.9F5.html、https://www.dcard.tw/f/mood/p/260739216、https://www.mobile01.com/topicdetail.php?f=651&t=5791239
 
 ## 文章
 
@@ -50,7 +58,7 @@
 8. 公司說先減班，帳單卻不會跟著減半
 9. 家裡突然少一個人撐，前三個月最怕生活斷掉
 10. 退休金每月進來，也怕一次醫療或詐騙打亂生活
-11. 被資遣後最難等的，可能不是工作而是帳單
+11. 被資遣後，失業給付還沒下來，這個月房租要怎麼辦？
 12. 一場住院不只花醫藥費，還會讓薪水少一段
 
 ## 驗證

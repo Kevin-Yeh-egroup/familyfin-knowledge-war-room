@@ -176,6 +176,10 @@ const awkwardTitlePatterns = [
   /放進.*表.*看/,
   /先看.*能不能/,
   /要先算.*能不能/,
+  /最難等的.*不是.*而是/,
+  /常比.*失業給付.*先到/,
+  /要繳、.*要扣，.*還沒下來/,
+  /先怎麼撐/,
 ];
 
 function body(paragraphs) {
@@ -944,8 +948,8 @@ const articles = [
   {
     id: "unemployment-first-month",
     fileName: "11-unemployment-first-month.txt",
-    title: "被資遣後最難等的，可能不是工作而是帳單",
-    titleArchetype: "等待壓力",
+    title: "被資遣後，失業給付還沒下來，這個月房租要怎麼辦？",
+    titleArchetype: "求助疑問",
     primaryTag: "家庭重大事件-失業與收入中斷",
     secondaryTags: ["就業保險", "家庭現金流"],
     categoryType: "失業給付",
@@ -1442,6 +1446,9 @@ function buildArticleRecord(article, index) {
       "roleIntegrityReview",
       "titleAttractionReview",
       "titleNaturalnessReview",
+      "titleSemanticClarityReview",
+      "titleHookStrengthReview",
+      "titleReaderVoiceReview",
     ],
     preGenerationReview: preGenerationReview(article),
     readerSimulationReview: readerSimulationReview(article),
@@ -1519,6 +1526,52 @@ function buildArticleRecord(article, index) {
       revisionMove:
         "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。",
     },
+    titleSemanticClarityReview: {
+      status: "passed_title_logic_gate",
+      ownerStage: "human_copy_reviewer",
+      checkedPatterns: [
+        "one_read_understandable",
+        "clear_subject_and_problem",
+        "no_missing_comparison_target",
+        "no_clever_but_confusing_turn",
+        "reader_can_predict_article_topic",
+      ],
+      kevinFeedbackIntegrated:
+        "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+      revisionMove:
+        "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。",
+    },
+    titleHookStrengthReview: {
+      status: "passed_title_hook_gate",
+      ownerStage: "human_copy_reviewer",
+      checkedPatterns: [
+        "not_only_summary",
+        "concrete_life_scene",
+        "pressure_collision",
+        "reader_has_reason_to_click",
+        "no_report_headline_flatness",
+        "complete_question_or_clear_takeaway",
+      ],
+      kevinFeedbackIntegrated:
+        "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+      revisionMove:
+        "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。",
+    },
+    titleReaderVoiceReview: {
+      status: "passed_reader_voice_gate",
+      ownerStage: "taiwan_voice_ai_reduction_group",
+      checkedPatterns: [
+        "reader_inner_question",
+        "search_box_or_friend_talk_test",
+        "not_author_summary",
+        "not_editorial_outline",
+        "taiwan_plain_question_wording",
+      ],
+      kevinFeedbackIntegrated:
+        "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+      revisionMove:
+        "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。",
+    },
     sortOrder: index + 1,
   };
 }
@@ -1590,6 +1643,9 @@ function updateSuggestions(enrichedArticles, stats) {
     titleArchetypeDiversityRequired: true,
     titleTaiwanVoiceGateRequired: true,
     titleDeAiGateRequired: true,
+    titleSemanticClarityGateRequired: true,
+    titleHookStrengthGateRequired: true,
+    titleReaderVoiceGateRequired: true,
     latestGrounded12ArticlePackId: packId,
     latestGrounded12ArticlePackGeneratedAt: now,
     latestGrounded12ArticlePackArticleCount: enrichedArticles.length,
@@ -1615,6 +1671,9 @@ function updateSuggestions(enrichedArticles, stats) {
       "段落節奏改為短中有長：提示句合併到說明段，每篇補一段承接敘述，避免讀起來破碎。",
       "標題先呈現生活張力、疑問、後果或反差，不把整批文章命名成同一套工作台句型。",
       "標題也需通過台灣自然語氣與去 AI 感檢查，不使用房租日、收入空窗、財務止血等硬造詞或內部規劃語。",
+      "標題需通過語意清楚度檢查，讀者看第一眼就要知道生活問題，不使用聰明但不合邏輯的轉折。",
+      "標題需通過鉤子強度檢查，不能只是平鋪直述的文章摘要或片語排列，至少要有生活畫面、壓力衝突、具體後果或完整問題。",
+      "標題需通過讀者心聲檢查，先從整理型標題確認題目，再改成讀者會搜尋、會問朋友、會在心裡冒出的句子。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。",
     ],
     articles: enrichedArticles,
@@ -1638,6 +1697,9 @@ function updateSuggestions(enrichedArticles, stats) {
       titleArchetypeDiversityRequired: true,
       titleTaiwanVoiceRequired: true,
       titleDeAiRequired: true,
+      titleSemanticClarityRequired: true,
+      titleHookStrengthRequired: true,
+      titleReaderVoiceRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     articlePackGreenReviewPolicy: {
@@ -1678,8 +1740,11 @@ function updateHistory(stats) {
       "每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。",
       "每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。",
       "每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。",
-      "標題改用不同入口：生活疑問、照顧衝突、口語疑問、安心提醒、意外成本、時間壓力、生活畫面、反差句、後果提醒、風險提醒、等待壓力與事件後果，避免整批看起來一樣。",
+      "標題改用不同入口：生活疑問、照顧衝突、口語疑問、安心提醒、意外成本、時間壓力、生活畫面、反差句、後果提醒、風險提醒、求助疑問與事件後果，避免整批看起來一樣。",
       "標題同步加入台灣用語與去 AI 感檢查；例如不使用房租日這種不像台灣讀者日常會說的硬造詞。",
+      "標題同步加入語意清楚度檢查；一句話要講得通，不能只追求反差或漂亮轉折。",
+      "標題同步加入鉤子強度檢查；清楚但沒有感覺、像報告摘要、只有資訊排列或話沒說完的標題，必須退回重擬。",
+      "標題同步加入讀者心聲檢查；避免作者摘要、編輯大綱或寫作腔，改成一般民眾真的會問的話。",
       "資源段以家庭好處呈現，不寫成政策公告。",
       "正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。",
     ],
@@ -1695,6 +1760,9 @@ function updateHistory(stats) {
       "styleVariationGate 已納入生成規則：不是...而是最多 3 次、比較穩 0 次、自問自答轉場最多 1 次、真正最多 3 次。",
       "titleAttractionReview 已納入生成規則：標題不得只使用同一種句型或工作台語氣。",
       "titleNaturalnessReview 已納入生成規則：標題必須通過台灣自然語氣與去 AI 感檢查。",
+      "titleSemanticClarityReview 已納入生成規則：標題必須一眼讀懂生活問題與文章要處理的時間差或金額壓力。",
+      "titleHookStrengthReview 已納入生成規則：標題必須有生活畫面、壓力衝突、具體後果或完整口語問題，不能只是正確摘要或片語排列。",
+      "titleReaderVoiceReview 已納入生成規則：標題必須從讀者心聲出發，通過搜尋框、朋友對話與心裡冒出來三種口語測試。",
       "role leak audit 需於生成後由工具驗證。",
     ],
     relatedLogs: [
@@ -1744,6 +1812,9 @@ function writeReport(stats) {
     "- `human_copy_reviewer`：依外部閱讀研究與 Kevin 回饋，將過短提示段合併成較完整的敘述段，避免讀起來像卡片條列。",
     "- `topic_planning_group`：依 Kevin 回饋重擬標題，讓每篇使用不同入口，不用同一套「先看／要算／分開算」模板。",
     "- `taiwan_voice_ai_reduction_group`：標題也進入台灣用語與去 AI 感檢查，避免房租日、收入空窗、財務止血等硬造詞。",
+    "- `human_copy_reviewer`：標題需先講得通，避免用聰明反差造成讀者不知道文章在說什麼。",
+    "- `human_copy_reviewer`：標題還需有鉤子強度與完整重點，避免只像把文章主旨平鋪直述地講完，或把幾個壓力片語排在一起。",
+    "- `taiwan_voice_ai_reduction_group`：標題最後需轉成讀者心聲，像搜尋框、朋友對話或心裡冒出的問題，不停在作者摘要。",
     "- `numeric_decision_reviewer`：每篇都有改善前後差異、施行效果與仍未打平時的求助路徑。",
     "- `role_privacy_boundary_reviewer`：正文不得出現審稿語、投稿語、agent、社工版、SEO/AIO 或來源清單。",
     "",
@@ -1760,6 +1831,9 @@ function writeReport(stats) {
     "- 段落節奏規則：保留可掃讀性，但把短提示句合併到前後脈絡，讓情境、數字和改善計畫讀起來更連續。",
     "- 標題吸引力規則：12 篇分別使用不同標題型態，避免排在一起像系列模板或內部規劃表。",
     "- 標題語氣規則：標題需像台灣一般讀者會說的話，不使用硬造詞、翻譯腔、顧問式抽象詞或 AI 感漂亮句。",
+    "- 標題語意規則：標題需清楚指出生活問題，不能讓讀者需要猜測『等帳單』這類不合常理的轉折。",
+    "- 標題鉤子規則：標題不能只是正確摘要或片語排列，需有生活畫面、壓力衝突、具體後果或完整口語疑問，讓讀者有理由點進去。",
+    "- 標題讀者心聲規則：標題要像台灣讀者會搜尋、跟朋友說、或在心裡冒出來的問題；整理型標題只能當中間稿，不可直接進工作台。",
     "",
     "## 外部閱讀資料參考",
     "",
@@ -1767,6 +1841,8 @@ function writeReport(stats) {
     "- GOV.UK content principles：重要資訊應前置，短網頁與短段落有助理解，但仍需清楚組織。https://www.gov.uk/government/publications/govuk-content-principles-conventions-and-research-background/govuk-content-principles-conventions-and-research-background",
     "- GCA style guide paragraph length：段落約 5 行、1 個重點較容易讀。https://www.gca.gov.uk/government-commercial-agency-style-guide/formatting",
     "- Poynter：短句、短段與留白能降低視覺壓力，本次採用的是合併過短提示段，不是拉成大塊文字。https://www.poynter.org/reporting-editing/2019/please-please-please-shorter-sentences-shorter-paragraphs-more-white-space/",
+    "- 2026-06-12 台灣語句邏輯 web learning：失業給付官方流程、104 職場文章、PTT/Dcard/Mobile01 一般討論顯示，標題需把眼前壓力收束成完整問題，例如「這個月房租要怎麼辦」。",
+    "- 台灣語感參考來源：https://emps.wda.gov.tw/Internet/Index/labor-benefits.aspx、https://blog.104.com.tw/what-can-i-deal-with-lay-off/、https://www.ptt.cc/bbs/Salary/M.1448386533.A.9F5.html、https://www.dcard.tw/f/mood/p/260739216、https://www.mobile01.com/topicdetail.php?f=651&t=5791239",
     "",
     "## 文章",
     "",

@@ -77,7 +77,10 @@
     "titleAttractionGateRequired": true,
     "titleArchetypeDiversityRequired": true,
     "titleTaiwanVoiceGateRequired": true,
-    "titleDeAiGateRequired": true
+    "titleDeAiGateRequired": true,
+    "titleSemanticClarityGateRequired": true,
+    "titleHookStrengthGateRequired": true,
+    "titleReaderVoiceGateRequired": true
   },
   "learningSummary": {
     "status": "completed",
@@ -208,6 +211,9 @@
       "段落節奏改為短中有長：提示句合併到說明段，每篇補一段承接敘述，避免讀起來破碎。",
       "標題先呈現生活張力、疑問、後果或反差，不把整批文章命名成同一套工作台句型。",
       "標題也需通過台灣自然語氣與去 AI 感檢查，不使用房租日、收入空窗、財務止血等硬造詞或內部規劃語。",
+      "標題需通過語意清楚度檢查，讀者看第一眼就要知道生活問題，不使用聰明但不合邏輯的轉折。",
+      "標題需通過鉤子強度檢查，不能只是平鋪直述的文章摘要或片語排列，至少要有生活畫面、壓力衝突、具體後果或完整問題。",
+      "標題需通過讀者心聲檢查，先從整理型標題確認題目，再改成讀者會搜尋、會問朋友、會在心裡冒出的句子。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。"
     ],
     "articles": [
@@ -293,7 +299,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -545,6 +554,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 1
       },
       {
@@ -635,7 +684,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -888,6 +940,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 2
       },
       {
@@ -972,7 +1064,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1224,6 +1319,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 3
       },
       {
@@ -1308,7 +1443,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1560,6 +1698,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 4
       },
       {
@@ -1644,7 +1822,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1896,6 +2077,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 5
       },
       {
@@ -1980,7 +2201,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2232,6 +2456,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 6
       },
       {
@@ -2310,7 +2574,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2561,6 +2828,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 7
       },
       {
@@ -2645,7 +2952,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2897,6 +3207,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 8
       },
       {
@@ -2981,7 +3331,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3233,6 +3586,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 9
       },
       {
@@ -3323,7 +3716,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3576,12 +3972,52 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 10
       },
       {
         "id": "unemployment-first-month",
-        "title": "被資遣後最難等的，可能不是工作而是帳單",
-        "titleArchetype": "等待壓力",
+        "title": "被資遣後，失業給付還沒下來，這個月房租要怎麼辦？",
+        "titleArchetype": "求助疑問",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-失業與收入中斷",
         "secondaryTags": [
@@ -3660,7 +4096,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3889,12 +4328,12 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "被資遣後最難等的可能不是工作而是帳單",
+          "normalizedTitle": "被資遣後失業給付還沒下來這個月房租要怎麼辦",
           "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
         },
         "titleAttractionReview": {
           "status": "passed_current_pack_gate",
-          "archetype": "等待壓力",
+          "archetype": "求助疑問",
           "ownerStage": "topic_planning_group",
           "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
           "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
@@ -3911,6 +4350,46 @@
           ],
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
+        },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
         },
         "sortOrder": 11
       },
@@ -3996,7 +4475,10 @@
           "behaviorRealismReview",
           "roleIntegrityReview",
           "titleAttractionReview",
-          "titleNaturalnessReview"
+          "titleNaturalnessReview",
+          "titleSemanticClarityReview",
+          "titleHookStrengthReview",
+          "titleReaderVoiceReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -4248,6 +4730,46 @@
           "bannedExample": "房租日",
           "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
+        "titleSemanticClarityReview": {
+          "status": "passed_title_logic_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "one_read_understandable",
+            "clear_subject_and_problem",
+            "no_missing_comparison_target",
+            "no_clever_but_confusing_turn",
+            "reader_can_predict_article_topic"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題不只要台灣化，語句也要看台灣人會不會這樣講；例如「最難等的是帳單」會讓讀者不懂意思。",
+          "revisionMove": "標題若需要讀者猜前後文才懂，或把『等帳單』這類不合常理的語意轉折當亮點，需退回改成具體生活問題與時間差。"
+        },
+        "titleHookStrengthReview": {
+          "status": "passed_title_hook_gate",
+          "ownerStage": "human_copy_reviewer",
+          "checkedPatterns": [
+            "not_only_summary",
+            "concrete_life_scene",
+            "pressure_collision",
+            "reader_has_reason_to_click",
+            "no_report_headline_flatness",
+            "complete_question_or_clear_takeaway"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：標題清楚仍不夠；例如「被資遣後第一個月，房租和帳單常比失業給付先到」平鋪直述，讀者沒有感覺；「被資遣那個月，房租要繳、帳單要扣，失業給付還沒下來」像話沒說完，缺少重點。",
+          "revisionMove": "標題需至少放入一個生活畫面、壓力衝突、具體後果或口語疑問，並把主問題講完整；若只是把片語排列或文章主旨摘要講完，即使正確也需退回重擬。"
+        },
+        "titleReaderVoiceReview": {
+          "status": "passed_reader_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "reader_inner_question",
+            "search_box_or_friend_talk_test",
+            "not_author_summary",
+            "not_editorial_outline",
+            "taiwan_plain_question_wording"
+          ],
+          "kevinFeedbackIntegrated": "2026-06-12：讀者心聲比整理型標題更有力；「這個月房租要怎麼辦？」比「這個月房租先怎麼撐？」更像台灣一般民眾真的會問的話。",
+          "revisionMove": "標題先允許整理型版本確認題目，再改成讀者心聲版本；若不像台灣讀者會丟進搜尋框、跟朋友說、或在心裡冒出的問題，即使清楚也要退回。"
+        },
         "sortOrder": 12
       }
     ],
@@ -4284,6 +4806,9 @@
       "titleArchetypeDiversityRequired": true,
       "titleTaiwanVoiceRequired": true,
       "titleDeAiRequired": true,
+      "titleSemanticClarityRequired": true,
+      "titleHookStrengthRequired": true,
+      "titleReaderVoiceRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "articlePackGreenReviewPolicy": {
@@ -4339,7 +4864,7 @@
         "公司說先減班，帳單卻不會跟著減半",
         "家裡突然少一個人撐，前三個月最怕生活斷掉",
         "退休金每月進來，也怕一次醫療或詐騙打亂生活",
-        "被資遣後最難等的，可能不是工作而是帳單",
+        "被資遣後，失業給付還沒下來，這個月房租要怎麼辦？",
         "一場住院不只花醫藥費，還會讓薪水少一段"
       ]
     }
