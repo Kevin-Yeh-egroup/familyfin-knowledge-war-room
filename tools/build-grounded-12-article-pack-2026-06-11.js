@@ -163,6 +163,21 @@ const awkwardBodyPatterns = [
   /資源能不能.*接上/,
 ];
 
+const awkwardTitlePatterns = [
+  /房租日/,
+  /收入空窗/,
+  /進帳空窗/,
+  /財務止血/,
+  /承接風險/,
+  /風險承接/,
+  /正式資源/,
+  /正式窗口/,
+  /生活被接住/,
+  /放進.*表.*看/,
+  /先看.*能不能/,
+  /要先算.*能不能/,
+];
+
 function body(paragraphs) {
   const rawText = paragraphs.map((line) => line.trim()).filter(Boolean).join("\n\n");
   return smoothParagraphRhythm(rawText);
@@ -231,10 +246,10 @@ const stylePhraseReplacements = new Map([
   ["很多人不是不會安排生活，而是每個月最重的一筆錢剛好排在最前面。", "很多人其實已經很會安排，只是每個月最重的一筆錢剛好排在最前面。"],
   ["對家庭來說，最重要的不是背下所有規定，而是知道它核定後，能不能讓下個月少一點固定壓力。", "對家庭來說，不必背下所有規定；更要看的是核定後，下個月能不能少一點固定壓力。"],
   ["很多家庭一寫出來才發現，問題不是整個月花太多，而是月初需要的錢比帳戶餘額多。", "很多家庭一寫出來才發現，整個月未必花太多，月初需要的錢卻已經超過帳戶餘額。"],
-  ["改善不是靠單一妙招，而是房租日期、固定支出和短期缺口一起被看見。", "改善通常靠幾件事一起發生：房租日期被看見、固定支出降下來、短期缺口不要再滾成新債。"],
+  ["改善不是靠單一妙招，而是房租日期、固定支出和短期缺口一起被看見。", "改善通常靠幾件事一起發生：繳房租的日期被看見、固定支出降下來、短期缺口不要再滾成新債。"],
   ["房租表不是為了證明自己撐不住，而是幫你知道要先問哪個缺口。", "房租表的用處，是幫你看出眼前要先問哪個缺口。"],
   ["能打平的計畫，通常不是一口氣改變人生，而是讓下個月少一次借錢。", "能打平的計畫，通常先從下個月少一次借錢開始。"],
-  ["如果這樣做兩個月後，房租日前仍然固定差一筆錢，就不是記帳不夠認真，而是收入日期和固定支出結構不合。", "如果這樣做兩個月後，房租日前仍然固定差一筆錢，問題多半已經不在記帳，而在收入日期和固定支出結構不合。"],
+  ["如果這樣做兩個月後，房租日前仍然固定差一筆錢，就不是記帳不夠認真，而是收入日期和固定支出結構不合。", "如果這樣做兩個月後，繳房租前仍然固定差一筆錢，問題多半已經不在記帳，而在收入日期和固定支出結構不合。"],
   ["這時要處理的不是忍耐，而是房租、扣款日、債務月付或可用資源哪一個要重新安排。", "這時要重新安排的，會是房租、扣款日、債務月付或可用資源其中一項。"],
   ["最後還要留意一件事：補貼不是用來讓家庭忽略原本的租屋壓力，而是幫家庭爭取調整時間。", "最後還要留意一件事：補貼的作用，是替家庭爭取調整時間，不是讓原本的租屋壓力被忽略。"],
   ["這不是不努力，而是生活一開始就排成負數。", "這種狀況不能簡化成不努力，因為生活一開始就排成負數。"],
@@ -363,7 +378,7 @@ function reduceTemplatePhrases(text) {
     .replace(/真正讓/g, "讓")
     .replace(/比較穩/g, "較能維持")
     .replace(/比較不傷現金流/g, "現金流壓力較小")
-    .replace(/但這個月五號怎麼辦，還是要先處理。/g, "接下來要回到眼前的房租日。");
+    .replace(/但這個月五號怎麼辦，還是要先處理。/g, "接下來要先處理眼前這筆房租。");
 }
 
 function stylePatternStats(text) {
@@ -577,21 +592,22 @@ const articles = [
   {
     id: "rent-subsidy-payment-date",
     fileName: "01-rent-subsidy-payment-date.txt",
-    title: "房租日比薪水早到，租金補貼要先放進收支表裡看",
+    title: "帳戶還有錢，為什麼繳房租那天還是會慌",
+    titleArchetype: "生活疑問",
     primaryTag: "居住支出-租屋與補貼",
     secondaryTags: ["財務管理與規劃-現金流", "政府救助資源-住宅補貼"],
     categoryType: "居住現金流",
     primaryPattern: "policy_decision_order",
     sources: [sourceBank.rentSubsidy, sourceBank.welfare1957],
-    hook: "租屋家庭最緊的常常不是整月不夠，而是房租日早於薪水日。",
-    assessmentTask: "把房租日、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出房租日前缺口。",
-    decisionBoundary: "若房租日前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。",
+    hook: "租屋家庭最緊的常常不是整月不夠，而是房租要繳的時間早於薪水入帳。",
+    assessmentTask: "把繳房租的日期、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出繳房租前的缺口。",
+    decisionBoundary: "若繳房租前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。",
     capability: "學會把補貼從年度政策轉成家庭每月與每日可用現金。",
     readerTakeaway: "先看日期和缺口，再看補貼能補哪一段，才不會把希望放在還沒入帳的錢。",
     beforeAfter: "月初缺10,000元；補貼核定與固定支出調整後，每月可多留4,500元。",
     remainingGapPath: "若仍缺本月房租，先問所在地租屋或急難協助，並把可延後扣款與不能斷的支出分開。",
     text: body([
-      "房租日比薪水早到，是很多租屋家庭說不出口的緊張。",
+      "房租要繳的時間比薪水早到，是很多租屋家庭說不出口的緊張。",
       "整個月看起來也許沒有赤字，可是房租五號要匯，薪水十號才進來。中間那五天，帳戶裡的錢不夠，房東也不會因為補貼還在審就自動等一下。很多人不是不會安排生活，而是每個月最重的一筆錢剛好排在最前面。",
       "把一個家庭的帳攤開來看。月收入58,000元，房租22,000元，孩子餐費與交通9,000元，水電手機4,000元，債務最低應繳5,000元，其他基本吃飯與日用品大約16,000元。整月加起來還能勉強打平，可是月初帳戶只剩12,000元，五號房租就差10,000元。",
       "這個缺口不是少買幾杯飲料能解決。它是日期問題，也是固定支出太靠近收入的問題。",
@@ -601,17 +617,18 @@ const articles = [
       "比較實際的順序，是先做一次收支核對。第一欄寫收入哪一天進來，第二欄寫房租、水電、信用卡、保費哪一天扣，第三欄寫扣款前帳戶大概剩多少。很多家庭一寫出來才發現，問題不是整個月花太多，而是月初需要的錢比帳戶餘額多。",
       "接著把缺口分成兩種。第一種是這個月不能斷的房租、餐食、交通、醫療。第二種是可以詢問延後、降額或暫緩的保費、分期、部分帳單。不要一開始就用高利借款補房租，因為下個月房租還會再來。",
       "有些人會說，可以跟房東談晚幾天。但在台灣租屋生活裡，這不是容易開口的事。租約寫著日期，承租人也怕一開口就被貼上繳不出房租的印象。比較穩的做法，是先把下個月房租在薪水進來當天移到房租帳戶，不讓它被其他支出吃掉。真的避不開時，再看租約、確認可付款日期，提早用訊息留下紀錄，而不是等到被催才處理。",
-      "如果補貼核定後每月少3,200元，手機方案再降500元，暫停一筆可延後的非必要支出800元，每月就多出4,500元。原本月底差2,000元的家庭，可以先不再新增卡債，還能留下2,500元處理醫療或孩子臨時費用。改善不是靠單一妙招，而是房租日期、固定支出和短期缺口一起被看見。",
+      "如果補貼核定後每月少3,200元，手機方案再降500元，暫停一筆可延後的非必要支出800元，每月就多出4,500元。原本月底差2,000元的家庭，可以先不再新增卡債，還能留下2,500元處理醫療或孩子臨時費用。改善不是靠單一妙招，而是繳房租的日期、固定支出和短期缺口一起被看見。",
       "也要把房租看完整。管理費、電費計價、網路、停車、退租提前告知，都會改變實際居住成本。房租寫20,000元，管理費1,500元，電費每月多700元，實際就是22,200元。每月少算2,200元，一年就是26,400元，足以讓家庭一直覺得自己怎麼算都算不準。",
       "搬家也不能只看新房租比較低。每月少2,000元聽起來很好，可是搬家、清潔、押金差額和通勤增加若要40,000元，要住滿20個月才開始真的省到。手上沒有緩衝時，搬家第一個月可能比原地整理更危險。",
       "如果排完日期還是打不平，就要找可靠窗口。中央補貼比較像降低後面月份的租金壓力；地方租屋協助、急難協助或1957福利諮詢，才可能幫你釐清眼前哪一筆會先斷。詢問時不用把人生全部講完，先說清楚本月房租差多少、何時到期、手上有什麼文件、是否有孩子或長輩支出。",
-      "房租讓人焦慮，不代表你不會生活。有時候只是錢差那幾天，卻每個月都差那幾天。先把房租日、薪水日和扣款日放在同一張收支表裡，才知道要處理的是金額、日期，還是需要先找窗口把這個月的洞補起來。",
+      "房租讓人焦慮，不代表你不會生活。有時候只是錢差那幾天，卻每個月都差那幾天。先把繳房租的日期、薪水日和扣款日放在同一張收支表裡，才知道要處理的是金額、日期，還是需要先找窗口把這個月的洞補起來。",
     ]),
   },
   {
     id: "single-parent-childcare-work-hours",
     fileName: "02-single-parent-childcare-work-hours.txt",
-    title: "一個人接孩子也接帳單，單親家庭要先算托育和工時能不能配合",
+    title: "一個人接孩子，最怕帳單也同時到期",
+    titleArchetype: "照顧衝突",
     primaryTag: "家庭重大事件-家庭型態改變",
     secondaryTags: ["托育與照顧支出", "政府救助資源-育兒與托育補助"],
     categoryType: "照顧與收入",
@@ -645,7 +662,8 @@ const articles = [
   {
     id: "debt-minimum-payment-plan",
     fileName: "03-debt-minimum-payment-plan.txt",
-    title: "每月都有還錢，為什麼債務還是沒降下來",
+    title: "明明每月都有繳，債務怎麼還是卡在那裡",
+    titleArchetype: "口語疑問",
     primaryTag: "財務管理與規劃-債務與信用",
     secondaryTags: ["家庭現金流", "法律與金融求助"],
     categoryType: "債務整理",
@@ -679,7 +697,8 @@ const articles = [
   {
     id: "emergency-buffer-days",
     fileName: "04-emergency-buffer-days.txt",
-    title: "緊急預備金不用先想六個月，先看家裡能撐幾天",
+    title: "存不到六個月也沒關係，先知道家裡能撐幾天",
+    titleArchetype: "安心提醒",
     primaryTag: "財務管理與規劃-緊急預備金",
     secondaryTags: ["家庭現金流", "急難與福利諮詢"],
     categoryType: "風險緩衝",
@@ -704,7 +723,7 @@ const articles = [
       "原本每月可留下4,000元，存到30,000元要約8個月，而且中間不能出意外。若手機與訂閱調降800元、外食每週少兩次約1,600元、和債權人把一筆月付從5,000元談到4,000元，每月可留下7,400元。存到30,000元就從8個月縮到約5個月。",
       "改善關鍵不是意志力，而是固定支出、飲食型態和債務月付一起稍微鬆開。",
       "預備金也要分層。第一層是3到7天能立刻用的錢，處理交通、餐費、藥費。第二層是一個月內可動用的帳戶，處理房租、保費和孩子費用。第三層才是比較長期的安全網。很多家庭有保單或親友承諾，卻沒有明天能用的錢，小狀況就容易變成大壓力。",
-      "也可以把支出分成紅燈、黃燈和綠燈。紅燈是房租、基本食物、必要交通、醫療和孩子照顧。黃燈是可以延後但不能消失的保費、學費、家用或協商中的月付。綠燈才是可暫停的項目。收入一變少，如果只砍綠燈卻沒看紅燈日期，房租日仍可能出事。",
+      "也可以把支出分成紅燈、黃燈和綠燈。紅燈是房租、基本食物、必要交通、醫療和孩子照顧。黃燈是可以延後但不能消失的保費、學費、家用或協商中的月付。綠燈才是可暫停的項目。收入一變少，如果只砍綠燈卻沒看紅燈日期，房租要繳時仍可能出事。",
       "若紅燈支出每月42,000元，手上只有10,000元，代表紅燈只能撐約7天，而不是一個月。這種分法會讓人更快知道，真正需要談的是房租、餐食、交通和醫療，不是先為小額娛樂自責。",
       "如果手上已經只剩幾天緩衝，也要知道外部資源有時間差。1957福利諮詢、地方社會福利窗口、急難救助、就業服務、醫療協助，都可能是入口，但通常需要文件、審核和時間。家庭要先知道哪一筆錢撐今天，哪個窗口處理這一週，哪個制度處理接下來一個月。",
       "前後差距可以很小，但很重要。原本手上只有5,000元，遇到收入延遲十天，第3天就開始借錢。三個月後手上有18,000元，至少可撐約9天；同時先查好急難資源與公司請假規則，處理時間就不會全部壓在同一天。這不是讓風險消失，而是讓家庭不必一開始就掉進債務。",
@@ -714,7 +733,8 @@ const articles = [
   {
     id: "long-term-care-cost-plan",
     fileName: "05-long-term-care-cost-plan.txt",
-    title: "長照不是只有看護費，家裡少掉的工時也要一起算",
+    title: "照顧長輩最貴的，常常是少掉的上班時間",
+    titleArchetype: "意外成本",
     primaryTag: "家庭重大事件-長照與醫療",
     secondaryTags: ["照顧支出", "政府救助資源-長照"],
     categoryType: "照顧成本",
@@ -749,7 +769,8 @@ const articles = [
   {
     id: "scam-loss-thirty-days",
     fileName: "06-scam-loss-thirty-days.txt",
-    title: "被騙後先別急著補回全部損失，先保住接下來30天",
+    title: "錢被騙走後，接下來30天更要穩住生活",
+    titleArchetype: "時間壓力",
     primaryTag: "財務安全與風險-詐騙防治",
     secondaryTags: ["家庭現金流", "高齡與金融風險"],
     categoryType: "詐騙後財務處理",
@@ -783,7 +804,8 @@ const articles = [
   {
     id: "first-job-fixed-costs",
     fileName: "07-first-job-fixed-costs.txt",
-    title: "第一份薪水不是全部都能花，先看房租、家用和學貸剩多少",
+    title: "第一份薪水還沒入口袋，房租和家用已經在排隊",
+    titleArchetype: "生活畫面",
     primaryTag: "生命歷程與財務-青年就業",
     secondaryTags: ["財務管理與規劃-收支計畫", "家庭支持與家用"],
     categoryType: "青年起步",
@@ -817,7 +839,8 @@ const articles = [
   {
     id: "reduced-hours-three-bills",
     fileName: "08-reduced-hours-three-bills.txt",
-    title: "公司開始減班，家裡先看房貸、保費和孩子費用",
+    title: "公司說先減班，帳單卻不會跟著減半",
+    titleArchetype: "反差句",
     primaryTag: "家庭重大事件-收入中斷",
     secondaryTags: ["勞動權益與就業支持", "家庭現金流"],
     categoryType: "減班休息",
@@ -852,7 +875,8 @@ const articles = [
   {
     id: "special-family-three-months",
     fileName: "09-special-family-three-months.txt",
-    title: "家庭突然少一個支撐，前三個月要先保住哪些支出",
+    title: "家裡突然少一個人撐，前三個月最怕生活斷掉",
+    titleArchetype: "後果提醒",
     primaryTag: "主要問題彙編-政府救助資源",
     secondaryTags: ["特殊境遇家庭", "急難與生活扶助"],
     categoryType: "家庭變故",
@@ -885,7 +909,8 @@ const articles = [
   {
     id: "retirement-care-fraud-buffer",
     fileName: "10-retirement-care-fraud-buffer.txt",
-    title: "退休金每月都有進來，還是要把醫療、照顧和詐騙分開算",
+    title: "退休金每月進來，也怕一次醫療或詐騙打亂生活",
+    titleArchetype: "風險提醒",
     primaryTag: "生命歷程與財務-退休與高齡",
     secondaryTags: ["長照與醫療", "詐騙防治"],
     categoryType: "高齡財務",
@@ -919,7 +944,8 @@ const articles = [
   {
     id: "unemployment-first-month",
     fileName: "11-unemployment-first-month.txt",
-    title: "被資遣後第一個月，先算家裡能不能等到給付進來",
+    title: "被資遣後最難等的，可能不是工作而是帳單",
+    titleArchetype: "等待壓力",
     primaryTag: "家庭重大事件-失業與收入中斷",
     secondaryTags: ["就業保險", "家庭現金流"],
     categoryType: "失業給付",
@@ -952,7 +978,8 @@ const articles = [
   {
     id: "sickness-benefit-hospital-cashflow",
     fileName: "12-sickness-benefit-hospital-cashflow.txt",
-    title: "住院時薪水少了，家裡還要先撐過哪幾筆錢",
+    title: "一場住院不只花醫藥費，還會讓薪水少一段",
+    titleArchetype: "事件後果",
     primaryTag: "家庭重大事件-疾病與醫療支出",
     secondaryTags: ["勞保傷病給付", "家庭現金流"],
     categoryType: "疾病收入中斷",
@@ -1056,7 +1083,7 @@ for (const article of articles) {
 
 const articleContinuityBridges = {
   "rent-subsidy-payment-date": body([
-    "這種壓力最磨人的地方，是它每個月都會重來。雅婷可以省午餐、少買東西，也可以把孩子的費用一再往後排，可是房租日不會因為她已經很努力就晚幾天。讀者若只看全年收入，會覺得這個家庭還能撐；但把日期擺進來看，才會看見她每次都是在月初先被推到牆邊。",
+    "這種壓力最磨人的地方，是它每個月都會重來。雅婷可以省午餐、少買東西，也可以把孩子的費用一再往後排，可是繳房租的日期不會因為她已經很努力就晚幾天。讀者若只看全年收入，會覺得這個家庭還能撐；但把日期擺進來看，才會看見她每次都是在月初先被推到牆邊。",
   ]),
   "single-parent-childcare-work-hours": body([
     "小美的生活不是只有一張收支表，而是一張每天都會被時間打亂的行程表。孩子幾點下課、托育能不能延長、公司能不能提前知道班表，這些都會影響她能不能穩定上班。錢的缺口常常不是一次出現，而是在每一次不能加班、臨時請假、交通繞路裡慢慢累積。",
@@ -1103,7 +1130,7 @@ const articleAddenda = {
   "rent-subsidy-payment-date": body([
     "還有一個常被忽略的檢查，是補貼核定後也要繼續看資格和租約。租約到期、搬家、家庭成員變動、帳戶資料錯誤，都可能讓補貼延後或需要補件。家庭若把每月補貼直接算成一定會進來的錢，遇到延遲就會再次卡住。",
     "比較穩的是把補貼分成兩種用途。已經入帳的補貼，可以拿來降低當月房租壓力；還沒入帳的補貼，只能當作未來可能減壓，不能拿來承諾今天要付的帳。這個差別很小，卻能避免家庭把希望放在還沒到手的錢上。",
-    "如果整理後仍然每月少3,000元以上，就代表問題不只在房租日期。這時要回頭看收入是否穩定、債務月付是否太高、孩子或長輩支出是否有其他資源可問。房租表不是為了證明自己撐不住，而是幫你知道要先問哪個缺口。",
+    "如果整理後仍然每月少3,000元以上，就代表問題不只在繳房租的日期。這時要回頭看收入是否穩定、債務月付是否太高、孩子或長輩支出是否有其他資源可問。房租表不是為了證明自己撐不住，而是幫你知道要先問哪個缺口。",
     "能打平的計畫，通常不是一口氣改變人生，而是讓下個月少一次借錢。只要少一次借款，下一個月就少一筆最低應繳，家庭才會慢慢從追帳單，回到可以安排生活。",
   ]),
   "single-parent-childcare-work-hours": body([
@@ -1183,7 +1210,7 @@ for (const article of articles) {
 const articleFinalChecks = {
   "rent-subsidy-payment-date": body([
     "你也可以用一個很簡單的方式檢查：下次薪水進來後，先不要急著付所有帳單，先把房租、餐費和交通分開放。過三天再看剩下多少，會比月底才翻帳單更早知道危險在哪裡。",
-    "如果這樣做兩個月後，房租日前仍然固定差一筆錢，就不是記帳不夠認真，而是收入日期和固定支出結構不合。這時要處理的不是忍耐，而是房租、扣款日、債務月付或可用資源哪一個要重新安排。",
+    "如果這樣做兩個月後，繳房租前仍然固定差一筆錢，就不是記帳不夠認真，而是收入日期和固定支出結構不合。這時要處理的不是忍耐，而是房租、扣款日、債務月付或可用資源哪一個要重新安排。",
   ]),
   "single-parent-childcare-work-hours": body([
     "每個月底可以回頭看三個數字：托育自己付多少、因接送或生病少掉多少收入、真正穩定進來的支援有多少。這三個數字比一句有沒有補助更接近生活。",
@@ -1307,10 +1334,15 @@ for (const article of articles) {
 function validateArticles() {
   const ids = new Set();
   const normalizedTitles = new Set();
+  const titleArchetypes = new Set();
   const styleStatsList = [];
   for (const article of articles) {
     if (ids.has(article.id)) throw new Error(`duplicate article id: ${article.id}`);
     ids.add(article.id);
+    if (!article.titleArchetype) throw new Error(`${article.id} titleArchetype missing`);
+    titleArchetypes.add(article.titleArchetype);
+    const awkwardTitle = awkwardTitlePatterns.filter((pattern) => pattern.test(article.title));
+    if (awkwardTitle.length) throw new Error(`${article.id} awkward title phrasing: ${awkwardTitle.join(", ")}`);
     const normalizedTitle = normalizeTitleForSimilarity(article.title);
     if (normalizedTitles.has(normalizedTitle)) throw new Error(`duplicate normalized title: ${article.title}`);
     normalizedTitles.add(normalizedTitle);
@@ -1344,6 +1376,9 @@ function validateArticles() {
   if (articlesWithNotBut > Math.floor(articles.length / 2)) {
     throw new Error(`article pack has too many articles using not-but pattern: ${articlesWithNotBut}/${articles.length}`);
   }
+  if (titleArchetypes.size < 6) {
+    throw new Error(`article pack title archetypes too narrow: ${titleArchetypes.size}/6`);
+  }
 }
 
 function buildArticleRecord(article, index) {
@@ -1351,6 +1386,7 @@ function buildArticleRecord(article, index) {
   return {
     id: article.id,
     title: article.title,
+    titleArchetype: article.titleArchetype,
     audience: "一般民眾",
     primaryTag: article.primaryTag,
     secondaryTags: article.secondaryTags,
@@ -1404,6 +1440,8 @@ function buildArticleRecord(article, index) {
       "bodyNaturalnessReview",
       "behaviorRealismReview",
       "roleIntegrityReview",
+      "titleAttractionReview",
+      "titleNaturalnessReview",
     ],
     preGenerationReview: preGenerationReview(article),
     readerSimulationReview: readerSimulationReview(article),
@@ -1457,7 +1495,29 @@ function buildArticleRecord(article, index) {
     titleNoveltyReview: {
       status: "passed_current_pack_gate",
       normalizedTitle: normalizeTitleForSimilarity(article.title),
-      note: "12篇標題不做系列化命名，避免同一節奏。",
+      note: "12篇標題不做系列化命名，也不只換名詞套同一句型。",
+    },
+    titleAttractionReview: {
+      status: "passed_current_pack_gate",
+      archetype: article.titleArchetype,
+      ownerStage: "topic_planning_group",
+      kevinFeedbackIntegrated: "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+      revisionMove:
+        "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。",
+    },
+    titleNaturalnessReview: {
+      status: "passed_title_voice_gate",
+      ownerStage: "taiwan_voice_ai_reduction_group",
+      checkedPatterns: [
+        "taiwan_daily_wording",
+        "no_internal_finance_jargon",
+        "no_translation_tone",
+        "no_template_title_cadence",
+        "no_awkward_title_terms",
+      ],
+      bannedExample: "房租日",
+      revisionMove:
+        "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。",
     },
     sortOrder: index + 1,
   };
@@ -1526,6 +1586,10 @@ function updateSuggestions(enrichedArticles, stats) {
     defaultAudience: "一般民眾",
     styleVariationGateRequired: true,
     readerSimulationGateRequired: true,
+    titleAttractionGateRequired: true,
+    titleArchetypeDiversityRequired: true,
+    titleTaiwanVoiceGateRequired: true,
+    titleDeAiGateRequired: true,
     latestGrounded12ArticlePackId: packId,
     latestGrounded12ArticlePackGeneratedAt: now,
     latestGrounded12ArticlePackArticleCount: enrichedArticles.length,
@@ -1549,6 +1613,8 @@ function updateSuggestions(enrichedArticles, stats) {
       "可使用「姓名（化名）」開場增加信任感與帶入感，但角色只作綜合情境載體，不宣稱真實案例。",
       "每篇開頭改為生活切片式敘事，再回到數字、收支與改善判斷。",
       "段落節奏改為短中有長：提示句合併到說明段，每篇補一段承接敘述，避免讀起來破碎。",
+      "標題先呈現生活張力、疑問、後果或反差，不把整批文章命名成同一套工作台句型。",
+      "標題也需通過台灣自然語氣與去 AI 感檢查，不使用房租日、收入空窗、財務止血等硬造詞或內部規劃語。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。",
     ],
     articles: enrichedArticles,
@@ -1568,6 +1634,10 @@ function updateSuggestions(enrichedArticles, stats) {
       bodyNaturalTaiwanChineseRequired: true,
       greenReviewRequired: true,
       greenReviewLoopRequired: true,
+      titleAttractionRequired: true,
+      titleArchetypeDiversityRequired: true,
+      titleTaiwanVoiceRequired: true,
+      titleDeAiRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     articlePackGreenReviewPolicy: {
@@ -1608,6 +1678,8 @@ function updateHistory(stats) {
       "每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。",
       "每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。",
       "每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。",
+      "標題改用不同入口：生活疑問、照顧衝突、口語疑問、安心提醒、意外成本、時間壓力、生活畫面、反差句、後果提醒、風險提醒、等待壓力與事件後果，避免整批看起來一樣。",
+      "標題同步加入台灣用語與去 AI 感檢查；例如不使用房租日這種不像台灣讀者日常會說的硬造詞。",
       "資源段以家庭好處呈現，不寫成政策公告。",
       "正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。",
     ],
@@ -1621,6 +1693,8 @@ function updateHistory(stats) {
       "pseudonymNarrativeReview 已納入生成規則：化名角色只作情境載體，不宣稱真實案例。",
       "paragraphRhythmGate 已納入生成規則：18-24 段、無過短提示段、平均段落不低於 100 字。",
       "styleVariationGate 已納入生成規則：不是...而是最多 3 次、比較穩 0 次、自問自答轉場最多 1 次、真正最多 3 次。",
+      "titleAttractionReview 已納入生成規則：標題不得只使用同一種句型或工作台語氣。",
+      "titleNaturalnessReview 已納入生成規則：標題必須通過台灣自然語氣與去 AI 感檢查。",
       "role leak audit 需於生成後由工具驗證。",
     ],
     relatedLogs: [
@@ -1668,6 +1742,8 @@ function writeReport(stats) {
     "- `resource_benefit_translator`：資源段說清楚能少哪筆錢、爭取幾天、避免哪種債。",
     "- `scenario_or_workflow_mapper`：每篇可用「姓名（化名）」作為情境載體，讓讀者先進入生活，再回到收支表與決策。",
     "- `human_copy_reviewer`：依外部閱讀研究與 Kevin 回饋，將過短提示段合併成較完整的敘述段，避免讀起來像卡片條列。",
+    "- `topic_planning_group`：依 Kevin 回饋重擬標題，讓每篇使用不同入口，不用同一套「先看／要算／分開算」模板。",
+    "- `taiwan_voice_ai_reduction_group`：標題也進入台灣用語與去 AI 感檢查，避免房租日、收入空窗、財務止血等硬造詞。",
     "- `numeric_decision_reviewer`：每篇都有改善前後差異、施行效果與仍未打平時的求助路徑。",
     "- `role_privacy_boundary_reviewer`：正文不得出現審稿語、投稿語、agent、社工版、SEO/AIO 或來源清單。",
     "",
@@ -1682,6 +1758,8 @@ function writeReport(stats) {
     `- 語氣變奏：不是...而是最多 ${stats.styleVariation.notButMax} 次，整包 ${stats.styleVariation.notButTotal} 次／${stats.styleVariation.articlesWithNotBut} 篇；比較穩 ${stats.styleVariation.stablePhraseTotal} 次，自問自答最多 ${stats.styleVariation.selfQuestionMax} 次，真正最多 ${stats.styleVariation.trueNeedMax} 次`,
     "- 故事帶入規則：每篇使用「姓名（化名）」與生活切片開場，不宣稱真實案例，並在 2-4 段內回到數字與判斷。",
     "- 段落節奏規則：保留可掃讀性，但把短提示句合併到前後脈絡，讓情境、數字和改善計畫讀起來更連續。",
+    "- 標題吸引力規則：12 篇分別使用不同標題型態，避免排在一起像系列模板或內部規劃表。",
+    "- 標題語氣規則：標題需像台灣一般讀者會說的話，不使用硬造詞、翻譯腔、顧問式抽象詞或 AI 感漂亮句。",
     "",
     "## 外部閱讀資料參考",
     "",

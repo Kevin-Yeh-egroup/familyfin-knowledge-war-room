@@ -98,6 +98,21 @@ function normalizeTitleForSimilarity(title) {
     .trim();
 }
 
+const awkwardTitlePatterns = [
+  /房租日/,
+  /收入空窗/,
+  /進帳空窗/,
+  /財務止血/,
+  /承接風險/,
+  /風險承接/,
+  /正式資源/,
+  /正式窗口/,
+  /生活被接住/,
+  /放進.*表.*看/,
+  /先看.*能不能/,
+  /要先算.*能不能/,
+];
+
 function levenshteinDistance(a, b) {
   const rows = a.length + 1;
   const cols = b.length + 1;
@@ -170,6 +185,24 @@ function analyzeTitleNovelty(articles) {
     containmentPairs,
     warningPairs,
     normalized,
+  };
+}
+
+function analyzeTitleArchetypeDiversity(articles) {
+  const missing = [];
+  const counts = {};
+  for (const article of articles) {
+    const archetype = article.titleAttractionReview?.archetype || article.titleArchetype;
+    if (!archetype) {
+      missing.push(article.id);
+      continue;
+    }
+    counts[archetype] = (counts[archetype] || 0) + 1;
+  }
+  return {
+    missing,
+    archetypes: Object.keys(counts),
+    counts,
   };
 }
 
@@ -430,6 +463,7 @@ if (suggestions?.articlePack) {
   const nonGreenReviewIds = [];
   const preGenerationFailures = [];
   const titleNovelty = analyzeTitleNovelty(articles);
+  const titleArchetypeDiversity = analyzeTitleArchetypeDiversity(articles);
   const knowledgeBaseTitleComparison = knowledgeBaseTitleIndex
     ? compareTitlesWithKnowledgeBase(articles, knowledgeBaseTitleIndex)
     : null;
@@ -453,6 +487,22 @@ if (suggestions?.articlePack) {
   }
   if (!titleNovelty.exactPairs.length && !titleNovelty.nearPairs.length && !titleNovelty.containmentPairs.length) {
     pushCheck("current pack title novelty", "pass", `${articles.length} titles, ${titleNovelty.warningPairs.length} warnings`);
+  }
+
+  if (titleArchetypeDiversity.missing.length) {
+    errors.push(`current pack title archetype missing: ${titleArchetypeDiversity.missing.join(", ")}`);
+  }
+  const minimumTitleArchetypes = Math.min(6, articles.length);
+  if (titleArchetypeDiversity.archetypes.length < minimumTitleArchetypes) {
+    errors.push(
+      `current pack title archetype diversity too narrow: ${titleArchetypeDiversity.archetypes.length}/${minimumTitleArchetypes}`,
+    );
+  } else {
+    pushCheck(
+      "current pack title archetype diversity",
+      "pass",
+      `${titleArchetypeDiversity.archetypes.length} archetypes`,
+    );
   }
 
   if (knowledgeBaseTitleComparison) {
@@ -481,6 +531,11 @@ if (suggestions?.articlePack) {
   }
 
   for (const article of articles) {
+    const awkwardTitle = awkwardTitlePatterns.filter((pattern) => pattern.test(article.title));
+    if (awkwardTitle.length) {
+      errors.push(`${article.id} title has awkward Taiwan/de-AI phrasing: ${awkwardTitle.join(", ")}`);
+    }
+
     const preGenerationReview = article.preGenerationReview;
     if (!preGenerationReview) {
       errors.push(`${article.id} preGenerationReview missing`);
@@ -548,6 +603,22 @@ if (suggestions?.articlePack) {
       errors.push(`${article.id} deAiReview missing or not passed`);
     } else if (!article.deAiReview.revisionMove || !article.deAiReview.publicBodyRule) {
       errors.push(`${article.id} deAiReview lacks revision move or public body rule`);
+    }
+
+    if (!article.titleAttractionReview || article.titleAttractionReview.status !== "passed_current_pack_gate") {
+      errors.push(`${article.id} titleAttractionReview missing or not passed`);
+    } else if (!article.titleAttractionReview.archetype || !article.titleAttractionReview.revisionMove) {
+      errors.push(`${article.id} titleAttractionReview lacks archetype or revision move`);
+    }
+
+    if (!article.titleNaturalnessReview || article.titleNaturalnessReview.status !== "passed_title_voice_gate") {
+      errors.push(`${article.id} titleNaturalnessReview missing or not passed`);
+    } else if (
+      !article.titleNaturalnessReview.revisionMove ||
+      !Array.isArray(article.titleNaturalnessReview.checkedPatterns) ||
+      article.titleNaturalnessReview.checkedPatterns.length < 5
+    ) {
+      errors.push(`${article.id} titleNaturalnessReview lacks checked patterns or revision move`);
     }
 
     const reviewGate = article.articlePackReviewGate;
@@ -767,8 +838,26 @@ if (suggestions?.articlePack) {
   if (suggestions.metrics?.readerSimulationGateRequired !== true) {
     errors.push("readerSimulationGateRequired metric missing or false");
   }
+  if (suggestions.metrics?.titleAttractionGateRequired !== true) {
+    errors.push("titleAttractionGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.titleArchetypeDiversityRequired !== true) {
+    errors.push("titleArchetypeDiversityRequired metric missing or false");
+  }
+  if (suggestions.metrics?.titleTaiwanVoiceGateRequired !== true) {
+    errors.push("titleTaiwanVoiceGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.titleDeAiGateRequired !== true) {
+    errors.push("titleDeAiGateRequired metric missing or false");
+  }
   if (pack.exportMode?.greenReviewRequired !== true) {
     errors.push("articlePack exportMode.greenReviewRequired missing or false");
+  }
+  if (pack.exportMode?.titleAttractionRequired !== true || pack.exportMode?.titleArchetypeDiversityRequired !== true) {
+    errors.push("articlePack exportMode title attraction/diversity flags missing or false");
+  }
+  if (pack.exportMode?.titleTaiwanVoiceRequired !== true || pack.exportMode?.titleDeAiRequired !== true) {
+    errors.push("articlePack exportMode title Taiwan voice/de-AI flags missing or false");
   }
   if (pack.articlePackGreenReviewPolicy?.status !== "required_before_review_board") {
     errors.push("articlePackGreenReviewPolicy missing or status drift");

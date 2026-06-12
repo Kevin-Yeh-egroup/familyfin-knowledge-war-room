@@ -73,7 +73,11 @@
     "latestGrounded12ArticlePackGeneratedAt": "2026-06-11T18:20:00+08:00",
     "latestGrounded12ArticlePackArticleCount": 12,
     "styleVariationGateRequired": true,
-    "readerSimulationGateRequired": true
+    "readerSimulationGateRequired": true,
+    "titleAttractionGateRequired": true,
+    "titleArchetypeDiversityRequired": true,
+    "titleTaiwanVoiceGateRequired": true,
+    "titleDeAiGateRequired": true
   },
   "learningSummary": {
     "status": "completed",
@@ -202,12 +206,15 @@
       "可使用「姓名（化名）」開場增加信任感與帶入感，但角色只作綜合情境載體，不宣稱真實案例。",
       "每篇開頭改為生活切片式敘事，再回到數字、收支與改善判斷。",
       "段落節奏改為短中有長：提示句合併到說明段，每篇補一段承接敘述，避免讀起來破碎。",
+      "標題先呈現生活張力、疑問、後果或反差，不把整批文章命名成同一套工作台句型。",
+      "標題也需通過台灣自然語氣與去 AI 感檢查，不使用房租日、收入空窗、財務止血等硬造詞或內部規劃語。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。"
     ],
     "articles": [
       {
         "id": "rent-subsidy-payment-date",
-        "title": "房租日比薪水早到，租金補貼要先放進收支表裡看",
+        "title": "帳戶還有錢，為什麼繳房租那天還是會慌",
+        "titleArchetype": "生活疑問",
         "audience": "一般民眾",
         "primaryTag": "居住支出-租屋與補貼",
         "secondaryTags": [
@@ -215,14 +222,14 @@
           "政府救助資源-住宅補貼"
         ],
         "categoryType": "居住現金流",
-        "bodyChars": 2389,
-        "bodyCharsIncludingWhitespace": 2427,
+        "bodyChars": 2394,
+        "bodyCharsIncludingWhitespace": 2432,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2389,
-          "charsIncludingWhitespace": 2427
+          "nonWhitespaceChars": 2394,
+          "charsIncludingWhitespace": 2432
         },
         "paragraphRhythmGate": {
           "status": "passed",
@@ -230,8 +237,8 @@
           "stats": {
             "paragraphs": 20,
             "shortestParagraph": 81,
-            "longestParagraph": 186,
-            "averageParagraph": 119,
+            "longestParagraph": 190,
+            "averageParagraph": 120,
             "veryShortParagraphs": 0
           },
           "method": "Short prompt-like paragraphs are merged into nearby explanatory paragraphs; each article also includes one continuity bridge between scene and financial reasoning."
@@ -240,7 +247,7 @@
           "status": "passed",
           "target": "not-but pattern <= 3 per article and total <= article count, no awkward 比較穩 phrase, fake self-question transitions <= 1, 真正 <= 3",
           "stats": {
-            "notButCount": 0,
+            "notButCount": 2,
             "stablePhraseCount": 0,
             "selfQuestionTransitionCount": 0,
             "trueNeedCount": 1
@@ -284,7 +291,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -300,7 +309,7 @@
           },
           "readerFitCard": {
             "status": "passed",
-            "hook": "租屋家庭最緊的常常不是整月不夠，而是房租日早於薪水日。",
+            "hook": "租屋家庭最緊的常常不是整月不夠，而是房租要繳的時間早於薪水入帳。",
             "avoid": [
               "不以政策背景開場",
               "不把資源寫成公告",
@@ -311,7 +320,7 @@
           },
           "readerLoadCard": {
             "status": "passed",
-            "mainProblem": "把房租日、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出房租日前缺口。",
+            "mainProblem": "把繳房租的日期、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出繳房租前的缺口。",
             "supportProblemLimit": 2,
             "maxActionCount": 3,
             "safetyReminder": "若仍缺本月房租，先問所在地租屋或急難協助，並把可延後扣款與不能斷的支出分開。",
@@ -319,8 +328,8 @@
           },
           "financialDecisionCard": {
             "status": "passed",
-            "assessmentTask": "把房租日、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出房租日前缺口。",
-            "decisionBoundary": "若房租日前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。"
+            "assessmentTask": "把繳房租的日期、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出繳房租前的缺口。",
+            "decisionBoundary": "若繳房租前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。"
           },
           "financialLiteracyTransfer": {
             "status": "passed",
@@ -513,14 +522,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "房租日比薪水早到租金補貼要先放進收支表裡看",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "帳戶還有錢為什麼繳房租那天還是會慌",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "生活疑問",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 1
       },
       {
         "id": "single-parent-childcare-work-hours",
-        "title": "一個人接孩子也接帳單，單親家庭要先算托育和工時能不能配合",
+        "title": "一個人接孩子，最怕帳單也同時到期",
+        "titleArchetype": "照顧衝突",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-家庭型態改變",
         "secondaryTags": [
@@ -603,7 +633,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -833,14 +865,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "一個人接孩子也接帳單單親家庭要先算托育和工時能不能配合",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "一個人接孩子最怕帳單也同時到期",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "照顧衝突",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 2
       },
       {
         "id": "debt-minimum-payment-plan",
-        "title": "每月都有還錢，為什麼債務還是沒降下來",
+        "title": "明明每月都有繳，債務怎麼還是卡在那裡",
+        "titleArchetype": "口語疑問",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-債務與信用",
         "secondaryTags": [
@@ -917,7 +970,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1146,14 +1201,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "每月都有還錢為什麼債務還是沒降下來",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "明明每月都有繳債務怎麼還是卡在那裡",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "口語疑問",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 3
       },
       {
         "id": "emergency-buffer-days",
-        "title": "緊急預備金不用先想六個月，先看家裡能撐幾天",
+        "title": "存不到六個月也沒關係，先知道家裡能撐幾天",
+        "titleArchetype": "安心提醒",
         "audience": "一般民眾",
         "primaryTag": "財務管理與規劃-緊急預備金",
         "secondaryTags": [
@@ -1161,14 +1237,14 @@
           "急難與福利諮詢"
         ],
         "categoryType": "風險緩衝",
-        "bodyChars": 2257,
-        "bodyCharsIncludingWhitespace": 2291,
+        "bodyChars": 2259,
+        "bodyCharsIncludingWhitespace": 2293,
         "bodyLengthGate": {
           "status": "passed",
           "mode": "non_whitespace",
           "minRequired": 2001,
-          "nonWhitespaceChars": 2257,
-          "charsIncludingWhitespace": 2291
+          "nonWhitespaceChars": 2259,
+          "charsIncludingWhitespace": 2293
         },
         "paragraphRhythmGate": {
           "status": "passed",
@@ -1177,7 +1253,7 @@
             "paragraphs": 18,
             "shortestParagraph": 75,
             "longestParagraph": 203,
-            "averageParagraph": 125,
+            "averageParagraph": 126,
             "veryShortParagraphs": 0
           },
           "method": "Short prompt-like paragraphs are merged into nearby explanatory paragraphs; each article also includes one continuity bridge between scene and financial reasoning."
@@ -1230,7 +1306,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1459,14 +1537,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "緊急預備金不用先想六個月先看家裡能撐幾天",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "存不到六個月也沒關係先知道家裡能撐幾天",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "安心提醒",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 4
       },
       {
         "id": "long-term-care-cost-plan",
-        "title": "長照不是只有看護費，家裡少掉的工時也要一起算",
+        "title": "照顧長輩最貴的，常常是少掉的上班時間",
+        "titleArchetype": "意外成本",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-長照與醫療",
         "secondaryTags": [
@@ -1543,7 +1642,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -1772,14 +1873,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "長照不是只有看護費家裡少掉的工時也要一起算",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "照顧長輩最貴的常常是少掉的上班時間",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "意外成本",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 5
       },
       {
         "id": "scam-loss-thirty-days",
-        "title": "被騙後先別急著補回全部損失，先保住接下來30天",
+        "title": "錢被騙走後，接下來30天更要穩住生活",
+        "titleArchetype": "時間壓力",
         "audience": "一般民眾",
         "primaryTag": "財務安全與風險-詐騙防治",
         "secondaryTags": [
@@ -1856,7 +1978,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2085,14 +2209,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "被騙後先別急著補回全部損失先保住接下來30天",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "錢被騙走後接下來30天更要穩住生活",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "時間壓力",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 6
       },
       {
         "id": "first-job-fixed-costs",
-        "title": "第一份薪水不是全部都能花，先看房租、家用和學貸剩多少",
+        "title": "第一份薪水還沒入口袋，房租和家用已經在排隊",
+        "titleArchetype": "生活畫面",
         "audience": "一般民眾",
         "primaryTag": "生命歷程與財務-青年就業",
         "secondaryTags": [
@@ -2163,7 +2308,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2391,14 +2538,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "第一份薪水不是全部都能花先看房租家用和學貸剩多少",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "第一份薪水還沒入口袋房租和家用已經在排隊",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "生活畫面",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 7
       },
       {
         "id": "reduced-hours-three-bills",
-        "title": "公司開始減班，家裡先看房貸、保費和孩子費用",
+        "title": "公司說先減班，帳單卻不會跟著減半",
+        "titleArchetype": "反差句",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-收入中斷",
         "secondaryTags": [
@@ -2475,7 +2643,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -2704,14 +2874,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "公司開始減班家裡先看房貸保費和孩子費用",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "公司說先減班帳單卻不會跟著減半",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "反差句",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 8
       },
       {
         "id": "special-family-three-months",
-        "title": "家庭突然少一個支撐，前三個月要先保住哪些支出",
+        "title": "家裡突然少一個人撐，前三個月最怕生活斷掉",
+        "titleArchetype": "後果提醒",
         "audience": "一般民眾",
         "primaryTag": "主要問題彙編-政府救助資源",
         "secondaryTags": [
@@ -2788,7 +2979,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3017,14 +3210,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "家庭突然少一個支撐前三個月要先保住哪些支出",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "家裡突然少一個人撐前三個月最怕生活斷掉",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "後果提醒",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 9
       },
       {
         "id": "retirement-care-fraud-buffer",
-        "title": "退休金每月都有進來，還是要把醫療、照顧和詐騙分開算",
+        "title": "退休金每月進來，也怕一次醫療或詐騙打亂生活",
+        "titleArchetype": "風險提醒",
         "audience": "一般民眾",
         "primaryTag": "生命歷程與財務-退休與高齡",
         "secondaryTags": [
@@ -3107,7 +3321,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3337,14 +3553,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "退休金每月都有進來還是要把醫療照顧和詐騙分開算",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "退休金每月進來也怕一次醫療或詐騙打亂生活",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "風險提醒",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 10
       },
       {
         "id": "unemployment-first-month",
-        "title": "被資遣後第一個月，先算家裡能不能等到給付進來",
+        "title": "被資遣後最難等的，可能不是工作而是帳單",
+        "titleArchetype": "等待壓力",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-失業與收入中斷",
         "secondaryTags": [
@@ -3421,7 +3658,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3650,14 +3889,35 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "被資遣後第一個月先算家裡能不能等到給付進來",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "被資遣後最難等的可能不是工作而是帳單",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "等待壓力",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 11
       },
       {
         "id": "sickness-benefit-hospital-cashflow",
-        "title": "住院時薪水少了，家裡還要先撐過哪幾筆錢",
+        "title": "一場住院不只花醫藥費，還會讓薪水少一段",
+        "titleArchetype": "事件後果",
         "audience": "一般民眾",
         "primaryTag": "家庭重大事件-疾病與醫療支出",
         "secondaryTags": [
@@ -3734,7 +3994,9 @@
           "nonConceptReview",
           "bodyNaturalnessReview",
           "behaviorRealismReview",
-          "roleIntegrityReview"
+          "roleIntegrityReview",
+          "titleAttractionReview",
+          "titleNaturalnessReview"
         ],
         "preGenerationReview": {
           "status": "passed_prewrite_protocol",
@@ -3963,8 +4225,28 @@
         },
         "titleNoveltyReview": {
           "status": "passed_current_pack_gate",
-          "normalizedTitle": "住院時薪水少了家裡還要先撐過哪幾筆錢",
-          "note": "12篇標題不做系列化命名，避免同一節奏。"
+          "normalizedTitle": "一場住院不只花醫藥費還會讓薪水少一段",
+          "note": "12篇標題不做系列化命名，也不只換名詞套同一句型。"
+        },
+        "titleAttractionReview": {
+          "status": "passed_current_pack_gate",
+          "archetype": "事件後果",
+          "ownerStage": "topic_planning_group",
+          "kevinFeedbackIntegrated": "2026-06-12：目前文章標題不吸引人，且不要生成看起來都一樣。",
+          "revisionMove": "標題先呈現讀者會遇到的生活緊張、疑問、後果或反差，再保留家庭財務判斷；避免整批都用先看、要算、分開算、放進表等工作台語氣。"
+        },
+        "titleNaturalnessReview": {
+          "status": "passed_title_voice_gate",
+          "ownerStage": "taiwan_voice_ai_reduction_group",
+          "checkedPatterns": [
+            "taiwan_daily_wording",
+            "no_internal_finance_jargon",
+            "no_translation_tone",
+            "no_template_title_cadence",
+            "no_awkward_title_terms"
+          ],
+          "bannedExample": "房租日",
+          "revisionMove": "標題需改成台灣讀者自然會說的話，例如用「繳房租那天」或「房租要繳之前」，不使用硬造詞、內部規劃語或 AI 式漂亮句。"
         },
         "sortOrder": 12
       }
@@ -3998,6 +4280,10 @@
       "bodyNaturalTaiwanChineseRequired": true,
       "greenReviewRequired": true,
       "greenReviewLoopRequired": true,
+      "titleAttractionRequired": true,
+      "titleArchetypeDiversityRequired": true,
+      "titleTaiwanVoiceRequired": true,
+      "titleDeAiRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "articlePackGreenReviewPolicy": {
@@ -4007,10 +4293,10 @@
     },
     "packStats": {
       "articleCount": 12,
-      "bodyCharsMin": 2257,
-      "bodyCharsMax": 2389,
-      "bodyCharsIncludingWhitespaceMin": 2291,
-      "bodyCharsIncludingWhitespaceMax": 2427,
+      "bodyCharsMin": 2259,
+      "bodyCharsMax": 2394,
+      "bodyCharsIncludingWhitespaceMin": 2293,
+      "bodyCharsIncludingWhitespaceMax": 2432,
       "paragraphRhythm": {
         "paragraphsMin": 18,
         "paragraphsMax": 21,
@@ -4021,9 +4307,9 @@
         "veryShortParagraphsTotal": 0
       },
       "styleVariation": {
-        "notButMax": 0,
-        "notButTotal": 0,
-        "articlesWithNotBut": 0,
+        "notButMax": 2,
+        "notButTotal": 2,
+        "articlesWithNotBut": 1,
         "stablePhraseTotal": 0,
         "selfQuestionMax": 0,
         "trueNeedMax": 3
@@ -4043,18 +4329,18 @@
         "articles/2026-06-11-grounded-12-article-pack/12-sickness-benefit-hospital-cashflow.txt"
       ],
       "titles": [
-        "房租日比薪水早到，租金補貼要先放進收支表裡看",
-        "一個人接孩子也接帳單，單親家庭要先算托育和工時能不能配合",
-        "每月都有還錢，為什麼債務還是沒降下來",
-        "緊急預備金不用先想六個月，先看家裡能撐幾天",
-        "長照不是只有看護費，家裡少掉的工時也要一起算",
-        "被騙後先別急著補回全部損失，先保住接下來30天",
-        "第一份薪水不是全部都能花，先看房租、家用和學貸剩多少",
-        "公司開始減班，家裡先看房貸、保費和孩子費用",
-        "家庭突然少一個支撐，前三個月要先保住哪些支出",
-        "退休金每月都有進來，還是要把醫療、照顧和詐騙分開算",
-        "被資遣後第一個月，先算家裡能不能等到給付進來",
-        "住院時薪水少了，家裡還要先撐過哪幾筆錢"
+        "帳戶還有錢，為什麼繳房租那天還是會慌",
+        "一個人接孩子，最怕帳單也同時到期",
+        "明明每月都有繳，債務怎麼還是卡在那裡",
+        "存不到六個月也沒關係，先知道家裡能撐幾天",
+        "照顧長輩最貴的，常常是少掉的上班時間",
+        "錢被騙走後，接下來30天更要穩住生活",
+        "第一份薪水還沒入口袋，房租和家用已經在排隊",
+        "公司說先減班，帳單卻不會跟著減半",
+        "家裡突然少一個人撐，前三個月最怕生活斷掉",
+        "退休金每月進來，也怕一次醫療或詐騙打亂生活",
+        "被資遣後最難等的，可能不是工作而是帳單",
+        "一場住院不只花醫藥費，還會讓薪水少一段"
       ]
     }
   },

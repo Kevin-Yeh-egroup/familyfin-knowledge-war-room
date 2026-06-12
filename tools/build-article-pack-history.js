@@ -23,6 +23,8 @@ const packDefinitions = [
       "每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。",
       "每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。",
       "每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。",
+      "標題改用不同入口：生活疑問、照顧衝突、口語疑問、安心提醒、意外成本、時間壓力、生活畫面、反差句、後果提醒、風險提醒、等待壓力與事件後果，避免整批看起來一樣。",
+      "標題同步加入台灣用語與去 AI 感檢查；例如不使用房租日這種不像台灣讀者日常會說的硬造詞。",
       "資源段以家庭好處呈現，不寫成政策公告。",
       "正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。"
     ],
@@ -34,6 +36,8 @@ const packDefinitions = [
       "resourceBenefitTranslation、scenarioNarrativeReview、behaviorRealismReview 已納入逐篇 metadata。",
       "pseudonymNarrativeReview 已納入生成規則：化名角色只作情境載體，不宣稱真實案例。",
       "paragraphRhythmGate 已納入生成規則：18-24 段、無過短提示段、平均段落不低於 100 字。",
+      "titleAttractionReview 已納入生成規則：標題不得只使用同一種句型或工作台語氣。",
+      "titleNaturalnessReview 已納入生成規則：標題必須通過台灣自然語氣與去 AI 感檢查。",
       "role leak audit 通過。"
     ],
     relatedLogs: [
