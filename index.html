@@ -1034,7 +1034,7 @@
 
     function tablePlainText(table) {
       return [
-        `【表格：${table.title || "未命名表格"}】`,
+        table.title ? `【表格：${table.title}】` : "",
         (table.headers || []).join("\t"),
         ...(table.rows || []).map((row) => row.join("\t"))
       ].filter(Boolean).join("\n");
@@ -1056,12 +1056,105 @@
       ].join("");
     }
 
-    function bodyBlocksWithoutTableFallback(body) {
+    function bodyBlocks(body) {
       return String(body || "")
         .replace(/\r\n/g, "\n")
         .split(/\n\s*\n/)
         .map((block) => block.trim())
-        .filter((block) => block && !block.startsWith("【表格："));
+        .filter(Boolean);
+    }
+
+    function trimOuterEmptyCells(cells) {
+      const next = [...cells];
+      while (next.length && !next[0].trim()) next.shift();
+      while (next.length && !next[next.length - 1].trim()) next.pop();
+      return next.map((cell) => cell.trim());
+    }
+
+    function parseDelimitedTableBlock(block) {
+      const lines = String(block || "")
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean);
+      if (lines.length < 2 || !lines.every((line) => /[|｜]/.test(line))) return null;
+
+      const rows = lines
+        .map((line) => trimOuterEmptyCells(line.split(/[|｜]/)))
+        .filter((row) => row.length >= 2)
+        .filter((row) => !row.every((cell) => /^:?-{3,}:?$/.test(cell)));
+
+      if (rows.length < 2) return null;
+      const width = rows[0].length;
+      if (width < 2 || rows.some((row) => row.length !== width)) return null;
+
+      return {
+        id: "legacy-delimited-table",
+        title: "",
+        headers: rows[0],
+        rows: rows.slice(1),
+        source: "legacy_delimited_text"
+      };
+    }
+
+    function parseTabFallbackTableBlock(block) {
+      const lines = String(block || "")
+        .split("\n")
+        .map((line) => line.trim())
+        .filter(Boolean);
+      const titleMatch = lines[0]?.match(/^【表格：(.+)】$/);
+      if (!titleMatch || lines.length < 3) return null;
+
+      const rows = lines.slice(1).map((line) => line.split("\t").map((cell) => cell.trim()));
+      const width = rows[0]?.length || 0;
+      if (width < 2 || rows.length < 2 || rows.some((row) => row.length !== width)) return null;
+
+      return {
+        id: "plain-text-fallback-table",
+        title: titleMatch[1],
+        headers: rows[0],
+        rows: rows.slice(1),
+        source: "tab_plain_text_fallback"
+      };
+    }
+
+    function articleBodyParts(body, article) {
+      const structuredTables = articleTables(article);
+      const insertedTables = new Set();
+      const parts = [];
+
+      bodyBlocks(body).forEach((block) => {
+        const tabTable = parseTabFallbackTableBlock(block);
+        if (tabTable) {
+          const structuredMatch = structuredTables.find((table) => table.title === tabTable.title);
+          if (structuredMatch && !insertedTables.has(structuredMatch.id)) {
+            parts.push({ type: "table", table: structuredMatch });
+            insertedTables.add(structuredMatch.id);
+          } else if (!structuredMatch) {
+            parts.push({ type: "table", table: tabTable });
+          }
+          return;
+        }
+
+        const legacyTable = parseDelimitedTableBlock(block);
+        if (legacyTable) {
+          parts.push({ type: "table", table: legacyTable });
+          return;
+        }
+
+        parts.push({ type: "paragraph", text: block });
+        structuredTables
+          .filter((table) => table.afterParagraph === block && !insertedTables.has(table.id))
+          .forEach((table) => {
+            parts.push({ type: "table", table });
+            insertedTables.add(table.id);
+          });
+      });
+
+      structuredTables
+        .filter((table) => !insertedTables.has(table.id))
+        .forEach((table) => parts.push({ type: "table", table }));
+
+      return parts;
     }
 
     function renderArticleTable(table) {
@@ -1104,19 +1197,16 @@
     }
 
     function articleBodyHtml(body, article, includeTitle = false) {
-      const tables = articleTables(article);
-      const blocks = bodyBlocksWithoutTableFallback(body);
       const output = [];
       if (includeTitle && article?.title) {
         output.push(`<h1>${escapeHtml(article.title)}</h1>`);
       }
-      blocks.forEach((block) => {
-        output.push(`<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`);
-        tables
-          .filter((table) => table.afterParagraph === block)
-          .forEach((table) => {
-            output.push(tableHtml(table));
-          });
+      articleBodyParts(body, article).forEach((part) => {
+        if (part.type === "table") {
+          output.push(tableHtml(part.table));
+        } else {
+          output.push(`<p>${escapeHtml(part.text).replace(/\n/g, "<br>")}</p>`);
+        }
       });
       return output.join("\n");
     }
@@ -1124,23 +1214,30 @@
     function renderArticleBody(container, body, article) {
       container.textContent = "";
       container.classList.add("rendered");
-      const blocks = bodyBlocksWithoutTableFallback(body);
-      const tables = articleTables(article);
-      if (!blocks.length) {
+      const parts = articleBodyParts(body, article);
+      if (!parts.length) {
         container.textContent = "正在讀取純文字正文...";
         return;
       }
 
-      blocks.forEach((block) => {
-        container.appendChild(paragraph(block));
-        tables
-          .filter((table) => table.afterParagraph === block)
-          .forEach((table) => container.appendChild(renderArticleTable(table)));
+      parts.forEach((part) => {
+        if (part.type === "table") {
+          container.appendChild(renderArticleTable(part.table));
+        } else {
+          container.appendChild(paragraph(part.text));
+        }
       });
     }
 
+    function articleBodyPlainText(body, article) {
+      return articleBodyParts(body, article)
+        .map((part) => (part.type === "table" ? tablePlainText(part.table) : part.text))
+        .filter(Boolean)
+        .join("\n\n");
+    }
+
     function articleCopyPayload(body, article, includeTitle = false) {
-      const plainBody = String(body || "").trim();
+      const plainBody = articleBodyPlainText(body, article).trim();
       const plainText = includeTitle && article?.title
         ? [article.title, plainBody].filter(Boolean).join("\n\n")
         : plainBody;
