@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T15:30:00+08:00",
+  "updatedAt": "2026-06-17T16:50:00+08:00",
   "source": "FamilyFin knowledge war room 2026-06-11 grounded 12-article regeneration after staged agent discussion",
   "metrics": {
     "indexedPublishedArticles": 1320,
@@ -53,9 +53,9 @@
     "financialDecisionSupportGateRequired": true,
     "financialLiteracyTransferGateRequired": true,
     "hypothesisTopicVerificationRequired": true,
-    "trialArticlePackCount": 3,
+    "trialArticlePackCount": 4,
     "currentTrialArticlePackArticleCount": 2,
-    "latestTrialArticlePackGeneratedAt": "2026-06-17T15:30:00+08:00",
+    "latestTrialArticlePackGeneratedAt": "2026-06-17T16:50:00+08:00",
     "topicEvidenceGateStrengthenedAt": "2026-06-10T18:40:00+08:00",
     "sourceBehindMetadataBodyModeRequired": true,
     "approvedAuthorStructureLearningRequired": true,
@@ -94,7 +94,8 @@
     "articleUsefulnessGateRequired": true,
     "structuredArticleFlowRequired": true,
     "plainTextArticlePackBodyOnlyRequired": true,
-    "articleStructureLearningUpdatedAt": "2026-06-17T15:30:00+08:00"
+    "articleStructureLearningUpdatedAt": "2026-06-17T16:50:00+08:00",
+    "lowFrequencyTopicSelectionRequired": true
   },
   "learningSummary": {
     "status": "completed",
@@ -6803,8 +6804,439 @@
     "latestPack": "2026-06-09-rejection-learned-pack",
     "auditCommand": "node tools/audit-article-role-integrity.js articles/2026-06-09-rejection-learned-pack"
   },
-  "currentTrialArticlePackId": "2026-06-17-structured-two-article-pack",
+  "currentTrialArticlePackId": "2026-06-17-gap-two-article-pack",
   "trialArticlePacks": [
+    {
+      "id": "2026-06-17-gap-two-article-pack",
+      "title": "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款",
+      "status": "待 Kevin 看效果",
+      "description": "依知識庫標題索引低頻盤點，避開近期房租/失業等已密集處理題，改選2個標題索引0命中的家庭財務缺口：健保欠費與保單借款/解約金。",
+      "createdAt": "2026-06-17T16:50:00+08:00",
+      "audience": "一般民眾",
+      "generatedBy": "tools/build-gap-two-article-pack-2026-06-17.js",
+      "displayMode": "trial_article_pack_dropdown",
+      "exportMode": "plain_text_title_and_body_only",
+      "files": {
+        "directory": "articles/2026-06-17-gap-two-article-pack",
+        "bodyFiles": [
+          "articles/2026-06-17-gap-two-article-pack/01-nhi-arrears-medical-care-gap.txt",
+          "articles/2026-06-17-gap-two-article-pack/02-policy-loan-surrender-protection-gap.txt"
+        ],
+        "report": "reports/2026-06-17-gap-two-article-pack.md",
+        "log": "logs/2026-06-17-gap-two-article-pack-log.md"
+      },
+      "topicGapReview": {
+        "status": "passed",
+        "indexedTitleCount": 1323,
+        "selectedBy": "low_frequency_title_index_scan",
+        "currentPackAvoidedTopics": [
+          "房租",
+          "失業",
+          "減班",
+          "住院傷病",
+          "詐騙",
+          "托育",
+          "長照",
+          "債務協商"
+        ],
+        "selectedGaps": [
+          {
+            "topic": "健保欠費與就醫",
+            "titleIndexHitCount": 0
+          },
+          {
+            "topic": "保單借款與解約金",
+            "titleIndexHitCount": 0
+          }
+        ],
+        "reason": "兩題都在目前低頻盤點中為0命中，且能提供一般民眾具體家庭財務判斷，不重複近期文章包主題。"
+      },
+      "agentConvergence": {
+        "status": "converged",
+        "updatedAt": "2026-06-17T16:50:00+08:00",
+        "agents": [
+          "familyfin_grounded_orchestrator",
+          "knowledge_gap_mapper",
+          "source_grounding_reviewer",
+          "approved_author_structure_reviewer",
+          "taiwan_habit_reviewer",
+          "resource_benefit_translator",
+          "human_copy_reviewer",
+          "financial_decision_reviewer",
+          "role_integrity_reviewer",
+          "final_quality_gate"
+        ],
+        "strongSignals": [
+          "Kevin clarified that the task is to supplement rarely mentioned knowledge-base topics, not merely topics absent from the latest article pack.",
+          "Use granular title-index counts and select low-frequency gaps first.",
+          "Both selected topics have 0 title-index hits in the local keyword scan and clear household financial decision value.",
+          "Public bodies should enter the family situation directly and avoid setup/meta narration."
+        ],
+        "usefulDisagreement": [
+          "0-hit topics can be too niche; keep only topics with strong Taiwan official grounding and everyday household relevance.",
+          "Health insurance and policy-loan topics carry shame and fear, so the article must reduce avoidance while still showing numbers."
+        ],
+        "adoptNow": [
+          "Generate two new low-frequency topics: NHI arrears and policy loan/surrender.",
+          "Use one table per article to reduce decision load.",
+          "Every article needs before/after effect, remaining gap, and a realistic help path if the gap is not closed."
+        ],
+        "validateNext": [
+          "Kevin should review whether these low-frequency topics feel useful enough for submission.",
+          "If accepted, future gap selection should rank by title-index hit count before agent topic discussion."
+        ]
+      },
+      "articles": [
+        {
+          "id": "nhi-arrears-medical-care-gap",
+          "title": "健保費欠著，最怕的不是帳單，是不敢去看醫生",
+          "audience": "一般民眾",
+          "primaryTag": "家庭財務風險-健保欠費",
+          "secondaryTags": [
+            "醫療支出",
+            "政府救助資源",
+            "家庭現金流"
+          ],
+          "categoryType": "健保欠費與就醫時間差",
+          "selectedForm": "恐懼拆解＋分期前後差異",
+          "bodyPath": "articles/2026-06-17-gap-two-article-pack/01-nhi-arrears-medical-care-gap.txt",
+          "bodyChars": 2088,
+          "bodyCharsIncludingWhitespace": 2125,
+          "bodyLengthGate": "passed",
+          "contentMode": "plain_text_body_only",
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "copyTarget": "bodyPath",
+          "sources": [
+            {
+              "label": "健保署：欠費繳納協助措施",
+              "url": "https://www.nhi.gov.tw/ch/np-2646-1.html",
+              "checkedAt": "2026-06-17T16:50:00+08:00",
+              "usedFor": "欠費分期條件、辦理方式與移送行政執行限制查核。"
+            },
+            {
+              "label": "衛生福利部：健保全面解卡，加強欠費追償",
+              "url": "https://www.mohw.gov.tw/cp-2628-19097-1.html",
+              "checkedAt": "2026-06-17T16:50:00+08:00",
+              "usedFor": "健保欠費與就醫權脫鉤、欠費協助措施與延誤就醫風險查核。"
+            }
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-17T16:50:00+08:00",
+            "workflow": "FamilyFin grounded staged workflow",
+            "sourceSearchSummary": [
+              "健保署欠費繳納協助措施：欠費達2,000元以上且未移送行政執行等條件，可網路辦理簡易分期。",
+              "衛福部新聞稿：健保欠費與就醫權脫鉤，弱勢民眾欠費免予鎖卡，但欠費仍需處理。",
+              "健保欠費協助包含分期繳納、紓困基金貸款、轉介公益團體與緊急醫療保障等方向。"
+            ],
+            "knowledgeGapCard": {
+              "status": "passed",
+              "source": "data/knowledge-base-title-index.json",
+              "indexedTitleCount": 1323,
+              "gapFinding": "以健保欠費、欠健保、健保費、停止就醫、健保卡等關鍵字盤點知識庫標題，命中0筆；目前正式文章包也沒有健保欠費與就醫權主題。",
+              "titleIndexHitCount": 0,
+              "excludedRecentTopics": [
+                "房租",
+                "失業",
+                "減班",
+                "住院傷病",
+                "詐騙",
+                "托育",
+                "長照",
+                "債務協商"
+              ]
+            },
+            "topicEvidenceCard": {
+              "status": "passed",
+              "topic": "健保費欠著，最怕的不是帳單，是不敢去看醫生",
+              "evidenceBasis": "以健保署欠費繳納協助措施與衛福部健保欠費就醫權脫鉤公開說明作為制度底盤；正文轉成家庭如何分清看病、欠費、分期與求助。",
+              "taiwanFit": "台灣家庭遇到健保欠費時，常因怕被拒診、怕櫃檯尷尬、怕行政執行而延後就醫；文章用分期、分區業務組與1957/公所求助路徑降低不敢看病的風險。",
+              "notHypotheticalRule": "化名角色只作閱讀代入；制度與金額邏輯以台灣公開資料、知識庫缺口和家庭收支試算支撐，不宣稱是真實單一案例。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "audience": "一般民眾",
+              "openingHook": "欠健保費時，很多人先怕的是醫院櫃檯，而不是那張欠費單。",
+              "avoidedTone": [
+                "政策公告口吻",
+                "AI 式概念整理",
+                "審稿建議入正文",
+                "自我說明文章寫法"
+              ],
+              "readerNeed": "讀者需要知道欠費不等於不能看病，同時也要知道欠費不能一直放著不處理。"
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "把欠費總額、這次就醫支出、家庭30天必要生活費、可分期金額與求助窗口分開。",
+              "decisionOutput": "先就醫、再確認欠費狀態、再安排分期或紓困，不用用高利借款補健保欠費。",
+              "tableOrStructure": "使用欠費原狀與分期後月現金流對照表。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "學會把健保欠費從恐懼變成可處理的月付問題，避免因誤會延誤就醫。",
+              "transferTest": "讀完後能說出欠費多少、是否已移送行政執行、每月可負擔分期多少、要先問哪個窗口。"
+            },
+            "readerLoadCard": {
+              "status": "passed",
+              "mainProblem": "健保欠費導致家庭不敢就醫。",
+              "supportProblems": [
+                "分期繳納與行政執行狀態",
+                "醫療支出與30天生活費衝突"
+              ],
+              "maxActionCount": 3,
+              "revisionMove": "Keep one primary household decision per article; avoid piling up multiple policy tracks."
+            },
+            "articleUsefulnessCard": {
+              "status": "passed",
+              "readerJudgment": "先把就醫權、欠費處理與家庭月付分開，不要因欠費直接放棄看病。",
+              "commonMisreadingToPrevent": "不要以為欠健保就一定不能看病，也不要以為不會被鎖卡就可以完全不處理欠費。",
+              "nextCheckAfterReading": "查欠費是否達2,000元、是否已移送行政執行、每月能分期多少、是否需要健保署或社福窗口協助。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-17T16:50:00+08:00",
+              "primaryPattern": "policy_decision_order",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "用調整前後的數字、缺口與關鍵動作，讓讀者看見改善不是口號。",
+                  "rejectWhen": "只有情緒或概念，沒有前後差異、可行動順序與仍未補上的缺口。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度資訊先轉成家庭要判斷的資格、時間、金額、文件與下一步。",
+                  "rejectWhen": "只像宣告政策，沒有說明制度能補哪個生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "分清家庭自己的錢、制度資源、親友協助與正式求助各自能補哪一段。",
+                  "rejectWhen": "把支持寫成溫情，沒有交代哪一層支撐哪個風險。"
+                }
+              ],
+              "generationConstraint": "Apply accepted-author structures without copying private text: before/after difference, policy decision order, support/risk layering.",
+              "publicBodyRule": "Body must be plain public-facing Traditional Chinese only; no reviewer language, no SEO/AIO labels, no agent process, no submission notes."
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 1,
+            "reviewedAt": "2026-06-17T16:50:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "familyfin_grounded_orchestrator",
+              "knowledge_gap_mapper",
+              "source_grounding_reviewer",
+              "approved_author_structure_reviewer",
+              "taiwan_habit_reviewer",
+              "resource_benefit_translator",
+              "human_copy_reviewer",
+              "financial_decision_reviewer",
+              "role_integrity_reviewer",
+              "final_quality_gate"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Return to generation when the topic is not truly low-frequency, lacks Taiwan official grounding, has no household math, sounds like a policy announcement, or contains body setup/meta narration.",
+            "revisionMove": "Re-select topic from low-frequency knowledge gaps, verify current Taiwan data, rewrite with one family decision, one structure aid, before/after numbers, remaining gap, and realistic help path.",
+            "passedChecks": [
+              "low_frequency_topic_selected",
+              "body_over_2000_non_whitespace_chars",
+              "plain_text_body_only",
+              "taiwan_public_reader_voice",
+              "household_financial_assessment_visible",
+              "improvement_plan_and_remaining_gap_visible",
+              "source_grounding_in_metadata",
+              "no_role_leak"
+            ],
+            "articleId": "nhi-arrears-medical-care-gap"
+          }
+        },
+        {
+          "id": "policy-loan-surrender-protection-gap",
+          "title": "急用錢先別急著解保單，借到錢之前要先看保障會少多少",
+          "audience": "一般民眾",
+          "primaryTag": "家庭財務風險-保單借款",
+          "secondaryTags": [
+            "保險保費",
+            "短期周轉",
+            "家庭保障"
+          ],
+          "categoryType": "保單借款與解約風險",
+          "selectedForm": "選項比較＋保障缺口試算",
+          "bodyPath": "articles/2026-06-17-gap-two-article-pack/02-policy-loan-surrender-protection-gap.txt",
+          "bodyChars": 2168,
+          "bodyCharsIncludingWhitespace": 2204,
+          "bodyLengthGate": "passed",
+          "contentMode": "plain_text_body_only",
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "copyTarget": "bodyPath",
+          "sources": [
+            {
+              "label": "金管會：提醒保戶辦理保險單借款應注意事項",
+              "url": "https://www.fsc.gov.tw/ch/home.jsp?dataserno=201302080002&dtable=News&id=96&mcustomize=news_view.jsp&parentpath=0%2C2&toolsflag=Y",
+              "checkedAt": "2026-06-17T16:50:00+08:00",
+              "usedFor": "保單借款利息、契約效力、理賠金額扣除借款本息與停效風險查核。"
+            },
+            {
+              "label": "保險局：勿因業務員勸誘而以借款或解約購買保險",
+              "url": "https://www.ib.gov.tw/ch/home.jsp?dataserno=202009150008&dtable=Consumer&id=51&mcustomize=onemessage_view.jsp&parentpath=0%2C5",
+              "checkedAt": "2026-06-17T16:50:00+08:00",
+              "usedFor": "解約、借款與以融資方式購買保險的權益受損風險查核。"
+            }
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-17T16:50:00+08:00",
+            "workflow": "FamilyFin grounded staged workflow",
+            "sourceSearchSummary": [
+              "金管會提醒保戶辦理保單借款需注意利息負擔、契約效力與理賠金額扣除借款本息。",
+              "金管會提醒消費者不要因業務員勸誘而以借款、保單借款、定存解約或終止保險契約再購買保險。",
+              "保單解約可能有保障中斷、解約金低於已繳保費、健康險等待期重算、年齡與體況造成未來保費提高等風險。"
+            ],
+            "knowledgeGapCard": {
+              "status": "passed",
+              "source": "data/knowledge-base-title-index.json",
+              "indexedTitleCount": 1323,
+              "gapFinding": "以保單借款、解約金、保單價值、保價金等關鍵字盤點知識庫標題，命中0筆；目前正式文章包沒有處理急用錢時保單借款與解約的家庭保障缺口。",
+              "titleIndexHitCount": 0,
+              "excludedRecentTopics": [
+                "房租",
+                "失業",
+                "減班",
+                "住院傷病",
+                "詐騙",
+                "托育",
+                "長照",
+                "債務協商"
+              ]
+            },
+            "topicEvidenceCard": {
+              "status": "passed",
+              "topic": "急用錢先別急著解保單，借到錢之前要先看保障會少多少",
+              "evidenceBasis": "以金管會保單借款與借款/解約購買保險風險提醒作為制度底盤；正文轉成家庭急用錢前要比較的保障缺口與利息成本。",
+              "taiwanFit": "台灣家庭遇到急用錢時常先想到保單、定存、信用卡或親友；文章不把保單借款妖魔化，而是要求先查利率、可借額度、保單效力與替代資金。",
+              "notHypotheticalRule": "化名角色只作閱讀代入；制度與金額邏輯以台灣公開資料、知識庫缺口和家庭收支試算支撐，不宣稱是真實單一案例。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "audience": "一般民眾",
+              "openingHook": "急用錢時，保單看起來像一個可以馬上打開的存錢筒。",
+              "avoidedTone": [
+                "政策公告口吻",
+                "AI 式概念整理",
+                "審稿建議入正文",
+                "自我說明文章寫法"
+              ],
+              "readerNeed": "讀者需要知道保單借款和解約不只是拿到錢，也會改變利息、保障和未來可選擇。"
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "比較保單借款、解約、部分支出延後、親友短期支援和正式債務協商的月付與風險。",
+              "decisionOutput": "如果只是短期缺口，優先降低借款額度並保留保障；如果已經還不出利息，要轉向正式求助而不是一直借保單。",
+              "tableOrStructure": "使用借款前後保障與月付對照表。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "學會把急用錢拆成缺口金額、需要多久、借款利息、保障減少與還款能力。",
+              "transferTest": "讀完後能向保險公司問出可借額度、借款利率、保單價值準備金、是否會停效、理賠會扣多少。"
+            },
+            "readerLoadCard": {
+              "status": "passed",
+              "mainProblem": "急用錢時把保單當成第一個現金來源。",
+              "supportProblems": [
+                "保單借款利息與停效風險",
+                "解約後保障中斷與重新投保困難"
+              ],
+              "maxActionCount": 3,
+              "revisionMove": "Keep one primary household decision per article; avoid piling up multiple policy tracks."
+            },
+            "articleUsefulnessCard": {
+              "status": "passed",
+              "readerJudgment": "先看需要多少、多久能還、保障少多少，再決定要不要借或解約。",
+              "commonMisreadingToPrevent": "不要以為保單借款是自己的錢不用還，也不要以為解約拿到現金就沒有代價。",
+              "nextCheckAfterReading": "確認保單可借額度、利率、已借金額、停效條件、解約金與家庭每月可還款金額。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-17T16:50:00+08:00",
+              "primaryPattern": "support_and_risk_layering",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "用調整前後的數字、缺口與關鍵動作，讓讀者看見改善不是口號。",
+                  "rejectWhen": "只有情緒或概念，沒有前後差異、可行動順序與仍未補上的缺口。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度資訊先轉成家庭要判斷的資格、時間、金額、文件與下一步。",
+                  "rejectWhen": "只像宣告政策，沒有說明制度能補哪個生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "分清家庭自己的錢、制度資源、親友協助與正式求助各自能補哪一段。",
+                  "rejectWhen": "把支持寫成溫情，沒有交代哪一層支撐哪個風險。"
+                }
+              ],
+              "generationConstraint": "Apply accepted-author structures without copying private text: before/after difference, policy decision order, support/risk layering.",
+              "publicBodyRule": "Body must be plain public-facing Traditional Chinese only; no reviewer language, no SEO/AIO labels, no agent process, no submission notes."
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 1,
+            "reviewedAt": "2026-06-17T16:50:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "familyfin_grounded_orchestrator",
+              "knowledge_gap_mapper",
+              "source_grounding_reviewer",
+              "approved_author_structure_reviewer",
+              "taiwan_habit_reviewer",
+              "resource_benefit_translator",
+              "human_copy_reviewer",
+              "financial_decision_reviewer",
+              "role_integrity_reviewer",
+              "final_quality_gate"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Return to generation when the topic is not truly low-frequency, lacks Taiwan official grounding, has no household math, sounds like a policy announcement, or contains body setup/meta narration.",
+            "revisionMove": "Re-select topic from low-frequency knowledge gaps, verify current Taiwan data, rewrite with one family decision, one structure aid, before/after numbers, remaining gap, and realistic help path.",
+            "passedChecks": [
+              "low_frequency_topic_selected",
+              "body_over_2000_non_whitespace_chars",
+              "plain_text_body_only",
+              "taiwan_public_reader_voice",
+              "household_financial_assessment_visible",
+              "improvement_plan_and_remaining_gap_visible",
+              "source_grounding_in_metadata",
+              "no_role_leak"
+            ],
+            "articleId": "policy-loan-surrender-protection-gap"
+          }
+        }
+      ]
+    },
     {
       "id": "2026-06-17-structured-two-article-pack",
       "title": "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
@@ -6840,7 +7272,8 @@
         "strongSignals": [
           "The first rejected topic should not reuse the rent article skeleton; it should become a dual-case contrast: timing gap vs ongoing income gap.",
           "The second rejected topic already has strong narrative; it needs a cashflow calendar/table so readers can act.",
-          "Structure is not decorative formatting; it must help the reader identify the household decision."
+          "Structure is not decorative formatting; it must help the reader identify the household decision.",
+          "Public article bodies should not explain the writing setup; scenario context must be absorbed into the story itself."
         ],
         "usefulDisagreement": [
           "Resource details are necessary for verification, but body tone should describe what the resource changes for the family rather than announce the resource.",
@@ -6849,7 +7282,8 @@
         "adoptNow": [
           "Use one visible decision structure per article.",
           "Keep sources in metadata and translate facts into household effects in body.",
-          "Make the ending ask one concrete household check instead of a broad encouragement."
+          "Make the ending ask one concrete household check instead of a broad encouragement.",
+          "Remove body setup/meta narration; the article should enter the family situation directly."
         ],
         "validateNext": [
           "Kevin should review whether the two titles feel clickable enough.",
@@ -6885,8 +7319,8 @@
           ],
           "categoryType": "收入中斷與房租壓力",
           "bodyPath": "articles/2026-06-17-structured-two-article-pack/01-unemployment-benefit-rent-two-cases.txt",
-          "bodyChars": 2986,
-          "bodyCharsIncludingWhitespace": 3045,
+          "bodyChars": 2962,
+          "bodyCharsIncludingWhitespace": 3021,
           "bodyLengthGate": "passed",
           "contentMode": "plain_text_body_only",
           "sourceDisclosureMode": "metadata_only_not_body",
@@ -7079,8 +7513,8 @@
           ],
           "categoryType": "現金流盤點型",
           "bodyPath": "articles/2026-06-17-structured-two-article-pack/02-rent-payment-cashflow-calendar.txt",
-          "bodyChars": 2561,
-          "bodyCharsIncludingWhitespace": 2619,
+          "bodyChars": 2537,
+          "bodyCharsIncludingWhitespace": 2595,
           "bodyLengthGate": "passed",
           "contentMode": "plain_text_body_only",
           "sourceDisclosureMode": "metadata_only_not_body",

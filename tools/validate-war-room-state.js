@@ -26,6 +26,7 @@ const paths = {
 const errors = [];
 const warnings = [];
 const checks = [];
+const LOW_FREQUENCY_TITLE_HIT_MAX = 10;
 
 function relPath(filePath) {
   return path.relative(repoRoot, filePath).replace(/\\/g, "/");
@@ -1290,6 +1291,65 @@ if (suggestions?.trialArticlePacks?.length) {
         (currentTrial?.articles || []).length
       }`,
     );
+  }
+
+  if (suggestions.metrics?.lowFrequencyTopicSelectionRequired === true) {
+    const topicGapReview = currentTrial?.topicGapReview;
+    const selectedGaps = topicGapReview?.selectedGaps || [];
+    if (!topicGapReview || topicGapReview.status !== "passed") {
+      errors.push("current trial low-frequency topicGapReview missing or not passed");
+    } else if (!String(topicGapReview.selectedBy || "").includes("low_frequency")) {
+      errors.push(`current trial topicGapReview selectedBy is not low-frequency: ${topicGapReview.selectedBy}`);
+    } else if (!Array.isArray(selectedGaps) || selectedGaps.length < (currentTrial?.articles || []).length) {
+      errors.push(
+        `current trial low-frequency selectedGaps too shallow: ${selectedGaps.length}/${(currentTrial?.articles || []).length}`,
+      );
+    } else {
+      const highHitGaps = selectedGaps.filter(
+        (gap) =>
+          typeof gap.titleIndexHitCount !== "number" ||
+          gap.titleIndexHitCount > LOW_FREQUENCY_TITLE_HIT_MAX,
+      );
+      if (highHitGaps.length) {
+        errors.push(
+          `current trial low-frequency selectedGaps invalid: ${highHitGaps
+            .map((gap) => `${gap.topic || "unknown"}=${gap.titleIndexHitCount}`)
+            .join(", ")}`,
+        );
+      } else {
+        pushCheck(
+          "current trial low-frequency topic selection",
+          "pass",
+          `${selectedGaps.length} gaps, max hit count ${Math.max(...selectedGaps.map((gap) => gap.titleIndexHitCount))}`,
+        );
+      }
+    }
+
+    for (const article of currentTrial?.articles || []) {
+      const knowledgeGapCard = article.preGenerationReview?.knowledgeGapCard;
+      if (!knowledgeGapCard || knowledgeGapCard.status !== "passed") {
+        errors.push(`${currentTrial.id}/${article.id} low-frequency knowledgeGapCard missing or not passed`);
+        continue;
+      }
+      if (knowledgeGapCard.source !== paths.knowledgeBaseTitleIndex) {
+        errors.push(
+          `${currentTrial.id}/${article.id} knowledgeGapCard source drift: ${knowledgeGapCard.source}`,
+        );
+      }
+      if (typeof knowledgeGapCard.titleIndexHitCount !== "number") {
+        errors.push(`${currentTrial.id}/${article.id} titleIndexHitCount missing`);
+      } else if (knowledgeGapCard.titleIndexHitCount > LOW_FREQUENCY_TITLE_HIT_MAX) {
+        errors.push(
+          `${currentTrial.id}/${article.id} titleIndexHitCount too high for low-frequency gate: ${knowledgeGapCard.titleIndexHitCount}`,
+        );
+      }
+      if (!Array.isArray(knowledgeGapCard.excludedRecentTopics) || knowledgeGapCard.excludedRecentTopics.length < 3) {
+        errors.push(`${currentTrial.id}/${article.id} excluded dense/recent topic evidence missing`);
+      }
+      if (!knowledgeGapCard.gapFinding) {
+        errors.push(`${currentTrial.id}/${article.id} gapFinding missing`);
+      }
+    }
   }
 
   if (articlePackHistory && currentTrialPackStats) {

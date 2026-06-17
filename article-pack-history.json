@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T05:50:57.310Z",
+  "updatedAt": "2026-06-17T07:08:01.837Z",
   "source": "FamilyFin plain-text article pack generation records",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
@@ -7,7 +7,7 @@
     "publicSafeDerivedRecordsOnly": true
   },
   "latestPackId": "2026-06-11-grounded-12-article-pack",
-  "packCount": 7,
+  "packCount": 8,
   "generationAttemptCount": 1,
   "records": [
     {
@@ -128,6 +128,70 @@
       "copyText": "2026-06-11 FamilyFin grounded workflow 重生 12 篇文章包\n\n日期：2026-06-11\n狀態：目前工作台文章包，12 篇重生稿\n目錄：articles/2026-06-11-grounded-12-article-pack\n篇數：12\n正文非空白字數：2259 到 2394 字\n含空白正文長度：2293 到 2432 字\n段落節奏：18 到 21 段，平均 108 到 126 字，過短段落 0\n語氣變奏：不是...而是最多 2 次，整包 2 次／1 篇；比較穩 0 次，自問自答最多 0 次，真正最多 3 次\n\n紀錄重點\n- 將先前 6/9 正式 10 篇與 6/10 試產 2 篇合併重生。\n- 套用全域 FamilyFin grounded workflow：分段討論、逐段放行、最後綠燈才進工作台。\n- 每篇都補入改善計畫、前後差異、施行效果、剩餘缺口與求助路徑。\n- 每篇開頭使用「姓名（化名）」與生活切片式敘事，提高帶入感，但不宣稱真實案例、不保留個資。\n- 每篇補入承接敘述並合併過短提示段，讓情境、數字與改善計畫形成較連續的閱讀脈絡。\n- 標題改用不同入口：生活疑問、照顧衝突、口語疑問、安心提醒、意外成本、時間壓力、生活畫面、反差句、後果提醒、風險提醒、求助疑問與事件後果，避免整批看起來一樣。\n- 標題同步加入台灣用語與去 AI 感檢查；例如不使用房租日這種不像台灣讀者日常會說的硬造詞。\n- 標題同步加入語意清楚度檢查；一句話要講得通，不能只追求反差或漂亮轉折。\n- 標題同步加入鉤子強度檢查；清楚但沒有感覺、像報告摘要、只有資訊排列或話沒說完的標題，必須退回重擬。\n- 標題同步加入讀者心聲檢查；避免作者摘要、編輯大綱或寫作腔，改成一般民眾真的會問的話。\n- 資源段以家庭好處呈現，不寫成政策公告。\n- 正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- groundedWorkflowReview 逐篇通過。\n- articlePackReviewGate 綠燈 12/12。\n- resourceBenefitTranslation、scenarioNarrativeReview、behaviorRealismReview 已納入逐篇 metadata。\n- pseudonymNarrativeReview 已納入生成規則：化名角色只作情境載體，不宣稱真實案例。\n- paragraphRhythmGate 已納入生成規則：18-24 段、無過短提示段、平均段落不低於 100 字。\n- titleAttractionReview 已納入生成規則：標題不得只使用同一種句型或工作台語氣。\n- titleNaturalnessReview 已納入生成規則：標題必須通過台灣自然語氣與去 AI 感檢查。\n- titleSemanticClarityReview 已納入生成規則：標題必須一眼讀懂生活問題與文章要處理的時間差或金額壓力。\n- titleHookStrengthReview 已納入生成規則：標題必須有生活畫面、壓力衝突、具體後果或完整口語問題，不能只是平鋪直述的正確摘要或片語排列。\n- titleReaderVoiceReview 已納入生成規則：標題必須從讀者心聲出發，通過搜尋框、朋友對話與心裡冒出來三種口語測試。\n- role leak audit 通過。"
     },
     {
+      "id": "2026-06-17-gap-two-article-pack",
+      "date": "2026-06-17",
+      "title": "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款",
+      "status": "trial_review_pack",
+      "statusLabel": "2 篇低頻缺口試產稿",
+      "audience": "一般民眾",
+      "directory": "articles/2026-06-17-gap-two-article-pack",
+      "generatedBy": "tools/build-gap-two-article-pack-2026-06-17.js",
+      "currentReviewBoard": false,
+      "currentTrialPack": true,
+      "notes": [
+        "修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。",
+        "低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。",
+        "兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。",
+        "正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。"
+      ],
+      "checks": [
+        "正文非空白字數均超過 2000 字。",
+        "preGenerationReview 逐篇通過。",
+        "approvedAuthorStructureUse 逐篇通過。",
+        "articlePackReviewGate 綠燈 2/2。",
+        "role leak audit 通過。"
+      ],
+      "relatedLogs": [
+        "reports/2026-06-17-gap-two-article-pack.md",
+        "logs/2026-06-17-gap-two-article-pack-log.md"
+      ],
+      "outputType": "plain_text_article_pack",
+      "format": "txt",
+      "articleCount": 2,
+      "bodyCountMode": "non_whitespace",
+      "bodyCharsMin": 2088,
+      "bodyCharsMax": 2168,
+      "bodyCharsIncludingWhitespaceMin": 2125,
+      "bodyCharsIncludingWhitespaceMax": 2204,
+      "paragraphRhythm": {
+        "paragraphsMin": 17,
+        "paragraphsMax": 17,
+        "averageParagraphMin": 123,
+        "averageParagraphMax": 128,
+        "shortestParagraphMin": 8,
+        "longestParagraphMax": 177,
+        "veryShortParagraphsTotal": 2
+      },
+      "styleVariation": {
+        "notButMax": 6,
+        "notButTotal": 10,
+        "articlesWithNotBut": 2,
+        "stablePhraseTotal": 0,
+        "selfQuestionMax": 0,
+        "trueNeedMax": 3
+      },
+      "writingFormDiversity": null,
+      "bodyFiles": [
+        "articles/2026-06-17-gap-two-article-pack/01-nhi-arrears-medical-care-gap.txt",
+        "articles/2026-06-17-gap-two-article-pack/02-policy-loan-surrender-protection-gap.txt"
+      ],
+      "titles": [
+        "健保費欠著，最怕的不是帳單，是不敢去看醫生",
+        "急用錢先別急著解保單，借到錢之前要先看保障會少多少"
+      ],
+      "copyText": "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款\n\n日期：2026-06-17\n狀態：2 篇低頻缺口試產稿\n目錄：articles/2026-06-17-gap-two-article-pack\n篇數：2\n正文非空白字數：2088 到 2168 字\n含空白正文長度：2125 到 2204 字\n段落節奏：17 到 17 段，平均 123 到 128 字，過短段落 2\n語氣變奏：不是...而是最多 6 次，整包 10 次／2 篇；比較穩 0 次，自問自答最多 0 次，真正最多 3 次\n\n紀錄重點\n- 修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。\n- 低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。\n- 兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。\n- 正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- role leak audit 通過。"
+    },
+    {
       "id": "2026-06-17-structured-two-article-pack",
       "date": "2026-06-17",
       "title": "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
@@ -137,7 +201,7 @@
       "directory": "articles/2026-06-17-structured-two-article-pack",
       "generatedBy": "tools/build-structured-two-article-pack-2026-06-17.js",
       "currentReviewBoard": false,
-      "currentTrialPack": true,
+      "currentTrialPack": false,
       "notes": [
         "本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。",
         "失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。",
@@ -160,26 +224,26 @@
       "format": "txt",
       "articleCount": 2,
       "bodyCountMode": "non_whitespace",
-      "bodyCharsMin": 2561,
-      "bodyCharsMax": 2986,
-      "bodyCharsIncludingWhitespaceMin": 2619,
-      "bodyCharsIncludingWhitespaceMax": 3045,
+      "bodyCharsMin": 2537,
+      "bodyCharsMax": 2962,
+      "bodyCharsIncludingWhitespaceMin": 2595,
+      "bodyCharsIncludingWhitespaceMax": 3021,
       "paragraphRhythm": {
         "paragraphsMin": 27,
         "paragraphsMax": 27,
-        "averageParagraphMin": 95,
-        "averageParagraphMax": 111,
+        "averageParagraphMin": 94,
+        "averageParagraphMax": 110,
         "shortestParagraphMin": 11,
         "longestParagraphMax": 204,
         "veryShortParagraphsTotal": 16
       },
       "styleVariation": {
         "notButMax": 9,
-        "notButTotal": 15,
+        "notButTotal": 14,
         "articlesWithNotBut": 2,
         "stablePhraseTotal": 0,
         "selfQuestionMax": 0,
-        "trueNeedMax": 4
+        "trueNeedMax": 5
       },
       "writingFormDiversity": null,
       "bodyFiles": [
@@ -190,7 +254,7 @@
         "被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口",
         "帳戶還有錢，為什麼繳房租那天還是會慌：先把錢分成三種名字"
       ],
-      "copyText": "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流\n\n日期：2026-06-17\n狀態：2 篇結構化試產稿\n目錄：articles/2026-06-17-structured-two-article-pack\n篇數：2\n正文非空白字數：2561 到 2986 字\n含空白正文長度：2619 到 3045 字\n段落節奏：27 到 27 段，平均 95 到 111 字，過短段落 16\n語氣變奏：不是...而是最多 9 次，整包 15 次／2 篇；比較穩 0 次，自問自答最多 0 次，真正最多 4 次\n\n紀錄重點\n- 本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。\n- 失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。\n- 繳房租那天的現金流稿保留敘事感，加入現金流月曆與三種錢的文字表，讓讀者能直接判斷。\n- 文章結構化規則已納入：開頭先回答讀者問題、中段使用一個主要結構工具、結尾留下具體家庭檢查。\n- 正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- role leak audit 通過。"
+      "copyText": "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流\n\n日期：2026-06-17\n狀態：2 篇結構化試產稿\n目錄：articles/2026-06-17-structured-two-article-pack\n篇數：2\n正文非空白字數：2537 到 2962 字\n含空白正文長度：2595 到 3021 字\n段落節奏：27 到 27 段，平均 94 到 110 字，過短段落 16\n語氣變奏：不是...而是最多 9 次，整包 14 次／2 篇；比較穩 0 次，自問自答最多 0 次，真正最多 5 次\n\n紀錄重點\n- 本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。\n- 失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。\n- 繳房租那天的現金流稿保留敘事感，加入現金流月曆與三種錢的文字表，讓讀者能直接判斷。\n- 文章結構化規則已納入：開頭先回答讀者問題、中段使用一個主要結構工具、結尾留下具體家庭檢查。\n- 正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- role leak audit 通過。"
     },
     {
       "id": "2026-06-11-staged-editorial-workflow-test",

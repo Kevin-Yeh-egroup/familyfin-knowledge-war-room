@@ -7,6 +7,35 @@ const outputPath = path.join(repoRoot, "article-pack-history.json");
 
 const packDefinitions = [
   {
+    id: "2026-06-17-gap-two-article-pack",
+    date: "2026-06-17",
+    title: "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款",
+    status: "trial_review_pack",
+    statusLabel: "2 篇低頻缺口試產稿",
+    audience: "一般民眾",
+    directory: "articles/2026-06-17-gap-two-article-pack",
+    generatedBy: "tools/build-gap-two-article-pack-2026-06-17.js",
+    currentReviewBoard: false,
+    currentTrialPack: true,
+    notes: [
+      "修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。",
+      "低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。",
+      "兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。",
+      "正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。"
+    ],
+    checks: [
+      "正文非空白字數均超過 2000 字。",
+      "preGenerationReview 逐篇通過。",
+      "approvedAuthorStructureUse 逐篇通過。",
+      "articlePackReviewGate 綠燈 2/2。",
+      "role leak audit 通過。"
+    ],
+    relatedLogs: [
+      "reports/2026-06-17-gap-two-article-pack.md",
+      "logs/2026-06-17-gap-two-article-pack-log.md"
+    ]
+  },
+  {
     id: "2026-06-17-structured-two-article-pack",
     date: "2026-06-17",
     title: "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
@@ -16,7 +45,7 @@ const packDefinitions = [
     directory: "articles/2026-06-17-structured-two-article-pack",
     generatedBy: "tools/build-structured-two-article-pack-2026-06-17.js",
     currentReviewBoard: false,
-    currentTrialPack: true,
+    currentTrialPack: false,
     notes: [
       "本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。",
       "失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。",

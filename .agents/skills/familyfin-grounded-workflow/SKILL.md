@@ -111,6 +111,7 @@ Read the smallest relevant subset. Do not load everything by default.
 
 Must record:
 
+- low-frequency gap selection review
 - topic evidence
 - reader fit
 - financial decision or literacy transfer
@@ -129,6 +130,15 @@ Must record:
 - final green gate
 
 Public body must be plain text only unless Kevin asks for internal review.
+
+Before title planning, run the **Low-Frequency Gap Gate** whenever Kevin asks to supplement missing/under-mentioned areas, expand the knowledge base, or generate article candidates:
+
+- Use the whole `data/knowledge-base-title-index.json`, knowledge labels/tags, the current formal article pack, and recent trial packs.
+- Rank candidate topics by how rarely they are mentioned in the whole knowledge base. Do not treat "not in the latest pack" as the same as "rarely mentioned".
+- Record `indexedTitleCount`, searched keywords, `titleIndexHitCount`, excluded dense/recent topics, and the selection reason in `topicGapReview` or `preGenerationReview.knowledgeGapCard`.
+- If a topic is already heavily covered, exclude it unless Kevin explicitly asks for that topic or the scan proves a neglected sub-angle.
+- If a low-frequency topic has no clear family-economy link, no current Taiwan source, no ordinary-reader angle, or no household financial decision, mark it `pause` and choose another topic.
+- The weekly war-room review should hand off low-frequency expansion candidates. The biweekly generation flow must choose from those candidates before considering broad popular topics.
 
 Use the staged article grouping workflow when writing article packs:
 
@@ -191,6 +201,7 @@ Must record:
 - Stale Taiwan subsidy, legal, or local-government details.
 - Article gives empathy but no financial assessment, next step, or help path.
 - Article pack repeats the same narrative template across most articles without a recorded writing-form diversity review.
+- Article expansion fills already-dense or currently common topics when Kevin asked to supplement rarely mentioned knowledge-base gaps.
 
 ## Verification
 

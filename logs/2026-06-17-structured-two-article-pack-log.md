@@ -5,3 +5,4 @@
 - Agent OS route: familyfin_grounded_orchestrator + source_grounding_reviewer + article_structure_reviewer + human_copy_reviewer + final_quality_gate.
 - Gate: review_then_revise_until_green.
 - Result: 2 trial articles generated as plain text body files.
+- Kevin feedback applied: remove article self-explanation from public bodies and keep setup language out of generated trial articles.

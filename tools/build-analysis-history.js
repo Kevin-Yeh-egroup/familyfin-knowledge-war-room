@@ -5,6 +5,19 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const sources = [
   {
+    id: "2026-06-17-gap-two-article-pack",
+    sourcePath: "reports/2026-06-17-gap-two-article-pack.md",
+    type: "兩篇試產文章包",
+    title: "低頻缺口題：健保欠費與保單借款",
+    summary:
+      "依 Kevin 指正，修正選題邏輯為先盤點知識庫低頻主題；本輪選出健保欠費與保單借款/解約金兩個0命中主題，查核台灣官方資料後生成一般民眾純文字試產稿。",
+    highlights: [
+      "不沿用前一輪被資遣與房租現金流兩題。",
+      "健保欠費題把就醫權、欠費分期、30天生活費與求助窗口分開。",
+      "保單借款題把急用錢、利息、保單效力、理賠扣除與解約後保障缺口分開。"
+    ]
+  },
+  {
     id: "2026-06-17-structured-two-article-pack",
     sourcePath: "reports/2026-06-17-structured-two-article-pack.md",
     type: "兩篇試產文章包",
