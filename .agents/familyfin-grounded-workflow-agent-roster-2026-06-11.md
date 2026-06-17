@@ -64,6 +64,7 @@ Add:
 - `public_writer`
 - `scenario_narrative_reviewer`
 - `behavior_realism_reviewer`
+- `writing_form_variety_reviewer`
 - `role_leak_reviewer`
 
 Required proof:
@@ -81,16 +82,26 @@ Use this overlay when generating or regenerating article packs. The goal is stag
 Stage owners:
 
 1. `topic_planning_group`
-   - Owns topic fit, knowledge gap, tag fit, title diversity, family economy relevance, and `topicEvidenceCard`.
+   - Owns topic fit, knowledge gap, tag fit, title diversity, family economy relevance, writing-form selection, accepted/rejected InfoCenter contrast learning, and `topicEvidenceCard`.
 
 2. `drafting_group`
-   - Owns plain-text body, scene narrative, paragraph rhythm, `readerLoadCard`, `financialDecisionCard`, `financialLiteracyTransfer`, and `improvementPlanCard`.
+   - Owns plain-text body, scene narrative, paragraph rhythm, `readerLoadCard`, `articleUsefulnessReview`, `financialDecisionCard`, `financialLiteracyTransfer`, and `improvementPlanCard`.
 
 3. `content_quality_group`
-   - Owns non-concept review, resource benefit translation, improvement plan quality, behavior realism, fact/case boundary, and role/privacy boundary.
+   - Owns non-concept review, article usefulness, resource benefit translation, improvement plan quality, behavior realism, fact/case boundary, and role/privacy boundary.
 
 4. `taiwan_voice_ai_reduction_group`
    - Owns Taiwan natural voice, de-AI rewrite candidates, style variation, awkward phrase removal, and `deAiReview`.
+
+4a. `writing_form_variety_reviewer`
+   - Owns `writingFormDiversityReview`.
+   - Checks that each article has a distinct narrative form, article move, accepted-submission structure reference, rejected-draft contrast reference, and regenerate instruction when the pack feels templated.
+   - Uses only de-identified learning from successful submissions and rejected article/review contrast cards.
+
+4b. `article_usefulness_reviewer`
+   - Owns `articleUsefulnessReview`.
+   - Checks that each article advances one household financial judgment, prevents one common misreading, uses concrete body evidence, and leaves one next number/date/risk/choice for the reader to check.
+   - Sends complete-but-average drafts back to topic planning or drafting instead of polishing wording only.
 
 5. `reader_simulation_group`
    - Owns simulated reading checks for ordinary readers, anxious caregivers, resource-unfamiliar readers, and editor proxy. Simulation is an editorial check, not real user research.
@@ -101,7 +112,9 @@ Stage owners:
 Additional required proof:
 
 - `readerLoadCard`
+- `articleUsefulnessReview`
 - `styleVariationGate`
+- `writingFormDiversityReview`
 - `deAiReview`
 - `readerSimulationReview`
 - article-pack level style density

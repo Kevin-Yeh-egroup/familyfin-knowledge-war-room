@@ -687,7 +687,7 @@
       <div>
         <div class="eyebrow">2026-06-02 plain-text workbench</div>
         <h1>文章包工作台</h1>
-        <p>正式純文字文章包與試產文章包已合併檢視，可用下拉選擇批次與文章。來源查核與平台欄位改放在內部規則，不佔用投稿預覽。</p>
+        <p>正式純文字文章包與試產文章包已合併檢視，可用下拉選擇批次與文章。工作站只負責檢視與複製標題、正文，來源查核與平台欄位留在內部規則。</p>
       </div>
       <div class="status-board">
         <div class="status-tile"><strong id="heroBatches">17</strong><span>已完成全文學習批次</span></div>
@@ -718,7 +718,7 @@
           </div>
           <div class="box">
             <h3>這輪修正</h3>
-            <p>文章包改為純文字正文與複製流程。審核焦點從「欄位完整」往前移到「是否太概念、是否有生活畫面、資料是否自然融入」。</p>
+            <p>文章包改為純文字正文與複製流程。工作站不做核准、退修或駁回，只讓 Kevin 快速取得可用的標題與內文。</p>
           </div>
         </div>
         <div class="box" style="margin-top:16px">
@@ -829,14 +829,9 @@
                 <select id="articleSelect" class="field-select" aria-label="選擇文章"></select>
               </div>
             </div>
-            <div class="box" id="approvalBox" style="margin-top:14px">
-              <h3>核准分類</h3>
-              <p>核准、退修與駁回先保存在此瀏覽器。核准後可依主要標籤匯出純文字文章包。</p>
-              <div class="actions">
-                <button class="action" id="exportTxt" type="button">匯出核准純文字</button>
-                <button class="action danger" id="clearReviews" type="button">清除本機審核紀錄</button>
-              </div>
-              <div id="approvalVault" class="vault"></div>
+            <div class="box" style="margin-top:14px">
+              <h3>複製用途</h3>
+              <p>這裡只做文章檢視與複製，不保存核准、退修或駁回狀態。選好文章後，右側可直接複製標題＋正文。</p>
             </div>
           </div>
           <div id="articleDetail" class="detail"></div>
@@ -903,14 +898,6 @@
   </footer>
 
   <script>
-    const storageKey = "familyfin-war-room-plain-text-pack-v2";
-    const statusLabels = {
-      pending: "待審",
-      approved: "核准",
-      revise: "退修",
-      rejected: "駁回"
-    };
-
     let data = { articlePack: { articles: [] }, metrics: {}, qualityGates: [] };
     let analysisHistory = { entries: [] };
     let articlePackHistory = { records: [], generationAttempts: [] };
@@ -918,45 +905,6 @@
     let activeId = null;
     let activeBody = "";
     let activeWeeklyId = null;
-
-    function loadReviews() {
-      try {
-        return JSON.parse(localStorage.getItem(storageKey)) || {};
-      } catch (error) {
-        return {};
-      }
-    }
-
-    function saveReviews(reviews) {
-      localStorage.setItem(storageKey, JSON.stringify(reviews));
-    }
-
-    function statusFor(id) {
-      return loadReviews()[id]?.status || "pending";
-    }
-
-    function setStatus(id, status, note) {
-      const reviews = loadReviews();
-      const article = (data.articlePack.articles || []).find((item) => item.id === id);
-      if (!article) return;
-      const previous = reviews[id] || {};
-      reviews[id] = {
-        ...previous,
-        status,
-        title: article.title,
-        primaryTag: article.primaryTag,
-        audience: article.audience,
-        note: note ?? previous.note ?? "",
-        reviewedAt: new Date().toISOString()
-      };
-      saveReviews(reviews);
-      render();
-    }
-
-    function saveReviewNote(id, note) {
-      const status = statusFor(id);
-      setStatus(id, status, note);
-    }
 
     function makeTag(text, kind) {
       const el = document.createElement("span");
@@ -1186,9 +1134,9 @@
           kind: "current",
           title: data.articlePack.title || "目前純文字文章包",
           status: data.articlePack.status || "目前工作台文章包",
-          statusLabel: "正式核准台",
+          statusLabel: "正式文章包",
           audience: data.articlePack.audience || "一般民眾",
-          description: data.articlePack.description || "目前 10 篇純文字文章包，可核准、退修、駁回與匯出。",
+          description: data.articlePack.description || "目前 10 篇純文字文章包，可檢視並複製標題與正文。",
           articles: data.articlePack.articles || [],
         });
       }
@@ -1217,10 +1165,6 @@
       return articles.find((article) => article.id === activeId) || articles[0] || null;
     }
 
-    function isCurrentReviewPack(pack) {
-      return pack?.kind === "current";
-    }
-
     async function selectArticlePack(packId) {
       activePackId = packId;
       const pack = currentArticlePack();
@@ -1242,7 +1186,6 @@
       const packSelect = document.getElementById("articlePackSelect");
       const articleSelect = document.getElementById("articleSelect");
       const summary = document.getElementById("selectedPackSummary");
-      const approvalBox = document.getElementById("approvalBox");
       if (!packSelect || !articleSelect) return;
 
       const packs = availableArticlePacks();
@@ -1270,9 +1213,6 @@
         summary.textContent = pack
           ? `${pack.statusLabel}，共 ${pack.articles.length} 篇。${pack.description}`
           : "目前沒有可選文章包。";
-      }
-      if (approvalBox) {
-        approvalBox.style.display = isCurrentReviewPack(pack) ? "" : "none";
       }
     }
 
@@ -1430,7 +1370,6 @@
         return;
       }
       activeId = article.id;
-      const currentPack = isCurrentReviewPack(pack);
       const plain = splitArticleText(activeBody, article);
 
       const top = document.createElement("div");
@@ -1450,25 +1389,20 @@
       const copyActions = document.createElement("div");
       copyActions.className = "actions";
       copyActions.append(
-        actionButton("複製正文", "primary", () => copyText(plain.body, "已複製正文。")),
-        actionButton("複製標題＋正文", "", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
-        actionButton("下載這篇 TXT", "", () => download(`${article.id}.txt`, plain.titleAndBody, "text/plain;charset=utf-8"))
+        actionButton("複製標題＋正文", "primary", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
+        actionButton("複製正文", "", () => copyText(plain.body, "已複製正文。"))
       );
       detail.appendChild(copyActions);
 
       const copyNote = document.createElement("div");
       copyNote.className = "copy-note";
       copyNote.id = "copyNote";
-      copyNote.textContent = "預設顯示與下載為標題＋正文，不包含平台欄位、來源清單或查核紀錄。";
+      copyNote.textContent = "複製內容不包含平台欄位、來源清單、查核紀錄或審稿資料。";
       detail.appendChild(copyNote);
 
       const basicInfo = document.createElement("div");
       const tagWrap = document.createElement("p");
-      tagWrap.append(
-        currentPack
-          ? makeTag(statusLabels[statusFor(article.id)], statusFor(article.id) === "approved" ? "green" : "gold")
-          : makeTag(pack.statusLabel, "blue")
-      );
+      tagWrap.append(makeTag(pack.statusLabel, "blue"));
       tagWrap.append(makeTag("主要：" + article.primaryTag, "green"));
       (article.secondaryTags || []).forEach((tag) => tagWrap.append(makeTag("次要：" + tag, "blue")));
       detailSection(basicInfo, "文章標籤", [tagWrap]);
@@ -1488,6 +1422,16 @@
 
       detailSection(generationInfo, "通過稿結構學習", approvedAuthorUseElements(pre));
 
+      const writingForm = article.writingFormDiversityReview || {};
+      const selectedForm = writingForm.selectedForm || {};
+      detailSection(generationInfo, "文體變奏與成功/駁回學習", [
+        paragraph("文體：" + (selectedForm.label || selectedForm.id || "未記錄")),
+        paragraph("推進方式：" + (writingForm.articleMove || "未記錄")),
+        paragraph("agent 討論：" + ((writingForm.agentDiscussionStages || []).join("、") || "未記錄")),
+        paragraph("學習來源：" + ((writingForm.learningSources || []).join("、") || "未記錄")),
+        paragraph("回修規則：" + (writingForm.revisionMove || "未記錄"))
+      ]);
+
       const packGate = article.articlePackReviewGate || {};
       detailSection(generationInfo, "生成審核綠燈 Gate", [
         paragraph("狀態：" + (packGate.status || "未審")),
@@ -1506,29 +1450,6 @@
       detailSection(generationInfo, "Agent 討論摘要", [paragraph(article.agentDiscussion || "尚未填寫。")]);
       detailDisclosure(detail, "生成、檢核與 Agent 紀錄", [generationInfo]);
 
-      if (currentPack) {
-        const currentReview = loadReviews()[article.id] || {};
-        const reviewNote = document.createElement("textarea");
-        reviewNote.className = "review-note-input";
-        reviewNote.placeholder = "輸入退修、駁回或核准原因。這會先存於此瀏覽器，之後可轉成 review_feedback_card。";
-        reviewNote.value = currentReview.note || "";
-        const approvalActions = document.createElement("div");
-        approvalActions.className = "actions";
-        approvalActions.append(
-          actionButton("儲存審核意見", "", () => saveReviewNote(article.id, reviewNote.value.trim())),
-          actionButton("核准投稿", "primary", () => setStatus(article.id, "approved", reviewNote.value.trim())),
-          actionButton("退修", "warn", () => setStatus(article.id, "revise", reviewNote.value.trim())),
-          actionButton("駁回", "danger", () => setStatus(article.id, "rejected", reviewNote.value.trim())),
-          actionButton("複製審稿版", "", () => copyText(plain.reviewText, "已複製含標籤的審稿版。"))
-        );
-        const reviewInfo = document.createElement("div");
-        detailSection(reviewInfo, "人工審核意見 / 退修原因", [
-          reviewNote,
-          paragraph("若文章被退修或駁回，請盡量寫出問題段落、審核原因與希望修正方向。")
-        ]);
-        reviewInfo.appendChild(approvalActions);
-        detailDisclosure(detail, "人工審核與核准操作", [reviewInfo]);
-      }
     }
 
     function actionButton(label, kind, onClick) {
@@ -1612,36 +1533,6 @@
       }
     }
 
-    function renderVault() {
-      const vault = document.getElementById("approvalVault");
-      const reviews = loadReviews();
-      const approved = data.articlePack.articles.filter((item) => reviews[item.id]?.status === "approved");
-      vault.textContent = "";
-      if (!approved.length) {
-        vault.appendChild(paragraph("目前沒有已核准文章。"));
-        return;
-      }
-      const groups = approved.reduce((acc, item) => {
-        acc[item.primaryTag] = acc[item.primaryTag] || [];
-        acc[item.primaryTag].push(item);
-        return acc;
-      }, {});
-      Object.entries(groups).forEach(([tag, items]) => {
-        const box = document.createElement("div");
-        box.className = "vault-group";
-        const h = document.createElement("h4");
-        h.textContent = tag;
-        const ul = document.createElement("ul");
-        items.forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = `${item.title} / ${item.audience}`;
-          ul.appendChild(li);
-        });
-        box.append(h, ul);
-        vault.appendChild(box);
-      });
-    }
-
     function download(filename, content, type) {
       const blob = new Blob([content], { type });
       const url = URL.createObjectURL(blob);
@@ -1654,21 +1545,6 @@
       URL.revokeObjectURL(url);
     }
 
-    async function exportTxt() {
-      const reviews = loadReviews();
-      const approved = data.articlePack.articles.filter((item) => reviews[item.id]?.status === "approved");
-      if (!approved.length) {
-        download("familyfin-approved-submission-pack.txt", "目前沒有已核准文章。\n", "text/plain;charset=utf-8");
-        return;
-      }
-      const parts = [];
-      for (const article of approved) {
-        const body = await loadArticleBody(article);
-        parts.push(splitArticleText(body, article).titleAndBody);
-      }
-      download("familyfin-approved-submission-pack.txt", parts.join("\n\n==============================\n\n"), "text/plain;charset=utf-8");
-    }
-
     async function render() {
       renderMetrics();
       renderTraining();
@@ -1676,7 +1552,6 @@
       renderAgent();
       renderHistory();
       renderDetail();
-      renderVault();
       renderArticlePackHistory();
     }
 
@@ -1716,12 +1591,6 @@
       }
       render();
     }
-
-    document.getElementById("exportTxt").addEventListener("click", exportTxt);
-    document.getElementById("clearReviews").addEventListener("click", () => {
-      localStorage.removeItem(storageKey);
-      render();
-    });
 
     init();
   </script>

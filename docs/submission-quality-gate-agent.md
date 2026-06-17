@@ -71,8 +71,9 @@ Output contract：
 11. financialLiteracyTransfer: 讀者能帶走哪一個可重複使用的財務知能
 12. improvementPlanCard: 目前缺口、改善行動、施行效果、剩餘缺口、是否打平、若未打平的合理求助路徑
 13. readerLoadCard: 1 個主問題、最多 2 個支撐問題、最多 3 個行動、1 個安全提醒；超出即拆題
-14. approvedAuthorStructureCard: 只在有效通過稿樣本存在時填寫，保存去識別結構判讀，不保存全文、事件 ID 或 FB 短文
-15. approvedAuthorStructureUse: 每篇生成稿都必須說明如何採用三張通過稿結構卡，包含 primaryPattern、appliedPatterns、generationConstraint 與 publicBodyRule
+14. articleUsefulnessReview: 文章只推動哪一個家庭財務判斷、要避免哪一個常見誤判、讀者讀完後要先檢查哪個數字/日期/風險/選擇
+15. approvedAuthorStructureCard: 只在有效通過稿樣本存在時填寫，保存去識別結構判讀，不保存全文、事件 ID 或 FB 短文
+16. approvedAuthorStructureUse: 每篇生成稿都必須說明如何採用三張通過稿結構卡，包含 primaryPattern、appliedPatterns、generationConstraint 與 publicBodyRule
 
 Required discussion：
 - topic_evidence_reviewer: 開寫前驗證題目是否真有台灣現實支撐；若只是合理想像，要求換題、補資料或降階成家庭盤點型文章。
@@ -81,6 +82,7 @@ Required discussion：
 - financial_literacy_transfer_reviewer: 檢查讀者是否學到可重複使用的能力，例如分類支出、看現金流、比較成本、查證資訊、辨識風險或保留緩衝。
 - improvement_plan_reviewer: 檢查文章是否把改善計畫寫成讀者能理解的前後差異，並判斷是否打平；若未打平，要求加入合理求助路徑。
 - reader_load_reviewer: 檢查文章是否過載，若同時處理太多問題，要求拆題或刪除支線。
+- article_usefulness_reviewer: 檢查文章是否只推動一個家庭財務判斷；若資訊完整但讀者不知道下一步要看哪個數字、日期、風險或選擇，要求回到題目規劃或正文重寫。
 - approved_author_structure_reviewer: 只根據事件列表中客戶‑個人符合作者本人、且可讀到完整文章的通過稿建立結構學習；不得把 FB 短文當成通過稿樣本。生成時需檢查每篇文章都有 `approvedAuthorStructureUse`，且三種結構都已轉成約束。
 - review_feedback_miner: 用本規則庫先標出可能退件原因，禁止直接引用私有審稿原文。
 - writing_angle_reviewer: 判斷一般民眾版或社工版的入口角度是否正確。

@@ -54,6 +54,9 @@ Every output must pass five layers:
 - `data/taiwan-natural-language-feedback-seeds-2026-06-11.json`
 - `data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json`
 - `data/approved-author-structure-cards-2026-06-10.json`
+- `data/review-rejection-learning-2026-06-09.json`
+- `data/review-rejection-derived-full-2026-06-09.json`
+- `data/review-contrast-cards-2026-06-03.json`
 - Recent relevant files in `reports/`, `logs/`, `analysis-history.json`, `article-pack-history.json`, and `suggestions.json`.
 
 Read the smallest relevant subset. Do not load everything by default.
@@ -112,11 +115,13 @@ Must record:
 - reader fit
 - financial decision or literacy transfer
 - reader load card
+- article usefulness review
 - improvement plan and remaining gap
 - resource benefit translation
 - scenario narrative review
 - de-AI review
 - style variation gate
+- writing form diversity review
 - simulated reader review
 - Taiwan natural feedback review
 - behavior realism review
@@ -127,9 +132,15 @@ Public body must be plain text only unless Kevin asks for internal review.
 
 Use the staged article grouping workflow when writing article packs:
 
-`topic_planning_group -> drafting_group -> content_quality_group -> taiwan_voice_ai_reduction_group -> reader_simulation_group -> final_packaging_group`
+`topic_planning_group -> writing_form_variety_reviewer -> drafting_group -> content_quality_group -> taiwan_voice_ai_reduction_group -> reader_simulation_group -> final_packaging_group`
+
+Before drafting an article pack, choose a different writing form or narrative move for each article. Keep referencing the 好理家在文章管理區 event list: use approved article bodies as source material for de-identified structure learning, and use rejected article bodies plus rejection content as contrast lessons. A 12-article pack should use at least 8 unique writing forms and record `writingFormDiversityReview` for every article.
+
+Every article must also record `articleUsefulnessReview`: the one household financial judgment the article advances, the common misreading it prevents, the concrete evidence in the body, the reusable capability, and the next number/date/risk/choice the reader should check after reading. If a draft is complete but average, split or rewrite until the article has one clear judgment.
 
 Do not treat the reader simulation as real user research. It is an editorial gate that catches drop-off, AI flavor, missing next step, shame/trust risk, and unrealistic action advice before Kevin reviews the draft.
+
+The article workstation is copy-only. It should let Kevin select an article and copy title plus body. It should not submit, approve, revise, reject, store local review status, or replace the InfoCenter article-management workflow.
 
 ### Tool Or Workbench
 
@@ -179,6 +190,7 @@ Must record:
 - Public surface containing private review content, raw comments, agent notes, or SEO/AIO internals.
 - Stale Taiwan subsidy, legal, or local-government details.
 - Article gives empathy but no financial assessment, next step, or help path.
+- Article pack repeats the same narrative template across most articles without a recorded writing-form diversity review.
 
 ## Verification
 

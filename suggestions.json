@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T18:20:00+08:00",
+  "updatedAt": "2026-06-17T15:30:00+08:00",
   "source": "FamilyFin knowledge war room 2026-06-11 grounded 12-article regeneration after staged agent discussion",
   "metrics": {
     "indexedPublishedArticles": 1320,
@@ -53,9 +53,9 @@
     "financialDecisionSupportGateRequired": true,
     "financialLiteracyTransferGateRequired": true,
     "hypothesisTopicVerificationRequired": true,
-    "trialArticlePackCount": 2,
-    "currentTrialArticlePackArticleCount": 1,
-    "latestTrialArticlePackGeneratedAt": "2026-06-10T18:40:00+08:00",
+    "trialArticlePackCount": 3,
+    "currentTrialArticlePackArticleCount": 2,
+    "latestTrialArticlePackGeneratedAt": "2026-06-17T15:30:00+08:00",
     "topicEvidenceGateStrengthenedAt": "2026-06-10T18:40:00+08:00",
     "sourceBehindMetadataBodyModeRequired": true,
     "approvedAuthorStructureLearningRequired": true,
@@ -80,7 +80,21 @@
     "titleDeAiGateRequired": true,
     "titleSemanticClarityGateRequired": true,
     "titleHookStrengthGateRequired": true,
-    "titleReaderVoiceGateRequired": true
+    "titleReaderVoiceGateRequired": true,
+    "writingFormDiversityGateRequired": true,
+    "writingFormDiversityMinimumUniqueForms": 8,
+    "writingFormDiversityCurrentUniqueForms": 12,
+    "writingFormDiversityLearningSources": [
+      "data/approved-author-structure-cards-2026-06-10.json",
+      "data/review-rejection-learning-2026-06-09.json",
+      "data/review-rejection-derived-full-2026-06-09.json",
+      "data/review-contrast-cards-2026-06-03.json",
+      "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+    ],
+    "articleUsefulnessGateRequired": true,
+    "structuredArticleFlowRequired": true,
+    "plainTextArticlePackBodyOnlyRequired": true,
+    "articleStructureLearningUpdatedAt": "2026-06-17T15:30:00+08:00"
   },
   "learningSummary": {
     "status": "completed",
@@ -214,8 +228,45 @@
       "標題需通過語意清楚度檢查，讀者看第一眼就要知道生活問題，不使用聰明但不合邏輯的轉折。",
       "標題需通過鉤子強度檢查，不能只是平鋪直述的文章摘要或片語排列，至少要有生活畫面、壓力衝突、具體後果或完整問題。",
       "標題需通過讀者心聲檢查，先從整理型標題確認題目，再改成讀者會搜尋、會問朋友、會在心裡冒出的句子。",
+      "每篇需通過 articleUsefulnessReview：只推動一個家庭財務判斷，先指出常見誤判，並留下讀者讀完後可檢查的一個數字、日期、風險或選擇。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。"
     ],
+    "writingFormDiversityProtocol": {
+      "status": "required_before_drafting",
+      "ownerAgents": [
+        "topic_planning_group",
+        "approved_author_structure_reviewer",
+        "review_feedback_miner",
+        "review_contrast_miner",
+        "writing_form_variety_reviewer",
+        "human_copy_reviewer"
+      ],
+      "learningSources": [
+        "data/approved-author-structure-cards-2026-06-10.json",
+        "data/review-rejection-learning-2026-06-09.json",
+        "data/review-rejection-derived-full-2026-06-09.json",
+        "data/review-contrast-cards-2026-06-03.json",
+        "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+      ],
+      "minimumUniqueForms": 8,
+      "currentUniqueForms": 12,
+      "selectedForms": [
+        "calendar_pressure_story",
+        "day_schedule_conflict",
+        "ledger_repayment_reveal",
+        "red_yellow_green_sorting",
+        "hidden_cost_accumulation",
+        "thirty_day_recovery_map",
+        "paycheck_split_scene",
+        "fixed_bills_warning",
+        "three_month_stabilization_path",
+        "risk_layering_family_talk",
+        "reader_question_problem_solver",
+        "hospital_to_home_cashflow"
+      ],
+      "useRule": "Use accepted submissions to learn structure and pacing; use rejected drafts plus review comments to learn what to avoid. Do not expose raw private article bodies or review text.",
+      "nonGreenAction": "If the pack repeats the same story structure, regenerate the affected article angle and form before showing it in the approval workbench."
+    },
     "articles": [
       {
         "id": "rent-subsidy-payment-date",
@@ -260,6 +311,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "calendar_pressure_story",
+            "label": "calendar pressure story",
+            "useWhen": "The household pressure is created by due dates, payout timing, rent, payroll, or benefit lag.",
+            "avoid": "Do not make the article a generic ledger. Let the dates and payment order carry the tension.",
+            "derivedFrom": [
+              "approved_author_policy_decision_order",
+              "rejection_lesson_specific_household_timing"
+            ]
+          },
+          "articleMove": "Open with the rent due date and payroll/subsidy lag, then move into household cashflow.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/01-rent-subsidy-payment-date.txt",
@@ -288,6 +376,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -350,6 +440,15 @@
             "beforeAfter": "月初缺10,000元；補貼核定與固定支出調整後，每月可多留4,500元。",
             "remainingGapPath": "若仍缺本月房租，先問所在地租屋或急難協助，並把可延後扣款與不能斷的支出分開。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把繳房租的日期、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出繳房租前的缺口。",
+            "commonMisreadingToPrevent": "若繳房租前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。",
+            "concreteEvidenceInBody": "月初缺10,000元；補貼核定與固定支出調整後，每月可多留4,500元。",
+            "reusableCapability": "學會把補貼從年度政策轉成家庭每月與每日可用現金。",
+            "nextCheckAfterReading": "若仍缺本月房租，先問所在地租屋或急難協助，並把可延後扣款與不能斷的支出分開。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -379,6 +478,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "calendar_pressure_story",
+            "selectedFormLabel": "calendar pressure story",
+            "articleMove": "Open with the rent due date and payroll/subsidy lag, then move into household cashflow.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -460,6 +585,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把繳房租的日期、薪水日、扣款日、補貼可能入帳日放在同一張收支表，算出繳房租前的缺口。",
+          "commonMisreadingToPrevent": "若繳房租前現金不足，先處理本月缺口，再把補貼當成下月固定壓力下降，不把它當成今天就會到的錢。",
+          "concreteEvidenceInBody": "月初缺10,000元；補貼核定與固定支出調整後，每月可多留4,500元。",
+          "reusableCapability": "學會把補貼從年度政策轉成家庭每月與每日可用現金。",
+          "nextCheckAfterReading": "若仍缺本月房租，先問所在地租屋或急難協助，並把可延後扣款與不能斷的支出分開。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -473,6 +611,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -493,6 +632,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -639,6 +780,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "day_schedule_conflict",
+            "label": "day schedule conflict",
+            "useWhen": "The core financial problem is hidden inside childcare, work shifts, care time, or commuting constraints.",
+            "avoid": "Do not only list subsidies. Show how time limits change income and choices.",
+            "derivedFrom": [
+              "approved_author_case_before_after_difference",
+              "rejection_lesson_no_abstract_support"
+            ]
+          },
+          "articleMove": "Use one caregiver's weekly schedule to show why childcare cost, shifts, and income cannot be separated.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/02-single-parent-childcare-work-hours.txt",
@@ -673,6 +851,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -736,6 +916,15 @@
             "beforeAfter": "原本每月少500元；托育補助、排班與後援固定後，月餘裕提高到8,000元上下。",
             "remainingGapPath": "若托育名額或補助未接上，先詢問地方托育、特殊境遇家庭或福利諮詢入口。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把托育費、接送時間、請假少掉的收入與可用補助放在同一張表。",
+            "commonMisreadingToPrevent": "若托育支出與請假損失超過每月可留下的錢，先處理穩定托育與工時，再談存錢。",
+            "concreteEvidenceInBody": "原本每月少500元；托育補助、排班與後援固定後，月餘裕提高到8,000元上下。",
+            "reusableCapability": "學會把照顧時間換算成家庭現金流。",
+            "nextCheckAfterReading": "若托育名額或補助未接上，先詢問地方托育、特殊境遇家庭或福利諮詢入口。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -765,6 +954,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "day_schedule_conflict",
+            "selectedFormLabel": "day schedule conflict",
+            "articleMove": "Use one caregiver's weekly schedule to show why childcare cost, shifts, and income cannot be separated.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -846,6 +1061,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把托育費、接送時間、請假少掉的收入與可用補助放在同一張表。",
+          "commonMisreadingToPrevent": "若托育支出與請假損失超過每月可留下的錢，先處理穩定托育與工時，再談存錢。",
+          "concreteEvidenceInBody": "原本每月少500元；托育補助、排班與後援固定後，月餘裕提高到8,000元上下。",
+          "reusableCapability": "學會把照顧時間換算成家庭現金流。",
+          "nextCheckAfterReading": "若托育名額或補助未接上，先詢問地方托育、特殊境遇家庭或福利諮詢入口。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -859,6 +1087,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -879,6 +1108,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -1025,6 +1256,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "ledger_repayment_reveal",
+            "label": "ledger repayment reveal",
+            "useWhen": "The article needs to reveal the gap between paying bills and actually reducing debt.",
+            "avoid": "Do not moralize debt. Use repayment order, minimum payment, and cashflow to reveal the issue.",
+            "derivedFrom": [
+              "approved_author_case_before_after_difference",
+              "rejection_lesson_non_concept_numbers"
+            ]
+          },
+          "articleMove": "Reveal the difference between paying the minimum and actually reducing the principal.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/03-debt-minimum-payment-plan.txt",
@@ -1053,6 +1321,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -1115,6 +1385,15 @@
             "beforeAfter": "月付9,500元造成每月少1,500元；協商與支出調整後月付降到6,000元，家庭可多2,000元。",
             "remainingGapPath": "若仍無法打平，洽最大債權金融機構、銀行公會查詢專區或法扶，避免高額代辦。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把每筆債務的本金、月付、逾期、利息費用與必要生活支出放在同一張表。",
+            "commonMisreadingToPrevent": "若還款後無法支付30天必要生活，還款方案看起來積極但其實不穩。",
+            "concreteEvidenceInBody": "月付9,500元造成每月少1,500元；協商與支出調整後月付降到6,000元，家庭可多2,000元。",
+            "reusableCapability": "學會從每月可還金額判斷債務處理，而不是只看總欠款。",
+            "nextCheckAfterReading": "若仍無法打平，洽最大債權金融機構、銀行公會查詢專區或法扶，避免高額代辦。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -1144,6 +1423,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "ledger_repayment_reveal",
+            "selectedFormLabel": "ledger repayment reveal",
+            "articleMove": "Reveal the difference between paying the minimum and actually reducing the principal.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -1225,6 +1530,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把每筆債務的本金、月付、逾期、利息費用與必要生活支出放在同一張表。",
+          "commonMisreadingToPrevent": "若還款後無法支付30天必要生活，還款方案看起來積極但其實不穩。",
+          "concreteEvidenceInBody": "月付9,500元造成每月少1,500元；協商與支出調整後月付降到6,000元，家庭可多2,000元。",
+          "reusableCapability": "學會從每月可還金額判斷債務處理，而不是只看總欠款。",
+          "nextCheckAfterReading": "若仍無法打平，洽最大債權金融機構、銀行公會查詢專區或法扶，避免高額代辦。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -1238,6 +1556,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -1258,6 +1577,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -1404,6 +1725,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "red_yellow_green_sorting",
+            "label": "red yellow green sorting",
+            "useWhen": "Readers need a simple sorting frame for urgent, delayable, and optional spending decisions.",
+            "avoid": "Do not turn it into a checklist dump. Keep the frame inside a household scene.",
+            "derivedFrom": [
+              "approved_author_policy_decision_order",
+              "rejection_lesson_reader_can_act"
+            ]
+          },
+          "articleMove": "Turn emergency savings into days of survival and red/yellow/green spending choices.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/04-emergency-buffer-days.txt",
@@ -1432,6 +1790,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -1494,6 +1854,15 @@
             "beforeAfter": "手上5,000元只能撐約3天；三個月後累積18,000元，可撐約9天。",
             "remainingGapPath": "若收入已中斷且紅燈支出即將斷，先洽1957、地方社會福利或急難窗口。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把每月必要支出除以30，算出手上現金能撐幾天。",
+            "commonMisreadingToPrevent": "若只能撐3到5天，先建立短期緩衝與急難查詢，不急著追求六個月大目標。",
+            "concreteEvidenceInBody": "手上5,000元只能撐約3天；三個月後累積18,000元，可撐約9天。",
+            "reusableCapability": "學會把預備金轉成可撐天數，判斷風險大小。",
+            "nextCheckAfterReading": "若收入已中斷且紅燈支出即將斷，先洽1957、地方社會福利或急難窗口。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -1523,6 +1892,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "red_yellow_green_sorting",
+            "selectedFormLabel": "red yellow green sorting",
+            "articleMove": "Turn emergency savings into days of survival and red/yellow/green spending choices.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -1604,6 +1999,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把每月必要支出除以30，算出手上現金能撐幾天。",
+          "commonMisreadingToPrevent": "若只能撐3到5天，先建立短期緩衝與急難查詢，不急著追求六個月大目標。",
+          "concreteEvidenceInBody": "手上5,000元只能撐約3天；三個月後累積18,000元，可撐約9天。",
+          "reusableCapability": "學會把預備金轉成可撐天數，判斷風險大小。",
+          "nextCheckAfterReading": "若收入已中斷且紅燈支出即將斷，先洽1957、地方社會福利或急難窗口。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -1617,6 +2025,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -1637,6 +2046,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -1783,6 +2194,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "hidden_cost_accumulation",
+            "label": "hidden cost accumulation",
+            "useWhen": "The risk is not one big bill but repeated small costs, lost work time, or invisible burden.",
+            "avoid": "Do not only name service resources. Translate each resource into reduced time, cash, or care burden.",
+            "derivedFrom": [
+              "approved_author_support_and_risk_layering",
+              "rejection_lesson_family_economy_fit"
+            ]
+          },
+          "articleMove": "Accumulate care costs, lost income, transport, and supplies before introducing service support.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/05-long-term-care-cost-plan.txt",
@@ -1811,6 +2259,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -1873,6 +2323,15 @@
             "beforeAfter": "原本每月多7,000元缺口；服務與分工後缺口降到3,000元。",
             "remainingGapPath": "若仍赤字，撥1966或洽照管中心，並同步詢問急難、喘息或地方支持。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把長照自付費、耗材交通、照顧者少掉的收入分成三欄計算。",
+            "commonMisreadingToPrevent": "若照顧讓家庭每月轉為赤字，先找最卡的時間段與費用，而不是只問有沒有服務。",
+            "concreteEvidenceInBody": "原本每月多7,000元缺口；服務與分工後缺口降到3,000元。",
+            "reusableCapability": "學會把照顧時間與照顧支出一起放進家庭預算。",
+            "nextCheckAfterReading": "若仍赤字，撥1966或洽照管中心，並同步詢問急難、喘息或地方支持。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -1902,6 +2361,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "hidden_cost_accumulation",
+            "selectedFormLabel": "hidden cost accumulation",
+            "articleMove": "Accumulate care costs, lost income, transport, and supplies before introducing service support.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -1983,6 +2468,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把長照自付費、耗材交通、照顧者少掉的收入分成三欄計算。",
+          "commonMisreadingToPrevent": "若照顧讓家庭每月轉為赤字，先找最卡的時間段與費用，而不是只問有沒有服務。",
+          "concreteEvidenceInBody": "原本每月多7,000元缺口；服務與分工後缺口降到3,000元。",
+          "reusableCapability": "學會把照顧時間與照顧支出一起放進家庭預算。",
+          "nextCheckAfterReading": "若仍赤字，撥1966或洽照管中心，並同步詢問急難、喘息或地方支持。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -1996,6 +2494,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -2016,6 +2515,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -2162,6 +2663,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "thirty_day_recovery_map",
+            "label": "thirty day recovery map",
+            "useWhen": "The article starts after a sudden loss and must help readers stabilize the next month.",
+            "avoid": "Do not over-promise recovery. Separate stop-loss, 30-day living costs, and longer procedures.",
+            "derivedFrom": [
+              "approved_author_support_and_risk_layering",
+              "rejection_lesson_verified_case_boundary"
+            ]
+          },
+          "articleMove": "Start after the money leaves the account, then map stop-loss and the next 30 days.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/06-scam-loss-thirty-days.txt",
@@ -2190,6 +2728,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -2252,6 +2792,15 @@
             "beforeAfter": "損失150,000元後若借高利每月多6,000元；改成先處理支出與分期，新增壓力降到2,500元。",
             "remainingGapPath": "若30天必要支出仍不足，先問銀行、165、地方急難或可靠福利窗口，避開二次詐騙。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "列出損失金額、剩餘現金、30天內必要支出與可能新增債務。",
+            "commonMisreadingToPrevent": "若追回款項不確定，生活安排不能押在追回上，先保住30天紅燈支出。",
+            "concreteEvidenceInBody": "損失150,000元後若借高利每月多6,000元；改成先處理支出與分期，新增壓力降到2,500元。",
+            "reusableCapability": "學會把追回程序和生活現金流分開處理。",
+            "nextCheckAfterReading": "若30天必要支出仍不足，先問銀行、165、地方急難或可靠福利窗口，避開二次詐騙。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -2281,6 +2830,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "thirty_day_recovery_map",
+            "selectedFormLabel": "thirty day recovery map",
+            "articleMove": "Start after the money leaves the account, then map stop-loss and the next 30 days.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -2362,6 +2937,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "列出損失金額、剩餘現金、30天內必要支出與可能新增債務。",
+          "commonMisreadingToPrevent": "若追回款項不確定，生活安排不能押在追回上，先保住30天紅燈支出。",
+          "concreteEvidenceInBody": "損失150,000元後若借高利每月多6,000元；改成先處理支出與分期，新增壓力降到2,500元。",
+          "reusableCapability": "學會把追回程序和生活現金流分開處理。",
+          "nextCheckAfterReading": "若30天必要支出仍不足，先問銀行、165、地方急難或可靠福利窗口，避開二次詐騙。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -2375,6 +2963,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -2395,6 +2984,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -2541,6 +3132,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "paycheck_split_scene",
+            "label": "paycheck split scene",
+            "useWhen": "The article should make an income look different once rent, family support, loans, and food are separated.",
+            "avoid": "Do not sound like a young-person lecture. Show fixed commitments that arrive with the first salary.",
+            "derivedFrom": [
+              "approved_author_case_before_after_difference",
+              "rejection_lesson_no_blame"
+            ]
+          },
+          "articleMove": "Split the first salary into rent, food, family support, loans, and the remaining buffer.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/07-first-job-fixed-costs.txt",
@@ -2563,6 +3191,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -2624,6 +3254,15 @@
             "beforeAfter": "月薪32,000元原本剩1,200元；家用階段式與通勤調整後剩3,500元。",
             "remainingGapPath": "若仍不足，先延後大型分期、重談家用期間，必要時找就業或家庭支持資源。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把薪水分成生存支出、責任支出與可調整支出，確認剩餘是否足夠處理意外。",
+            "commonMisreadingToPrevent": "若前兩段支出超過收入九成，先談房租交通家用與分期，不急著設定高存款目標。",
+            "concreteEvidenceInBody": "月薪32,000元原本剩1,200元；家用階段式與通勤調整後剩3,500元。",
+            "reusableCapability": "學會用起步期現金流判斷哪些責任要分階段承擔。",
+            "nextCheckAfterReading": "若仍不足，先延後大型分期、重談家用期間，必要時找就業或家庭支持資源。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -2653,6 +3292,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "paycheck_split_scene",
+            "selectedFormLabel": "paycheck split scene",
+            "articleMove": "Split the first salary into rent, food, family support, loans, and the remaining buffer.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -2734,6 +3399,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把薪水分成生存支出、責任支出與可調整支出，確認剩餘是否足夠處理意外。",
+          "commonMisreadingToPrevent": "若前兩段支出超過收入九成，先談房租交通家用與分期，不急著設定高存款目標。",
+          "concreteEvidenceInBody": "月薪32,000元原本剩1,200元；家用階段式與通勤調整後剩3,500元。",
+          "reusableCapability": "學會用起步期現金流判斷哪些責任要分階段承擔。",
+          "nextCheckAfterReading": "若仍不足，先延後大型分期、重談家用期間，必要時找就業或家庭支持資源。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -2747,6 +3425,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -2767,6 +3446,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -2913,6 +3594,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "fixed_bills_warning",
+            "label": "fixed bills warning",
+            "useWhen": "Income changes suddenly but bills, deductions, and household promises stay fixed.",
+            "avoid": "Do not make the warning vague. Name the three numbers that change decisions.",
+            "derivedFrom": [
+              "approved_author_policy_decision_order",
+              "rejection_lesson_practical_decision_help"
+            ]
+          },
+          "articleMove": "Compare income before and after reduced hours against the same fixed bills.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/08-reduced-hours-three-bills.txt",
@@ -2941,6 +3659,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -3003,6 +3723,15 @@
             "beforeAfter": "收入少8,400元後每月缺2,400元；三項支出調整後轉為多4,600元。",
             "remainingGapPath": "若仍缺口擴大，查勞動部就業服務、僱用安定或減班休息相關措施。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "算出收入少多少、固定支出多少不能動、手上現金能撐幾個月。",
+            "commonMisreadingToPrevent": "若缺口可能超過兩個月，不能只等公司通知，要同步查補貼、訓練與支出調整。",
+            "concreteEvidenceInBody": "收入少8,400元後每月缺2,400元；三項支出調整後轉為多4,600元。",
+            "reusableCapability": "學會把減班當成家庭財務警示燈，提早排支出與資源。",
+            "nextCheckAfterReading": "若仍缺口擴大，查勞動部就業服務、僱用安定或減班休息相關措施。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -3032,6 +3761,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "fixed_bills_warning",
+            "selectedFormLabel": "fixed bills warning",
+            "articleMove": "Compare income before and after reduced hours against the same fixed bills.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -3113,6 +3868,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "算出收入少多少、固定支出多少不能動、手上現金能撐幾個月。",
+          "commonMisreadingToPrevent": "若缺口可能超過兩個月，不能只等公司通知，要同步查補貼、訓練與支出調整。",
+          "concreteEvidenceInBody": "收入少8,400元後每月缺2,400元；三項支出調整後轉為多4,600元。",
+          "reusableCapability": "學會把減班當成家庭財務警示燈，提早排支出與資源。",
+          "nextCheckAfterReading": "若仍缺口擴大，查勞動部就業服務、僱用安定或減班休息相關措施。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -3126,6 +3894,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -3146,6 +3915,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -3292,6 +4063,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "three_month_stabilization_path",
+            "label": "three month stabilization path",
+            "useWhen": "A family needs a staged plan: first month stop the leak, next months reduce repeated gaps.",
+            "avoid": "Do not require too many actions. Keep one main problem and two supporting moves.",
+            "derivedFrom": [
+              "approved_author_case_before_after_difference",
+              "rejection_lesson_reader_load"
+            ]
+          },
+          "articleMove": "Use a staged first-month, second-month, third-month stabilization path.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/09-special-family-three-months.txt",
@@ -3320,6 +4128,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -3382,6 +4192,15 @@
             "beforeAfter": "原本每月少12,000元；生活扶助、支出暫緩與親友固定支援後降到2,000元。",
             "remainingGapPath": "若仍缺，洽所在地社會局處、1957或急難救助，並確認文件與戶籍居住規定。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "列出前三個月的房租、餐食、孩子、醫療、交通與可申請扶助缺口。",
+            "commonMisreadingToPrevent": "若三個月內無法打平，先找所在地社福窗口釐清資格與急難路徑。",
+            "concreteEvidenceInBody": "原本每月少12,000元；生活扶助、支出暫緩與親友固定支援後降到2,000元。",
+            "reusableCapability": "學會把家庭變故拆成短期生活缺口、制度申請與長期安排。",
+            "nextCheckAfterReading": "若仍缺，洽所在地社會局處、1957或急難救助，並確認文件與戶籍居住規定。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -3411,6 +4230,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "three_month_stabilization_path",
+            "selectedFormLabel": "three month stabilization path",
+            "articleMove": "Use a staged first-month, second-month, third-month stabilization path.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -3492,6 +4337,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "列出前三個月的房租、餐食、孩子、醫療、交通與可申請扶助缺口。",
+          "commonMisreadingToPrevent": "若三個月內無法打平，先找所在地社福窗口釐清資格與急難路徑。",
+          "concreteEvidenceInBody": "原本每月少12,000元；生活扶助、支出暫緩與親友固定支援後降到2,000元。",
+          "reusableCapability": "學會把家庭變故拆成短期生活缺口、制度申請與長期安排。",
+          "nextCheckAfterReading": "若仍缺，洽所在地社會局處、1957或急難救助，並確認文件與戶籍居住規定。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -3505,6 +4363,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -3525,6 +4384,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -3671,6 +4532,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "risk_layering_family_talk",
+            "label": "risk layering family talk",
+            "useWhen": "The financial issue involves health, care, fraud, family dignity, and role sharing.",
+            "avoid": "Do not make family members sound perfectly rational. Respect face, autonomy, and hesitation.",
+            "derivedFrom": [
+              "approved_author_support_and_risk_layering",
+              "rejection_lesson_taiwan_behavior_realism"
+            ]
+          },
+          "articleMove": "Layer pension, care, medical, and fraud risk through a respectful family money conversation.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/10-retirement-care-fraud-buffer.txt",
@@ -3705,6 +4603,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -3768,6 +4668,15 @@
             "beforeAfter": "月剩6,000元，照顧耗材後剩900元；支出調整與支援後回到3,700元。",
             "remainingGapPath": "若仍不足，問長照1966、1957、地方老人福利與家人支援上限。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "把長輩收入、固定支出、醫療照顧增加、詐騙防護和子女支援上限分開。",
+            "commonMisreadingToPrevent": "若醫療照顧後每月只剩一兩千元，就要提早安排家庭支援與大額交易防線。",
+            "concreteEvidenceInBody": "月剩6,000元，照顧耗材後剩900元；支出調整與支援後回到3,700元。",
+            "reusableCapability": "學會把老後存款分用途，辨認真正可承受突發風險的錢。",
+            "nextCheckAfterReading": "若仍不足，問長照1966、1957、地方老人福利與家人支援上限。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -3797,6 +4706,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "risk_layering_family_talk",
+            "selectedFormLabel": "risk layering family talk",
+            "articleMove": "Layer pension, care, medical, and fraud risk through a respectful family money conversation.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -3878,6 +4813,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "把長輩收入、固定支出、醫療照顧增加、詐騙防護和子女支援上限分開。",
+          "commonMisreadingToPrevent": "若醫療照顧後每月只剩一兩千元，就要提早安排家庭支援與大額交易防線。",
+          "concreteEvidenceInBody": "月剩6,000元，照顧耗材後剩900元；支出調整與支援後回到3,700元。",
+          "reusableCapability": "學會把老後存款分用途，辨認真正可承受突發風險的錢。",
+          "nextCheckAfterReading": "若仍不足，問長照1966、1957、地方老人福利與家人支援上限。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -3891,6 +4839,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -3911,6 +4860,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -4057,6 +5008,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "reader_question_problem_solver",
+            "label": "reader question problem solver",
+            "useWhen": "The natural entry is a concrete question ordinary readers might search or ask a friend.",
+            "avoid": "Do not use fake clever Q&A transitions. The question must be complete and useful.",
+            "derivedFrom": [
+              "approved_author_policy_decision_order",
+              "Kevin_title_reader_voice_feedback"
+            ]
+          },
+          "articleMove": "Use the reader's immediate question about this month's rent and bills as the article spine.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/11-unemployment-first-month.txt",
@@ -4085,6 +5073,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -4147,6 +5137,15 @@
             "beforeAfter": "原本30天缺18,000元；給付估算、支出暫緩與家人短期支援後缺口降到3,000元。",
             "remainingGapPath": "若仍不足，先到就服站辦理失業認定並問地方急難或1957，不碰高利借款。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "估算離職後30天必要支出、可能失業給付、等待期與手上現金缺口。",
+            "commonMisreadingToPrevent": "若等待期間現金不足，先處理30天紅燈支出與可靠借款替代，不把給付當成立即入帳。",
+            "concreteEvidenceInBody": "原本30天缺18,000元；給付估算、支出暫緩與家人短期支援後缺口降到3,000元。",
+            "reusableCapability": "學會區分投保薪資、實領薪資和家裡真正要付的錢。",
+            "nextCheckAfterReading": "若仍不足，先到就服站辦理失業認定並問地方急難或1957，不碰高利借款。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -4176,6 +5175,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "reader_question_problem_solver",
+            "selectedFormLabel": "reader question problem solver",
+            "articleMove": "Use the reader's immediate question about this month's rent and bills as the article spine.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -4257,6 +5282,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "估算離職後30天必要支出、可能失業給付、等待期與手上現金缺口。",
+          "commonMisreadingToPrevent": "若等待期間現金不足，先處理30天紅燈支出與可靠借款替代，不把給付當成立即入帳。",
+          "concreteEvidenceInBody": "原本30天缺18,000元；給付估算、支出暫緩與家人短期支援後缺口降到3,000元。",
+          "reusableCapability": "學會區分投保薪資、實領薪資和家裡真正要付的錢。",
+          "nextCheckAfterReading": "若仍不足，先到就服站辦理失業認定並問地方急難或1957，不碰高利借款。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -4270,6 +5308,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -4290,6 +5329,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -4436,6 +5477,43 @@
           },
           "method": "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate."
         },
+        "writingFormDiversityReview": {
+          "status": "passed_writing_form_gate",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "selectedForm": {
+            "id": "hospital_to_home_cashflow",
+            "label": "hospital to home cashflow",
+            "useWhen": "The article moves from a health event to the bills, leave, transport, and household cash gap that follows.",
+            "avoid": "Do not let medical facts overtake family finance. Keep the financial assessment visible.",
+            "derivedFrom": [
+              "approved_author_support_and_risk_layering",
+              "rejection_lesson_family_economy_relevance"
+            ]
+          },
+          "articleMove": "Move from sickness leave to hospital costs, home recovery, benefit timing, and household gap.",
+          "agentDiscussionStages": [
+            "topic_planning_group",
+            "approved_author_structure_reviewer",
+            "review_feedback_miner",
+            "review_contrast_miner",
+            "writing_form_variety_reviewer",
+            "taiwan_voice_ai_reduction_group",
+            "simulated_reader_panel",
+            "final_quality_gate"
+          ],
+          "learningSources": [
+            "data/approved-author-structure-cards-2026-06-10.json",
+            "data/review-rejection-learning-2026-06-09.json",
+            "data/review-rejection-derived-full-2026-06-09.json",
+            "data/review-contrast-cards-2026-06-03.json",
+            "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+          ],
+          "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+          "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+          "publicPrivateBoundary": "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+          "packDiversityRule": "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+          "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
+        },
         "readiness": "可投稿初稿，待 Kevin 核准",
         "approvalStatus": "pending",
         "bodyPath": "articles/2026-06-11-grounded-12-article-pack/12-sickness-benefit-hospital-cashflow.txt",
@@ -4464,6 +5542,8 @@
           "bodyChars",
           "paragraphRhythmGate",
           "styleVariationGate",
+          "writingFormDiversityReview",
+          "articleUsefulnessReview",
           "readiness",
           "preGenerationReview",
           "groundedWorkflowReview",
@@ -4526,6 +5606,15 @@
             "beforeAfter": "住院10天造成17,000元缺口；給付、扣款調整與家人分工後降到4,000元。",
             "remainingGapPath": "若仍不足，問公司請假、勞保傷病、醫院或地方急難協助。"
           },
+          "articleUsefulnessCard": {
+            "status": "passed",
+            "readerJudgment": "列出住院期間醫療費、收入減少、陪病請假、出院後復健與30天必要支出。",
+            "commonMisreadingToPrevent": "若給付入帳前現金不足，先守住30天必要支出，不用信用卡連續補洞。",
+            "concreteEvidenceInBody": "住院10天造成17,000元缺口；給付、扣款調整與家人分工後降到4,000元。",
+            "reusableCapability": "學會把疾病給付視為補一段缺口，而不是立即替代全部薪水。",
+            "nextCheckAfterReading": "若仍不足，問公司請假、勞保傷病、醫院或地方急難協助。",
+            "revisionMove": "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment."
+          },
           "resourceBenefitTranslation": {
             "status": "passed",
             "rule": "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。"
@@ -4555,6 +5644,32 @@
             "status": "passed",
             "source": "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
             "rule": "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。"
+          },
+          "writingFormDiversityCard": {
+            "status": "passed",
+            "selectedFormId": "hospital_to_home_cashflow",
+            "selectedFormLabel": "hospital to home cashflow",
+            "articleMove": "Move from sickness leave to hospital costs, home recovery, benefit timing, and household gap.",
+            "agentDiscussionStages": [
+              "topic_planning_group",
+              "approved_author_structure_reviewer",
+              "review_feedback_miner",
+              "review_contrast_miner",
+              "writing_form_variety_reviewer",
+              "taiwan_voice_ai_reduction_group",
+              "simulated_reader_panel",
+              "final_quality_gate"
+            ],
+            "learningSources": [
+              "data/approved-author-structure-cards-2026-06-10.json",
+              "data/review-rejection-learning-2026-06-09.json",
+              "data/review-rejection-derived-full-2026-06-09.json",
+              "data/review-contrast-cards-2026-06-03.json",
+              "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events"
+            ],
+            "successReferenceUse": "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+            "rejectionContrastUse": "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+            "revisionMove": "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting."
           },
           "approvedAuthorStructureUse": {
             "status": "passed",
@@ -4636,6 +5751,19 @@
           ],
           "convergence": "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。"
         },
+        "articleUsefulnessReview": {
+          "status": "passed_article_usefulness_gate",
+          "ownerStage": "content_quality_group",
+          "reviewedAt": "2026-06-11T18:20:00+08:00",
+          "readerJudgment": "列出住院期間醫療費、收入減少、陪病請假、出院後復健與30天必要支出。",
+          "commonMisreadingToPrevent": "若給付入帳前現金不足，先守住30天必要支出，不用信用卡連續補洞。",
+          "concreteEvidenceInBody": "住院10天造成17,000元缺口；給付、扣款調整與家人分工後降到4,000元。",
+          "reusableCapability": "學會把疾病給付視為補一段缺口，而不是立即替代全部薪水。",
+          "nextCheckAfterReading": "若仍不足，問公司請假、勞保傷病、醫院或地方急難協助。",
+          "scopeRule": "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+          "revisionMove": "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+          "publicBodyRule": "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation."
+        },
         "articlePackReviewGate": {
           "status": "green",
           "round": 1,
@@ -4649,6 +5777,7 @@
             "resource_benefit_translator",
             "scenario_or_workflow_mapper",
             "human_copy_reviewer",
+            "article_usefulness_reviewer",
             "numeric_decision_reviewer",
             "role_privacy_boundary_reviewer",
             "final_quality_gate"
@@ -4669,6 +5798,8 @@
             "scene_first_narrative",
             "paragraph_rhythm_continuity",
             "style_pattern_variation",
+            "writing_form_diversity",
+            "article_usefulness_single_judgment",
             "reader_simulation",
             "before_after_and_remaining_gap",
             "behavior_realism",
@@ -4809,6 +5940,8 @@
       "titleSemanticClarityRequired": true,
       "titleHookStrengthRequired": true,
       "titleReaderVoiceRequired": true,
+      "writingFormDiversityRequired": true,
+      "articleUsefulnessRequired": true,
       "approvalStorage": "localStorage for workstation review; approved TXT export grouped by tag"
     },
     "articlePackGreenReviewPolicy": {
@@ -4838,6 +5971,24 @@
         "stablePhraseTotal": 0,
         "selfQuestionMax": 0,
         "trueNeedMax": 3
+      },
+      "writingFormDiversity": {
+        "minimumUniqueFormsRequired": 8,
+        "uniqueFormCount": 12,
+        "forms": [
+          "calendar_pressure_story",
+          "day_schedule_conflict",
+          "ledger_repayment_reveal",
+          "red_yellow_green_sorting",
+          "hidden_cost_accumulation",
+          "thirty_day_recovery_map",
+          "paycheck_split_scene",
+          "fixed_bills_warning",
+          "three_month_stabilization_path",
+          "risk_layering_family_talk",
+          "reader_question_problem_solver",
+          "hospital_to_home_cashflow"
+        ]
       },
       "bodyFiles": [
         "articles/2026-06-11-grounded-12-article-pack/01-rent-subsidy-payment-date.txt",
@@ -5652,8 +6803,466 @@
     "latestPack": "2026-06-09-rejection-learned-pack",
     "auditCommand": "node tools/audit-article-role-integrity.js articles/2026-06-09-rejection-learned-pack"
   },
-  "currentTrialArticlePackId": "2026-06-11-staged-editorial-workflow-test",
+  "currentTrialArticlePackId": "2026-06-17-structured-two-article-pack",
   "trialArticlePacks": [
+    {
+      "id": "2026-06-17-structured-two-article-pack",
+      "title": "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
+      "status": "待 Kevin 看效果",
+      "description": "依 6/17 退件意見與文章結構化搜尋結果，先產 2 篇一般民眾純文字稿：一篇用雙情境拆分失業後房租缺口，一篇用現金流月曆與三種錢改善繳房租前的焦慮。",
+      "createdAt": "2026-06-17T15:30:00+08:00",
+      "audience": "一般民眾",
+      "generatedBy": "tools/build-structured-two-article-pack-2026-06-17.js",
+      "displayMode": "trial_article_pack_dropdown",
+      "exportMode": "plain_text_title_and_body_only",
+      "files": {
+        "directory": "articles/2026-06-17-structured-two-article-pack",
+        "bodyFiles": [
+          "articles/2026-06-17-structured-two-article-pack/01-unemployment-benefit-rent-two-cases.txt",
+          "articles/2026-06-17-structured-two-article-pack/02-rent-payment-cashflow-calendar.txt"
+        ],
+        "report": "reports/2026-06-17-structured-two-article-pack.md",
+        "log": "logs/2026-06-17-structured-two-article-pack-log.md"
+      },
+      "agentConvergence": {
+        "status": "converged",
+        "updatedAt": "2026-06-17T15:30:00+08:00",
+        "agents": [
+          "familyfin_grounded_orchestrator",
+          "source_grounding_reviewer",
+          "article_structure_reviewer",
+          "taiwan_habit_reviewer",
+          "human_copy_reviewer",
+          "financial_decision_reviewer",
+          "role_integrity_reviewer",
+          "final_quality_gate"
+        ],
+        "strongSignals": [
+          "The first rejected topic should not reuse the rent article skeleton; it should become a dual-case contrast: timing gap vs ongoing income gap.",
+          "The second rejected topic already has strong narrative; it needs a cashflow calendar/table so readers can act.",
+          "Structure is not decorative formatting; it must help the reader identify the household decision."
+        ],
+        "usefulDisagreement": [
+          "Resource details are necessary for verification, but body tone should describe what the resource changes for the family rather than announce the resource.",
+          "Tables help structure, but too many tables make the body feel mechanical; each article uses one primary structure aid."
+        ],
+        "adoptNow": [
+          "Use one visible decision structure per article.",
+          "Keep sources in metadata and translate facts into household effects in body.",
+          "Make the ending ask one concrete household check instead of a broad encouragement."
+        ],
+        "validateNext": [
+          "Kevin should review whether the two titles feel clickable enough.",
+          "If accepted, extend this structured-but-storylike flow to later article packs."
+        ]
+      },
+      "structureLearning": {
+        "searchedAt": "2026-06-17T15:30:00+08:00",
+        "adoptedRules": [
+          "Use a clear opening that names the reader's practical question.",
+          "Use headings, lists, or tables only when they reduce decision load.",
+          "Use concise and objective language; avoid promotional or abstract filler.",
+          "Put the main answer early, then support with story, numbers, and next-step judgment."
+        ],
+        "sources": [
+          "https://www.nngroup.com/articles/how-users-read-on-the-web/",
+          "https://www.nngroup.com/articles/concise-scannable-and-objective-how-to-write-for-the-web/",
+          "https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/tone-of-voice/",
+          "https://adbest.com.tw/blog/what-is-seo-article/",
+          "https://www.faranie.com/seo-article-structure/"
+        ]
+      },
+      "articles": [
+        {
+          "id": "unemployment-benefit-rent-two-cases",
+          "title": "被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口",
+          "audience": "一般民眾",
+          "primaryTag": "家庭重大事件-失業與收入中斷",
+          "secondaryTags": [
+            "財務管理與規劃-現金流",
+            "政府救助資源-就業保險",
+            "租屋與居住成本"
+          ],
+          "categoryType": "收入中斷與房租壓力",
+          "bodyPath": "articles/2026-06-17-structured-two-article-pack/01-unemployment-benefit-rent-two-cases.txt",
+          "bodyChars": 2986,
+          "bodyCharsIncludingWhitespace": 3045,
+          "bodyLengthGate": "passed",
+          "contentMode": "plain_text_body_only",
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "copyTarget": "bodyPath",
+          "sources": [
+            {
+              "label": "我的E政府/勞動部勞工保險局：失業給付申請",
+              "url": "https://www.gov.tw/News_Content_2_389560",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "失業給付資格、給付標準與辦理入口查核。"
+            },
+            {
+              "label": "內政部國土管理署：115年度中央擴大租金補貼公告",
+              "url": "https://www.nlma.gov.tw/ch/legislation/law%26regunu/7243",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "115年度租金補貼申請期間與主管機關查核。"
+            },
+            {
+              "label": "衛生福利部：1957福利諮詢專線",
+              "url": "https://www.mohw.gov.tw/fp-16-21130-1.html",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "生活困難時的福利諮詢與轉介入口。"
+            }
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-17T15:30:00+08:00",
+            "workflow": "FamilyFin grounded staged workflow",
+            "sourceSearchSummary": [
+              "NN/g: web readers scan; use scannable text, clear headings, concise/objective language.",
+              "Taiwan SEO/content-writing sources: article structures need title, intro, body, conclusion, and tables or lists when content has decision steps.",
+              "Taiwan official sources: unemployment benefit and 115 rent subsidy facts verified before drafting."
+            ],
+            "rejectedFeedbackApplied": [
+              "避免與房租篇同樣結構。",
+              "把兩種案型整理成案例對照：短期時間差與連續收入斷層。",
+              "把失業給付、房租、生活費與求助順序結構化。"
+            ],
+            "topicEvidenceCard": {
+              "status": "passed",
+              "topic": "被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口",
+              "evidenceBasis": "失業給付由勞保局/我的E政府公開資料驗證：非自願離職、向公立就業服務機構辦理求職登記、給付標準按退保前6個月平均月投保薪資60%等規則；租金補貼以國土管理署與行政院資料作背景。",
+              "taiwanFit": "Uses Taiwan household cashflow, rent timing, public employment service, BLI unemployment benefit, and rent subsidy context.",
+              "notHypotheticalRule": "化名情境只作常見狀況整理；制度與金額邏輯以公開資料與家庭收支試算支撐，不宣稱是真實單一案例。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "audience": "一般民眾",
+              "openingHook": "被資遣後不是只有少一份薪水，而是房租常常比給付更早到。",
+              "avoidedTone": [
+                "政策公告口吻",
+                "AI 式概念整理",
+                "審稿建議入正文",
+                "不合常理的輕鬆建議"
+              ],
+              "readerNeed": "讀者需要先分辨自己卡的是幾天的時間差，還是接下來幾個月的收入缺口。"
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "把本月房租、下一筆收入、可能給付、必要生活費與手上現金放在同一張表，判斷缺口類型。",
+              "decisionOutput": "分成短期時間差、連續收入斷層、立即求助三條路徑。",
+              "tableOrStructure": "使用兩種家庭情境對照表與30天必付順序。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "學會把失業後的壓力拆成日期、金額、期間與求助入口，不用只靠忍耐或借款補洞。",
+              "transferTest": "讀完後能說出自己缺的是哪幾天、哪幾筆、缺多久，以及該先問就服還是社福。"
+            },
+            "writingFormDiversityCard": {
+              "status": "passed",
+              "selectedForm": "雙情境對照＋決策順序",
+              "variationReason": "回應退件意見：與房租篇不同，不再只寫單一租屋壓力，而是把被資遣後的房租問題拆成兩種缺口。",
+              "avoidSamePackFeel": "Two articles use different structures: dual-case contrast vs narrative cashflow calendar."
+            },
+            "readerLoadCard": {
+              "status": "passed",
+              "mainProblem": "被資遣後第一個月的房租與生活費缺口。",
+              "supportProblems": [
+                "失業給付時間差",
+                "連續收入下降"
+              ],
+              "maxActionCount": 3,
+              "revisionMove": "Keep one primary decision per article; use table/list only where it helps the reader choose next step."
+            },
+            "articleUsefulnessCard": {
+              "status": "passed",
+              "readerJudgment": "先判斷這個月差幾天，還是接下來幾個月都會差。",
+              "commonMisreadingToPrevent": "不要以為有失業給付就能直接解決這個月房租，也不要把房租溝通寫得太容易。",
+              "nextCheckAfterReading": "確認房租要繳的日期、求職登記時間、可用現金與30天必付項目。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-17T15:30:00+08:00",
+              "primaryPattern": "policy_decision_order",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "用調整前後的數字、缺口與關鍵動作，讓讀者看見改善不是口號。",
+                  "rejectWhen": "只有情緒或概念，沒有前後差異、可行動順序與仍未補上的缺口。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度資訊先轉成家庭要判斷的資格、時間、金額、文件與下一步。",
+                  "rejectWhen": "只像宣告政策，沒有說明制度能補哪個生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "分清家庭自己的錢、制度資源、親友協助與正式求助各自能補哪一段。",
+                  "rejectWhen": "把支持寫成溫情，沒有交代哪一層支撐哪個風險。"
+                }
+              ],
+              "generationConstraint": "Apply accepted-author structures without copying private text: before/after difference, policy decision order, support/risk layering.",
+              "publicBodyRule": "Body must be plain public-facing Traditional Chinese only; no reviewer language, no SEO/AIO labels, no agent process, no submission notes."
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 2,
+            "reviewedAt": "2026-06-17T15:30:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "familyfin_grounded_orchestrator",
+              "source_grounding_reviewer",
+              "article_structure_reviewer",
+              "taiwan_habit_reviewer",
+              "human_copy_reviewer",
+              "financial_decision_reviewer",
+              "role_integrity_reviewer",
+              "final_quality_gate"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Return to generation when body is abstract, repeats an old rent-article skeleton, lacks structure/table, uses unnatural Taiwan phrasing, or fails to give a household financial decision.",
+            "revisionMove": "Regenerate from structure plan: clarify the reader's question, split the household gap into visible categories, add one table or decision list, and rewrite ending around a concrete next check.",
+            "passedChecks": [
+              "body_over_2000_non_whitespace_chars",
+              "plain_text_body_only",
+              "taiwan_public_reader_voice",
+              "structured_article_flow",
+              "cashflow_math_visible",
+              "source_grounding_in_metadata",
+              "no_role_leak"
+            ],
+            "articleId": "unemployment-benefit-rent-two-cases"
+          },
+          "articleUsefulnessReview": {
+            "status": "passed",
+            "usefulness": "先判斷這個月差幾天，還是接下來幾個月都會差。",
+            "structureAid": "使用兩種家庭情境對照表與30天必付順序。",
+            "decisionMemory": "確認房租要繳的日期、求職登記時間、可用現金與30天必付項目。"
+          },
+          "deAiReview": {
+            "status": "passed",
+            "checks": [
+              "no_role_or_editor_language",
+              "no_policy_bulletin_tone",
+              "uses_taiwan_daily_speech",
+              "keeps_reader_decision_visible"
+            ]
+          },
+          "structureReview": {
+            "status": "passed",
+            "adoptedRules": [
+              "opening answers why this matters now",
+              "body uses one visible table or decision list",
+              "case or story is followed by cashflow math",
+              "ending names the next household check"
+            ]
+          }
+        },
+        {
+          "id": "rent-payment-cashflow-calendar",
+          "title": "帳戶還有錢，為什麼繳房租那天還是會慌：先把錢分成三種名字",
+          "audience": "一般民眾",
+          "primaryTag": "財務管理與規劃-現金流",
+          "secondaryTags": [
+            "租屋與居住成本",
+            "家庭收支盤點",
+            "財務韌性與預備金"
+          ],
+          "categoryType": "現金流盤點型",
+          "bodyPath": "articles/2026-06-17-structured-two-article-pack/02-rent-payment-cashflow-calendar.txt",
+          "bodyChars": 2561,
+          "bodyCharsIncludingWhitespace": 2619,
+          "bodyLengthGate": "passed",
+          "contentMode": "plain_text_body_only",
+          "sourceDisclosureMode": "metadata_only_not_body",
+          "copyTarget": "bodyPath",
+          "sources": [
+            {
+              "label": "行政院：300億元中央擴大租金補貼專案計畫",
+              "url": "https://www.ey.gov.tw/Page/5A8A0CB5B41DA11E/442e67f9-e22e-42c6-9df2-4d3fa9d10666",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "中央租金補貼金額與加碼方向查核。"
+            },
+            {
+              "label": "內政部國土管理署：115年度中央擴大租金補貼公告",
+              "url": "https://www.nlma.gov.tw/ch/legislation/law%26regunu/7243",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "115年度租金補貼申請期間、主管機關與核撥規則查核。"
+            },
+            {
+              "label": "NN/g：How Users Read on the Web",
+              "url": "https://www.nngroup.com/articles/how-users-read-on-the-web/",
+              "checkedAt": "2026-06-17T15:30:00+08:00",
+              "usedFor": "文章結構化：讀者掃讀、小標、清楚段落與可掃描內容。"
+            }
+          ],
+          "preGenerationReview": {
+            "status": "passed_prewrite_protocol",
+            "reviewedAt": "2026-06-17T15:30:00+08:00",
+            "workflow": "FamilyFin grounded staged workflow",
+            "sourceSearchSummary": [
+              "NN/g: web readers scan; use scannable text, clear headings, concise/objective language.",
+              "Taiwan SEO/content-writing sources: article structures need title, intro, body, conclusion, and tables or lists when content has decision steps.",
+              "Taiwan official sources: unemployment benefit and 115 rent subsidy facts verified before drafting."
+            ],
+            "rejectedFeedbackApplied": [
+              "保留原本敘事優點。",
+              "用現金流觀念解決問題。",
+              "加入文字表格輔助說明，避免只有感受描述。"
+            ],
+            "topicEvidenceCard": {
+              "status": "passed",
+              "topic": "帳戶還有錢，為什麼繳房租那天還是會慌：先把錢分成三種名字",
+              "evidenceBasis": "115年度中央租金補貼資料以行政院與國土管理署公告查核；文章主軸以家庭現金流盤點呈現，不把補助寫成政策公告。",
+              "taiwanFit": "Uses Taiwan household cashflow, rent timing, public employment service, BLI unemployment benefit, and rent subsidy context.",
+              "notHypotheticalRule": "化名情境只作常見狀況整理；制度與金額邏輯以公開資料與家庭收支試算支撐，不宣稱是真實單一案例。"
+            },
+            "readerFitCard": {
+              "status": "passed",
+              "audience": "一般民眾",
+              "openingHook": "帳戶餘額看起來還有錢，但有些錢其實早就被房租和帳單預約走了。",
+              "avoidedTone": [
+                "政策公告口吻",
+                "AI 式概念整理",
+                "審稿建議入正文",
+                "不合常理的輕鬆建議"
+              ],
+              "readerNeed": "讀者需要看懂帳戶餘額、已預留支出、真正可用現金三者差異。"
+            },
+            "financialDecisionCard": {
+              "status": "passed",
+              "assessmentTask": "把下一次薪水前的固定扣款、房租與生活費列成日期表，算出真正可動用金額。",
+              "decisionOutput": "判斷本月是可調整、需延後、需正式求助，或已經不能再用信用卡補洞。",
+              "tableOrStructure": "使用現金流月曆和三種錢的文字表。"
+            },
+            "financialLiteracyTransfer": {
+              "status": "passed",
+              "capability": "學會用日期和用途看錢，而不是只看帳戶餘額。",
+              "transferTest": "讀完後能把自己的錢分成看得到、已經有用途、真的能動用三類。"
+            },
+            "writingFormDiversityCard": {
+              "status": "passed",
+              "selectedForm": "故事開場＋現金流月曆＋三欄表",
+              "variationReason": "回應退件意見：保留敘事感，但用現金流表與三欄分類讓文章更結構化。",
+              "avoidSamePackFeel": "Two articles use different structures: dual-case contrast vs narrative cashflow calendar."
+            },
+            "readerLoadCard": {
+              "status": "passed",
+              "mainProblem": "帳戶有餘額卻在繳房租前焦慮。",
+              "supportProblems": [
+                "固定扣款時間",
+                "生活費預留不足"
+              ],
+              "maxActionCount": 3,
+              "revisionMove": "Keep one primary decision per article; use table/list only where it helps the reader choose next step."
+            },
+            "articleUsefulnessCard": {
+              "status": "passed",
+              "readerJudgment": "先問下一次收入前，這筆錢已經有哪些用途。",
+              "commonMisreadingToPrevent": "不要把帳戶餘額當成全部可用錢，也不要把補貼想成馬上能救本月房租。",
+              "nextCheckAfterReading": "寫出下次薪水前所有會扣款的日期和最低生活費。"
+            },
+            "approvedAuthorStructureUse": {
+              "status": "passed",
+              "source": "data/approved-author-structure-cards-2026-06-10.json",
+              "reviewedAt": "2026-06-17T15:30:00+08:00",
+              "primaryPattern": "case_before_after_difference",
+              "appliedPatterns": [
+                {
+                  "id": "case_before_after_difference",
+                  "learnedFrom": "劉泰一",
+                  "label": "個案前後差異",
+                  "generationMove": "用調整前後的數字、缺口與關鍵動作，讓讀者看見改善不是口號。",
+                  "rejectWhen": "只有情緒或概念，沒有前後差異、可行動順序與仍未補上的缺口。"
+                },
+                {
+                  "id": "policy_decision_order",
+                  "learnedFrom": "李婉仙",
+                  "label": "制度判斷順序",
+                  "generationMove": "制度資訊先轉成家庭要判斷的資格、時間、金額、文件與下一步。",
+                  "rejectWhen": "只像宣告政策，沒有說明制度能補哪個生活缺口。"
+                },
+                {
+                  "id": "support_and_risk_layering",
+                  "learnedFrom": "蔡思樂",
+                  "label": "風險支撐分層",
+                  "generationMove": "分清家庭自己的錢、制度資源、親友協助與正式求助各自能補哪一段。",
+                  "rejectWhen": "把支持寫成溫情，沒有交代哪一層支撐哪個風險。"
+                }
+              ],
+              "generationConstraint": "Apply accepted-author structures without copying private text: before/after difference, policy decision order, support/risk layering.",
+              "publicBodyRule": "Body must be plain public-facing Traditional Chinese only; no reviewer language, no SEO/AIO labels, no agent process, no submission notes."
+            }
+          },
+          "articlePackReviewGate": {
+            "status": "green",
+            "round": 2,
+            "reviewedAt": "2026-06-17T15:30:00+08:00",
+            "loopPolicy": "review_then_revise_until_green",
+            "reviewers": [
+              "familyfin_grounded_orchestrator",
+              "source_grounding_reviewer",
+              "article_structure_reviewer",
+              "taiwan_habit_reviewer",
+              "human_copy_reviewer",
+              "financial_decision_reviewer",
+              "role_integrity_reviewer",
+              "final_quality_gate"
+            ],
+            "blockingStatuses": [
+              "red",
+              "yellow",
+              "not_reviewed"
+            ],
+            "revisionRequiredWhen": "Return to generation when body is abstract, repeats an old rent-article skeleton, lacks structure/table, uses unnatural Taiwan phrasing, or fails to give a household financial decision.",
+            "revisionMove": "Regenerate from structure plan: clarify the reader's question, split the household gap into visible categories, add one table or decision list, and rewrite ending around a concrete next check.",
+            "passedChecks": [
+              "body_over_2000_non_whitespace_chars",
+              "plain_text_body_only",
+              "taiwan_public_reader_voice",
+              "structured_article_flow",
+              "cashflow_math_visible",
+              "source_grounding_in_metadata",
+              "no_role_leak"
+            ],
+            "articleId": "rent-payment-cashflow-calendar"
+          },
+          "articleUsefulnessReview": {
+            "status": "passed",
+            "usefulness": "先問下一次收入前，這筆錢已經有哪些用途。",
+            "structureAid": "使用現金流月曆和三種錢的文字表。",
+            "decisionMemory": "寫出下次薪水前所有會扣款的日期和最低生活費。"
+          },
+          "deAiReview": {
+            "status": "passed",
+            "checks": [
+              "no_role_or_editor_language",
+              "no_policy_bulletin_tone",
+              "uses_taiwan_daily_speech",
+              "keeps_reader_decision_visible"
+            ]
+          },
+          "structureReview": {
+            "status": "passed",
+            "adoptedRules": [
+              "opening answers why this matters now",
+              "body uses one visible table or decision list",
+              "case or story is followed by cashflow math",
+              "ending names the next household check"
+            ]
+          }
+        }
+      ]
+    },
     {
       "id": "2026-06-11-staged-editorial-workflow-test",
       "title": "2026-06-11 分段 agent 編輯工作流試驗｜房租日期現金流二修稿",

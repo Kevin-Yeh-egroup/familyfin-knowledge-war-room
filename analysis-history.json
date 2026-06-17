@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-11T09:29:13.378Z",
+  "updatedAt": "2026-06-17T05:50:57.410Z",
   "source": "public-safe derived analysis logs and reports",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
@@ -7,11 +7,37 @@
     "localPrivatePathsNormalized": true,
     "publicSafeDerivedSummariesOnly": true
   },
-  "latestEntryId": "2026-06-11-approved-author-learning-generation-optimization",
-  "latestWeeklyReportId": "week-2026-06-08",
-  "count": 22,
-  "weeklyReportCount": 3,
+  "latestEntryId": "2026-06-17-structured-two-article-pack",
+  "latestWeeklyReportId": "week-2026-06-15",
+  "count": 24,
+  "weeklyReportCount": 4,
   "weeklyReports": [
+    {
+      "id": "week-2026-06-15",
+      "weekStart": "2026-06-15",
+      "weekEnd": "2026-06-21",
+      "title": "2026-06-15 至 2026-06-21 週報",
+      "status": "已完成",
+      "summary": "本週共有 1 筆分析紀錄，重點包含：退件意見轉成結構化文章流程。",
+      "outcomes": [
+        "依 Kevin 提供的兩則退件建議與文章結構化搜尋結果，先生成 2 篇一般民眾純文字試產稿：一篇改成雙情境對照，一篇保留敘事並加入現金流月曆與三種錢的文字表。"
+      ],
+      "blockers": [],
+      "nextActions": [
+        "回到該週紀錄展開查看細節，將阻擋原因轉成下次流程的檢查清單。"
+      ],
+      "records": [
+        {
+          "id": "2026-06-17-structured-two-article-pack",
+          "date": "2026-06-17",
+          "type": "兩篇試產文章包",
+          "title": "退件意見轉成結構化文章流程",
+          "summary": "依 Kevin 提供的兩則退件建議與文章結構化搜尋結果，先生成 2 篇一般民眾純文字試產稿：一篇改成雙情境對照，一篇保留敘事並加入現金流月曆與三種錢的文字表。",
+          "sourcePath": "reports/2026-06-17-structured-two-article-pack.md"
+        }
+      ],
+      "copyText": "2026-06-15 至 2026-06-21 週報\n\n狀態：已完成\n週期：2026-06-15 至 2026-06-21\n\n本週摘要\n本週共有 1 筆分析紀錄，重點包含：退件意見轉成結構化文章流程。\n\n本週完成\n- 依 Kevin 提供的兩則退件建議與文章結構化搜尋結果，先生成 2 篇一般民眾純文字試產稿：一篇改成雙情境對照，一篇保留敘事並加入現金流月曆與三種錢的文字表。\n\n阻擋或風險\n- 無明確阻擋。\n\n下一步\n- 回到該週紀錄展開查看細節，將阻擋原因轉成下次流程的檢查清單。\n\n本週紀錄\n- 2026-06-17｜兩篇試產文章包｜退件意見轉成結構化文章流程"
+    },
     {
       "id": "week-2026-06-08",
       "weekStart": "2026-06-08",
@@ -55,6 +81,14 @@
         "考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。"
       ],
       "records": [
+        {
+          "id": "2026-06-12-writing-form-diversity-learning",
+          "date": "2026-06-12",
+          "type": "Agent 生成規則優化",
+          "title": "文體變奏與成功/駁回學習規則",
+          "summary": "依 Kevin 要求，將每次文章生成前的文體選型、成功投稿結構學習、審核駁回正文與評語對照學習，接入文章包生成器、validator、文章包歷史、文件與 agent workflow。",
+          "sourcePath": "reports/2026-06-12-writing-form-diversity-learning.md"
+        },
         {
           "id": "2026-06-11-approved-author-learning-generation-optimization",
           "date": "2026-06-11",
@@ -152,7 +186,7 @@
           "sourcePath": "reports/2026-06-08-source-of-truth-reconciliation.md"
         }
       ],
-      "copyText": "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核、駁回學習與文章重生\n\n狀態：進行中\n週期：2026-06-08 至 2026-06-14\n\n本週摘要\n本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程，接著重新讀取 6/9 大量審核駁回，將最新 350 筆駁回、51 筆完整審核內容與 50 張可交叉學習卡轉成產稿前 gate，並重生一般民眾純文字文章包。6/10 再依「假設性議題，缺乏驗證」、去 AI 感、讀者吸引力與財務決策幫助，動用 Agent OS 收斂新規格，先產出 2 篇一般民眾試產稿。後續依 Kevin 新觀察，新增改善計畫、施行效果、剩餘缺口、打平或求助路徑 gate，並確認通過稿作者學習不得使用 FB 短文。6/11 已將三張通過稿結構卡正式接入生成器、validator 與戰情室前台。\n\n本週完成\n- 完成劉泰一、李婉仙、蔡思樂三位通過稿作者完整文章結構卡，來源限定為客戶-個人等於作者本人、審核成功、可讀完整正文。\n- 將三張通過稿結構卡轉成 `approvedAuthorStructureUse`，接入十篇正式文章包、兩篇試產文章包、validator 與前台展示。\n- 完成 2026-06-10 改善計畫與剩餘缺口 agent 討論，新增 `improvementPlanCard`、`readerLoadCard` 與 `approvedAuthorStructureCard` 來源邊界。\n- 只讀檢查 InfoCenter 事件列表作者來源：李婉仙與蔡思樂有多筆審核成功事件；劉泰一後續已從 live 事件頁補回可讀完整正文的通過樣本；FB 短文已排除於正式學習樣本之外。\n- 完成 2026-06-10 Agent OS 討論：題目驗證、去 AI 感、讀者吸引力與財務決策幫助。\n- 新增 2026-06-10 兩篇一般民眾試產稿，均以台灣官方制度作為證據底盤，正文超過 2000 字。\n- 新增 `trialArticlePacks` 與前端獨立下拉區，讓試產稿和正式主包分開呈現。\n- 完成 2026-06-09 InfoCenter read-only 回讀：2086 筆事件、350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。\n- 新增 6/9 駁回學習衍生資料、投稿品質 gate、規則增量、日報與日誌。\n- 重新生成 2026-06-09 一般民眾純文字文章包，10 篇皆通過生成綠燈。\n- 新增生成前 protocol：topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。\n- 重新更新 10 篇文章生成，將前置 protocol 寫入每篇文章 metadata，並新增 validator 檢查。\n- 完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。\n- 回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。\n- validator 增加同批標題正規化重複、近似與核心題名包含檢查。\n- 新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。\n- 新增純文字文章包 `articlePackReviewGate` 綠燈迴圈；非綠燈直接回修生成，不進 Kevin 核准台。\n\n阻擋或風險\n- 公開戰情室仍只保存去識別衍生資料；私有 raw 駁回內容留在 work-private，不進 repo。\n- 正式投稿前仍需人工確認每篇引用的年度補助、地方規範與最新官方資料。\n- 通過稿結構卡已接入生成流程，但下一輪新文章仍需人工看語感、可投稿感與正文是否真正自然。\n\n下一步\n- 先讓 Kevin 看 2 篇試產稿的語感、結尾、數字自然度與可投稿感。\n- 下一輪文章生成前，逐篇補 `improvementPlanCard`：若調整後未打平，必須加入具體求助路徑。\n- 下一輪文章生成時，逐篇確認 `approvedAuthorStructureUse` 是否真的影響正文，而不是只停在 metadata。\n- 若 Kevin 接受這兩篇方向，再用同一套 gate 補後續 8 篇。\n- 下一輪正式產稿前，先重跑 InfoCenter rejection learning，確認 ready cards 是否有新增。\n- 每次重生文章包後，逐篇保存 reviewer verdict trace，缺綠燈就回修題目、數字、角度或正文。\n- 若 Kevin 提供新的退稿理由，直接接到 6/9 gate 的 reinforced rules 與文章重生迴圈。\n- 下一輪產稿逐篇保存三張前置卡與財務知能轉移欄位，確認不是假設性議題，且讀者可帶走一個家庭財務判斷能力。\n- 考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。\n\n本週紀錄\n- 2026-06-11｜Agent 生成規則優化｜三張通過稿結構卡正式接入戰情室與文章生成\n- 2026-06-10｜通過稿作者學習｜劉泰一、李婉仙、蔡思樂三位作者完整文章結構卡\n- 2026-06-10｜Agent 生成規則優化｜改善計畫、剩餘缺口與通過稿作者學習規則\n- 2026-06-10｜兩篇試產文章包｜退件學習後先生成 2 篇一般民眾試產稿\n- 2026-06-10｜Agent 生成規則優化｜題目驗證、去 AI 感與財務決策幫助的 6/10 收斂\n- 2026-06-09｜文章包重新生成｜10 篇文章重新套用前置驗證 protocol\n- 2026-06-09｜Agent 生成規則優化｜假設性議題先驗證，文章要幫讀者做家庭財務判斷\n- 2026-06-09｜審核駁回學習｜大量駁回回讀與 6/9 文章重生規則\n- 2026-06-08｜知識庫標題索引｜既有知識庫標題索引接入 validator\n- 2026-06-08｜投稿檢核機制回查｜把投稿檢核聊天本體回填到產稿前 gate\n- 2026-06-08｜純文字文章包綠燈審核迴圈｜純文字文章包先審綠燈，非綠燈直接回修生成\n- 2026-06-08｜Source-of-truth 對帳｜戰情室正式索引與紀錄來源對帳"
+      "copyText": "2026-06-08 至 2026-06-14 週報｜正式索引、投稿檢核、駁回學習與文章重生\n\n狀態：進行中\n週期：2026-06-08 至 2026-06-14\n\n本週摘要\n本週先把戰情室的正式索引、週報來源與投稿檢核機制回填到產稿前流程，接著重新讀取 6/9 大量審核駁回，將最新 350 筆駁回、51 筆完整審核內容與 50 張可交叉學習卡轉成產稿前 gate，並重生一般民眾純文字文章包。6/10 再依「假設性議題，缺乏驗證」、去 AI 感、讀者吸引力與財務決策幫助，動用 Agent OS 收斂新規格，先產出 2 篇一般民眾試產稿。後續依 Kevin 新觀察，新增改善計畫、施行效果、剩餘缺口、打平或求助路徑 gate，並確認通過稿作者學習不得使用 FB 短文。6/11 已將三張通過稿結構卡正式接入生成器、validator 與戰情室前台。\n\n本週完成\n- 完成劉泰一、李婉仙、蔡思樂三位通過稿作者完整文章結構卡，來源限定為客戶-個人等於作者本人、審核成功、可讀完整正文。\n- 將三張通過稿結構卡轉成 `approvedAuthorStructureUse`，接入十篇正式文章包、兩篇試產文章包、validator 與前台展示。\n- 完成 2026-06-10 改善計畫與剩餘缺口 agent 討論，新增 `improvementPlanCard`、`readerLoadCard` 與 `approvedAuthorStructureCard` 來源邊界。\n- 只讀檢查 InfoCenter 事件列表作者來源：李婉仙與蔡思樂有多筆審核成功事件；劉泰一後續已從 live 事件頁補回可讀完整正文的通過樣本；FB 短文已排除於正式學習樣本之外。\n- 完成 2026-06-10 Agent OS 討論：題目驗證、去 AI 感、讀者吸引力與財務決策幫助。\n- 新增 2026-06-10 兩篇一般民眾試產稿，均以台灣官方制度作為證據底盤，正文超過 2000 字。\n- 新增 `trialArticlePacks` 與前端獨立下拉區，讓試產稿和正式主包分開呈現。\n- 完成 2026-06-09 InfoCenter read-only 回讀：2086 筆事件、350 筆審核駁回、51 筆完整審核內容、50 張可交叉學習卡。\n- 新增 6/9 駁回學習衍生資料、投稿品質 gate、規則增量、日報與日誌。\n- 重新生成 2026-06-09 一般民眾純文字文章包，10 篇皆通過生成綠燈。\n- 新增生成前 protocol：topicEvidenceCard、readerFitCard、financialDecisionCard、financialLiteracyTransfer。\n- 重新更新 10 篇文章生成，將前置 protocol 寫入每篇文章 metadata，並新增 validator 檢查。\n- 完成 source-of-truth 對帳，確認 suggestions、article-pack-history、analysis-history 與 reports/logs 的角色。\n- 回查「檢核投稿機制」聊天本體，將標題新意與內容差異轉成戰情室產稿前 gate。\n- validator 增加同批標題正規化重複、近似與核心題名包含檢查。\n- 新增公開知識庫標題索引，已接入 1323 筆公開文章標題供 prewrite 比對。\n- 新增純文字文章包 `articlePackReviewGate` 綠燈迴圈；非綠燈直接回修生成，不進 Kevin 核准台。\n\n阻擋或風險\n- 公開戰情室仍只保存去識別衍生資料；私有 raw 駁回內容留在 work-private，不進 repo。\n- 正式投稿前仍需人工確認每篇引用的年度補助、地方規範與最新官方資料。\n- 通過稿結構卡已接入生成流程，但下一輪新文章仍需人工看語感、可投稿感與正文是否真正自然。\n\n下一步\n- 先讓 Kevin 看 2 篇試產稿的語感、結尾、數字自然度與可投稿感。\n- 下一輪文章生成前，逐篇補 `improvementPlanCard`：若調整後未打平，必須加入具體求助路徑。\n- 下一輪文章生成時，逐篇確認 `approvedAuthorStructureUse` 是否真的影響正文，而不是只停在 metadata。\n- 若 Kevin 接受這兩篇方向，再用同一套 gate 補後續 8 篇。\n- 下一輪正式產稿前，先重跑 InfoCenter rejection learning，確認 ready cards 是否有新增。\n- 每次重生文章包後，逐篇保存 reviewer verdict trace，缺綠燈就回修題目、數字、角度或正文。\n- 若 Kevin 提供新的退稿理由，直接接到 6/9 gate 的 reinforced rules 與文章重生迴圈。\n- 下一輪產稿逐篇保存三張前置卡與財務知能轉移欄位，確認不是假設性議題，且讀者可帶走一個家庭財務判斷能力。\n- 考慮把投稿審核 skill/agent 候選規格升級為 project-local skill，通過 governance 後再全域化。\n\n本週紀錄\n- 2026-06-12｜Agent 生成規則優化｜文體變奏與成功/駁回學習規則\n- 2026-06-11｜Agent 生成規則優化｜三張通過稿結構卡正式接入戰情室與文章生成\n- 2026-06-10｜通過稿作者學習｜劉泰一、李婉仙、蔡思樂三位作者完整文章結構卡\n- 2026-06-10｜Agent 生成規則優化｜改善計畫、剩餘缺口與通過稿作者學習規則\n- 2026-06-10｜兩篇試產文章包｜退件學習後先生成 2 篇一般民眾試產稿\n- 2026-06-10｜Agent 生成規則優化｜題目驗證、去 AI 感與財務決策幫助的 6/10 收斂\n- 2026-06-09｜文章包重新生成｜10 篇文章重新套用前置驗證 protocol\n- 2026-06-09｜Agent 生成規則優化｜假設性議題先驗證，文章要幫讀者做家庭財務判斷\n- 2026-06-09｜審核駁回學習｜大量駁回回讀與 6/9 文章重生規則\n- 2026-06-08｜知識庫標題索引｜既有知識庫標題索引接入 validator\n- 2026-06-08｜投稿檢核機制回查｜把投稿檢核聊天本體回填到產稿前 gate\n- 2026-06-08｜純文字文章包綠燈審核迴圈｜純文字文章包先審綠燈，非綠燈直接回修生成\n- 2026-06-08｜Source-of-truth 對帳｜戰情室正式索引與紀錄來源對帳"
     },
     {
       "id": "week-2026-06-01",
@@ -286,6 +320,36 @@
     }
   ],
   "entries": [
+    {
+      "id": "2026-06-17-structured-two-article-pack",
+      "sourcePath": "reports/2026-06-17-structured-two-article-pack.md",
+      "type": "兩篇試產文章包",
+      "title": "退件意見轉成結構化文章流程",
+      "summary": "依 Kevin 提供的兩則退件建議與文章結構化搜尋結果，先生成 2 篇一般民眾純文字試產稿：一篇改成雙情境對照，一篇保留敘事並加入現金流月曆與三種錢的文字表。",
+      "highlights": [
+        "失業給付房租題不再沿用既有房租篇骨架，改分短期時間差與連續收入斷層。",
+        "帳戶有錢仍會慌的題目保留故事感，但加入現金流月曆、三種錢與可用現金計算。",
+        "新增結構化規則：開頭先回答讀者問題、中段只用一個主要結構工具、結尾留下下一個家庭檢查。"
+      ],
+      "date": "2026-06-17",
+      "content": "# 2026-06-17 兩篇結構化試產文章包\n\n## 本次退件學習\n\n- `被資遣後，失業給付還沒下來，這個月房租要怎麼辦？`：不能再用既有房租篇同樣骨架，改成雙情境對照，分清短期時間差與連續收入斷層。\n- `帳戶還有錢，為什麼繳房租那天還是會慌`：保留敘事優點，但用現金流月曆和三種錢的表格讓讀者可以判斷。\n\n## 文章結構化規則\n\n- 開頭先回答讀者現在為什麼會卡住。\n- 中段只放一個主要結構工具，避免過度表格化。\n- 數字要服務家庭決策，不能只像資料堆疊。\n- 結尾要留下下一個具體檢查，而不是抽象鼓勵。\n\n## 產出\n\n1. 被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口：2986 非空白字。\n2. 帳戶還有錢，為什麼繳房租那天還是會慌：先把錢分成三種名字：2561 非空白字。\n\n## 已用來源\n\n- NN/g：How Users Read on the Web\n- NN/g：Concise, Scannable, and Objective\n- GOV.UK：Tone of voice / clear structure and language\n- ADBest / Faranie：SEO article structure and table/list presentation\n- 我的E政府/勞動部勞工保險局：失業給付申請\n- 內政部國土管理署、行政院：115年度租金補貼資訊\n- 衛生福利部：1957福利諮詢專線",
+      "copyText": "退件意見轉成結構化文章流程\n\n# 2026-06-17 兩篇結構化試產文章包\n\n## 本次退件學習\n\n- `被資遣後，失業給付還沒下來，這個月房租要怎麼辦？`：不能再用既有房租篇同樣骨架，改成雙情境對照，分清短期時間差與連續收入斷層。\n- `帳戶還有錢，為什麼繳房租那天還是會慌`：保留敘事優點，但用現金流月曆和三種錢的表格讓讀者可以判斷。\n\n## 文章結構化規則\n\n- 開頭先回答讀者現在為什麼會卡住。\n- 中段只放一個主要結構工具，避免過度表格化。\n- 數字要服務家庭決策，不能只像資料堆疊。\n- 結尾要留下下一個具體檢查，而不是抽象鼓勵。\n\n## 產出\n\n1. 被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口：2986 非空白字。\n2. 帳戶還有錢，為什麼繳房租那天還是會慌：先把錢分成三種名字：2561 非空白字。\n\n## 已用來源\n\n- NN/g：How Users Read on the Web\n- NN/g：Concise, Scannable, and Objective\n- GOV.UK：Tone of voice / clear structure and language\n- ADBest / Faranie：SEO article structure and table/list presentation\n- 我的E政府/勞動部勞工保險局：失業給付申請\n- 內政部國土管理署、行政院：115年度租金補貼資訊\n- 衛生福利部：1957福利諮詢專線"
+    },
+    {
+      "id": "2026-06-12-writing-form-diversity-learning",
+      "sourcePath": "reports/2026-06-12-writing-form-diversity-learning.md",
+      "type": "Agent 生成規則優化",
+      "title": "文體變奏與成功/駁回學習規則",
+      "summary": "依 Kevin 要求，將每次文章生成前的文體選型、成功投稿結構學習、審核駁回正文與評語對照學習，接入文章包生成器、validator、文章包歷史、文件與 agent workflow。",
+      "highlights": [
+        "新增 `writingFormDiversityReview` 與 prewrite `writingFormDiversityCard`。",
+        "12 篇正式文章包分配 12 種不同文體，validator 要求 12 篇至少 8 種。",
+        "成功稿只學去識別結構，駁回稿只學失敗原因與修正規則，公開 repo 不保存私有全文或審核原文。"
+      ],
+      "date": "2026-06-12",
+      "content": "# 2026-06-12 文體變奏與成功/駁回學習規則\n\n## 任務\n\nKevin 希望每次文章生成不要都長得一樣。每週更新與文章生成時，agent 應先討論本次要用哪些不同寫法與文體，並持續從事件列表中的成功投稿文章、審核駁回文章正文與審核內容中累積經驗。\n\n## Agent OS 收斂\n\n- `familyfin_grounded_orchestrator`：本次不是重寫正文，而是把「文體變奏」變成生成前必過流程。\n- `real_feedback_miner`：成功稿只學去識別結構，駁回稿只學失敗原因與修正規則。\n- `review_contrast_miner`：要求將評論中的文章、審核內容、駁回原因與成功稿特徵交叉對照。\n- `writing_form_variety_reviewer`：每篇文章需先選定不同敘事形式，再進入正文生成。\n- `human_copy_reviewer`：若一包文章讀起來像同一個模板，不能只改句子，要回到題目切角與文體選型。\n- `role_privacy_boundary_reviewer`：公開 repo 只保存去識別學習結論，不保存 InfoCenter 私有全文、審核原文、事件 ID 或個資。\n\n## 本次新增規則\n\n每篇文章新增 `writingFormDiversityReview`，必須記錄：\n\n- `selectedForm`：本篇使用的文體或敘事形式。\n- `articleMove`：本篇如何推進，不只是主題名稱。\n- `agentDiscussionStages`：需包含成功稿結構、駁回對照、文體變奏、台灣語氣與 final gate。\n- `learningSources`：需包含通過稿結構卡、駁回學習資料與對照卡。\n- `revisionMove`：若文章讀起來和同包其他稿件太像，退回題目規劃與文體選型重生。\n\n同一包 12 篇文章至少要使用 8 種不同文體。本次正式文章包已分配 12 種：\n\n1. `calendar_pressure_story`\n2. `day_schedule_conflict`\n3. `ledger_repayment_reveal`\n4. `red_yellow_green_sorting`\n5. `hidden_cost_accumulation`\n6. `thirty_day_recovery_map`\n7. `paycheck_split_scene`\n8. `fixed_bills_warning`\n9. `three_month_stabilization_path`\n10. `risk_layering_family_talk`\n11. `reader_question_problem_solver`\n12. `hospital_to_home_cashflow`\n\n## 已接入的檔案\n\n- `tools/build-grounded-12-article-pack-2026-06-11.js`\n- `tools/validate-war-room-state.js`\n- `tools/build-article-pack-history.js`\n- `suggestions.json`\n- `article-pack-history.json`\n- `docs/submission-article-generation-standard-v2.md`\n- `.agents/familyfin-grounded-workflow-agent-roster-2026-06-11.md`\n- `.agents/skills/familyfin-grounded-workflow/SKILL.md`\n\n## 驗證結果\n\n- `node tools/build-grounded-12-article-pack-2026-06-11.js`：通過，12 篇正文皆超過 2000 字。\n- `node tools/build-article-pack-history.js`：通過，文章包歷史保留文體統計。\n- `node tools/validate-war-room-state.js`：通過。\n- validator 顯示 `article pack writing form diversity`：12 unique forms / 12 articles。\n- validator 顯示 `article-pack-history writing form diversity`：12 unique forms / 12 articles。\n\n## 下一步\n\n下次週報若取得新的成功投稿或審核駁回資料，需新增「文體與退件學習」摘要，說明下次文章包要如何調整：\n\n- 題目切角\n- 開頭方式\n- 敘事形式\n- 改善計畫\n- 結尾收束\n- 避免同質化的具體做法",
+      "copyText": "文體變奏與成功/駁回學習規則\n\n# 2026-06-12 文體變奏與成功/駁回學習規則\n\n## 任務\n\nKevin 希望每次文章生成不要都長得一樣。每週更新與文章生成時，agent 應先討論本次要用哪些不同寫法與文體，並持續從事件列表中的成功投稿文章、審核駁回文章正文與審核內容中累積經驗。\n\n## Agent OS 收斂\n\n- `familyfin_grounded_orchestrator`：本次不是重寫正文，而是把「文體變奏」變成生成前必過流程。\n- `real_feedback_miner`：成功稿只學去識別結構，駁回稿只學失敗原因與修正規則。\n- `review_contrast_miner`：要求將評論中的文章、審核內容、駁回原因與成功稿特徵交叉對照。\n- `writing_form_variety_reviewer`：每篇文章需先選定不同敘事形式，再進入正文生成。\n- `human_copy_reviewer`：若一包文章讀起來像同一個模板，不能只改句子，要回到題目切角與文體選型。\n- `role_privacy_boundary_reviewer`：公開 repo 只保存去識別學習結論，不保存 InfoCenter 私有全文、審核原文、事件 ID 或個資。\n\n## 本次新增規則\n\n每篇文章新增 `writingFormDiversityReview`，必須記錄：\n\n- `selectedForm`：本篇使用的文體或敘事形式。\n- `articleMove`：本篇如何推進，不只是主題名稱。\n- `agentDiscussionStages`：需包含成功稿結構、駁回對照、文體變奏、台灣語氣與 final gate。\n- `learningSources`：需包含通過稿結構卡、駁回學習資料與對照卡。\n- `revisionMove`：若文章讀起來和同包其他稿件太像，退回題目規劃與文體選型重生。\n\n同一包 12 篇文章至少要使用 8 種不同文體。本次正式文章包已分配 12 種：\n\n1. `calendar_pressure_story`\n2. `day_schedule_conflict`\n3. `ledger_repayment_reveal`\n4. `red_yellow_green_sorting`\n5. `hidden_cost_accumulation`\n6. `thirty_day_recovery_map`\n7. `paycheck_split_scene`\n8. `fixed_bills_warning`\n9. `three_month_stabilization_path`\n10. `risk_layering_family_talk`\n11. `reader_question_problem_solver`\n12. `hospital_to_home_cashflow`\n\n## 已接入的檔案\n\n- `tools/build-grounded-12-article-pack-2026-06-11.js`\n- `tools/validate-war-room-state.js`\n- `tools/build-article-pack-history.js`\n- `suggestions.json`\n- `article-pack-history.json`\n- `docs/submission-article-generation-standard-v2.md`\n- `.agents/familyfin-grounded-workflow-agent-roster-2026-06-11.md`\n- `.agents/skills/familyfin-grounded-workflow/SKILL.md`\n\n## 驗證結果\n\n- `node tools/build-grounded-12-article-pack-2026-06-11.js`：通過，12 篇正文皆超過 2000 字。\n- `node tools/build-article-pack-history.js`：通過，文章包歷史保留文體統計。\n- `node tools/validate-war-room-state.js`：通過。\n- validator 顯示 `article pack writing form diversity`：12 unique forms / 12 articles。\n- validator 顯示 `article-pack-history writing form diversity`：12 unique forms / 12 articles。\n\n## 下一步\n\n下次週報若取得新的成功投稿或審核駁回資料，需新增「文體與退件學習」摘要，說明下次文章包要如何調整：\n\n- 題目切角\n- 開頭方式\n- 敘事形式\n- 改善計畫\n- 結尾收束\n- 避免同質化的具體做法"
+    },
     {
       "id": "2026-06-11-approved-author-learning-generation-optimization",
       "sourcePath": "reports/2026-06-11-approved-author-learning-generation-optimization.md",

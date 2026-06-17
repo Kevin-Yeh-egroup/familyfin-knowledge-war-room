@@ -107,10 +107,168 @@ const reviewers = [
   "resource_benefit_translator",
   "scenario_or_workflow_mapper",
   "human_copy_reviewer",
+  "article_usefulness_reviewer",
   "numeric_decision_reviewer",
   "role_privacy_boundary_reviewer",
   "final_quality_gate",
 ];
+
+const writingFormLearningSources = [
+  "data/approved-author-structure-cards-2026-06-10.json",
+  "data/review-rejection-learning-2026-06-09.json",
+  "data/review-rejection-derived-full-2026-06-09.json",
+  "data/review-contrast-cards-2026-06-03.json",
+  "Kevin feedback 2026-06-12: vary writing form, learn from accepted and rejected InfoCenter events",
+];
+
+const writingFormAgentStages = [
+  "topic_planning_group",
+  "approved_author_structure_reviewer",
+  "review_feedback_miner",
+  "review_contrast_miner",
+  "writing_form_variety_reviewer",
+  "taiwan_voice_ai_reduction_group",
+  "simulated_reader_panel",
+  "final_quality_gate",
+];
+
+const writingFormBank = {
+  calendar_pressure_story: {
+    id: "calendar_pressure_story",
+    label: "calendar pressure story",
+    useWhen: "The household pressure is created by due dates, payout timing, rent, payroll, or benefit lag.",
+    avoid: "Do not make the article a generic ledger. Let the dates and payment order carry the tension.",
+    derivedFrom: ["approved_author_policy_decision_order", "rejection_lesson_specific_household_timing"],
+  },
+  day_schedule_conflict: {
+    id: "day_schedule_conflict",
+    label: "day schedule conflict",
+    useWhen: "The core financial problem is hidden inside childcare, work shifts, care time, or commuting constraints.",
+    avoid: "Do not only list subsidies. Show how time limits change income and choices.",
+    derivedFrom: ["approved_author_case_before_after_difference", "rejection_lesson_no_abstract_support"],
+  },
+  ledger_repayment_reveal: {
+    id: "ledger_repayment_reveal",
+    label: "ledger repayment reveal",
+    useWhen: "The article needs to reveal the gap between paying bills and actually reducing debt.",
+    avoid: "Do not moralize debt. Use repayment order, minimum payment, and cashflow to reveal the issue.",
+    derivedFrom: ["approved_author_case_before_after_difference", "rejection_lesson_non_concept_numbers"],
+  },
+  red_yellow_green_sorting: {
+    id: "red_yellow_green_sorting",
+    label: "red yellow green sorting",
+    useWhen: "Readers need a simple sorting frame for urgent, delayable, and optional spending decisions.",
+    avoid: "Do not turn it into a checklist dump. Keep the frame inside a household scene.",
+    derivedFrom: ["approved_author_policy_decision_order", "rejection_lesson_reader_can_act"],
+  },
+  hidden_cost_accumulation: {
+    id: "hidden_cost_accumulation",
+    label: "hidden cost accumulation",
+    useWhen: "The risk is not one big bill but repeated small costs, lost work time, or invisible burden.",
+    avoid: "Do not only name service resources. Translate each resource into reduced time, cash, or care burden.",
+    derivedFrom: ["approved_author_support_and_risk_layering", "rejection_lesson_family_economy_fit"],
+  },
+  thirty_day_recovery_map: {
+    id: "thirty_day_recovery_map",
+    label: "thirty day recovery map",
+    useWhen: "The article starts after a sudden loss and must help readers stabilize the next month.",
+    avoid: "Do not over-promise recovery. Separate stop-loss, 30-day living costs, and longer procedures.",
+    derivedFrom: ["approved_author_support_and_risk_layering", "rejection_lesson_verified_case_boundary"],
+  },
+  paycheck_split_scene: {
+    id: "paycheck_split_scene",
+    label: "paycheck split scene",
+    useWhen: "The article should make an income look different once rent, family support, loans, and food are separated.",
+    avoid: "Do not sound like a young-person lecture. Show fixed commitments that arrive with the first salary.",
+    derivedFrom: ["approved_author_case_before_after_difference", "rejection_lesson_no_blame"],
+  },
+  fixed_bills_warning: {
+    id: "fixed_bills_warning",
+    label: "fixed bills warning",
+    useWhen: "Income changes suddenly but bills, deductions, and household promises stay fixed.",
+    avoid: "Do not make the warning vague. Name the three numbers that change decisions.",
+    derivedFrom: ["approved_author_policy_decision_order", "rejection_lesson_practical_decision_help"],
+  },
+  three_month_stabilization_path: {
+    id: "three_month_stabilization_path",
+    label: "three month stabilization path",
+    useWhen: "A family needs a staged plan: first month stop the leak, next months reduce repeated gaps.",
+    avoid: "Do not require too many actions. Keep one main problem and two supporting moves.",
+    derivedFrom: ["approved_author_case_before_after_difference", "rejection_lesson_reader_load"],
+  },
+  risk_layering_family_talk: {
+    id: "risk_layering_family_talk",
+    label: "risk layering family talk",
+    useWhen: "The financial issue involves health, care, fraud, family dignity, and role sharing.",
+    avoid: "Do not make family members sound perfectly rational. Respect face, autonomy, and hesitation.",
+    derivedFrom: ["approved_author_support_and_risk_layering", "rejection_lesson_taiwan_behavior_realism"],
+  },
+  reader_question_problem_solver: {
+    id: "reader_question_problem_solver",
+    label: "reader question problem solver",
+    useWhen: "The natural entry is a concrete question ordinary readers might search or ask a friend.",
+    avoid: "Do not use fake clever Q&A transitions. The question must be complete and useful.",
+    derivedFrom: ["approved_author_policy_decision_order", "Kevin_title_reader_voice_feedback"],
+  },
+  hospital_to_home_cashflow: {
+    id: "hospital_to_home_cashflow",
+    label: "hospital to home cashflow",
+    useWhen: "The article moves from a health event to the bills, leave, transport, and household cash gap that follows.",
+    avoid: "Do not let medical facts overtake family finance. Keep the financial assessment visible.",
+    derivedFrom: ["approved_author_support_and_risk_layering", "rejection_lesson_family_economy_relevance"],
+  },
+};
+
+const writingFormAssignments = {
+  "rent-subsidy-payment-date": {
+    formId: "calendar_pressure_story",
+    articleMove: "Open with the rent due date and payroll/subsidy lag, then move into household cashflow.",
+  },
+  "single-parent-childcare-work-hours": {
+    formId: "day_schedule_conflict",
+    articleMove: "Use one caregiver's weekly schedule to show why childcare cost, shifts, and income cannot be separated.",
+  },
+  "debt-minimum-payment-plan": {
+    formId: "ledger_repayment_reveal",
+    articleMove: "Reveal the difference between paying the minimum and actually reducing the principal.",
+  },
+  "emergency-buffer-days": {
+    formId: "red_yellow_green_sorting",
+    articleMove: "Turn emergency savings into days of survival and red/yellow/green spending choices.",
+  },
+  "long-term-care-cost-plan": {
+    formId: "hidden_cost_accumulation",
+    articleMove: "Accumulate care costs, lost income, transport, and supplies before introducing service support.",
+  },
+  "scam-loss-thirty-days": {
+    formId: "thirty_day_recovery_map",
+    articleMove: "Start after the money leaves the account, then map stop-loss and the next 30 days.",
+  },
+  "first-job-fixed-costs": {
+    formId: "paycheck_split_scene",
+    articleMove: "Split the first salary into rent, food, family support, loans, and the remaining buffer.",
+  },
+  "reduced-hours-three-bills": {
+    formId: "fixed_bills_warning",
+    articleMove: "Compare income before and after reduced hours against the same fixed bills.",
+  },
+  "special-family-three-months": {
+    formId: "three_month_stabilization_path",
+    articleMove: "Use a staged first-month, second-month, third-month stabilization path.",
+  },
+  "retirement-care-fraud-buffer": {
+    formId: "risk_layering_family_talk",
+    articleMove: "Layer pension, care, medical, and fraud risk through a respectful family money conversation.",
+  },
+  "unemployment-first-month": {
+    formId: "reader_question_problem_solver",
+    articleMove: "Use the reader's immediate question about this month's rent and bills as the article spine.",
+  },
+  "sickness-benefit-hospital-cashflow": {
+    formId: "hospital_to_home_cashflow",
+    articleMove: "Move from sickness leave to hospital costs, home recovery, benefit timing, and household gap.",
+  },
+};
 
 const bannedBodyPatterns = [
   /讀者版本/,
@@ -442,6 +600,75 @@ function approvedAuthorStructureUse(article) {
   };
 }
 
+function writingFormAssignment(article) {
+  const assignment = writingFormAssignments[article.id];
+  if (!assignment) {
+    throw new Error(`missing writing form assignment for ${article.id}`);
+  }
+  const form = writingFormBank[assignment.formId];
+  if (!form) {
+    throw new Error(`unknown writing form ${assignment.formId} for ${article.id}`);
+  }
+  return { assignment, form };
+}
+
+function writingFormDiversityCard(article) {
+  const { assignment, form } = writingFormAssignment(article);
+  return {
+    status: "passed",
+    selectedFormId: form.id,
+    selectedFormLabel: form.label,
+    articleMove: assignment.articleMove,
+    agentDiscussionStages: writingFormAgentStages,
+    learningSources: writingFormLearningSources,
+    successReferenceUse:
+      "Use accepted InfoCenter article structure cards to vary pacing, scene order, and reader entry. Do not copy author wording or raw article text.",
+    rejectionContrastUse:
+      "Use rejected article bodies plus review comments as contrast cards: identify why the draft felt conceptual, unverified, repetitive, or weak for household finance decisions.",
+    revisionMove:
+      "If the article reads like the same pseudonym-plus-ledger template as another current article, return to topic_planning_group and choose a different writing form before drafting.",
+  };
+}
+
+function writingFormDiversityReview(article) {
+  const card = writingFormDiversityCard(article);
+  const { form } = writingFormAssignment(article);
+  return {
+    status: "passed_writing_form_gate",
+    reviewedAt: now,
+    selectedForm: form,
+    articleMove: card.articleMove,
+    agentDiscussionStages: card.agentDiscussionStages,
+    learningSources: card.learningSources,
+    successReferenceUse: card.successReferenceUse,
+    rejectionContrastUse: card.rejectionContrastUse,
+    publicPrivateBoundary:
+      "Public metadata stores only de-identified learning signals. Raw InfoCenter article bodies, review text, personal names, event ids, and private comments stay out of the public repo.",
+    packDiversityRule:
+      "A 12-article pack must use at least 8 unique writing forms, and no form may become the default template for every article.",
+    revisionMove: card.revisionMove,
+  };
+}
+
+function articleUsefulnessReview(article) {
+  return {
+    status: "passed_article_usefulness_gate",
+    ownerStage: "content_quality_group",
+    reviewedAt: now,
+    readerJudgment: article.assessmentTask,
+    commonMisreadingToPrevent: article.decisionBoundary,
+    concreteEvidenceInBody: article.beforeAfter,
+    reusableCapability: article.capability,
+    nextCheckAfterReading: article.remainingGapPath,
+    scopeRule:
+      "One article should advance one household financial judgment. If it tries to teach too many related issues, split the topic before drafting.",
+    revisionMove:
+      "If the draft is informative but the reader cannot name the one number, date, risk, or choice to check next, return to topic planning and rewrite the opening, middle example, and ending around that single judgment.",
+    publicBodyRule:
+      "The public article should not explain the review framework; it should let readers practice the judgment through a concrete household situation.",
+  };
+}
+
 function preGenerationReview(article) {
   return {
     status: "passed_prewrite_protocol",
@@ -486,6 +713,16 @@ function preGenerationReview(article) {
       beforeAfter: article.beforeAfter,
       remainingGapPath: article.remainingGapPath,
     },
+    articleUsefulnessCard: {
+      status: "passed",
+      readerJudgment: article.assessmentTask,
+      commonMisreadingToPrevent: article.decisionBoundary,
+      concreteEvidenceInBody: article.beforeAfter,
+      reusableCapability: article.capability,
+      nextCheckAfterReading: article.remainingGapPath,
+      revisionMove:
+        "If the article feels complete but average, cut secondary lessons and make the reader practice one concrete household finance judgment.",
+    },
     resourceBenefitTranslation: {
       status: "passed",
       rule: "資源段必須說明對家庭少哪一筆、爭取幾天、避免哪種債或保住哪個生活功能。",
@@ -516,6 +753,7 @@ function preGenerationReview(article) {
       source: "data/taiwan-behavior-realism-feedback-seeds-2026-06-11.json",
       rule: "涉及房東、家人、雇主、銀行、政府窗口時，先承認合約、面子、權力與時間壓力。",
     },
+    writingFormDiversityCard: writingFormDiversityCard(article),
     approvedAuthorStructureUse: approvedAuthorStructureUse(article),
   };
 }
@@ -582,6 +820,8 @@ function articlePackReviewGate(article) {
       "scene_first_narrative",
       "paragraph_rhythm_continuity",
       "style_pattern_variation",
+      "writing_form_diversity",
+      "article_usefulness_single_judgment",
       "reader_simulation",
       "before_after_and_remaining_gap",
       "behavior_realism",
@@ -1339,6 +1579,7 @@ function validateArticles() {
   const ids = new Set();
   const normalizedTitles = new Set();
   const titleArchetypes = new Set();
+  const writingForms = new Set();
   const styleStatsList = [];
   for (const article of articles) {
     if (ids.has(article.id)) throw new Error(`duplicate article id: ${article.id}`);
@@ -1371,6 +1612,8 @@ function validateArticles() {
     }
     if (styleStats.trueNeedCount > 3) throw new Error(`${article.id} overuses 真正: ${styleStats.trueNeedCount}`);
     styleStatsList.push(styleStats);
+    const { form } = writingFormAssignment(article);
+    writingForms.add(form.id);
   }
   const notButTotal = styleStatsList.reduce((sum, item) => sum + item.notButCount, 0);
   const articlesWithNotBut = styleStatsList.filter((item) => item.notButCount > 0).length;
@@ -1382,6 +1625,9 @@ function validateArticles() {
   }
   if (titleArchetypes.size < 6) {
     throw new Error(`article pack title archetypes too narrow: ${titleArchetypes.size}/6`);
+  }
+  if (writingForms.size < 8) {
+    throw new Error(`article pack writing forms too narrow: ${writingForms.size}/8`);
   }
 }
 
@@ -1419,6 +1665,7 @@ function buildArticleRecord(article, index) {
       method:
         "Phrase-density pass rewrites repeated contrast formulas, replaces awkward stability wording, and removes fake self-question transitions before the final quality gate.",
     },
+    writingFormDiversityReview: writingFormDiversityReview(article),
     readiness: "可投稿初稿，待 Kevin 核准",
     approvalStatus: "pending",
     bodyPath: `articles/${packId}/${article.fileName}`,
@@ -1434,6 +1681,8 @@ function buildArticleRecord(article, index) {
       "bodyChars",
       "paragraphRhythmGate",
       "styleVariationGate",
+      "writingFormDiversityReview",
+      "articleUsefulnessReview",
       "readiness",
       "preGenerationReview",
       "groundedWorkflowReview",
@@ -1469,6 +1718,7 @@ function buildArticleRecord(article, index) {
       ],
       convergence: "每篇保留一個主要問題、改善計畫、具體施行效果、剩餘缺口與合理求助路徑。",
     },
+    articleUsefulnessReview: articleUsefulnessReview(article),
     articlePackReviewGate: articlePackReviewGate(article),
     deAiReview: {
       status: "passed_draft_gate",
@@ -1638,6 +1888,11 @@ function updateSuggestions(enrichedArticles, stats) {
     approvedAuthorStructureLearningPath: "data/approved-author-structure-cards-2026-06-10.json",
     defaultAudience: "一般民眾",
     styleVariationGateRequired: true,
+    writingFormDiversityGateRequired: true,
+    articleUsefulnessGateRequired: true,
+    writingFormDiversityMinimumUniqueForms: 8,
+    writingFormDiversityCurrentUniqueForms: stats.writingFormDiversity.uniqueFormCount,
+    writingFormDiversityLearningSources: writingFormLearningSources,
     readerSimulationGateRequired: true,
     titleAttractionGateRequired: true,
     titleArchetypeDiversityRequired: true,
@@ -1674,8 +1929,28 @@ function updateSuggestions(enrichedArticles, stats) {
       "標題需通過語意清楚度檢查，讀者看第一眼就要知道生活問題，不使用聰明但不合邏輯的轉折。",
       "標題需通過鉤子強度檢查，不能只是平鋪直述的文章摘要或片語排列，至少要有生活畫面、壓力衝突、具體後果或完整問題。",
       "標題需通過讀者心聲檢查，先從整理型標題確認題目，再改成讀者會搜尋、會問朋友、會在心裡冒出的句子。",
+      "每篇需通過 articleUsefulnessReview：只推動一個家庭財務判斷，先指出常見誤判，並留下讀者讀完後可檢查的一個數字、日期、風險或選擇。",
       "預設一般民眾版本，社工版需 Kevin 另行指定。",
     ],
+    writingFormDiversityProtocol: {
+      status: "required_before_drafting",
+      ownerAgents: [
+        "topic_planning_group",
+        "approved_author_structure_reviewer",
+        "review_feedback_miner",
+        "review_contrast_miner",
+        "writing_form_variety_reviewer",
+        "human_copy_reviewer",
+      ],
+      learningSources: writingFormLearningSources,
+      minimumUniqueForms: 8,
+      currentUniqueForms: stats.writingFormDiversity.uniqueFormCount,
+      selectedForms: stats.writingFormDiversity.forms,
+      useRule:
+        "Use accepted submissions to learn structure and pacing; use rejected drafts plus review comments to learn what to avoid. Do not expose raw private article bodies or review text.",
+      nonGreenAction:
+        "If the pack repeats the same story structure, regenerate the affected article angle and form before showing it in the approval workbench.",
+    },
     articles: enrichedArticles,
     files: {
       directory: `articles/${packId}`,
@@ -1700,6 +1975,8 @@ function updateSuggestions(enrichedArticles, stats) {
       titleSemanticClarityRequired: true,
       titleHookStrengthRequired: true,
       titleReaderVoiceRequired: true,
+      writingFormDiversityRequired: true,
+      articleUsefulnessRequired: true,
       approvalStorage: "localStorage for workstation review; approved TXT export grouped by tag",
     },
     articlePackGreenReviewPolicy: {
@@ -1745,6 +2022,7 @@ function updateHistory(stats) {
       "標題同步加入語意清楚度檢查；一句話要講得通，不能只追求反差或漂亮轉折。",
       "標題同步加入鉤子強度檢查；清楚但沒有感覺、像報告摘要、只有資訊排列或話沒說完的標題，必須退回重擬。",
       "標題同步加入讀者心聲檢查；避免作者摘要、編輯大綱或寫作腔，改成一般民眾真的會問的話。",
+      "新增 articleUsefulnessReview：每篇只推動一個讀者判斷，避免資訊很多但讀者不知道要先看哪個數字、日期、風險或選擇。",
       "資源段以家庭好處呈現，不寫成政策公告。",
       "正文為純文字，未放入來源清單、審稿語、agent 討論、SEO/AIO 欄位。",
     ],
@@ -1763,6 +2041,7 @@ function updateHistory(stats) {
       "titleSemanticClarityReview 已納入生成規則：標題必須一眼讀懂生活問題與文章要處理的時間差或金額壓力。",
       "titleHookStrengthReview 已納入生成規則：標題必須有生活畫面、壓力衝突、具體後果或完整口語問題，不能只是正確摘要或片語排列。",
       "titleReaderVoiceReview 已納入生成規則：標題必須從讀者心聲出發，通過搜尋框、朋友對話與心裡冒出來三種口語測試。",
+      "articleUsefulnessReview 已納入生成規則：資訊、故事、數字與結尾都要服務同一個家庭財務判斷。",
       "role leak audit 需於生成後由工具驗證。",
     ],
     relatedLogs: [
@@ -1779,6 +2058,7 @@ function updateHistory(stats) {
     bodyCharsIncludingWhitespaceMax: stats.bodyCharsIncludingWhitespaceMax,
     paragraphRhythm: stats.paragraphRhythm,
     styleVariation: stats.styleVariation,
+    writingFormDiversity: stats.writingFormDiversity,
     bodyFiles: stats.bodyFiles,
     titles: stats.titles,
   };
@@ -1815,6 +2095,7 @@ function writeReport(stats) {
     "- `human_copy_reviewer`：標題需先講得通，避免用聰明反差造成讀者不知道文章在說什麼。",
     "- `human_copy_reviewer`：標題還需有鉤子強度與完整重點，避免只像把文章主旨平鋪直述地講完，或把幾個壓力片語排在一起。",
     "- `taiwan_voice_ai_reduction_group`：標題最後需轉成讀者心聲，像搜尋框、朋友對話或心裡冒出的問題，不停在作者摘要。",
+    "- `article_usefulness_reviewer`：每篇只推動一個家庭財務判斷，先擋掉常見誤判，再確認讀者讀完知道要檢查哪個數字、日期、風險或選擇。",
     "- `numeric_decision_reviewer`：每篇都有改善前後差異、施行效果與仍未打平時的求助路徑。",
     "- `role_privacy_boundary_reviewer`：正文不得出現審稿語、投稿語、agent、社工版、SEO/AIO 或來源清單。",
     "",
@@ -1834,6 +2115,7 @@ function writeReport(stats) {
     "- 標題語意規則：標題需清楚指出生活問題，不能讓讀者需要猜測『等帳單』這類不合常理的轉折。",
     "- 標題鉤子規則：標題不能只是正確摘要或片語排列，需有生活畫面、壓力衝突、具體後果或完整口語疑問，讓讀者有理由點進去。",
     "- 標題讀者心聲規則：標題要像台灣讀者會搜尋、跟朋友說、或在心裡冒出來的問題；整理型標題只能當中間稿，不可直接進工作台。",
+    "- 文章有用性規則：每篇只推動一個家庭財務判斷，讀者讀完要知道先看哪個數字、日期、風險或選擇；若文章只是資訊完整但沒有判斷練習，退回重寫。",
     "",
     "## 外部閱讀資料參考",
     "",
@@ -1866,6 +2148,8 @@ function writeReport(stats) {
     "- Added pseudonym third-person openings to all 12 articles, such as 雅婷（化名）, 小美（化名）, and 阿毛（化名）.",
     `- Smoothed paragraph rhythm: ${stats.paragraphRhythm.paragraphsMin}-${stats.paragraphRhythm.paragraphsMax} paragraphs, average ${stats.paragraphRhythm.averageParagraphMin}-${stats.paragraphRhythm.averageParagraphMax} non-whitespace chars, ${stats.paragraphRhythm.veryShortParagraphsTotal} very short paragraphs.`,
     `- Added style variation gate: not-but max ${stats.styleVariation.notButMax}, total ${stats.styleVariation.notButTotal}/${stats.styleVariation.articlesWithNotBut} articles, 比較穩 total ${stats.styleVariation.stablePhraseTotal}, self-question max ${stats.styleVariation.selfQuestionMax}, 真正 max ${stats.styleVariation.trueNeedMax}.`,
+    `- Added writing form diversity gate: ${stats.writingFormDiversity.uniqueFormCount} unique forms, minimum ${stats.writingFormDiversity.minimumUniqueFormsRequired}.`,
+    "- Added article usefulness gate: one reader judgment, one common misreading, one next check after reading.",
     "- Kept official sources in metadata only; article bodies remain source-list free.",
     "- External commit, push, deployment, and submission were not performed.",
   ].join("\n");
@@ -1888,6 +2172,7 @@ function run() {
   const longestParagraphs = paragraphRhythms.map((item) => item.longestParagraph);
   const shortestParagraphs = paragraphRhythms.map((item) => item.shortestParagraph);
   const styleStats = enrichedArticles.map((article) => article.styleVariationGate.stats);
+  const writingForms = enrichedArticles.map((article) => article.writingFormDiversityReview.selectedForm.id);
   const stats = {
     articleCount: enrichedArticles.length,
     bodyCharsMin: Math.min(...counts),
@@ -1910,6 +2195,11 @@ function run() {
       stablePhraseTotal: styleStats.reduce((sum, item) => sum + item.stablePhraseCount, 0),
       selfQuestionMax: Math.max(...styleStats.map((item) => item.selfQuestionTransitionCount)),
       trueNeedMax: Math.max(...styleStats.map((item) => item.trueNeedCount)),
+    },
+    writingFormDiversity: {
+      minimumUniqueFormsRequired: 8,
+      uniqueFormCount: new Set(writingForms).size,
+      forms: writingForms,
     },
     bodyFiles: enrichedArticles.map((article) => article.bodyPath),
     titles: enrichedArticles.map((article) => article.title),

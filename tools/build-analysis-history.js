@@ -5,6 +5,32 @@ const repoRoot = path.resolve(__dirname, "..");
 
 const sources = [
   {
+    id: "2026-06-17-structured-two-article-pack",
+    sourcePath: "reports/2026-06-17-structured-two-article-pack.md",
+    type: "兩篇試產文章包",
+    title: "退件意見轉成結構化文章流程",
+    summary:
+      "依 Kevin 提供的兩則退件建議與文章結構化搜尋結果，先生成 2 篇一般民眾純文字試產稿：一篇改成雙情境對照，一篇保留敘事並加入現金流月曆與三種錢的文字表。",
+    highlights: [
+      "失業給付房租題不再沿用既有房租篇骨架，改分短期時間差與連續收入斷層。",
+      "帳戶有錢仍會慌的題目保留故事感，但加入現金流月曆、三種錢與可用現金計算。",
+      "新增結構化規則：開頭先回答讀者問題、中段只用一個主要結構工具、結尾留下下一個家庭檢查。"
+    ]
+  },
+  {
+    id: "2026-06-12-writing-form-diversity-learning",
+    sourcePath: "reports/2026-06-12-writing-form-diversity-learning.md",
+    type: "Agent 生成規則優化",
+    title: "文體變奏與成功/駁回學習規則",
+    summary:
+      "依 Kevin 要求，將每次文章生成前的文體選型、成功投稿結構學習、審核駁回正文與評語對照學習，接入文章包生成器、validator、文章包歷史、文件與 agent workflow。",
+    highlights: [
+      "新增 `writingFormDiversityReview` 與 prewrite `writingFormDiversityCard`。",
+      "12 篇正式文章包分配 12 種不同文體，validator 要求 12 篇至少 8 種。",
+      "成功稿只學去識別結構，駁回稿只學失敗原因與修正規則，公開 repo 不保存私有全文或審核原文。"
+    ]
+  },
+  {
     id: "2026-06-11-approved-author-learning-generation-optimization",
     sourcePath: "reports/2026-06-11-approved-author-learning-generation-optimization.md",
     type: "Agent 生成規則優化",

@@ -7,6 +7,36 @@ const outputPath = path.join(repoRoot, "article-pack-history.json");
 
 const packDefinitions = [
   {
+    id: "2026-06-17-structured-two-article-pack",
+    date: "2026-06-17",
+    title: "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
+    status: "trial_review_pack",
+    statusLabel: "2 篇結構化試產稿",
+    audience: "一般民眾",
+    directory: "articles/2026-06-17-structured-two-article-pack",
+    generatedBy: "tools/build-structured-two-article-pack-2026-06-17.js",
+    currentReviewBoard: false,
+    currentTrialPack: true,
+    notes: [
+      "本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。",
+      "失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。",
+      "繳房租那天的現金流稿保留敘事感，加入現金流月曆與三種錢的文字表，讓讀者能直接判斷。",
+      "文章結構化規則已納入：開頭先回答讀者問題、中段使用一個主要結構工具、結尾留下具體家庭檢查。",
+      "正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。"
+    ],
+    checks: [
+      "正文非空白字數均超過 2000 字。",
+      "preGenerationReview 逐篇通過。",
+      "approvedAuthorStructureUse 逐篇通過。",
+      "articlePackReviewGate 綠燈 2/2。",
+      "role leak audit 通過。"
+    ],
+    relatedLogs: [
+      "reports/2026-06-17-structured-two-article-pack.md",
+      "logs/2026-06-17-structured-two-article-pack-log.md"
+    ]
+  },
+  {
     id: "2026-06-11-grounded-12-article-pack",
     date: "2026-06-11",
     title: "2026-06-11 FamilyFin grounded workflow 重生 12 篇文章包",
@@ -61,7 +91,7 @@ const packDefinitions = [
     directory: "articles/2026-06-11-staged-editorial-workflow-test",
     generatedBy: "tools/build-staged-editorial-workflow-test-2026-06-11.js",
     currentReviewBoard: false,
-    currentTrialPack: true,
+    currentTrialPack: false,
     notes: [
       "本批只產 1 篇，用來測試分段 agent 工作流，不取代正式工作台文章包。",
       "從 6/9 房租補貼稿抽出一篇做二修，主軸改成房租日前後五天的現金流盤點。",
@@ -369,11 +399,28 @@ function articleTitlesFromSuggestions(packId, suggestions) {
   return [];
 }
 
+function writingFormDiversityFromSuggestions(packId, suggestions) {
+  const pack =
+    suggestions.articlePack?.id === packId
+      ? suggestions.articlePack
+      : (suggestions.trialArticlePacks || []).find((item) => item.id === packId);
+  const forms = (pack?.articles || [])
+    .map((article) => article.writingFormDiversityReview?.selectedForm?.id)
+    .filter(Boolean);
+  if (!forms.length) return null;
+  return {
+    minimumUniqueFormsRequired: 8,
+    uniqueFormCount: new Set(forms).size,
+    forms
+  };
+}
+
 function buildRecords() {
   const suggestions = safeReadJson(suggestionsPath, {});
   return packDefinitions.map((pack) => {
     const bodyFiles = listTxtFiles(pack.directory);
     const stats = fileStats(bodyFiles);
+    const writingFormDiversity = writingFormDiversityFromSuggestions(pack.id, suggestions);
     return {
       ...pack,
       outputType: "plain_text_article_pack",
@@ -386,6 +433,7 @@ function buildRecords() {
       bodyCharsIncludingWhitespaceMax: stats.bodyCharsIncludingWhitespaceMax,
       paragraphRhythm: stats.paragraphRhythm,
       styleVariation: stats.styleVariation,
+      writingFormDiversity,
       bodyFiles,
       titles: articleTitlesFromSuggestions(pack.id, suggestions),
       copyText: [

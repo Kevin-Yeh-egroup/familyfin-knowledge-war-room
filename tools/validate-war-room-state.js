@@ -16,6 +16,9 @@ const paths = {
   improvementRuleDelta: "docs/reviewer-rule-delta-2026-06-10.md",
   approvedAuthorStructureTemplate: "data/approved-author-structure-card-template-2026-06-10.json",
   approvedAuthorStructureCards: "data/approved-author-structure-cards-2026-06-10.json",
+  reviewRejectionLearning: "data/review-rejection-learning-2026-06-09.json",
+  reviewRejectionDerivedFull: "data/review-rejection-derived-full-2026-06-09.json",
+  reviewContrastCards: "data/review-contrast-cards-2026-06-03.json",
   improvementPlanReport: "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
   approvedAuthorStructureReport: "reports/2026-06-10-approved-author-structure-cards.md",
 };
@@ -308,6 +311,49 @@ function validateApprovedAuthorStructureUse(scopeId, approvedAuthorStructureUse)
   return true;
 }
 
+function validateWritingFormDiversityReview(scopeId, review) {
+  const requiredSources = [
+    paths.approvedAuthorStructureCards,
+    paths.reviewRejectionLearning,
+    paths.reviewRejectionDerivedFull,
+  ];
+  const requiredStages = ["approved_author_structure_reviewer", "review_contrast_miner", "writing_form_variety_reviewer"];
+
+  if (!review) {
+    errors.push(`${scopeId} writingFormDiversityReview missing`);
+    return false;
+  }
+  if (review.status !== "passed_writing_form_gate") {
+    errors.push(`${scopeId} writingFormDiversityReview status drift: ${review.status}`);
+    return false;
+  }
+  if (!review.selectedForm?.id || !review.selectedForm?.label || !review.articleMove) {
+    errors.push(`${scopeId} writingFormDiversityReview selected form or article move missing`);
+    return false;
+  }
+  const stages = review.agentDiscussionStages || [];
+  const missingStages = requiredStages.filter((stage) => !stages.includes(stage));
+  if (!Array.isArray(stages) || stages.length < 6 || missingStages.length) {
+    errors.push(
+      `${scopeId} writingFormDiversityReview agent stages invalid: missing=${missingStages.join(",") || "none"}`,
+    );
+    return false;
+  }
+  const learningSources = review.learningSources || [];
+  const missingSources = requiredSources.filter((source) => !learningSources.includes(source));
+  if (!Array.isArray(learningSources) || learningSources.length < 4 || missingSources.length) {
+    errors.push(
+      `${scopeId} writingFormDiversityReview learning sources invalid: missing=${missingSources.join(",") || "none"}`,
+    );
+    return false;
+  }
+  if (!review.successReferenceUse || !review.rejectionContrastUse || !review.revisionMove) {
+    errors.push(`${scopeId} writingFormDiversityReview use/revision rules missing`);
+    return false;
+  }
+  return true;
+}
+
 function checkExists(relativePath, label = relativePath) {
   const fullPath = path.join(repoRoot, relativePath);
   if (!fs.existsSync(fullPath)) {
@@ -466,6 +512,7 @@ if (suggestions?.articlePack) {
   let preGenerationPassCount = 0;
   const nonGreenReviewIds = [];
   const preGenerationFailures = [];
+  const writingForms = [];
   const titleNovelty = analyzeTitleNovelty(articles);
   const titleArchetypeDiversity = analyzeTitleArchetypeDiversity(articles);
   const knowledgeBaseTitleComparison = knowledgeBaseTitleIndex
@@ -549,9 +596,11 @@ if (suggestions?.articlePack) {
         "topicEvidenceCard",
         "readerFitCard",
         "readerLoadCard",
+        "articleUsefulnessCard",
         "financialDecisionCard",
         "improvementPlanCard",
         "financialLiteracyTransfer",
+        "writingFormDiversityCard",
         "approvedAuthorStructureUse",
       ];
       const missingCards = requiredCards.filter((field) => !preGenerationReview[field]);
@@ -581,11 +630,34 @@ if (suggestions?.articlePack) {
       ) {
         errors.push(`${article.id} readerLoadCard lacks main problem, revision move, or exceeds action count`);
         preGenerationFailures.push(`${article.id}:reader_load`);
+      } else if (
+        !preGenerationReview.articleUsefulnessCard.readerJudgment ||
+        !preGenerationReview.articleUsefulnessCard.commonMisreadingToPrevent ||
+        !preGenerationReview.articleUsefulnessCard.nextCheckAfterReading
+      ) {
+        errors.push(`${article.id} articleUsefulnessCard lacks reader judgment, misreading, or next check`);
+        preGenerationFailures.push(`${article.id}:article_usefulness`);
       } else if (!validateApprovedAuthorStructureUse(article.id, preGenerationReview.approvedAuthorStructureUse)) {
         preGenerationFailures.push(`${article.id}:approvedAuthorStructureUse`);
       } else {
         preGenerationPassCount += 1;
       }
+    }
+
+    if (validateWritingFormDiversityReview(article.id, article.writingFormDiversityReview)) {
+      writingForms.push(article.writingFormDiversityReview.selectedForm.id);
+    }
+
+    if (!article.articleUsefulnessReview || article.articleUsefulnessReview.status !== "passed_article_usefulness_gate") {
+      errors.push(`${article.id} articleUsefulnessReview missing or not passed`);
+    } else if (
+      !article.articleUsefulnessReview.readerJudgment ||
+      !article.articleUsefulnessReview.commonMisreadingToPrevent ||
+      !article.articleUsefulnessReview.nextCheckAfterReading ||
+      !article.articleUsefulnessReview.revisionMove ||
+      !article.articleUsefulnessReview.publicBodyRule
+    ) {
+      errors.push(`${article.id} articleUsefulnessReview lacks judgment, misreading, next check, revision move, or public body rule`);
     }
 
     if (!article.readerSimulationReview || article.readerSimulationReview.status !== "passed_simulated_reader_gate") {
@@ -801,6 +873,13 @@ if (suggestions?.articlePack) {
           trueNeedMax: Math.max(...computed.map((item) => item.styleVariation.trueNeedCount)),
         }
       : null,
+    writingFormDiversity: writingForms.length
+      ? {
+          minimumUniqueFormsRequired: 8,
+          uniqueFormCount: new Set(writingForms).size,
+          forms: writingForms,
+        }
+      : null,
     computed,
     greenReview: {
       green: greenReviewCount,
@@ -844,6 +923,21 @@ if (suggestions?.articlePack) {
     }
   }
 
+  if (currentPackStats.writingFormDiversity) {
+    const writingForm = currentPackStats.writingFormDiversity;
+    if (writingForm.uniqueFormCount < writingForm.minimumUniqueFormsRequired) {
+      errors.push(
+        `article pack writing form diversity failed: unique=${writingForm.uniqueFormCount}/${writingForm.minimumUniqueFormsRequired}`,
+      );
+    } else {
+      pushCheck(
+        "article pack writing form diversity",
+        "pass",
+        `${writingForm.uniqueFormCount} unique forms / ${articles.length} articles`,
+      );
+    }
+  }
+
   const metricGreenReviewCount = suggestions.metrics?.articlePackGreenReviewCount;
   if (metricGreenReviewCount !== undefined && metricGreenReviewCount !== articles.length) {
     errors.push(`articlePackGreenReviewCount drift: suggestions=${metricGreenReviewCount}, articles=${articles.length}`);
@@ -868,6 +962,30 @@ if (suggestions?.articlePack) {
   }
   if (suggestions.metrics?.styleVariationGateRequired !== true) {
     errors.push("styleVariationGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.writingFormDiversityGateRequired !== true) {
+    errors.push("writingFormDiversityGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.articleUsefulnessGateRequired !== true) {
+    errors.push("articleUsefulnessGateRequired metric missing or false");
+  }
+  if (suggestions.metrics?.writingFormDiversityMinimumUniqueForms !== 8) {
+    errors.push("writingFormDiversityMinimumUniqueForms metric missing or drifted");
+  }
+  if (
+    suggestions.metrics?.writingFormDiversityCurrentUniqueForms !==
+    currentPackStats.writingFormDiversity?.uniqueFormCount
+  ) {
+    errors.push(
+      `writingFormDiversityCurrentUniqueForms drift: suggestions=${suggestions.metrics?.writingFormDiversityCurrentUniqueForms}, computed=${currentPackStats.writingFormDiversity?.uniqueFormCount}`,
+    );
+  }
+  if (
+    !Array.isArray(suggestions.metrics?.writingFormDiversityLearningSources) ||
+    !suggestions.metrics.writingFormDiversityLearningSources.includes(paths.approvedAuthorStructureCards) ||
+    !suggestions.metrics.writingFormDiversityLearningSources.includes(paths.reviewRejectionDerivedFull)
+  ) {
+    errors.push("writingFormDiversityLearningSources metric missing accepted/rejected learning paths");
   }
   if (suggestions.metrics?.readerSimulationGateRequired !== true) {
     errors.push("readerSimulationGateRequired metric missing or false");
@@ -910,6 +1028,19 @@ if (suggestions?.articlePack) {
   }
   if (pack.exportMode?.titleReaderVoiceRequired !== true) {
     errors.push("articlePack exportMode title reader voice flag missing or false");
+  }
+  if (pack.exportMode?.writingFormDiversityRequired !== true) {
+    errors.push("articlePack exportMode writing form diversity flag missing or false");
+  }
+  if (pack.writingFormDiversityProtocol?.status !== "required_before_drafting") {
+    errors.push("articlePack writingFormDiversityProtocol missing or status drift");
+  } else if (
+    pack.writingFormDiversityProtocol.currentUniqueForms !== currentPackStats.writingFormDiversity?.uniqueFormCount ||
+    pack.writingFormDiversityProtocol.minimumUniqueForms !== 8 ||
+    !Array.isArray(pack.writingFormDiversityProtocol.ownerAgents) ||
+    pack.writingFormDiversityProtocol.ownerAgents.length < 5
+  ) {
+    errors.push("articlePack writingFormDiversityProtocol incomplete or drifted");
   }
   if (pack.articlePackGreenReviewPolicy?.status !== "required_before_review_board") {
     errors.push("articlePackGreenReviewPolicy missing or status drift");
@@ -978,6 +1109,24 @@ if (articlePackHistory && currentPackStats) {
         "pass",
         `not-but max ${actual.notButMax}, total ${actual.notButTotal}/${actual.articlesWithNotBut} articles, 比較穩 total ${actual.stablePhraseTotal}, self-question max ${actual.selfQuestionMax}, 真正 max ${actual.trueNeedMax}`,
       );
+    }
+    if (currentRecord.writingFormDiversity && currentPackStats.writingFormDiversity) {
+      const expected = currentRecord.writingFormDiversity;
+      const actual = currentPackStats.writingFormDiversity;
+      if (
+        expected.uniqueFormCount !== actual.uniqueFormCount ||
+        expected.minimumUniqueFormsRequired !== actual.minimumUniqueFormsRequired ||
+        JSON.stringify(expected.forms) !== JSON.stringify(actual.forms)
+      ) {
+        errors.push("article-pack-history writing form diversity drift");
+      }
+      pushCheck(
+        "article-pack-history writing form diversity",
+        "pass",
+        `${actual.uniqueFormCount} unique forms / ${currentPackStats.articleCount} articles`,
+      );
+    } else {
+      errors.push("article-pack-history writing form diversity missing");
     }
   }
 

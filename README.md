@@ -5,12 +5,12 @@
 目前用途：
 
 - 盤點好理家在知識庫與 InfoCenter 文章管理結果。
-- 讓 Codex / agent 從文章全文、狀態、標籤與退修意見中學習好文章標準。
+- 讓 Codex / agent 從文章管理區的審核成功全文、審核駁回內容與原文對照中學習好文章標準。
 - 每週產出知識庫擴充建議與 10 篇可投稿文章草稿。
 - 以週報方式回看上一次與歷次任務的分析整理、執行日誌、阻擋原因與下一步。
 - 記錄每次純文字文章包的產出批次、狀態、篇數、字數範圍、檢查結果與未產出原因。
 - 以 validator 檢查工作台資料、文章包紀錄、非空白正文 2000 字 gate、role leak、生成審核綠燈與 history drift。
-- 提供 Kevin 可點選全文、複製純文字、核准、退修、駁回、分類存放的審核台。
+- 提供 Kevin 可點選全文並複製標題＋正文的文章工作站；工作站不負責提交、核准、退修或駁回。
 - 透過 GitHub + Vercel Production 提供穩定 public review URL。
 
 ## 目前狀態
@@ -38,6 +38,8 @@
 - 新增 Agent 訓練閉環規格：將評論文章、審核評語、退修差異、agent 討論與學習卡串成 `Review Contrast Learning Loop`。
 - 2026-06-09 已完成最新 InfoCenter read-only 回讀，取得 350 筆審核駁回、51 筆完整審核內容與 50 張可交叉學習卡；公開 repo 只保存去識別衍生規則。
 - 退修/駁回建議會優先轉成下週必查規則。
+- 文章工作站定位為 copy-only：只檢視文章包並複製標題＋正文，不保存本機審核狀態、不匯出核准包、不取代文章管理區。
+- 文章生成流程新增 `articleUsefulnessReview`：每篇只推動一個家庭財務判斷，先擋掉常見誤判，並讓讀者知道讀完要檢查哪個數字、日期、風險或選擇。
 - 正文長度以「非空白字數」作為硬性 gate；低於或等於 2000 不得標示為可投稿。
 - 標題新意與內容差異已納入產稿前 gate：同批標題不得正規化重複、近似或互相包含核心題名；與既有題目相近時，必須先寫出新情境、新數字與新判斷。
 - 既有知識庫標題索引已接入 validator；正式產稿前需先更新 `data/knowledge-base-title-index.json`，再檢查候選題是否撞到站上既有標題。
@@ -79,8 +81,14 @@
 - `docs/numeric-proof-writing-angle-reviewers.md`：數值化證明與寫作角度 reviewer 規格。
 - `docs/readability-research-20260602.md`：知識型文章可讀性研究摘要。
 - `docs/current-taiwan-data-verification-rules.md`：台灣最新資料與補助規範查核規則。
+- `docs/automation-14-15-preflight-rules-2026-06-15.md`：每週戰情室與雙週文章生成的固定 preflight / inherited gate 規則。
 - `reports/2026-06-02-full-learning-summary.md`：全文學習總結。
 - `logs/2026-06-02-full-learning-and-automation-log.md`：學習與 automation 日誌。
+
+## 2026-06-15 automation preflight 補充
+
+- `automation-14` 現在先固定檢查登入、project context、`EVENT_REVIEW` 路徑、`EVENT_COMMENT` 路徑與 proof surface，再決定能不能做 complete learning。
+- `automation-15` 現在先讀上游 handoff 與 blocker card，若 fatal gate 尚未解除，就沿用上游 proof artifact 停在 inherited checkpoint，不重跑同一輪 blocker discovery。
 
 ## 安全邊界
 
