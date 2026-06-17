@@ -131,6 +131,8 @@ Must record:
 
 Public body must be plain text only unless Kevin asks for internal review.
 
+If an article or workbench output needs a table, the public body must use structured table data and the workbench must render/copy a real table. Do not put Markdown tables, ASCII `|` tables, or full-width `｜` text tables into the final article body. Plain-text fallback may use tab-separated columns only.
+
 Before title planning, run the **Low-Frequency Gap Gate** whenever Kevin asks to supplement missing/under-mentioned areas, expand the knowledge base, or generate article candidates:
 
 - Use the whole `data/knowledge-base-title-index.json`, knowledge labels/tags, the current formal article pack, and recent trial packs.

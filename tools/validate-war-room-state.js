@@ -63,6 +63,65 @@ function splitParagraphs(text) {
     .filter(Boolean);
 }
 
+function tableSyntaxViolations(text) {
+  return String(text || "")
+    .replace(/\r\n/g, "\n")
+    .split("\n")
+    .map((line, index) => ({ index: index + 1, line: line.trim() }))
+    .filter(({ line }) => {
+      if (!line) return false;
+      const delimiterCount = (line.match(/[|｜]/g) || []).length;
+      const markdownSeparator = /^\|?\s*:?-{3,}\s*(\||$)/.test(line);
+      return markdownSeparator || delimiterCount >= 2;
+    });
+}
+
+function validateStructuredTables(scopeId, article) {
+  const tables = article.structuredTables || [];
+  const needsTable = /表/.test(
+    [
+      article.tableOrStructure,
+      article.preGenerationReview?.financialDecisionCard?.tableOrStructure,
+      article.tableOutputMode,
+    ]
+      .filter(Boolean)
+      .join(" "),
+  );
+
+  if (!needsTable && !tables.length) return true;
+  if (!Array.isArray(tables) || !tables.length) {
+    errors.push(`${scopeId} structuredTables missing for table-oriented article`);
+    return false;
+  }
+
+  let valid = true;
+  tables.forEach((table, index) => {
+    const tableScope = `${scopeId} structuredTables[${index}]`;
+    if (!table.id || !table.title || !table.afterParagraph) {
+      errors.push(`${tableScope} id/title/afterParagraph missing`);
+      valid = false;
+    }
+    if (!Array.isArray(table.headers) || table.headers.length < 2) {
+      errors.push(`${tableScope} headers missing or too shallow`);
+      valid = false;
+    }
+    if (!Array.isArray(table.rows) || !table.rows.length) {
+      errors.push(`${tableScope} rows missing`);
+      valid = false;
+    }
+    const width = table.headers?.length || 0;
+    for (const row of table.rows || []) {
+      if (!Array.isArray(row) || row.length !== width || row.some((cell) => !String(cell || "").trim())) {
+        errors.push(`${tableScope} row width/content invalid`);
+        valid = false;
+        break;
+      }
+    }
+  });
+
+  return valid;
+}
+
 function paragraphStats(text) {
   const paragraphs = splitParagraphs(text);
   const lengths = paragraphs.map((paragraph) => nonWhitespaceCount(paragraph));
@@ -1140,6 +1199,7 @@ if (articlePackHistory && currentPackStats) {
 
 if (suggestions?.trialArticlePacks?.length) {
   const trialPacks = suggestions.trialArticlePacks;
+  const currentTrialId = suggestions.currentTrialArticlePackId || trialPacks[0]?.id;
   let currentTrialPackStats = null;
 
   for (const trialPack of trialPacks) {
@@ -1147,8 +1207,11 @@ if (suggestions?.trialArticlePacks?.length) {
     const computed = [];
     let greenReviewCount = 0;
     let preGenerationPassCount = 0;
+    let structuredTablePassCount = 0;
     const nonGreenReviewIds = [];
     const preGenerationFailures = [];
+    const requiresStructuredTables =
+      suggestions.metrics?.structuredTableOutputRequired === true && trialPack.id === currentTrialId;
 
     if (!articles.length) {
       errors.push(`${trialPack.id} trial pack has no articles`);
@@ -1228,6 +1291,20 @@ if (suggestions?.trialArticlePacks?.length) {
       const includingWhitespace = body.length;
       computed.push({ id: article.id, path: article.bodyPath, chars, includingWhitespace });
 
+      if (requiresStructuredTables) {
+        const tableViolations = tableSyntaxViolations(body);
+        if (tableViolations.length) {
+          errors.push(
+            `${trialPack.id}/${article.id} body contains Markdown or pipe-table syntax: ${tableViolations
+              .slice(0, 3)
+              .map((item) => `line ${item.index}`)
+              .join(", ")}`,
+          );
+        } else if (validateStructuredTables(`${trialPack.id}/${article.id}`, article)) {
+          structuredTablePassCount += 1;
+        }
+      }
+
       if (chars <= 2000) {
         errors.push(`${trialPack.id}/${article.id} body length gate failed: ${chars} non-whitespace chars`);
       }
@@ -1254,6 +1331,9 @@ if (suggestions?.trialArticlePacks?.length) {
     }
     if (preGenerationPassCount === articles.length && preGenerationFailures.length === 0) {
       pushCheck(`${trialPack.id} pre-generation protocol`, "pass", `${preGenerationPassCount}/${articles.length} articles passed`);
+    }
+    if (requiresStructuredTables && structuredTablePassCount === articles.length) {
+      pushCheck(`${trialPack.id} structured table output`, "pass", `${structuredTablePassCount}/${articles.length} articles`);
     }
 
     const stats = {

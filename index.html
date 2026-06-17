@@ -493,6 +493,54 @@
       font-size: 15px;
     }
 
+    .article-body.rendered {
+      white-space: normal;
+    }
+
+    .article-body.rendered p {
+      margin: 0 0 1.1em;
+    }
+
+    .article-body.rendered p:last-child {
+      margin-bottom: 0;
+    }
+
+    .article-table-wrap {
+      margin: 16px 0 22px;
+      overflow-x: auto;
+    }
+
+    .article-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      background: #fff;
+      color: #25364d;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    .article-table caption {
+      padding-bottom: 8px;
+      text-align: left;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .article-table th,
+    .article-table td {
+      border: 1px solid var(--line);
+      padding: 10px 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .article-table th {
+      background: #f3f8f8;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
     .weekly-records {
       display: grid;
       gap: 10px;
@@ -971,6 +1019,137 @@
       };
     }
 
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function articleTables(article) {
+      return Array.isArray(article?.structuredTables) ? article.structuredTables : [];
+    }
+
+    function tablePlainText(table) {
+      return [
+        `【表格：${table.title || "未命名表格"}】`,
+        (table.headers || []).join("\t"),
+        ...(table.rows || []).map((row) => row.join("\t"))
+      ].filter(Boolean).join("\n");
+    }
+
+    function tableHtml(table) {
+      const headers = table.headers || [];
+      const rows = table.rows || [];
+      return [
+        `<table class="article-table">`,
+        table.title ? `<caption>${escapeHtml(table.title)}</caption>` : "",
+        headers.length
+          ? `<thead><tr>${headers.map((header) => `<th>${escapeHtml(header)}</th>`).join("")}</tr></thead>`
+          : "",
+        `<tbody>${rows
+          .map((row) => `<tr>${row.map((cell) => `<td>${escapeHtml(cell)}</td>`).join("")}</tr>`)
+          .join("")}</tbody>`,
+        `</table>`
+      ].join("");
+    }
+
+    function bodyBlocksWithoutTableFallback(body) {
+      return String(body || "")
+        .replace(/\r\n/g, "\n")
+        .split(/\n\s*\n/)
+        .map((block) => block.trim())
+        .filter((block) => block && !block.startsWith("【表格："));
+    }
+
+    function renderArticleTable(table) {
+      const wrap = document.createElement("div");
+      wrap.className = "article-table-wrap";
+      const tableNode = document.createElement("table");
+      tableNode.className = "article-table";
+
+      if (table.title) {
+        const caption = document.createElement("caption");
+        caption.textContent = table.title;
+        tableNode.appendChild(caption);
+      }
+
+      if (table.headers?.length) {
+        const thead = document.createElement("thead");
+        const row = document.createElement("tr");
+        table.headers.forEach((header) => {
+          const th = document.createElement("th");
+          th.textContent = header;
+          row.appendChild(th);
+        });
+        thead.appendChild(row);
+        tableNode.appendChild(thead);
+      }
+
+      const tbody = document.createElement("tbody");
+      (table.rows || []).forEach((rowData) => {
+        const row = document.createElement("tr");
+        rowData.forEach((cell) => {
+          const td = document.createElement("td");
+          td.textContent = cell;
+          row.appendChild(td);
+        });
+        tbody.appendChild(row);
+      });
+      tableNode.appendChild(tbody);
+      wrap.appendChild(tableNode);
+      return wrap;
+    }
+
+    function articleBodyHtml(body, article, includeTitle = false) {
+      const tables = articleTables(article);
+      const blocks = bodyBlocksWithoutTableFallback(body);
+      const output = [];
+      if (includeTitle && article?.title) {
+        output.push(`<h1>${escapeHtml(article.title)}</h1>`);
+      }
+      blocks.forEach((block) => {
+        output.push(`<p>${escapeHtml(block).replace(/\n/g, "<br>")}</p>`);
+        tables
+          .filter((table) => table.afterParagraph === block)
+          .forEach((table) => {
+            output.push(tableHtml(table));
+          });
+      });
+      return output.join("\n");
+    }
+
+    function renderArticleBody(container, body, article) {
+      container.textContent = "";
+      container.classList.add("rendered");
+      const blocks = bodyBlocksWithoutTableFallback(body);
+      const tables = articleTables(article);
+      if (!blocks.length) {
+        container.textContent = "正在讀取純文字正文...";
+        return;
+      }
+
+      blocks.forEach((block) => {
+        container.appendChild(paragraph(block));
+        tables
+          .filter((table) => table.afterParagraph === block)
+          .forEach((table) => container.appendChild(renderArticleTable(table)));
+      });
+    }
+
+    function articleCopyPayload(body, article, includeTitle = false) {
+      const plainBody = String(body || "").trim();
+      const plainText = includeTitle && article?.title
+        ? [article.title, plainBody].filter(Boolean).join("\n\n")
+        : plainBody;
+      return {
+        plainText,
+        html: articleBodyHtml(plainBody, article, includeTitle)
+      };
+    }
+
     function renderMetrics() {
       const metrics = data.metrics || {};
       const packs = availableArticlePacks();
@@ -1383,14 +1562,18 @@
 
       const body = document.createElement("div");
       body.className = "article-body";
-      body.textContent = plain.body || "正在讀取純文字正文...";
+      renderArticleBody(body, plain.body, article);
       detailSection(detail, "正文", [body]);
 
       const copyActions = document.createElement("div");
       copyActions.className = "actions";
       copyActions.append(
-        actionButton("複製標題＋正文", "primary", () => copyText(plain.titleAndBody, "已複製標題與正文。")),
-        actionButton("複製正文", "", () => copyText(plain.body, "已複製正文。"))
+        actionButton("複製標題＋正文", "primary", () =>
+          copyRichArticle(articleCopyPayload(plain.body, article, true), "已複製標題與正文。")
+        ),
+        actionButton("複製正文", "", () =>
+          copyRichArticle(articleCopyPayload(plain.body, article, false), "已複製正文。")
+        )
       );
       detail.appendChild(copyActions);
 
@@ -1487,6 +1670,33 @@
       area.select();
       area.setSelectionRange(0, area.value.length);
       if (note) note.textContent = "瀏覽器未開放自動複製，請使用下方手動複製框。";
+    }
+
+    async function copyRichArticle(payload, successText, noteId = "copyNote") {
+      const note = document.getElementById(noteId);
+      const plainText = String(payload?.plainText || "");
+      const html = String(payload?.html || "");
+      if (!plainText.trim()) {
+        if (note) note.textContent = "目前沒有可複製的文章內容。";
+        return false;
+      }
+
+      try {
+        if (window.isSecureContext && navigator.clipboard?.write && window.ClipboardItem && html.trim()) {
+          await navigator.clipboard.write([
+            new ClipboardItem({
+              "text/html": new Blob([html], { type: "text/html" }),
+              "text/plain": new Blob([plainText], { type: "text/plain" })
+            })
+          ]);
+          if (note) note.textContent = `${successText || "已複製文章。"}表格會以表格格式貼上；若貼上目標不支援，會使用純文字備援。`;
+          return true;
+        }
+      } catch (_error) {
+        // Continue to plain-text fallback below.
+      }
+
+      return copyText(plainText, `${successText || "已複製文章。"}瀏覽器只允許純文字複製，表格已用分欄文字備援。`, noteId);
     }
 
     async function copyText(text, successText, noteId = "copyNote") {

@@ -6,3 +6,4 @@
 - Gate: review_then_revise_until_green.
 - Result: 2 new low-frequency trial articles generated as plain text body files.
 - Kevin correction applied: select rarely mentioned knowledge-base topics before drafting.
+- Kevin correction applied: article tables must use structured table output, not Markdown or pipe-table text.

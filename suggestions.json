@@ -95,7 +95,8 @@
     "structuredArticleFlowRequired": true,
     "plainTextArticlePackBodyOnlyRequired": true,
     "articleStructureLearningUpdatedAt": "2026-06-17T16:50:00+08:00",
-    "lowFrequencyTopicSelectionRequired": true
+    "lowFrequencyTopicSelectionRequired": true,
+    "structuredTableOutputRequired": true
   },
   "learningSummary": {
     "status": "completed",
@@ -6816,6 +6817,7 @@
       "generatedBy": "tools/build-gap-two-article-pack-2026-06-17.js",
       "displayMode": "trial_article_pack_dropdown",
       "exportMode": "plain_text_title_and_body_only",
+      "tableOutputMode": "structured_html_table_with_tab_plain_text_fallback",
       "files": {
         "directory": "articles/2026-06-17-gap-two-article-pack",
         "bodyFiles": [
@@ -6878,7 +6880,7 @@
         ],
         "adoptNow": [
           "Generate two new low-frequency topics: NHI arrears and policy loan/surrender.",
-          "Use one table per article to reduce decision load.",
+          "Use one structured HTML table per article to reduce decision load; do not put Markdown or pipe tables in the public body.",
           "Every article needs before/after effect, remaining gap, and a realistic help path if the gap is not closed."
         ],
         "validateNext": [
@@ -6901,9 +6903,49 @@
           "selectedForm": "恐懼拆解＋分期前後差異",
           "bodyPath": "articles/2026-06-17-gap-two-article-pack/01-nhi-arrears-medical-care-gap.txt",
           "bodyChars": 2088,
-          "bodyCharsIncludingWhitespace": 2125,
+          "bodyCharsIncludingWhitespace": 2138,
           "bodyLengthGate": "passed",
           "contentMode": "plain_text_body_only",
+          "structuredTables": [
+            {
+              "id": "nhi-arrears-cashflow-check",
+              "title": "健保欠費處理表",
+              "afterParagraph": "先把帳攤開來看。",
+              "headers": [
+                "項目",
+                "金額",
+                "先要判斷什麼"
+              ],
+              "rows": [
+                [
+                  "健保欠費",
+                  "18,600元",
+                  "能不能分期，不要先用高利借款"
+                ],
+                [
+                  "本月可留下現金",
+                  "約4,300元",
+                  "不能全部拿去補欠費"
+                ],
+                [
+                  "孩子看診與藥費",
+                  "約600到1,200元",
+                  "生病不能拖"
+                ],
+                [
+                  "房租與食物交通",
+                  "約19,000元",
+                  "30天內不能斷"
+                ],
+                [
+                  "每月可負擔分期",
+                  "約2,000到3,000元",
+                  "要留生活緩衝"
+                ]
+              ]
+            }
+          ],
+          "tableOutputMode": "html_table_with_tab_plain_text_fallback",
           "sourceDisclosureMode": "metadata_only_not_body",
           "copyTarget": "bodyPath",
           "sources": [
@@ -7074,10 +7116,45 @@
           "categoryType": "保單借款與解約風險",
           "selectedForm": "選項比較＋保障缺口試算",
           "bodyPath": "articles/2026-06-17-gap-two-article-pack/02-policy-loan-surrender-protection-gap.txt",
-          "bodyChars": 2168,
-          "bodyCharsIncludingWhitespace": 2204,
+          "bodyChars": 2174,
+          "bodyCharsIncludingWhitespace": 2221,
           "bodyLengthGate": "passed",
           "contentMode": "plain_text_body_only",
+          "structuredTables": [
+            {
+              "id": "policy-loan-options-check",
+              "title": "急用錢前的保單選項比較",
+              "afterParagraph": "先把兩種想法放在一起看。",
+              "headers": [
+                "做法",
+                "眼前拿到什麼",
+                "接下來會發生什麼"
+              ],
+              "rows": [
+                [
+                  "直接借80,000元",
+                  "缺口一次補上",
+                  "每月若想一年還完約要7,100元，超過目前餘裕"
+                ],
+                [
+                  "只借50,000元",
+                  "缺口還剩30,000元要處理",
+                  "一年攤還約4,400元，接近目前可承受上限"
+                ],
+                [
+                  "直接解約",
+                  "可能拿到一筆解約金",
+                  "保障中斷，未來重新投保可能更貴或不一定能買"
+                ],
+                [
+                  "先調整支出再少借",
+                  "借款變少、利息變少",
+                  "需要家人一起接受延後付款或縮小支出"
+                ]
+              ]
+            }
+          ],
+          "tableOutputMode": "html_table_with_tab_plain_text_fallback",
           "sourceDisclosureMode": "metadata_only_not_body",
           "copyTarget": "bodyPath",
           "sources": [

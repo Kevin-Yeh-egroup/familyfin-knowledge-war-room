@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-06-17T07:08:01.837Z",
+  "updatedAt": "2026-06-17T07:52:11.410Z",
   "source": "FamilyFin plain-text article pack generation records",
   "privacy": {
     "rawInfoCenterArticleBodiesStored": false,
@@ -160,16 +160,16 @@
       "articleCount": 2,
       "bodyCountMode": "non_whitespace",
       "bodyCharsMin": 2088,
-      "bodyCharsMax": 2168,
-      "bodyCharsIncludingWhitespaceMin": 2125,
-      "bodyCharsIncludingWhitespaceMax": 2204,
+      "bodyCharsMax": 2174,
+      "bodyCharsIncludingWhitespaceMin": 2138,
+      "bodyCharsIncludingWhitespaceMax": 2221,
       "paragraphRhythm": {
         "paragraphsMin": 17,
         "paragraphsMax": 17,
         "averageParagraphMin": 123,
         "averageParagraphMax": 128,
         "shortestParagraphMin": 8,
-        "longestParagraphMax": 177,
+        "longestParagraphMax": 183,
         "veryShortParagraphsTotal": 2
       },
       "styleVariation": {
@@ -189,7 +189,7 @@
         "健保費欠著，最怕的不是帳單，是不敢去看醫生",
         "急用錢先別急著解保單，借到錢之前要先看保障會少多少"
       ],
-      "copyText": "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款\n\n日期：2026-06-17\n狀態：2 篇低頻缺口試產稿\n目錄：articles/2026-06-17-gap-two-article-pack\n篇數：2\n正文非空白字數：2088 到 2168 字\n含空白正文長度：2125 到 2204 字\n段落節奏：17 到 17 段，平均 123 到 128 字，過短段落 2\n語氣變奏：不是...而是最多 6 次，整包 10 次／2 篇；比較穩 0 次，自問自答最多 0 次，真正最多 3 次\n\n紀錄重點\n- 修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。\n- 低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。\n- 兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。\n- 正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- role leak audit 通過。"
+      "copyText": "2026-06-17 低頻缺口兩篇試產稿｜健保欠費與保單借款\n\n日期：2026-06-17\n狀態：2 篇低頻缺口試產稿\n目錄：articles/2026-06-17-gap-two-article-pack\n篇數：2\n正文非空白字數：2088 到 2174 字\n含空白正文長度：2138 到 2221 字\n段落節奏：17 到 17 段，平均 123 到 128 字，過短段落 2\n語氣變奏：不是...而是最多 6 次，整包 10 次／2 篇；比較穩 0 次，自問自答最多 0 次，真正最多 3 次\n\n紀錄重點\n- 修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。\n- 低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。\n- 兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。\n- 正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。\n\n檢查\n- 正文非空白字數均超過 2000 字。\n- preGenerationReview 逐篇通過。\n- approvedAuthorStructureUse 逐篇通過。\n- articlePackReviewGate 綠燈 2/2。\n- role leak audit 通過。"
     },
     {
       "id": "2026-06-17-structured-two-article-pack",

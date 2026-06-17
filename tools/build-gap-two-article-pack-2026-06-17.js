@@ -47,8 +47,28 @@ const approvedAuthorStructurePatterns = [
   },
 ];
 
-function bodyText(paragraphs) {
-  return paragraphs.map((line) => line.trim()).filter(Boolean).join("\n\n");
+function tablePlainText(table) {
+  return [
+    `【表格：${table.title}】`,
+    table.headers.join("\t"),
+    ...table.rows.map((row) => row.join("\t")),
+  ].join("\n");
+}
+
+function bodyText(article) {
+  const tables = article.structuredTables || [];
+  const output = [];
+
+  for (const paragraph of article.paragraphs) {
+    const text = paragraph.trim();
+    if (!text) continue;
+    output.push(text);
+    for (const table of tables.filter((item) => item.afterParagraph === paragraph)) {
+      output.push(tablePlainText(table));
+    }
+  }
+
+  return output.join("\n\n");
 }
 
 function nonWhitespaceCount(value) {
@@ -180,6 +200,21 @@ const articles = [
     assessmentTask: "把欠費總額、這次就醫支出、家庭30天必要生活費、可分期金額與求助窗口分開。",
     decisionOutput: "先就醫、再確認欠費狀態、再安排分期或紓困，不用用高利借款補健保欠費。",
     tableOrStructure: "使用欠費原狀與分期後月現金流對照表。",
+    structuredTables: [
+      {
+        id: "nhi-arrears-cashflow-check",
+        title: "健保欠費處理表",
+        afterParagraph: "先把帳攤開來看。",
+        headers: ["項目", "金額", "先要判斷什麼"],
+        rows: [
+          ["健保欠費", "18,600元", "能不能分期，不要先用高利借款"],
+          ["本月可留下現金", "約4,300元", "不能全部拿去補欠費"],
+          ["孩子看診與藥費", "約600到1,200元", "生病不能拖"],
+          ["房租與食物交通", "約19,000元", "30天內不能斷"],
+          ["每月可負擔分期", "約2,000到3,000元", "要留生活緩衝"],
+        ],
+      },
+    ],
     capability: "學會把健保欠費從恐懼變成可處理的月付問題，避免因誤會延誤就醫。",
     transferTest: "讀完後能說出欠費多少、是否已移送行政執行、每月可負擔分期多少、要先問哪個窗口。",
     readerLoad: {
@@ -208,7 +243,6 @@ const articles = [
       "很多家庭遇到健保欠費，真正卡住的是恐懼。怕被拒絕、怕丟臉、怕越查越多錢，最後就把小病拖成大病。可是欠費和就醫要先分開看。衛福部曾說明，健保欠費與就醫權已經脫鉤，弱勢民眾欠費不再因為欠費就被鎖卡；健保署也有欠費協助措施。這不代表欠費不用處理，而是先不要因為害怕而不去看醫生。",
       "雅雯家的問題不是完全沒有收入。她每月薪水34,000元，房租11,000元，孩子餐費與交通8,000元，水電手機3,200元，學校雜費與生活採買大約7,500元。平常一個月大概剩4,300元。健保欠費18,600元如果一次繳掉，她這個月房租和生活費會立刻出事。",
       "先把帳攤開來看。",
-      "項目｜金額｜先要判斷什麼\n健保欠費｜18,600元｜能不能分期，不要先用高利借款\n本月可留下現金｜約4,300元｜不能全部拿去補欠費\n孩子看診與藥費｜約600到1,200元｜生病不能拖\n房租與食物交通｜約19,000元｜30天內不能斷\n每月可負擔分期｜約2,000到3,000元｜要留生活緩衝",
       "這張表會讓雅雯看見，眼前不是只有繳或不繳兩種選擇。若一次繳18,600元，她會直接透支；若完全不處理，她會一直怕收到下一封通知，也可能讓欠費進入更麻煩的程序。比較實際的是先就醫，再確認欠費狀態，接著安排自己真的繳得下去的分期。",
       "健保署目前公開的欠費協助中，欠費達2,000元以上且欠費沒有移送行政執行、近2年分期違約紀錄符合條件者，可以網路辦理簡易分期。已移送行政執行的欠費，則要先經執行署同意才能辦理分期。這些細節聽起來像行政規定，放到家庭裡其實是很具體的問題：你的欠費還能不能線上分期？每期金額會不會壓垮下個月生活？",
       "如果雅雯把18,600元分成6期，每月要繳3,100元。她原本每月只剩4,300元，分期後只剩1,200元。這樣雖然比一次繳清好多了，但生活仍然很薄。孩子看診、機車維修、學校臨時費用一來，1,200元很快就不見。她不能只看分期能不能辦，也要看辦了以後家裡還能不能過30天。",
@@ -250,6 +284,20 @@ const articles = [
     assessmentTask: "比較保單借款、解約、部分支出延後、親友短期支援和正式債務協商的月付與風險。",
     decisionOutput: "如果只是短期缺口，優先降低借款額度並保留保障；如果已經還不出利息，要轉向正式求助而不是一直借保單。",
     tableOrStructure: "使用借款前後保障與月付對照表。",
+    structuredTables: [
+      {
+        id: "policy-loan-options-check",
+        title: "急用錢前的保單選項比較",
+        afterParagraph: "先把兩種想法放在一起看。",
+        headers: ["做法", "眼前拿到什麼", "接下來會發生什麼"],
+        rows: [
+          ["直接借80,000元", "缺口一次補上", "每月若想一年還完約要7,100元，超過目前餘裕"],
+          ["只借50,000元", "缺口還剩30,000元要處理", "一年攤還約4,400元，接近目前可承受上限"],
+          ["直接解約", "可能拿到一筆解約金", "保障中斷，未來重新投保可能更貴或不一定能買"],
+          ["先調整支出再少借", "借款變少、利息變少", "需要家人一起接受延後付款或縮小支出"],
+        ],
+      },
+    ],
     capability: "學會把急用錢拆成缺口金額、需要多久、借款利息、保障減少與還款能力。",
     transferTest: "讀完後能向保險公司問出可借額度、借款利率、保單價值準備金、是否會停效、理賠會扣多少。",
     readerLoad: {
@@ -279,7 +327,6 @@ const articles = [
       "志明一開始只看眼前缺口。他需要80,000元，保險公司客服查到這張保單可借額度足夠，借款年利率要依保單與公司公告確認。為了讓自己看得懂，他先用年利率6%做壓力試算。如果借80,000元，一年利息大約4,800元，平均每月要先準備400元利息；若本金也想在一年內還完，每月要準備約6,700元本金，加起來每月約7,100元。",
       "這個數字一出來，志明才發現問題不只是能不能借到。家裡每月收入58,000元，房租16,000元，食物交通19,000元，媽媽醫療與交通新增6,000元，信用卡最低應繳7,000元，其他水電手機保費6,000元。原本每月只剩約4,000元。若保單借款後每月要準備7,100元，家裡立刻又少3,100元。",
       "先把兩種想法放在一起看。",
-      "做法｜眼前拿到什麼｜接下來會發生什麼\n直接借80,000元｜缺口一次補上｜每月若想一年還完約要7,100元，超過目前餘裕\n只借50,000元｜缺口還剩30,000元要處理｜一年攤還約4,400元，接近目前可承受上限\n直接解約｜可能拿到一筆解約金｜保障中斷，未來重新投保可能更貴或不一定能買\n先調整支出再少借｜借款變少、利息變少｜需要家人一起接受延後付款或縮小支出",
       "金管會提醒過，保單借款會影響保險契約效力。借款本息如果超過保單價值準備金，保險公司會依規定通知；若未在期限內返還，保單效力可能停止。保單借款期間若發生理賠，保險金也可能先扣掉借款本息。這些不是嚇人，而是提醒家庭：保單借款不是不用還的錢，它會改變你原本以為還在的保障。",
       "志明真正要問的，不是保單能借多少，而是家裡最多能安全借多少。若每月最多只擠得出4,000元，他就不適合借到一年內要還7,100元的金額。借80,000元可以讓今天舒服一點，但下個月會把缺口推大。借50,000元雖然還不夠，至少月付比較接近家庭承受能力。",
       "他的改善計畫分成三步。第一，先把醫療與看護支出分清楚，確認哪些是這個月必付，哪些可以等帳單或和醫院社工詢問協助。第二，保單借款只借50,000元，不借滿可借額度。第三，和姐姐討論短期支援20,000元，自己把一筆非急用支出延後10,000元。這樣80,000元缺口就被拆成50,000元借款、20,000元親友短期支援、10,000元延後支出。",
@@ -296,7 +343,7 @@ const articles = [
 ];
 
 function buildArticle(article) {
-  const body = bodyText(article.paragraphs);
+  const body = bodyText(article);
   const outputPath = path.join(packDir, article.fileName);
   fs.writeFileSync(outputPath, `${body}\n`, "utf8");
   const bodyChars = nonWhitespaceCount(body);
@@ -314,6 +361,8 @@ function buildArticle(article) {
     bodyCharsIncludingWhitespace: body.length,
     bodyLengthGate: bodyChars > 2000 ? "passed" : "failed",
     contentMode: "plain_text_body_only",
+    structuredTables: article.structuredTables || [],
+    tableOutputMode: "html_table_with_tab_plain_text_fallback",
     sourceDisclosureMode: "metadata_only_not_body",
     copyTarget: "bodyPath",
     sources: article.sources,
@@ -334,6 +383,7 @@ function buildPack(articleCards) {
     generatedBy: "tools/build-gap-two-article-pack-2026-06-17.js",
     displayMode: "trial_article_pack_dropdown",
     exportMode: "plain_text_title_and_body_only",
+    tableOutputMode: "structured_html_table_with_tab_plain_text_fallback",
     files: {
       directory: `articles/${packId}`,
       bodyFiles: articleCards.map((article) => article.bodyPath),
@@ -368,7 +418,7 @@ function buildPack(articleCards) {
       ],
       adoptNow: [
         "Generate two new low-frequency topics: NHI arrears and policy loan/surrender.",
-        "Use one table per article to reduce decision load.",
+        "Use one structured HTML table per article to reduce decision load; do not put Markdown or pipe tables in the public body.",
         "Every article needs before/after effect, remaining gap, and a realistic help path if the gap is not closed.",
       ],
       validateNext: [
@@ -395,6 +445,7 @@ function updateSuggestions(pack) {
   suggestions.metrics.latestTrialArticlePackGeneratedAt = now;
   suggestions.metrics.lowFrequencyTopicSelectionRequired = true;
   suggestions.metrics.plainTextArticlePackBodyOnlyRequired = true;
+  suggestions.metrics.structuredTableOutputRequired = true;
   suggestions.metrics.articleStructureLearningUpdatedAt = now;
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
 }
@@ -411,6 +462,7 @@ function writeReport(pack) {
     "- 修正選題邏輯：不是只看目前文章包缺什麼，而是先看知識庫標題索引中很少提及什麼。",
     "- 低頻盤點後，改選兩個0命中主題：健保欠費與就醫、保單借款與解約金。",
     "- 正文直接進入家庭情境，不寫文章自我說明。",
+    "- 表格改為結構化資料；工作台顯示與複製應輸出真正表格，不再用 Markdown 或直線文字表。",
     "",
     "## 產出",
     "",
@@ -433,6 +485,7 @@ function writeReport(pack) {
     "- Gate: review_then_revise_until_green.",
     "- Result: 2 new low-frequency trial articles generated as plain text body files.",
     "- Kevin correction applied: select rarely mentioned knowledge-base topics before drafting.",
+    "- Kevin correction applied: article tables must use structured table output, not Markdown or pipe-table text.",
     "",
   ].join("\n");
   fs.writeFileSync(reportPath, report, "utf8");
