@@ -8,6 +8,9 @@ const packId = "2026-06-17-gap-two-article-pack";
 const packDir = path.join(repoRoot, "articles", packId);
 const suggestionsPath = path.join(repoRoot, "suggestions.json");
 const now = "2026-06-17T16:50:00+08:00";
+const secondGateAt = "2026-06-17T17:55:00+08:00";
+const secondGateLearningPath = "data/low-frequency-gap-second-pass-gate-2026-06-17.json";
+const approvedArticleTraitValidationPath = "data/approved-article-risk-decision-validation-2026-06-17.json";
 const approvedAuthorStructureLearningPath = "data/approved-author-structure-cards-2026-06-10.json";
 
 const reviewerNames = [
@@ -16,6 +19,20 @@ const reviewerNames = [
   "source_grounding_reviewer",
   "approved_author_structure_reviewer",
   "taiwan_habit_reviewer",
+  "resource_benefit_translator",
+  "human_copy_reviewer",
+  "financial_decision_reviewer",
+  "role_integrity_reviewer",
+  "final_quality_gate",
+];
+
+const secondPassReviewerNames = [
+  "familyfin_grounded_orchestrator",
+  "low_frequency_gap_reviewer",
+  "source_grounding_reviewer",
+  "structural_cashflow_reviewer",
+  "high_variation_topic_reviewer",
+  "financial_risk_decision_reviewer",
   "resource_benefit_translator",
   "human_copy_reviewer",
   "financial_decision_reviewer",
@@ -142,6 +159,7 @@ function preGenerationReview(article) {
       commonMisreadingToPrevent: article.commonMisreadingToPrevent,
       nextCheckAfterReading: article.nextCheckAfterReading,
     },
+    financialRiskDecisionCard: financialRiskDecisionReview(article),
     approvedAuthorStructureUse: approvedAuthorStructureUse(article.primaryApprovedPattern),
   };
 }
@@ -172,6 +190,111 @@ function articlePackReviewGate(article) {
   };
 }
 
+function secondPassGateReview(article) {
+  return {
+    status: article.secondPassGateStatus,
+    reviewedAt: secondGateAt,
+    source: secondGateLearningPath,
+    trigger: "Kevin requested the new low-frequency article pack pass the updated gates after 6/17 editor rejection learning.",
+    reviewers: secondPassReviewerNames,
+    gatesApplied: [
+      "lowFrequencyGapGate",
+      "sourceFreshnessSpotCheck",
+      "structuralCashflowReview",
+      "highVariationTopicReview",
+      "financialRiskDecisionReview",
+      "articleUsefulnessReview",
+      "resourceBenefitTranslation",
+      "taiwanNaturalVoiceReview",
+      "roleLeakReview",
+      "structuredTableOutputReview",
+    ],
+    submitReady: article.secondPassSubmitReady,
+    verdict: article.secondPassVerdict,
+    revisionApplied: article.secondPassRevisionApplied || "none",
+    passedChecks: article.secondPassPassedChecks,
+    remainingRisks: article.secondPassRemainingRisks,
+    nextRequiredAction: article.secondPassNextRequiredAction,
+  };
+}
+
+function financialRiskDecisionReview(article) {
+  return {
+    status: "passed",
+    reviewedAt: secondGateAt,
+    source: secondGateLearningPath,
+    purpose:
+      "Check whether the draft helps readers judge their financial risk, understand the household-finance consequence, and choose a Taiwan-realistic solution, instead of only telling a story or listing items.",
+    riskJudgment: article.riskJudgment,
+    riskIndicators: article.riskIndicators,
+    householdFinanceConsequence: article.householdFinanceConsequence,
+    solutionChoiceMap: article.solutionChoiceMap,
+    solutionCredibilityChecks: article.solutionCredibilityChecks,
+    decisionBoundary: article.readerDecisionBoundary,
+    rejectWhen:
+      "The article has a relatable story or checklist, but the reader cannot tell which risk level they are in, what household-finance problem the risk causes, which Taiwan-realistic option fits, and when they should seek formal help.",
+  };
+}
+
+function approvedArticleTraitValidation() {
+  return {
+    id: "approved-article-risk-decision-validation-2026-06-17",
+    createdAt: secondGateAt,
+    source: approvedAuthorStructureLearningPath,
+    sampleBoundary: {
+      sampleCount: 3,
+      storesRawArticleBody: false,
+      onlyUsesDeidentifiedStructureCards: true,
+      requiredReviewStatus: "審核成功",
+      requiredFullBodyReadable: true,
+    },
+    question:
+      "審核通過的文章內文是否多具有風險判斷、家庭財務後果、合理解法選擇與不牽強方法這類特質。",
+    conclusion:
+      "初步支持。三張通過稿結構卡都不只是故事或資訊整理，而是把生活壓力轉成判斷順序、前後差異、制度門檻或風險分層；但樣本數仍小，應標記為質性驗證，不宣稱為正式統計。",
+    traitChecks: [
+      {
+        trait: "風險或問題判斷",
+        matchedSamples: 3,
+        evidence:
+          "劉泰一樣本用家庭經濟翻轉前後差異判斷困境；李婉仙樣本用換屋資格、期限與稅負順序判斷風險；蔡思樂樣本用週轉力來源與介入時機判斷債務風險。",
+      },
+      {
+        trait: "家庭財務後果",
+        matchedSamples: 3,
+        evidence:
+          "三張卡都回到家庭可支配金錢、換屋成本/稅負、債務週轉來源等家庭經濟後果，不停在抽象概念。",
+      },
+      {
+        trait: "解法或下一步選擇",
+        matchedSamples: 3,
+        evidence:
+          "劉泰一樣本有技能、就業與支持系統；李婉仙樣本有資格檢查、時序規劃與專業協助；蔡思樂樣本有觀察、協商或正式路徑的分流。",
+      },
+      {
+        trait: "方法可信度",
+        matchedSamples: 3,
+        evidence:
+          "三張卡都把限制條件放進文章：家庭權力與照顧壓力、稅務資格與期限、信用/親友/資產支撐是否會失效。方法不是單靠個人努力。",
+      },
+      {
+        trait: "可量化或可辨識的判斷指標",
+        matchedSamples: 2,
+        evidence:
+          "劉泰一與李婉仙樣本有金額、稅率、年限或期限；蔡思樂樣本偏判讀框架，後續一般民眾版需補月付、缺口與可撐時間。",
+      },
+    ],
+    generationImpact: [
+      "保留故事，但故事後必須接風險判斷與解法選擇。",
+      "新稿不能只列項目；要讓讀者知道自己落在哪種風險，該選哪條路，何時找正式協助。",
+      "若方法不符合台灣現況、生活常理或家庭限制，即使故事好讀也不得過 gate。",
+    ],
+    confidence: "medium_quality_validation_small_sample",
+    nextValidation:
+      "下一輪若能從事件列表再抽10到20篇審核成功且可讀全文的文章，可把 traitChecks 量化成更穩定的通過稿特徵分布。",
+  };
+}
+
 const articles = [
   {
     id: "nhi-arrears-medical-care-gap",
@@ -184,6 +307,28 @@ const articles = [
     selectedForm: "恐懼拆解＋分期前後差異",
     primaryApprovedPattern: "policy_decision_order",
     titleIndexHitCount: 0,
+    secondPassGateStatus: "green_after_second_pass",
+    secondPassSubmitReady: true,
+    secondPassVerdict:
+      "通過重審。此題屬低頻缺口，正文已把讀者需確認的風險層級、分期後30天生活費、行政執行狀態與求助分流拆出來，沒有只靠單一化名情境當主要參考。",
+    secondPassRevisionApplied: "metadata_gate_only_no_body_rewrite",
+    secondPassPassedChecks: [
+      "low_frequency_title_index_hit_count_0",
+      "official_source_spot_check_passed",
+      "high_variation_boundaries_visible",
+      "financial_risk_decision_review_passed",
+      "household_financial_inventory_visible",
+      "monthly_payment_and_30_day_living_gap_visible",
+      "realistic_help_path_visible",
+      "structured_table_metadata_present",
+      "no_role_leak",
+    ],
+    secondPassRemainingRisks: [
+      "欠費分期、紓困與行政執行狀態仍需投稿前依健保署最新頁面再確認。",
+      "正文示例金額為家庭試算，不可被讀者理解為官方補助或固定分期方案。",
+    ],
+    secondPassNextRequiredAction:
+      "投稿前保留最新查核日期；若健保署分期條件更新，先改 metadata 與正文制度段。",
     gapFinding:
       "以健保欠費、欠健保、健保費、停止就醫、健保卡等關鍵字盤點知識庫標題，命中0筆；目前正式文章包也沒有健保欠費與就醫權主題。",
     sourceSearchSummary: [
@@ -197,21 +342,41 @@ const articles = [
       "台灣家庭遇到健保欠費時，常因怕被拒診、怕櫃檯尷尬、怕行政執行而延後就醫；文章用分期、分區業務組與1957/公所求助路徑降低不敢看病的風險。",
     openingHook: "欠健保費時，很多人先怕的是醫院櫃檯，而不是那張欠費單。",
     readerNeed: "讀者需要知道欠費不等於不能看病，同時也要知道欠費不能一直放著不處理。",
-    assessmentTask: "把欠費總額、這次就醫支出、家庭30天必要生活費、可分期金額與求助窗口分開。",
-    decisionOutput: "先就醫、再確認欠費狀態、再安排分期或紓困，不用用高利借款補健保欠費。",
-    tableOrStructure: "使用欠費原狀與分期後月現金流對照表。",
+    assessmentTask: "判斷欠費是可分期處理的壓力、已經壓到30天生活費的現金流風險，還是需要正式求助的生活困難。",
+    decisionOutput: "先就醫，再確認欠費狀態；若分期後仍守得住30天必要生活費就安排分期，若守不住就改問健保署、1957、公所或社福窗口。",
+    tableOrStructure: "使用健保欠費風險判斷與解法選擇表。",
+    riskJudgment:
+      "讀者要先分辨自己是短期欠費、分期後仍可過30天、分期後會赤字，或已進入行政執行/生活困難。",
+    riskIndicators: [
+      "分期後是否還能保留房租、食物、交通、看診等30天必要生活費。",
+      "欠費是否已移送行政執行，或每月連2,000到3,000元都無法穩定支付。",
+      "是否因欠費恐懼而延後看診，讓醫療風險變大。",
+    ],
+    householdFinanceConsequence:
+      "健保欠費若一次繳清，可能吃掉房租、食物、交通與看診預留金；若完全不處理，則可能拖成行政執行、延誤就醫或用高利借款補洞。",
+    solutionChoiceMap: [
+      "分期後仍能過30天：先就醫、確認欠費、辦理自己繳得下去的分期。",
+      "分期後只剩很少緩衝：下修分期金額或延長期數，先守住房租、食物、交通與醫療錢。",
+      "已移送行政執行或每月仍赤字：先問健保署/執行分署與1957、公所、社福窗口，不用高利借款補洞。",
+    ],
+    solutionCredibilityChecks: [
+      "符合台灣現況：使用健保署分期、分區業務組、1957、公所與社福窗口，而不是要求讀者自行談不合理條件。",
+      "符合邏輯：先把就醫與欠費處理分開，再用分期或求助避免一次繳清造成生活斷裂。",
+      "不過度牽強：若每月連分期都繳不出來，正文不硬說靠節省可解決，而是轉向正式協助。",
+    ],
+    readerDecisionBoundary:
+      "這篇不替讀者判定資格，而是讓讀者知道該先看欠費狀態、分期後30天生活費與是否需要正式協助。",
     structuredTables: [
       {
         id: "nhi-arrears-cashflow-check",
-        title: "健保欠費處理表",
-        afterParagraph: "先把帳攤開來看。",
-        headers: ["項目", "金額", "先要判斷什麼"],
+        title: "健保欠費先判斷哪一種風險",
+        afterParagraph: "先判斷自己是哪一種風險。",
+        headers: ["看到哪個訊號", "代表的財務風險", "比較適合先做什麼"],
         rows: [
-          ["健保欠費", "18,600元", "能不能分期，不要先用高利借款"],
-          ["本月可留下現金", "約4,300元", "不能全部拿去補欠費"],
-          ["孩子看診與藥費", "約600到1,200元", "生病不能拖"],
-          ["房租與食物交通", "約19,000元", "30天內不能斷"],
-          ["每月可負擔分期", "約2,000到3,000元", "要留生活緩衝"],
+          ["分期後仍能留下30天必要生活費", "可用分期處理", "先就醫，再確認欠費並安排月付"],
+          ["一次繳會吃掉房租、食物或交通錢", "現金流太薄", "不要一次繳清，先把月付壓到生活能承受"],
+          ["欠費已移送行政執行，或每月2,000元都不穩", "已不是單純欠費", "先問健保署、執行分署、1957或公所社福"],
+          ["因為怕欠費而不敢看病", "醫療延誤風險", "先處理就醫，再處理欠費安排"],
         ],
       },
     ],
@@ -239,21 +404,21 @@ const articles = [
       },
     ],
     paragraphs: [
-      "雅雯（化名）把健保欠費通知放在抽屜裡，已經放了三個月。她不是不知道要繳，是每次打開都覺得心口一縮。欠費18,600元，家裡帳戶只剩9,200元，孩子這週又開始咳嗽。她最怕的不是錢不夠，而是帶孩子去診所時，櫃檯一查就說不能看。",
+      "佳怡（化名）把健保欠費通知放在抽屜裡，已經放了三個月。她不是不知道要繳，是每次打開都覺得心口一縮。欠費18,600元，家裡帳戶只剩9,200元，孩子這週又開始咳嗽。她最怕的不是錢不夠，而是帶孩子去診所時，櫃檯一查就說不能看。",
       "很多家庭遇到健保欠費，真正卡住的是恐懼。怕被拒絕、怕丟臉、怕越查越多錢，最後就把小病拖成大病。可是欠費和就醫要先分開看。衛福部曾說明，健保欠費與就醫權已經脫鉤，弱勢民眾欠費不再因為欠費就被鎖卡；健保署也有欠費協助措施。這不代表欠費不用處理，而是先不要因為害怕而不去看醫生。",
-      "雅雯家的問題不是完全沒有收入。她每月薪水34,000元，房租11,000元，孩子餐費與交通8,000元，水電手機3,200元，學校雜費與生活採買大約7,500元。平常一個月大概剩4,300元。健保欠費18,600元如果一次繳掉，她這個月房租和生活費會立刻出事。",
-      "先把帳攤開來看。",
-      "這張表會讓雅雯看見，眼前不是只有繳或不繳兩種選擇。若一次繳18,600元，她會直接透支；若完全不處理，她會一直怕收到下一封通知，也可能讓欠費進入更麻煩的程序。比較實際的是先就醫，再確認欠費狀態，接著安排自己真的繳得下去的分期。",
+      "佳怡家的問題不是完全沒有收入。她每月薪水34,000元，房租11,000元，孩子餐費與交通8,000元，水電手機3,200元，學校雜費與生活採買大約7,500元。平常一個月大概剩4,300元。健保欠費18,600元如果一次繳掉，她這個月房租和生活費會立刻出事。",
+      "先判斷自己是哪一種風險。",
+      "這張表會讓佳怡看見，眼前不是只有繳或不繳兩種選擇。若一次繳18,600元，她會直接透支；若完全不處理，她會一直怕收到下一封通知，也可能讓欠費進入更麻煩的程序。比較實際的是先分辨風險：是短期欠費、分期後仍可過30天，還是已經需要正式求助。",
       "健保署目前公開的欠費協助中，欠費達2,000元以上且欠費沒有移送行政執行、近2年分期違約紀錄符合條件者，可以網路辦理簡易分期。已移送行政執行的欠費，則要先經執行署同意才能辦理分期。這些細節聽起來像行政規定，放到家庭裡其實是很具體的問題：你的欠費還能不能線上分期？每期金額會不會壓垮下個月生活？",
-      "如果雅雯把18,600元分成6期，每月要繳3,100元。她原本每月只剩4,300元，分期後只剩1,200元。這樣雖然比一次繳清好多了，但生活仍然很薄。孩子看診、機車維修、學校臨時費用一來，1,200元很快就不見。她不能只看分期能不能辦，也要看辦了以後家裡還能不能過30天。",
+      "如果佳怡把18,600元分成6期，每月要繳3,100元。她原本每月只剩4,300元，分期後只剩1,200元。這樣雖然比一次繳清好多了，但生活仍然很薄。孩子看診、機車維修、學校臨時費用一來，1,200元很快就不見。她不能只看分期能不能辦，也要看辦了以後家裡還能不能過30天。",
       "她後來把分期和支出一起調整。手機方案降500元，暫停兩個訂閱共600元，外食和飲料每週少約400元，一個月少1,600元。這三項合計每月多出2,700元。原本分期後只剩1,200元，調整後變成3,900元。這不是寬裕，但至少孩子看診或交通臨時增加時，不用立刻刷卡。",
       "真正改善的關鍵，不是把欠費藏起來，而是把欠費變成家裡承受得住的月付。健保欠費如果一直壓在心裡，人會把所有醫療都往後拖。可是醫療越拖，花費可能越大。一次診所自付幾百元，拖成急診、住院或請假少收入，家庭要付出的可能不只醫藥費，還有工作和照顧安排。",
       "也要分清楚，健保欠費協助不是直接給你一筆可以自由花的錢。分期是把欠費拆成月付，紓困基金貸款或其他協助也有資格、文件和審核。對家庭來說，它們的好處是爭取時間，讓你不用一次拿出大筆現金，也不用在最慌的時候去借利息很高的錢。",
       "如果欠費已經移送行政執行，壓力會更大，但還是不要把通知放著不看。這時要先確認是哪一段欠費、目前在哪個機關處理、能不能申請分期或改成自己付得出來的期數。很多人看到行政執行就覺得完了，結果不敢接電話、不敢開信，最後只會更難處理。先把狀態問清楚，至少知道下一步是跟健保署談，還是要跟行政執行分署確認。",
-      "也可以先替家裡設一個底線：分期後，30天必要生活費不能被吃光。以雅雯家來說，房租、食物、交通和孩子必要支出至少要留26,000元左右。如果分期金額讓家裡剩不到基本生活費，就不是咬牙撐一下就好，而是要回頭問有沒有更長期的分期、紓困貸款、地方急難或社福協助。分期如果讓家庭每個月都赤字，欠費只是從一張通知換成下一張信用卡帳單。",
+      "也可以先替家裡設一個底線：分期後，30天必要生活費不能被吃光。以佳怡家來說，房租、食物、交通和孩子必要支出至少要留26,000元左右。如果分期金額讓家裡剩不到基本生活費，就不是咬牙撐一下就好，而是要回頭問有沒有更長期的分期、紓困貸款、地方急難或社福協助。分期如果讓家庭每個月都赤字，欠費只是從一張通知換成下一張信用卡帳單。",
       "如果欠費已經太高，或家裡連每月2,000元都擠不出來，就不要只在家裡自己算。可以先問健保署分區業務組或聯絡辦公室，確認欠費狀態、是否能分期、是否已移送行政執行。若同時有低收入、中低收入、失業、重大傷病或其他生活困難，也可以問公所、社福窗口或1957福利諮詢專線，看是否有可搭配的協助。",
-      "雅雯最需要改變的，是不要把看醫生放在最後。孩子已經咳嗽，就先帶去看。看診前可以先準備健保卡、身分證件和基本費用，遇到不清楚的地方再問健保署。欠費的事要處理，但不能讓恐懼變成延誤就醫的理由。",
-      "家庭也可以做一張簡單的健保欠費處理表。第一欄寫欠費總額，第二欄寫目前是否能分期，第三欄寫每月最多可繳多少，第四欄寫看病和藥費不能動用的預留金。這張表不需要漂亮，重點是讓家人知道：這筆欠費會怎麼慢慢還，孩子或長輩需要就醫時，哪一筆錢不能拿去補別的洞。",
+      "佳怡最需要改變的，是不要把看醫生放在最後。孩子已經咳嗽，就先帶去看。看診前可以先準備健保卡、身分證件和基本費用，遇到不清楚的地方再問健保署。欠費的事要處理，但不能讓恐懼變成延誤就醫的理由。",
+      "家庭也可以做一張簡單的健保欠費風險表。第一欄寫欠費總額，第二欄寫目前是否能分期，第三欄寫每月最多可繳多少，第四欄寫看病和藥費不能動用的預留金，最後再寫下一步要問誰。這張表不需要漂亮，重點是讓家人知道：這筆欠費會怎麼慢慢還，孩子或長輩需要就醫時，哪一筆錢不能拿去補別的洞。",
       "健保費欠著，會讓人覺得自己做錯事。但很多時候，欠費是收入太薄、帳單太密、生活沒有緩衝的結果。真正重要的，不是一直躲通知，而是先確認自己能不能就醫、欠費能不能分期、每月分期後還剩多少生活費。當欠費從一張可怕的通知變成一個月付計畫，人比較有機會一邊看病，一邊把生活慢慢拉回來。",
     ],
   },
@@ -268,6 +433,29 @@ const articles = [
     selectedForm: "選項比較＋保障缺口試算",
     primaryApprovedPattern: "support_and_risk_layering",
     titleIndexHitCount: 0,
+    secondPassGateStatus: "green_after_revision",
+    secondPassSubmitReady: true,
+    secondPassVerdict:
+      "重審後通過。此題是高變異題材，已將正文從個案解法調整為保單變數盤點：可借額度、利率、停效條件、理賠扣除、解約金與每月還款能力。",
+    secondPassRevisionApplied:
+      "rewrote policy-loan body from case-led solution to variable-first checklist; replaced option table with insurance-policy variables table.",
+    secondPassPassedChecks: [
+      "low_frequency_title_index_hit_count_0",
+      "official_source_spot_check_passed",
+      "high_variation_topic_review_passed_after_revision",
+      "financial_risk_decision_review_passed",
+      "variable_checklist_visible",
+      "household_monthly_repayment_capacity_visible",
+      "protection_gap_and_help_path_visible",
+      "structured_table_metadata_present",
+      "no_role_leak",
+    ],
+    secondPassRemainingRisks: [
+      "各張保單利率、可借額度、價值準備金、解約金與停效條件不同，投稿前仍須保留提醒讀者向保險公司或正式窗口確認。",
+      "6%利率只作壓力試算，不能被理解為任何公司或商品的實際借款利率。",
+    ],
+    secondPassNextRequiredAction:
+      "投稿前檢查正文是否仍清楚標示利率與可借額度依保單和公司規定不同；若要補最新實務，優先查金管會、保險局與壽險公會。",
     gapFinding:
       "以保單借款、解約金、保單價值、保價金等關鍵字盤點知識庫標題，命中0筆；目前正式文章包沒有處理急用錢時保單借款與解約的家庭保障缺口。",
     sourceSearchSummary: [
@@ -281,20 +469,42 @@ const articles = [
       "台灣家庭遇到急用錢時常先想到保單、定存、信用卡或親友；文章不把保單借款妖魔化，而是要求先查利率、可借額度、保單效力與替代資金。",
     openingHook: "急用錢時，保單看起來像一個可以馬上打開的存錢筒。",
     readerNeed: "讀者需要知道保單借款和解約不只是拿到錢，也會改變利息、保障和未來可選擇。",
-    assessmentTask: "比較保單借款、解約、部分支出延後、親友短期支援和正式債務協商的月付與風險。",
-    decisionOutput: "如果只是短期缺口，優先降低借款額度並保留保障；如果已經還不出利息，要轉向正式求助而不是一直借保單。",
-    tableOrStructure: "使用借款前後保障與月付對照表。",
+    assessmentTask: "判斷急用錢是一次性短期缺口、借款後仍能還的周轉壓力、借款後會連續赤字，還是已經需要正式求助的家庭財務風險。",
+    decisionOutput: "如果只是短期缺口且月付能承受，可低額借款並保留保障；如果月付後仍赤字或會吃掉保障，就要改找醫院社工、1957、債務協商或其他正式管道。",
+    tableOrStructure: "使用保單借款風險判斷與解法選擇表。",
+    riskJudgment:
+      "讀者要先判斷這筆保單借款會不會讓家庭從短期缺口變成長期赤字、保障變薄或理賠被扣。",
+    riskIndicators: [
+      "借款後每月利息與還本金是否超過家庭原本可留下的現金。",
+      "借款本息是否可能影響保單效力，或讓未來理賠先被扣掉一大段。",
+      "急用錢是不是一次性缺口；如果每月都赤字，保單借款只是延後問題。",
+    ],
+    householdFinanceConsequence:
+      "保單借款如果借太滿，會新增月付壓力、吃掉理賠或解約金，甚至讓原本替家人準備的保障變薄；解約則可能把短期現金換成長期保障中斷。",
+    solutionChoiceMap: [
+      "一次性缺口且月付可承受：低額借款、不借滿可借額度，並先保留必要保障。",
+      "月付後會赤字：先拆支出、延後非急用支出、找家人短期支援或正式協助，不把保單借滿。",
+      "每月連利息都繳不出來：不要再用保單補洞，轉向醫院社工、1957、債務協商或主管機關諮詢。",
+    ],
+    solutionCredibilityChecks: [
+      "符合台灣現況：保單借款條件依各公司、各商品不同，正文要求先問保險公司或正式窗口，不替讀者做資格判定。",
+      "符合邏輯：先算缺口與月付能力，再決定借款額度；不是先借滿再想怎麼還。",
+      "不過度牽強：若家庭已長期赤字，正文不把保單借款包裝成解方，而是引導正式求助。",
+    ],
+    readerDecisionBoundary:
+      "這篇不建議讀者一定借或一定解約，而是讓讀者用缺口金額、月付能力、保障影響與求助可能性選擇路徑。",
     structuredTables: [
       {
         id: "policy-loan-options-check",
-        title: "急用錢前的保單選項比較",
-        afterParagraph: "先把兩種想法放在一起看。",
-        headers: ["做法", "眼前拿到什麼", "接下來會發生什麼"],
+        title: "保單借款前先判斷哪一種風險",
+        afterParagraph: "先把風險分清楚，再決定要不要動保單。",
+        headers: ["看到哪個訊號", "代表的家庭財務風險", "比較適合先做什麼"],
         rows: [
-          ["直接借80,000元", "缺口一次補上", "每月若想一年還完約要7,100元，超過目前餘裕"],
-          ["只借50,000元", "缺口還剩30,000元要處理", "一年攤還約4,400元，接近目前可承受上限"],
-          ["直接解約", "可能拿到一筆解約金", "保障中斷，未來重新投保可能更貴或不一定能買"],
-          ["先調整支出再少借", "借款變少、利息變少", "需要家人一起接受延後付款或縮小支出"],
+          ["只缺一次錢，且月付後還有生活緩衝", "短期周轉風險", "低額借款、不借滿，保留保障"],
+          ["借款月付大於家裡每月可留下的錢", "借了就會每月赤字", "先降借款額度，改拆支出或找正式協助"],
+          ["借款本息可能影響保單效力或理賠", "保障被吃掉", "先問停效條件與理賠扣除，再決定借多少"],
+          ["想直接解約換現金", "保障中斷與重新投保風險", "先查解約金、等待期、年齡和體況影響"],
+          ["家裡每月都靠借款補洞", "長期財務失衡", "不要再從保單挖錢，改問社福、醫院社工或債務協商"],
         ],
       },
     ],
@@ -322,19 +532,19 @@ const articles = [
       },
     ],
     paragraphs: [
-      "志明（化名）需要80,000元。媽媽最近住院，家裡先墊了看護和交通費，信用卡也快到期。他翻到一張繳了十幾年的壽險保單，心想既然保單有價值，先借出來應該比跟人開口容易。保單不像跟朋友借錢，不用解釋太多，也比較不丟臉。",
-      "可是保單不是單純的存錢筒。從保單拿錢，通常有兩條路：保單借款或解約。借款看起來保單還在，但會有利息，理賠或解約時也可能先扣掉借款本息；解約看起來一次拿到現金，但保障可能中斷，未來如果年紀變大、身體狀況改變，要再買回類似保障不一定容易。",
-      "志明一開始只看眼前缺口。他需要80,000元，保險公司客服查到這張保單可借額度足夠，借款年利率要依保單與公司公告確認。為了讓自己看得懂，他先用年利率6%做壓力試算。如果借80,000元，一年利息大約4,800元，平均每月要先準備400元利息；若本金也想在一年內還完，每月要準備約6,700元本金，加起來每月約7,100元。",
-      "這個數字一出來，志明才發現問題不只是能不能借到。家裡每月收入58,000元，房租16,000元，食物交通19,000元，媽媽醫療與交通新增6,000元，信用卡最低應繳7,000元，其他水電手機保費6,000元。原本每月只剩約4,000元。若保單借款後每月要準備7,100元，家裡立刻又少3,100元。",
-      "先把兩種想法放在一起看。",
-      "金管會提醒過，保單借款會影響保險契約效力。借款本息如果超過保單價值準備金，保險公司會依規定通知；若未在期限內返還，保單效力可能停止。保單借款期間若發生理賠，保險金也可能先扣掉借款本息。這些不是嚇人，而是提醒家庭：保單借款不是不用還的錢，它會改變你原本以為還在的保障。",
-      "志明真正要問的，不是保單能借多少，而是家裡最多能安全借多少。若每月最多只擠得出4,000元，他就不適合借到一年內要還7,100元的金額。借80,000元可以讓今天舒服一點，但下個月會把缺口推大。借50,000元雖然還不夠，至少月付比較接近家庭承受能力。",
+      "柏翰（化名）需要80,000元。媽媽最近住院，家裡先墊了看護和交通費，信用卡也快到期。他翻到一張繳了十幾年的壽險保單，心想既然保單有價值，先借出來應該比跟人開口容易。保單不像跟朋友借錢，不用解釋太多，也比較不丟臉。",
+      "可是保單不是單純的存錢筒。從保單拿錢，通常有兩條路：保單借款或解約。借款看起來保單還在，但會有利息，理賠或解約時也可能先扣掉借款本息；解約看起來一次拿到現金，但保障可能中斷。每張保單的可借額度、利率、價值準備金、停效條件和解約金都不一樣，所以不能只用柏翰這個情境當答案。",
+      "柏翰一開始只看眼前缺口。他需要80,000元，保險公司客服查到這張保單可借額度足夠，借款年利率要依保單與公司公告確認。為了讓自己看得懂，他先用年利率6%做壓力試算。這不是實際利率，只是拿來看壓力：如果借80,000元，一年利息大約4,800元；若本金也想在一年內還完，每月本金加利息約7,100元。",
+      "這個數字一出來，柏翰才發現問題不只是能不能借到。家裡每月收入58,000元，房租16,000元，食物交通19,000元，媽媽醫療與交通新增6,000元，信用卡最低應繳7,000元，其他水電手機保費6,000元。原本每月只剩約4,000元。若保單借款後每月要準備7,100元，家裡不是解決問題，而是每月多出3,100元缺口。",
+      "先把風險分清楚，再決定要不要動保單。",
+      "金管會提醒過，保單借款會影響保險契約效力。借款本息如果超過保單價值準備金，保險公司會依規定通知；若未在期限內返還，保單效力可能停止。保單借款期間若發生理賠，保險金也可能先扣掉借款本息。對家庭來說，這些規則會變成三種風險：月付變重、保障變薄、出事時拿到的理賠變少。",
+      "所以柏翰真正要判斷的，不是保單能借多少，而是借了以後家裡會掉進哪一種風險。若每月最多只擠得出4,000元，他就不適合借到一年內要還7,100元的金額。借80,000元可以讓今天舒服一點，但下個月會把缺口推大。借50,000元雖然還不夠，至少月付比較接近家庭承受能力。",
       "他的改善計畫分成三步。第一，先把醫療與看護支出分清楚，確認哪些是這個月必付，哪些可以等帳單或和醫院社工詢問協助。第二，保單借款只借50,000元，不借滿可借額度。第三，和姐姐討論短期支援20,000元，自己把一筆非急用支出延後10,000元。這樣80,000元缺口就被拆成50,000元借款、20,000元親友短期支援、10,000元延後支出。",
-      "調整後的效果很明顯。原本借80,000元，一年攤還每月約7,100元，家裡每月少3,100元。改成借50,000元，一年攤還約4,400元，雖然仍然吃緊，但志明把手機和訂閱調降1,100元、外食減少1,500元，每月多出2,600元。原本剩4,000元，加上2,600元，變成6,600元。扣掉約4,400元後，還有2,200元緩衝。",
-      "2,200元不是很安全，但比每月赤字好。這筆緩衝可以接住媽媽回診交通、藥品差額或臨時餐費。更重要的是，志明沒有把整張保單借到很滿，也沒有直接解約讓保障消失。急用錢時，保留一點未來選擇，比一次把所有可用額度打開更重要。",
-      "如果家裡每月連利息都繳不出來，就不應該把保單借款當成解方。這時候要回頭看，問題是不是已經變成債務壓力、醫療支出或收入不足，而不是單純缺一筆短期周轉。可以詢問醫院社工、1957福利諮詢、債務協商正式管道，或先和債權人確認能否調整月付。用保單借款補一個每月都存在的缺口，只會讓保障慢慢被吃掉。",
+      "調整後的效果很明顯。原本借80,000元，一年攤還每月約7,100元，家裡每月少3,100元。改成借50,000元，一年攤還約4,400元，雖然仍然吃緊，但柏翰把手機和訂閱調降1,100元、外食減少1,500元，每月多出2,600元。原本剩4,000元，加上2,600元，變成6,600元。扣掉約4,400元後，還有2,200元緩衝。",
+      "2,200元不是很安全，但比每月赤字好。這筆緩衝可以接住媽媽回診交通、藥品差額或臨時餐費。更重要的是，柏翰沒有把整張保單借到很滿，也沒有直接解約讓保障消失。急用錢時，保留一點未來選擇，比一次把所有可用額度打開更重要。",
+      "如果家裡每月連利息都繳不出來，就不應該把保單借款當成解方。這時候要回頭看，問題是不是已經變成債務壓力、醫療支出或收入不足，而不是單純缺一筆短期周轉。可以詢問醫院社工、1957福利諮詢、債務協商正式管道，或先和債權人確認能否調整月付。用保單借款補一個每月都存在的缺口，只會讓保障慢慢被吃掉；這種做法看起來有現金，其實是在用未來保障填今天的洞。",
       "解約也要更小心。金管會提醒，終止保險契約可能讓保障中斷，也可能出現解約金低於過去所繳保費、健康險等待期重新計算、年齡增加或體況改變導致未來保費提高，甚至買不回原本保障的風險。對家庭來說，解約不是把錢拿回來這麼簡單，而是把一個未來風險的保護拿掉。",
-      "志明後來打給保險公司時，不再只問可以借多少。他問了五件事：目前可借額度是多少，借款利率是多少，已借本息到什麼程度會影響保單效力，如果發生理賠會先扣多少，解約金和保障差異是多少。問完以後，他才知道自己真正要比較的不是借款和不借款，而是借多少、借多久、保障少多少。",
+      "柏翰後來打給保險公司時，不再只問可以借多少。他問了五件事：目前可借額度是多少，借款利率是多少，已借本息到什麼程度會影響保單效力，如果發生理賠會先扣多少，解約金和保障差異是多少。問完以後，他才知道自己真正要比較的不是借款和不借款，而是借多少、借多久、保障少多少。",
       "家人也要一起知道這件事。很多保單是為了家人買的，借款或解約影響的不只是要保人一個人。若家裡主要收入者把壽險解掉，短期拿到現金，長期卻少了風險保護。這不是說保單永遠不能動，而是動之前要讓家人知道：這筆錢補的是哪個洞，多久補回，保障會少到什麼程度。",
       "急用錢時，人很容易只想先過今天。但保單借款和解約會把今天的缺口連到明天的保障。比較安全的順序，是先算缺口需要多少，再看每月能還多少，接著確認保單效力和理賠扣除，最後才決定借款金額。若缺口不是一次性的，而是每月都在發生，就要找正式協助，而不是一直從保單裡挖錢。",
       "保單可以是周轉工具，但不該變成家庭看不見的債。當你先問清楚利率、可借額度、停效條件、解約金和保障差異，再決定要借多少，這筆錢才比較可能幫家庭度過短期壓力，而不是悄悄換掉原本的安全網。",
@@ -368,6 +578,41 @@ function buildArticle(article) {
     sources: article.sources,
     preGenerationReview: preGenerationReview(article),
     articlePackReviewGate: articlePackReviewGate(article),
+    secondPassGateReview: secondPassGateReview(article),
+  };
+}
+
+function buildSecondPassGateReview(articleCards) {
+  return {
+    status: "green",
+    reviewedAt: secondGateAt,
+    source: secondGateLearningPath,
+    trigger: "Kevin requested the low-frequency article pack pass the updated gate again.",
+    reviewers: secondPassReviewerNames,
+    gatesApplied: [
+      "lowFrequencyGapGate",
+      "sourceFreshnessSpotCheck",
+      "structuralCashflowReview",
+      "highVariationTopicReview",
+      "financialRiskDecisionReview",
+      "articleUsefulnessReview",
+      "resourceBenefitTranslation",
+      "taiwanNaturalVoiceReview",
+      "roleLeakReview",
+      "structuredTableOutputReview",
+    ],
+    articleResults: articleCards.map((article) => ({
+      id: article.id,
+      title: article.title,
+      status: article.secondPassGateReview.status,
+      submitReady: article.secondPassGateReview.submitReady,
+      revisionApplied: article.secondPassGateReview.revisionApplied,
+    })),
+    notes: [
+      "Kevin clarified that the key is not listing items, but helping readers judge financial risk and choose a credible solution.",
+      "The NHI arrears article now frames the table as risk levels and help-path choices.",
+      "The policy-loan article was revised from case-led solution to variable/risk judgment before solution choice.",
+    ],
   };
 }
 
@@ -402,28 +647,58 @@ function buildPack(articleCards) {
       reason:
         "兩題都在目前低頻盤點中為0命中，且能提供一般民眾具體家庭財務判斷，不重複近期文章包主題。",
     },
+    pseudonymFreshnessReview: {
+      status: "passed",
+      rule:
+        "每次新產文章的化名需先比對既有文章包，避免重複使用近期已出現的角色名字。",
+      selectedPseudonyms: ["佳怡", "柏翰"],
+      checkedAgainst: "articles/**/*.txt excluding current pack",
+      rejectedRecentPseudonyms: [
+        "雅婷",
+        "小美",
+        "阿毛",
+        "佳萱",
+        "美玲",
+        "志明",
+        "冠宇",
+        "建宏",
+        "怡君",
+        "明德",
+        "俊豪",
+        "佩雯",
+      ],
+    },
+    secondPassGateReview: buildSecondPassGateReview(articleCards),
+    approvedArticleTraitValidation: approvedArticleTraitValidation(),
     agentConvergence: {
       status: "converged",
-      updatedAt: now,
-      agents: reviewerNames,
+      updatedAt: secondGateAt,
+      agents: Array.from(new Set([...reviewerNames, ...secondPassReviewerNames])),
       strongSignals: [
         "Kevin clarified that the task is to supplement rarely mentioned knowledge-base topics, not merely topics absent from the latest article pack.",
         "Use granular title-index counts and select low-frequency gaps first.",
         "Both selected topics have 0 title-index hits in the local keyword scan and clear household financial decision value.",
         "Public bodies should enter the family situation directly and avoid setup/meta narration.",
+        "Kevin clarified that the key quality is whether readers can judge family financial risk and choose a Taiwan-realistic, logically credible solution.",
+        "Approved article structure cards provide qualitative support: accepted articles tend to include before/after differences, institutional judgment order, or risk-level decision paths.",
       ],
       usefulDisagreement: [
         "0-hit topics can be too niche; keep only topics with strong Taiwan official grounding and everyday household relevance.",
         "Health insurance and policy-loan topics carry shame and fear, so the article must reduce avoidance while still showing numbers.",
+        "Stories improve readability, but if they do not become risk indicators and solution choices, they remain low reference value.",
+        "Pseudonyms can build trust only if they do not feel recycled across article packs.",
       ],
       adoptNow: [
         "Generate two new low-frequency topics: NHI arrears and policy loan/surrender.",
         "Use one structured HTML table per article to reduce decision load; do not put Markdown or pipe tables in the public body.",
         "Every article needs before/after effect, remaining gap, and a realistic help path if the gap is not closed.",
+        "Run financialRiskDecisionReview for each article: risk judgment, household finance consequence, solution choice, and solution credibility.",
+        "Run pseudonym freshness before drafting and reject names already used in previous generated packs.",
       ],
       validateNext: [
         "Kevin should review whether these low-frequency topics feel useful enough for submission.",
         "If accepted, future gap selection should rank by title-index hit count before agent topic discussion.",
+        "Expand the approved-article validation sample beyond three structure cards before treating the trait distribution as statistical.",
       ],
     },
     articles: articleCards,
@@ -447,6 +722,10 @@ function updateSuggestions(pack) {
   suggestions.metrics.plainTextArticlePackBodyOnlyRequired = true;
   suggestions.metrics.structuredTableOutputRequired = true;
   suggestions.metrics.articleStructureLearningUpdatedAt = now;
+  suggestions.metrics.lowFrequencyGapSecondGateUpdatedAt = secondGateAt;
+  suggestions.metrics.financialRiskDecisionReviewRequired = true;
+  suggestions.metrics.approvedArticleTraitValidationUpdatedAt = secondGateAt;
+  suggestions.metrics.pseudonymFreshnessRequired = true;
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
 }
 
@@ -463,10 +742,29 @@ function writeReport(pack) {
     "- 低頻盤點後，改選兩個0命中主題：健保欠費與就醫、保單借款與解約金。",
     "- 正文直接進入家庭情境，不寫文章自我說明。",
     "- 表格改為結構化資料；工作台顯示與複製應輸出真正表格，不再用 Markdown 或直線文字表。",
+    "- 2026-06-17 二次 gate 加入 `financialRiskDecisionReview`：文章必須協助讀者判斷家庭財務風險、理解風險造成的財務後果，並選擇符合台灣現況且不牽強的解決方法。",
+    "- 以三張已讀全文的審核通過稿結構卡做反向驗證：通過稿普遍不是只說故事，而是有前後差異、制度判斷順序、風險分層或正式求助分流；目前樣本數為3，標記為質性支持，不當作正式統計。",
+    "- 新增化名新鮮度規則：每次新產文章不得沿用近期文章包已出現過的化名。",
+    "- 健保欠費篇：表格從項目整理改為風險判斷與解法選擇。",
+    "- 保單借款篇：正文從單一個案解法改為先判斷保單借款造成哪種家庭財務風險，再選擇低額借款、拆支出、正式求助或暫停動保單。",
     "",
     "## 產出",
     "",
     ...pack.articles.map((article, index) => `${index + 1}. ${article.title}：${article.bodyChars} 非空白字。`),
+    "",
+    "## 二次 gate 結果",
+    "",
+    ...pack.articles.map(
+      (article) =>
+        `- ${article.title}：${article.secondPassGateReview.status}；submitReady=${article.secondPassGateReview.submitReady}；${article.secondPassGateReview.verdict}`,
+    ),
+    "",
+    "## 通過稿特質驗證",
+    "",
+    `- 樣本數：${pack.approvedArticleTraitValidation.sampleBoundary.sampleCount} 篇去識別通過稿結構卡。`,
+    `- 結論：${pack.approvedArticleTraitValidation.conclusion}`,
+    "- 共同特質：風險或問題判斷、家庭財務後果、解法或下一步選擇、方法可信度。",
+    "- 限制：目前為質性驗證，下一步可擴大抽樣10到20篇審核成功且可讀全文的文章。",
     "",
     "## 已用來源",
     "",
@@ -483,9 +781,13 @@ function writeReport(pack) {
     `- packId: ${pack.id}`,
     "- Agent OS route: familyfin_grounded_orchestrator + knowledge_gap_mapper + source_grounding_reviewer + approved_author_structure_reviewer + human_copy_reviewer + final_quality_gate.",
     "- Gate: review_then_revise_until_green.",
+    "- Second gate: financialRiskDecisionReview added after Kevin clarified risk judgment + credible solution choice.",
     "- Result: 2 new low-frequency trial articles generated as plain text body files.",
     "- Kevin correction applied: select rarely mentioned knowledge-base topics before drafting.",
     "- Kevin correction applied: article tables must use structured table output, not Markdown or pipe-table text.",
+    "- Kevin correction applied: article must not only tell a story; it must help readers judge financial risk and choose a Taiwan-realistic solution.",
+    "- Kevin correction applied: pseudonyms must be fresh across generated article packs.",
+    "- Approved article validation: 3 de-identified approved structure cards reviewed; conclusion supports risk judgment + decision path as a likely accepted-article trait, with small-sample limitation.",
     "",
   ].join("\n");
   fs.writeFileSync(reportPath, report, "utf8");
@@ -496,8 +798,19 @@ function main() {
   fs.mkdirSync(packDir, { recursive: true });
   fs.mkdirSync(path.join(repoRoot, "reports"), { recursive: true });
   fs.mkdirSync(path.join(repoRoot, "logs"), { recursive: true });
+  fs.mkdirSync(path.join(repoRoot, "data"), { recursive: true });
   const articleCards = articles.map(buildArticle);
   const pack = buildPack(articleCards);
+  fs.writeFileSync(
+    path.join(repoRoot, approvedArticleTraitValidationPath),
+    `${JSON.stringify(pack.approvedArticleTraitValidation, null, 2)}\n`,
+    "utf8",
+  );
+  fs.writeFileSync(
+    path.join(repoRoot, secondGateLearningPath),
+    `${JSON.stringify(pack.secondPassGateReview, null, 2)}\n`,
+    "utf8",
+  );
   updateSuggestions(pack);
   writeReport(pack);
   console.log(

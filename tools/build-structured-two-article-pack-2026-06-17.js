@@ -8,6 +8,9 @@ const packId = "2026-06-17-structured-two-article-pack";
 const packDir = path.join(repoRoot, "articles", packId);
 const suggestionsPath = path.join(repoRoot, "suggestions.json");
 const now = "2026-06-17T15:30:00+08:00";
+const editorRejectionLearningAt = "2026-06-17";
+const editorRejectionLearningPath = "data/editor-rejection-learning-2026-06-17.json";
+const shouldSetAsCurrentTrial = false;
 const approvedAuthorStructureLearningPath = "data/approved-author-structure-cards-2026-06-10.json";
 
 const reviewerNames = [
@@ -17,6 +20,7 @@ const reviewerNames = [
   "taiwan_habit_reviewer",
   "human_copy_reviewer",
   "financial_decision_reviewer",
+  "financial_risk_decision_reviewer",
   "role_integrity_reviewer",
   "final_quality_gate",
 ];
@@ -198,6 +202,18 @@ const articles = [
     readerJudgment: "先判斷這個月差幾天，還是接下來幾個月都會差。",
     commonMisreadingToPrevent: "不要以為有失業給付就能直接解決這個月房租，也不要把房租溝通寫得太容易。",
     nextCheckAfterReading: "確認房租要繳的日期、求職登記時間、可用現金與30天必付項目。",
+    postSubmissionRejection: {
+      status: "editor_rejected",
+      recordedAt: editorRejectionLearningAt,
+      source: editorRejectionLearningPath,
+      editorComment: "個案情境及各種資遣條件不一，缺乏參考價值",
+      failureType: "high_variation_topic_case_led_low_reference_value",
+      requiredGate: "highVariationTopicReview",
+      learning:
+        "資遣、失業給付、補助與契約條件高度依個別情況變動；不得以一到兩個化名情境作為主要參考。文章也必須讓讀者判斷自己是哪一種財務風險，並選擇符合台灣現況與家庭限制的解法。",
+      futureAction:
+        "本篇不建議直接投稿。若重做，改為變數盤點、決策表或求助前檢查工具，只用情境作短示意。",
+    },
     sources: [
       {
         label: "我的E政府/勞動部勞工保險局：失業給付申請",
@@ -284,6 +300,18 @@ const articles = [
     readerJudgment: "先問下一次收入前，這筆錢已經有哪些用途。",
     commonMisreadingToPrevent: "不要把帳戶餘額當成全部可用錢，也不要把補貼想成馬上能救本月房租。",
     nextCheckAfterReading: "寫出下次薪水前所有會扣款的日期和最低生活費。",
+    postSubmissionRejection: {
+      status: "editor_rejected",
+      recordedAt: editorRejectionLearningAt,
+      source: editorRejectionLearningPath,
+      editorComment: "真正要做的是結構性盤點財務及現金流",
+      failureType: "cashflow_article_not_structural_enough",
+      requiredGate: "structuralCashflowReview",
+      learning:
+        "現金流題不能只寫焦慮、故事或表格；正文要帶讀者完成收入日期、固定支出、扣款日、受保護金額、真正可用現金、缺口類型與下一步，並讓讀者知道這個缺口該用哪一種解法處理。",
+      futureAction:
+        "本篇不建議直接投稿。若重做，主軸改成結構性家庭財務與現金流盤點，敘事只作入口。",
+    },
     sources: [
       {
         label: "行政院：300億元中央擴大租金補貼專案計畫",
@@ -356,6 +384,16 @@ function buildArticle(article) {
     sourceDisclosureMode: "metadata_only_not_body",
     copyTarget: "bodyPath",
     sources: article.sources,
+    postSubmissionRejectionReview: article.postSubmissionRejection || null,
+    submitReadyOverride: article.postSubmissionRejection
+      ? {
+          status: "not_submit_ready",
+          reason:
+            "Post-submission editor rejection overrides the internal green gate until the article is rewritten and re-gated.",
+          source: editorRejectionLearningPath,
+          recordedAt: editorRejectionLearningAt,
+        }
+      : null,
     preGenerationReview: preGenerationReview(article),
     articlePackReviewGate: articlePackReviewGate(article),
     articleUsefulnessReview: {
@@ -389,9 +427,9 @@ function buildPack(articleCards) {
   return {
     id: packId,
     title: "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
-    status: "待 Kevin 看效果",
+    status: "投稿後退件學習，不建議直接投稿",
     description:
-      "依 6/17 退件意見與文章結構化搜尋結果，先產 2 篇一般民眾純文字稿：一篇用雙情境拆分失業後房租缺口，一篇用現金流月曆與三種錢改善繳房租前的焦慮。",
+      "此包保留為 6/17 投稿後退件學習樣本：現金流題需改為結構性財務與現金流盤點；資遣題因條件高變異，不宜以個案情境作主要參考。",
     createdAt: now,
     audience: "一般民眾",
     generatedBy: "tools/build-structured-two-article-pack-2026-06-17.js",
@@ -403,29 +441,46 @@ function buildPack(articleCards) {
       report: "reports/2026-06-17-structured-two-article-pack.md",
       log: "logs/2026-06-17-structured-two-article-pack-log.md",
     },
+    editorRejectionLearning: {
+      status: "editor_rejected_after_internal_green",
+      recordedAt: editorRejectionLearningAt,
+      source: editorRejectionLearningPath,
+      submitReady: false,
+      packDecision:
+        "Retain as rejection-learning evidence. Do not use this pack as a submit-ready article pack unless rewritten and re-gated.",
+      derivedGates: [
+        "structuralCashflowReview",
+        "highVariationTopicReview",
+        "financialRiskDecisionReview",
+        "postSubmissionOverride",
+      ],
+    },
     agentConvergence: {
-      status: "converged",
+      status: "post_submission_learning_converged",
       updatedAt: now,
       agents: reviewerNames,
       strongSignals: [
-        "The first rejected topic should not reuse the rent article skeleton; it should become a dual-case contrast: timing gap vs ongoing income gap.",
-        "The second rejected topic already has strong narrative; it needs a cashflow calendar/table so readers can act.",
-        "Structure is not decorative formatting; it must help the reader identify the household decision.",
-        "Public article bodies should not explain the writing setup; scenario context must be absorbed into the story itself.",
+        "The cash-flow article did not go far enough: structure must mean a household financial and cash-flow inventory, not just a narrative plus a table.",
+        "The severance/unemployment-benefit article has low reference value when led by named cases because conditions vary materially.",
+        "Internal green gate must be overridden by later editor rejection learning.",
+        "Future drafts should decide whether a topic is better as a checklist, decision table, or tool before forcing it into story article form.",
+        "A story or checklist is not enough if the reader cannot judge the financial risk and choose a credible Taiwan-realistic solution.",
       ],
       usefulDisagreement: [
-        "Resource details are necessary for verification, but body tone should describe what the resource changes for the family rather than announce the resource.",
-        "Tables help structure, but too many tables make the body feel mechanical; each article uses one primary structure aid.",
+        "Story-led writing can improve readability, but high-variation policy or labor topics need variables and boundaries before story.",
+        "Tables help structure, but a table only counts when it lets the reader complete their own inventory or decision.",
       ],
       adoptNow: [
-        "Use one visible decision structure per article.",
-        "Keep sources in metadata and translate facts into household effects in body.",
-        "Make the ending ask one concrete household check instead of a broad encouragement.",
-        "Remove body setup/meta narration; the article should enter the family situation directly.",
+        "Add structuralCashflowReview to rent, bill, salary timing, subsidy timing, and monthly shortfall topics.",
+        "Add highVariationTopicReview to severance, unemployment benefit, subsidies, debt, insurance, long-term care, and local-resource topics.",
+        "Add financialRiskDecisionReview to all family-finance articles so each draft must map risk signal to household finance consequence and credible solution choice.",
+        "Mark this pack as not submit-ready and preserve the failure as a contrast lesson.",
+        "Use scenarios as entry points only when variables do not materially change the reader's answer.",
       ],
       validateNext: [
-        "Kevin should review whether the two titles feel clickable enough.",
-        "If accepted, extend this structured-but-storylike flow to later article packs.",
+        "A revised cash-flow article must show income timing, fixed commitments, due dates, protected money, usable cash, gap type, and next action.",
+        "A revised severance article should become a variable checklist or pre-consultation tool unless fresh official sources and conditions are verified.",
+        "Any revised story-led article must show how the story becomes a reusable financial-risk judgment and solution choice.",
       ],
     },
     structureLearning: {
@@ -451,7 +506,9 @@ function buildPack(articleCards) {
 function updateSuggestions(pack) {
   const suggestions = JSON.parse(fs.readFileSync(suggestionsPath, "utf8"));
   const existingTrialPacks = suggestions.trialArticlePacks || [];
-  suggestions.currentTrialArticlePackId = pack.id;
+  if (shouldSetAsCurrentTrial) {
+    suggestions.currentTrialArticlePackId = pack.id;
+  }
   suggestions.trialArticlePacks = [
     pack,
     ...existingTrialPacks.filter((trialPack) => trialPack.id !== pack.id),
@@ -459,11 +516,13 @@ function updateSuggestions(pack) {
   suggestions.updatedAt = now;
   suggestions.metrics = suggestions.metrics || {};
   suggestions.metrics.trialArticlePackCount = suggestions.trialArticlePacks.length;
-  suggestions.metrics.currentTrialArticlePackArticleCount = pack.articles.length;
-  suggestions.metrics.latestTrialArticlePackGeneratedAt = now;
+  if (shouldSetAsCurrentTrial) {
+    suggestions.metrics.currentTrialArticlePackArticleCount = pack.articles.length;
+    suggestions.metrics.latestTrialArticlePackGeneratedAt = now;
+  }
   suggestions.metrics.structuredArticleFlowRequired = true;
   suggestions.metrics.plainTextArticlePackBodyOnlyRequired = true;
-  suggestions.metrics.articleStructureLearningUpdatedAt = now;
+  suggestions.metrics.editorRejectionLearningUpdatedAt = editorRejectionLearningAt;
   fs.writeFileSync(suggestionsPath, `${JSON.stringify(suggestions, null, 2)}\n`, "utf8");
 }
 
@@ -473,22 +532,28 @@ function writeReport(pack) {
   const report = [
     "# 2026-06-17 兩篇結構化試產文章包",
     "",
-    "## 本次退件學習",
+    "## 投稿後退件學習",
     "",
-    "- `被資遣後，失業給付還沒下來，這個月房租要怎麼辦？`：不能再用既有房租篇同樣骨架，改成雙情境對照，分清短期時間差與連續收入斷層。",
-    "- `帳戶還有錢，為什麼繳房租那天還是會慌`：保留敘事優點，但用現金流月曆和三種錢的表格讓讀者可以判斷。",
+    "- `帳戶還有錢，為什麼繳房租那天還是會慌`：總編回饋為「真正要做的是結構性盤點財務及現金流」。這代表故事感與表格不足以通過，文章主軸必須帶讀者完成收入、支出、日期、受保護金額、可用現金與缺口類型盤點。",
+    "- `被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口`：總編回饋為「個案情境及各種資遣條件不一，缺乏參考價值」。這代表高變異條件題材不能由化名案例承擔主要解法，應改成變數清單、決策表或工具型內容。",
     "",
-    "## 文章結構化規則",
+    "## 新增必查 gate",
     "",
-    "- 開頭先回答讀者現在為什麼會卡住。",
-    "- 中段只放一個主要結構工具，避免過度表格化。",
-    "- 數字要服務家庭決策，不能只像資料堆疊。",
-    "- 正文不說明自己的寫法或情境設定，直接把脈絡寫進故事與判斷。",
-    "- 結尾要留下下一個具體檢查，而不是抽象鼓勵。",
+    "- `structuralCashflowReview`：房租、帳單、薪水、補貼、月底缺口題材，必須呈現收入時間、固定承諾、扣款日、受保護金額、真正可用現金、缺口類型與下一步。",
+    "- `highVariationTopicReview`：資遣、失業給付、補助、債務、長照、保險、地方資源題材，若資格或條件差異會大幅改變答案，不得以個案情境當主要參考。",
+    "- `financialRiskDecisionReview`：文章不能只說故事或列項目，必須協助讀者判斷家庭財務風險、理解風險造成的財務後果，並選擇符合台灣現況且不牽強的解決方法。",
+    "- `postSubmissionOverride`：內部生成 gate 通過後若收到總編退件，必須保留退件診斷並把該稿標為不建議直接投稿。",
     "",
-    "## 產出",
+    "## 本包處理決定",
     "",
-    ...pack.articles.map((article, index) => `${index + 1}. ${article.title}：${article.bodyChars} 非空白字。`),
+    "- 狀態：投稿後退件學習，不建議直接投稿。",
+    "- 現金流篇：若重做，應改為結構性財務與現金流盤點文章或檢查表。",
+    "- 資遣篇：若重做，應改為高變異條件變數清單、決策表或求助前盤點工具。",
+    "- 正文保留為退件對照樣本；後續生成不得把這兩篇當作成功稿學習。",
+    "",
+    "## 原始產出",
+    "",
+    ...pack.articles.map((article, index) => `${index + 1}. ${article.title}：${article.bodyChars} 非空白字，post-submission status=${article.postSubmissionRejectionReview?.status || "none"}。`),
     "",
     "## 已用來源",
     "",
@@ -496,6 +561,7 @@ function writeReport(pack) {
     "- NN/g：Concise, Scannable, and Objective",
     "- GOV.UK：Tone of voice / clear structure and language",
     "- ADBest / Faranie：SEO article structure and table/list presentation",
+    "- `data/editor-rejection-learning-2026-06-17.json`",
     "- 我的E政府/勞動部勞工保險局：失業給付申請",
     "- 內政部國土管理署、行政院：115年度租金補貼資訊",
     "- 衛生福利部：1957福利諮詢專線",
@@ -508,8 +574,11 @@ function writeReport(pack) {
     `- packId: ${pack.id}`,
     "- Agent OS route: familyfin_grounded_orchestrator + source_grounding_reviewer + article_structure_reviewer + human_copy_reviewer + final_quality_gate.",
     "- Gate: review_then_revise_until_green.",
-    "- Result: 2 trial articles generated as plain text body files.",
-    "- Kevin feedback applied: remove article self-explanation from public bodies and keep setup language out of generated trial articles.",
+    "- Initial result: 2 trial articles generated as plain text body files.",
+    "- Post-submission editor result: rejected.",
+    "- Rejection learning source: data/editor-rejection-learning-2026-06-17.json.",
+    "- Pack status updated: not submit-ready; retained as rejection-learning evidence.",
+    "- New gates: structuralCashflowReview, highVariationTopicReview, financialRiskDecisionReview, postSubmissionOverride.",
     "",
   ].join("\n");
   fs.writeFileSync(reportPath, report, "utf8");

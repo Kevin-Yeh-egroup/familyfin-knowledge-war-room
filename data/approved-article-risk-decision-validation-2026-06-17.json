@@ -1,0 +1,48 @@
+{
+  "id": "approved-article-risk-decision-validation-2026-06-17",
+  "createdAt": "2026-06-17T17:55:00+08:00",
+  "source": "data/approved-author-structure-cards-2026-06-10.json",
+  "sampleBoundary": {
+    "sampleCount": 3,
+    "storesRawArticleBody": false,
+    "onlyUsesDeidentifiedStructureCards": true,
+    "requiredReviewStatus": "審核成功",
+    "requiredFullBodyReadable": true
+  },
+  "question": "審核通過的文章內文是否多具有風險判斷、家庭財務後果、合理解法選擇與不牽強方法這類特質。",
+  "conclusion": "初步支持。三張通過稿結構卡都不只是故事或資訊整理，而是把生活壓力轉成判斷順序、前後差異、制度門檻或風險分層；但樣本數仍小，應標記為質性驗證，不宣稱為正式統計。",
+  "traitChecks": [
+    {
+      "trait": "風險或問題判斷",
+      "matchedSamples": 3,
+      "evidence": "劉泰一樣本用家庭經濟翻轉前後差異判斷困境；李婉仙樣本用換屋資格、期限與稅負順序判斷風險；蔡思樂樣本用週轉力來源與介入時機判斷債務風險。"
+    },
+    {
+      "trait": "家庭財務後果",
+      "matchedSamples": 3,
+      "evidence": "三張卡都回到家庭可支配金錢、換屋成本/稅負、債務週轉來源等家庭經濟後果，不停在抽象概念。"
+    },
+    {
+      "trait": "解法或下一步選擇",
+      "matchedSamples": 3,
+      "evidence": "劉泰一樣本有技能、就業與支持系統；李婉仙樣本有資格檢查、時序規劃與專業協助；蔡思樂樣本有觀察、協商或正式路徑的分流。"
+    },
+    {
+      "trait": "方法可信度",
+      "matchedSamples": 3,
+      "evidence": "三張卡都把限制條件放進文章：家庭權力與照顧壓力、稅務資格與期限、信用/親友/資產支撐是否會失效。方法不是單靠個人努力。"
+    },
+    {
+      "trait": "可量化或可辨識的判斷指標",
+      "matchedSamples": 2,
+      "evidence": "劉泰一與李婉仙樣本有金額、稅率、年限或期限；蔡思樂樣本偏判讀框架，後續一般民眾版需補月付、缺口與可撐時間。"
+    }
+  ],
+  "generationImpact": [
+    "保留故事，但故事後必須接風險判斷與解法選擇。",
+    "新稿不能只列項目；要讓讀者知道自己落在哪種風險，該選哪條路，何時找正式協助。",
+    "若方法不符合台灣現況、生活常理或家庭限制，即使故事好讀也不得過 gate。"
+  ],
+  "confidence": "medium_quality_validation_small_sample",
+  "nextValidation": "下一輪若能從事件列表再抽10到20篇審核成功且可讀全文的文章，可把 traitChecks 量化成更穩定的通過稿特徵分布。"
+}

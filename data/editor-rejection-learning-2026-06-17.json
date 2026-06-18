@@ -1,0 +1,122 @@
+{
+  "id": "editor-rejection-learning-2026-06-17",
+  "createdAt": "2026-06-17",
+  "source": "Kevin provided post-submission editor rejection summaries in Codex chat.",
+  "privacyBoundary": {
+    "storesRawInfoCenterBody": false,
+    "storesEventId": false,
+    "storesReviewerIdentity": false,
+    "storedContent": "Only article titles, Kevin-provided rejection summaries, de-identified diagnosis, and future generation rules."
+  },
+  "agentDiscussion": {
+    "mode": "Agent OS staged convergence",
+    "participants": [
+      "familyfin_grounded_orchestrator",
+      "review_feedback_miner",
+      "financial_decision_reviewer",
+      "structural_cashflow_reviewer",
+      "high_variation_topic_reviewer",
+      "taiwan_habit_reviewer",
+      "human_copy_reviewer",
+      "financial_risk_decision_reviewer",
+      "final_quality_gate"
+    ],
+    "strongSignals": [
+      "Cash-flow articles are not structurally useful unless they help the reader inventory income timing, fixed commitments, due dates, protected money, usable cash, gap type, and next action.",
+      "Case narratives can improve readability, but they become low-reference-value when the topic outcome depends on many individual variables.",
+      "A generated green gate is not the same as post-submission editor approval; editor rejection must override future use of the article as a submit-ready sample.",
+      "A story or checklist is not enough if the reader cannot judge the financial risk, understand the household-finance consequence, and choose a credible Taiwan-realistic solution."
+    ],
+    "usefulDisagreement": [
+      "Story-led writing helps general readers enter the problem, but for high-variation policy or labor topics the story should only introduce the issue, not carry the solution.",
+      "Tables help scanability, but a table is only valid when it changes the reader's decision or next calculation."
+    ],
+    "adoptNow": [
+      "Add structuralCashflowReview to all rent, bill, salary timing, subsidy timing, and monthly shortfall articles.",
+      "Add highVariationTopicReview to all severance, unemployment benefit, subsidy, debt, insurance, long-term care, and local-resource articles.",
+      "Add financialRiskDecisionReview to all family-finance articles so each draft must map risk signal to household finance consequence and credible solution choice.",
+      "Mark the 2026-06-17 structured two-article trial pack as post-submission rejected learning, not submit-ready."
+    ]
+  },
+  "items": [
+    {
+      "articleId": "rent-payment-cashflow-calendar",
+      "title": "帳戶還有錢，為什麼繳房租那天還是會慌",
+      "articlePath": "articles/2026-06-17-structured-two-article-pack/02-rent-payment-cashflow-calendar.txt",
+      "editorComment": "真正要做的是結構性盤點財務及現金流",
+      "diagnosis": "The draft had narrative, numbers, and table-like structure, but it still framed the article around why the reader feels anxious. The next version must make the household inventory itself the article's main action.",
+      "failureType": "cashflow_article_not_structural_enough",
+      "newGate": "structuralCashflowReview",
+      "revisionRule": "For this topic family, require income date, fixed commitments, due dates, protected money, usable cash, one-time vs recurring gap, next action, and solution choice. If these are not visible, the article cannot be marked submit-ready.",
+      "futureAction": "Rewrite as a structural finance and cash-flow inventory article or turn into a checklist/workbench. Do not resubmit the current draft."
+    },
+    {
+      "articleId": "unemployment-benefit-rent-two-cases",
+      "title": "被資遣後第一個月，房租先到、給付還沒進來，家裡先看哪一種缺口",
+      "articlePath": "articles/2026-06-17-structured-two-article-pack/01-unemployment-benefit-rent-two-cases.txt",
+      "editorComment": "個案情境及各種資遣條件不一，缺乏參考價值",
+      "diagnosis": "The draft tried to solve a structural issue with two named scenarios. Because severance conditions, insured salary, payout timing, eligibility, household support, lease pressure, and subsidy/resource access vary materially, the scenario-led article cannot provide stable reference value.",
+      "failureType": "high_variation_topic_case_led_low_reference_value",
+      "newGate": "highVariationTopicReview",
+      "revisionRule": "For severance/unemployment-benefit topics, lead with variables readers must verify: separation reason, documents, company settlement timing, insured salary, public employment registration, waiting time, rent due date, protected expenses, local help options, and the financial-risk level that decides the solution path. Use scenarios only as short illustrations.",
+      "futureAction": "Retire the case-led version. If revisiting the topic, make it a variable checklist, decision table, or pre-consultation tool rather than a story-led publishable article."
+    }
+  ],
+  "derivedGates": [
+    {
+      "id": "structuralCashflowReview",
+      "trigger": "Article discusses rent, bill deduction, salary timing, subsidy timing, account balance anxiety, monthly shortfall, or household cash flow.",
+      "mustShow": [
+        "income timing",
+        "fixed commitments",
+        "due dates",
+        "protected money",
+        "usable cash",
+        "one-time or recurring gap type",
+        "next action or help path"
+      ],
+      "rejectWhen": "The body only describes emotion, only explains a concept, or uses a table without letting readers complete their own inventory."
+    },
+    {
+      "id": "highVariationTopicReview",
+      "trigger": "Article topic depends materially on eligibility, local rules, documents, contract terms, insured salary, approval timing, debt terms, household composition, or formal resource access.",
+      "mustShow": [
+        "variables that change the answer",
+        "what readers need to verify",
+        "what cannot be concluded from a sample case",
+        "decision checklist, comparison table, or tool-like inventory"
+      ],
+      "rejectWhen": "Named scenarios carry the main solution and readers cannot adapt the article to their own conditions."
+    },
+    {
+      "id": "financialRiskDecisionReview",
+      "trigger": "Article discusses household finance, income disruption, subsidy timing, medical cost, debt, insurance, housing, care cost, or any risk that may change family cash flow or protection.",
+      "mustShow": [
+        "financial risk indicators readers can recognize",
+        "household finance consequence caused by the risk",
+        "solution choices matched to risk level",
+        "Taiwan-realistic and logically credible method",
+        "formal help path when the gap cannot be reasonably closed"
+      ],
+      "rejectWhen": "The story is readable or the list is complete, but readers cannot judge which risk they are in, what consequence to prevent, which solution fits, or when to seek formal help."
+    },
+    {
+      "id": "postSubmissionOverride",
+      "trigger": "Kevin provides editor rejection after a generated article previously passed internal gate.",
+      "mustShow": [
+        "editor rejection summary",
+        "diagnosis",
+        "new generation rule",
+        "future action",
+        "status that current draft is not submit-ready"
+      ],
+      "rejectWhen": "The article remains marked as submit-ready without preserving the editor rejection learning."
+    }
+  ],
+  "nextGenerationImpact": {
+    "cashflowTopics": "Start from structural inventory, then add story; do not start from story and hope the table makes it structural.",
+    "highVariationTopics": "Start from variables and decision tree; use story only to make the stakes readable.",
+    "financialRiskDecisionTopics": "Start from risk signal, household finance consequence, and credible solution choice; story can help readers enter the issue but cannot replace judgment indicators.",
+    "workbench": "If the topic is better handled as a tool, checklist, or table, do not force it into a story article."
+  }
+}

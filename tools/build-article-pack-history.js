@@ -21,13 +21,18 @@ const packDefinitions = [
       "修正選題邏輯：先看知識庫標題索引中很少提及的主題，而不是只看近期文章包缺什麼。",
       "低頻盤點後，選出兩個0命中主題：健保欠費與就醫、保單借款與解約金。",
       "兩篇均使用台灣官方資料作為制度底盤，正文只寫家庭數字、改善計畫、剩餘缺口與求助路徑。",
+      "2026-06-17 二次 gate 加入 financialRiskDecisionReview：文章不能只說故事或列項目，必須協助讀者判斷財務風險、理解家庭財務後果，並選擇符合台灣現況且不牽強的解決方法。",
+      "以三張已讀全文的審核通過稿結構卡做質性驗證：通過稿多具有前後差異、制度判斷順序、風險分層或正式求助分流；目前樣本小，不宣稱正式統計。",
       "正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。"
     ],
     checks: [
       "正文非空白字數均超過 2000 字。",
       "preGenerationReview 逐篇通過。",
+      "financialRiskDecisionReview 逐篇通過。",
       "approvedAuthorStructureUse 逐篇通過。",
       "articlePackReviewGate 綠燈 2/2。",
+      "secondPassGateReview 綠燈 2/2。",
+      "approvedArticleTraitValidation 已寫入質性驗證卡。",
       "role leak audit 通過。"
     ],
     relatedLogs: [
@@ -39,26 +44,27 @@ const packDefinitions = [
     id: "2026-06-17-structured-two-article-pack",
     date: "2026-06-17",
     title: "2026-06-17 兩篇結構化試產稿｜失業給付房租與繳房租那天的現金流",
-    status: "trial_review_pack",
-    statusLabel: "2 篇結構化試產稿",
+    status: "post_submission_rejected_learning",
+    statusLabel: "投稿後退件學習，不建議直接投稿",
     audience: "一般民眾",
     directory: "articles/2026-06-17-structured-two-article-pack",
     generatedBy: "tools/build-structured-two-article-pack-2026-06-17.js",
     currentReviewBoard: false,
     currentTrialPack: false,
     notes: [
-      "本批回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包。",
-      "失業給付房租稿改成雙情境對照，分清短期時間差與連續收入斷層，避免與既有房租篇同構。",
-      "繳房租那天的現金流稿保留敘事感，加入現金流月曆與三種錢的文字表，讓讀者能直接判斷。",
-      "文章結構化規則已納入：開頭先回答讀者問題、中段使用一個主要結構工具、結尾留下具體家庭檢查。",
+      "本批原先回應 6/17 兩則退件建議，先產 2 篇，不取代正式 12 篇工作台文章包；投稿後再次收到總編退件。",
+      "現金流篇退件重點：真正要做的是結構性盤點財務及現金流；故事和表格不足以取代收入、支出、日期、受保護金額、可用現金與缺口類型盤點。",
+      "資遣篇退件重點：個案情境及各種資遣條件不一，缺乏參考價值；高變異題材需改成變數清單、決策表或工具型內容。",
+      "新增 structuralCashflowReview、highVariationTopicReview 與 postSubmissionOverride 三個後續必查 gate。",
       "正文為純文字，不放來源清單、審稿語、agent 討論或 SEO/AIO 欄位。"
     ],
     checks: [
       "正文非空白字數均超過 2000 字。",
       "preGenerationReview 逐篇通過。",
       "approvedAuthorStructureUse 逐篇通過。",
-      "articlePackReviewGate 綠燈 2/2。",
-      "role leak audit 通過。"
+      "articlePackReviewGate 當時綠燈 2/2；投稿後由總編退件學習覆蓋，不再視為可直接投稿。",
+      "role leak audit 通過。",
+      "editor-rejection-learning-2026-06-17 已寫入去識別學習卡。"
     ],
     relatedLogs: [
       "reports/2026-06-17-structured-two-article-pack.md",

@@ -120,6 +120,7 @@ Must record:
 - improvement plan and remaining gap
 - resource benefit translation
 - scenario narrative review
+- pseudonym freshness review when using named scenarios
 - de-AI review
 - style variation gate
 - writing form diversity review
@@ -148,7 +149,15 @@ Use the staged article grouping workflow when writing article packs:
 
 Before drafting an article pack, choose a different writing form or narrative move for each article. Keep referencing the 好理家在文章管理區 event list: use approved article bodies as source material for de-identified structure learning, and use rejected article bodies plus rejection content as contrast lessons. A 12-article pack should use at least 8 unique writing forms and record `writingFormDiversityReview` for every article.
 
+When using named scenarios, run `pseudonymFreshnessReview` before drafting: scan recent and existing generated article packs for `＿（化名）`, reject recycled names, and pick names that have not appeared in prior packs unless Kevin explicitly asks to reuse one. Reused pseudonyms can make articles feel templated or fake even when the financial logic is correct.
+
 Every article must also record `articleUsefulnessReview`: the one household financial judgment the article advances, the common misreading it prevents, the concrete evidence in the body, the reusable capability, and the next number/date/risk/choice the reader should check after reading. If a draft is complete but average, split or rewrite until the article has one clear judgment.
+
+Cash-flow or rent-payment anxiety articles must pass `structuralCashflowReview`: income timing, fixed commitments, due dates, protected money, usable cash, recurring or one-time gap, and next action must all be visible. A story plus a table is not enough if the reader still cannot structurally inventory household finances and cash flow.
+
+High-variation topics such as severance, unemployment benefit, subsidies, debt terms, long-term care payment, insurance, or local-government resources must pass `highVariationTopicReview`. If eligibility, location, contract terms, insured salary, documents, or approval timing materially change the answer, do not use named scenarios as the main proof. Convert the output into variable checklist, decision table, pre-help-seeking inventory, or tool-like content; otherwise reject it as low reference value.
+
+Every family-finance article must pass `financialRiskDecisionReview`: the draft must help readers identify the financial risk, understand what the risk does to household finances, and choose a Taiwan-realistic, logically credible, non-forced solution path. Story, numbers, and tables are supporting devices only. Reject drafts where readers feel the story but cannot tell which risk level they are in, what consequence to prevent, or when to seek formal help. Current approved-article structure cards qualitatively support this pattern: accepted drafts tend to use before/after differences, institutional judgment order, risk layering, or formal help-path decisions, not story alone.
 
 Do not treat the reader simulation as real user research. It is an editorial gate that catches drop-off, AI flavor, missing next step, shame/trust risk, and unrealistic action advice before Kevin reviews the draft.
 

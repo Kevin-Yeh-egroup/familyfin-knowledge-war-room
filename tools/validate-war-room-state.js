@@ -19,6 +19,9 @@ const paths = {
   reviewRejectionLearning: "data/review-rejection-learning-2026-06-09.json",
   reviewRejectionDerivedFull: "data/review-rejection-derived-full-2026-06-09.json",
   reviewContrastCards: "data/review-contrast-cards-2026-06-03.json",
+  editorRejectionLearning20260617: "data/editor-rejection-learning-2026-06-17.json",
+  lowFrequencyGapSecondPassGate20260617: "data/low-frequency-gap-second-pass-gate-2026-06-17.json",
+  approvedArticleRiskDecisionValidation20260617: "data/approved-article-risk-decision-validation-2026-06-17.json",
   improvementPlanReport: "reports/2026-06-10-improvement-plan-gap-and-author-learning.md",
   approvedAuthorStructureReport: "reports/2026-06-10-approved-author-structure-cards.md",
 };
@@ -74,6 +77,96 @@ function tableSyntaxViolations(text) {
       const markdownSeparator = /^\|?\s*:?-{3,}\s*(\||$)/.test(line);
       return markdownSeparator || delimiterCount >= 2;
     });
+}
+
+function extractPseudonyms(text) {
+  const names = [];
+  const pattern = /([\u4e00-\u9fff]{2,4})（化名）/g;
+  let match;
+  while ((match = pattern.exec(String(text || "")))) {
+    names.push(match[1]);
+  }
+  return names;
+}
+
+function listTextFilesRecursive(directory) {
+  if (!fs.existsSync(directory)) return [];
+  const entries = fs.readdirSync(directory, { withFileTypes: true });
+  const files = [];
+  for (const entry of entries) {
+    const fullPath = path.join(directory, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...listTextFilesRecursive(fullPath));
+    } else if (entry.isFile() && entry.name.toLowerCase().endsWith(".txt")) {
+      files.push(fullPath);
+    }
+  }
+  return files;
+}
+
+function isSameOrInside(childPath, parentPath) {
+  const relative = path.relative(parentPath, childPath);
+  return relative === "" || (!!relative && !relative.startsWith("..") && !path.isAbsolute(relative));
+}
+
+function validateCurrentTrialPseudonymFreshness(currentTrial) {
+  if (!currentTrial) {
+    errors.push("pseudonym freshness requires current trial pack");
+    return;
+  }
+
+  const currentNames = [];
+  for (const article of currentTrial.articles || []) {
+    if (!article.bodyPath || !fs.existsSync(path.join(repoRoot, article.bodyPath))) continue;
+    const raw = fs.readFileSync(path.join(repoRoot, article.bodyPath), "utf8");
+    for (const name of extractPseudonyms(raw)) {
+      currentNames.push({ name, articleId: article.id, path: article.bodyPath });
+    }
+  }
+
+  if (!currentNames.length) {
+    errors.push(`${currentTrial.id} pseudonymFreshnessReview requires at least one named scenario`);
+    return;
+  }
+
+  const duplicateWithinCurrent = currentNames
+    .filter((item, index) => currentNames.findIndex((candidate) => candidate.name === item.name) !== index)
+    .map((item) => item.name);
+  if (duplicateWithinCurrent.length) {
+    errors.push(
+      `${currentTrial.id} duplicate pseudonyms inside current pack: ${Array.from(new Set(duplicateWithinCurrent)).join(", ")}`,
+    );
+  }
+
+  const articlesRoot = path.join(repoRoot, "articles");
+  const currentDirectory = path.join(repoRoot, currentTrial.files?.directory || `articles/${currentTrial.id}`);
+  const previousNames = new Map();
+  for (const filePath of listTextFilesRecursive(articlesRoot)) {
+    if (isSameOrInside(filePath, currentDirectory)) continue;
+    const raw = fs.readFileSync(filePath, "utf8");
+    for (const name of extractPseudonyms(raw)) {
+      if (!previousNames.has(name)) {
+        previousNames.set(name, relPath(filePath));
+      }
+    }
+  }
+
+  const reused = currentNames.filter((item) => previousNames.has(item.name));
+  if (reused.length) {
+    errors.push(
+      `${currentTrial.id} reused pseudonyms: ${reused
+        .map((item) => `${item.name} (${item.articleId}; previous ${previousNames.get(item.name)})`)
+        .join(", ")}`,
+    );
+    return;
+  }
+
+  const uniqueCurrentNames = Array.from(new Set(currentNames.map((item) => item.name)));
+  pushCheck(
+    "current trial pseudonym freshness",
+    "pass",
+    `${uniqueCurrentNames.join(", ")} checked against ${previousNames.size} previous pseudonyms`,
+  );
 }
 
 function validateStructuredTables(scopeId, article) {
@@ -1208,10 +1301,13 @@ if (suggestions?.trialArticlePacks?.length) {
     let greenReviewCount = 0;
     let preGenerationPassCount = 0;
     let structuredTablePassCount = 0;
+    let financialRiskDecisionPassCount = 0;
     const nonGreenReviewIds = [];
     const preGenerationFailures = [];
     const requiresStructuredTables =
       suggestions.metrics?.structuredTableOutputRequired === true && trialPack.id === currentTrialId;
+    const requiresFinancialRiskDecision =
+      suggestions.metrics?.financialRiskDecisionReviewRequired === true && trialPack.id === currentTrialId;
 
     if (!articles.length) {
       errors.push(`${trialPack.id} trial pack has no articles`);
@@ -1259,6 +1355,26 @@ if (suggestions?.trialArticlePacks?.length) {
           preGenerationFailures.push(`${article.id}:approvedAuthorStructureUse`);
         } else {
           preGenerationPassCount += 1;
+        }
+
+        if (requiresFinancialRiskDecision) {
+          const riskCard = preGenerationReview.financialRiskDecisionCard;
+          if (
+            !riskCard ||
+            riskCard.status !== "passed" ||
+            !riskCard.riskJudgment ||
+            !riskCard.householdFinanceConsequence ||
+            !Array.isArray(riskCard.riskIndicators) ||
+            riskCard.riskIndicators.length < 2 ||
+            !Array.isArray(riskCard.solutionChoiceMap) ||
+            riskCard.solutionChoiceMap.length < 2 ||
+            !Array.isArray(riskCard.solutionCredibilityChecks) ||
+            riskCard.solutionCredibilityChecks.length < 2
+          ) {
+            errors.push(`${trialPack.id}/${article.id} financialRiskDecisionCard missing or too shallow`);
+          } else {
+            financialRiskDecisionPassCount += 1;
+          }
         }
       }
 
@@ -1335,6 +1451,151 @@ if (suggestions?.trialArticlePacks?.length) {
     if (requiresStructuredTables && structuredTablePassCount === articles.length) {
       pushCheck(`${trialPack.id} structured table output`, "pass", `${structuredTablePassCount}/${articles.length} articles`);
     }
+    if (requiresFinancialRiskDecision && financialRiskDecisionPassCount === articles.length) {
+      pushCheck(
+        `${trialPack.id} financial risk decision review`,
+        "pass",
+        `${financialRiskDecisionPassCount}/${articles.length} articles`,
+      );
+    }
+
+    if (trialPack.editorRejectionLearning) {
+      const rejectionLearning = trialPack.editorRejectionLearning;
+      const sourcePath = rejectionLearning.source || paths.editorRejectionLearning20260617;
+      const requiredGates = [
+        "structuralCashflowReview",
+        "highVariationTopicReview",
+        "financialRiskDecisionReview",
+        "postSubmissionOverride",
+      ];
+      const derivedGates = new Set(rejectionLearning.derivedGates || []);
+      const rejectedArticles = articles.filter(
+        (article) => article.postSubmissionRejectionReview?.status === "editor_rejected",
+      );
+
+      if (!checkExists(sourcePath, `${trialPack.id} editor rejection learning source`)) {
+        errors.push(`${trialPack.id} editor rejection learning source missing: ${sourcePath}`);
+      }
+      if (rejectionLearning.submitReady !== false) {
+        errors.push(`${trialPack.id} editorRejectionLearning submitReady must be false`);
+      }
+      for (const gate of requiredGates) {
+        if (!derivedGates.has(gate)) {
+          errors.push(`${trialPack.id} editorRejectionLearning missing derived gate: ${gate}`);
+        }
+      }
+      if (!rejectedArticles.length) {
+        errors.push(`${trialPack.id} editorRejectionLearning has no rejected articles`);
+      }
+
+      for (const article of rejectedArticles) {
+        const review = article.postSubmissionRejectionReview || {};
+        if (!review.editorComment || !review.requiredGate || !review.futureAction) {
+          errors.push(`${trialPack.id}/${article.id} postSubmissionRejectionReview incomplete`);
+        }
+        if (article.submitReadyOverride?.status !== "not_submit_ready") {
+          errors.push(`${trialPack.id}/${article.id} submitReadyOverride must be not_submit_ready`);
+        }
+      }
+
+      if (
+        rejectedArticles.length &&
+        rejectionLearning.submitReady === false &&
+        requiredGates.every((gate) => derivedGates.has(gate))
+      ) {
+        pushCheck(
+          `${trialPack.id} post-submission rejection learning`,
+          "pass",
+          `${rejectedArticles.length}/${articles.length} editor-rejected articles, gates ${requiredGates.join(", ")}`,
+        );
+      }
+    }
+
+    if (trialPack.secondPassGateReview) {
+      const secondPass = trialPack.secondPassGateReview;
+      const sourcePath = secondPass.source || paths.lowFrequencyGapSecondPassGate20260617;
+      const requiredGates = [
+        "lowFrequencyGapGate",
+        "sourceFreshnessSpotCheck",
+        "financialRiskDecisionReview",
+        "articleUsefulnessReview",
+        "structuredTableOutputReview",
+      ];
+      const gates = new Set(secondPass.gatesApplied || []);
+      const secondPassArticles = articles.filter((article) => article.secondPassGateReview);
+      let secondPassArticleCount = 0;
+
+      if (!checkExists(sourcePath, `${trialPack.id} second pass gate source`)) {
+        errors.push(`${trialPack.id} second pass gate source missing: ${sourcePath}`);
+      }
+      if (secondPass.status !== "green") {
+        errors.push(`${trialPack.id} secondPassGateReview must be green: ${secondPass.status}`);
+      }
+      for (const gate of requiredGates) {
+        if (!gates.has(gate)) {
+          errors.push(`${trialPack.id} secondPassGateReview missing gate: ${gate}`);
+        }
+      }
+      if (secondPassArticles.length !== articles.length) {
+        errors.push(`${trialPack.id} secondPassGateReview article count mismatch: ${secondPassArticles.length}/${articles.length}`);
+      }
+
+      for (const article of secondPassArticles) {
+        const review = article.secondPassGateReview || {};
+        if (!String(review.status || "").startsWith("green")) {
+          errors.push(`${trialPack.id}/${article.id} secondPassGateReview not green: ${review.status}`);
+        } else if (
+          review.submitReady !== true ||
+          !review.verdict ||
+          !Array.isArray(review.passedChecks) ||
+          !review.passedChecks.includes("financial_risk_decision_review_passed") ||
+          !review.nextRequiredAction
+        ) {
+          errors.push(`${trialPack.id}/${article.id} secondPassGateReview incomplete`);
+        } else {
+          secondPassArticleCount += 1;
+        }
+      }
+
+      if (
+        secondPass.status === "green" &&
+        secondPassArticleCount === articles.length &&
+        requiredGates.every((gate) => gates.has(gate))
+      ) {
+        pushCheck(
+          `${trialPack.id} second-pass gate`,
+          "pass",
+          `${secondPassArticleCount}/${articles.length} articles passed updated gates`,
+        );
+      }
+    }
+
+    if (trialPack.approvedArticleTraitValidation) {
+      const validation = trialPack.approvedArticleTraitValidation;
+      const sourcePath = paths.approvedArticleRiskDecisionValidation20260617;
+      const traitChecks = validation.traitChecks || [];
+      if (!checkExists(sourcePath, `${trialPack.id} approved article trait validation source`)) {
+        errors.push(`${trialPack.id} approved article trait validation source missing: ${sourcePath}`);
+      }
+      if (validation.sampleBoundary?.sampleCount < 3 || validation.sampleBoundary?.storesRawArticleBody !== false) {
+        errors.push(`${trialPack.id} approvedArticleTraitValidation sample boundary invalid`);
+      }
+      if (!String(validation.conclusion || "").includes("初步支持")) {
+        errors.push(`${trialPack.id} approvedArticleTraitValidation conclusion must mark qualitative support`);
+      }
+      if (!String(validation.confidence || "").includes("small_sample")) {
+        errors.push(`${trialPack.id} approvedArticleTraitValidation must preserve small-sample limitation`);
+      }
+      if (!Array.isArray(traitChecks) || traitChecks.length < 4) {
+        errors.push(`${trialPack.id} approvedArticleTraitValidation traitChecks too shallow`);
+      } else {
+        pushCheck(
+          `${trialPack.id} approved article trait validation`,
+          "pass",
+          `${traitChecks.length} qualitative trait checks, sample=${validation.sampleBoundary.sampleCount}`,
+        );
+      }
+    }
 
     const stats = {
       id: trialPack.id,
@@ -1371,6 +1632,13 @@ if (suggestions?.trialArticlePacks?.length) {
         (currentTrial?.articles || []).length
       }`,
     );
+  }
+
+  if (suggestions.metrics?.pseudonymFreshnessRequired === true) {
+    if (currentTrial?.pseudonymFreshnessReview?.status !== "passed") {
+      errors.push("current trial pseudonymFreshnessReview missing or not passed");
+    }
+    validateCurrentTrialPseudonymFreshness(currentTrial);
   }
 
   if (suggestions.metrics?.lowFrequencyTopicSelectionRequired === true) {

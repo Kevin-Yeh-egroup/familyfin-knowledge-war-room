@@ -1,0 +1,52 @@
+{
+  "status": "green",
+  "reviewedAt": "2026-06-17T17:55:00+08:00",
+  "source": "data/low-frequency-gap-second-pass-gate-2026-06-17.json",
+  "trigger": "Kevin requested the low-frequency article pack pass the updated gate again.",
+  "reviewers": [
+    "familyfin_grounded_orchestrator",
+    "low_frequency_gap_reviewer",
+    "source_grounding_reviewer",
+    "structural_cashflow_reviewer",
+    "high_variation_topic_reviewer",
+    "financial_risk_decision_reviewer",
+    "resource_benefit_translator",
+    "human_copy_reviewer",
+    "financial_decision_reviewer",
+    "role_integrity_reviewer",
+    "final_quality_gate"
+  ],
+  "gatesApplied": [
+    "lowFrequencyGapGate",
+    "sourceFreshnessSpotCheck",
+    "structuralCashflowReview",
+    "highVariationTopicReview",
+    "financialRiskDecisionReview",
+    "articleUsefulnessReview",
+    "resourceBenefitTranslation",
+    "taiwanNaturalVoiceReview",
+    "roleLeakReview",
+    "structuredTableOutputReview"
+  ],
+  "articleResults": [
+    {
+      "id": "nhi-arrears-medical-care-gap",
+      "title": "健保費欠著，最怕的不是帳單，是不敢去看醫生",
+      "status": "green_after_second_pass",
+      "submitReady": true,
+      "revisionApplied": "metadata_gate_only_no_body_rewrite"
+    },
+    {
+      "id": "policy-loan-surrender-protection-gap",
+      "title": "急用錢先別急著解保單，借到錢之前要先看保障會少多少",
+      "status": "green_after_revision",
+      "submitReady": true,
+      "revisionApplied": "rewrote policy-loan body from case-led solution to variable-first checklist; replaced option table with insurance-policy variables table."
+    }
+  ],
+  "notes": [
+    "Kevin clarified that the key is not listing items, but helping readers judge financial risk and choose a credible solution.",
+    "The NHI arrears article now frames the table as risk levels and help-path choices.",
+    "The policy-loan article was revised from case-led solution to variable/risk judgment before solution choice."
+  ]
+}
